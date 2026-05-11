@@ -1,0 +1,112 @@
+- id: fail2ban
+  title_cs: "Fail2ban (ochrana proti brute-force)"
+  title_en: "Fail2ban (brute-force protection)"
+  tags_cs: [fail2ban, ban, brute, force, ochrana]
+  tags_en: [fail2ban, ban, brute, force, protection]
+  commands:
+    - cmd: "sudo fail2ban-client status"
+      desc_cs: "Souhrn (které jaily jsou aktivní)"
+      desc_en: "Summary (active jails)"
+    - cmd: "sudo fail2ban-client status sshd"
+      desc_cs: "Detail SSH jailu (zabanované IP)"
+      desc_en: "SSH jail detail (banned IPs)"
+    - cmd: "sudo fail2ban-client set sshd unbanip 1.2.3.4"
+      desc_cs: "Odbanovat IP"
+      desc_en: "Unban IP"
+    - cmd: "sudo fail2ban-client reload"
+      desc_cs: "Znovu načíst konfiguraci"
+      desc_en: "Reload config"
+    - cmd: "sudo tail -f /var/log/fail2ban.log"
+      desc_cs: "Sledovat akce fail2ban živě"
+      desc_en: "Watch fail2ban actions live"
+
+- id: openssl-cert
+  title_cs: "OpenSSL - certifikáty"
+  title_en: "OpenSSL - certificates"
+  tags_cs: [openssl, certifikát, ssl, tls, klíč]
+  tags_en: [openssl, certificate, ssl, tls, key]
+  commands:
+    - cmd: "openssl s_client -connect example.com:443"
+      desc_cs: "Otestovat TLS spojení"
+      desc_en: "Test TLS connection"
+    - cmd: "echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -dates"
+      desc_cs: "Datum platnosti certifikátu"
+      desc_en: "Certificate validity dates"
+    - cmd: "openssl x509 -in cert.pem -noout -text"
+      desc_cs: "Dekódovat certifikát do textu"
+      desc_en: "Decode certificate to text"
+    - cmd: "openssl genrsa -out klic.pem 4096"
+      desc_cs: "Vygenerovat RSA klíč 4096 bit"
+      desc_en: "Generate RSA 4096-bit key"
+    - cmd: "openssl req -new -key klic.pem -out csr.pem"
+      desc_cs: "Vytvořit CSR (žádost o certifikát)"
+      desc_en: "Create CSR (certificate request)"
+    - cmd: "openssl req -x509 -newkey rsa:4096 -keyout klic.pem -out cert.pem -days 365 -nodes"
+      desc_cs: "Self-signed certifikát na 365 dní"
+      desc_en: "Self-signed cert for 365 days"
+
+- id: certbot
+  title_cs: "Let's Encrypt (certbot)"
+  title_en: "Let's Encrypt (certbot)"
+  tags_cs: [certbot, letsencrypt, https, certifikát]
+  tags_en: [certbot, letsencrypt, https, certificate]
+  commands:
+    - cmd: "sudo certbot --nginx -d example.com"
+      desc_cs: "Získat + nastavit HTTPS pro nginx"
+      desc_en: "Obtain + configure HTTPS for nginx"
+    - cmd: "sudo certbot --apache -d example.com"
+      desc_cs: "Pro Apache"
+      desc_en: "For Apache"
+    - cmd: "sudo certbot certonly --standalone -d example.com"
+      desc_cs: "Jen získat cert (bez auto-configu)"
+      desc_en: "Just obtain cert (no auto-config)"
+    - cmd: "sudo certbot renew --dry-run"
+      desc_cs: "Test obnovení"
+      desc_en: "Test renewal"
+    - cmd: "sudo certbot certificates"
+      desc_cs: "Seznam získaných certifikátů"
+      desc_en: "List obtained certificates"
+
+- id: gpg
+  title_cs: "GPG (šifrování a podpisy)"
+  title_en: "GPG (encryption and signing)"
+  tags_cs: [gpg, šifrování, podpis, klíč, encrypt]
+  tags_en: [gpg, encrypt, sign, key]
+  commands:
+    - cmd: "gpg --gen-key"
+      desc_cs: "Vygenerovat GPG klíčový pár"
+      desc_en: "Generate GPG key pair"
+    - cmd: "gpg --list-keys"
+      desc_cs: "Veřejné klíče v klíčence"
+      desc_en: "Public keys in keyring"
+    - cmd: "gpg --export -a 'jméno' > klic.asc"
+      desc_cs: "Exportovat veřejný klíč"
+      desc_en: "Export public key"
+    - cmd: "gpg -c soubor.txt"
+      desc_cs: "Zašifrovat heslem (symetricky)"
+      desc_en: "Encrypt with password (symmetric)"
+    - cmd: "gpg soubor.txt.gpg"
+      desc_cs: "Dešifrovat"
+      desc_en: "Decrypt"
+    - cmd: "gpg -e -r prijemce soubor.txt"
+      desc_cs: "Zašifrovat pro příjemce (asymetricky)"
+      desc_en: "Encrypt for recipient (asymmetric)"
+
+- id: hash
+  title_cs: "Kontrolní součty (hash)"
+  title_en: "Checksums (hash)"
+  tags_cs: [hash, md5, sha256, kontrolní, součet, checksum]
+  tags_en: [hash, md5, sha256, checksum]
+  commands:
+    - cmd: "md5sum soubor"
+      desc_cs: "MD5 hash souboru"
+      desc_en: "MD5 hash of file"
+    - cmd: "sha256sum soubor"
+      desc_cs: "SHA-256 hash souboru"
+      desc_en: "SHA-256 hash of file"
+    - cmd: "sha256sum -c soubor.sha256"
+      desc_cs: "Ověřit podle .sha256 souboru"
+      desc_en: "Verify against .sha256 file"
+    - cmd: "echo -n 'text' | sha256sum"
+      desc_cs: "Hash z řetězce"
+      desc_en: "Hash from string"

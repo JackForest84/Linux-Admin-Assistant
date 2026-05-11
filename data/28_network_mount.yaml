@@ -1,0 +1,78 @@
+- id: nfs-mount
+  title_cs: "NFS - sdílení souborů (Linux)"
+  title_en: "NFS - file sharing (Linux)"
+  tags_cs: [nfs, sdílení, mount, síťový, disk]
+  tags_en: [nfs, share, mount, network, drive]
+  commands:
+    - cmd: "sudo apt install nfs-common"
+      desc_cs: "Klient: nainstalovat balíček"
+      desc_en: "Client: install package"
+    - cmd: "sudo mount -t nfs 192.168.1.10:/export /mnt"
+      desc_cs: "Připojit NFS share"
+      desc_en: "Mount NFS share"
+    - cmd: "showmount -e 192.168.1.10"
+      desc_cs: "Vypsat exporty serveru"
+      desc_en: "List server exports"
+    - cmd: "sudo apt install nfs-kernel-server"
+      desc_cs: "Server: nainstalovat"
+      desc_en: "Server: install"
+    - cmd: "sudo exportfs -rav"
+      desc_cs: "Server: znovu načíst /etc/exports"
+      desc_en: "Server: reload /etc/exports"
+
+- id: smb-cifs
+  title_cs: "Samba / CIFS (Windows sdílení)"
+  title_en: "Samba / CIFS (Windows share)"
+  tags_cs: [samba, cifs, smb, windows, sdílení]
+  tags_en: [samba, cifs, smb, windows, share]
+  commands:
+    - cmd: "sudo apt install cifs-utils"
+      desc_cs: "Nainstalovat CIFS klienta"
+      desc_en: "Install CIFS client"
+    - cmd: "sudo mount -t cifs //server/share /mnt -o username=user"
+      desc_cs: "Připojit SMB share"
+      desc_en: "Mount SMB share"
+    - cmd: "smbclient -L //192.168.1.10 -U user"
+      desc_cs: "Vypsat dostupné shares na serveru"
+      desc_en: "List available shares on server"
+    - cmd: "smbclient //server/share -U user"
+      desc_cs: "Interaktivní klient (jako FTP)"
+      desc_en: "Interactive client (like FTP)"
+
+- id: sshfs
+  title_cs: "SSHFS - mount přes SSH"
+  title_en: "SSHFS - mount over SSH"
+  tags_cs: [sshfs, fuse, mount, ssh, vzdálený]
+  tags_en: [sshfs, fuse, mount, ssh, remote]
+  commands:
+    - cmd: "sudo apt install sshfs"
+      desc_cs: "Nainstalovat"
+      desc_en: "Install"
+    - cmd: "sshfs user@host:/cesta /mnt"
+      desc_cs: "Připojit vzdálený adresář přes SSH"
+      desc_en: "Mount remote directory via SSH"
+    - cmd: "fusermount -u /mnt"
+      desc_cs: "Odpojit"
+      desc_en: "Unmount"
+
+- id: fstab
+  title_cs: "Trvalé mountování (fstab)"
+  title_en: "Permanent mounts (fstab)"
+  tags_cs: [fstab, mount, trvalý, boot, autostart]
+  tags_en: [fstab, mount, permanent, boot, autostart]
+  commands:
+    - cmd: "sudo cp /etc/fstab /etc/fstab.bak"
+      desc_cs: "Záloha fstab před úpravou (důležité!)"
+      desc_en: "Backup fstab before edit (important!)"
+    - cmd: "sudo nano /etc/fstab"
+      desc_cs: "Upravit fstab"
+      desc_en: "Edit fstab"
+    - cmd: "sudo mount -a"
+      desc_cs: "Připojit vše z fstab (test)"
+      desc_en: "Mount everything from fstab (test)"
+    - cmd: "lsblk -f"
+      desc_cs: "Najít UUID disků (pro fstab)"
+      desc_en: "Find disk UUIDs (for fstab)"
+    - cmd: "echo 'UUID=xxx /mnt ext4 defaults 0 2' | sudo tee -a /etc/fstab"
+      desc_cs: "Příklad záznamu (uprav UUID a cestu)"
+      desc_en: "Example entry (edit UUID and path)"

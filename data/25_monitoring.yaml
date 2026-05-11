@@ -1,0 +1,78 @@
+- id: io-monitor
+  title_cs: "I/O monitoring (disky)"
+  title_en: "I/O monitoring (disks)"
+  tags_cs: [iotop, iostat, io, disk, výkon, monitoring]
+  tags_en: [iotop, iostat, io, disk, performance, monitoring]
+  commands:
+    - cmd: "sudo iotop"
+      desc_cs: "Které procesy zatěžují disk (apt install iotop)"
+      desc_en: "Which processes load disk"
+    - cmd: "iostat -xz 2"
+      desc_cs: "I/O statistiky každé 2 vteřiny (apt install sysstat)"
+      desc_en: "I/O stats every 2 seconds"
+    - cmd: "sudo dstat -tcmnd"
+      desc_cs: "Kombinovaný monitor (CPU, RAM, síť, disk)"
+      desc_en: "Combined monitor (CPU, RAM, net, disk)"
+    - cmd: "vmstat 2"
+      desc_cs: "Statistiky systému každé 2 vteřiny"
+      desc_en: "System stats every 2 seconds"
+
+- id: net-monitor
+  title_cs: "Síťové monitorování"
+  title_en: "Network monitoring"
+  tags_cs: [iftop, nethogs, síť, monitoring, provoz]
+  tags_en: [iftop, nethogs, network, monitoring, traffic]
+  commands:
+    - cmd: "sudo iftop -i eth0"
+      desc_cs: "Živý provoz na rozhraní"
+      desc_en: "Live traffic on interface"
+    - cmd: "sudo nethogs"
+      desc_cs: "Které procesy posílají data"
+      desc_en: "Which processes send data"
+    - cmd: "sudo tcpdump -i eth0 port 80"
+      desc_cs: "Zachytávat provoz na portu 80"
+      desc_en: "Capture traffic on port 80"
+    - cmd: "sudo tcpdump -i eth0 -w out.pcap"
+      desc_cs: "Uložit zachycený provoz do souboru"
+      desc_en: "Save captured traffic to file"
+    - cmd: "speedtest-cli"
+      desc_cs: "Test rychlosti internetu (pip install speedtest-cli)"
+      desc_en: "Internet speed test"
+
+- id: bench
+  title_cs: "Výkonnostní testy"
+  title_en: "Performance benchmarks"
+  tags_cs: [benchmark, výkon, test, sysbench, hdparm]
+  tags_en: [benchmark, performance, test, sysbench, hdparm]
+  commands:
+    - cmd: "sudo hdparm -t /dev/sda"
+      desc_cs: "Rychlost čtení disku"
+      desc_en: "Disk read speed"
+    - cmd: "dd if=/dev/zero of=test.bin bs=1M count=1024 conv=fdatasync"
+      desc_cs: "Rychlost zápisu (vytvoří 1 GB soubor)"
+      desc_en: "Write speed (creates 1 GB file)"
+    - cmd: "sysbench cpu --threads=4 run"
+      desc_cs: "Benchmark CPU"
+      desc_en: "CPU benchmark"
+    - cmd: "stress-ng --cpu 4 --timeout 30s"
+      desc_cs: "Stres test CPU na 30 vteřin"
+      desc_en: "CPU stress test for 30 seconds"
+
+- id: open-files
+  title_cs: "Otevřené soubory a deskriptory"
+  title_en: "Open files and descriptors"
+  tags_cs: [lsof, otevřené, soubory, descriptor, handle]
+  tags_en: [lsof, open, files, descriptor, handle]
+  commands:
+    - cmd: "sudo lsof -p 1234"
+      desc_cs: "Co má otevřeno proces s PID 1234"
+      desc_en: "What process 1234 has open"
+    - cmd: "sudo lsof /var/log/syslog"
+      desc_cs: "Kdo má otevřený tento soubor"
+      desc_en: "Who has this file open"
+    - cmd: "sudo lsof +D /opt"
+      desc_cs: "Vše otevřené uvnitř /opt"
+      desc_en: "Everything open inside /opt"
+    - cmd: "ulimit -n"
+      desc_cs: "Limit otevřených souborů (na uživatele)"
+      desc_en: "Open files limit (per user)"

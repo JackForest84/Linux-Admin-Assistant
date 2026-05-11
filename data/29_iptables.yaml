@@ -1,0 +1,62 @@
+- id: iptables-list
+  title_cs: "iptables - výpis pravidel"
+  title_en: "iptables - list rules"
+  tags_cs: [iptables, firewall, pravidla, list]
+  tags_en: [iptables, firewall, rules, list]
+  commands:
+    - cmd: "sudo iptables -L -n -v"
+      desc_cs: "Vypsat všechna pravidla"
+      desc_en: "List all rules"
+    - cmd: "sudo iptables -L -n -v --line-numbers"
+      desc_cs: "Vč. čísel řádků (pro mazání)"
+      desc_en: "Including line numbers (for deletion)"
+    - cmd: "sudo iptables -S"
+      desc_cs: "Pravidla ve formátu příkazů"
+      desc_en: "Rules in command format"
+    - cmd: "sudo iptables-save > rules.v4"
+      desc_cs: "Uložit pravidla do souboru"
+      desc_en: "Save rules to file"
+    - cmd: "sudo iptables-restore < rules.v4"
+      desc_cs: "Obnovit pravidla ze souboru"
+      desc_en: "Restore rules from file"
+
+- id: iptables-rules
+  title_cs: "iptables - přidat / smazat pravidla"
+  title_en: "iptables - add / delete rules"
+  tags_cs: [iptables, povolit, zakázat, port, allow, drop]
+  tags_en: [iptables, allow, deny, port, drop]
+  commands:
+    - cmd: "sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT"
+      desc_cs: "Povolit příchozí SSH"
+      desc_en: "Allow incoming SSH"
+    - cmd: "sudo iptables -A INPUT -s 1.2.3.4 -j DROP"
+      desc_cs: "Zablokovat IP adresu"
+      desc_en: "Block IP address"
+    - cmd: "sudo iptables -D INPUT 3"
+      desc_cs: "Smazat pravidlo č. 3"
+      desc_en: "Delete rule #3"
+    - cmd: "sudo iptables -F"
+      desc_cs: "Smazat všechna pravidla (POZOR!)"
+      desc_en: "Flush all rules (CAREFUL!)"
+    - cmd: "sudo iptables -P INPUT DROP"
+      desc_cs: "Výchozí politika: vše blokovat"
+      desc_en: "Default policy: drop everything"
+
+- id: nftables
+  title_cs: "nftables (moderní náhrada iptables)"
+  title_en: "nftables (modern iptables replacement)"
+  tags_cs: [nftables, nft, firewall, moderní]
+  tags_en: [nftables, nft, firewall, modern]
+  commands:
+    - cmd: "sudo nft list ruleset"
+      desc_cs: "Vypsat všechna pravidla"
+      desc_en: "List all rules"
+    - cmd: "sudo nft list table inet filter"
+      desc_cs: "Detail tabulky"
+      desc_en: "Table details"
+    - cmd: "sudo nft -f /etc/nftables.conf"
+      desc_cs: "Načíst konfiguraci ze souboru"
+      desc_en: "Load config from file"
+    - cmd: "sudo nft flush ruleset"
+      desc_cs: "Smazat všechna pravidla"
+      desc_en: "Flush all rules"

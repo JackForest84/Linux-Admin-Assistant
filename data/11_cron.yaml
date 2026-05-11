@@ -1,0 +1,75 @@
+- id: cron-edit
+  title_cs: "Plánované úlohy (cron)"
+  title_en: "Scheduled tasks (cron)"
+  tags_cs: [cron, crontab, plánovat, scheduler, úloha, automaticky]
+  tags_en: [cron, crontab, schedule, scheduler, task]
+  commands:
+    - cmd: "crontab -e"
+      desc_cs: "Upravit crontab aktuálního uživatele"
+      desc_en: "Edit current user's crontab"
+    - cmd: "crontab -l"
+      desc_cs: "Vypsat naplánované úlohy"
+      desc_en: "List scheduled tasks"
+    - cmd: "sudo crontab -e -u root"
+      desc_cs: "Upravit root crontab"
+      desc_en: "Edit root crontab"
+    - cmd: "crontab -r"
+      desc_cs: "Smazat všechny úlohy (POZOR)"
+      desc_en: "Delete all tasks (CAREFUL)"
+
+- id: cron-syntax
+  title_cs: "Cron syntaxe (příklady)"
+  title_en: "Cron syntax (examples)"
+  tags_cs: [cron, syntaxe, čas, příklad, minuta, hodina]
+  tags_en: [cron, syntax, time, example, minute, hour]
+  commands:
+    - cmd: "*/5 * * * * /opt/script.sh"
+      desc_cs: "Každých 5 minut"
+      desc_en: "Every 5 minutes"
+    - cmd: "0 3 * * * /opt/backup.sh"
+      desc_cs: "Každý den ve 3:00"
+      desc_en: "Every day at 3:00"
+    - cmd: "0 0 * * 0 /opt/weekly.sh"
+      desc_cs: "Každou neděli o půlnoci"
+      desc_en: "Every Sunday at midnight"
+    - cmd: "@reboot /opt/onboot.sh"
+      desc_cs: "Při každém startu systému"
+      desc_en: "On every system boot"
+    - cmd: "0 9-17 * * 1-5 /opt/pracovni.sh"
+      desc_cs: "Každou celou hodinu 9-17 v pracovních dnech"
+      desc_en: "Every hour 9-17 on weekdays"
+
+- id: systemd-timer
+  title_cs: "Systemd timer (moderní alternativa cronu)"
+  title_en: "Systemd timer (modern cron alternative)"
+  tags_cs: [systemd, timer, časovač, plánovat]
+  tags_en: [systemd, timer, schedule]
+  commands:
+    - cmd: "systemctl list-timers"
+      desc_cs: "Všechny aktivní timery (kdy poběží)"
+      desc_en: "All active timers (when they run)"
+    - cmd: "systemctl status mojeUloha.timer"
+      desc_cs: "Stav konkrétního timeru"
+      desc_en: "Status of specific timer"
+    - cmd: "sudo systemctl enable --now mojeUloha.timer"
+      desc_cs: "Zapnout timer + po startu systému"
+      desc_en: "Enable timer + on boot"
+
+- id: at-jobs
+  title_cs: "Jednorázové úlohy (at)"
+  title_en: "One-shot scheduled jobs (at)"
+  tags_cs: [at, jednorázové, plánovat, později]
+  tags_en: [at, one-shot, schedule, later]
+  commands:
+    - cmd: "echo 'sudo reboot' | at 03:00"
+      desc_cs: "Spustit příkaz ve 3:00"
+      desc_en: "Run command at 3:00"
+    - cmd: "echo 'backup.sh' | at now + 1 hour"
+      desc_cs: "Za hodinu"
+      desc_en: "In one hour"
+    - cmd: "atq"
+      desc_cs: "Seznam čekajících úloh"
+      desc_en: "List of pending jobs"
+    - cmd: "atrm 5"
+      desc_cs: "Zrušit úlohu č. 5"
+      desc_en: "Cancel job number 5"

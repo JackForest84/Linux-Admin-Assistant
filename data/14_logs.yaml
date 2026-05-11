@@ -1,0 +1,65 @@
+- id: log-view
+  title_cs: "Prohlížení systémových logů"
+  title_en: "Viewing system logs"
+  tags_cs: [logy, log, syslog, dmesg, journal]
+  tags_en: [logs, log, syslog, dmesg, journal]
+  commands:
+    - cmd: "sudo tail -f /var/log/syslog"
+      desc_cs: "Hlavní systémový log živě"
+      desc_en: "Main system log live"
+    - cmd: "sudo tail -f /var/log/auth.log"
+      desc_cs: "Přihlášení, sudo, SSH"
+      desc_en: "Logins, sudo, SSH"
+    - cmd: "sudo dmesg | tail -50"
+      desc_cs: "Kernel zprávy (HW, drivery)"
+      desc_en: "Kernel messages (HW, drivers)"
+    - cmd: "sudo dmesg -wH"
+      desc_cs: "Kernel log živě, lidsky čitelné časy"
+      desc_en: "Kernel log live, human times"
+    - cmd: "last -20"
+      desc_cs: "Posledních 20 přihlášení"
+      desc_en: "Last 20 logins"
+    - cmd: "lastb -20"
+      desc_cs: "Posledních 20 NEÚSPĚŠNÝCH přihlášení"
+      desc_en: "Last 20 FAILED logins"
+
+- id: log-rotate
+  title_cs: "Rotace logů"
+  title_en: "Log rotation"
+  tags_cs: [logrotate, rotace, logy, smazat, staré]
+  tags_en: [logrotate, rotation, logs, old, delete]
+  commands:
+    - cmd: "sudo logrotate -d /etc/logrotate.conf"
+      desc_cs: "Test rotace (debug, nic nemění)"
+      desc_en: "Test rotation (debug, no changes)"
+    - cmd: "sudo logrotate -f /etc/logrotate.conf"
+      desc_cs: "Vynutit rotaci hned"
+      desc_en: "Force rotation now"
+    - cmd: "sudo journalctl --vacuum-size=500M"
+      desc_cs: "Smazat journal logy nad 500 MB"
+      desc_en: "Trim journal logs above 500 MB"
+    - cmd: "sudo journalctl --vacuum-time=30d"
+      desc_cs: "Smazat starší než 30 dní"
+      desc_en: "Delete older than 30 days"
+    - cmd: "sudo journalctl --disk-usage"
+      desc_cs: "Kolik místa journal zabírá"
+      desc_en: "How much space journal uses"
+
+- id: log-search
+  title_cs: "Hledání v logách"
+  title_en: "Searching in logs"
+  tags_cs: [logy, grep, hledat, chyby, error]
+  tags_en: [logs, grep, search, errors]
+  commands:
+    - cmd: "sudo grep -i error /var/log/syslog | tail -20"
+      desc_cs: "Posledních 20 chyb"
+      desc_en: "Last 20 errors"
+    - cmd: "sudo journalctl -p err --since today"
+      desc_cs: "Dnešní chyby z journalu"
+      desc_en: "Today's errors from journal"
+    - cmd: "sudo zcat /var/log/syslog.*.gz | grep ssh"
+      desc_cs: "Hledat i ve zkomprimovaných archivech"
+      desc_en: "Search in compressed archives too"
+    - cmd: "sudo awk '/Failed password/' /var/log/auth.log"
+      desc_cs: "Neúspěšné SSH pokusy"
+      desc_en: "Failed SSH login attempts"

@@ -1,0 +1,103 @@
+- id: file-find
+  title_cs: "Najít soubor"
+  title_en: "Find file"
+  tags_cs: [find, najít, hledat, soubor]
+  tags_en: [find, search, file]
+  commands:
+    - cmd: "find /etc -name '*.conf'"
+      desc_cs: "Najít všechny .conf soubory v /etc"
+      desc_en: "Find all .conf files in /etc"
+    - cmd: "find . -type f -mtime -1"
+      desc_cs: "Soubory změněné za posledních 24 h"
+      desc_en: "Files modified in last 24 h"
+    - cmd: "find / -type f -size +1G 2>/dev/null"
+      desc_cs: "Soubory větší než 1 GB"
+      desc_en: "Files larger than 1 GB"
+    - cmd: "locate nginx.conf"
+      desc_cs: "Rychlé hledání přes databázi (sudo updatedb)"
+      desc_en: "Fast search via database (sudo updatedb)"
+
+- id: file-grep
+  title_cs: "Hledat text v souborech"
+  title_en: "Search text in files"
+  tags_cs: [grep, hledat, text, obsah, řetězec]
+  tags_en: [grep, search, text, content, string]
+  commands:
+    - cmd: "grep -r 'heslo' /etc"
+      desc_cs: "Rekurzivně hledat řetězec ve všech souborech"
+      desc_en: "Recursively search string in all files"
+    - cmd: "grep -rn 'error' /var/log"
+      desc_cs: "Včetně čísel řádků"
+      desc_en: "Including line numbers"
+    - cmd: "grep -ri 'TODO' . --include='*.py'"
+      desc_cs: "Bez ohledu na velikost, jen v .py souborech"
+      desc_en: "Case-insensitive, only in .py files"
+    - cmd: "grep -v '^#' /etc/ssh/sshd_config | grep -v '^$'"
+      desc_cs: "Bez komentářů a prázdných řádků"
+      desc_en: "Without comments and empty lines"
+
+- id: file-perms
+  title_cs: "Práva souborů a vlastník"
+  title_en: "File permissions and owner"
+  tags_cs: [chmod, chown, práva, vlastník, permissions]
+  tags_en: [chmod, chown, permissions, owner]
+  commands:
+    - cmd: "ls -l soubor"
+      desc_cs: "Zobrazit práva, vlastníka, velikost"
+      desc_en: "Show permissions, owner, size"
+    - cmd: "chmod 644 soubor"
+      desc_cs: "rw-r--r-- (běžný soubor)"
+      desc_en: "rw-r--r-- (regular file)"
+    - cmd: "chmod 755 skript.sh"
+      desc_cs: "rwxr-xr-x (spustitelný)"
+      desc_en: "rwxr-xr-x (executable)"
+    - cmd: "chmod +x skript.sh"
+      desc_cs: "Přidat právo spouštění"
+      desc_en: "Add execute permission"
+    - cmd: "sudo chown jakub:jakub /opt/aplikace -R"
+      desc_cs: "Změnit vlastníka rekurzivně"
+      desc_en: "Change owner recursively"
+
+- id: file-copy
+  title_cs: "Kopírovat / přesunout soubory"
+  title_en: "Copy / move files"
+  tags_cs: [cp, mv, kopírovat, přesunout, rsync]
+  tags_en: [cp, mv, copy, move, rsync]
+  commands:
+    - cmd: "cp -r src/ dest/"
+      desc_cs: "Rekurzivně zkopírovat složku"
+      desc_en: "Recursively copy folder"
+    - cmd: "cp -a src/ dest/"
+      desc_cs: "Zachovat práva a časy"
+      desc_en: "Preserve permissions and timestamps"
+    - cmd: "mv soubor.txt /tmp/"
+      desc_cs: "Přesunout (nebo přejmenovat)"
+      desc_en: "Move (or rename)"
+    - cmd: "rsync -avh --progress src/ dest/"
+      desc_cs: "Rychlá synchronizace s progress barem"
+      desc_en: "Fast sync with progress"
+    - cmd: "rsync -avzh src/ user@host:/path/"
+      desc_cs: "Sync na vzdálený server přes SSH"
+      desc_en: "Sync to remote server via SSH"
+
+- id: file-archive
+  title_cs: "Archivy (tar, zip)"
+  title_en: "Archives (tar, zip)"
+  tags_cs: [tar, zip, archiv, komprese, gzip, rozbalit]
+  tags_en: [tar, zip, archive, compress, gzip, extract]
+  commands:
+    - cmd: "tar czf archiv.tar.gz slozka/"
+      desc_cs: "Vytvořit gzip archiv ze složky"
+      desc_en: "Create gzip archive from folder"
+    - cmd: "tar xzf archiv.tar.gz"
+      desc_cs: "Rozbalit gzip archiv"
+      desc_en: "Extract gzip archive"
+    - cmd: "tar tzf archiv.tar.gz"
+      desc_cs: "Vypsat obsah archivu (bez rozbalení)"
+      desc_en: "List archive contents (without extracting)"
+    - cmd: "zip -r archiv.zip slozka/"
+      desc_cs: "Vytvořit ZIP"
+      desc_en: "Create ZIP"
+    - cmd: "unzip archiv.zip"
+      desc_cs: "Rozbalit ZIP"
+      desc_en: "Extract ZIP"

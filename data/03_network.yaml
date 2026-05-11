@@ -1,0 +1,97 @@
+- id: net-ip
+  title_cs: "IP adresy a síťová rozhraní"
+  title_en: "IP addresses and network interfaces"
+  tags_cs: [síť, ip, adresa, rozhraní, ifconfig]
+  tags_en: [network, ip, address, interface, ifconfig]
+  commands:
+    - cmd: "ip a"
+      desc_cs: "Všechna rozhraní a IP adresy"
+      desc_en: "All interfaces and IP addresses"
+    - cmd: "ip -br a"
+      desc_cs: "Stručný přehled (jeden řádek na rozhraní)"
+      desc_en: "Brief view (one line per interface)"
+    - cmd: "hostname -I"
+      desc_cs: "Jen IP adresy tohoto stroje"
+      desc_en: "Just this machine's IP addresses"
+    - cmd: "curl -s ifconfig.me"
+      desc_cs: "Veřejná IP adresa"
+      desc_en: "Public IP address"
+
+- id: net-ports
+  title_cs: "Otevřené porty a poslouchající služby"
+  title_en: "Open ports and listening services"
+  tags_cs: [porty, ss, netstat, poslouchá, listening, otevřené]
+  tags_en: [ports, ss, netstat, listening, open]
+  commands:
+    - cmd: "sudo ss -tulnp"
+      desc_cs: "TCP/UDP porty + jaký proces je drží"
+      desc_en: "TCP/UDP ports + which process owns them"
+    - cmd: "sudo ss -tlnp"
+      desc_cs: "Jen TCP poslouchající"
+      desc_en: "Only TCP listening"
+    - cmd: "sudo lsof -i -P -n"
+      desc_cs: "Všechna síťová spojení a porty"
+      desc_en: "All network connections and ports"
+    - cmd: "sudo lsof -i :80"
+      desc_cs: "Kdo používá port 80"
+      desc_en: "Who uses port 80"
+
+- id: net-test
+  title_cs: "Test konektivity"
+  title_en: "Test connectivity"
+  tags_cs: [ping, traceroute, dns, test, spojení, internet]
+  tags_en: [ping, traceroute, dns, test, connection]
+  commands:
+    - cmd: "ping -c 4 8.8.8.8"
+      desc_cs: "4× ping na Google DNS"
+      desc_en: "4× ping to Google DNS"
+    - cmd: "traceroute google.com"
+      desc_cs: "Cesta paketu (každý hop)"
+      desc_en: "Packet route (each hop)"
+    - cmd: "dig google.com"
+      desc_cs: "DNS dotaz s detaily"
+      desc_en: "DNS query with details"
+    - cmd: "nslookup google.com"
+      desc_cs: "Jednodušší DNS překlad"
+      desc_en: "Simpler DNS lookup"
+    - cmd: "curl -I https://example.com"
+      desc_cs: "Jen HTTP hlavičky odpovědi"
+      desc_en: "Only HTTP response headers"
+
+- id: net-download
+  title_cs: "Stáhnout soubor"
+  title_en: "Download file"
+  tags_cs: [stáhnout, download, curl, wget]
+  tags_en: [download, curl, wget]
+  commands:
+    - cmd: "curl -O https://example.com/file.tar.gz"
+      desc_cs: "Uložit pod původním názvem"
+      desc_en: "Save under original name"
+    - cmd: "curl -L -o out.tar.gz https://example.com/file"
+      desc_cs: "Následovat redirecty, uložit pod novým jménem"
+      desc_en: "Follow redirects, save as new name"
+    - cmd: "wget https://example.com/file.tar.gz"
+      desc_cs: "Stáhnout s wget (s progress barem)"
+      desc_en: "Download with wget (with progress)"
+
+- id: net-firewall
+  title_cs: "UFW firewall"
+  title_en: "UFW firewall"
+  tags_cs: [firewall, ufw, povolit, zakázat, port]
+  tags_en: [firewall, ufw, allow, deny, port]
+  commands:
+    - cmd: "sudo ufw status verbose"
+      desc_cs: "Stav firewallu + pravidla"
+      desc_en: "Firewall status + rules"
+    - cmd: "sudo ufw allow 80/tcp"
+      desc_cs: "Povolit příchozí port 80"
+      desc_en: "Allow incoming port 80"
+    - cmd: "sudo ufw allow from 192.168.1.0/24"
+      desc_cs: "Povolit vše z lokální sítě"
+      desc_en: "Allow everything from local network"
+    - cmd: "sudo ufw delete allow 80/tcp"
+      desc_cs: "Smazat pravidlo"
+      desc_en: "Delete rule"
+    - cmd: "sudo ufw enable"
+      desc_cs: "Zapnout firewall"
+      desc_en: "Enable firewall"

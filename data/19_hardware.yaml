@@ -1,0 +1,72 @@
+- id: hw-overview
+  title_cs: "Hardware - přehled"
+  title_en: "Hardware overview"
+  tags_cs: [hardware, hw, lshw, lspci, lsusb, info]
+  tags_en: [hardware, hw, lshw, lspci, lsusb, info]
+  commands:
+    - cmd: "sudo lshw -short"
+      desc_cs: "Kompletní přehled HW (stručně)"
+      desc_en: "Complete HW overview (brief)"
+    - cmd: "sudo lshw -class disk -class storage"
+      desc_cs: "Jen disky a řadiče"
+      desc_en: "Only disks and controllers"
+    - cmd: "lspci"
+      desc_cs: "PCI zařízení (síťovky, GPU)"
+      desc_en: "PCI devices (NICs, GPU)"
+    - cmd: "lspci -v"
+      desc_cs: "Podrobně (drivery)"
+      desc_en: "Verbose (drivers)"
+    - cmd: "lsusb"
+      desc_cs: "USB zařízení"
+      desc_en: "USB devices"
+    - cmd: "sudo dmidecode -t system"
+      desc_cs: "Výrobce, model, BIOS"
+      desc_en: "Manufacturer, model, BIOS"
+
+- id: hw-disk-health
+  title_cs: "Zdraví disků (SMART)"
+  title_en: "Disk health (SMART)"
+  tags_cs: [smart, disk, zdraví, smartctl, závada]
+  tags_en: [smart, disk, health, smartctl, failure]
+  commands:
+    - cmd: "sudo smartctl -a /dev/sda"
+      desc_cs: "SMART hodnoty disku"
+      desc_en: "Disk SMART values"
+    - cmd: "sudo smartctl -H /dev/sda"
+      desc_cs: "Stručný stav (PASSED / FAILED)"
+      desc_en: "Brief status (PASSED / FAILED)"
+    - cmd: "sudo smartctl -t short /dev/sda"
+      desc_cs: "Spustit krátký self-test"
+      desc_en: "Run short self-test"
+    - cmd: "sudo nvme smart-log /dev/nvme0"
+      desc_cs: "SMART pro NVMe disk"
+      desc_en: "SMART for NVMe disk"
+
+- id: hw-temp
+  title_cs: "Teploty"
+  title_en: "Temperatures"
+  tags_cs: [teplota, temp, sensors, lm-sensors]
+  tags_en: [temperature, temp, sensors, lm-sensors]
+  commands:
+    - cmd: "sensors"
+      desc_cs: "Teploty CPU/desky (apt install lm-sensors)"
+      desc_en: "CPU/mainboard temps"
+    - cmd: "sudo sensors-detect --auto"
+      desc_cs: "Inicializovat senzory (po instalaci)"
+      desc_en: "Initialize sensors (after install)"
+    - cmd: "watch -n 2 sensors"
+      desc_cs: "Sledovat teploty živě"
+      desc_en: "Watch temps live"
+
+- id: hw-power
+  title_cs: "Baterie a napájení"
+  title_en: "Battery and power"
+  tags_cs: [baterie, battery, napájení, power, upower]
+  tags_en: [battery, power, upower]
+  commands:
+    - cmd: "upower -i $(upower -e | grep BAT)"
+      desc_cs: "Stav baterie (procenta, kapacita)"
+      desc_en: "Battery status (percent, capacity)"
+    - cmd: "cat /sys/class/power_supply/BAT0/capacity"
+      desc_cs: "Jen procenta baterie"
+      desc_en: "Just battery percent"

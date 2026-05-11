@@ -1,0 +1,90 @@
+- id: systemd-create
+  title_cs: "Vytvořit vlastní systemd službu"
+  title_en: "Create custom systemd service"
+  tags_cs: [systemd, služba, vlastní, vytvořit, unit]
+  tags_en: [systemd, service, custom, create, unit]
+  commands:
+    - cmd: "sudo nano /etc/systemd/system/mojeapp.service"
+      desc_cs: "Vytvořit service unit"
+      desc_en: "Create service unit"
+    - cmd: "sudo systemctl daemon-reload"
+      desc_cs: "Po úpravě unit souboru - znovu načíst"
+      desc_en: "After editing unit file - reload"
+    - cmd: "sudo systemctl enable --now mojeapp"
+      desc_cs: "Zapnout + spustit"
+      desc_en: "Enable + start"
+    - cmd: "systemctl cat mojeapp"
+      desc_cs: "Vypsat obsah unit souboru"
+      desc_en: "Show unit file content"
+    - cmd: "systemctl edit mojeapp"
+      desc_cs: "Upravit (override drop-in)"
+      desc_en: "Edit (override drop-in)"
+    - cmd: "systemctl show mojeapp"
+      desc_cs: "Všechny vlastnosti služby"
+      desc_en: "All service properties"
+
+- id: systemd-deps
+  title_cs: "Systemd - závislosti a analýza"
+  title_en: "Systemd - dependencies and analysis"
+  tags_cs: [systemd, závislosti, dependencies, boot, analyze]
+  tags_en: [systemd, dependencies, boot, analyze]
+  commands:
+    - cmd: "systemctl list-dependencies nginx"
+      desc_cs: "Strom závislostí služby"
+      desc_en: "Service dependency tree"
+    - cmd: "systemd-analyze"
+      desc_cs: "Jak dlouho trval start systému"
+      desc_en: "How long boot took"
+    - cmd: "systemd-analyze blame"
+      desc_cs: "Které služby zdržely boot"
+      desc_en: "Which services slowed boot"
+    - cmd: "systemd-analyze critical-chain"
+      desc_cs: "Kritická cesta startu"
+      desc_en: "Critical boot chain"
+    - cmd: "systemctl --failed"
+      desc_cs: "Které služby selhaly"
+      desc_en: "Which services failed"
+
+- id: systemd-target
+  title_cs: "Runlevel / target"
+  title_en: "Runlevel / target"
+  tags_cs: [target, runlevel, multi-user, graphical, default]
+  tags_en: [target, runlevel, multi-user, graphical, default]
+  commands:
+    - cmd: "systemctl get-default"
+      desc_cs: "Výchozí target (multi-user / graphical)"
+      desc_en: "Default target"
+    - cmd: "sudo systemctl set-default multi-user.target"
+      desc_cs: "Bootovat bez GUI"
+      desc_en: "Boot without GUI"
+    - cmd: "sudo systemctl set-default graphical.target"
+      desc_cs: "Bootovat s GUI"
+      desc_en: "Boot with GUI"
+    - cmd: "sudo systemctl isolate rescue.target"
+      desc_cs: "Přepnout do rescue módu (single user)"
+      desc_en: "Switch to rescue mode (single user)"
+
+- id: pm2
+  title_cs: "PM2 (process manager pro Node.js)"
+  title_en: "PM2 (Node.js process manager)"
+  tags_cs: [pm2, node, proces, manager, restart]
+  tags_en: [pm2, node, process, manager, restart]
+  commands:
+    - cmd: "pm2 start app.js --name web"
+      desc_cs: "Spustit aplikaci pod správou pm2"
+      desc_en: "Start app under pm2"
+    - cmd: "pm2 list"
+      desc_cs: "Seznam spravovaných procesů"
+      desc_en: "List managed processes"
+    - cmd: "pm2 logs web"
+      desc_cs: "Logy konkrétního procesu"
+      desc_en: "Logs of specific process"
+    - cmd: "pm2 restart web"
+      desc_cs: "Restart"
+      desc_en: "Restart"
+    - cmd: "pm2 save"
+      desc_cs: "Uložit aktuální seznam procesů"
+      desc_en: "Save current process list"
+    - cmd: "pm2 startup"
+      desc_cs: "Vygenerovat příkaz pro autostart po reboootu"
+      desc_en: "Generate autostart-on-boot command"

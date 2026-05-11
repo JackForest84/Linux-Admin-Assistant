@@ -1,0 +1,74 @@
+- id: lvm-basics
+  title_cs: "LVM (Logical Volume Manager)"
+  title_en: "LVM (Logical Volume Manager)"
+  tags_cs: [lvm, oddíl, partition, pv, vg, lv, volume]
+  tags_en: [lvm, partition, pv, vg, lv, volume]
+  commands:
+    - cmd: "sudo pvs"
+      desc_cs: "Physical volumes (fyzické disky)"
+      desc_en: "Physical volumes"
+    - cmd: "sudo vgs"
+      desc_cs: "Volume groups (skupiny)"
+      desc_en: "Volume groups"
+    - cmd: "sudo lvs"
+      desc_cs: "Logical volumes (oddíly)"
+      desc_en: "Logical volumes"
+    - cmd: "sudo lvextend -L +10G /dev/vg/lv"
+      desc_cs: "Zvětšit LV o 10 GB"
+      desc_en: "Extend LV by 10 GB"
+    - cmd: "sudo lvextend -l +100%FREE /dev/vg/lv"
+      desc_cs: "Použít všechno volné místo"
+      desc_en: "Use all free space"
+    - cmd: "sudo resize2fs /dev/vg/lv"
+      desc_cs: "Zvětšit ext4 filesystem na max"
+      desc_en: "Resize ext4 filesystem to max"
+    - cmd: "sudo xfs_growfs /mnt"
+      desc_cs: "Zvětšit XFS (musí být připojený)"
+      desc_en: "Grow XFS (must be mounted)"
+
+- id: mkfs-fsck
+  title_cs: "Vytvořit / opravit filesystem"
+  title_en: "Create / repair filesystem"
+  tags_cs: [mkfs, fsck, formátovat, oprava, filesystem]
+  tags_en: [mkfs, fsck, format, repair, filesystem]
+  commands:
+    - cmd: "sudo mkfs.ext4 /dev/sdb1"
+      desc_cs: "Formátovat na ext4"
+      desc_en: "Format as ext4"
+    - cmd: "sudo mkfs.xfs /dev/sdb1"
+      desc_cs: "Formátovat na XFS"
+      desc_en: "Format as XFS"
+    - cmd: "sudo mkfs.vfat -F32 /dev/sdb1"
+      desc_cs: "FAT32 (USB klíčenky)"
+      desc_en: "FAT32 (USB sticks)"
+    - cmd: "sudo fsck /dev/sdb1"
+      desc_cs: "Zkontrolovat filesystem (odpojený!)"
+      desc_en: "Check filesystem (unmounted!)"
+    - cmd: "sudo fsck -y /dev/sdb1"
+      desc_cs: "Automaticky opravit (odpovídat 'yes')"
+      desc_en: "Auto-repair (answer 'yes')"
+    - cmd: "sudo tune2fs -l /dev/sda1"
+      desc_cs: "Detailní info o ext filesystému"
+      desc_en: "Detailed ext filesystem info"
+
+- id: swap
+  title_cs: "Swap (odkládací prostor)"
+  title_en: "Swap (swap space)"
+  tags_cs: [swap, swapfile, paměť, ram, odkládací]
+  tags_en: [swap, swapfile, memory, ram]
+  commands:
+    - cmd: "swapon --show"
+      desc_cs: "Aktivní swap"
+      desc_en: "Active swap"
+    - cmd: "sudo fallocate -l 2G /swapfile"
+      desc_cs: "Vytvořit 2GB swap soubor"
+      desc_en: "Create 2GB swap file"
+    - cmd: "sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile"
+      desc_cs: "Zformátovat a aktivovat"
+      desc_en: "Format and activate"
+    - cmd: "sudo swapoff /swapfile"
+      desc_cs: "Deaktivovat swap"
+      desc_en: "Disable swap"
+    - cmd: "cat /proc/sys/vm/swappiness"
+      desc_cs: "Současná hodnota swappiness (0-100)"
+      desc_en: "Current swappiness value (0-100)"

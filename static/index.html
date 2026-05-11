@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>linuxcmd</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>linux<span>cmd</span></h1>
+    <div class="lang">
+      <button data-lang="cs" class="active">CS</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <input id="q" type="search" autofocus
+    placeholder="Hledej: disk, procesy, síť, archiv…"
+    autocomplete="off" spellcheck="false">
+  <div id="hint" class="hint"></div>
+  <div id="results"></div>
+</main>
+<footer>
+  <div class="wrap">
+    <a href="https://jakub.forejt.it/" target="_blank" rel="noopener">jakub.forejt.it</a>
+  </div>
+</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+- id: nginx-control
+  title_cs: "Nginx - správa"
+  title_en: "Nginx - management"
+  tags_cs: [nginx, restart, reload, test, konfigurace]
+  tags_en: [nginx, restart, reload, test, config]
+  commands:
+    - cmd: "sudo nginx -t"
+      desc_cs: "Test konfigurace (před reloadem!)"
+      desc_en: "Test config (before reload!)"
+    - cmd: "sudo systemctl reload nginx"
+      desc_cs: "Načíst konfiguraci bez výpadku"
+      desc_en: "Reload config without downtime"
+    - cmd: "sudo systemctl restart nginx"
+      desc_cs: "Plný restart"
+      desc_en: "Full restart"
+    - cmd: "sudo nginx -s reload"
+      desc_cs: "Alternativní reload"
+      desc_en: "Alternative reload"
+    - cmd: "sudo nginx -V"
+      desc_cs: "Verze + zkompilované moduly"
+      desc_en: "Version + compiled modules"
+
+- id: nginx-sites
+  title_cs: "Nginx - virtual hosts"
+  title_en: "Nginx - virtual hosts"
+  tags_cs: [nginx, vhost, site, povolit, zakázat]
+  tags_en: [nginx, vhost, site, enable, disable]
+  commands:
+    - cmd: "ls /etc/nginx/sites-available/"
+      desc_cs: "Dostupné konfigurace"
+      desc_en: "Available configs"
+    - cmd: "ls /etc/nginx/sites-enabled/"
+      desc_cs: "Aktivní (zapnuté) konfigurace"
+      desc_en: "Active (enabled) configs"
+    - cmd: "sudo ln -s /etc/nginx/sites-available/site /etc/nginx/sites-enabled/"
+      desc_cs: "Zapnout virtual host"
+      desc_en: "Enable virtual host"
+    - cmd: "sudo rm /etc/nginx/sites-enabled/site"
+      desc_cs: "Vypnout virtual host"
+      desc_en: "Disable virtual host"
+    - cmd: "sudo tail -f /var/log/nginx/access.log"
+      desc_cs: "Sledovat access log"
+      desc_en: "Watch access log"
+    - cmd: "sudo tail -f /var/log/nginx/error.log"
+      desc_cs: "Sledovat error log"
+      desc_en: "Watch error log"
+
+- id: apache-control
+  title_cs: "Apache - správa"
+  title_en: "Apache - management"
+  tags_cs: [apache, apache2, httpd, restart, reload]
+  tags_en: [apache, apache2, httpd, restart, reload]
+  commands:
+    - cmd: "sudo apache2ctl configtest"
+      desc_cs: "Test konfigurace"
+      desc_en: "Test config"
+    - cmd: "sudo systemctl reload apache2"
+      desc_cs: "Reload bez výpadku"
+      desc_en: "Reload without downtime"
+    - cmd: "sudo a2enmod rewrite"
+      desc_cs: "Zapnout modul"
+      desc_en: "Enable module"
+    - cmd: "sudo a2ensite mysite"
+      desc_cs: "Zapnout site"
+      desc_en: "Enable site"
+    - cmd: "sudo a2dissite mysite"
+      desc_cs: "Vypnout site"
+      desc_en: "Disable site"

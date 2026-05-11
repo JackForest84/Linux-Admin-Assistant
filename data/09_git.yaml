@@ -1,0 +1,128 @@
+- id: git-status
+  title_cs: "Stav repozitáře"
+  title_en: "Repository status"
+  tags_cs: [git, status, stav, změny]
+  tags_en: [git, status, changes]
+  commands:
+    - cmd: "git status"
+      desc_cs: "Co je změněno, co ve staging"
+      desc_en: "What's changed, what's staged"
+    - cmd: "git status -s"
+      desc_cs: "Stručný formát"
+      desc_en: "Short format"
+    - cmd: "git diff"
+      desc_cs: "Změny v souborech (neuložené)"
+      desc_en: "Unstaged changes"
+    - cmd: "git diff --staged"
+      desc_cs: "Změny ve staging (před commitem)"
+      desc_en: "Staged changes (before commit)"
+
+- id: git-commit
+  title_cs: "Vytvořit commit"
+  title_en: "Create commit"
+  tags_cs: [git, commit, add, uložit]
+  tags_en: [git, commit, add, save]
+  commands:
+    - cmd: "git add ."
+      desc_cs: "Přidat všechny změny do staging"
+      desc_en: "Stage all changes"
+    - cmd: "git add -p"
+      desc_cs: "Interaktivně, po blocích"
+      desc_en: "Interactive, hunk by hunk"
+    - cmd: "git commit -m 'zpráva'"
+      desc_cs: "Commit se zprávou"
+      desc_en: "Commit with message"
+    - cmd: "git commit -am 'zpráva'"
+      desc_cs: "Add tracked files + commit najednou"
+      desc_en: "Add tracked + commit at once"
+    - cmd: "git commit --amend"
+      desc_cs: "Upravit poslední commit"
+      desc_en: "Amend last commit"
+
+- id: git-branch
+  title_cs: "Větve (branches)"
+  title_en: "Branches"
+  tags_cs: [git, branch, větev, checkout, switch]
+  tags_en: [git, branch, checkout, switch]
+  commands:
+    - cmd: "git branch"
+      desc_cs: "Seznam lokálních větví"
+      desc_en: "List local branches"
+    - cmd: "git branch -a"
+      desc_cs: "Včetně vzdálených"
+      desc_en: "Including remote"
+    - cmd: "git switch -c nova-vetev"
+      desc_cs: "Vytvořit a přepnout na novou větev"
+      desc_en: "Create and switch to new branch"
+    - cmd: "git switch main"
+      desc_cs: "Přepnout na main"
+      desc_en: "Switch to main"
+    - cmd: "git branch -d nova-vetev"
+      desc_cs: "Smazat lokální větev"
+      desc_en: "Delete local branch"
+
+- id: git-remote
+  title_cs: "Práce se vzdáleným repem"
+  title_en: "Working with remote"
+  tags_cs: [git, remote, push, pull, fetch, clone, origin]
+  tags_en: [git, remote, push, pull, fetch, clone, origin]
+  commands:
+    - cmd: "git clone https://github.com/user/repo.git"
+      desc_cs: "Naklonovat repo"
+      desc_en: "Clone repo"
+    - cmd: "git pull"
+      desc_cs: "Stáhnout a sloučit změny"
+      desc_en: "Fetch and merge changes"
+    - cmd: "git push"
+      desc_cs: "Nahrát commity na server"
+      desc_en: "Push commits to server"
+    - cmd: "git push -u origin nova-vetev"
+      desc_cs: "Push nové větve + nastavit tracking"
+      desc_en: "Push new branch + set tracking"
+    - cmd: "git fetch --all --prune"
+      desc_cs: "Stáhnout změny + zahodit smazané větve"
+      desc_en: "Fetch + drop deleted branches"
+
+- id: git-log
+  title_cs: "Historie commitů"
+  title_en: "Commit history"
+  tags_cs: [git, log, historie, history]
+  tags_en: [git, log, history]
+  commands:
+    - cmd: "git log --oneline"
+      desc_cs: "Stručný log (jeden řádek = commit)"
+      desc_en: "Brief log (one line per commit)"
+    - cmd: "git log --oneline --graph --all"
+      desc_cs: "ASCII graf všech větví"
+      desc_en: "ASCII graph of all branches"
+    - cmd: "git log -p soubor.txt"
+      desc_cs: "Historie změn konkrétního souboru"
+      desc_en: "Change history of specific file"
+    - cmd: "git blame soubor.txt"
+      desc_cs: "Kdo změnil který řádek"
+      desc_en: "Who changed which line"
+
+- id: git-undo
+  title_cs: "Vrátit změny"
+  title_en: "Undo changes"
+  tags_cs: [git, undo, reset, revert, vrátit, stash]
+  tags_en: [git, undo, reset, revert, stash]
+  commands:
+    - cmd: "git restore soubor.txt"
+      desc_cs: "Zahodit neuložené změny v souboru"
+      desc_en: "Discard unstaged changes in file"
+    - cmd: "git restore --staged soubor.txt"
+      desc_cs: "Odebrat ze staging (ale ponechat změny)"
+      desc_en: "Unstage (keep changes)"
+    - cmd: "git reset --hard HEAD"
+      desc_cs: "POZOR: zahodit všechny lokální změny"
+      desc_en: "WARNING: discard all local changes"
+    - cmd: "git revert <commit>"
+      desc_cs: "Vytvořit commit, který ruší daný commit"
+      desc_en: "Create commit that undoes a commit"
+    - cmd: "git stash"
+      desc_cs: "Schovat změny stranou"
+      desc_en: "Stash changes aside"
+    - cmd: "git stash pop"
+      desc_cs: "Vrátit schované změny"
+      desc_en: "Apply stashed changes"

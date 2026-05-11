@@ -1,0 +1,85 @@
+- id: disk-free
+  title_cs: "Volné místo na disku"
+  title_en: "Free disk space"
+  tags_cs: [disk, místo, volné, prostor, oddíl, df]
+  tags_en: [disk, space, free, partition, df]
+  commands:
+    - cmd: "df -h"
+      desc_cs: "Lidsky čitelné jednotky (GB/MB)"
+      desc_en: "Human-readable units (GB/MB)"
+    - cmd: "df -hT"
+      desc_cs: "Včetně typu souborového systému"
+      desc_en: "Including filesystem type"
+    - cmd: "df -i"
+      desc_cs: "Volné inody (počet souborů)"
+      desc_en: "Free inodes (file count)"
+
+- id: disk-usage-dir
+  title_cs: "Co zabírá místo v adresáři"
+  title_en: "What takes up space in a directory"
+  tags_cs: [du, velikost, adresář, složka, zabírá, místo]
+  tags_en: [du, size, directory, folder, usage]
+  commands:
+    - cmd: "du -sh /var/*"
+      desc_cs: "Velikost každé podsložky v /var"
+      desc_en: "Size of each subfolder in /var"
+    - cmd: "du -sh /var/* | sort -h"
+      desc_cs: "Seřazeno od nejmenší po největší"
+      desc_en: "Sorted from smallest to largest"
+    - cmd: "du -h --max-depth=1 /var | sort -h"
+      desc_cs: "První úroveň, seřazeno"
+      desc_en: "First level, sorted"
+    - cmd: "sudo du -ah / 2>/dev/null | sort -h | tail -20"
+      desc_cs: "20 největších souborů v celém systému"
+      desc_en: "20 largest files in entire system"
+
+- id: disk-largest-files
+  title_cs: "Najít největší soubory"
+  title_en: "Find largest files"
+  tags_cs: [najít, největší, soubor, find, velikost, place]
+  tags_en: [find, largest, biggest, file, size]
+  commands:
+    - cmd: "sudo find / -type f -size +100M 2>/dev/null"
+      desc_cs: "Soubory větší než 100 MB"
+      desc_en: "Files larger than 100 MB"
+    - cmd: "sudo find / -type f -printf '%s %p\\n' 2>/dev/null | sort -rn | head -20"
+      desc_cs: "Top 20 největších souborů"
+      desc_en: "Top 20 largest files"
+
+- id: disk-block-devices
+  title_cs: "Seznam disků a oddílů"
+  title_en: "List disks and partitions"
+  tags_cs: [disk, lsblk, oddíl, partition, blokové, zařízení]
+  tags_en: [disk, lsblk, partition, block, device]
+  commands:
+    - cmd: "lsblk"
+      desc_cs: "Strom všech blokových zařízení"
+      desc_en: "Tree of all block devices"
+    - cmd: "lsblk -f"
+      desc_cs: "Včetně filesystému a UUID"
+      desc_en: "Including filesystem and UUID"
+    - cmd: "sudo fdisk -l"
+      desc_cs: "Detail rozdělení disků"
+      desc_en: "Detailed partition info"
+    - cmd: "sudo blkid"
+      desc_cs: "UUID a typ filesystému"
+      desc_en: "UUID and filesystem type"
+
+- id: disk-mount
+  title_cs: "Připojené souborové systémy"
+  title_en: "Mounted filesystems"
+  tags_cs: [mount, připojené, namountovat, fstab]
+  tags_en: [mount, mounted, fstab]
+  commands:
+    - cmd: "mount | column -t"
+      desc_cs: "Vše připojené, hezky zarovnané"
+      desc_en: "All mounts, nicely aligned"
+    - cmd: "findmnt"
+      desc_cs: "Strom přípojných bodů"
+      desc_en: "Mount point tree"
+    - cmd: "sudo mount /dev/sdb1 /mnt"
+      desc_cs: "Připojit oddíl do /mnt"
+      desc_en: "Mount partition to /mnt"
+    - cmd: "sudo umount /mnt"
+      desc_cs: "Odpojit"
+      desc_en: "Unmount"
