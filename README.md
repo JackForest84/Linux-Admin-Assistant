@@ -49,9 +49,19 @@
 
 ## Vlastní deploy (Debian / Ubuntu)
 
+Jeden příkaz — nainstaluje vše automaticky (git clone, Python venv, systemd, nginx):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/JackForest84/Linux-Admin-Assistant/main/install.sh | sudo bash
+```
+
+Po dokončení otevři `http://<IP-serveru>` v prohlížeči.
+
+### Ruční instalace
+
 ```bash
 # Závislosti
-sudo apt install python3-venv nginx
+sudo apt install git python3-venv nginx
 
 # Projekt
 git clone https://github.com/JackForest84/Linux-Admin-Assistant.git /opt/linuxcmd
