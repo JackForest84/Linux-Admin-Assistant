@@ -1,262 +1,705 @@
 - id: date-time
   title:
-    cs: Datum a čas v shellu
-    en: Date and time in shell
+    en: "Date and time in shell"
+    cs: "Datum a čas v shellu"
+    sk: "Dátum a čas v shelle"
+    de: "Datum und Uhrzeit in Shell"
+    es: "Fecha y hora en shell"
+    fr: "Date et heure dans le shell"
+    it: "Data e ora in shell"
+    pl: "Data i czas w powłoce"
+    tr: "Kabukta tarih ve saat"
+    pt: "Data e hora no shell"
+    nl: "Datum en tijd in shell"
+    hu: "Dátum és idő a shellben"
   tags:
-    cs:
-    - date
-    - datum
-    - čas
-    - timestamp
-    - formát
-    en:
-    - date
-    - time
-    - timestamp
-    - format
+    en: [date, time, timestamp, format]
+    cs: [date, datum, čas, timestamp, formát]
+    sk: [date, dátum, čas, timestamp, formát]
+    de: [date, datum, uhrzeit, timestamp, format]
+    es: [date, fecha, hora, timestamp, formato]
+    fr: [date, heure, timestamp, format]
+    it: [date, data, ora, timestamp, formato]
+    pl: [date, data, czas, timestamp, format]
+    tr: [date, tarih, saat, timestamp, format]
+    pt: [date, data, hora, timestamp, formato]
+    nl: [date, datum, tijd, timestamp, formaat]
+    hu: [date, dátum, idő, timestamp, formátum]
   commands:
-  - cmd: date '+%Y-%m-%d %H:%M:%S'
-    desc:
-      cs: ISO formát
-      en: ISO format
-  - cmd: date +%s
-    desc:
-      cs: Unix timestamp
-      en: Unix timestamp
-  - cmd: date -d '@1700000000'
-    desc:
-      cs: Převést timestamp na datum
-      en: Convert timestamp to date
-  - cmd: date -d 'tomorrow'
-    desc:
-      cs: Zítřejší datum
-      en: Tomorrow's date
-  - cmd: date -d '7 days ago' +%Y-%m-%d
-    desc:
-      cs: Datum 7 dní zpět
-      en: Date 7 days ago
-  - cmd: cal
-    desc:
-      cs: Kalendář aktuálního měsíce
-      en: Current month calendar
+    - cmd: "date '+%Y-%m-%d %H:%M:%S'"
+      desc:
+        en: "ISO format"
+        cs: "ISO formát"
+        sk: "ISO formát"
+        de: "ISO-Format"
+        es: "Formato ISO"
+        fr: "Format ISO"
+        it: "Formato ISO"
+        pl: "Format ISO"
+        tr: "ISO format"
+        pt: "Formato ISO"
+        nl: "ISO-formaat"
+        hu: "ISO formátum"
+    - cmd: "date +%s"
+      desc:
+        en: "Unix timestamp"
+        cs: "Unix timestamp"
+        sk: "Unix timestamp"
+        de: "Unix-Timestamp"
+        es: "Timestamp Unix"
+        fr: "Timestamp Unix"
+        it: "Timestamp Unix"
+        pl: "Timestamp Unix"
+        tr: "Unix zaman damgası"
+        pt: "Timestamp Unix"
+        nl: "Unix-timestamp"
+        hu: "Unix időbélyeg"
+    - cmd: "date -d '@1700000000'"
+      desc:
+        en: "Convert timestamp to date"
+        cs: "Převést timestamp na datum"
+        sk: "Previesť timestamp na dátum"
+        de: "Timestamp in Datum umwandeln"
+        es: "Convertir timestamp a fecha"
+        fr: "Convertir timestamp en date"
+        it: "Convertire timestamp in data"
+        pl: "Konwertuj timestamp na datę"
+        tr: "Zaman damgasını tarihe çevir"
+        pt: "Converter timestamp para data"
+        nl: "Timestamp naar datum converteren"
+        hu: "Időbélyeg dátummá konvertálása"
+    - cmd: "date -d 'tomorrow'"
+      desc:
+        en: "Tomorrow's date"
+        cs: "Zítřejší datum"
+        sk: "Zajtrajší dátum"
+        de: "Datum von morgen"
+        es: "Fecha de mañana"
+        fr: "Date de demain"
+        it: "Data di domani"
+        pl: "Jutrzejsza data"
+        tr: "Yarının tarihi"
+        pt: "Data de amanhã"
+        nl: "Datum van morgen"
+        hu: "Holnapi dátum"
+    - cmd: "date -d '7 days ago' +%Y-%m-%d"
+      desc:
+        en: "Date 7 days ago"
+        cs: "Datum 7 dní zpět"
+        sk: "Dátum 7 dní späť"
+        de: "Datum vor 7 Tagen"
+        es: "Fecha hace 7 días"
+        fr: "Date il y a 7 jours"
+        it: "Data di 7 giorni fa"
+        pl: "Data sprzed 7 dni"
+        tr: "7 gün önceki tarih"
+        pt: "Data de 7 dias atrás"
+        nl: "Datum 7 dagen geleden"
+        hu: "Dátum 7 nappal ezelőtt"
+    - cmd: "cal"
+      desc:
+        en: "Current month calendar"
+        cs: "Kalendář aktuálního měsíce"
+        sk: "Kalendár aktuálneho mesiaca"
+        de: "Aktueller Monatskalender"
+        es: "Calendario del mes actual"
+        fr: "Calendrier du mois"
+        it: "Calendario del mese"
+        pl: "Kalendarz bieżącego miesiąca"
+        tr: "Geçerli ay takvimi"
+        pt: "Calendário do mês atual"
+        nl: "Kalender van huidige maand"
+        hu: "Aktuális hónap naptára"
+
 - id: terminal-tricks
   title:
-    cs: Triky v terminálu
-    en: Terminal tricks
+    en: "Terminal tricks"
+    cs: "Triky v terminálu"
+    sk: "Triky v termináli"
+    de: "Terminal-Tricks"
+    es: "Trucos de terminal"
+    fr: "Astuces de terminal"
+    it: "Trucchi del terminale"
+    pl: "Triki terminalowe"
+    tr: "Terminal hileleri"
+    pt: "Truques do terminal"
+    nl: "Terminaltrucs"
+    hu: "Terminál trükkök"
   tags:
-    cs:
-    - terminál
-    - klávesy
-    - zkratky
-    - clear
-    - ctrl
-    en:
-    - terminal
-    - keys
-    - shortcuts
-    - clear
-    - ctrl
+    en: [terminal, keys, shortcuts, clear, ctrl]
+    cs: [terminál, klávesy, zkratky, clear, ctrl]
+    sk: [terminál, klávesy, skratky, clear, ctrl]
+    de: [terminal, tasten, kürzel, clear, ctrl]
+    es: [terminal, teclas, atajos, clear, ctrl]
+    fr: [terminal, touches, raccourcis, clear, ctrl]
+    it: [terminale, tasti, scorciatoie, clear, ctrl]
+    pl: [terminal, klawisze, skróty, clear, ctrl]
+    tr: [terminal, tuşlar, kısayollar, clear, ctrl]
+    pt: [terminal, teclas, atalhos, clear, ctrl]
+    nl: [terminal, toetsen, sneltoetsen, clear, ctrl]
+    hu: [terminál, billentyűk, gyorsbillentyűk, clear, ctrl]
   commands:
-  - cmd: Ctrl+C
-    desc:
-      cs: Přerušit běžící příkaz
-      en: Interrupt running command
-  - cmd: Ctrl+D
-    desc:
-      cs: Konec vstupu / odhlásit
-      en: End of input / logout
-  - cmd: Ctrl+Z
-    desc:
-      cs: Pozastavit příkaz (bg / fg pro obnovu)
-      en: Suspend command (bg / fg to resume)
-  - cmd: Ctrl+L
-    desc:
-      cs: Vyčistit obrazovku
-      en: Clear screen
-  - cmd: Ctrl+A
-    desc:
-      cs: Na začátek řádku
-      en: Start of line
-  - cmd: Ctrl+E
-    desc:
-      cs: Na konec řádku
-      en: End of line
-  - cmd: Ctrl+U
-    desc:
-      cs: Vymazat řádek doleva
-      en: Clear line to left
-  - cmd: Ctrl+W
-    desc:
-      cs: Smazat slovo doleva
-      en: Delete word to left
-  - cmd: clear
-    desc:
-      cs: Vyčistit obrazovku (jako Ctrl+L)
-      en: Clear screen (like Ctrl+L)
-  - cmd: reset
-    desc:
-      cs: Reset terminálu (když se rozbije)
-      en: Reset terminal (when broken)
+    - cmd: "Ctrl+C"
+      desc:
+        en: "Interrupt running command"
+        cs: "Přerušit běžící příkaz"
+        sk: "Prerušiť bežiaci príkaz"
+        de: "Laufenden Befehl unterbrechen"
+        es: "Interrumpir comando en ejecución"
+        fr: "Interrompre la commande"
+        it: "Interrompere comando"
+        pl: "Przerwij polecenie"
+        tr: "Çalışan komutu kes"
+        pt: "Interromper comando"
+        nl: "Lopend commando onderbreken"
+        hu: "Futó parancs megszakítása"
+    - cmd: "Ctrl+D"
+      desc:
+        en: "End of input / logout"
+        cs: "Konec vstupu / odhlásit"
+        sk: "Koniec vstupu / odhlásiť"
+        de: "Eingabeende / Abmelden"
+        es: "Fin de entrada / cerrar sesión"
+        fr: "Fin d'entrée / se déconnecter"
+        it: "Fine input / logout"
+        pl: "Koniec wejścia / wyloguj"
+        tr: "Giriş sonu / çıkış"
+        pt: "Fim da entrada / sair"
+        nl: "Einde invoer / uitloggen"
+        hu: "Bemenet vége / kijelentkezés"
+    - cmd: "Ctrl+Z"
+      desc:
+        en: "Suspend command (bg / fg to resume)"
+        cs: "Pozastavit příkaz (bg / fg pro obnovu)"
+        sk: "Pozastaviť príkaz (bg / fg na obnovu)"
+        de: "Befehl anhalten (bg / fg zum Fortsetzen)"
+        es: "Suspender comando (bg / fg para reanudar)"
+        fr: "Suspendre la commande (bg / fg pour reprendre)"
+        it: "Sospendere comando (bg / fg per riprendere)"
+        pl: "Wstrzymaj polecenie (bg / fg by wznowić)"
+        tr: "Komutu askıya al (bg / fg ile devam et)"
+        pt: "Suspender comando (bg / fg para retomar)"
+        nl: "Commando pauzeren (bg / fg om door te gaan)"
+        hu: "Parancs felfüggesztése (bg / fg folytatáshoz)"
+    - cmd: "Ctrl+L"
+      desc:
+        en: "Clear screen"
+        cs: "Vyčistit obrazovku"
+        sk: "Vyčistiť obrazovku"
+        de: "Bildschirm löschen"
+        es: "Limpiar pantalla"
+        fr: "Effacer l'écran"
+        it: "Pulire schermo"
+        pl: "Wyczyść ekran"
+        tr: "Ekranı temizle"
+        pt: "Limpar tela"
+        nl: "Scherm wissen"
+        hu: "Képernyő törlése"
+    - cmd: "Ctrl+A"
+      desc:
+        en: "Start of line"
+        cs: "Na začátek řádku"
+        sk: "Na začiatok riadku"
+        de: "Zeilenanfang"
+        es: "Inicio de línea"
+        fr: "Début de ligne"
+        it: "Inizio riga"
+        pl: "Początek linii"
+        tr: "Satır başı"
+        pt: "Início da linha"
+        nl: "Begin van regel"
+        hu: "Sor eleje"
+    - cmd: "Ctrl+E"
+      desc:
+        en: "End of line"
+        cs: "Na konec řádku"
+        sk: "Na koniec riadku"
+        de: "Zeilenende"
+        es: "Final de línea"
+        fr: "Fin de ligne"
+        it: "Fine riga"
+        pl: "Koniec linii"
+        tr: "Satır sonu"
+        pt: "Final da linha"
+        nl: "Einde van regel"
+        hu: "Sor vége"
+    - cmd: "Ctrl+U"
+      desc:
+        en: "Clear line to left"
+        cs: "Vymazat řádek doleva"
+        sk: "Vymazať riadok doľava"
+        de: "Zeile nach links löschen"
+        es: "Borrar línea a la izquierda"
+        fr: "Effacer la ligne à gauche"
+        it: "Cancellare riga a sinistra"
+        pl: "Wyczyść linię w lewo"
+        tr: "Satırı sola sil"
+        pt: "Limpar linha à esquerda"
+        nl: "Regel naar links wissen"
+        hu: "Sor balra törlése"
+    - cmd: "Ctrl+W"
+      desc:
+        en: "Delete word to left"
+        cs: "Smazat slovo doleva"
+        sk: "Zmazať slovo doľava"
+        de: "Wort nach links löschen"
+        es: "Eliminar palabra a la izquierda"
+        fr: "Supprimer le mot à gauche"
+        it: "Eliminare parola a sinistra"
+        pl: "Usuń słowo w lewo"
+        tr: "Kelimeyi sola sil"
+        pt: "Excluir palavra à esquerda"
+        nl: "Woord naar links verwijderen"
+        hu: "Szó törlése balra"
+    - cmd: "clear"
+      desc:
+        en: "Clear screen (like Ctrl+L)"
+        cs: "Vyčistit obrazovku (jako Ctrl+L)"
+        sk: "Vyčistiť obrazovku (ako Ctrl+L)"
+        de: "Bildschirm löschen (wie Strg+L)"
+        es: "Limpiar pantalla (como Ctrl+L)"
+        fr: "Effacer (comme Ctrl+L)"
+        it: "Pulire schermo (come Ctrl+L)"
+        pl: "Wyczyść ekran (jak Ctrl+L)"
+        tr: "Ekranı temizle (Ctrl+L gibi)"
+        pt: "Limpar tela (como Ctrl+L)"
+        nl: "Scherm wissen (zoals Ctrl+L)"
+        hu: "Képernyő törlése (mint Ctrl+L)"
+    - cmd: "reset"
+      desc:
+        en: "Reset terminal (when broken)"
+        cs: "Reset terminálu (když se rozbije)"
+        sk: "Reset terminálu (keď sa rozbije)"
+        de: "Terminal zurücksetzen (bei Problemen)"
+        es: "Resetear terminal (cuando se rompe)"
+        fr: "Réinitialiser le terminal"
+        it: "Resettare terminale (se rotto)"
+        pl: "Resetuj terminal (gdy zepsuty)"
+        tr: "Terminali sıfırla (bozulduğunda)"
+        pt: "Resetar terminal (se quebrado)"
+        nl: "Terminal resetten (bij kapot)"
+        hu: "Terminál visszaállítása (ha elromlott)"
+
 - id: bg-jobs
   title:
-    cs: Procesy na pozadí
-    en: Background processes
+    en: "Background processes"
+    cs: "Procesy na pozadí"
+    sk: "Procesy na pozadí"
+    de: "Hintergrundprozesse"
+    es: "Procesos en segundo plano"
+    fr: "Processus en arrière-plan"
+    it: "Processi in background"
+    pl: "Procesy w tle"
+    tr: "Arka plan süreçleri"
+    pt: "Processos em background"
+    nl: "Achtergrondprocessen"
+    hu: "Háttérfolyamatok"
   tags:
-    cs:
-    - pozadí
-    - background
-    - nohup
-    - jobs
-    - fg
-    - bg
-    en:
-    - background
-    - nohup
-    - jobs
-    - fg
-    - bg
+    en: [background, nohup, jobs, fg, bg]
+    cs: [pozadí, background, nohup, jobs, fg, bg]
+    sk: [pozadie, background, nohup, jobs, fg, bg]
+    de: [hintergrund, nohup, jobs, fg, bg]
+    es: [segundo plano, nohup, jobs, fg, bg]
+    fr: [arrière-plan, nohup, jobs, fg, bg]
+    it: [background, nohup, jobs, fg, bg]
+    pl: [w tle, nohup, jobs, fg, bg]
+    tr: [arka plan, nohup, jobs, fg, bg]
+    pt: [background, nohup, jobs, fg, bg]
+    nl: [achtergrond, nohup, jobs, fg, bg]
+    hu: [háttér, nohup, jobs, fg, bg]
   commands:
-  - cmd: prikaz &
-    desc:
-      cs: Spustit na pozadí
-      en: Run in background
-  - cmd: jobs
-    desc:
-      cs: Seznam jobů této session
-      en: List jobs of this session
-  - cmd: fg %1
-    desc:
-      cs: Přenést job 1 do popředí
-      en: Bring job 1 to foreground
-  - cmd: bg %1
-    desc:
-      cs: Pokračovat v běhu na pozadí
-      en: Resume in background
-  - cmd: nohup dlouhy-prikaz &
-    desc:
-      cs: Spustit + nezavřít po odhlášení
-      en: Run + survive logout
-  - cmd: disown %1
-    desc:
-      cs: Odpojit job od shellu
-      en: Detach job from shell
+    - cmd: "command &"
+      desc:
+        en: "Run in background"
+        cs: "Spustit na pozadí"
+        sk: "Spustiť na pozadí"
+        de: "Im Hintergrund ausführen"
+        es: "Ejecutar en segundo plano"
+        fr: "Exécuter en arrière-plan"
+        it: "Eseguire in background"
+        pl: "Uruchom w tle"
+        tr: "Arka planda çalıştır"
+        pt: "Executar em background"
+        nl: "Op achtergrond uitvoeren"
+        hu: "Háttérben futtatás"
+    - cmd: "jobs"
+      desc:
+        en: "List jobs of this session"
+        cs: "Seznam jobů této session"
+        sk: "Zoznam jobov tejto session"
+        de: "Jobs dieser Session auflisten"
+        es: "Listar jobs de esta sesión"
+        fr: "Lister les jobs de la session"
+        it: "Elencare i job di questa sessione"
+        pl: "Lista jobów tej sesji"
+        tr: "Bu oturumun işlerini listele"
+        pt: "Listar jobs desta sessão"
+        nl: "Jobs van deze sessie tonen"
+        hu: "Munkamenet feladatainak listája"
+    - cmd: "fg %1"
+      desc:
+        en: "Bring job 1 to foreground"
+        cs: "Přenést job 1 do popředí"
+        sk: "Preniesť job 1 do popredia"
+        de: "Job 1 in den Vordergrund holen"
+        es: "Traer job 1 al primer plano"
+        fr: "Mettre le job 1 au premier plan"
+        it: "Portare il job 1 in primo piano"
+        pl: "Przywróć job 1 na pierwszy plan"
+        tr: "1. işi ön plana getir"
+        pt: "Trazer job 1 ao primeiro plano"
+        nl: "Job 1 naar voorgrond brengen"
+        hu: "1. munka előtérbe hozása"
+    - cmd: "bg %1"
+      desc:
+        en: "Resume in background"
+        cs: "Pokračovat v běhu na pozadí"
+        sk: "Pokračovať v behu na pozadí"
+        de: "Im Hintergrund fortsetzen"
+        es: "Reanudar en segundo plano"
+        fr: "Reprendre en arrière-plan"
+        it: "Riprendere in background"
+        pl: "Wznów w tle"
+        tr: "Arka planda devam et"
+        pt: "Retomar em background"
+        nl: "Hervatten op achtergrond"
+        hu: "Folytatás háttérben"
+    - cmd: "nohup long-command &"
+      desc:
+        en: "Run + survive logout"
+        cs: "Spustit + nezavřít po odhlášení"
+        sk: "Spustiť + neukončiť po odhlásení"
+        de: "Ausführen + nach Abmelden weiterlaufen"
+        es: "Ejecutar + sobrevivir al logout"
+        fr: "Lancer + survivre à la déconnexion"
+        it: "Eseguire + sopravvivere al logout"
+        pl: "Uruchom + przetrwaj wylogowanie"
+        tr: "Çalıştır + çıkıştan sonra da çalış"
+        pt: "Executar + sobreviver ao logout"
+        nl: "Uitvoeren + uitloggen overleven"
+        hu: "Futtatás + kijelentkezés túlélése"
+    - cmd: "disown %1"
+      desc:
+        en: "Detach job from shell"
+        cs: "Odpojit job od shellu"
+        sk: "Odpojiť job od shellu"
+        de: "Job von Shell trennen"
+        es: "Desvincular job de shell"
+        fr: "Détacher le job du shell"
+        it: "Scollegare job dalla shell"
+        pl: "Odłącz job od powłoki"
+        tr: "İşi kabuktan ayır"
+        pt: "Desvincular job do shell"
+        nl: "Job loskoppelen van shell"
+        hu: "Munka leválasztása a shellről"
+
 - id: which-info
   title:
-    cs: Kde je příkaz, co dělá
-    en: Where is command, what it does
+    en: "Where is command, what it does"
+    cs: "Kde je příkaz, co dělá"
+    sk: "Kde je príkaz, čo robí"
+    de: "Wo ist Befehl, was tut er"
+    es: "Dónde está el comando, qué hace"
+    fr: "Où est la commande, que fait-elle"
+    it: "Dov'è il comando, cosa fa"
+    pl: "Gdzie jest polecenie, co robi"
+    tr: "Komut nerede, ne yapar"
+    pt: "Onde está o comando, o que faz"
+    nl: "Waar is commando, wat doet het"
+    hu: "Hol van a parancs, mit csinál"
   tags:
-    cs:
-    - which
-    - whereis
-    - man
-    - info
-    - help
-    - nápověda
-    en:
-    - which
-    - whereis
-    - man
-    - info
-    - help
+    en: [which, whereis, man, info, help]
+    cs: [which, whereis, man, info, help, nápověda]
+    sk: [which, whereis, man, info, help, nápoveda]
+    de: [which, whereis, man, info, help, hilfe]
+    es: [which, whereis, man, info, help, ayuda]
+    fr: [which, whereis, man, info, help, aide]
+    it: [which, whereis, man, info, help, aiuto]
+    pl: [which, whereis, man, info, help, pomoc]
+    tr: [which, whereis, man, info, help, yardım]
+    pt: [which, whereis, man, info, help, ajuda]
+    nl: [which, whereis, man, info, help, hulp]
+    hu: [which, whereis, man, info, help, súgó]
   commands:
-  - cmd: which git
-    desc:
-      cs: Cesta k binárce
-      en: Path to binary
-  - cmd: whereis git
-    desc:
-      cs: Cesta + man stránka + zdrojáky
-      en: Path + man page + sources
-  - cmd: man ls
-    desc:
-      cs: Manuál (q pro konec)
-      en: Manual (q to quit)
-  - cmd: man -k 'klíčové slovo'
-    desc:
-      cs: Najít man stránku podle slova
-      en: Find man page by keyword
-  - cmd: ls --help
-    desc:
-      cs: Stručná nápověda
-      en: Brief help
-  - cmd: info ls
-    desc:
-      cs: Info dokumentace (rozsáhlejší než man)
-      en: Info docs (more detailed than man)
-  - cmd: tldr tar
-    desc:
-      cs: Praktické příklady místo manuálu (npm/apt install tldr)
-      en: Practical examples instead of manual
+    - cmd: "which git"
+      desc:
+        en: "Path to binary"
+        cs: "Cesta k binárce"
+        sk: "Cesta k binárke"
+        de: "Pfad zur Binärdatei"
+        es: "Ruta al binario"
+        fr: "Chemin du binaire"
+        it: "Percorso al binario"
+        pl: "Ścieżka do binarki"
+        tr: "Binary'e giden yol"
+        pt: "Caminho do binário"
+        nl: "Pad naar binary"
+        hu: "Útvonal a bináris fájlhoz"
+    - cmd: "whereis git"
+      desc:
+        en: "Path + man page + sources"
+        cs: "Cesta + man stránka + zdrojáky"
+        sk: "Cesta + man stránka + zdrojáky"
+        de: "Pfad + Manpage + Quellen"
+        es: "Ruta + man + fuentes"
+        fr: "Chemin + page man + sources"
+        it: "Percorso + man + sorgenti"
+        pl: "Ścieżka + man + źródła"
+        tr: "Yol + man + kaynaklar"
+        pt: "Caminho + man + fontes"
+        nl: "Pad + man + bronnen"
+        hu: "Útvonal + man + források"
+    - cmd: "man ls"
+      desc:
+        en: "Manual (q to quit)"
+        cs: "Manuál (q pro konec)"
+        sk: "Manuál (q pre koniec)"
+        de: "Handbuch (q zum Beenden)"
+        es: "Manual (q para salir)"
+        fr: "Manuel (q pour quitter)"
+        it: "Manuale (q per uscire)"
+        pl: "Podręcznik (q wyjście)"
+        tr: "Kılavuz (çıkmak için q)"
+        pt: "Manual (q para sair)"
+        nl: "Handleiding (q sluiten)"
+        hu: "Kézikönyv (q kilépés)"
+    - cmd: "man -k 'keyword'"
+      desc:
+        en: "Find man page by keyword"
+        cs: "Najít man stránku podle slova"
+        sk: "Nájsť man stránku podľa slova"
+        de: "Manpage nach Schlüsselwort suchen"
+        es: "Buscar man por palabra clave"
+        fr: "Trouver une page man par mot-clé"
+        it: "Trovare man per parola chiave"
+        pl: "Znajdź stronę man wg słowa"
+        tr: "Anahtar kelimeyle man bul"
+        pt: "Encontrar man por palavra-chave"
+        nl: "Man-pagina zoeken op trefwoord"
+        hu: "Man oldal keresése kulcsszó alapján"
+    - cmd: "ls --help"
+      desc:
+        en: "Brief help"
+        cs: "Stručná nápověda"
+        sk: "Stručná nápoveda"
+        de: "Kurze Hilfe"
+        es: "Ayuda breve"
+        fr: "Aide brève"
+        it: "Aiuto breve"
+        pl: "Krótka pomoc"
+        tr: "Kısa yardım"
+        pt: "Ajuda breve"
+        nl: "Korte hulp"
+        hu: "Rövid súgó"
+    - cmd: "info ls"
+      desc:
+        en: "Info docs (more detailed than man)"
+        cs: "Info dokumentace (rozsáhlejší než man)"
+        sk: "Info dokumentácia (rozsiahlejšia ako man)"
+        de: "Info-Dokumentation (umfangreicher als man)"
+        es: "Docs Info (más detallado que man)"
+        fr: "Docs Info (plus détaillées que man)"
+        it: "Docs Info (più dettagliato di man)"
+        pl: "Dokumentacja Info (szczegółowsza niż man)"
+        tr: "Info belgeler (man'den ayrıntılı)"
+        pt: "Docs Info (mais detalhado que man)"
+        nl: "Info-docs (uitgebreider dan man)"
+        hu: "Info dokumentáció (részletesebb mint man)"
+    - cmd: "tldr tar"
+      desc:
+        en: "Practical examples instead of manual"
+        cs: "Praktické příklady místo manuálu (npm/apt install tldr)"
+        sk: "Praktické príklady namiesto manuálu (npm/apt install tldr)"
+        de: "Praktische Beispiele statt Handbuch"
+        es: "Ejemplos prácticos en lugar de manual"
+        fr: "Exemples pratiques au lieu du manuel"
+        it: "Esempi pratici invece del manuale"
+        pl: "Praktyczne przykłady zamiast manuala"
+        tr: "Kılavuz yerine pratik örnekler"
+        pt: "Exemplos práticos em vez do manual"
+        nl: "Praktische voorbeelden i.p.v. handleiding"
+        hu: "Gyakorlati példák kézikönyv helyett"
+
 - id: links
   title:
-    cs: Symbolické a tvrdé linky
-    en: Symbolic and hard links
+    en: "Symbolic and hard links"
+    cs: "Symbolické a tvrdé linky"
+    sk: "Symbolické a tvrdé linky"
+    de: "Symbolische und harte Links"
+    es: "Enlaces simbólicos y duros"
+    fr: "Liens symboliques et durs"
+    it: "Link simbolici e hard"
+    pl: "Linki symboliczne i twarde"
+    tr: "Sembolik ve sabit bağlantılar"
+    pt: "Links simbólicos e duros"
+    nl: "Symbolische en harde links"
+    hu: "Szimbolikus és kemény linkek"
   tags:
-    cs:
-    - ln
-    - link
-    - odkaz
-    - symlink
-    - soft
-    - hard
-    en:
-    - ln
-    - link
-    - symlink
-    - soft
-    - hard
+    en: [ln, link, symlink, soft, hard]
+    cs: [ln, link, odkaz, symlink, soft, hard]
+    sk: [ln, link, odkaz, symlink, soft, hard]
+    de: [ln, link, symlink, soft, hard]
+    es: [ln, enlace, symlink, soft, hard]
+    fr: [ln, lien, symlink, soft, hard]
+    it: [ln, link, symlink, soft, hard]
+    pl: [ln, link, symlink, soft, hard]
+    tr: [ln, bağlantı, symlink, soft, hard]
+    pt: [ln, link, symlink, soft, hard]
+    nl: [ln, link, symlink, soft, hard]
+    hu: [ln, link, symlink, soft, hard]
   commands:
-  - cmd: ln -s /opt/aplikace /usr/local/bin/aplikace
-    desc:
-      cs: Symbolický link (symlink, jako zástupce)
-      en: Symbolic link (symlink)
-  - cmd: ln /zdroj /cil
-    desc:
-      cs: Tvrdý link (na stejný inode)
-      en: Hard link (same inode)
-  - cmd: readlink -f soubor
-    desc:
-      cs: Kam ukazuje symlink (s rozbalením)
-      en: Where does symlink point (resolved)
-  - cmd: ls -la | grep '^l'
-    desc:
-      cs: Jen symlinky v adresáři
-      en: Only symlinks in directory
+    - cmd: "ln -s /opt/app /usr/local/bin/app"
+      desc:
+        en: "Symbolic link (symlink)"
+        cs: "Symbolický link (symlink, jako zástupce)"
+        sk: "Symbolický link (symlink, ako odkaz)"
+        de: "Symbolischer Link (symlink)"
+        es: "Enlace simbólico (symlink)"
+        fr: "Lien symbolique (symlink)"
+        it: "Link simbolico (symlink)"
+        pl: "Link symboliczny (symlink)"
+        tr: "Sembolik bağlantı (symlink)"
+        pt: "Link simbólico (symlink)"
+        nl: "Symbolische link (symlink)"
+        hu: "Szimbolikus link (symlink)"
+    - cmd: "ln /source /target"
+      desc:
+        en: "Hard link (same inode)"
+        cs: "Tvrdý link (na stejný inode)"
+        sk: "Tvrdý link (na rovnaký inode)"
+        de: "Hard Link (gleicher Inode)"
+        es: "Enlace duro (mismo inodo)"
+        fr: "Lien dur (même inode)"
+        it: "Hard link (stesso inode)"
+        pl: "Twardy link (ten sam inode)"
+        tr: "Sabit bağlantı (aynı inode)"
+        pt: "Link duro (mesmo inode)"
+        nl: "Harde link (zelfde inode)"
+        hu: "Kemény link (azonos inode)"
+    - cmd: "readlink -f file"
+      desc:
+        en: "Where does symlink point (resolved)"
+        cs: "Kam ukazuje symlink (s rozbalením)"
+        sk: "Kam ukazuje symlink (s rozbalením)"
+        de: "Wohin der Symlink zeigt (aufgelöst)"
+        es: "Adónde apunta el symlink (resuelto)"
+        fr: "Cible du symlink (résolu)"
+        it: "Dove punta il symlink (risolto)"
+        pl: "Gdzie wskazuje symlink (rozwiązany)"
+        tr: "Symlink nereyi gösteriyor (çözülmüş)"
+        pt: "Para onde aponta o symlink"
+        nl: "Waar wijst symlink naartoe (opgelost)"
+        hu: "Hova mutat a symlink (feloldva)"
+    - cmd: "ls -la | grep '^l'"
+      desc:
+        en: "Only symlinks in directory"
+        cs: "Jen symlinky v adresáři"
+        sk: "Iba symlinky v adresári"
+        de: "Nur Symlinks im Verzeichnis"
+        es: "Solo symlinks en directorio"
+        fr: "Uniquement symlinks dans le dossier"
+        it: "Solo symlink nella directory"
+        pl: "Tylko symlinki w katalogu"
+        tr: "Sadece dizindeki symlink'ler"
+        pt: "Apenas symlinks no diretório"
+        nl: "Alleen symlinks in map"
+        hu: "Csak symlinkek a könyvtárban"
+
 - id: env-shell
   title:
-    cs: Konfigurace shellu
-    en: Shell configuration
+    en: "Shell configuration"
+    cs: "Konfigurace shellu"
+    sk: "Konfigurácia shellu"
+    de: "Shell-Konfiguration"
+    es: "Configuración del shell"
+    fr: "Configuration du shell"
+    it: "Configurazione shell"
+    pl: "Konfiguracja powłoki"
+    tr: "Kabuk yapılandırması"
+    pt: "Configuração do shell"
+    nl: "Shell-configuratie"
+    hu: "Shell konfiguráció"
   tags:
-    cs:
-    - bashrc
-    - zshrc
-    - profile
-    - shell
-    - prompt
-    en:
-    - bashrc
-    - zshrc
-    - profile
-    - shell
-    - prompt
+    en: [bashrc, zshrc, profile, shell, prompt]
+    cs: [bashrc, zshrc, profile, shell, prompt]
+    sk: [bashrc, zshrc, profile, shell, prompt]
+    de: [bashrc, zshrc, profile, shell, prompt]
+    es: [bashrc, zshrc, profile, shell, prompt]
+    fr: [bashrc, zshrc, profile, shell, prompt]
+    it: [bashrc, zshrc, profile, shell, prompt]
+    pl: [bashrc, zshrc, profile, shell, prompt]
+    tr: [bashrc, zshrc, profile, shell, prompt]
+    pt: [bashrc, zshrc, profile, shell, prompt]
+    nl: [bashrc, zshrc, profile, shell, prompt]
+    hu: [bashrc, zshrc, profile, shell, prompt]
   commands:
-  - cmd: source ~/.bashrc
-    desc:
-      cs: Znovu načíst bashrc
-      en: Reload bashrc
-  - cmd: echo $SHELL
-    desc:
-      cs: Aktuální shell (přihlašovací)
-      en: Current shell (login)
-  - cmd: chsh -s /bin/zsh
-    desc:
-      cs: Změnit výchozí shell na zsh
-      en: Change default shell to zsh
-  - cmd: echo $PATH | tr ':' '\n'
-    desc:
-      cs: Vypsat PATH po řádcích
-      en: Print PATH line by line
-  - cmd: export PATH=$PATH:/opt/bin
-    desc:
-      cs: Přidat adresář do PATH (jen pro session)
-      en: Add directory to PATH (session only)
+    - cmd: "source ~/.bashrc"
+      desc:
+        en: "Reload bashrc"
+        cs: "Znovu načíst bashrc"
+        sk: "Znovu načítať bashrc"
+        de: "Bashrc neu laden"
+        es: "Recargar bashrc"
+        fr: "Recharger bashrc"
+        it: "Ricaricare bashrc"
+        pl: "Przeładuj bashrc"
+        tr: "Bashrc'i yeniden yükle"
+        pt: "Recarregar bashrc"
+        nl: "Bashrc herladen"
+        hu: "Bashrc újratöltése"
+    - cmd: "echo $SHELL"
+      desc:
+        en: "Current shell (login)"
+        cs: "Aktuální shell (přihlašovací)"
+        sk: "Aktuálny shell (prihlasovací)"
+        de: "Aktuelle Shell (Login)"
+        es: "Shell actual (login)"
+        fr: "Shell actuel (login)"
+        it: "Shell attuale (login)"
+        pl: "Aktualna powłoka (login)"
+        tr: "Geçerli kabuk (login)"
+        pt: "Shell atual (login)"
+        nl: "Huidige shell (login)"
+        hu: "Aktuális shell (bejelentkezési)"
+    - cmd: "chsh -s /bin/zsh"
+      desc:
+        en: "Change default shell to zsh"
+        cs: "Změnit výchozí shell na zsh"
+        sk: "Zmeniť predvolený shell na zsh"
+        de: "Standard-Shell auf zsh ändern"
+        es: "Cambiar shell por defecto a zsh"
+        fr: "Changer le shell par défaut en zsh"
+        it: "Cambiare shell predefinita in zsh"
+        pl: "Zmień domyślną powłokę na zsh"
+        tr: "Varsayılan kabuğu zsh yap"
+        pt: "Mudar shell padrão para zsh"
+        nl: "Standaard shell wijzigen naar zsh"
+        hu: "Alapértelmezett shell zsh-ra váltása"
+    - cmd: "echo $PATH | tr ':' '\\n'"
+      desc:
+        en: "Print PATH line by line"
+        cs: "Vypsat PATH po řádcích"
+        sk: "Vypísať PATH po riadkoch"
+        de: "PATH zeilenweise ausgeben"
+        es: "Mostrar PATH línea por línea"
+        fr: "Afficher PATH ligne par ligne"
+        it: "Stampare PATH riga per riga"
+        pl: "Wypisz PATH linia po linii"
+        tr: "PATH'i satır satır yazdır"
+        pt: "Imprimir PATH linha por linha"
+        nl: "PATH regel voor regel tonen"
+        hu: "PATH kiírása soronként"
+    - cmd: "export PATH=$PATH:/opt/bin"
+      desc:
+        en: "Add directory to PATH (session only)"
+        cs: "Přidat adresář do PATH (jen pro session)"
+        sk: "Pridať adresár do PATH (len pre session)"
+        de: "Verzeichnis zum PATH (nur Session)"
+        es: "Añadir dir al PATH (solo sesión)"
+        fr: "Ajouter dossier au PATH (session)"
+        it: "Aggiungere dir al PATH (solo sessione)"
+        pl: "Dodaj katalog do PATH (tylko sesja)"
+        tr: "Dizini PATH'e ekle (sadece oturum)"
+        pt: "Adicionar dir ao PATH (só sessão)"
+        nl: "Map toevoegen aan PATH (alleen sessie)"
+        hu: "Könyvtár hozzáadása PATH-hoz (csak munkamenet)"

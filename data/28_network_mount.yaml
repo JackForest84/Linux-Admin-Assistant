@@ -1,140 +1,353 @@
 - id: nfs-mount
   title:
-    cs: NFS - sdílení souborů (Linux)
-    en: NFS - file sharing (Linux)
+    en: "NFS - file sharing (Linux)"
+    cs: "NFS - sdílení souborů (Linux)"
+    sk: "NFS - zdieľanie súborov (Linux)"
+    de: "NFS - Dateifreigabe (Linux)"
+    es: "NFS - compartir archivos (Linux)"
+    fr: "NFS - partage de fichiers (Linux)"
+    it: "NFS - condivisione file (Linux)"
+    pl: "NFS - udostępnianie plików (Linux)"
+    tr: "NFS - dosya paylaşımı (Linux)"
+    pt: "NFS - compartilhamento (Linux)"
+    nl: "NFS - bestandsdeling (Linux)"
+    hu: "NFS - fájlmegosztás (Linux)"
   tags:
-    cs:
-    - nfs
-    - sdílení
-    - mount
-    - síťový
-    - disk
-    en:
-    - nfs
-    - share
-    - mount
-    - network
-    - drive
+    en: [nfs, share, mount, network, drive]
+    cs: [nfs, sdílení, mount, síťový, disk]
+    sk: [nfs, zdieľanie, mount, sieťový, disk]
+    de: [nfs, freigabe, mount, netzwerk, laufwerk]
+    es: [nfs, compartir, mount, red, unidad]
+    fr: [nfs, partage, mount, réseau, lecteur]
+    it: [nfs, condivisione, mount, rete, unità]
+    pl: [nfs, udostępnij, mount, sieć, dysk]
+    tr: [nfs, paylaşım, mount, ağ, sürücü]
+    pt: [nfs, compartilhar, mount, rede, unidade]
+    nl: [nfs, delen, mount, netwerk, schijf]
+    hu: [nfs, megosztás, mount, hálózat, meghajtó]
   commands:
-  - cmd: sudo apt install nfs-common
-    desc:
-      cs: 'Klient: nainstalovat balíček'
-      en: 'Client: install package'
-  - cmd: sudo mount -t nfs 192.168.1.10:/export /mnt
-    desc:
-      cs: Připojit NFS share
-      en: Mount NFS share
-  - cmd: showmount -e 192.168.1.10
-    desc:
-      cs: Vypsat exporty serveru
-      en: List server exports
-  - cmd: sudo apt install nfs-kernel-server
-    desc:
-      cs: 'Server: nainstalovat'
-      en: 'Server: install'
-  - cmd: sudo exportfs -rav
-    desc:
-      cs: 'Server: znovu načíst /etc/exports'
-      en: 'Server: reload /etc/exports'
+    - cmd: "sudo apt install nfs-common"
+      desc:
+        en: "Client: install package"
+        cs: "Klient: nainstalovat balíček"
+        sk: "Klient: nainštalovať balíček"
+        de: "Client: Paket installieren"
+        es: "Cliente: instalar paquete"
+        fr: "Client : installer le paquet"
+        it: "Client: installare pacchetto"
+        pl: "Klient: zainstaluj pakiet"
+        tr: "İstemci: paket yükle"
+        pt: "Cliente: instalar pacote"
+        nl: "Client: pakket installeren"
+        hu: "Kliens: csomag telepítése"
+    - cmd: "sudo mount -t nfs 192.168.1.10:/export /mnt"
+      desc:
+        en: "Mount NFS share"
+        cs: "Připojit NFS share"
+        sk: "Pripojiť NFS share"
+        de: "NFS-Freigabe einhängen"
+        es: "Montar compartido NFS"
+        fr: "Monter le partage NFS"
+        it: "Montare share NFS"
+        pl: "Zamontuj zasób NFS"
+        tr: "NFS paylaşımını bağla"
+        pt: "Montar compartilhamento NFS"
+        nl: "NFS-share mounten"
+        hu: "NFS megosztás csatolása"
+    - cmd: "showmount -e 192.168.1.10"
+      desc:
+        en: "List server exports"
+        cs: "Vypsat exporty serveru"
+        sk: "Vypísať exporty servera"
+        de: "Server-Exporte auflisten"
+        es: "Listar exports del servidor"
+        fr: "Lister les exports du serveur"
+        it: "Elencare export del server"
+        pl: "Lista eksportów serwera"
+        tr: "Sunucu dışa aktarmalarını listele"
+        pt: "Listar exports do servidor"
+        nl: "Server-exports tonen"
+        hu: "Szerver exportok listája"
+    - cmd: "sudo apt install nfs-kernel-server"
+      desc:
+        en: "Server: install"
+        cs: "Server: nainstalovat"
+        sk: "Server: nainštalovať"
+        de: "Server: installieren"
+        es: "Servidor: instalar"
+        fr: "Serveur : installer"
+        it: "Server: installare"
+        pl: "Serwer: zainstaluj"
+        tr: "Sunucu: kur"
+        pt: "Servidor: instalar"
+        nl: "Server: installeren"
+        hu: "Szerver: telepítés"
+    - cmd: "sudo exportfs -rav"
+      desc:
+        en: "Server: reload /etc/exports"
+        cs: "Server: znovu načíst /etc/exports"
+        sk: "Server: znovu načítať /etc/exports"
+        de: "Server: /etc/exports neu laden"
+        es: "Servidor: recargar /etc/exports"
+        fr: "Serveur : recharger /etc/exports"
+        it: "Server: ricaricare /etc/exports"
+        pl: "Serwer: przeładuj /etc/exports"
+        tr: "Sunucu: /etc/exports yeniden yükle"
+        pt: "Servidor: recarregar /etc/exports"
+        nl: "Server: /etc/exports herladen"
+        hu: "Szerver: /etc/exports újratöltése"
+
 - id: smb-cifs
   title:
-    cs: Samba / CIFS (Windows sdílení)
-    en: Samba / CIFS (Windows share)
+    en: "Samba / CIFS (Windows share)"
+    cs: "Samba / CIFS (Windows sdílení)"
+    sk: "Samba / CIFS (Windows zdieľanie)"
+    de: "Samba / CIFS (Windows-Freigabe)"
+    es: "Samba / CIFS (compartido Windows)"
+    fr: "Samba / CIFS (partage Windows)"
+    it: "Samba / CIFS (condivisione Windows)"
+    pl: "Samba / CIFS (udostępnianie Windows)"
+    tr: "Samba / CIFS (Windows paylaşımı)"
+    pt: "Samba / CIFS (compartilhamento Windows)"
+    nl: "Samba / CIFS (Windows-share)"
+    hu: "Samba / CIFS (Windows megosztás)"
   tags:
-    cs:
-    - samba
-    - cifs
-    - smb
-    - windows
-    - sdílení
-    en:
-    - samba
-    - cifs
-    - smb
-    - windows
-    - share
+    en: [samba, cifs, smb, windows, share]
+    cs: [samba, cifs, smb, windows, sdílení]
+    sk: [samba, cifs, smb, windows, zdieľanie]
+    de: [samba, cifs, smb, windows, freigabe]
+    es: [samba, cifs, smb, windows, compartir]
+    fr: [samba, cifs, smb, windows, partage]
+    it: [samba, cifs, smb, windows, condivisione]
+    pl: [samba, cifs, smb, windows, udostępnianie]
+    tr: [samba, cifs, smb, windows, paylaşım]
+    pt: [samba, cifs, smb, windows, compartilhamento]
+    nl: [samba, cifs, smb, windows, delen]
+    hu: [samba, cifs, smb, windows, megosztás]
   commands:
-  - cmd: sudo apt install cifs-utils
-    desc:
-      cs: Nainstalovat CIFS klienta
-      en: Install CIFS client
-  - cmd: sudo mount -t cifs //server/share /mnt -o username=user
-    desc:
-      cs: Připojit SMB share
-      en: Mount SMB share
-  - cmd: smbclient -L //192.168.1.10 -U user
-    desc:
-      cs: Vypsat dostupné shares na serveru
-      en: List available shares on server
-  - cmd: smbclient //server/share -U user
-    desc:
-      cs: Interaktivní klient (jako FTP)
-      en: Interactive client (like FTP)
+    - cmd: "sudo apt install cifs-utils"
+      desc:
+        en: "Install CIFS client"
+        cs: "Nainstalovat CIFS klienta"
+        sk: "Nainštalovať CIFS klienta"
+        de: "CIFS-Client installieren"
+        es: "Instalar cliente CIFS"
+        fr: "Installer le client CIFS"
+        it: "Installare client CIFS"
+        pl: "Zainstaluj klienta CIFS"
+        tr: "CIFS istemcisini yükle"
+        pt: "Instalar cliente CIFS"
+        nl: "CIFS-client installeren"
+        hu: "CIFS kliens telepítése"
+    - cmd: "sudo mount -t cifs //server/share /mnt -o username=user"
+      desc:
+        en: "Mount SMB share"
+        cs: "Připojit SMB share"
+        sk: "Pripojiť SMB share"
+        de: "SMB-Freigabe einhängen"
+        es: "Montar compartido SMB"
+        fr: "Monter le partage SMB"
+        it: "Montare share SMB"
+        pl: "Zamontuj zasób SMB"
+        tr: "SMB paylaşımını bağla"
+        pt: "Montar compartilhamento SMB"
+        nl: "SMB-share mounten"
+        hu: "SMB megosztás csatolása"
+    - cmd: "smbclient -L //192.168.1.10 -U user"
+      desc:
+        en: "List available shares on server"
+        cs: "Vypsat dostupné shares na serveru"
+        sk: "Vypísať dostupné shares na serveri"
+        de: "Verfügbare Freigaben auflisten"
+        es: "Listar compartidos en servidor"
+        fr: "Lister les partages du serveur"
+        it: "Elencare share disponibili"
+        pl: "Lista dostępnych udziałów"
+        tr: "Sunucudaki kullanılabilir paylaşımlar"
+        pt: "Listar compartilhamentos no servidor"
+        nl: "Beschikbare shares tonen"
+        hu: "Elérhető megosztások listája"
+    - cmd: "smbclient //server/share -U user"
+      desc:
+        en: "Interactive client (like FTP)"
+        cs: "Interaktivní klient (jako FTP)"
+        sk: "Interaktívny klient (ako FTP)"
+        de: "Interaktiver Client (wie FTP)"
+        es: "Cliente interactivo (como FTP)"
+        fr: "Client interactif (comme FTP)"
+        it: "Client interattivo (come FTP)"
+        pl: "Klient interaktywny (jak FTP)"
+        tr: "Etkileşimli istemci (FTP gibi)"
+        pt: "Cliente interativo (como FTP)"
+        nl: "Interactieve client (zoals FTP)"
+        hu: "Interaktív kliens (mint az FTP)"
+
 - id: sshfs
   title:
-    cs: SSHFS - mount přes SSH
-    en: SSHFS - mount over SSH
+    en: "SSHFS - mount over SSH"
+    cs: "SSHFS - mount přes SSH"
+    sk: "SSHFS - mount cez SSH"
+    de: "SSHFS - Mount über SSH"
+    es: "SSHFS - montar por SSH"
+    fr: "SSHFS - monter via SSH"
+    it: "SSHFS - mount via SSH"
+    pl: "SSHFS - mount przez SSH"
+    tr: "SSHFS - SSH üzerinden bağla"
+    pt: "SSHFS - montar via SSH"
+    nl: "SSHFS - mounten via SSH"
+    hu: "SSHFS - csatolás SSH-n"
   tags:
-    cs:
-    - sshfs
-    - fuse
-    - mount
-    - ssh
-    - vzdálený
-    en:
-    - sshfs
-    - fuse
-    - mount
-    - ssh
-    - remote
+    en: [sshfs, fuse, mount, ssh, remote]
+    cs: [sshfs, fuse, mount, ssh, vzdálený]
+    sk: [sshfs, fuse, mount, ssh, vzdialený]
+    de: [sshfs, fuse, mount, ssh, remote]
+    es: [sshfs, fuse, mount, ssh, remoto]
+    fr: [sshfs, fuse, mount, ssh, distant]
+    it: [sshfs, fuse, mount, ssh, remoto]
+    pl: [sshfs, fuse, mount, ssh, zdalny]
+    tr: [sshfs, fuse, mount, ssh, uzak]
+    pt: [sshfs, fuse, mount, ssh, remoto]
+    nl: [sshfs, fuse, mount, ssh, extern]
+    hu: [sshfs, fuse, mount, ssh, távoli]
   commands:
-  - cmd: sudo apt install sshfs
-    desc:
-      cs: Nainstalovat
-      en: Install
-  - cmd: sshfs user@host:/cesta /mnt
-    desc:
-      cs: Připojit vzdálený adresář přes SSH
-      en: Mount remote directory via SSH
-  - cmd: fusermount -u /mnt
-    desc:
-      cs: Odpojit
-      en: Unmount
+    - cmd: "sudo apt install sshfs"
+      desc:
+        en: "Install"
+        cs: "Nainstalovat"
+        sk: "Nainštalovať"
+        de: "Installieren"
+        es: "Instalar"
+        fr: "Installer"
+        it: "Installare"
+        pl: "Zainstaluj"
+        tr: "Yükle"
+        pt: "Instalar"
+        nl: "Installeren"
+        hu: "Telepítés"
+    - cmd: "sshfs user@host:/path /mnt"
+      desc:
+        en: "Mount remote directory via SSH"
+        cs: "Připojit vzdálený adresář přes SSH"
+        sk: "Pripojiť vzdialený adresár cez SSH"
+        de: "Remote-Verzeichnis über SSH einhängen"
+        es: "Montar directorio remoto vía SSH"
+        fr: "Monter le dossier distant via SSH"
+        it: "Montare directory remota via SSH"
+        pl: "Zamontuj zdalny katalog przez SSH"
+        tr: "SSH ile uzak dizini bağla"
+        pt: "Montar diretório remoto via SSH"
+        nl: "Externe map mounten via SSH"
+        hu: "Távoli könyvtár csatolása SSH-n"
+    - cmd: "fusermount -u /mnt"
+      desc:
+        en: "Unmount"
+        cs: "Odpojit"
+        sk: "Odpojiť"
+        de: "Aushängen"
+        es: "Desmontar"
+        fr: "Démonter"
+        it: "Smontare"
+        pl: "Odmontuj"
+        tr: "Bağlantıyı kes"
+        pt: "Desmontar"
+        nl: "Ontkoppelen"
+        hu: "Leválasztás"
+
 - id: fstab
   title:
-    cs: Trvalé mountování (fstab)
-    en: Permanent mounts (fstab)
+    en: "Permanent mounts (fstab)"
+    cs: "Trvalé mountování (fstab)"
+    sk: "Trvalé mountovanie (fstab)"
+    de: "Permanente Mounts (fstab)"
+    es: "Montajes permanentes (fstab)"
+    fr: "Montages permanents (fstab)"
+    it: "Mount permanenti (fstab)"
+    pl: "Stałe montowania (fstab)"
+    tr: "Kalıcı bağlamalar (fstab)"
+    pt: "Montagens permanentes (fstab)"
+    nl: "Permanente mounts (fstab)"
+    hu: "Állandó csatolások (fstab)"
   tags:
-    cs:
-    - fstab
-    - mount
-    - trvalý
-    - boot
-    - autostart
-    en:
-    - fstab
-    - mount
-    - permanent
-    - boot
-    - autostart
+    en: [fstab, mount, permanent, boot, autostart]
+    cs: [fstab, mount, trvalý, boot, autostart]
+    sk: [fstab, mount, trvalý, boot, autostart]
+    de: [fstab, mount, permanent, boot, autostart]
+    es: [fstab, mount, permanente, boot, autostart]
+    fr: [fstab, mount, permanent, boot, autostart]
+    it: [fstab, mount, permanente, boot, autostart]
+    pl: [fstab, mount, trwały, boot, autostart]
+    tr: [fstab, mount, kalıcı, boot, autostart]
+    pt: [fstab, mount, permanente, boot, autostart]
+    nl: [fstab, mount, permanent, boot, autostart]
+    hu: [fstab, mount, állandó, boot, autostart]
   commands:
-  - cmd: sudo cp /etc/fstab /etc/fstab.bak
-    desc:
-      cs: Záloha fstab před úpravou (důležité!)
-      en: Backup fstab before edit (important!)
-  - cmd: sudo nano /etc/fstab
-    desc:
-      cs: Upravit fstab
-      en: Edit fstab
-  - cmd: sudo mount -a
-    desc:
-      cs: Připojit vše z fstab (test)
-      en: Mount everything from fstab (test)
-  - cmd: lsblk -f
-    desc:
-      cs: Najít UUID disků (pro fstab)
-      en: Find disk UUIDs (for fstab)
-  - cmd: echo 'UUID=xxx /mnt ext4 defaults 0 2' | sudo tee -a /etc/fstab
-    desc:
-      cs: Příklad záznamu (uprav UUID a cestu)
-      en: Example entry (edit UUID and path)
+    - cmd: "sudo cp /etc/fstab /etc/fstab.bak"
+      desc:
+        en: "Backup fstab before edit (important!)"
+        cs: "Záloha fstab před úpravou (důležité!)"
+        sk: "Záloha fstab pred úpravou (dôležité!)"
+        de: "Fstab vor Bearbeitung sichern (wichtig!)"
+        es: "Backup de fstab antes de editar (¡importante!)"
+        fr: "Sauvegarder fstab avant édition (important !)"
+        it: "Backup di fstab prima di modificare (importante!)"
+        pl: "Backup fstab przed edycją (ważne!)"
+        tr: "Düzenleme öncesi fstab yedeği (önemli!)"
+        pt: "Backup do fstab antes de editar (importante!)"
+        nl: "Fstab back-uppen vóór bewerken (belangrijk!)"
+        hu: "Fstab mentése szerkesztés előtt (fontos!)"
+    - cmd: "sudo nano /etc/fstab"
+      desc:
+        en: "Edit fstab"
+        cs: "Upravit fstab"
+        sk: "Upraviť fstab"
+        de: "Fstab bearbeiten"
+        es: "Editar fstab"
+        fr: "Modifier fstab"
+        it: "Modificare fstab"
+        pl: "Edytuj fstab"
+        tr: "Fstab'ı düzenle"
+        pt: "Editar fstab"
+        nl: "Fstab bewerken"
+        hu: "Fstab szerkesztése"
+    - cmd: "sudo mount -a"
+      desc:
+        en: "Mount everything from fstab (test)"
+        cs: "Připojit vše z fstab (test)"
+        sk: "Pripojiť všetko z fstab (test)"
+        de: "Alles aus fstab einhängen (Test)"
+        es: "Montar todo de fstab (prueba)"
+        fr: "Monter tout depuis fstab (test)"
+        it: "Montare tutto da fstab (test)"
+        pl: "Zamontuj wszystko z fstab (test)"
+        tr: "Fstab'dan her şeyi bağla (test)"
+        pt: "Montar tudo do fstab (teste)"
+        nl: "Alles uit fstab mounten (test)"
+        hu: "Minden csatolása fstab-ból (teszt)"
+    - cmd: "lsblk -f"
+      desc:
+        en: "Find disk UUIDs (for fstab)"
+        cs: "Najít UUID disků (pro fstab)"
+        sk: "Nájsť UUID diskov (pre fstab)"
+        de: "Festplatten-UUIDs finden (für fstab)"
+        es: "Encontrar UUIDs (para fstab)"
+        fr: "Trouver les UUIDs (pour fstab)"
+        it: "Trovare UUID (per fstab)"
+        pl: "Znajdź UUID dysków (do fstab)"
+        tr: "Disk UUID'lerini bul (fstab için)"
+        pt: "Encontrar UUIDs (para fstab)"
+        nl: "Schijf-UUIDs vinden (voor fstab)"
+        hu: "Lemez UUID-k keresése (fstab-hoz)"
+    - cmd: "echo 'UUID=xxx /mnt ext4 defaults 0 2' | sudo tee -a /etc/fstab"
+      desc:
+        en: "Example entry (edit UUID and path)"
+        cs: "Příklad záznamu (uprav UUID a cestu)"
+        sk: "Príklad záznamu (uprav UUID a cestu)"
+        de: "Beispieleintrag (UUID und Pfad anpassen)"
+        es: "Entrada de ejemplo (edita UUID y ruta)"
+        fr: "Entrée d'exemple (modifier UUID et chemin)"
+        it: "Esempio (modifica UUID e percorso)"
+        pl: "Przykładowy wpis (edytuj UUID i ścieżkę)"
+        tr: "Örnek girdi (UUID ve yolu düzenle)"
+        pt: "Entrada de exemplo (edite UUID e caminho)"
+        nl: "Voorbeeld (UUID en pad aanpassen)"
+        hu: "Példa bejegyzés (módosítsd a UUID-t és utat)"

@@ -1,107 +1,282 @@
 - id: iptables-list
   title:
-    cs: iptables - výpis pravidel
-    en: iptables - list rules
+    en: "iptables - list rules"
+    cs: "iptables - výpis pravidel"
+    sk: "iptables - výpis pravidiel"
+    de: "iptables - Regeln auflisten"
+    es: "iptables - listar reglas"
+    fr: "iptables - lister les règles"
+    it: "iptables - elenco regole"
+    pl: "iptables - lista reguł"
+    tr: "iptables - kuralları listele"
+    pt: "iptables - listar regras"
+    nl: "iptables - regels tonen"
+    hu: "iptables - szabályok listája"
   tags:
-    cs:
-    - iptables
-    - firewall
-    - pravidla
-    - list
-    en:
-    - iptables
-    - firewall
-    - rules
-    - list
+    en: [iptables, firewall, rules, list]
+    cs: [iptables, firewall, pravidla, list]
+    sk: [iptables, firewall, pravidlá, list]
+    de: [iptables, firewall, regeln, list]
+    es: [iptables, firewall, reglas, list]
+    fr: [iptables, firewall, règles, list]
+    it: [iptables, firewall, regole, list]
+    pl: [iptables, firewall, reguły, list]
+    tr: [iptables, firewall, kurallar, list]
+    pt: [iptables, firewall, regras, list]
+    nl: [iptables, firewall, regels, list]
+    hu: [iptables, firewall, szabályok, list]
   commands:
-  - cmd: sudo iptables -L -n -v
-    desc:
-      cs: Vypsat všechna pravidla
-      en: List all rules
-  - cmd: sudo iptables -L -n -v --line-numbers
-    desc:
-      cs: Vč. čísel řádků (pro mazání)
-      en: Including line numbers (for deletion)
-  - cmd: sudo iptables -S
-    desc:
-      cs: Pravidla ve formátu příkazů
-      en: Rules in command format
-  - cmd: sudo iptables-save > rules.v4
-    desc:
-      cs: Uložit pravidla do souboru
-      en: Save rules to file
-  - cmd: sudo iptables-restore < rules.v4
-    desc:
-      cs: Obnovit pravidla ze souboru
-      en: Restore rules from file
+    - cmd: "sudo iptables -L -n -v"
+      desc:
+        en: "List all rules"
+        cs: "Vypsat všechna pravidla"
+        sk: "Vypísať všetky pravidlá"
+        de: "Alle Regeln auflisten"
+        es: "Listar todas las reglas"
+        fr: "Lister toutes les règles"
+        it: "Elencare tutte le regole"
+        pl: "Lista wszystkich reguł"
+        tr: "Tüm kuralları listele"
+        pt: "Listar todas as regras"
+        nl: "Alle regels tonen"
+        hu: "Minden szabály listája"
+    - cmd: "sudo iptables -L -n -v --line-numbers"
+      desc:
+        en: "Including line numbers (for deletion)"
+        cs: "Vč. čísel řádků (pro mazání)"
+        sk: "Vrátane čísel riadkov (na mazanie)"
+        de: "Inkl. Zeilennummern (zum Löschen)"
+        es: "Con números de línea (para borrar)"
+        fr: "Avec numéros de ligne (pour suppression)"
+        it: "Con numeri di riga (per eliminare)"
+        pl: "Z numerami linii (do usuwania)"
+        tr: "Satır numaralarıyla (silmek için)"
+        pt: "Com números de linha (para excluir)"
+        nl: "Met regelnummers (voor verwijderen)"
+        hu: "Sorszámokkal (törléshez)"
+    - cmd: "sudo iptables -S"
+      desc:
+        en: "Rules in command format"
+        cs: "Pravidla ve formátu příkazů"
+        sk: "Pravidlá vo formáte príkazov"
+        de: "Regeln im Befehlsformat"
+        es: "Reglas en formato comando"
+        fr: "Règles au format commande"
+        it: "Regole in formato comando"
+        pl: "Reguły w formacie poleceń"
+        tr: "Komut formatında kurallar"
+        pt: "Regras em formato de comando"
+        nl: "Regels in commandoformaat"
+        hu: "Szabályok parancs formátumban"
+    - cmd: "sudo iptables-save > rules.v4"
+      desc:
+        en: "Save rules to file"
+        cs: "Uložit pravidla do souboru"
+        sk: "Uložiť pravidlá do súboru"
+        de: "Regeln in Datei speichern"
+        es: "Guardar reglas en archivo"
+        fr: "Enregistrer les règles"
+        it: "Salvare regole su file"
+        pl: "Zapisz reguły do pliku"
+        tr: "Kuralları dosyaya kaydet"
+        pt: "Salvar regras em arquivo"
+        nl: "Regels naar bestand opslaan"
+        hu: "Szabályok mentése fájlba"
+    - cmd: "sudo iptables-restore < rules.v4"
+      desc:
+        en: "Restore rules from file"
+        cs: "Obnovit pravidla ze souboru"
+        sk: "Obnoviť pravidlá zo súboru"
+        de: "Regeln aus Datei wiederherstellen"
+        es: "Restaurar reglas desde archivo"
+        fr: "Restaurer les règles"
+        it: "Ripristinare regole da file"
+        pl: "Przywróć reguły z pliku"
+        tr: "Kuralları dosyadan geri yükle"
+        pt: "Restaurar regras de arquivo"
+        nl: "Regels uit bestand herstellen"
+        hu: "Szabályok visszaállítása fájlból"
+
 - id: iptables-rules
   title:
-    cs: iptables - přidat / smazat pravidla
-    en: iptables - add / delete rules
+    en: "iptables - add / delete rules"
+    cs: "iptables - přidat / smazat pravidla"
+    sk: "iptables - pridať / zmazať pravidlá"
+    de: "iptables - Regeln hinzufügen / löschen"
+    es: "iptables - añadir / eliminar reglas"
+    fr: "iptables - ajouter / supprimer règles"
+    it: "iptables - aggiungere / eliminare regole"
+    pl: "iptables - dodaj / usuń reguły"
+    tr: "iptables - kural ekle / sil"
+    pt: "iptables - adicionar / excluir regras"
+    nl: "iptables - regels toevoegen / verwijderen"
+    hu: "iptables - szabályok hozzáadása / törlése"
   tags:
-    cs:
-    - iptables
-    - povolit
-    - zakázat
-    - port
-    - allow
-    - drop
-    en:
-    - iptables
-    - allow
-    - deny
-    - port
-    - drop
+    en: [iptables, allow, deny, port, drop]
+    cs: [iptables, povolit, zakázat, port, allow, drop]
+    sk: [iptables, povoliť, zakázať, port, allow, drop]
+    de: [iptables, erlauben, verweigern, port, drop]
+    es: [iptables, permitir, denegar, puerto, drop]
+    fr: [iptables, autoriser, refuser, port, drop]
+    it: [iptables, consenti, nega, porta, drop]
+    pl: [iptables, zezwól, odmów, port, drop]
+    tr: [iptables, izin, reddet, port, drop]
+    pt: [iptables, permitir, negar, porta, drop]
+    nl: [iptables, toestaan, weigeren, poort, drop]
+    hu: [iptables, engedélyez, tilt, port, drop]
   commands:
-  - cmd: sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-    desc:
-      cs: Povolit příchozí SSH
-      en: Allow incoming SSH
-  - cmd: sudo iptables -A INPUT -s 1.2.3.4 -j DROP
-    desc:
-      cs: Zablokovat IP adresu
-      en: Block IP address
-  - cmd: sudo iptables -D INPUT 3
-    desc:
-      cs: Smazat pravidlo č. 3
-      en: 'Delete rule #3'
-  - cmd: sudo iptables -F
-    desc:
-      cs: Smazat všechna pravidla (POZOR!)
-      en: Flush all rules (CAREFUL!)
-  - cmd: sudo iptables -P INPUT DROP
-    desc:
-      cs: 'Výchozí politika: vše blokovat'
-      en: 'Default policy: drop everything'
+    - cmd: "sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT"
+      desc:
+        en: "Allow incoming SSH"
+        cs: "Povolit příchozí SSH"
+        sk: "Povoliť prichádzajúce SSH"
+        de: "Eingehendes SSH erlauben"
+        es: "Permitir SSH entrante"
+        fr: "Autoriser SSH entrant"
+        it: "Consentire SSH in entrata"
+        pl: "Zezwól na przychodzące SSH"
+        tr: "Gelen SSH'ye izin ver"
+        pt: "Permitir SSH de entrada"
+        nl: "Inkomende SSH toestaan"
+        hu: "Bejövő SSH engedélyezése"
+    - cmd: "sudo iptables -A INPUT -s 1.2.3.4 -j DROP"
+      desc:
+        en: "Block IP address"
+        cs: "Zablokovat IP adresu"
+        sk: "Zablokovať IP adresu"
+        de: "IP-Adresse blockieren"
+        es: "Bloquear dirección IP"
+        fr: "Bloquer une adresse IP"
+        it: "Bloccare indirizzo IP"
+        pl: "Zablokuj adres IP"
+        tr: "IP adresini engelle"
+        pt: "Bloquear endereço IP"
+        nl: "IP-adres blokkeren"
+        hu: "IP cím blokkolása"
+    - cmd: "sudo iptables -D INPUT 3"
+      desc:
+        en: "Delete rule #3"
+        cs: "Smazat pravidlo č. 3"
+        sk: "Zmazať pravidlo č. 3"
+        de: "Regel Nr. 3 löschen"
+        es: "Eliminar regla 3"
+        fr: "Supprimer la règle 3"
+        it: "Eliminare regola 3"
+        pl: "Usuń regułę nr 3"
+        tr: "3. kuralı sil"
+        pt: "Excluir regra 3"
+        nl: "Regel 3 verwijderen"
+        hu: "3. szabály törlése"
+    - cmd: "sudo iptables -F"
+      desc:
+        en: "Flush all rules (CAREFUL!)"
+        cs: "Smazat všechna pravidla (POZOR!)"
+        sk: "Zmazať všetky pravidlá (POZOR!)"
+        de: "Alle Regeln löschen (VORSICHT!)"
+        es: "Eliminar todas las reglas (¡CUIDADO!)"
+        fr: "Vider toutes les règles (ATTENTION !)"
+        it: "Eliminare tutte le regole (ATTENZIONE!)"
+        pl: "Wyczyść wszystkie reguły (UWAGA!)"
+        tr: "Tüm kuralları temizle (DİKKAT!)"
+        pt: "Limpar todas as regras (CUIDADO!)"
+        nl: "Alle regels wissen (LET OP!)"
+        hu: "Minden szabály törlése (FIGYELEM!)"
+    - cmd: "sudo iptables -P INPUT DROP"
+      desc:
+        en: "Default policy: drop everything"
+        cs: "Výchozí politika: vše blokovat"
+        sk: "Predvolená politika: všetko blokovať"
+        de: "Standardrichtlinie: alles verwerfen"
+        es: "Política predeterminada: rechazar todo"
+        fr: "Politique par défaut : tout rejeter"
+        it: "Policy predefinita: bloccare tutto"
+        pl: "Domyślna polityka: blokuj wszystko"
+        tr: "Varsayılan politika: hepsini düşür"
+        pt: "Política padrão: rejeitar tudo"
+        nl: "Standaardbeleid: alles droppen"
+        hu: "Alapértelmezett szabályzat: minden eldobása"
+
 - id: nftables
   title:
-    cs: nftables (moderní náhrada iptables)
-    en: nftables (modern iptables replacement)
+    en: "nftables (modern iptables replacement)"
+    cs: "nftables (moderní náhrada iptables)"
+    sk: "nftables (moderná náhrada iptables)"
+    de: "nftables (moderner iptables-Ersatz)"
+    es: "nftables (reemplazo moderno de iptables)"
+    fr: "nftables (remplacement moderne d'iptables)"
+    it: "nftables (sostituto moderno di iptables)"
+    pl: "nftables (nowoczesny zamiennik iptables)"
+    tr: "nftables (modern iptables yedek)"
+    pt: "nftables (substituto moderno do iptables)"
+    nl: "nftables (modern iptables-vervanger)"
+    hu: "nftables (modern iptables helyettesítő)"
   tags:
-    cs:
-    - nftables
-    - nft
-    - firewall
-    - moderní
-    en:
-    - nftables
-    - nft
-    - firewall
-    - modern
+    en: [nftables, nft, firewall, modern]
+    cs: [nftables, nft, firewall, moderní]
+    sk: [nftables, nft, firewall, moderný]
+    de: [nftables, nft, firewall, modern]
+    es: [nftables, nft, firewall, moderno]
+    fr: [nftables, nft, firewall, moderne]
+    it: [nftables, nft, firewall, moderno]
+    pl: [nftables, nft, firewall, nowoczesny]
+    tr: [nftables, nft, firewall, modern]
+    pt: [nftables, nft, firewall, moderno]
+    nl: [nftables, nft, firewall, modern]
+    hu: [nftables, nft, firewall, modern]
   commands:
-  - cmd: sudo nft list ruleset
-    desc:
-      cs: Vypsat všechna pravidla
-      en: List all rules
-  - cmd: sudo nft list table inet filter
-    desc:
-      cs: Detail tabulky
-      en: Table details
-  - cmd: sudo nft -f /etc/nftables.conf
-    desc:
-      cs: Načíst konfiguraci ze souboru
-      en: Load config from file
-  - cmd: sudo nft flush ruleset
-    desc:
-      cs: Smazat všechna pravidla
-      en: Flush all rules
+    - cmd: "sudo nft list ruleset"
+      desc:
+        en: "List all rules"
+        cs: "Vypsat všechna pravidla"
+        sk: "Vypísať všetky pravidlá"
+        de: "Alle Regeln auflisten"
+        es: "Listar todas las reglas"
+        fr: "Lister toutes les règles"
+        it: "Elencare tutte le regole"
+        pl: "Lista wszystkich reguł"
+        tr: "Tüm kuralları listele"
+        pt: "Listar todas as regras"
+        nl: "Alle regels tonen"
+        hu: "Minden szabály listája"
+    - cmd: "sudo nft list table inet filter"
+      desc:
+        en: "Table details"
+        cs: "Detail tabulky"
+        sk: "Detail tabuľky"
+        de: "Tabellendetails"
+        es: "Detalles de tabla"
+        fr: "Détails de la table"
+        it: "Dettagli tabella"
+        pl: "Szczegóły tabeli"
+        tr: "Tablo detayları"
+        pt: "Detalhes da tabela"
+        nl: "Tabeldetails"
+        hu: "Tábla részletei"
+    - cmd: "sudo nft -f /etc/nftables.conf"
+      desc:
+        en: "Load config from file"
+        cs: "Načíst konfiguraci ze souboru"
+        sk: "Načítať konfiguráciu zo súboru"
+        de: "Konfiguration aus Datei laden"
+        es: "Cargar config desde archivo"
+        fr: "Charger la config depuis fichier"
+        it: "Caricare config da file"
+        pl: "Wczytaj konfigurację z pliku"
+        tr: "Yapılandırmayı dosyadan yükle"
+        pt: "Carregar config de arquivo"
+        nl: "Config laden uit bestand"
+        hu: "Konfig betöltése fájlból"
+    - cmd: "sudo nft flush ruleset"
+      desc:
+        en: "Flush all rules"
+        cs: "Smazat všechna pravidla"
+        sk: "Zmazať všetky pravidlá"
+        de: "Alle Regeln löschen"
+        es: "Limpiar todas las reglas"
+        fr: "Vider toutes les règles"
+        it: "Eliminare tutte le regole"
+        pl: "Wyczyść wszystkie reguły"
+        tr: "Tüm kuralları temizle"
+        pt: "Limpar todas as regras"
+        nl: "Alle regels wissen"
+        hu: "Minden szabály törlése"

@@ -1,142 +1,353 @@
 - id: io-monitor
   title:
-    cs: I/O monitoring (disky)
-    en: I/O monitoring (disks)
+    en: "I/O monitoring (disks)"
+    cs: "I/O monitoring (disky)"
+    sk: "I/O monitoring (disky)"
+    de: "I/O-Überwachung (Festplatten)"
+    es: "Monitorización I/O (discos)"
+    fr: "Surveillance I/O (disques)"
+    it: "Monitoraggio I/O (dischi)"
+    pl: "Monitorowanie I/O (dyski)"
+    tr: "I/O izleme (diskler)"
+    pt: "Monitoramento I/O (discos)"
+    nl: "I/O-monitoring (schijven)"
+    hu: "I/O monitorozás (lemezek)"
   tags:
-    cs:
-    - iotop
-    - iostat
-    - io
-    - disk
-    - výkon
-    - monitoring
-    en:
-    - iotop
-    - iostat
-    - io
-    - disk
-    - performance
-    - monitoring
+    en: [iotop, iostat, io, disk, performance, monitoring]
+    cs: [iotop, iostat, io, disk, výkon, monitoring]
+    sk: [iotop, iostat, io, disk, výkon, monitoring]
+    de: [iotop, iostat, io, festplatte, leistung, monitoring]
+    es: [iotop, iostat, io, disco, rendimiento, monitorización]
+    fr: [iotop, iostat, io, disque, performance, surveillance]
+    it: [iotop, iostat, io, disco, prestazioni, monitoraggio]
+    pl: [iotop, iostat, io, dysk, wydajność, monitorowanie]
+    tr: [iotop, iostat, io, disk, performans, izleme]
+    pt: [iotop, iostat, io, disco, desempenho, monitoramento]
+    nl: [iotop, iostat, io, schijf, prestaties, monitoring]
+    hu: [iotop, iostat, io, lemez, teljesítmény, monitoring]
   commands:
-  - cmd: sudo iotop
-    desc:
-      cs: Které procesy zatěžují disk (apt install iotop)
-      en: Which processes load disk
-  - cmd: iostat -xz 2
-    desc:
-      cs: I/O statistiky každé 2 vteřiny (apt install sysstat)
-      en: I/O stats every 2 seconds
-  - cmd: sudo dstat -tcmnd
-    desc:
-      cs: Kombinovaný monitor (CPU, RAM, síť, disk)
-      en: Combined monitor (CPU, RAM, net, disk)
-  - cmd: vmstat 2
-    desc:
-      cs: Statistiky systému každé 2 vteřiny
-      en: System stats every 2 seconds
+    - cmd: "sudo iotop"
+      desc:
+        en: "Which processes load disk"
+        cs: "Které procesy zatěžují disk (apt install iotop)"
+        sk: "Ktoré procesy zaťažujú disk (apt install iotop)"
+        de: "Welche Prozesse die Platte belasten"
+        es: "Qué procesos cargan el disco"
+        fr: "Quels processus chargent le disque"
+        it: "Quali processi caricano il disco"
+        pl: "Które procesy obciążają dysk"
+        tr: "Hangi süreçler diski yüklüyor"
+        pt: "Quais processos carregam o disco"
+        nl: "Welke processen belasten de schijf"
+        hu: "Mely folyamatok terhelik a lemezt"
+    - cmd: "iostat -xz 2"
+      desc:
+        en: "I/O stats every 2 seconds"
+        cs: "I/O statistiky každé 2 vteřiny (apt install sysstat)"
+        sk: "I/O štatistiky každé 2 sekundy (apt install sysstat)"
+        de: "I/O-Statistiken alle 2 Sekunden"
+        es: "Estadísticas I/O cada 2 segundos"
+        fr: "Stats I/O toutes les 2 s"
+        it: "Statistiche I/O ogni 2 secondi"
+        pl: "Statystyki I/O co 2 sekundy"
+        tr: "Her 2 saniyede I/O istatistikleri"
+        pt: "Estatísticas I/O a cada 2 segundos"
+        nl: "I/O-stats elke 2 seconden"
+        hu: "I/O statisztikák 2 másodpercenként"
+    - cmd: "sudo dstat -tcmnd"
+      desc:
+        en: "Combined monitor (CPU, RAM, net, disk)"
+        cs: "Kombinovaný monitor (CPU, RAM, síť, disk)"
+        sk: "Kombinovaný monitor (CPU, RAM, sieť, disk)"
+        de: "Kombinierter Monitor (CPU, RAM, Netz, Disk)"
+        es: "Monitor combinado (CPU, RAM, red, disco)"
+        fr: "Moniteur combiné (CPU, RAM, réseau, disque)"
+        it: "Monitor combinato (CPU, RAM, rete, disco)"
+        pl: "Połączony monitor (CPU, RAM, sieć, dysk)"
+        tr: "Birleşik izleyici (CPU, RAM, ağ, disk)"
+        pt: "Monitor combinado (CPU, RAM, rede, disco)"
+        nl: "Gecombineerde monitor (CPU, RAM, net, schijf)"
+        hu: "Kombinált monitor (CPU, RAM, hálózat, lemez)"
+    - cmd: "vmstat 2"
+      desc:
+        en: "System stats every 2 seconds"
+        cs: "Statistiky systému každé 2 vteřiny"
+        sk: "Štatistiky systému každé 2 sekundy"
+        de: "Systemstatistik alle 2 Sekunden"
+        es: "Estadísticas del sistema cada 2 s"
+        fr: "Stats système toutes les 2 s"
+        it: "Statistiche sistema ogni 2 secondi"
+        pl: "Statystyki systemu co 2 sekundy"
+        tr: "Her 2 saniyede sistem istatistikleri"
+        pt: "Estatísticas do sistema a cada 2 s"
+        nl: "Systeemstats elke 2 seconden"
+        hu: "Rendszerstatisztikák 2 másodpercenként"
+
 - id: net-monitor
   title:
-    cs: Síťové monitorování
-    en: Network monitoring
+    en: "Network monitoring"
+    cs: "Síťové monitorování"
+    sk: "Sieťové monitorovanie"
+    de: "Netzwerküberwachung"
+    es: "Monitorización de red"
+    fr: "Surveillance réseau"
+    it: "Monitoraggio di rete"
+    pl: "Monitorowanie sieci"
+    tr: "Ağ izleme"
+    pt: "Monitoramento de rede"
+    nl: "Netwerkmonitoring"
+    hu: "Hálózati monitorozás"
   tags:
-    cs:
-    - iftop
-    - nethogs
-    - síť
-    - monitoring
-    - provoz
-    en:
-    - iftop
-    - nethogs
-    - network
-    - monitoring
-    - traffic
+    en: [iftop, nethogs, network, monitoring, traffic]
+    cs: [iftop, nethogs, síť, monitoring, provoz]
+    sk: [iftop, nethogs, sieť, monitoring, prevádzka]
+    de: [iftop, nethogs, netzwerk, monitoring, datenverkehr]
+    es: [iftop, nethogs, red, monitorización, tráfico]
+    fr: [iftop, nethogs, réseau, surveillance, trafic]
+    it: [iftop, nethogs, rete, monitoraggio, traffico]
+    pl: [iftop, nethogs, sieć, monitorowanie, ruch]
+    tr: [iftop, nethogs, ağ, izleme, trafik]
+    pt: [iftop, nethogs, rede, monitoramento, tráfego]
+    nl: [iftop, nethogs, netwerk, monitoring, verkeer]
+    hu: [iftop, nethogs, hálózat, monitoring, forgalom]
   commands:
-  - cmd: sudo iftop -i eth0
-    desc:
-      cs: Živý provoz na rozhraní
-      en: Live traffic on interface
-  - cmd: sudo nethogs
-    desc:
-      cs: Které procesy posílají data
-      en: Which processes send data
-  - cmd: sudo tcpdump -i eth0 port 80
-    desc:
-      cs: Zachytávat provoz na portu 80
-      en: Capture traffic on port 80
-  - cmd: sudo tcpdump -i eth0 -w out.pcap
-    desc:
-      cs: Uložit zachycený provoz do souboru
-      en: Save captured traffic to file
-  - cmd: speedtest-cli
-    desc:
-      cs: Test rychlosti internetu (pip install speedtest-cli)
-      en: Internet speed test
+    - cmd: "sudo iftop -i eth0"
+      desc:
+        en: "Live traffic on interface"
+        cs: "Živý provoz na rozhraní"
+        sk: "Živá prevádzka na rozhraní"
+        de: "Live-Verkehr auf Schnittstelle"
+        es: "Tráfico en vivo en la interfaz"
+        fr: "Trafic en direct sur l'interface"
+        it: "Traffico live sull'interfaccia"
+        pl: "Ruch na żywo na interfejsie"
+        tr: "Arayüzde canlı trafik"
+        pt: "Tráfego ao vivo na interface"
+        nl: "Live verkeer op interface"
+        hu: "Élő forgalom az interfészen"
+    - cmd: "sudo nethogs"
+      desc:
+        en: "Which processes send data"
+        cs: "Které procesy posílají data"
+        sk: "Ktoré procesy posielajú dáta"
+        de: "Welche Prozesse Daten senden"
+        es: "Qué procesos envían datos"
+        fr: "Quels processus envoient des données"
+        it: "Quali processi inviano dati"
+        pl: "Które procesy wysyłają dane"
+        tr: "Hangi süreçler veri gönderir"
+        pt: "Quais processos enviam dados"
+        nl: "Welke processen verzenden data"
+        hu: "Mely folyamatok küldenek adatot"
+    - cmd: "sudo tcpdump -i eth0 port 80"
+      desc:
+        en: "Capture traffic on port 80"
+        cs: "Zachytávat provoz na portu 80"
+        sk: "Zachytávať prevádzku na porte 80"
+        de: "Verkehr auf Port 80 erfassen"
+        es: "Capturar tráfico en puerto 80"
+        fr: "Capturer le trafic du port 80"
+        it: "Catturare traffico sulla porta 80"
+        pl: "Przechwyć ruch na porcie 80"
+        tr: "80 portunda trafiği yakala"
+        pt: "Capturar tráfego na porta 80"
+        nl: "Verkeer op poort 80 vastleggen"
+        hu: "Forgalom rögzítése a 80-as porton"
+    - cmd: "sudo tcpdump -i eth0 -w out.pcap"
+      desc:
+        en: "Save captured traffic to file"
+        cs: "Uložit zachycený provoz do souboru"
+        sk: "Uložiť zachytenú prevádzku do súboru"
+        de: "Erfassten Verkehr in Datei speichern"
+        es: "Guardar tráfico capturado en archivo"
+        fr: "Enregistrer le trafic capturé"
+        it: "Salvare traffico catturato su file"
+        pl: "Zapisz przechwycony ruch do pliku"
+        tr: "Yakalanan trafiği dosyaya kaydet"
+        pt: "Salvar tráfego capturado em arquivo"
+        nl: "Vastgelegd verkeer in bestand opslaan"
+        hu: "Rögzített forgalom fájlba mentése"
+    - cmd: "speedtest-cli"
+      desc:
+        en: "Internet speed test"
+        cs: "Test rychlosti internetu (pip install speedtest-cli)"
+        sk: "Test rýchlosti internetu (pip install speedtest-cli)"
+        de: "Internet-Geschwindigkeitstest"
+        es: "Prueba de velocidad de internet"
+        fr: "Test de vitesse internet"
+        it: "Test velocità internet"
+        pl: "Test prędkości internetu"
+        tr: "İnternet hız testi"
+        pt: "Teste de velocidade da internet"
+        nl: "Internetsnelheidstest"
+        hu: "Internet sebességteszt"
+
 - id: bench
   title:
-    cs: Výkonnostní testy
-    en: Performance benchmarks
+    en: "Performance benchmarks"
+    cs: "Výkonnostní testy"
+    sk: "Výkonnostné testy"
+    de: "Leistungstests"
+    es: "Benchmarks de rendimiento"
+    fr: "Tests de performance"
+    it: "Benchmark di prestazioni"
+    pl: "Testy wydajności"
+    tr: "Performans karşılaştırmaları"
+    pt: "Benchmarks de desempenho"
+    nl: "Prestatie-benchmarks"
+    hu: "Teljesítménytesztek"
   tags:
-    cs:
-    - benchmark
-    - výkon
-    - test
-    - sysbench
-    - hdparm
-    en:
-    - benchmark
-    - performance
-    - test
-    - sysbench
-    - hdparm
+    en: [benchmark, performance, test, sysbench, hdparm]
+    cs: [benchmark, výkon, test, sysbench, hdparm]
+    sk: [benchmark, výkon, test, sysbench, hdparm]
+    de: [benchmark, leistung, test, sysbench, hdparm]
+    es: [benchmark, rendimiento, test, sysbench, hdparm]
+    fr: [benchmark, performance, test, sysbench, hdparm]
+    it: [benchmark, prestazioni, test, sysbench, hdparm]
+    pl: [benchmark, wydajność, test, sysbench, hdparm]
+    tr: [benchmark, performans, test, sysbench, hdparm]
+    pt: [benchmark, desempenho, teste, sysbench, hdparm]
+    nl: [benchmark, prestaties, test, sysbench, hdparm]
+    hu: [benchmark, teljesítmény, teszt, sysbench, hdparm]
   commands:
-  - cmd: sudo hdparm -t /dev/sda
-    desc:
-      cs: Rychlost čtení disku
-      en: Disk read speed
-  - cmd: dd if=/dev/zero of=test.bin bs=1M count=1024 conv=fdatasync
-    desc:
-      cs: Rychlost zápisu (vytvoří 1 GB soubor)
-      en: Write speed (creates 1 GB file)
-  - cmd: sysbench cpu --threads=4 run
-    desc:
-      cs: Benchmark CPU
-      en: CPU benchmark
-  - cmd: stress-ng --cpu 4 --timeout 30s
-    desc:
-      cs: Stres test CPU na 30 vteřin
-      en: CPU stress test for 30 seconds
+    - cmd: "sudo hdparm -t /dev/sda"
+      desc:
+        en: "Disk read speed"
+        cs: "Rychlost čtení disku"
+        sk: "Rýchlosť čítania disku"
+        de: "Festplatten-Lesegeschwindigkeit"
+        es: "Velocidad de lectura del disco"
+        fr: "Vitesse de lecture du disque"
+        it: "Velocità di lettura del disco"
+        pl: "Prędkość odczytu dysku"
+        tr: "Disk okuma hızı"
+        pt: "Velocidade de leitura do disco"
+        nl: "Schijfleessnelheid"
+        hu: "Lemez olvasási sebesség"
+    - cmd: "dd if=/dev/zero of=test.bin bs=1M count=1024 conv=fdatasync"
+      desc:
+        en: "Write speed (creates 1 GB file)"
+        cs: "Rychlost zápisu (vytvoří 1 GB soubor)"
+        sk: "Rýchlosť zápisu (vytvorí 1 GB súbor)"
+        de: "Schreibgeschwindigkeit (erstellt 1-GB-Datei)"
+        es: "Velocidad de escritura (crea archivo 1 GB)"
+        fr: "Vitesse d'écriture (crée fichier 1 Go)"
+        it: "Velocità scrittura (crea file da 1 GB)"
+        pl: "Prędkość zapisu (tworzy plik 1 GB)"
+        tr: "Yazma hızı (1 GB dosya oluşturur)"
+        pt: "Velocidade de escrita (cria arquivo 1 GB)"
+        nl: "Schrijfsnelheid (maakt 1-GB-bestand)"
+        hu: "Írási sebesség (1 GB fájlt készít)"
+    - cmd: "sysbench cpu --threads=4 run"
+      desc:
+        en: "CPU benchmark"
+        cs: "Benchmark CPU"
+        sk: "Benchmark CPU"
+        de: "CPU-Benchmark"
+        es: "Benchmark CPU"
+        fr: "Benchmark CPU"
+        it: "Benchmark CPU"
+        pl: "Benchmark CPU"
+        tr: "CPU benchmark"
+        pt: "Benchmark CPU"
+        nl: "CPU-benchmark"
+        hu: "CPU benchmark"
+    - cmd: "stress-ng --cpu 4 --timeout 30s"
+      desc:
+        en: "CPU stress test for 30 seconds"
+        cs: "Stres test CPU na 30 vteřin"
+        sk: "Stres test CPU na 30 sekúnd"
+        de: "CPU-Stresstest für 30 Sekunden"
+        es: "Test de estrés de CPU por 30 s"
+        fr: "Test de stress CPU pendant 30 s"
+        it: "Stress test CPU per 30 secondi"
+        pl: "Test obciążenia CPU przez 30 s"
+        tr: "30 saniyelik CPU stres testi"
+        pt: "Teste de estresse CPU por 30 s"
+        nl: "CPU-stresstest 30 seconden"
+        hu: "CPU stresszteszt 30 másodpercig"
+
 - id: open-files
   title:
-    cs: Otevřené soubory a deskriptory
-    en: Open files and descriptors
+    en: "Open files and descriptors"
+    cs: "Otevřené soubory a deskriptory"
+    sk: "Otvorené súbory a deskriptory"
+    de: "Geöffnete Dateien und Deskriptoren"
+    es: "Archivos abiertos y descriptores"
+    fr: "Fichiers ouverts et descripteurs"
+    it: "File aperti e descrittori"
+    pl: "Otwarte pliki i deskryptory"
+    tr: "Açık dosyalar ve tanımlayıcılar"
+    pt: "Arquivos abertos e descritores"
+    nl: "Open bestanden en descriptors"
+    hu: "Megnyitott fájlok és leírók"
   tags:
-    cs:
-    - lsof
-    - otevřené
-    - soubory
-    - descriptor
-    - handle
-    en:
-    - lsof
-    - open
-    - files
-    - descriptor
-    - handle
+    en: [lsof, open, files, descriptor, handle]
+    cs: [lsof, otevřené, soubory, descriptor, handle]
+    sk: [lsof, otvorené, súbory, descriptor, handle]
+    de: [lsof, geöffnet, dateien, deskriptor, handle]
+    es: [lsof, abiertos, archivos, descriptor, handle]
+    fr: [lsof, ouverts, fichiers, descripteur, handle]
+    it: [lsof, aperti, file, descrittore, handle]
+    pl: [lsof, otwarte, pliki, deskryptor, handle]
+    tr: [lsof, açık, dosyalar, tanımlayıcı, handle]
+    pt: [lsof, abertos, arquivos, descritor, handle]
+    nl: [lsof, open, bestanden, descriptor, handle]
+    hu: [lsof, nyitott, fájlok, leíró, handle]
   commands:
-  - cmd: sudo lsof -p 1234
-    desc:
-      cs: Co má otevřeno proces s PID 1234
-      en: What process 1234 has open
-  - cmd: sudo lsof /var/log/syslog
-    desc:
-      cs: Kdo má otevřený tento soubor
-      en: Who has this file open
-  - cmd: sudo lsof +D /opt
-    desc:
-      cs: Vše otevřené uvnitř /opt
-      en: Everything open inside /opt
-  - cmd: ulimit -n
-    desc:
-      cs: Limit otevřených souborů (na uživatele)
-      en: Open files limit (per user)
+    - cmd: "sudo lsof -p 1234"
+      desc:
+        en: "What process 1234 has open"
+        cs: "Co má otevřeno proces s PID 1234"
+        sk: "Čo má otvorené proces s PID 1234"
+        de: "Was Prozess 1234 geöffnet hat"
+        es: "Qué tiene abierto el proceso 1234"
+        fr: "Ce que le processus 1234 a ouvert"
+        it: "Cosa ha aperto il processo 1234"
+        pl: "Co ma otwarte proces 1234"
+        tr: "1234 numaralı sürecin açtıkları"
+        pt: "O que o processo 1234 tem aberto"
+        nl: "Wat proces 1234 open heeft"
+        hu: "Mit nyitott meg az 1234-es folyamat"
+    - cmd: "sudo lsof /var/log/syslog"
+      desc:
+        en: "Who has this file open"
+        cs: "Kdo má otevřený tento soubor"
+        sk: "Kto má otvorený tento súbor"
+        de: "Wer diese Datei geöffnet hat"
+        es: "Quién tiene este archivo abierto"
+        fr: "Qui a ouvert ce fichier"
+        it: "Chi ha aperto questo file"
+        pl: "Kto ma otwarty ten plik"
+        tr: "Bu dosyayı kim açtı"
+        pt: "Quem tem este arquivo aberto"
+        nl: "Wie heeft dit bestand open"
+        hu: "Ki nyitotta meg ezt a fájlt"
+    - cmd: "sudo lsof +D /opt"
+      desc:
+        en: "Everything open inside /opt"
+        cs: "Vše otevřené uvnitř /opt"
+        sk: "Všetko otvorené vo vnútri /opt"
+        de: "Alles in /opt geöffnete"
+        es: "Todo lo abierto dentro de /opt"
+        fr: "Tout ce qui est ouvert dans /opt"
+        it: "Tutto aperto dentro /opt"
+        pl: "Wszystko otwarte w /opt"
+        tr: "/opt içinde açık her şey"
+        pt: "Tudo aberto em /opt"
+        nl: "Alles open in /opt"
+        hu: "Minden megnyitott /opt-ban"
+    - cmd: "ulimit -n"
+      desc:
+        en: "Open files limit (per user)"
+        cs: "Limit otevřených souborů (na uživatele)"
+        sk: "Limit otvorených súborov (na používateľa)"
+        de: "Limit offener Dateien (pro Benutzer)"
+        es: "Límite de archivos abiertos (por usuario)"
+        fr: "Limite de fichiers ouverts (par utilisateur)"
+        it: "Limite file aperti (per utente)"
+        pl: "Limit otwartych plików (na użytkownika)"
+        tr: "Açık dosya limiti (kullanıcı başına)"
+        pt: "Limite de arquivos abertos (por usuário)"
+        nl: "Limiet open bestanden (per gebruiker)"
+        hu: "Megnyitott fájlok korlátja (felhasználónként)"

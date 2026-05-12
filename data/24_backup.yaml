@@ -1,145 +1,381 @@
 - id: backup-rsync
   title:
-    cs: Záloha přes rsync
-    en: Backup with rsync
+    en: "Backup with rsync"
+    cs: "Záloha přes rsync"
+    sk: "Záloha cez rsync"
+    de: "Backup mit rsync"
+    es: "Backup con rsync"
+    fr: "Sauvegarde avec rsync"
+    it: "Backup con rsync"
+    pl: "Backup przez rsync"
+    tr: "rsync ile yedekleme"
+    pt: "Backup com rsync"
+    nl: "Back-up met rsync"
+    hu: "Mentés rsync-kel"
   tags:
-    cs:
-    - rsync
-    - záloha
-    - backup
-    - kopírovat
-    - sync
-    en:
-    - rsync
-    - backup
-    - sync
-    - copy
+    en: [rsync, backup, sync, copy]
+    cs: [rsync, záloha, backup, kopírovat, sync]
+    sk: [rsync, záloha, backup, kopírovať, sync]
+    de: [rsync, backup, sync, kopieren]
+    es: [rsync, backup, sync, copiar]
+    fr: [rsync, sauvegarde, sync, copier]
+    it: [rsync, backup, sync, copiare]
+    pl: [rsync, backup, sync, kopiowanie]
+    tr: [rsync, yedek, sync, kopyala]
+    pt: [rsync, backup, sync, copiar]
+    nl: [rsync, back-up, sync, kopiëren]
+    hu: [rsync, mentés, sync, másolás]
   commands:
-  - cmd: rsync -avh /zdroj/ /cil/
-    desc:
-      cs: Základní lokální záloha
-      en: Basic local backup
-  - cmd: rsync -avh --delete /zdroj/ /cil/
-    desc:
-      cs: Včetně mazání souborů, které ve zdroji už nejsou (mirror)
-      en: Include deletions (mirror)
-  - cmd: rsync -avzh -e ssh /zdroj/ user@host:/cil/
-    desc:
-      cs: Vzdálená záloha přes SSH s kompresí
-      en: Remote backup via SSH with compression
-  - cmd: rsync -avh --exclude='node_modules' /zdroj/ /cil/
-    desc:
-      cs: S výjimkami
-      en: With exclusions
-  - cmd: rsync -avh --progress --partial /zdroj/ /cil/
-    desc:
-      cs: S progress barem a možností pokračovat
-      en: With progress and resume capability
-  - cmd: rsync -avhn /zdroj/ /cil/
-    desc:
-      cs: Dry-run (jen ukázat, co by udělal)
-      en: Dry-run (preview only)
+    - cmd: "rsync -avh /source/ /dest/"
+      desc:
+        en: "Basic local backup"
+        cs: "Základní lokální záloha"
+        sk: "Základná lokálna záloha"
+        de: "Einfaches lokales Backup"
+        es: "Backup local básico"
+        fr: "Sauvegarde locale basique"
+        it: "Backup locale base"
+        pl: "Podstawowy lokalny backup"
+        tr: "Temel yerel yedek"
+        pt: "Backup local básico"
+        nl: "Basis lokale back-up"
+        hu: "Alapvető helyi mentés"
+    - cmd: "rsync -avh --delete /source/ /dest/"
+      desc:
+        en: "Include deletions (mirror)"
+        cs: "Včetně mazání souborů, které ve zdroji už nejsou (mirror)"
+        sk: "Vrátane mazania súborov, ktoré v zdroji už nie sú (mirror)"
+        de: "Inkl. Löschen (Spiegel)"
+        es: "Incluyendo borrados (espejo)"
+        fr: "Y compris suppressions (miroir)"
+        it: "Includere eliminazioni (mirror)"
+        pl: "Wraz z usuwaniem (lustro)"
+        tr: "Silmeleri dahil (ayna)"
+        pt: "Incluindo exclusões (espelho)"
+        nl: "Inclusief verwijderingen (spiegel)"
+        hu: "Beleértve a törléseket (tükör)"
+    - cmd: "rsync -avzh -e ssh /source/ user@host:/dest/"
+      desc:
+        en: "Remote backup via SSH with compression"
+        cs: "Vzdálená záloha přes SSH s kompresí"
+        sk: "Vzdialená záloha cez SSH s kompresiou"
+        de: "Remote-Backup über SSH mit Komprimierung"
+        es: "Backup remoto vía SSH con compresión"
+        fr: "Sauvegarde distante via SSH avec compression"
+        it: "Backup remoto via SSH con compressione"
+        pl: "Zdalny backup przez SSH z kompresją"
+        tr: "Sıkıştırmalı SSH üzerinden uzak yedek"
+        pt: "Backup remoto via SSH com compressão"
+        nl: "Externe back-up via SSH met compressie"
+        hu: "Távoli mentés SSH-n keresztül tömörítéssel"
+    - cmd: "rsync -avh --exclude='node_modules' /source/ /dest/"
+      desc:
+        en: "With exclusions"
+        cs: "S výjimkami"
+        sk: "S výnimkami"
+        de: "Mit Ausnahmen"
+        es: "Con exclusiones"
+        fr: "Avec exclusions"
+        it: "Con esclusioni"
+        pl: "Z wykluczeniami"
+        tr: "Hariç tutmalarla"
+        pt: "Com exclusões"
+        nl: "Met uitsluitingen"
+        hu: "Kizárásokkal"
+    - cmd: "rsync -avh --progress --partial /source/ /dest/"
+      desc:
+        en: "With progress and resume capability"
+        cs: "S progress barem a možností pokračovat"
+        sk: "S progress barom a možnosťou pokračovať"
+        de: "Mit Fortschritt und Wiederaufnahme"
+        es: "Con progreso y capacidad de reanudar"
+        fr: "Avec progression et reprise"
+        it: "Con progresso e capacità di ripresa"
+        pl: "Z paskiem postępu i wznowieniem"
+        tr: "İlerleme ve devam etme özelliğiyle"
+        pt: "Com progresso e retomada"
+        nl: "Met voortgang en hervatten"
+        hu: "Folyamatjelzővel és folytatással"
+    - cmd: "rsync -avhn /source/ /dest/"
+      desc:
+        en: "Dry-run (preview only)"
+        cs: "Dry-run (jen ukázat, co by udělal)"
+        sk: "Dry-run (len ukázať, čo by spravil)"
+        de: "Probelauf (nur Vorschau)"
+        es: "Dry-run (solo previsualizar)"
+        fr: "Dry-run (prévisualisation)"
+        it: "Dry-run (solo anteprima)"
+        pl: "Dry-run (tylko podgląd)"
+        tr: "Dry-run (sadece önizleme)"
+        pt: "Dry-run (apenas prévia)"
+        nl: "Dry-run (alleen preview)"
+        hu: "Dry-run (csak előnézet)"
+
 - id: backup-tar
   title:
-    cs: Záloha přes tar
-    en: Backup with tar
+    en: "Backup with tar"
+    cs: "Záloha přes tar"
+    sk: "Záloha cez tar"
+    de: "Backup mit tar"
+    es: "Backup con tar"
+    fr: "Sauvegarde avec tar"
+    it: "Backup con tar"
+    pl: "Backup przez tar"
+    tr: "tar ile yedekleme"
+    pt: "Backup com tar"
+    nl: "Back-up met tar"
+    hu: "Mentés tar-ral"
   tags:
-    cs:
-    - tar
-    - záloha
-    - backup
-    - archiv
-    en:
-    - tar
-    - backup
-    - archive
+    en: [tar, backup, archive]
+    cs: [tar, záloha, backup, archiv]
+    sk: [tar, záloha, backup, archív]
+    de: [tar, backup, archiv]
+    es: [tar, backup, archivo]
+    fr: [tar, sauvegarde, archive]
+    it: [tar, backup, archivio]
+    pl: [tar, backup, archiwum]
+    tr: [tar, yedek, arşiv]
+    pt: [tar, backup, arquivo]
+    nl: [tar, back-up, archief]
+    hu: [tar, mentés, archívum]
   commands:
-  - cmd: tar czf zaloha-$(date +%Y%m%d).tar.gz /etc /home
-    desc:
-      cs: Archív s datem v názvu
-      en: Archive with date in name
-  - cmd: tar cjf zaloha.tar.bz2 /data
-    desc:
-      cs: Lepší komprese (bzip2)
-      en: Better compression (bzip2)
-  - cmd: tar cJf zaloha.tar.xz /data
-    desc:
-      cs: Nejlepší komprese (xz, pomalé)
-      en: Best compression (xz, slow)
-  - cmd: tar czf - /data | ssh host 'cat > zaloha.tar.gz'
-    desc:
-      cs: Streamovat zálohu přes SSH
-      en: Stream backup over SSH
+    - cmd: "tar czf backup-$(date +%Y%m%d).tar.gz /etc /home"
+      desc:
+        en: "Archive with date in name"
+        cs: "Archív s datem v názvu"
+        sk: "Archív s dátumom v názve"
+        de: "Archiv mit Datum im Namen"
+        es: "Archivo con fecha en el nombre"
+        fr: "Archive avec date dans le nom"
+        it: "Archivio con data nel nome"
+        pl: "Archiwum z datą w nazwie"
+        tr: "Adında tarih olan arşiv"
+        pt: "Arquivo com data no nome"
+        nl: "Archief met datum in naam"
+        hu: "Archívum dátummal a névben"
+    - cmd: "tar cjf backup.tar.bz2 /data"
+      desc:
+        en: "Better compression (bzip2)"
+        cs: "Lepší komprese (bzip2)"
+        sk: "Lepšia kompresia (bzip2)"
+        de: "Bessere Komprimierung (bzip2)"
+        es: "Mejor compresión (bzip2)"
+        fr: "Meilleure compression (bzip2)"
+        it: "Migliore compressione (bzip2)"
+        pl: "Lepsza kompresja (bzip2)"
+        tr: "Daha iyi sıkıştırma (bzip2)"
+        pt: "Melhor compressão (bzip2)"
+        nl: "Betere compressie (bzip2)"
+        hu: "Jobb tömörítés (bzip2)"
+    - cmd: "tar cJf backup.tar.xz /data"
+      desc:
+        en: "Best compression (xz, slow)"
+        cs: "Nejlepší komprese (xz, pomalé)"
+        sk: "Najlepšia kompresia (xz, pomalé)"
+        de: "Beste Komprimierung (xz, langsam)"
+        es: "Mejor compresión (xz, lento)"
+        fr: "Meilleure compression (xz, lent)"
+        it: "Migliore compressione (xz, lento)"
+        pl: "Najlepsza kompresja (xz, wolno)"
+        tr: "En iyi sıkıştırma (xz, yavaş)"
+        pt: "Melhor compressão (xz, lento)"
+        nl: "Beste compressie (xz, traag)"
+        hu: "Legjobb tömörítés (xz, lassú)"
+    - cmd: "tar czf - /data | ssh host 'cat > backup.tar.gz'"
+      desc:
+        en: "Stream backup over SSH"
+        cs: "Streamovat zálohu přes SSH"
+        sk: "Streamovať zálohu cez SSH"
+        de: "Backup über SSH streamen"
+        es: "Transmitir backup por SSH"
+        fr: "Streamer la sauvegarde via SSH"
+        it: "Stream backup via SSH"
+        pl: "Strumieniuj backup przez SSH"
+        tr: "SSH üzerinden yedek akıt"
+        pt: "Transmitir backup via SSH"
+        nl: "Back-up streamen via SSH"
+        hu: "Mentés streamelése SSH-n"
+
 - id: restic
   title:
-    cs: Restic (moderní zálohy s deduplikací)
-    en: Restic (modern dedup backup)
+    en: "Restic (modern dedup backup)"
+    cs: "Restic (moderní zálohy s deduplikací)"
+    sk: "Restic (moderné zálohy s deduplikáciou)"
+    de: "Restic (modernes Dedup-Backup)"
+    es: "Restic (backup moderno con dedup)"
+    fr: "Restic (sauvegarde déduplication moderne)"
+    it: "Restic (backup moderno con dedup)"
+    pl: "Restic (nowoczesny backup z dedup)"
+    tr: "Restic (modern tekilleştirme yedek)"
+    pt: "Restic (backup moderno com dedup)"
+    nl: "Restic (moderne dedup-back-up)"
+    hu: "Restic (modern dedup mentés)"
   tags:
-    cs:
-    - restic
-    - záloha
-    - backup
-    - deduplikace
-    - snapshot
-    en:
-    - restic
-    - backup
-    - dedup
-    - snapshot
+    en: [restic, backup, dedup, snapshot]
+    cs: [restic, záloha, backup, deduplikace, snapshot]
+    sk: [restic, záloha, backup, deduplikácia, snapshot]
+    de: [restic, backup, dedup, snapshot]
+    es: [restic, backup, dedup, snapshot]
+    fr: [restic, sauvegarde, dedup, snapshot]
+    it: [restic, backup, dedup, snapshot]
+    pl: [restic, backup, dedup, snapshot]
+    tr: [restic, yedek, tekilleştirme, snapshot]
+    pt: [restic, backup, dedup, snapshot]
+    nl: [restic, back-up, dedup, snapshot]
+    hu: [restic, mentés, dedup, snapshot]
   commands:
-  - cmd: restic init --repo /backups/repo
-    desc:
-      cs: Inicializovat repozitář
-      en: Initialize repository
-  - cmd: restic -r /backups/repo backup /data
-    desc:
-      cs: Vytvořit zálohu (snapshot)
-      en: Create backup (snapshot)
-  - cmd: restic -r /backups/repo snapshots
-    desc:
-      cs: Seznam snapshotů
-      en: List snapshots
-  - cmd: restic -r /backups/repo restore latest --target /obnova
-    desc:
-      cs: Obnovit nejnovější snapshot
-      en: Restore latest snapshot
-  - cmd: restic -r /backups/repo forget --keep-daily 7 --keep-weekly 4 --prune
-    desc:
-      cs: Smazat staré + uvolnit místo
-      en: Remove old + free space
+    - cmd: "restic init --repo /backups/repo"
+      desc:
+        en: "Initialize repository"
+        cs: "Inicializovat repozitář"
+        sk: "Inicializovať repozitár"
+        de: "Repository initialisieren"
+        es: "Inicializar repositorio"
+        fr: "Initialiser le dépôt"
+        it: "Inizializzare repository"
+        pl: "Zainicjuj repozytorium"
+        tr: "Depoyu başlat"
+        pt: "Inicializar repositório"
+        nl: "Repository initialiseren"
+        hu: "Repository inicializálása"
+    - cmd: "restic -r /backups/repo backup /data"
+      desc:
+        en: "Create backup (snapshot)"
+        cs: "Vytvořit zálohu (snapshot)"
+        sk: "Vytvoriť zálohu (snapshot)"
+        de: "Backup erstellen (Snapshot)"
+        es: "Crear backup (snapshot)"
+        fr: "Créer une sauvegarde (snapshot)"
+        it: "Creare backup (snapshot)"
+        pl: "Utwórz backup (snapshot)"
+        tr: "Yedek oluştur (snapshot)"
+        pt: "Criar backup (snapshot)"
+        nl: "Back-up maken (snapshot)"
+        hu: "Mentés készítése (snapshot)"
+    - cmd: "restic -r /backups/repo snapshots"
+      desc:
+        en: "List snapshots"
+        cs: "Seznam snapshotů"
+        sk: "Zoznam snapshotov"
+        de: "Snapshots auflisten"
+        es: "Listar snapshots"
+        fr: "Lister les snapshots"
+        it: "Elenco snapshot"
+        pl: "Lista snapshotów"
+        tr: "Snapshot'ları listele"
+        pt: "Listar snapshots"
+        nl: "Snapshots tonen"
+        hu: "Snapshotok listája"
+    - cmd: "restic -r /backups/repo restore latest --target /restored"
+      desc:
+        en: "Restore latest snapshot"
+        cs: "Obnovit nejnovější snapshot"
+        sk: "Obnoviť najnovší snapshot"
+        de: "Neuesten Snapshot wiederherstellen"
+        es: "Restaurar último snapshot"
+        fr: "Restaurer le dernier snapshot"
+        it: "Ripristinare ultimo snapshot"
+        pl: "Przywróć najnowszy snapshot"
+        tr: "En son snapshot'ı geri yükle"
+        pt: "Restaurar último snapshot"
+        nl: "Laatste snapshot herstellen"
+        hu: "Legfrissebb snapshot visszaállítása"
+    - cmd: "restic -r /backups/repo forget --keep-daily 7 --keep-weekly 4 --prune"
+      desc:
+        en: "Remove old + free space"
+        cs: "Smazat staré + uvolnit místo"
+        sk: "Zmazať staré + uvoľniť miesto"
+        de: "Alte entfernen + Speicher freigeben"
+        es: "Eliminar antiguos + liberar espacio"
+        fr: "Supprimer anciens + libérer espace"
+        it: "Rimuovere vecchi + liberare spazio"
+        pl: "Usuń stare + zwolnij miejsce"
+        tr: "Eskileri sil + alan boşalt"
+        pt: "Remover antigos + liberar espaço"
+        nl: "Oude verwijderen + ruimte vrij"
+        hu: "Régiek törlése + hely felszabadítása"
+
 - id: dd-image
   title:
-    cs: Image disku (dd)
-    en: Disk image (dd)
+    en: "Disk image (dd)"
+    cs: "Image disku (dd)"
+    sk: "Image disku (dd)"
+    de: "Festplatten-Image (dd)"
+    es: "Imagen de disco (dd)"
+    fr: "Image disque (dd)"
+    it: "Immagine disco (dd)"
+    pl: "Obraz dysku (dd)"
+    tr: "Disk imajı (dd)"
+    pt: "Imagem de disco (dd)"
+    nl: "Schijf-image (dd)"
+    hu: "Lemez image (dd)"
   tags:
-    cs:
-    - dd
-    - image
-    - klon
-    - disk
-    - sd karta
-    - usb
-    en:
-    - dd
-    - image
-    - clone
-    - disk
-    - sd card
-    - usb
+    en: [dd, image, clone, disk, sd card, usb]
+    cs: [dd, image, klon, disk, sd karta, usb]
+    sk: [dd, image, klon, disk, sd karta, usb]
+    de: [dd, image, klon, festplatte, sd-karte, usb]
+    es: [dd, image, clonar, disco, tarjeta sd, usb]
+    fr: [dd, image, cloner, disque, carte sd, usb]
+    it: [dd, image, clonare, disco, scheda sd, usb]
+    pl: [dd, image, klon, dysk, karta sd, usb]
+    tr: [dd, image, klonla, disk, sd kart, usb]
+    pt: [dd, image, clonar, disco, cartão sd, usb]
+    nl: [dd, image, kloon, schijf, sd-kaart, usb]
+    hu: [dd, image, klónozás, lemez, sd kártya, usb]
   commands:
-  - cmd: sudo dd if=/dev/sdb of=disk.img bs=4M status=progress
-    desc:
-      cs: Vytvořit image disku (POZOR na zdroj!)
-      en: Create disk image (CAREFUL with source!)
-  - cmd: sudo dd if=disk.img of=/dev/sdb bs=4M status=progress
-    desc:
-      cs: Zapsat image na disk (PŘEPÍŠE!)
-      en: Write image to disk (OVERWRITES!)
-  - cmd: sudo dd if=ubuntu.iso of=/dev/sdb bs=4M status=progress && sync
-    desc:
-      cs: Vytvořit bootovací USB
-      en: Create bootable USB
-  - cmd: sudo dd if=/dev/zero of=/dev/sdb bs=1M status=progress
-    desc:
-      cs: Vynulovat celý disk (POZOR!)
-      en: Zero out entire disk (CAREFUL!)
+    - cmd: "sudo dd if=/dev/sdb of=disk.img bs=4M status=progress"
+      desc:
+        en: "Create disk image (CAREFUL with source!)"
+        cs: "Vytvořit image disku (POZOR na zdroj!)"
+        sk: "Vytvoriť image disku (POZOR na zdroj!)"
+        de: "Festplatten-Image erstellen (VORSICHT bei Quelle!)"
+        es: "Crear imagen de disco (¡CUIDADO con la fuente!)"
+        fr: "Créer une image disque (ATTENTION à la source !)"
+        it: "Creare immagine disco (ATTENZIONE alla sorgente!)"
+        pl: "Utwórz obraz dysku (UWAGA na źródło!)"
+        tr: "Disk imajı oluştur (kaynağa DİKKAT!)"
+        pt: "Criar imagem de disco (CUIDADO com a origem!)"
+        nl: "Schijf-image maken (LET OP bron!)"
+        hu: "Lemez image létrehozása (FIGYELEM a forrásra!)"
+    - cmd: "sudo dd if=disk.img of=/dev/sdb bs=4M status=progress"
+      desc:
+        en: "Write image to disk (OVERWRITES!)"
+        cs: "Zapsat image na disk (PŘEPÍŠE!)"
+        sk: "Zapísať image na disk (PREPÍŠE!)"
+        de: "Image auf Festplatte schreiben (ÜBERSCHREIBT!)"
+        es: "Escribir imagen al disco (¡SOBRESCRIBE!)"
+        fr: "Écrire l'image sur disque (ÉCRASE !)"
+        it: "Scrivere immagine su disco (SOVRASCRIVE!)"
+        pl: "Zapisz obraz na dysk (NADPISUJE!)"
+        tr: "İmajı diske yaz (ÜZERİNE YAZAR!)"
+        pt: "Gravar imagem no disco (SOBRESCREVE!)"
+        nl: "Image naar schijf schrijven (OVERSCHRIJFT!)"
+        hu: "Image írása lemezre (FELÜLÍR!)"
+    - cmd: "sudo dd if=ubuntu.iso of=/dev/sdb bs=4M status=progress && sync"
+      desc:
+        en: "Create bootable USB"
+        cs: "Vytvořit bootovací USB"
+        sk: "Vytvoriť bootovacie USB"
+        de: "Bootfähigen USB erstellen"
+        es: "Crear USB de arranque"
+        fr: "Créer USB bootable"
+        it: "Creare USB avviabile"
+        pl: "Utwórz bootowalne USB"
+        tr: "Önyüklenebilir USB oluştur"
+        pt: "Criar USB inicializável"
+        nl: "Bootable USB maken"
+        hu: "Indítható USB létrehozása"
+    - cmd: "sudo dd if=/dev/zero of=/dev/sdb bs=1M status=progress"
+      desc:
+        en: "Zero out entire disk (CAREFUL!)"
+        cs: "Vynulovat celý disk (POZOR!)"
+        sk: "Vynulovať celý disk (POZOR!)"
+        de: "Gesamte Festplatte nullen (VORSICHT!)"
+        es: "Llenar disco con ceros (¡CUIDADO!)"
+        fr: "Remplir le disque de zéros (ATTENTION !)"
+        it: "Azzerare intero disco (ATTENZIONE!)"
+        pl: "Wyzeruj cały dysk (UWAGA!)"
+        tr: "Tüm diski sıfırla (DİKKAT!)"
+        pt: "Zerar disco inteiro (CUIDADO!)"
+        nl: "Hele schijf nullen (LET OP!)"
+        hu: "Egész lemez nullázása (FIGYELEM!)"

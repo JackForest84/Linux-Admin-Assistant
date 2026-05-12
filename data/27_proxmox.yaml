@@ -1,158 +1,437 @@
 - id: pct-lxc
   title:
-    cs: Proxmox - LXC kontejnery (pct)
-    en: Proxmox - LXC containers (pct)
+    en: "Proxmox - LXC containers (pct)"
+    cs: "Proxmox - LXC kontejnery (pct)"
+    sk: "Proxmox - LXC kontajnery (pct)"
+    de: "Proxmox - LXC-Container (pct)"
+    es: "Proxmox - contenedores LXC (pct)"
+    fr: "Proxmox - conteneurs LXC (pct)"
+    it: "Proxmox - container LXC (pct)"
+    pl: "Proxmox - kontenery LXC (pct)"
+    tr: "Proxmox - LXC konteynerler (pct)"
+    pt: "Proxmox - contêineres LXC (pct)"
+    nl: "Proxmox - LXC-containers (pct)"
+    hu: "Proxmox - LXC konténerek (pct)"
   tags:
-    cs:
-    - proxmox
-    - pct
-    - lxc
-    - kontejner
-    en:
-    - proxmox
-    - pct
-    - lxc
-    - container
+    en: [proxmox, pct, lxc, container]
+    cs: [proxmox, pct, lxc, kontejner]
+    sk: [proxmox, pct, lxc, kontajner]
+    de: [proxmox, pct, lxc, container]
+    es: [proxmox, pct, lxc, contenedor]
+    fr: [proxmox, pct, lxc, conteneur]
+    it: [proxmox, pct, lxc, container]
+    pl: [proxmox, pct, lxc, kontener]
+    tr: [proxmox, pct, lxc, konteyner]
+    pt: [proxmox, pct, lxc, contêiner]
+    nl: [proxmox, pct, lxc, container]
+    hu: [proxmox, pct, lxc, konténer]
   commands:
-  - cmd: pct list
-    desc:
-      cs: Seznam všech LXC kontejnerů
-      en: List all LXC containers
-  - cmd: pct start 100
-    desc:
-      cs: Spustit CT s ID 100
-      en: Start CT with ID 100
-  - cmd: pct stop 100
-    desc:
-      cs: Zastavit CT
-      en: Stop CT
-  - cmd: pct enter 100
-    desc:
-      cs: Vstoupit do shellu kontejneru (jako root)
-      en: Enter container shell (as root)
-  - cmd: pct exec 100 -- uptime
-    desc:
-      cs: Spustit příkaz uvnitř CT
-      en: Run command inside CT
-  - cmd: pct destroy 100
-    desc:
-      cs: Smazat CT (musí být zastaven)
-      en: Destroy CT (must be stopped)
-  - cmd: pct config 100
-    desc:
-      cs: Konfigurace CT
-      en: CT configuration
-  - cmd: pct snapshot 100 pred-zalohou
-    desc:
-      cs: Vytvořit snapshot
-      en: Create snapshot
-  - cmd: pct rollback 100 pred-zalohou
-    desc:
-      cs: Obnovit ze snapshotu
-      en: Rollback to snapshot
+    - cmd: "pct list"
+      desc:
+        en: "List all LXC containers"
+        cs: "Seznam všech LXC kontejnerů"
+        sk: "Zoznam všetkých LXC kontajnerov"
+        de: "Alle LXC-Container auflisten"
+        es: "Listar todos los contenedores LXC"
+        fr: "Lister tous les conteneurs LXC"
+        it: "Elencare tutti i container LXC"
+        pl: "Lista wszystkich kontenerów LXC"
+        tr: "Tüm LXC konteynerleri listele"
+        pt: "Listar todos os contêineres LXC"
+        nl: "Alle LXC-containers tonen"
+        hu: "Minden LXC konténer listája"
+    - cmd: "pct start 100"
+      desc:
+        en: "Start CT with ID 100"
+        cs: "Spustit CT s ID 100"
+        sk: "Spustiť CT s ID 100"
+        de: "CT mit ID 100 starten"
+        es: "Iniciar CT con ID 100"
+        fr: "Démarrer CT avec ID 100"
+        it: "Avviare CT con ID 100"
+        pl: "Uruchom CT o ID 100"
+        tr: "ID 100 olan CT'yi başlat"
+        pt: "Iniciar CT com ID 100"
+        nl: "CT met ID 100 starten"
+        hu: "100-as ID-jű CT indítása"
+    - cmd: "pct stop 100"
+      desc:
+        en: "Stop CT"
+        cs: "Zastavit CT"
+        sk: "Zastaviť CT"
+        de: "CT stoppen"
+        es: "Detener CT"
+        fr: "Arrêter CT"
+        it: "Arrestare CT"
+        pl: "Zatrzymaj CT"
+        tr: "CT'yi durdur"
+        pt: "Parar CT"
+        nl: "CT stoppen"
+        hu: "CT leállítása"
+    - cmd: "pct enter 100"
+      desc:
+        en: "Enter container shell (as root)"
+        cs: "Vstoupit do shellu kontejneru (jako root)"
+        sk: "Vstúpiť do shellu kontajnera (ako root)"
+        de: "Container-Shell betreten (als root)"
+        es: "Entrar al shell del contenedor (como root)"
+        fr: "Entrer dans le shell du conteneur (root)"
+        it: "Entrare nello shell del container (come root)"
+        pl: "Wejdź do powłoki kontenera (jako root)"
+        tr: "Konteyner kabuğuna gir (root olarak)"
+        pt: "Entrar no shell do contêiner (como root)"
+        nl: "Containershell openen (als root)"
+        hu: "Belépés a konténer shell-be (rootként)"
+    - cmd: "pct exec 100 -- uptime"
+      desc:
+        en: "Run command inside CT"
+        cs: "Spustit příkaz uvnitř CT"
+        sk: "Spustiť príkaz vo vnútri CT"
+        de: "Befehl in CT ausführen"
+        es: "Ejecutar comando dentro del CT"
+        fr: "Exécuter une commande dans le CT"
+        it: "Eseguire comando nel CT"
+        pl: "Uruchom polecenie w CT"
+        tr: "CT içinde komut çalıştır"
+        pt: "Executar comando dentro do CT"
+        nl: "Commando uitvoeren in CT"
+        hu: "Parancs futtatása CT-n belül"
+    - cmd: "pct destroy 100"
+      desc:
+        en: "Destroy CT (must be stopped)"
+        cs: "Smazat CT (musí být zastaven)"
+        sk: "Zmazať CT (musí byť zastavený)"
+        de: "CT zerstören (muss gestoppt sein)"
+        es: "Destruir CT (debe estar detenido)"
+        fr: "Détruire CT (doit être arrêté)"
+        it: "Distruggere CT (deve essere fermo)"
+        pl: "Zniszcz CT (musi być zatrzymany)"
+        tr: "CT'yi yok et (durmuş olmalı)"
+        pt: "Destruir CT (deve estar parado)"
+        nl: "CT vernietigen (moet gestopt zijn)"
+        hu: "CT megsemmisítése (leállítva kell legyen)"
+    - cmd: "pct config 100"
+      desc:
+        en: "CT configuration"
+        cs: "Konfigurace CT"
+        sk: "Konfigurácia CT"
+        de: "CT-Konfiguration"
+        es: "Configuración del CT"
+        fr: "Configuration du CT"
+        it: "Configurazione CT"
+        pl: "Konfiguracja CT"
+        tr: "CT yapılandırması"
+        pt: "Configuração do CT"
+        nl: "CT-configuratie"
+        hu: "CT konfiguráció"
+    - cmd: "pct snapshot 100 before-backup"
+      desc:
+        en: "Create snapshot"
+        cs: "Vytvořit snapshot"
+        sk: "Vytvoriť snapshot"
+        de: "Snapshot erstellen"
+        es: "Crear snapshot"
+        fr: "Créer un snapshot"
+        it: "Creare snapshot"
+        pl: "Utwórz snapshot"
+        tr: "Snapshot oluştur"
+        pt: "Criar snapshot"
+        nl: "Snapshot maken"
+        hu: "Snapshot készítése"
+    - cmd: "pct rollback 100 before-backup"
+      desc:
+        en: "Rollback to snapshot"
+        cs: "Obnovit ze snapshotu"
+        sk: "Obnoviť zo snapshotu"
+        de: "Auf Snapshot zurücksetzen"
+        es: "Volver al snapshot"
+        fr: "Revenir au snapshot"
+        it: "Tornare allo snapshot"
+        pl: "Przywróć snapshot"
+        tr: "Snapshot'a geri al"
+        pt: "Reverter para snapshot"
+        nl: "Terug naar snapshot"
+        hu: "Visszaállítás snapshotra"
+
 - id: qm-vm
   title:
-    cs: Proxmox - virtuální stroje (qm)
-    en: Proxmox - virtual machines (qm)
+    en: "Proxmox - virtual machines (qm)"
+    cs: "Proxmox - virtuální stroje (qm)"
+    sk: "Proxmox - virtuálne stroje (qm)"
+    de: "Proxmox - virtuelle Maschinen (qm)"
+    es: "Proxmox - máquinas virtuales (qm)"
+    fr: "Proxmox - machines virtuelles (qm)"
+    it: "Proxmox - macchine virtuali (qm)"
+    pl: "Proxmox - maszyny wirtualne (qm)"
+    tr: "Proxmox - sanal makineler (qm)"
+    pt: "Proxmox - máquinas virtuais (qm)"
+    nl: "Proxmox - virtuele machines (qm)"
+    hu: "Proxmox - virtuális gépek (qm)"
   tags:
-    cs:
-    - proxmox
-    - qm
-    - vm
-    - virtuální
-    en:
-    - proxmox
-    - qm
-    - vm
-    - virtual
+    en: [proxmox, qm, vm, virtual]
+    cs: [proxmox, qm, vm, virtuální]
+    sk: [proxmox, qm, vm, virtuálny]
+    de: [proxmox, qm, vm, virtuell]
+    es: [proxmox, qm, vm, virtual]
+    fr: [proxmox, qm, vm, virtuel]
+    it: [proxmox, qm, vm, virtuale]
+    pl: [proxmox, qm, vm, wirtualny]
+    tr: [proxmox, qm, vm, sanal]
+    pt: [proxmox, qm, vm, virtual]
+    nl: [proxmox, qm, vm, virtueel]
+    hu: [proxmox, qm, vm, virtuális]
   commands:
-  - cmd: qm list
-    desc:
-      cs: Seznam VM
-      en: List VMs
-  - cmd: qm start 200
-    desc:
-      cs: Spustit VM
-      en: Start VM
-  - cmd: qm shutdown 200
-    desc:
-      cs: Slušně vypnout
-      en: Shutdown gracefully
-  - cmd: qm stop 200
-    desc:
-      cs: Tvrdé zastavení
-      en: Force stop
-  - cmd: qm migrate 200 node2 --online
-    desc:
-      cs: Migrace VM za běhu
-      en: Live migrate VM
-  - cmd: qm config 200
-    desc:
-      cs: Konfigurace VM
-      en: VM configuration
+    - cmd: "qm list"
+      desc:
+        en: "List VMs"
+        cs: "Seznam VM"
+        sk: "Zoznam VM"
+        de: "VMs auflisten"
+        es: "Listar VMs"
+        fr: "Lister les VMs"
+        it: "Elencare VM"
+        pl: "Lista VM"
+        tr: "VM'leri listele"
+        pt: "Listar VMs"
+        nl: "VM's tonen"
+        hu: "VM-ek listája"
+    - cmd: "qm start 200"
+      desc:
+        en: "Start VM"
+        cs: "Spustit VM"
+        sk: "Spustiť VM"
+        de: "VM starten"
+        es: "Iniciar VM"
+        fr: "Démarrer VM"
+        it: "Avviare VM"
+        pl: "Uruchom VM"
+        tr: "VM'yi başlat"
+        pt: "Iniciar VM"
+        nl: "VM starten"
+        hu: "VM indítása"
+    - cmd: "qm shutdown 200"
+      desc:
+        en: "Shutdown gracefully"
+        cs: "Slušně vypnout"
+        sk: "Slušne vypnúť"
+        de: "Sauber herunterfahren"
+        es: "Apagar elegantemente"
+        fr: "Éteindre proprement"
+        it: "Spegnere correttamente"
+        pl: "Wyłącz łagodnie"
+        tr: "Düzgün kapat"
+        pt: "Desligar graciosamente"
+        nl: "Net afsluiten"
+        hu: "Elegáns leállítás"
+    - cmd: "qm stop 200"
+      desc:
+        en: "Force stop"
+        cs: "Tvrdé zastavení"
+        sk: "Tvrdé zastavenie"
+        de: "Erzwingen"
+        es: "Detener forzado"
+        fr: "Arrêt forcé"
+        it: "Arresto forzato"
+        pl: "Wymuszone zatrzymanie"
+        tr: "Zorla durdur"
+        pt: "Parar à força"
+        nl: "Geforceerd stoppen"
+        hu: "Erőltetett leállítás"
+    - cmd: "qm migrate 200 node2 --online"
+      desc:
+        en: "Live migrate VM"
+        cs: "Migrace VM za běhu"
+        sk: "Migrácia VM za behu"
+        de: "VM live migrieren"
+        es: "Migración en vivo de VM"
+        fr: "Migration à chaud de VM"
+        it: "Migrazione live VM"
+        pl: "Migracja VM na żywo"
+        tr: "VM canlı taşıma"
+        pt: "Migração ao vivo de VM"
+        nl: "Live VM-migratie"
+        hu: "VM élő migráció"
+    - cmd: "qm config 200"
+      desc:
+        en: "VM configuration"
+        cs: "Konfigurace VM"
+        sk: "Konfigurácia VM"
+        de: "VM-Konfiguration"
+        es: "Configuración de VM"
+        fr: "Configuration de la VM"
+        it: "Configurazione VM"
+        pl: "Konfiguracja VM"
+        tr: "VM yapılandırması"
+        pt: "Configuração de VM"
+        nl: "VM-configuratie"
+        hu: "VM konfiguráció"
+
 - id: pve-cluster
   title:
-    cs: Proxmox - cluster a uzly
-    en: Proxmox - cluster and nodes
+    en: "Proxmox - cluster and nodes"
+    cs: "Proxmox - cluster a uzly"
+    sk: "Proxmox - cluster a uzly"
+    de: "Proxmox - Cluster und Knoten"
+    es: "Proxmox - clúster y nodos"
+    fr: "Proxmox - cluster et nœuds"
+    it: "Proxmox - cluster e nodi"
+    pl: "Proxmox - klaster i węzły"
+    tr: "Proxmox - küme ve düğümler"
+    pt: "Proxmox - cluster e nós"
+    nl: "Proxmox - cluster en nodes"
+    hu: "Proxmox - klaszter és csomópontok"
   tags:
-    cs:
-    - proxmox
-    - cluster
-    - node
-    - uzel
-    - status
-    en:
-    - proxmox
-    - cluster
-    - node
-    - status
+    en: [proxmox, cluster, node, status]
+    cs: [proxmox, cluster, node, uzel, status]
+    sk: [proxmox, cluster, node, uzol, status]
+    de: [proxmox, cluster, node, knoten, status]
+    es: [proxmox, cluster, node, nodo, estado]
+    fr: [proxmox, cluster, node, nœud, statut]
+    it: [proxmox, cluster, node, nodo, stato]
+    pl: [proxmox, cluster, node, węzeł, status]
+    tr: [proxmox, cluster, node, düğüm, durum]
+    pt: [proxmox, cluster, node, nó, estado]
+    nl: [proxmox, cluster, node, knooppunt, status]
+    hu: [proxmox, cluster, node, csomópont, állapot]
   commands:
-  - cmd: pvecm status
-    desc:
-      cs: Stav clusteru
-      en: Cluster status
-  - cmd: pvecm nodes
-    desc:
-      cs: Seznam uzlů
-      en: List nodes
-  - cmd: pveversion
-    desc:
-      cs: Verze Proxmox VE
-      en: Proxmox VE version
-  - cmd: pvesh get /nodes
-    desc:
-      cs: Stav uzlů přes API
-      en: Node status via API
-  - cmd: ha-manager status
-    desc:
-      cs: Stav High Availability
-      en: HA status
+    - cmd: "pvecm status"
+      desc:
+        en: "Cluster status"
+        cs: "Stav clusteru"
+        sk: "Stav clusteru"
+        de: "Cluster-Status"
+        es: "Estado del clúster"
+        fr: "État du cluster"
+        it: "Stato cluster"
+        pl: "Stan klastra"
+        tr: "Küme durumu"
+        pt: "Estado do cluster"
+        nl: "Clusterstatus"
+        hu: "Klaszter állapota"
+    - cmd: "pvecm nodes"
+      desc:
+        en: "List nodes"
+        cs: "Seznam uzlů"
+        sk: "Zoznam uzlov"
+        de: "Knoten auflisten"
+        es: "Listar nodos"
+        fr: "Lister les nœuds"
+        it: "Elencare nodi"
+        pl: "Lista węzłów"
+        tr: "Düğümleri listele"
+        pt: "Listar nós"
+        nl: "Nodes tonen"
+        hu: "Csomópontok listája"
+    - cmd: "pveversion"
+      desc:
+        en: "Proxmox VE version"
+        cs: "Verze Proxmox VE"
+        sk: "Verzia Proxmox VE"
+        de: "Proxmox-VE-Version"
+        es: "Versión de Proxmox VE"
+        fr: "Version Proxmox VE"
+        it: "Versione Proxmox VE"
+        pl: "Wersja Proxmox VE"
+        tr: "Proxmox VE sürümü"
+        pt: "Versão do Proxmox VE"
+        nl: "Proxmox VE-versie"
+        hu: "Proxmox VE verzió"
+    - cmd: "pvesh get /nodes"
+      desc:
+        en: "Node status via API"
+        cs: "Stav uzlů přes API"
+        sk: "Stav uzlov cez API"
+        de: "Knotenstatus über API"
+        es: "Estado de nodos vía API"
+        fr: "État des nœuds via API"
+        it: "Stato nodi via API"
+        pl: "Stan węzłów przez API"
+        tr: "API üzerinden düğüm durumu"
+        pt: "Estado de nós via API"
+        nl: "Nodestatus via API"
+        hu: "Csomópont állapot API-n keresztül"
+    - cmd: "ha-manager status"
+      desc:
+        en: "HA status"
+        cs: "Stav High Availability"
+        sk: "Stav High Availability"
+        de: "HA-Status"
+        es: "Estado HA"
+        fr: "État HA"
+        it: "Stato HA"
+        pl: "Stan HA"
+        tr: "HA durumu"
+        pt: "Estado HA"
+        nl: "HA-status"
+        hu: "HA állapot"
+
 - id: pve-backup
   title:
-    cs: Proxmox - zálohy (vzdump)
-    en: Proxmox - backups (vzdump)
+    en: "Proxmox - backups (vzdump)"
+    cs: "Proxmox - zálohy (vzdump)"
+    sk: "Proxmox - zálohy (vzdump)"
+    de: "Proxmox - Backups (vzdump)"
+    es: "Proxmox - backups (vzdump)"
+    fr: "Proxmox - sauvegardes (vzdump)"
+    it: "Proxmox - backup (vzdump)"
+    pl: "Proxmox - backupy (vzdump)"
+    tr: "Proxmox - yedekler (vzdump)"
+    pt: "Proxmox - backups (vzdump)"
+    nl: "Proxmox - back-ups (vzdump)"
+    hu: "Proxmox - mentések (vzdump)"
   tags:
-    cs:
-    - proxmox
-    - záloha
-    - backup
-    - vzdump
-    - restore
-    en:
-    - proxmox
-    - backup
-    - vzdump
-    - restore
+    en: [proxmox, backup, vzdump, restore]
+    cs: [proxmox, záloha, backup, vzdump, restore]
+    sk: [proxmox, záloha, backup, vzdump, restore]
+    de: [proxmox, backup, vzdump, wiederherstellen]
+    es: [proxmox, backup, vzdump, restaurar]
+    fr: [proxmox, sauvegarde, vzdump, restaurer]
+    it: [proxmox, backup, vzdump, ripristinare]
+    pl: [proxmox, backup, vzdump, restore]
+    tr: [proxmox, yedek, vzdump, geri yükle]
+    pt: [proxmox, backup, vzdump, restaurar]
+    nl: [proxmox, back-up, vzdump, herstellen]
+    hu: [proxmox, mentés, vzdump, visszaállítás]
   commands:
-  - cmd: vzdump 100 --storage local --compress zstd
-    desc:
-      cs: Zálohovat CT 100
-      en: Backup CT 100
-  - cmd: vzdump --all --storage local
-    desc:
-      cs: Zálohovat všechny VM/CT
-      en: Backup all VMs/CTs
-  - cmd: pct restore 101 /var/lib/vz/dump/vzdump-lxc-100-*.tar.zst
-    desc:
-      cs: Obnovit CT pod novým ID
-      en: Restore CT under new ID
+    - cmd: "vzdump 100 --storage local --compress zstd"
+      desc:
+        en: "Backup CT 100"
+        cs: "Zálohovat CT 100"
+        sk: "Zálohovať CT 100"
+        de: "CT 100 sichern"
+        es: "Backup de CT 100"
+        fr: "Sauvegarder CT 100"
+        it: "Backup CT 100"
+        pl: "Backup CT 100"
+        tr: "CT 100'ü yedekle"
+        pt: "Backup do CT 100"
+        nl: "CT 100 back-uppen"
+        hu: "100-as CT mentése"
+    - cmd: "vzdump --all --storage local"
+      desc:
+        en: "Backup all VMs/CTs"
+        cs: "Zálohovat všechny VM/CT"
+        sk: "Zálohovať všetky VM/CT"
+        de: "Alle VMs/CTs sichern"
+        es: "Backup de todas las VM/CT"
+        fr: "Sauvegarder toutes les VMs/CTs"
+        it: "Backup di tutte le VM/CT"
+        pl: "Backup wszystkich VM/CT"
+        tr: "Tüm VM/CT'leri yedekle"
+        pt: "Backup de todas as VMs/CTs"
+        nl: "Alle VM's/CT's back-uppen"
+        hu: "Minden VM/CT mentése"
+    - cmd: "pct restore 101 /var/lib/vz/dump/vzdump-lxc-100-*.tar.zst"
+      desc:
+        en: "Restore CT under new ID"
+        cs: "Obnovit CT pod novým ID"
+        sk: "Obnoviť CT pod novým ID"
+        de: "CT unter neuer ID wiederherstellen"
+        es: "Restaurar CT con nuevo ID"
+        fr: "Restaurer CT sous nouveau ID"
+        it: "Ripristinare CT con nuovo ID"
+        pl: "Przywróć CT pod nowym ID"
+        tr: "CT'yi yeni ID ile geri yükle"
+        pt: "Restaurar CT com novo ID"
+        nl: "CT herstellen onder nieuw ID"
+        hu: "CT visszaállítása új ID alatt"
