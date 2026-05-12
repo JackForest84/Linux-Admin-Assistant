@@ -1,173 +1,438 @@
 - id: net-ip
   title:
-    cs: IP adresy a síťová rozhraní
-    en: IP addresses and network interfaces
+    en: "IP addresses and network interfaces"
+    cs: "IP adresy a síťová rozhraní"
+    sk: "IP adresy a sieťové rozhrania"
+    de: "IP-Adressen und Netzwerkschnittstellen"
+    es: "Direcciones IP e interfaces de red"
+    fr: "Adresses IP et interfaces réseau"
+    it: "Indirizzi IP e interfacce di rete"
+    pl: "Adresy IP i interfejsy sieciowe"
+    tr: "IP adresleri ve ağ arayüzleri"
+    pt: "Endereços IP e interfaces de rede"
+    nl: "IP-adressen en netwerkinterfaces"
+    hu: "IP-címek és hálózati interfészek"
   tags:
-    cs:
-    - síť
-    - ip
-    - adresa
-    - rozhraní
-    - ifconfig
-    en:
-    - network
-    - ip
-    - address
-    - interface
-    - ifconfig
+    en: [network, ip, address, interface, ifconfig]
+    cs: [síť, ip, adresa, rozhraní, ifconfig]
+    sk: [sieť, ip, adresa, rozhranie, ifconfig]
+    de: [netzwerk, ip, adresse, schnittstelle, ifconfig]
+    es: [red, ip, dirección, interfaz, ifconfig]
+    fr: [réseau, ip, adresse, interface, ifconfig]
+    it: [rete, ip, indirizzo, interfaccia, ifconfig]
+    pl: [sieć, ip, adres, interfejs, ifconfig]
+    tr: [ağ, ip, adres, arayüz, ifconfig]
+    pt: [rede, ip, endereço, interface, ifconfig]
+    nl: [netwerk, ip, adres, interface, ifconfig]
+    hu: [hálózat, ip, cím, interfész, ifconfig]
   commands:
-  - cmd: ip a
-    desc:
-      cs: Všechna rozhraní a IP adresy
-      en: All interfaces and IP addresses
-  - cmd: ip -br a
-    desc:
-      cs: Stručný přehled (jeden řádek na rozhraní)
-      en: Brief view (one line per interface)
-  - cmd: hostname -I
-    desc:
-      cs: Jen IP adresy tohoto stroje
-      en: Just this machine's IP addresses
-  - cmd: curl -s ifconfig.me
-    desc:
-      cs: Veřejná IP adresa
-      en: Public IP address
+    - cmd: "ip a"
+      desc:
+        en: "All interfaces and IP addresses"
+        cs: "Všechna rozhraní a IP adresy"
+        sk: "Všetky rozhrania a IP adresy"
+        de: "Alle Schnittstellen und IP-Adressen"
+        es: "Todas las interfaces y direcciones IP"
+        fr: "Toutes les interfaces et adresses IP"
+        it: "Tutte le interfacce e gli indirizzi IP"
+        pl: "Wszystkie interfejsy i adresy IP"
+        tr: "Tüm arayüzler ve IP adresleri"
+        pt: "Todas as interfaces e endereços IP"
+        nl: "Alle interfaces en IP-adressen"
+        hu: "Minden interfész és IP-cím"
+    - cmd: "ip -br a"
+      desc:
+        en: "Brief view (one line per interface)"
+        cs: "Stručný přehled (jeden řádek na rozhraní)"
+        sk: "Stručný prehľad (jeden riadok na rozhranie)"
+        de: "Kurzansicht (eine Zeile pro Schnittstelle)"
+        es: "Vista breve (una línea por interfaz)"
+        fr: "Vue brève (une ligne par interface)"
+        it: "Vista breve (una riga per interfaccia)"
+        pl: "Krótki widok (jedna linia na interfejs)"
+        tr: "Kısa görünüm (arayüz başına bir satır)"
+        pt: "Vista breve (uma linha por interface)"
+        nl: "Beknopte weergave (één regel per interface)"
+        hu: "Rövid nézet (interfészenként egy sor)"
+    - cmd: "hostname -I"
+      desc:
+        en: "This machine's IP addresses only"
+        cs: "Jen IP adresy tohoto stroje"
+        sk: "Iba IP adresy tohto stroja"
+        de: "Nur IP-Adressen dieses Rechners"
+        es: "Solo las direcciones IP de esta máquina"
+        fr: "Uniquement les adresses IP de cette machine"
+        it: "Solo gli indirizzi IP di questa macchina"
+        pl: "Tylko adresy IP tej maszyny"
+        tr: "Yalnızca bu makinenin IP adresleri"
+        pt: "Apenas os endereços IP desta máquina"
+        nl: "Alleen IP-adressen van deze machine"
+        hu: "Csak ennek a gépnek az IP-címei"
+    - cmd: "curl -s ifconfig.me"
+      desc:
+        en: "Public IP address"
+        cs: "Veřejná IP adresa"
+        sk: "Verejná IP adresa"
+        de: "Öffentliche IP-Adresse"
+        es: "Dirección IP pública"
+        fr: "Adresse IP publique"
+        it: "Indirizzo IP pubblico"
+        pl: "Publiczny adres IP"
+        tr: "Genel IP adresi"
+        pt: "Endereço IP público"
+        nl: "Openbaar IP-adres"
+        hu: "Nyilvános IP-cím"
+
 - id: net-ports
   title:
-    cs: Otevřené porty a poslouchající služby
-    en: Open ports and listening services
+    en: "Open ports and listening services"
+    cs: "Otevřené porty a poslouchající služby"
+    sk: "Otvorené porty a počúvajúce služby"
+    de: "Offene Ports und lauschende Dienste"
+    es: "Puertos abiertos y servicios en escucha"
+    fr: "Ports ouverts et services en écoute"
+    it: "Porte aperte e servizi in ascolto"
+    pl: "Otwarte porty i nasłuchujące usługi"
+    tr: "Açık portlar ve dinleyen servisler"
+    pt: "Portas abertas e serviços em escuta"
+    nl: "Open poorten en luisterende services"
+    hu: "Nyitott portok és figyelő szolgáltatások"
   tags:
-    cs:
-    - porty
-    - ss
-    - netstat
-    - poslouchá
-    - listening
-    - otevřené
-    en:
-    - ports
-    - ss
-    - netstat
-    - listening
-    - open
+    en: [ports, ss, netstat, listening, open]
+    cs: [porty, ss, netstat, poslouchá, listening, otevřené]
+    sk: [porty, ss, netstat, počúva, listening, otvorené]
+    de: [ports, ss, netstat, lauschen, offen]
+    es: [puertos, ss, netstat, escucha, abierto]
+    fr: [ports, ss, netstat, écoute, ouvert]
+    it: [porte, ss, netstat, ascolto, aperto]
+    pl: [porty, ss, netstat, nasłuchiwanie, otwarte]
+    tr: [portlar, ss, netstat, dinleme, açık]
+    pt: [portas, ss, netstat, escuta, aberto]
+    nl: [poorten, ss, netstat, luisteren, open]
+    hu: [portok, ss, netstat, figyelés, nyitott]
   commands:
-  - cmd: sudo ss -tulnp
-    desc:
-      cs: TCP/UDP porty + jaký proces je drží
-      en: TCP/UDP ports + which process owns them
-  - cmd: sudo ss -tlnp
-    desc:
-      cs: Jen TCP poslouchající
-      en: Only TCP listening
-  - cmd: sudo lsof -i -P -n
-    desc:
-      cs: Všechna síťová spojení a porty
-      en: All network connections and ports
-  - cmd: sudo lsof -i :80
-    desc:
-      cs: Kdo používá port 80
-      en: Who uses port 80
+    - cmd: "sudo ss -tulnp"
+      desc:
+        en: "TCP/UDP ports + which process owns them"
+        cs: "TCP/UDP porty + jaký proces je drží"
+        sk: "TCP/UDP porty + ktorý proces ich drží"
+        de: "TCP/UDP-Ports + welcher Prozess sie hält"
+        es: "Puertos TCP/UDP + qué proceso los usa"
+        fr: "Ports TCP/UDP + quel processus les détient"
+        it: "Porte TCP/UDP + quale processo le possiede"
+        pl: "Porty TCP/UDP + który proces je zajmuje"
+        tr: "TCP/UDP portları + hangi süreç sahibi"
+        pt: "Portas TCP/UDP + qual processo as detém"
+        nl: "TCP/UDP-poorten + welk proces ze bezit"
+        hu: "TCP/UDP portok + melyik folyamat birtokolja"
+    - cmd: "sudo ss -tlnp"
+      desc:
+        en: "Only TCP listening"
+        cs: "Jen TCP poslouchající"
+        sk: "Iba TCP počúvajúce"
+        de: "Nur TCP lauschend"
+        es: "Solo TCP en escucha"
+        fr: "Uniquement TCP en écoute"
+        it: "Solo TCP in ascolto"
+        pl: "Tylko TCP nasłuchujące"
+        tr: "Sadece TCP dinleyen"
+        pt: "Apenas TCP em escuta"
+        nl: "Alleen TCP luisterend"
+        hu: "Csak TCP figyelő"
+    - cmd: "sudo lsof -i -P -n"
+      desc:
+        en: "All network connections and ports"
+        cs: "Všechna síťová spojení a porty"
+        sk: "Všetky sieťové spojenia a porty"
+        de: "Alle Netzwerkverbindungen und Ports"
+        es: "Todas las conexiones de red y puertos"
+        fr: "Toutes les connexions réseau et ports"
+        it: "Tutte le connessioni di rete e porte"
+        pl: "Wszystkie połączenia sieciowe i porty"
+        tr: "Tüm ağ bağlantıları ve portlar"
+        pt: "Todas as conexões de rede e portas"
+        nl: "Alle netwerkverbindingen en poorten"
+        hu: "Minden hálózati kapcsolat és port"
+    - cmd: "sudo lsof -i :80"
+      desc:
+        en: "Who uses port 80"
+        cs: "Kdo používá port 80"
+        sk: "Kto používa port 80"
+        de: "Wer Port 80 verwendet"
+        es: "Quién usa el puerto 80"
+        fr: "Qui utilise le port 80"
+        it: "Chi usa la porta 80"
+        pl: "Kto używa portu 80"
+        tr: "Port 80'i kim kullanıyor"
+        pt: "Quem usa a porta 80"
+        nl: "Wie gebruikt poort 80"
+        hu: "Ki használja a 80-as portot"
+
 - id: net-test
   title:
-    cs: Test konektivity
-    en: Test connectivity
+    en: "Test connectivity"
+    cs: "Test konektivity"
+    sk: "Test pripojenia"
+    de: "Konnektivität testen"
+    es: "Probar conectividad"
+    fr: "Tester la connectivité"
+    it: "Testare la connettività"
+    pl: "Test łączności"
+    tr: "Bağlantıyı test et"
+    pt: "Testar conectividade"
+    nl: "Verbinding testen"
+    hu: "Kapcsolat tesztelése"
   tags:
-    cs:
-    - ping
-    - traceroute
-    - dns
-    - test
-    - spojení
-    - internet
-    en:
-    - ping
-    - traceroute
-    - dns
-    - test
-    - connection
+    en: [ping, traceroute, dns, test, connection]
+    cs: [ping, traceroute, dns, test, spojení, internet]
+    sk: [ping, traceroute, dns, test, spojenie, internet]
+    de: [ping, traceroute, dns, test, verbindung]
+    es: [ping, traceroute, dns, prueba, conexión]
+    fr: [ping, traceroute, dns, test, connexion]
+    it: [ping, traceroute, dns, test, connessione]
+    pl: [ping, traceroute, dns, test, połączenie]
+    tr: [ping, traceroute, dns, test, bağlantı]
+    pt: [ping, traceroute, dns, teste, conexão]
+    nl: [ping, traceroute, dns, test, verbinding]
+    hu: [ping, traceroute, dns, teszt, kapcsolat]
   commands:
-  - cmd: ping -c 4 8.8.8.8
-    desc:
-      cs: 4× ping na Google DNS
-      en: 4× ping to Google DNS
-  - cmd: traceroute google.com
-    desc:
-      cs: Cesta paketu (každý hop)
-      en: Packet route (each hop)
-  - cmd: dig google.com
-    desc:
-      cs: DNS dotaz s detaily
-      en: DNS query with details
-  - cmd: nslookup google.com
-    desc:
-      cs: Jednodušší DNS překlad
-      en: Simpler DNS lookup
-  - cmd: curl -I https://example.com
-    desc:
-      cs: Jen HTTP hlavičky odpovědi
-      en: Only HTTP response headers
+    - cmd: "ping -c 4 8.8.8.8"
+      desc:
+        en: "4× ping to Google DNS"
+        cs: "4× ping na Google DNS"
+        sk: "4× ping na Google DNS"
+        de: "4× Ping zu Google DNS"
+        es: "4× ping a Google DNS"
+        fr: "4× ping vers Google DNS"
+        it: "4× ping a Google DNS"
+        pl: "4× ping do Google DNS"
+        tr: "Google DNS'ye 4× ping"
+        pt: "4× ping para Google DNS"
+        nl: "4× ping naar Google DNS"
+        hu: "4× ping a Google DNS-re"
+    - cmd: "traceroute google.com"
+      desc:
+        en: "Packet route (each hop)"
+        cs: "Cesta paketu (každý hop)"
+        sk: "Cesta paketu (každý hop)"
+        de: "Paketroute (jeder Hop)"
+        es: "Ruta del paquete (cada salto)"
+        fr: "Route du paquet (chaque saut)"
+        it: "Percorso del pacchetto (ogni hop)"
+        pl: "Trasa pakietu (każdy hop)"
+        tr: "Paket rotası (her sıçrama)"
+        pt: "Rota do pacote (cada salto)"
+        nl: "Pakketroute (elke hop)"
+        hu: "Csomag útvonala (minden ugrás)"
+    - cmd: "dig google.com"
+      desc:
+        en: "DNS query with details"
+        cs: "DNS dotaz s detaily"
+        sk: "DNS dotaz s detailmi"
+        de: "DNS-Abfrage mit Details"
+        es: "Consulta DNS con detalles"
+        fr: "Requête DNS détaillée"
+        it: "Query DNS con dettagli"
+        pl: "Zapytanie DNS ze szczegółami"
+        tr: "Ayrıntılı DNS sorgusu"
+        pt: "Consulta DNS com detalhes"
+        nl: "DNS-query met details"
+        hu: "DNS lekérdezés részletekkel"
+    - cmd: "nslookup google.com"
+      desc:
+        en: "Simpler DNS lookup"
+        cs: "Jednodušší DNS překlad"
+        sk: "Jednoduchší DNS preklad"
+        de: "Einfachere DNS-Abfrage"
+        es: "Búsqueda DNS más simple"
+        fr: "Recherche DNS plus simple"
+        it: "Lookup DNS più semplice"
+        pl: "Prostsze zapytanie DNS"
+        tr: "Daha basit DNS araması"
+        pt: "Pesquisa DNS mais simples"
+        nl: "Eenvoudigere DNS-lookup"
+        hu: "Egyszerűbb DNS keresés"
+    - cmd: "curl -I https://example.com"
+      desc:
+        en: "Only HTTP response headers"
+        cs: "Jen HTTP hlavičky odpovědi"
+        sk: "Iba HTTP hlavičky odpovede"
+        de: "Nur HTTP-Antwortheader"
+        es: "Solo cabeceras de respuesta HTTP"
+        fr: "Uniquement les en-têtes de réponse HTTP"
+        it: "Solo header di risposta HTTP"
+        pl: "Tylko nagłówki odpowiedzi HTTP"
+        tr: "Sadece HTTP yanıt başlıkları"
+        pt: "Apenas cabeçalhos de resposta HTTP"
+        nl: "Alleen HTTP-responsheaders"
+        hu: "Csak HTTP válasz fejlécek"
+
 - id: net-download
   title:
-    cs: Stáhnout soubor
-    en: Download file
+    en: "Download file"
+    cs: "Stáhnout soubor"
+    sk: "Stiahnuť súbor"
+    de: "Datei herunterladen"
+    es: "Descargar archivo"
+    fr: "Télécharger un fichier"
+    it: "Scaricare file"
+    pl: "Pobierz plik"
+    tr: "Dosya indir"
+    pt: "Baixar arquivo"
+    nl: "Bestand downloaden"
+    hu: "Fájl letöltése"
   tags:
-    cs:
-    - stáhnout
-    - download
-    - curl
-    - wget
-    en:
-    - download
-    - curl
-    - wget
+    en: [download, curl, wget]
+    cs: [stáhnout, download, curl, wget]
+    sk: [stiahnuť, download, curl, wget]
+    de: [herunterladen, curl, wget]
+    es: [descargar, curl, wget]
+    fr: [télécharger, curl, wget]
+    it: [scaricare, curl, wget]
+    pl: [pobierz, curl, wget]
+    tr: [indir, curl, wget]
+    pt: [baixar, curl, wget]
+    nl: [download, curl, wget]
+    hu: [letöltés, curl, wget]
   commands:
-  - cmd: curl -O https://example.com/file.tar.gz
-    desc:
-      cs: Uložit pod původním názvem
-      en: Save under original name
-  - cmd: curl -L -o out.tar.gz https://example.com/file
-    desc:
-      cs: Následovat redirecty, uložit pod novým jménem
-      en: Follow redirects, save as new name
-  - cmd: wget https://example.com/file.tar.gz
-    desc:
-      cs: Stáhnout s wget (s progress barem)
-      en: Download with wget (with progress)
+    - cmd: "curl -O https://example.com/file.tar.gz"
+      desc:
+        en: "Save under original name"
+        cs: "Uložit pod původním názvem"
+        sk: "Uložiť pod pôvodným názvom"
+        de: "Unter Originalnamen speichern"
+        es: "Guardar con el nombre original"
+        fr: "Enregistrer sous le nom d'origine"
+        it: "Salvare con il nome originale"
+        pl: "Zapisz pod oryginalną nazwą"
+        tr: "Orijinal adıyla kaydet"
+        pt: "Salvar com nome original"
+        nl: "Onder originele naam opslaan"
+        hu: "Mentés eredeti néven"
+    - cmd: "curl -L -o out.tar.gz https://example.com/file"
+      desc:
+        en: "Follow redirects, save as new name"
+        cs: "Následovat redirecty, uložit pod novým jménem"
+        sk: "Nasledovať redirecty, uložiť pod novým menom"
+        de: "Weiterleitungen folgen, unter neuem Namen speichern"
+        es: "Seguir redirecciones, guardar con nuevo nombre"
+        fr: "Suivre les redirections, enregistrer sous un nouveau nom"
+        it: "Seguire i redirect, salvare con un nuovo nome"
+        pl: "Podążaj za przekierowaniami, zapisz pod nową nazwą"
+        tr: "Yönlendirmeleri takip et, yeni adla kaydet"
+        pt: "Seguir redirecionamentos, salvar com novo nome"
+        nl: "Doorverwijzingen volgen, onder nieuwe naam opslaan"
+        hu: "Átirányítások követése, mentés új néven"
+    - cmd: "wget https://example.com/file.tar.gz"
+      desc:
+        en: "Download with wget (with progress)"
+        cs: "Stáhnout s wget (s progress barem)"
+        sk: "Stiahnuť s wget (s progress barom)"
+        de: "Mit wget herunterladen (mit Fortschrittsanzeige)"
+        es: "Descargar con wget (con barra de progreso)"
+        fr: "Télécharger avec wget (avec barre de progression)"
+        it: "Scaricare con wget (con barra di progresso)"
+        pl: "Pobierz przez wget (z paskiem postępu)"
+        tr: "Wget ile indir (ilerleme çubuğuyla)"
+        pt: "Baixar com wget (com barra de progresso)"
+        nl: "Downloaden met wget (met voortgangsbalk)"
+        hu: "Letöltés wget-tel (folyamatjelzővel)"
+
 - id: net-firewall
   title:
-    cs: UFW firewall
-    en: UFW firewall
+    en: "UFW firewall"
+    cs: "UFW firewall"
+    sk: "UFW firewall"
+    de: "UFW-Firewall"
+    es: "Cortafuegos UFW"
+    fr: "Pare-feu UFW"
+    it: "Firewall UFW"
+    pl: "Zapora UFW"
+    tr: "UFW güvenlik duvarı"
+    pt: "Firewall UFW"
+    nl: "UFW firewall"
+    hu: "UFW tűzfal"
   tags:
-    cs:
-    - firewall
-    - ufw
-    - povolit
-    - zakázat
-    - port
-    en:
-    - firewall
-    - ufw
-    - allow
-    - deny
-    - port
+    en: [firewall, ufw, allow, deny, port]
+    cs: [firewall, ufw, povolit, zakázat, port]
+    sk: [firewall, ufw, povoliť, zakázať, port]
+    de: [firewall, ufw, erlauben, verweigern, port]
+    es: [cortafuegos, ufw, permitir, denegar, puerto]
+    fr: [pare-feu, ufw, autoriser, refuser, port]
+    it: [firewall, ufw, consenti, nega, porta]
+    pl: [zapora, ufw, zezwól, odmów, port]
+    tr: [güvenlik duvarı, ufw, izin ver, reddet, port]
+    pt: [firewall, ufw, permitir, negar, porta]
+    nl: [firewall, ufw, toestaan, weigeren, poort]
+    hu: [tűzfal, ufw, engedélyezés, tiltás, port]
   commands:
-  - cmd: sudo ufw status verbose
-    desc:
-      cs: Stav firewallu + pravidla
-      en: Firewall status + rules
-  - cmd: sudo ufw allow 80/tcp
-    desc:
-      cs: Povolit příchozí port 80
-      en: Allow incoming port 80
-  - cmd: sudo ufw allow from 192.168.1.0/24
-    desc:
-      cs: Povolit vše z lokální sítě
-      en: Allow everything from local network
-  - cmd: sudo ufw delete allow 80/tcp
-    desc:
-      cs: Smazat pravidlo
-      en: Delete rule
-  - cmd: sudo ufw enable
-    desc:
-      cs: Zapnout firewall
-      en: Enable firewall
+    - cmd: "sudo ufw status verbose"
+      desc:
+        en: "Firewall status + rules"
+        cs: "Stav firewallu + pravidla"
+        sk: "Stav firewallu + pravidlá"
+        de: "Firewall-Status + Regeln"
+        es: "Estado del firewall + reglas"
+        fr: "État du pare-feu + règles"
+        it: "Stato firewall + regole"
+        pl: "Stan zapory + reguły"
+        tr: "Güvenlik duvarı durumu + kurallar"
+        pt: "Status do firewall + regras"
+        nl: "Firewall-status + regels"
+        hu: "Tűzfal állapot + szabályok"
+    - cmd: "sudo ufw allow 80/tcp"
+      desc:
+        en: "Allow incoming port 80"
+        cs: "Povolit příchozí port 80"
+        sk: "Povoliť prichádzajúci port 80"
+        de: "Eingehenden Port 80 erlauben"
+        es: "Permitir puerto entrante 80"
+        fr: "Autoriser le port entrant 80"
+        it: "Consentire la porta in entrata 80"
+        pl: "Zezwól na przychodzący port 80"
+        tr: "Gelen 80 portuna izin ver"
+        pt: "Permitir porta 80 de entrada"
+        nl: "Inkomende poort 80 toestaan"
+        hu: "80-as bejövő port engedélyezése"
+    - cmd: "sudo ufw allow from 192.168.1.0/24"
+      desc:
+        en: "Allow everything from local network"
+        cs: "Povolit vše z lokální sítě"
+        sk: "Povoliť všetko z lokálnej siete"
+        de: "Alles aus lokalem Netzwerk erlauben"
+        es: "Permitir todo desde la red local"
+        fr: "Autoriser tout depuis le réseau local"
+        it: "Consentire tutto dalla rete locale"
+        pl: "Zezwól na wszystko z sieci lokalnej"
+        tr: "Yerel ağdan her şeye izin ver"
+        pt: "Permitir tudo da rede local"
+        nl: "Alles vanuit lokaal netwerk toestaan"
+        hu: "Minden engedélyezése a helyi hálózatról"
+    - cmd: "sudo ufw delete allow 80/tcp"
+      desc:
+        en: "Delete rule"
+        cs: "Smazat pravidlo"
+        sk: "Zmazať pravidlo"
+        de: "Regel löschen"
+        es: "Eliminar regla"
+        fr: "Supprimer la règle"
+        it: "Eliminare regola"
+        pl: "Usuń regułę"
+        tr: "Kuralı sil"
+        pt: "Excluir regra"
+        nl: "Regel verwijderen"
+        hu: "Szabály törlése"
+    - cmd: "sudo ufw enable"
+      desc:
+        en: "Enable firewall"
+        cs: "Zapnout firewall"
+        sk: "Zapnúť firewall"
+        de: "Firewall aktivieren"
+        es: "Activar cortafuegos"
+        fr: "Activer le pare-feu"
+        it: "Attivare il firewall"
+        pl: "Włącz zaporę"
+        tr: "Güvenlik duvarını etkinleştir"
+        pt: "Ativar firewall"
+        nl: "Firewall inschakelen"
+        hu: "Tűzfal engedélyezése"

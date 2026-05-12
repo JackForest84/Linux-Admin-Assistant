@@ -1,124 +1,311 @@
 - id: pkg-update
   title:
-    cs: Aktualizace balíčků (apt)
-    en: Update packages (apt)
+    en: "Update packages (apt)"
+    cs: "Aktualizace balíčků (apt)"
+    sk: "Aktualizácia balíčkov (apt)"
+    de: "Pakete aktualisieren (apt)"
+    es: "Actualizar paquetes (apt)"
+    fr: "Mettre à jour les paquets (apt)"
+    it: "Aggiornare pacchetti (apt)"
+    pl: "Aktualizacja pakietów (apt)"
+    tr: "Paketleri güncelle (apt)"
+    pt: "Atualizar pacotes (apt)"
+    nl: "Pakketten bijwerken (apt)"
+    hu: "Csomagok frissítése (apt)"
   tags:
-    cs:
-    - apt
-    - aktualizace
-    - update
-    - upgrade
-    - balíčky
-    en:
-    - apt
-    - update
-    - upgrade
-    - packages
+    en: [apt, update, upgrade, packages]
+    cs: [apt, aktualizace, update, upgrade, balíčky]
+    sk: [apt, aktualizácia, update, upgrade, balíčky]
+    de: [apt, aktualisierung, update, upgrade, pakete]
+    es: [apt, actualización, update, upgrade, paquetes]
+    fr: [apt, mise à jour, update, upgrade, paquets]
+    it: [apt, aggiornamento, update, upgrade, pacchetti]
+    pl: [apt, aktualizacja, update, upgrade, pakiety]
+    tr: [apt, güncelleme, update, upgrade, paketler]
+    pt: [apt, atualização, update, upgrade, pacotes]
+    nl: [apt, bijwerken, update, upgrade, pakketten]
+    hu: [apt, frissítés, update, upgrade, csomagok]
   commands:
-  - cmd: sudo apt update
-    desc:
-      cs: Stáhnout seznam dostupných balíčků
-      en: Refresh package index
-  - cmd: sudo apt upgrade -y
-    desc:
-      cs: Nainstalovat dostupné aktualizace
-      en: Install available upgrades
-  - cmd: sudo apt full-upgrade -y
-    desc:
-      cs: Upgrade včetně řešení změn závislostí
-      en: Upgrade including dependency changes
-  - cmd: sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-    desc:
-      cs: 'Plný cyklus: update + upgrade + úklid'
-      en: 'Full cycle: update + upgrade + cleanup'
+    - cmd: "sudo apt update"
+      desc:
+        en: "Refresh package index"
+        cs: "Stáhnout seznam dostupných balíčků"
+        sk: "Stiahnuť zoznam dostupných balíčkov"
+        de: "Paketindex aktualisieren"
+        es: "Actualizar índice de paquetes"
+        fr: "Rafraîchir l'index des paquets"
+        it: "Aggiornare l'indice dei pacchetti"
+        pl: "Odśwież indeks pakietów"
+        tr: "Paket dizinini yenile"
+        pt: "Atualizar índice de pacotes"
+        nl: "Pakketindex verversen"
+        hu: "Csomagindex frissítése"
+    - cmd: "sudo apt upgrade -y"
+      desc:
+        en: "Install available upgrades"
+        cs: "Nainstalovat dostupné aktualizace"
+        sk: "Nainštalovať dostupné aktualizácie"
+        de: "Verfügbare Upgrades installieren"
+        es: "Instalar actualizaciones disponibles"
+        fr: "Installer les mises à jour disponibles"
+        it: "Installare aggiornamenti disponibili"
+        pl: "Zainstaluj dostępne aktualizacje"
+        tr: "Mevcut yükseltmeleri kur"
+        pt: "Instalar atualizações disponíveis"
+        nl: "Beschikbare upgrades installeren"
+        hu: "Elérhető frissítések telepítése"
+    - cmd: "sudo apt full-upgrade -y"
+      desc:
+        en: "Upgrade including dependency changes"
+        cs: "Upgrade včetně řešení změn závislostí"
+        sk: "Upgrade vrátane riešenia zmien závislostí"
+        de: "Upgrade inkl. Abhängigkeitsänderungen"
+        es: "Actualización incl. cambios de dependencias"
+        fr: "Mise à jour avec changements de dépendances"
+        it: "Upgrade con modifiche dipendenze"
+        pl: "Aktualizacja wraz ze zmianami zależności"
+        tr: "Bağımlılık değişiklikleri dahil yükseltme"
+        pt: "Atualização incluindo mudanças de dependências"
+        nl: "Upgrade inclusief afhankelijkheidsveranderingen"
+        hu: "Frissítés a függőségi változásokkal"
+    - cmd: "sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+      desc:
+        en: "Full cycle: update + upgrade + cleanup"
+        cs: "Plný cyklus: update + upgrade + úklid"
+        sk: "Plný cyklus: update + upgrade + upratovanie"
+        de: "Voller Zyklus: update + upgrade + cleanup"
+        es: "Ciclo completo: update + upgrade + limpieza"
+        fr: "Cycle complet : update + upgrade + nettoyage"
+        it: "Ciclo completo: update + upgrade + pulizia"
+        pl: "Pełny cykl: update + upgrade + sprzątanie"
+        tr: "Tam döngü: update + upgrade + temizlik"
+        pt: "Ciclo completo: update + upgrade + limpeza"
+        nl: "Volledige cyclus: update + upgrade + opruimen"
+        hu: "Teljes ciklus: update + upgrade + tisztítás"
+
 - id: pkg-install
   title:
-    cs: Nainstalovat balíček
-    en: Install package
+    en: "Install package"
+    cs: "Nainstalovat balíček"
+    sk: "Nainštalovať balíček"
+    de: "Paket installieren"
+    es: "Instalar paquete"
+    fr: "Installer un paquet"
+    it: "Installare pacchetto"
+    pl: "Zainstaluj pakiet"
+    tr: "Paket yükle"
+    pt: "Instalar pacote"
+    nl: "Pakket installeren"
+    hu: "Csomag telepítése"
   tags:
-    cs:
-    - apt
-    - install
-    - nainstalovat
-    - balíček
-    en:
-    - apt
-    - install
-    - package
+    en: [apt, install, package]
+    cs: [apt, install, nainstalovat, balíček]
+    sk: [apt, install, nainštalovať, balíček]
+    de: [apt, install, paket]
+    es: [apt, install, paquete]
+    fr: [apt, install, paquet]
+    it: [apt, install, pacchetto]
+    pl: [apt, install, pakiet]
+    tr: [apt, install, paket]
+    pt: [apt, install, pacote]
+    nl: [apt, install, pakket]
+    hu: [apt, install, csomag]
   commands:
-  - cmd: sudo apt install -y htop
-    desc:
-      cs: Bez otázek nainstalovat balíček
-      en: Install package without prompts
-  - cmd: sudo apt install --reinstall -y nginx
-    desc:
-      cs: Přeinstalovat stávající balíček
-      en: Reinstall existing package
+    - cmd: "sudo apt install -y htop"
+      desc:
+        en: "Install package without prompts"
+        cs: "Bez otázek nainstalovat balíček"
+        sk: "Bez otázok nainštalovať balíček"
+        de: "Paket ohne Rückfragen installieren"
+        es: "Instalar paquete sin preguntas"
+        fr: "Installer le paquet sans demander"
+        it: "Installare pacchetto senza domande"
+        pl: "Zainstaluj pakiet bez pytań"
+        tr: "Soru sormadan paket yükle"
+        pt: "Instalar pacote sem perguntas"
+        nl: "Pakket installeren zonder vragen"
+        hu: "Csomag telepítése kérdések nélkül"
+    - cmd: "sudo apt install --reinstall -y nginx"
+      desc:
+        en: "Reinstall existing package"
+        cs: "Přeinstalovat stávající balíček"
+        sk: "Preinštalovať existujúci balíček"
+        de: "Vorhandenes Paket neu installieren"
+        es: "Reinstalar paquete existente"
+        fr: "Réinstaller un paquet existant"
+        it: "Reinstallare pacchetto esistente"
+        pl: "Zainstaluj ponownie istniejący pakiet"
+        tr: "Mevcut paketi yeniden yükle"
+        pt: "Reinstalar pacote existente"
+        nl: "Bestaand pakket herinstalleren"
+        hu: "Meglévő csomag újratelepítése"
+
 - id: pkg-remove
   title:
-    cs: Odebrat balíček
-    en: Remove package
+    en: "Remove package"
+    cs: "Odebrat balíček"
+    sk: "Odstrániť balíček"
+    de: "Paket entfernen"
+    es: "Eliminar paquete"
+    fr: "Supprimer un paquet"
+    it: "Rimuovere pacchetto"
+    pl: "Usuń pakiet"
+    tr: "Paketi kaldır"
+    pt: "Remover pacote"
+    nl: "Pakket verwijderen"
+    hu: "Csomag eltávolítása"
   tags:
-    cs:
-    - apt
-    - remove
-    - purge
-    - odinstalovat
-    - smazat
-    en:
-    - apt
-    - remove
-    - purge
-    - uninstall
+    en: [apt, remove, purge, uninstall]
+    cs: [apt, remove, purge, odinstalovat, smazat]
+    sk: [apt, remove, purge, odinštalovať, zmazať]
+    de: [apt, remove, purge, deinstallieren]
+    es: [apt, remove, purge, desinstalar]
+    fr: [apt, remove, purge, désinstaller]
+    it: [apt, remove, purge, disinstallare]
+    pl: [apt, remove, purge, odinstaluj]
+    tr: [apt, remove, purge, kaldır]
+    pt: [apt, remove, purge, desinstalar]
+    nl: [apt, remove, purge, verwijderen]
+    hu: [apt, remove, purge, eltávolítás]
   commands:
-  - cmd: sudo apt remove -y htop
-    desc:
-      cs: Odebrat balíček (ponechat konfiguraci)
-      en: Remove package (keep config)
-  - cmd: sudo apt purge -y htop
-    desc:
-      cs: Odebrat včetně konfigurace
-      en: Remove including config
-  - cmd: sudo apt autoremove -y
-    desc:
-      cs: Smazat nepotřebné závislosti
-      en: Remove unneeded dependencies
+    - cmd: "sudo apt remove -y htop"
+      desc:
+        en: "Remove package (keep config)"
+        cs: "Odebrat balíček (ponechat konfiguraci)"
+        sk: "Odstrániť balíček (ponechať konfiguráciu)"
+        de: "Paket entfernen (Konfiguration behalten)"
+        es: "Eliminar paquete (mantener configuración)"
+        fr: "Supprimer le paquet (garder la config)"
+        it: "Rimuovere pacchetto (mantenere config)"
+        pl: "Usuń pakiet (zachowaj konfigurację)"
+        tr: "Paketi kaldır (yapılandırmayı koru)"
+        pt: "Remover pacote (manter configuração)"
+        nl: "Pakket verwijderen (config behouden)"
+        hu: "Csomag eltávolítása (konfig megtartása)"
+    - cmd: "sudo apt purge -y htop"
+      desc:
+        en: "Remove including config"
+        cs: "Odebrat včetně konfigurace"
+        sk: "Odstrániť vrátane konfigurácie"
+        de: "Inkl. Konfiguration entfernen"
+        es: "Eliminar incluyendo configuración"
+        fr: "Supprimer avec la configuration"
+        it: "Rimuovere inclusa la config"
+        pl: "Usuń wraz z konfiguracją"
+        tr: "Yapılandırmayla birlikte kaldır"
+        pt: "Remover incluindo configuração"
+        nl: "Verwijderen inclusief config"
+        hu: "Eltávolítás konfiggal együtt"
+    - cmd: "sudo apt autoremove -y"
+      desc:
+        en: "Remove unneeded dependencies"
+        cs: "Smazat nepotřebné závislosti"
+        sk: "Zmazať nepotrebné závislosti"
+        de: "Unnötige Abhängigkeiten entfernen"
+        es: "Eliminar dependencias innecesarias"
+        fr: "Supprimer les dépendances inutiles"
+        it: "Rimuovere dipendenze inutili"
+        pl: "Usuń niepotrzebne zależności"
+        tr: "Gereksiz bağımlılıkları kaldır"
+        pt: "Remover dependências desnecessárias"
+        nl: "Onnodige afhankelijkheden verwijderen"
+        hu: "Felesleges függőségek eltávolítása"
+
 - id: pkg-search
   title:
-    cs: Najít balíček
-    en: Find package
+    en: "Find package"
+    cs: "Najít balíček"
+    sk: "Nájsť balíček"
+    de: "Paket finden"
+    es: "Encontrar paquete"
+    fr: "Trouver un paquet"
+    it: "Trovare pacchetto"
+    pl: "Znajdź pakiet"
+    tr: "Paket bul"
+    pt: "Encontrar pacote"
+    nl: "Pakket zoeken"
+    hu: "Csomag keresése"
   tags:
-    cs:
-    - apt
-    - search
-    - najít
-    - hledat
-    - balíček
-    - info
-    en:
-    - apt
-    - search
-    - find
-    - package
-    - info
+    en: [apt, search, find, package, info]
+    cs: [apt, search, najít, hledat, balíček, info]
+    sk: [apt, search, nájsť, hľadať, balíček, info]
+    de: [apt, search, finden, paket, info]
+    es: [apt, search, buscar, paquete, info]
+    fr: [apt, search, trouver, paquet, info]
+    it: [apt, search, trovare, pacchetto, info]
+    pl: [apt, search, znajdź, pakiet, info]
+    tr: [apt, search, bul, paket, info]
+    pt: [apt, search, encontrar, pacote, info]
+    nl: [apt, search, zoeken, pakket, info]
+    hu: [apt, search, keresés, csomag, info]
   commands:
-  - cmd: apt search nginx
-    desc:
-      cs: Vyhledat balíček podle názvu/popisu
-      en: Search package by name/description
-  - cmd: apt show nginx
-    desc:
-      cs: Detail balíčku (verze, popis, závislosti)
-      en: Package details (version, desc, deps)
-  - cmd: dpkg -l | grep nginx
-    desc:
-      cs: Je tento balíček nainstalovaný?
-      en: Is this package installed?
-  - cmd: dpkg -L nginx
-    desc:
-      cs: Vypsat všechny soubory balíčku
-      en: List all files of a package
-  - cmd: dpkg -S /etc/nginx/nginx.conf
-    desc:
-      cs: Z jakého balíčku pochází tento soubor
-      en: Which package owns this file
+    - cmd: "apt search nginx"
+      desc:
+        en: "Search package by name/description"
+        cs: "Vyhledat balíček podle názvu/popisu"
+        sk: "Vyhľadať balíček podľa názvu/popisu"
+        de: "Paket nach Name/Beschreibung suchen"
+        es: "Buscar paquete por nombre/descripción"
+        fr: "Rechercher un paquet par nom/description"
+        it: "Cercare pacchetto per nome/descrizione"
+        pl: "Wyszukaj pakiet po nazwie/opisie"
+        tr: "Paketi ad/açıklamaya göre ara"
+        pt: "Pesquisar pacote por nome/descrição"
+        nl: "Pakket zoeken op naam/beschrijving"
+        hu: "Csomag keresése név/leírás alapján"
+    - cmd: "apt show nginx"
+      desc:
+        en: "Package details (version, desc, deps)"
+        cs: "Detail balíčku (verze, popis, závislosti)"
+        sk: "Detail balíčka (verzia, popis, závislosti)"
+        de: "Paketdetails (Version, Beschreibung, Abhängigkeiten)"
+        es: "Detalles del paquete (versión, desc, deps)"
+        fr: "Détails du paquet (version, desc, deps)"
+        it: "Dettagli pacchetto (versione, desc, deps)"
+        pl: "Szczegóły pakietu (wersja, opis, zależności)"
+        tr: "Paket detayları (sürüm, açıklama, bağımlılıklar)"
+        pt: "Detalhes do pacote (versão, desc, deps)"
+        nl: "Pakketdetails (versie, beschr, deps)"
+        hu: "Csomag részletei (verzió, leírás, függőségek)"
+    - cmd: "dpkg -l | grep nginx"
+      desc:
+        en: "Is this package installed?"
+        cs: "Je tento balíček nainstalovaný?"
+        sk: "Je tento balíček nainštalovaný?"
+        de: "Ist dieses Paket installiert?"
+        es: "¿Está este paquete instalado?"
+        fr: "Ce paquet est-il installé ?"
+        it: "Questo pacchetto è installato?"
+        pl: "Czy ten pakiet jest zainstalowany?"
+        tr: "Bu paket yüklü mü?"
+        pt: "Este pacote está instalado?"
+        nl: "Is dit pakket geïnstalleerd?"
+        hu: "Telepítve van ez a csomag?"
+    - cmd: "dpkg -L nginx"
+      desc:
+        en: "List all files of a package"
+        cs: "Vypsat všechny soubory balíčku"
+        sk: "Vypísať všetky súbory balíčka"
+        de: "Alle Dateien eines Pakets auflisten"
+        es: "Listar todos los archivos de un paquete"
+        fr: "Lister tous les fichiers d'un paquet"
+        it: "Elenco di tutti i file di un pacchetto"
+        pl: "Lista wszystkich plików pakietu"
+        tr: "Bir paketin tüm dosyalarını listele"
+        pt: "Listar todos os arquivos de um pacote"
+        nl: "Alle bestanden van een pakket tonen"
+        hu: "Csomag összes fájljának listája"
+    - cmd: "dpkg -S /etc/nginx/nginx.conf"
+      desc:
+        en: "Which package owns this file"
+        cs: "Z jakého balíčku pochází tento soubor"
+        sk: "Z ktorého balíčka pochádza tento súbor"
+        de: "Welches Paket besitzt diese Datei"
+        es: "A qué paquete pertenece este archivo"
+        fr: "Quel paquet possède ce fichier"
+        it: "Quale pacchetto possiede questo file"
+        pl: "Do którego pakietu należy ten plik"
+        tr: "Bu dosya hangi pakete ait"
+        pt: "Qual pacote possui este arquivo"
+        nl: "Welk pakket bezit dit bestand"
+        hu: "Melyik csomag birtokolja ezt a fájlt"

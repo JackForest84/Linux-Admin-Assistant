@@ -1,138 +1,353 @@
 - id: systemd-status
   title:
-    cs: Stav služby
-    en: Service status
+    en: "Service status"
+    cs: "Stav služby"
+    sk: "Stav služby"
+    de: "Dienststatus"
+    es: "Estado del servicio"
+    fr: "État du service"
+    it: "Stato del servizio"
+    pl: "Stan usługi"
+    tr: "Servis durumu"
+    pt: "Estado do serviço"
+    nl: "Servicestatus"
+    hu: "Szolgáltatás állapota"
   tags:
-    cs:
-    - systemd
-    - služba
-    - service
-    - status
-    - stav
-    en:
-    - systemd
-    - service
-    - status
+    en: [systemd, service, status]
+    cs: [systemd, služba, service, status, stav]
+    sk: [systemd, služba, service, status, stav]
+    de: [systemd, dienst, service, status]
+    es: [systemd, servicio, status, estado]
+    fr: [systemd, service, statut, état]
+    it: [systemd, servizio, stato]
+    pl: [systemd, usługa, status, stan]
+    tr: [systemd, servis, durum]
+    pt: [systemd, serviço, estado]
+    nl: [systemd, service, status]
+    hu: [systemd, szolgáltatás, állapot]
   commands:
-  - cmd: systemctl status nginx
-    desc:
-      cs: Stav konkrétní služby
-      en: Status of specific service
-  - cmd: systemctl is-active nginx
-    desc:
-      cs: Jen 'active' / 'inactive'
-      en: Just 'active' / 'inactive'
-  - cmd: systemctl is-enabled nginx
-    desc:
-      cs: Zapnuto po startu?
-      en: Enabled on boot?
+    - cmd: "systemctl status nginx"
+      desc:
+        en: "Status of specific service"
+        cs: "Stav konkrétní služby"
+        sk: "Stav konkrétnej služby"
+        de: "Status eines bestimmten Dienstes"
+        es: "Estado de un servicio concreto"
+        fr: "État d'un service spécifique"
+        it: "Stato di un servizio specifico"
+        pl: "Stan konkretnej usługi"
+        tr: "Belirli bir servisin durumu"
+        pt: "Estado de um serviço específico"
+        nl: "Status van een specifieke service"
+        hu: "Adott szolgáltatás állapota"
+    - cmd: "systemctl is-active nginx"
+      desc:
+        en: "Just 'active' / 'inactive'"
+        cs: "Jen 'active' / 'inactive'"
+        sk: "Iba 'active' / 'inactive'"
+        de: "Nur 'active' / 'inactive'"
+        es: "Solo 'active' / 'inactive'"
+        fr: "Juste 'active' / 'inactive'"
+        it: "Solo 'active' / 'inactive'"
+        pl: "Tylko 'active' / 'inactive'"
+        tr: "Sadece 'active' / 'inactive'"
+        pt: "Apenas 'active' / 'inactive'"
+        nl: "Alleen 'active' / 'inactive'"
+        hu: "Csak 'active' / 'inactive'"
+    - cmd: "systemctl is-enabled nginx"
+      desc:
+        en: "Enabled on boot?"
+        cs: "Zapnuto po startu?"
+        sk: "Zapnuté po štarte?"
+        de: "Beim Booten aktiviert?"
+        es: "¿Activado al inicio?"
+        fr: "Activé au démarrage ?"
+        it: "Abilitato all'avvio?"
+        pl: "Włączone przy starcie?"
+        tr: "Önyüklemede etkin mi?"
+        pt: "Ativado na inicialização?"
+        nl: "Ingeschakeld bij opstarten?"
+        hu: "Engedélyezve indításkor?"
+
 - id: systemd-control
   title:
-    cs: Ovládat službu (start/stop/restart)
-    en: Control service (start/stop/restart)
+    en: "Control service (start/stop/restart)"
+    cs: "Ovládat službu (start/stop/restart)"
+    sk: "Ovládať službu (start/stop/restart)"
+    de: "Dienst steuern (start/stop/restart)"
+    es: "Controlar servicio (start/stop/restart)"
+    fr: "Contrôler le service (start/stop/restart)"
+    it: "Controllare servizio (start/stop/restart)"
+    pl: "Sterowanie usługą (start/stop/restart)"
+    tr: "Servisi kontrol et (start/stop/restart)"
+    pt: "Controlar serviço (start/stop/restart)"
+    nl: "Service besturen (start/stop/restart)"
+    hu: "Szolgáltatás vezérlése (start/stop/restart)"
   tags:
-    cs:
-    - systemd
-    - restart
-    - start
-    - stop
-    - reload
-    - služba
-    en:
-    - systemd
-    - restart
-    - start
-    - stop
-    - reload
-    - service
+    en: [systemd, restart, start, stop, reload, service]
+    cs: [systemd, restart, start, stop, reload, služba]
+    sk: [systemd, restart, start, stop, reload, služba]
+    de: [systemd, neustart, start, stopp, reload, dienst]
+    es: [systemd, reiniciar, iniciar, detener, reload, servicio]
+    fr: [systemd, redémarrage, démarrer, arrêter, reload, service]
+    it: [systemd, riavvio, start, stop, reload, servizio]
+    pl: [systemd, restart, start, stop, reload, usługa]
+    tr: [systemd, yeniden başlat, start, stop, reload, servis]
+    pt: [systemd, reiniciar, iniciar, parar, reload, serviço]
+    nl: [systemd, herstart, start, stop, reload, service]
+    hu: [systemd, újraindítás, start, stop, reload, szolgáltatás]
   commands:
-  - cmd: sudo systemctl start nginx
-    desc:
-      cs: Spustit
-      en: Start
-  - cmd: sudo systemctl stop nginx
-    desc:
-      cs: Zastavit
-      en: Stop
-  - cmd: sudo systemctl restart nginx
-    desc:
-      cs: Restartovat
-      en: Restart
-  - cmd: sudo systemctl reload nginx
-    desc:
-      cs: Znovu načíst konfiguraci (bez restartu)
-      en: Reload config (without restart)
-  - cmd: sudo systemctl enable --now nginx
-    desc:
-      cs: Spustit + zapnout po startu systému
-      en: Start + enable on boot
-  - cmd: sudo systemctl disable --now nginx
-    desc:
-      cs: Zastavit + vypnout po startu
-      en: Stop + disable on boot
+    - cmd: "sudo systemctl start nginx"
+      desc:
+        en: "Start"
+        cs: "Spustit"
+        sk: "Spustiť"
+        de: "Starten"
+        es: "Iniciar"
+        fr: "Démarrer"
+        it: "Avviare"
+        pl: "Uruchom"
+        tr: "Başlat"
+        pt: "Iniciar"
+        nl: "Starten"
+        hu: "Indítás"
+    - cmd: "sudo systemctl stop nginx"
+      desc:
+        en: "Stop"
+        cs: "Zastavit"
+        sk: "Zastaviť"
+        de: "Stoppen"
+        es: "Detener"
+        fr: "Arrêter"
+        it: "Arrestare"
+        pl: "Zatrzymaj"
+        tr: "Durdur"
+        pt: "Parar"
+        nl: "Stoppen"
+        hu: "Leállítás"
+    - cmd: "sudo systemctl restart nginx"
+      desc:
+        en: "Restart"
+        cs: "Restartovat"
+        sk: "Reštartovať"
+        de: "Neu starten"
+        es: "Reiniciar"
+        fr: "Redémarrer"
+        it: "Riavviare"
+        pl: "Uruchom ponownie"
+        tr: "Yeniden başlat"
+        pt: "Reiniciar"
+        nl: "Herstarten"
+        hu: "Újraindítás"
+    - cmd: "sudo systemctl reload nginx"
+      desc:
+        en: "Reload config (without restart)"
+        cs: "Znovu načíst konfiguraci (bez restartu)"
+        sk: "Znova načítať konfiguráciu (bez reštartu)"
+        de: "Konfiguration neu laden (ohne Neustart)"
+        es: "Recargar configuración (sin reiniciar)"
+        fr: "Recharger la configuration (sans redémarrage)"
+        it: "Ricaricare config (senza riavvio)"
+        pl: "Przeładuj konfigurację (bez restartu)"
+        tr: "Yapılandırmayı yeniden yükle (yeniden başlatmadan)"
+        pt: "Recarregar configuração (sem reiniciar)"
+        nl: "Configuratie herladen (zonder herstart)"
+        hu: "Konfiguráció újratöltése (újraindítás nélkül)"
+    - cmd: "sudo systemctl enable --now nginx"
+      desc:
+        en: "Start + enable on boot"
+        cs: "Spustit + zapnout po startu systému"
+        sk: "Spustiť + zapnúť po štarte systému"
+        de: "Starten + beim Booten aktivieren"
+        es: "Iniciar + activar al arranque"
+        fr: "Démarrer + activer au démarrage"
+        it: "Avviare + abilitare all'avvio"
+        pl: "Uruchom + włącz przy starcie"
+        tr: "Başlat + önyüklemede etkinleştir"
+        pt: "Iniciar + ativar na inicialização"
+        nl: "Starten + inschakelen bij opstarten"
+        hu: "Indítás + engedélyezés indításkor"
+    - cmd: "sudo systemctl disable --now nginx"
+      desc:
+        en: "Stop + disable on boot"
+        cs: "Zastavit + vypnout po startu"
+        sk: "Zastaviť + vypnúť po štarte"
+        de: "Stoppen + beim Booten deaktivieren"
+        es: "Detener + desactivar al arranque"
+        fr: "Arrêter + désactiver au démarrage"
+        it: "Arrestare + disabilitare all'avvio"
+        pl: "Zatrzymaj + wyłącz przy starcie"
+        tr: "Durdur + önyüklemede devre dışı bırak"
+        pt: "Parar + desativar na inicialização"
+        nl: "Stoppen + uitschakelen bij opstarten"
+        hu: "Leállítás + tiltás indításkor"
+
 - id: systemd-list
   title:
-    cs: Seznam služeb
-    en: List services
+    en: "List services"
+    cs: "Seznam služeb"
+    sk: "Zoznam služieb"
+    de: "Dienste auflisten"
+    es: "Listar servicios"
+    fr: "Lister les services"
+    it: "Elencare servizi"
+    pl: "Lista usług"
+    tr: "Servisleri listele"
+    pt: "Listar serviços"
+    nl: "Services tonen"
+    hu: "Szolgáltatások listája"
   tags:
-    cs:
-    - systemd
-    - seznam
-    - služby
-    - units
-    - list
-    en:
-    - systemd
-    - list
-    - services
-    - units
+    en: [systemd, list, services, units]
+    cs: [systemd, seznam, služby, units, list]
+    sk: [systemd, zoznam, služby, units, list]
+    de: [systemd, liste, dienste, units]
+    es: [systemd, lista, servicios, units]
+    fr: [systemd, liste, services, units]
+    it: [systemd, elenco, servizi, units]
+    pl: [systemd, lista, usługi, units]
+    tr: [systemd, liste, servisler, units]
+    pt: [systemd, lista, serviços, units]
+    nl: [systemd, lijst, services, units]
+    hu: [systemd, lista, szolgáltatások, units]
   commands:
-  - cmd: systemctl list-units --type=service
-    desc:
-      cs: Všechny běžící služby
-      en: All running services
-  - cmd: systemctl list-units --type=service --state=failed
-    desc:
-      cs: Selhané služby
-      en: Failed services
-  - cmd: systemctl list-unit-files --state=enabled
-    desc:
-      cs: Co se spouští po startu
-      en: What starts on boot
+    - cmd: "systemctl list-units --type=service"
+      desc:
+        en: "All running services"
+        cs: "Všechny běžící služby"
+        sk: "Všetky bežiace služby"
+        de: "Alle laufenden Dienste"
+        es: "Todos los servicios en ejecución"
+        fr: "Tous les services en cours"
+        it: "Tutti i servizi in esecuzione"
+        pl: "Wszystkie działające usługi"
+        tr: "Çalışan tüm servisler"
+        pt: "Todos os serviços em execução"
+        nl: "Alle draaiende services"
+        hu: "Minden futó szolgáltatás"
+    - cmd: "systemctl list-units --type=service --state=failed"
+      desc:
+        en: "Failed services"
+        cs: "Selhané služby"
+        sk: "Zlyhané služby"
+        de: "Fehlgeschlagene Dienste"
+        es: "Servicios con fallo"
+        fr: "Services en échec"
+        it: "Servizi falliti"
+        pl: "Usługi, które zawiodły"
+        tr: "Başarısız servisler"
+        pt: "Serviços que falharam"
+        nl: "Mislukte services"
+        hu: "Sikertelen szolgáltatások"
+    - cmd: "systemctl list-unit-files --state=enabled"
+      desc:
+        en: "What starts on boot"
+        cs: "Co se spouští po startu"
+        sk: "Čo sa spúšťa po štarte"
+        de: "Was beim Booten startet"
+        es: "Qué se inicia al arrancar"
+        fr: "Ce qui démarre au boot"
+        it: "Cosa parte all'avvio"
+        pl: "Co uruchamia się przy starcie"
+        tr: "Önyüklemede başlayanlar"
+        pt: "O que inicia na inicialização"
+        nl: "Wat start bij opstarten"
+        hu: "Mi indul induláskor"
+
 - id: systemd-logs
   title:
-    cs: Logy ze systemd (journalctl)
-    en: Systemd logs (journalctl)
+    en: "Systemd logs (journalctl)"
+    cs: "Logy ze systemd (journalctl)"
+    sk: "Logy zo systemd (journalctl)"
+    de: "Systemd-Logs (journalctl)"
+    es: "Logs de systemd (journalctl)"
+    fr: "Logs systemd (journalctl)"
+    it: "Log systemd (journalctl)"
+    pl: "Logi systemd (journalctl)"
+    tr: "Systemd logları (journalctl)"
+    pt: "Logs do systemd (journalctl)"
+    nl: "Systemd logs (journalctl)"
+    hu: "Systemd naplók (journalctl)"
   tags:
-    cs:
-    - logy
-    - journalctl
-    - journal
-    - log
-    - chyby
-    en:
-    - logs
-    - journalctl
-    - journal
-    - errors
+    en: [logs, journalctl, journal, errors]
+    cs: [logy, journalctl, journal, log, chyby]
+    sk: [logy, journalctl, journal, log, chyby]
+    de: [logs, journalctl, journal, fehler]
+    es: [logs, journalctl, journal, errores]
+    fr: [logs, journalctl, journal, erreurs]
+    it: [log, journalctl, journal, errori]
+    pl: [logi, journalctl, journal, błędy]
+    tr: [günlükler, journalctl, journal, hatalar]
+    pt: [logs, journalctl, journal, erros]
+    nl: [logs, journalctl, journal, fouten]
+    hu: [naplók, journalctl, journal, hibák]
   commands:
-  - cmd: journalctl -u nginx -n 100
-    desc:
-      cs: Posledních 100 řádků logu nginxu
-      en: Last 100 lines of nginx log
-  - cmd: journalctl -u nginx -f
-    desc:
-      cs: Sledovat živě (jako tail -f)
-      en: Follow live (like tail -f)
-  - cmd: journalctl --since '1 hour ago'
-    desc:
-      cs: Vše za poslední hodinu
-      en: Everything from last hour
-  - cmd: journalctl -p err -b
-    desc:
-      cs: Jen chyby od posledního bootu
-      en: Only errors since last boot
-  - cmd: journalctl --vacuum-time=7d
-    desc:
-      cs: Smazat logy starší než 7 dní
-      en: Delete logs older than 7 days
+    - cmd: "journalctl -u nginx -n 100"
+      desc:
+        en: "Last 100 lines of nginx log"
+        cs: "Posledních 100 řádků logu nginxu"
+        sk: "Posledných 100 riadkov logu nginxu"
+        de: "Letzte 100 Zeilen des nginx-Logs"
+        es: "Últimas 100 líneas del log de nginx"
+        fr: "Dernières 100 lignes du log nginx"
+        it: "Ultime 100 righe del log nginx"
+        pl: "Ostatnie 100 linii logu nginx"
+        tr: "Nginx günlüğünün son 100 satırı"
+        pt: "Últimas 100 linhas do log do nginx"
+        nl: "Laatste 100 regels van nginx-log"
+        hu: "Az nginx napló utolsó 100 sora"
+    - cmd: "journalctl -u nginx -f"
+      desc:
+        en: "Follow live (like tail -f)"
+        cs: "Sledovat živě (jako tail -f)"
+        sk: "Sledovať živo (ako tail -f)"
+        de: "Live verfolgen (wie tail -f)"
+        es: "Seguir en vivo (como tail -f)"
+        fr: "Suivre en direct (comme tail -f)"
+        it: "Seguire live (come tail -f)"
+        pl: "Śledź na żywo (jak tail -f)"
+        tr: "Canlı takip (tail -f gibi)"
+        pt: "Acompanhar ao vivo (como tail -f)"
+        nl: "Live volgen (zoals tail -f)"
+        hu: "Élő követés (mint a tail -f)"
+    - cmd: "journalctl --since '1 hour ago'"
+      desc:
+        en: "Everything from last hour"
+        cs: "Vše za poslední hodinu"
+        sk: "Všetko za poslednú hodinu"
+        de: "Alles aus der letzten Stunde"
+        es: "Todo de la última hora"
+        fr: "Tout depuis la dernière heure"
+        it: "Tutto dall'ultima ora"
+        pl: "Wszystko z ostatniej godziny"
+        tr: "Son bir saatten her şey"
+        pt: "Tudo da última hora"
+        nl: "Alles van het laatste uur"
+        hu: "Minden az utolsó órából"
+    - cmd: "journalctl -p err -b"
+      desc:
+        en: "Only errors since last boot"
+        cs: "Jen chyby od posledního bootu"
+        sk: "Iba chyby od posledného bootu"
+        de: "Nur Fehler seit dem letzten Booten"
+        es: "Solo errores desde el último arranque"
+        fr: "Seules les erreurs depuis le dernier boot"
+        it: "Solo errori dall'ultimo avvio"
+        pl: "Tylko błędy od ostatniego startu"
+        tr: "Son önyüklemeden bu yana sadece hatalar"
+        pt: "Apenas erros desde o último boot"
+        nl: "Alleen fouten sinds laatste boot"
+        hu: "Csak hibák a legutóbbi indítás óta"
+    - cmd: "journalctl --vacuum-time=7d"
+      desc:
+        en: "Delete logs older than 7 days"
+        cs: "Smazat logy starší než 7 dní"
+        sk: "Zmazať logy staršie ako 7 dní"
+        de: "Logs älter als 7 Tage löschen"
+        es: "Eliminar logs de más de 7 días"
+        fr: "Supprimer les logs de plus de 7 jours"
+        it: "Eliminare log più vecchi di 7 giorni"
+        pl: "Usuń logi starsze niż 7 dni"
+        tr: "7 günden eski günlükleri sil"
+        pt: "Excluir logs com mais de 7 dias"
+        nl: "Logs ouder dan 7 dagen verwijderen"
+        hu: "7 napnál régebbi naplók törlése"

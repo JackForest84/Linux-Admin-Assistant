@@ -1,131 +1,325 @@
 - id: ssh-connect
   title:
-    cs: SSH připojení
-    en: SSH connect
+    en: "SSH connect"
+    cs: "SSH připojení"
+    sk: "SSH pripojenie"
+    de: "SSH-Verbindung"
+    es: "Conectar por SSH"
+    fr: "Connexion SSH"
+    it: "Connessione SSH"
+    pl: "Połączenie SSH"
+    tr: "SSH bağlantısı"
+    pt: "Conexão SSH"
+    nl: "SSH-verbinding"
+    hu: "SSH csatlakozás"
   tags:
-    cs:
-    - ssh
-    - připojení
-    - vzdálený
-    - server
-    en:
-    - ssh
-    - connect
-    - remote
-    - server
+    en: [ssh, connect, remote, server]
+    cs: [ssh, připojení, vzdálený, server]
+    sk: [ssh, pripojenie, vzdialený, server]
+    de: [ssh, verbinden, remote, server]
+    es: [ssh, conectar, remoto, servidor]
+    fr: [ssh, connecter, distant, serveur]
+    it: [ssh, connetti, remoto, server]
+    pl: [ssh, połącz, zdalny, serwer]
+    tr: [ssh, bağlan, uzak, sunucu]
+    pt: [ssh, conectar, remoto, servidor]
+    nl: [ssh, verbinden, extern, server]
+    hu: [ssh, csatlakozás, távoli, szerver]
   commands:
-  - cmd: ssh user@192.168.1.10
-    desc:
-      cs: Připojit se k serveru
-      en: Connect to server
-  - cmd: ssh -p 2222 user@host
-    desc:
-      cs: Vlastní port
-      en: Custom port
-  - cmd: ssh -i ~/.ssh/key user@host
-    desc:
-      cs: Použít konkrétní klíč
-      en: Use specific key
-  - cmd: ssh user@host 'uptime && df -h'
-    desc:
-      cs: Spustit příkaz na serveru a vrátit se
-      en: Run command remotely and return
+    - cmd: "ssh user@192.168.1.10"
+      desc:
+        en: "Connect to server"
+        cs: "Připojit se k serveru"
+        sk: "Pripojiť sa k serveru"
+        de: "Mit Server verbinden"
+        es: "Conectar al servidor"
+        fr: "Se connecter au serveur"
+        it: "Connettersi al server"
+        pl: "Połącz z serwerem"
+        tr: "Sunucuya bağlan"
+        pt: "Conectar ao servidor"
+        nl: "Verbinden met server"
+        hu: "Csatlakozás a szerverhez"
+    - cmd: "ssh -p 2222 user@host"
+      desc:
+        en: "Custom port"
+        cs: "Vlastní port"
+        sk: "Vlastný port"
+        de: "Benutzerdefinierter Port"
+        es: "Puerto personalizado"
+        fr: "Port personnalisé"
+        it: "Porta personalizzata"
+        pl: "Niestandardowy port"
+        tr: "Özel port"
+        pt: "Porta personalizada"
+        nl: "Aangepaste poort"
+        hu: "Egyéni port"
+    - cmd: "ssh -i ~/.ssh/key user@host"
+      desc:
+        en: "Use specific key"
+        cs: "Použít konkrétní klíč"
+        sk: "Použiť konkrétny kľúč"
+        de: "Bestimmten Schlüssel verwenden"
+        es: "Usar una clave específica"
+        fr: "Utiliser une clé spécifique"
+        it: "Usare chiave specifica"
+        pl: "Użyj konkretnego klucza"
+        tr: "Belirli anahtarı kullan"
+        pt: "Usar chave específica"
+        nl: "Specifieke sleutel gebruiken"
+        hu: "Adott kulcs használata"
+    - cmd: "ssh user@host 'uptime && df -h'"
+      desc:
+        en: "Run command remotely and return"
+        cs: "Spustit příkaz na serveru a vrátit se"
+        sk: "Spustiť príkaz na serveri a vrátiť sa"
+        de: "Befehl entfernt ausführen und zurückkehren"
+        es: "Ejecutar comando remoto y volver"
+        fr: "Exécuter une commande à distance et revenir"
+        it: "Eseguire comando da remoto e tornare"
+        pl: "Uruchom polecenie zdalnie i wróć"
+        tr: "Komutu uzaktan çalıştır ve dön"
+        pt: "Executar comando remotamente e voltar"
+        nl: "Commando op afstand uitvoeren en terugkeren"
+        hu: "Parancs távoli futtatása és visszatérés"
+
 - id: ssh-keys
   title:
-    cs: SSH klíče
-    en: SSH keys
+    en: "SSH keys"
+    cs: "SSH klíče"
+    sk: "SSH kľúče"
+    de: "SSH-Schlüssel"
+    es: "Claves SSH"
+    fr: "Clés SSH"
+    it: "Chiavi SSH"
+    pl: "Klucze SSH"
+    tr: "SSH anahtarları"
+    pt: "Chaves SSH"
+    nl: "SSH-sleutels"
+    hu: "SSH kulcsok"
   tags:
-    cs:
-    - ssh
-    - klíč
-    - klic
-    - key
-    - ssh-keygen
-    - ssh-copy-id
-    en:
-    - ssh
-    - key
-    - ssh-keygen
-    - ssh-copy-id
+    en: [ssh, key, ssh-keygen, ssh-copy-id]
+    cs: [ssh, klíč, klic, key, ssh-keygen, ssh-copy-id]
+    sk: [ssh, kľúč, key, ssh-keygen, ssh-copy-id]
+    de: [ssh, schlüssel, key, ssh-keygen, ssh-copy-id]
+    es: [ssh, clave, key, ssh-keygen, ssh-copy-id]
+    fr: [ssh, clé, key, ssh-keygen, ssh-copy-id]
+    it: [ssh, chiave, key, ssh-keygen, ssh-copy-id]
+    pl: [ssh, klucz, key, ssh-keygen, ssh-copy-id]
+    tr: [ssh, anahtar, key, ssh-keygen, ssh-copy-id]
+    pt: [ssh, chave, key, ssh-keygen, ssh-copy-id]
+    nl: [ssh, sleutel, key, ssh-keygen, ssh-copy-id]
+    hu: [ssh, kulcs, key, ssh-keygen, ssh-copy-id]
   commands:
-  - cmd: ssh-keygen -t ed25519 -C 'jmeno@stroj'
-    desc:
-      cs: Vygenerovat nový moderní klíč
-      en: Generate new modern key
-  - cmd: ssh-copy-id user@host
-    desc:
-      cs: Nahrát veřejný klíč na server
-      en: Upload public key to server
-  - cmd: cat ~/.ssh/id_ed25519.pub
-    desc:
-      cs: Zobrazit veřejný klíč (pro zkopírování)
-      en: Show public key (for copying)
-  - cmd: ssh-add ~/.ssh/id_ed25519
-    desc:
-      cs: Přidat klíč do ssh-agenta
-      en: Add key to ssh-agent
+    - cmd: "ssh-keygen -t ed25519 -C 'name@machine'"
+      desc:
+        en: "Generate new modern key"
+        cs: "Vygenerovat nový moderní klíč"
+        sk: "Vygenerovať nový moderný kľúč"
+        de: "Neuen modernen Schlüssel erzeugen"
+        es: "Generar nueva clave moderna"
+        fr: "Générer une nouvelle clé moderne"
+        it: "Generare nuova chiave moderna"
+        pl: "Wygeneruj nowy nowoczesny klucz"
+        tr: "Yeni modern anahtar oluştur"
+        pt: "Gerar nova chave moderna"
+        nl: "Nieuwe moderne sleutel genereren"
+        hu: "Új modern kulcs létrehozása"
+    - cmd: "ssh-copy-id user@host"
+      desc:
+        en: "Upload public key to server"
+        cs: "Nahrát veřejný klíč na server"
+        sk: "Nahrať verejný kľúč na server"
+        de: "Öffentlichen Schlüssel auf Server hochladen"
+        es: "Subir clave pública al servidor"
+        fr: "Envoyer la clé publique au serveur"
+        it: "Caricare chiave pubblica sul server"
+        pl: "Wgraj klucz publiczny na serwer"
+        tr: "Genel anahtarı sunucuya yükle"
+        pt: "Enviar chave pública para o servidor"
+        nl: "Publieke sleutel naar server uploaden"
+        hu: "Nyilvános kulcs feltöltése a szerverre"
+    - cmd: "cat ~/.ssh/id_ed25519.pub"
+      desc:
+        en: "Show public key (for copying)"
+        cs: "Zobrazit veřejný klíč (pro zkopírování)"
+        sk: "Zobraziť verejný kľúč (na kopírovanie)"
+        de: "Öffentlichen Schlüssel anzeigen"
+        es: "Mostrar clave pública (para copiar)"
+        fr: "Afficher la clé publique (à copier)"
+        it: "Mostrare chiave pubblica (per copia)"
+        pl: "Pokaż klucz publiczny (do skopiowania)"
+        tr: "Genel anahtarı göster (kopyalama için)"
+        pt: "Mostrar chave pública (para copiar)"
+        nl: "Publieke sleutel tonen (om te kopiëren)"
+        hu: "Nyilvános kulcs megjelenítése (másoláshoz)"
+    - cmd: "ssh-add ~/.ssh/id_ed25519"
+      desc:
+        en: "Add key to ssh-agent"
+        cs: "Přidat klíč do ssh-agenta"
+        sk: "Pridať kľúč do ssh-agenta"
+        de: "Schlüssel zum ssh-agent hinzufügen"
+        es: "Añadir clave al ssh-agent"
+        fr: "Ajouter la clé au ssh-agent"
+        it: "Aggiungere chiave a ssh-agent"
+        pl: "Dodaj klucz do ssh-agent"
+        tr: "Anahtarı ssh-agent'a ekle"
+        pt: "Adicionar chave ao ssh-agent"
+        nl: "Sleutel toevoegen aan ssh-agent"
+        hu: "Kulcs hozzáadása az ssh-agenthez"
+
 - id: ssh-tunnel
   title:
-    cs: SSH tunel (port forwarding)
-    en: SSH tunnel (port forwarding)
+    en: "SSH tunnel (port forwarding)"
+    cs: "SSH tunel (port forwarding)"
+    sk: "SSH tunel (port forwarding)"
+    de: "SSH-Tunnel (Port-Weiterleitung)"
+    es: "Túnel SSH (port forwarding)"
+    fr: "Tunnel SSH (redirection de port)"
+    it: "Tunnel SSH (port forwarding)"
+    pl: "Tunel SSH (przekierowanie portów)"
+    tr: "SSH tüneli (port yönlendirme)"
+    pt: "Túnel SSH (encaminhamento de porta)"
+    nl: "SSH-tunnel (poortdoorsturing)"
+    hu: "SSH alagút (portátirányítás)"
   tags:
-    cs:
-    - ssh
-    - tunel
-    - tunnel
-    - port
-    - forwarding
-    - proxy
-    en:
-    - ssh
-    - tunnel
-    - port
-    - forwarding
-    - proxy
+    en: [ssh, tunnel, port, forwarding, proxy]
+    cs: [ssh, tunel, tunnel, port, forwarding, proxy]
+    sk: [ssh, tunel, port, forwarding, proxy]
+    de: [ssh, tunnel, port, weiterleitung, proxy]
+    es: [ssh, túnel, puerto, forwarding, proxy]
+    fr: [ssh, tunnel, port, redirection, proxy]
+    it: [ssh, tunnel, porta, forwarding, proxy]
+    pl: [ssh, tunel, port, przekierowanie, proxy]
+    tr: [ssh, tünel, port, yönlendirme, proxy]
+    pt: [ssh, túnel, porta, encaminhamento, proxy]
+    nl: [ssh, tunnel, poort, forwarding, proxy]
+    hu: [ssh, alagút, port, átirányítás, proxy]
   commands:
-  - cmd: ssh -L 8080:localhost:80 user@host
-    desc:
-      cs: Lokální 8080 → port 80 na vzdáleném serveru
-      en: Local 8080 → port 80 on remote
-  - cmd: ssh -R 9000:localhost:3000 user@host
-    desc:
-      cs: Vystavit lokální port 3000 jako 9000 na serveru
-      en: Expose local 3000 as 9000 on server
-  - cmd: ssh -D 1080 user@host
-    desc:
-      cs: SOCKS proxy přes SSH (port 1080)
-      en: SOCKS proxy via SSH (port 1080)
+    - cmd: "ssh -L 8080:localhost:80 user@host"
+      desc:
+        en: "Local 8080 → port 80 on remote"
+        cs: "Lokální 8080 → port 80 na vzdáleném serveru"
+        sk: "Lokálny 8080 → port 80 na vzdialenom serveri"
+        de: "Lokal 8080 → Port 80 auf Remote"
+        es: "Local 8080 → puerto 80 en remoto"
+        fr: "Local 8080 → port 80 sur distant"
+        it: "Locale 8080 → porta 80 su remoto"
+        pl: "Lokalny 8080 → port 80 na zdalnym"
+        tr: "Yerel 8080 → uzaktaki port 80"
+        pt: "Local 8080 → porta 80 no remoto"
+        nl: "Lokaal 8080 → poort 80 op remote"
+        hu: "Helyi 8080 → 80-as port a távoli gépen"
+    - cmd: "ssh -R 9000:localhost:3000 user@host"
+      desc:
+        en: "Expose local 3000 as 9000 on server"
+        cs: "Vystavit lokální port 3000 jako 9000 na serveru"
+        sk: "Vystaviť lokálny port 3000 ako 9000 na serveri"
+        de: "Lokalen Port 3000 als 9000 auf Server bereitstellen"
+        es: "Exponer local 3000 como 9000 en el servidor"
+        fr: "Exposer le port local 3000 comme 9000 sur le serveur"
+        it: "Esporre la porta locale 3000 come 9000 sul server"
+        pl: "Udostępnij lokalny port 3000 jako 9000 na serwerze"
+        tr: "Yerel 3000'i sunucuda 9000 olarak yayınla"
+        pt: "Expor porta local 3000 como 9000 no servidor"
+        nl: "Lokale poort 3000 blootstellen als 9000 op server"
+        hu: "Helyi 3000 közzététele 9000-ként a szerveren"
+    - cmd: "ssh -D 1080 user@host"
+      desc:
+        en: "SOCKS proxy via SSH (port 1080)"
+        cs: "SOCKS proxy přes SSH (port 1080)"
+        sk: "SOCKS proxy cez SSH (port 1080)"
+        de: "SOCKS-Proxy über SSH (Port 1080)"
+        es: "Proxy SOCKS por SSH (puerto 1080)"
+        fr: "Proxy SOCKS via SSH (port 1080)"
+        it: "Proxy SOCKS via SSH (porta 1080)"
+        pl: "Proxy SOCKS przez SSH (port 1080)"
+        tr: "SSH üzerinden SOCKS proxy (port 1080)"
+        pt: "Proxy SOCKS via SSH (porta 1080)"
+        nl: "SOCKS-proxy via SSH (poort 1080)"
+        hu: "SOCKS proxy SSH-n keresztül (1080 port)"
+
 - id: ssh-scp
   title:
-    cs: Kopírovat soubory přes SSH (scp/rsync)
-    en: Copy files via SSH (scp/rsync)
+    en: "Copy files via SSH (scp/rsync)"
+    cs: "Kopírovat soubory přes SSH (scp/rsync)"
+    sk: "Kopírovať súbory cez SSH (scp/rsync)"
+    de: "Dateien über SSH kopieren (scp/rsync)"
+    es: "Copiar archivos por SSH (scp/rsync)"
+    fr: "Copier des fichiers via SSH (scp/rsync)"
+    it: "Copiare file via SSH (scp/rsync)"
+    pl: "Kopiowanie plików przez SSH (scp/rsync)"
+    tr: "SSH üzerinden dosya kopyala (scp/rsync)"
+    pt: "Copiar arquivos via SSH (scp/rsync)"
+    nl: "Bestanden kopiëren via SSH (scp/rsync)"
+    hu: "Fájlok másolása SSH-n keresztül (scp/rsync)"
   tags:
-    cs:
-    - scp
-    - rsync
-    - kopírovat
-    - ssh
-    - přenos
-    en:
-    - scp
-    - rsync
-    - copy
-    - ssh
-    - transfer
+    en: [scp, rsync, copy, ssh, transfer]
+    cs: [scp, rsync, kopírovat, ssh, přenos]
+    sk: [scp, rsync, kopírovať, ssh, prenos]
+    de: [scp, rsync, kopieren, ssh, übertragung]
+    es: [scp, rsync, copiar, ssh, transferencia]
+    fr: [scp, rsync, copier, ssh, transfert]
+    it: [scp, rsync, copiare, ssh, trasferimento]
+    pl: [scp, rsync, kopiowanie, ssh, transfer]
+    tr: [scp, rsync, kopyalama, ssh, aktarım]
+    pt: [scp, rsync, copiar, ssh, transferência]
+    nl: [scp, rsync, kopiëren, ssh, overdracht]
+    hu: [scp, rsync, másolás, ssh, átvitel]
   commands:
-  - cmd: scp soubor.txt user@host:/tmp/
-    desc:
-      cs: Nahrát soubor na server
-      en: Upload file to server
-  - cmd: scp user@host:/tmp/soubor.txt .
-    desc:
-      cs: Stáhnout soubor ze serveru
-      en: Download file from server
-  - cmd: scp -r slozka/ user@host:/tmp/
-    desc:
-      cs: Rekurzivně přenést složku
-      en: Recursively transfer folder
-  - cmd: rsync -avzh slozka/ user@host:/dest/
-    desc:
-      cs: Rychlejší než scp, podporuje resume
-      en: Faster than scp, supports resume
+    - cmd: "scp file.txt user@host:/tmp/"
+      desc:
+        en: "Upload file to server"
+        cs: "Nahrát soubor na server"
+        sk: "Nahrať súbor na server"
+        de: "Datei auf Server hochladen"
+        es: "Subir archivo al servidor"
+        fr: "Téléverser un fichier vers le serveur"
+        it: "Caricare file sul server"
+        pl: "Wyślij plik na serwer"
+        tr: "Dosyayı sunucuya yükle"
+        pt: "Enviar arquivo para o servidor"
+        nl: "Bestand uploaden naar server"
+        hu: "Fájl feltöltése a szerverre"
+    - cmd: "scp user@host:/tmp/file.txt ."
+      desc:
+        en: "Download file from server"
+        cs: "Stáhnout soubor ze serveru"
+        sk: "Stiahnuť súbor zo servera"
+        de: "Datei vom Server herunterladen"
+        es: "Descargar archivo del servidor"
+        fr: "Télécharger un fichier depuis le serveur"
+        it: "Scaricare file dal server"
+        pl: "Pobierz plik z serwera"
+        tr: "Sunucudan dosya indir"
+        pt: "Baixar arquivo do servidor"
+        nl: "Bestand downloaden van server"
+        hu: "Fájl letöltése a szerverről"
+    - cmd: "scp -r folder/ user@host:/tmp/"
+      desc:
+        en: "Recursively transfer folder"
+        cs: "Rekurzivně přenést složku"
+        sk: "Rekurzívne preniesť priečinok"
+        de: "Ordner rekursiv übertragen"
+        es: "Transferir carpeta recursivamente"
+        fr: "Transférer le dossier récursivement"
+        it: "Trasferire cartella ricorsivamente"
+        pl: "Przenieś folder rekursywnie"
+        tr: "Klasörü özyinelemeli aktar"
+        pt: "Transferir pasta recursivamente"
+        nl: "Map recursief overdragen"
+        hu: "Mappa rekurzív átvitele"
+    - cmd: "rsync -avzh folder/ user@host:/dest/"
+      desc:
+        en: "Faster than scp, supports resume"
+        cs: "Rychlejší než scp, podporuje resume"
+        sk: "Rýchlejšie než scp, podporuje resume"
+        de: "Schneller als scp, unterstützt Resume"
+        es: "Más rápido que scp, soporta resume"
+        fr: "Plus rapide que scp, supporte le resume"
+        it: "Più veloce di scp, supporta resume"
+        pl: "Szybszy niż scp, wspiera resume"
+        tr: "scp'den hızlı, devam etmeyi destekler"
+        pt: "Mais rápido que scp, suporta resume"
+        nl: "Sneller dan scp, ondersteunt hervatten"
+        hu: "Gyorsabb mint az scp, támogatja a folytatást"

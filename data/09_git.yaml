@@ -1,220 +1,579 @@
 - id: git-status
   title:
-    cs: Stav repozitáře
-    en: Repository status
+    en: "Repository status"
+    cs: "Stav repozitáře"
+    sk: "Stav repozitára"
+    de: "Repository-Status"
+    es: "Estado del repositorio"
+    fr: "État du dépôt"
+    it: "Stato del repository"
+    pl: "Stan repozytorium"
+    tr: "Depo durumu"
+    pt: "Estado do repositório"
+    nl: "Repository-status"
+    hu: "Repository állapota"
   tags:
-    cs:
-    - git
-    - status
-    - stav
-    - změny
-    en:
-    - git
-    - status
-    - changes
+    en: [git, status, changes]
+    cs: [git, status, stav, změny]
+    sk: [git, status, stav, zmeny]
+    de: [git, status, änderungen]
+    es: [git, status, cambios]
+    fr: [git, status, modifications]
+    it: [git, status, modifiche]
+    pl: [git, status, zmiany]
+    tr: [git, status, değişiklikler]
+    pt: [git, status, alterações]
+    nl: [git, status, wijzigingen]
+    hu: [git, status, változások]
   commands:
-  - cmd: git status
-    desc:
-      cs: Co je změněno, co ve staging
-      en: What's changed, what's staged
-  - cmd: git status -s
-    desc:
-      cs: Stručný formát
-      en: Short format
-  - cmd: git diff
-    desc:
-      cs: Změny v souborech (neuložené)
-      en: Unstaged changes
-  - cmd: git diff --staged
-    desc:
-      cs: Změny ve staging (před commitem)
-      en: Staged changes (before commit)
+    - cmd: "git status"
+      desc:
+        en: "What's changed, what's staged"
+        cs: "Co je změněno, co ve staging"
+        sk: "Čo je zmenené, čo v staging"
+        de: "Was geändert wurde, was gestaged ist"
+        es: "Qué cambió, qué está en staging"
+        fr: "Ce qui a changé, ce qui est en staging"
+        it: "Cosa è cambiato, cosa è in staging"
+        pl: "Co zmieniono, co jest w staging"
+        tr: "Ne değişti, ne staging'de"
+        pt: "O que mudou, o que está em staging"
+        nl: "Wat is gewijzigd, wat is staged"
+        hu: "Mi változott, mi van staging-ben"
+    - cmd: "git status -s"
+      desc:
+        en: "Short format"
+        cs: "Stručný formát"
+        sk: "Stručný formát"
+        de: "Kurzes Format"
+        es: "Formato breve"
+        fr: "Format court"
+        it: "Formato breve"
+        pl: "Krótki format"
+        tr: "Kısa format"
+        pt: "Formato curto"
+        nl: "Kort formaat"
+        hu: "Rövid formátum"
+    - cmd: "git diff"
+      desc:
+        en: "Unstaged changes"
+        cs: "Změny v souborech (neuložené)"
+        sk: "Zmeny v súboroch (neuložené)"
+        de: "Ungestagete Änderungen"
+        es: "Cambios sin staging"
+        fr: "Modifications non staged"
+        it: "Modifiche non staged"
+        pl: "Zmiany niezatwierdzone"
+        tr: "Staging'de olmayan değişiklikler"
+        pt: "Alterações sem staging"
+        nl: "Niet-staged wijzigingen"
+        hu: "Nem staged változások"
+    - cmd: "git diff --staged"
+      desc:
+        en: "Staged changes (before commit)"
+        cs: "Změny ve staging (před commitem)"
+        sk: "Zmeny v staging (pred commitom)"
+        de: "Gestagete Änderungen (vor Commit)"
+        es: "Cambios en staging (antes del commit)"
+        fr: "Modifications staged (avant commit)"
+        it: "Modifiche staged (prima del commit)"
+        pl: "Zmiany w staging (przed commitem)"
+        tr: "Staging'deki değişiklikler (commit öncesi)"
+        pt: "Alterações em staging (antes do commit)"
+        nl: "Staged wijzigingen (vóór commit)"
+        hu: "Staged változások (commit előtt)"
+
 - id: git-commit
   title:
-    cs: Vytvořit commit
-    en: Create commit
+    en: "Create commit"
+    cs: "Vytvořit commit"
+    sk: "Vytvoriť commit"
+    de: "Commit erstellen"
+    es: "Crear commit"
+    fr: "Créer un commit"
+    it: "Creare commit"
+    pl: "Utwórz commit"
+    tr: "Commit oluştur"
+    pt: "Criar commit"
+    nl: "Commit maken"
+    hu: "Commit létrehozása"
   tags:
-    cs:
-    - git
-    - commit
-    - add
-    - uložit
-    en:
-    - git
-    - commit
-    - add
-    - save
+    en: [git, commit, add, save]
+    cs: [git, commit, add, uložit]
+    sk: [git, commit, add, uložiť]
+    de: [git, commit, add, speichern]
+    es: [git, commit, add, guardar]
+    fr: [git, commit, add, enregistrer]
+    it: [git, commit, add, salvare]
+    pl: [git, commit, add, zapisz]
+    tr: [git, commit, add, kaydet]
+    pt: [git, commit, add, salvar]
+    nl: [git, commit, add, opslaan]
+    hu: [git, commit, add, mentés]
   commands:
-  - cmd: git add .
-    desc:
-      cs: Přidat všechny změny do staging
-      en: Stage all changes
-  - cmd: git add -p
-    desc:
-      cs: Interaktivně, po blocích
-      en: Interactive, hunk by hunk
-  - cmd: git commit -m 'zpráva'
-    desc:
-      cs: Commit se zprávou
-      en: Commit with message
-  - cmd: git commit -am 'zpráva'
-    desc:
-      cs: Add tracked files + commit najednou
-      en: Add tracked + commit at once
-  - cmd: git commit --amend
-    desc:
-      cs: Upravit poslední commit
-      en: Amend last commit
+    - cmd: "git add ."
+      desc:
+        en: "Stage all changes"
+        cs: "Přidat všechny změny do staging"
+        sk: "Pridať všetky zmeny do staging"
+        de: "Alle Änderungen stagen"
+        es: "Hacer staging de todos los cambios"
+        fr: "Stager toutes les modifications"
+        it: "Staging di tutte le modifiche"
+        pl: "Dodaj wszystkie zmiany do staging"
+        tr: "Tüm değişiklikleri staging'e ekle"
+        pt: "Stage de todas as alterações"
+        nl: "Alle wijzigingen stagen"
+        hu: "Minden változás staging-be"
+    - cmd: "git add -p"
+      desc:
+        en: "Interactive, hunk by hunk"
+        cs: "Interaktivně, po blocích"
+        sk: "Interaktívne, po blokoch"
+        de: "Interaktiv, Block für Block"
+        es: "Interactivo, fragmento por fragmento"
+        fr: "Interactif, bloc par bloc"
+        it: "Interattivo, blocco per blocco"
+        pl: "Interaktywnie, blok po bloku"
+        tr: "Etkileşimli, parça parça"
+        pt: "Interativo, trecho por trecho"
+        nl: "Interactief, blok voor blok"
+        hu: "Interaktív, blokkonként"
+    - cmd: "git commit -m 'message'"
+      desc:
+        en: "Commit with message"
+        cs: "Commit se zprávou"
+        sk: "Commit so správou"
+        de: "Commit mit Nachricht"
+        es: "Commit con mensaje"
+        fr: "Commit avec message"
+        it: "Commit con messaggio"
+        pl: "Commit z wiadomością"
+        tr: "Mesajla commit"
+        pt: "Commit com mensagem"
+        nl: "Commit met bericht"
+        hu: "Commit üzenettel"
+    - cmd: "git commit -am 'message'"
+      desc:
+        en: "Add tracked files + commit at once"
+        cs: "Add tracked files + commit najednou"
+        sk: "Add tracked files + commit naraz"
+        de: "Tracked Files hinzufügen + Commit auf einmal"
+        es: "Add archivos rastreados + commit a la vez"
+        fr: "Add fichiers suivis + commit en une fois"
+        it: "Add file tracciati + commit insieme"
+        pl: "Add śledzone pliki + commit naraz"
+        tr: "Takip edilen dosyaları ekle + tek seferde commit"
+        pt: "Add arquivos rastreados + commit de uma vez"
+        nl: "Tracked bestanden toevoegen + commit ineens"
+        hu: "Követett fájlok hozzáadása + commit egyszerre"
+    - cmd: "git commit --amend"
+      desc:
+        en: "Amend last commit"
+        cs: "Upravit poslední commit"
+        sk: "Upraviť posledný commit"
+        de: "Letzten Commit anpassen"
+        es: "Modificar último commit"
+        fr: "Modifier le dernier commit"
+        it: "Modificare ultimo commit"
+        pl: "Zmień ostatni commit"
+        tr: "Son commit'i değiştir"
+        pt: "Alterar último commit"
+        nl: "Laatste commit aanpassen"
+        hu: "Utolsó commit módosítása"
+
 - id: git-branch
   title:
-    cs: Větve (branches)
-    en: Branches
+    en: "Branches"
+    cs: "Větve (branches)"
+    sk: "Vetvy (branches)"
+    de: "Branches"
+    es: "Ramas"
+    fr: "Branches"
+    it: "Branch"
+    pl: "Gałęzie"
+    tr: "Dallar"
+    pt: "Branches"
+    nl: "Branches"
+    hu: "Ágak (branches)"
   tags:
-    cs:
-    - git
-    - branch
-    - větev
-    - checkout
-    - switch
-    en:
-    - git
-    - branch
-    - checkout
-    - switch
+    en: [git, branch, checkout, switch]
+    cs: [git, branch, větev, checkout, switch]
+    sk: [git, branch, vetva, checkout, switch]
+    de: [git, branch, checkout, switch]
+    es: [git, branch, rama, checkout, switch]
+    fr: [git, branch, branche, checkout, switch]
+    it: [git, branch, ramo, checkout, switch]
+    pl: [git, branch, gałąź, checkout, switch]
+    tr: [git, branch, dal, checkout, switch]
+    pt: [git, branch, ramo, checkout, switch]
+    nl: [git, branch, checkout, switch]
+    hu: [git, branch, ág, checkout, switch]
   commands:
-  - cmd: git branch
-    desc:
-      cs: Seznam lokálních větví
-      en: List local branches
-  - cmd: git branch -a
-    desc:
-      cs: Včetně vzdálených
-      en: Including remote
-  - cmd: git switch -c nova-vetev
-    desc:
-      cs: Vytvořit a přepnout na novou větev
-      en: Create and switch to new branch
-  - cmd: git switch main
-    desc:
-      cs: Přepnout na main
-      en: Switch to main
-  - cmd: git branch -d nova-vetev
-    desc:
-      cs: Smazat lokální větev
-      en: Delete local branch
+    - cmd: "git branch"
+      desc:
+        en: "List local branches"
+        cs: "Seznam lokálních větví"
+        sk: "Zoznam lokálnych vetiev"
+        de: "Lokale Branches auflisten"
+        es: "Listar ramas locales"
+        fr: "Lister les branches locales"
+        it: "Elenco branch locali"
+        pl: "Lista lokalnych gałęzi"
+        tr: "Yerel dalları listele"
+        pt: "Listar branches locais"
+        nl: "Lokale branches tonen"
+        hu: "Helyi ágak listája"
+    - cmd: "git branch -a"
+      desc:
+        en: "Including remote"
+        cs: "Včetně vzdálených"
+        sk: "Vrátane vzdialených"
+        de: "Inklusive Remote"
+        es: "Incluyendo remotas"
+        fr: "Y compris distantes"
+        it: "Inclusi i remoti"
+        pl: "Wraz ze zdalnymi"
+        tr: "Uzaktakiler dahil"
+        pt: "Incluindo remotos"
+        nl: "Inclusief remote"
+        hu: "Beleértve a távoliakat"
+    - cmd: "git switch -c new-branch"
+      desc:
+        en: "Create and switch to new branch"
+        cs: "Vytvořit a přepnout na novou větev"
+        sk: "Vytvoriť a prepnúť na novú vetvu"
+        de: "Neuen Branch erstellen und wechseln"
+        es: "Crear y cambiar a nueva rama"
+        fr: "Créer et basculer sur une nouvelle branche"
+        it: "Creare e passare a nuovo branch"
+        pl: "Utwórz i przełącz na nową gałąź"
+        tr: "Yeni dal oluştur ve geç"
+        pt: "Criar e mudar para novo branch"
+        nl: "Nieuwe branch maken en switchen"
+        hu: "Új ág létrehozása és váltás"
+    - cmd: "git switch main"
+      desc:
+        en: "Switch to main"
+        cs: "Přepnout na main"
+        sk: "Prepnúť na main"
+        de: "Zu main wechseln"
+        es: "Cambiar a main"
+        fr: "Basculer sur main"
+        it: "Passare a main"
+        pl: "Przełącz na main"
+        tr: "main'e geç"
+        pt: "Mudar para main"
+        nl: "Naar main switchen"
+        hu: "Váltás main-re"
+    - cmd: "git branch -d new-branch"
+      desc:
+        en: "Delete local branch"
+        cs: "Smazat lokální větev"
+        sk: "Zmazať lokálnu vetvu"
+        de: "Lokalen Branch löschen"
+        es: "Eliminar rama local"
+        fr: "Supprimer une branche locale"
+        it: "Eliminare branch locale"
+        pl: "Usuń lokalną gałąź"
+        tr: "Yerel dalı sil"
+        pt: "Excluir branch local"
+        nl: "Lokale branch verwijderen"
+        hu: "Helyi ág törlése"
+
 - id: git-remote
   title:
-    cs: Práce se vzdáleným repem
-    en: Working with remote
+    en: "Working with remote"
+    cs: "Práce se vzdáleným repem"
+    sk: "Práca so vzdialeným repom"
+    de: "Mit Remote arbeiten"
+    es: "Trabajar con remoto"
+    fr: "Travailler avec un remote"
+    it: "Lavorare con remoto"
+    pl: "Praca ze zdalnym repo"
+    tr: "Uzak ile çalışma"
+    pt: "Trabalhar com remoto"
+    nl: "Werken met remote"
+    hu: "Munka távoli repóval"
   tags:
-    cs:
-    - git
-    - remote
-    - push
-    - pull
-    - fetch
-    - clone
-    - origin
-    en:
-    - git
-    - remote
-    - push
-    - pull
-    - fetch
-    - clone
-    - origin
+    en: [git, remote, push, pull, fetch, clone, origin]
+    cs: [git, remote, push, pull, fetch, clone, origin]
+    sk: [git, remote, push, pull, fetch, clone, origin]
+    de: [git, remote, push, pull, fetch, clone, origin]
+    es: [git, remote, push, pull, fetch, clone, origin]
+    fr: [git, remote, push, pull, fetch, clone, origin]
+    it: [git, remote, push, pull, fetch, clone, origin]
+    pl: [git, remote, push, pull, fetch, clone, origin]
+    tr: [git, remote, push, pull, fetch, clone, origin]
+    pt: [git, remote, push, pull, fetch, clone, origin]
+    nl: [git, remote, push, pull, fetch, clone, origin]
+    hu: [git, remote, push, pull, fetch, clone, origin]
   commands:
-  - cmd: git clone https://github.com/user/repo.git
-    desc:
-      cs: Naklonovat repo
-      en: Clone repo
-  - cmd: git pull
-    desc:
-      cs: Stáhnout a sloučit změny
-      en: Fetch and merge changes
-  - cmd: git push
-    desc:
-      cs: Nahrát commity na server
-      en: Push commits to server
-  - cmd: git push -u origin nova-vetev
-    desc:
-      cs: Push nové větve + nastavit tracking
-      en: Push new branch + set tracking
-  - cmd: git fetch --all --prune
-    desc:
-      cs: Stáhnout změny + zahodit smazané větve
-      en: Fetch + drop deleted branches
+    - cmd: "git clone https://github.com/user/repo.git"
+      desc:
+        en: "Clone repo"
+        cs: "Naklonovat repo"
+        sk: "Naklonovať repo"
+        de: "Repo klonen"
+        es: "Clonar repo"
+        fr: "Cloner un dépôt"
+        it: "Clonare repo"
+        pl: "Sklonuj repo"
+        tr: "Repoyu klonla"
+        pt: "Clonar repositório"
+        nl: "Repo klonen"
+        hu: "Repo klónozása"
+    - cmd: "git pull"
+      desc:
+        en: "Fetch and merge changes"
+        cs: "Stáhnout a sloučit změny"
+        sk: "Stiahnuť a zlúčiť zmeny"
+        de: "Änderungen holen und mergen"
+        es: "Obtener y fusionar cambios"
+        fr: "Récupérer et fusionner les modifications"
+        it: "Fetch e merge delle modifiche"
+        pl: "Pobierz i scal zmiany"
+        tr: "Değişiklikleri al ve birleştir"
+        pt: "Buscar e mesclar alterações"
+        nl: "Wijzigingen ophalen en mergen"
+        hu: "Változások letöltése és egyesítése"
+    - cmd: "git push"
+      desc:
+        en: "Push commits to server"
+        cs: "Nahrát commity na server"
+        sk: "Nahrať commity na server"
+        de: "Commits zum Server pushen"
+        es: "Subir commits al servidor"
+        fr: "Pousser les commits sur le serveur"
+        it: "Push dei commit sul server"
+        pl: "Wypchnij commity na serwer"
+        tr: "Commit'leri sunucuya gönder"
+        pt: "Push dos commits para o servidor"
+        nl: "Commits naar server pushen"
+        hu: "Commitok feltöltése a szerverre"
+    - cmd: "git push -u origin new-branch"
+      desc:
+        en: "Push new branch + set tracking"
+        cs: "Push nové větve + nastavit tracking"
+        sk: "Push novej vetvy + nastaviť tracking"
+        de: "Neuen Branch pushen + Tracking setzen"
+        es: "Push nueva rama + configurar tracking"
+        fr: "Push nouvelle branche + définir tracking"
+        it: "Push nuovo branch + impostare tracking"
+        pl: "Push nowej gałęzi + ustaw śledzenie"
+        tr: "Yeni dalı push'la + takip ayarla"
+        pt: "Push novo branch + configurar tracking"
+        nl: "Nieuwe branch pushen + tracking instellen"
+        hu: "Új ág push + tracking beállítás"
+    - cmd: "git fetch --all --prune"
+      desc:
+        en: "Fetch + drop deleted branches"
+        cs: "Stáhnout změny + zahodit smazané větve"
+        sk: "Stiahnuť zmeny + zahodiť zmazané vetvy"
+        de: "Fetch + gelöschte Branches verwerfen"
+        es: "Fetch + descartar ramas eliminadas"
+        fr: "Fetch + supprimer les branches supprimées"
+        it: "Fetch + scartare branch eliminati"
+        pl: "Fetch + odrzuć usunięte gałęzie"
+        tr: "Fetch + silinen dalları kaldır"
+        pt: "Fetch + descartar branches excluídos"
+        nl: "Fetch + verwijderde branches droppen"
+        hu: "Fetch + törölt ágak elhagyása"
+
 - id: git-log
   title:
-    cs: Historie commitů
-    en: Commit history
+    en: "Commit history"
+    cs: "Historie commitů"
+    sk: "História commitov"
+    de: "Commit-Historie"
+    es: "Historial de commits"
+    fr: "Historique des commits"
+    it: "Cronologia commit"
+    pl: "Historia commitów"
+    tr: "Commit geçmişi"
+    pt: "Histórico de commits"
+    nl: "Commitgeschiedenis"
+    hu: "Commit előzmények"
   tags:
-    cs:
-    - git
-    - log
-    - historie
-    - history
-    en:
-    - git
-    - log
-    - history
+    en: [git, log, history]
+    cs: [git, log, historie, history]
+    sk: [git, log, história, history]
+    de: [git, log, historie, geschichte]
+    es: [git, log, historial]
+    fr: [git, log, historique]
+    it: [git, log, cronologia]
+    pl: [git, log, historia]
+    tr: [git, log, geçmiş]
+    pt: [git, log, histórico]
+    nl: [git, log, geschiedenis]
+    hu: [git, log, előzmények]
   commands:
-  - cmd: git log --oneline
-    desc:
-      cs: Stručný log (jeden řádek = commit)
-      en: Brief log (one line per commit)
-  - cmd: git log --oneline --graph --all
-    desc:
-      cs: ASCII graf všech větví
-      en: ASCII graph of all branches
-  - cmd: git log -p soubor.txt
-    desc:
-      cs: Historie změn konkrétního souboru
-      en: Change history of specific file
-  - cmd: git blame soubor.txt
-    desc:
-      cs: Kdo změnil který řádek
-      en: Who changed which line
+    - cmd: "git log --oneline"
+      desc:
+        en: "Brief log (one line per commit)"
+        cs: "Stručný log (jeden řádek = commit)"
+        sk: "Stručný log (jeden riadok = commit)"
+        de: "Kurzes Log (eine Zeile pro Commit)"
+        es: "Log breve (una línea por commit)"
+        fr: "Log court (une ligne par commit)"
+        it: "Log breve (una riga per commit)"
+        pl: "Krótki log (jedna linia na commit)"
+        tr: "Kısa log (commit başına bir satır)"
+        pt: "Log breve (uma linha por commit)"
+        nl: "Beknopte log (één regel per commit)"
+        hu: "Rövid log (egy sor commitonként)"
+    - cmd: "git log --oneline --graph --all"
+      desc:
+        en: "ASCII graph of all branches"
+        cs: "ASCII graf všech větví"
+        sk: "ASCII graf všetkých vetiev"
+        de: "ASCII-Graph aller Branches"
+        es: "Gráfico ASCII de todas las ramas"
+        fr: "Graphe ASCII de toutes les branches"
+        it: "Grafico ASCII di tutti i branch"
+        pl: "Wykres ASCII wszystkich gałęzi"
+        tr: "Tüm dalların ASCII grafiği"
+        pt: "Gráfico ASCII de todos os branches"
+        nl: "ASCII-grafiek van alle branches"
+        hu: "ASCII grafikon minden ágról"
+    - cmd: "git log -p file.txt"
+      desc:
+        en: "Change history of specific file"
+        cs: "Historie změn konkrétního souboru"
+        sk: "História zmien konkrétneho súboru"
+        de: "Änderungshistorie einer Datei"
+        es: "Historial de cambios de un archivo"
+        fr: "Historique des modifications d'un fichier"
+        it: "Cronologia modifiche di un file"
+        pl: "Historia zmian konkretnego pliku"
+        tr: "Belirli bir dosyanın değişiklik geçmişi"
+        pt: "Histórico de alterações de um arquivo"
+        nl: "Wijzigingsgeschiedenis van bestand"
+        hu: "Egy fájl változási előzményei"
+    - cmd: "git blame file.txt"
+      desc:
+        en: "Who changed which line"
+        cs: "Kdo změnil který řádek"
+        sk: "Kto zmenil ktorý riadok"
+        de: "Wer welche Zeile geändert hat"
+        es: "Quién cambió qué línea"
+        fr: "Qui a modifié quelle ligne"
+        it: "Chi ha cambiato quale riga"
+        pl: "Kto zmienił którą linię"
+        tr: "Hangi satırı kim değiştirdi"
+        pt: "Quem alterou qual linha"
+        nl: "Wie heeft welke regel gewijzigd"
+        hu: "Ki melyik sort módosította"
+
 - id: git-undo
   title:
-    cs: Vrátit změny
-    en: Undo changes
+    en: "Undo changes"
+    cs: "Vrátit změny"
+    sk: "Vrátiť zmeny"
+    de: "Änderungen rückgängig machen"
+    es: "Deshacer cambios"
+    fr: "Annuler les modifications"
+    it: "Annullare modifiche"
+    pl: "Cofnij zmiany"
+    tr: "Değişiklikleri geri al"
+    pt: "Desfazer alterações"
+    nl: "Wijzigingen ongedaan maken"
+    hu: "Változások visszavonása"
   tags:
-    cs:
-    - git
-    - undo
-    - reset
-    - revert
-    - vrátit
-    - stash
-    en:
-    - git
-    - undo
-    - reset
-    - revert
-    - stash
+    en: [git, undo, reset, revert, stash]
+    cs: [git, undo, reset, revert, vrátit, stash]
+    sk: [git, undo, reset, revert, vrátiť, stash]
+    de: [git, rückgängig, reset, revert, stash]
+    es: [git, undo, reset, revert, deshacer, stash]
+    fr: [git, undo, reset, revert, annuler, stash]
+    it: [git, undo, reset, revert, annullare, stash]
+    pl: [git, undo, reset, revert, cofnij, stash]
+    tr: [git, geri al, reset, revert, stash]
+    pt: [git, undo, reset, revert, desfazer, stash]
+    nl: [git, ongedaan, reset, revert, stash]
+    hu: [git, visszavonás, reset, revert, stash]
   commands:
-  - cmd: git restore soubor.txt
-    desc:
-      cs: Zahodit neuložené změny v souboru
-      en: Discard unstaged changes in file
-  - cmd: git restore --staged soubor.txt
-    desc:
-      cs: Odebrat ze staging (ale ponechat změny)
-      en: Unstage (keep changes)
-  - cmd: git reset --hard HEAD
-    desc:
-      cs: 'POZOR: zahodit všechny lokální změny'
-      en: 'WARNING: discard all local changes'
-  - cmd: git revert <commit>
-    desc:
-      cs: Vytvořit commit, který ruší daný commit
-      en: Create commit that undoes a commit
-  - cmd: git stash
-    desc:
-      cs: Schovat změny stranou
-      en: Stash changes aside
-  - cmd: git stash pop
-    desc:
-      cs: Vrátit schované změny
-      en: Apply stashed changes
+    - cmd: "git restore file.txt"
+      desc:
+        en: "Discard unstaged changes in file"
+        cs: "Zahodit neuložené změny v souboru"
+        sk: "Zahodiť neuložené zmeny v súbore"
+        de: "Ungestagete Änderungen verwerfen"
+        es: "Descartar cambios sin staging en archivo"
+        fr: "Annuler les modifications non staged dans le fichier"
+        it: "Scartare modifiche non staged nel file"
+        pl: "Odrzuć niezatwierdzone zmiany w pliku"
+        tr: "Dosyadaki staging dışı değişiklikleri at"
+        pt: "Descartar alterações sem staging no arquivo"
+        nl: "Niet-staged wijzigingen in bestand verwerpen"
+        hu: "Nem staged változások eldobása fájlban"
+    - cmd: "git restore --staged file.txt"
+      desc:
+        en: "Unstage (keep changes)"
+        cs: "Odebrat ze staging (ale ponechat změny)"
+        sk: "Odobrať zo staging (ale ponechať zmeny)"
+        de: "Unstage (Änderungen behalten)"
+        es: "Quitar de staging (mantener cambios)"
+        fr: "Retirer du staging (garder les modifications)"
+        it: "Unstage (mantenere modifiche)"
+        pl: "Wycofaj ze staging (zachowaj zmiany)"
+        tr: "Staging'den çıkar (değişiklikleri tut)"
+        pt: "Retirar de staging (manter alterações)"
+        nl: "Unstage (wijzigingen behouden)"
+        hu: "Eltávolítás staging-ből (változások megtartása)"
+    - cmd: "git reset --hard HEAD"
+      desc:
+        en: "WARNING: discard all local changes"
+        cs: "POZOR: zahodit všechny lokální změny"
+        sk: "POZOR: zahodiť všetky lokálne zmeny"
+        de: "WARNUNG: Alle lokalen Änderungen verwerfen"
+        es: "AVISO: descartar todos los cambios locales"
+        fr: "ATTENTION : annuler toutes les modifications locales"
+        it: "ATTENZIONE: scartare tutte le modifiche locali"
+        pl: "UWAGA: odrzuć wszystkie lokalne zmiany"
+        tr: "UYARI: tüm yerel değişiklikleri at"
+        pt: "ATENÇÃO: descartar todas as alterações locais"
+        nl: "WAARSCHUWING: alle lokale wijzigingen verwerpen"
+        hu: "FIGYELEM: minden helyi változás elvetése"
+    - cmd: "git revert <commit>"
+      desc:
+        en: "Create commit that undoes a commit"
+        cs: "Vytvořit commit, který ruší daný commit"
+        sk: "Vytvoriť commit, ktorý ruší daný commit"
+        de: "Commit erstellen, der einen Commit rückgängig macht"
+        es: "Crear commit que deshace otro commit"
+        fr: "Créer un commit annulant un commit"
+        it: "Creare commit che annulla un commit"
+        pl: "Utwórz commit cofający commit"
+        tr: "Bir commit'i geri alan commit oluştur"
+        pt: "Criar commit que desfaz outro commit"
+        nl: "Commit maken die andere commit ongedaan maakt"
+        hu: "Commit létrehozása, amely visszavon egy commitot"
+    - cmd: "git stash"
+      desc:
+        en: "Stash changes aside"
+        cs: "Schovat změny stranou"
+        sk: "Schovať zmeny bokom"
+        de: "Änderungen beiseite legen"
+        es: "Guardar cambios temporalmente"
+        fr: "Mettre les modifications de côté"
+        it: "Mettere modifiche da parte"
+        pl: "Schowaj zmiany na bok"
+        tr: "Değişiklikleri kenara koy"
+        pt: "Guardar alterações temporariamente"
+        nl: "Wijzigingen opzij zetten"
+        hu: "Változások félretétele"
+    - cmd: "git stash pop"
+      desc:
+        en: "Apply stashed changes"
+        cs: "Vrátit schované změny"
+        sk: "Vrátiť skryté zmeny"
+        de: "Stashed Änderungen anwenden"
+        es: "Aplicar cambios guardados"
+        fr: "Appliquer les modifications stockées"
+        it: "Applicare modifiche stashed"
+        pl: "Przywróć schowane zmiany"
+        tr: "Saklanan değişiklikleri uygula"
+        pt: "Aplicar alterações guardadas"
+        nl: "Opgeslagen wijzigingen toepassen"
+        hu: "Félretett változások alkalmazása"

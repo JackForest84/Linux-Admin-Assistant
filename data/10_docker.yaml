@@ -1,225 +1,593 @@
 - id: docker-ps
   title:
-    cs: Běžící kontejnery
-    en: Running containers
+    en: "Running containers"
+    cs: "Běžící kontejnery"
+    sk: "Bežiace kontajnery"
+    de: "Laufende Container"
+    es: "Contenedores en ejecución"
+    fr: "Conteneurs en cours"
+    it: "Container in esecuzione"
+    pl: "Działające kontenery"
+    tr: "Çalışan konteynerler"
+    pt: "Contêineres em execução"
+    nl: "Draaiende containers"
+    hu: "Futó konténerek"
   tags:
-    cs:
-    - docker
-    - kontejner
-    - ps
-    - běžící
-    en:
-    - docker
-    - container
-    - ps
-    - running
+    en: [docker, container, ps, running]
+    cs: [docker, kontejner, ps, běžící]
+    sk: [docker, kontajner, ps, bežiaci]
+    de: [docker, container, ps, laufend]
+    es: [docker, contenedor, ps, ejecutándose]
+    fr: [docker, conteneur, ps, en cours]
+    it: [docker, container, ps, in esecuzione]
+    pl: [docker, kontener, ps, działający]
+    tr: [docker, konteyner, ps, çalışan]
+    pt: [docker, contêiner, ps, em execução]
+    nl: [docker, container, ps, draaiend]
+    hu: [docker, konténer, ps, futó]
   commands:
-  - cmd: docker ps
-    desc:
-      cs: Běžící kontejnery
-      en: Running containers
-  - cmd: docker ps -a
-    desc:
-      cs: Včetně zastavených
-      en: Including stopped
-  - cmd: docker ps -q
-    desc:
-      cs: Jen ID (pro skripty)
-      en: Only IDs (for scripts)
-  - cmd: docker stats
-    desc:
-      cs: Živý monitor CPU/RAM/IO kontejnerů
-      en: Live CPU/RAM/IO monitor
+    - cmd: "docker ps"
+      desc:
+        en: "Running containers"
+        cs: "Běžící kontejnery"
+        sk: "Bežiace kontajnery"
+        de: "Laufende Container"
+        es: "Contenedores en ejecución"
+        fr: "Conteneurs en cours"
+        it: "Container in esecuzione"
+        pl: "Działające kontenery"
+        tr: "Çalışan konteynerler"
+        pt: "Contêineres em execução"
+        nl: "Draaiende containers"
+        hu: "Futó konténerek"
+    - cmd: "docker ps -a"
+      desc:
+        en: "Including stopped"
+        cs: "Včetně zastavených"
+        sk: "Vrátane zastavených"
+        de: "Inklusive gestoppter"
+        es: "Incluyendo detenidos"
+        fr: "Y compris arrêtés"
+        it: "Inclusi quelli arrestati"
+        pl: "Wraz z zatrzymanymi"
+        tr: "Durdurulanlar dahil"
+        pt: "Incluindo parados"
+        nl: "Inclusief gestopte"
+        hu: "Beleértve a leállítottakat"
+    - cmd: "docker ps -q"
+      desc:
+        en: "Only IDs (for scripts)"
+        cs: "Jen ID (pro skripty)"
+        sk: "Iba ID (pre skripty)"
+        de: "Nur IDs (für Skripte)"
+        es: "Solo IDs (para scripts)"
+        fr: "Uniquement les IDs (pour scripts)"
+        it: "Solo ID (per script)"
+        pl: "Tylko ID (do skryptów)"
+        tr: "Sadece ID'ler (komut dosyaları için)"
+        pt: "Apenas IDs (para scripts)"
+        nl: "Alleen ID's (voor scripts)"
+        hu: "Csak ID-k (szkriptekhez)"
+    - cmd: "docker stats"
+      desc:
+        en: "Live CPU/RAM/IO monitor"
+        cs: "Živý monitor CPU/RAM/IO kontejnerů"
+        sk: "Živý monitor CPU/RAM/IO kontajnerov"
+        de: "Live-Monitor CPU/RAM/IO"
+        es: "Monitor en vivo CPU/RAM/IO"
+        fr: "Moniteur live CPU/RAM/IO"
+        it: "Monitor live CPU/RAM/IO"
+        pl: "Monitor na żywo CPU/RAM/IO"
+        tr: "Canlı CPU/RAM/IO izleyici"
+        pt: "Monitor ao vivo CPU/RAM/IO"
+        nl: "Live CPU/RAM/IO monitor"
+        hu: "Élő CPU/RAM/IO monitor"
+
 - id: docker-run
   title:
-    cs: Spustit kontejner
-    en: Run container
+    en: "Run container"
+    cs: "Spustit kontejner"
+    sk: "Spustiť kontajner"
+    de: "Container ausführen"
+    es: "Ejecutar contenedor"
+    fr: "Lancer un conteneur"
+    it: "Eseguire container"
+    pl: "Uruchom kontener"
+    tr: "Konteyner çalıştır"
+    pt: "Executar contêiner"
+    nl: "Container starten"
+    hu: "Konténer futtatása"
   tags:
-    cs:
-    - docker
-    - run
-    - spustit
-    - kontejner
-    en:
-    - docker
-    - run
-    - start
-    - container
+    en: [docker, run, start, container]
+    cs: [docker, run, spustit, kontejner]
+    sk: [docker, run, spustiť, kontajner]
+    de: [docker, run, starten, container]
+    es: [docker, run, iniciar, contenedor]
+    fr: [docker, run, lancer, conteneur]
+    it: [docker, run, avviare, container]
+    pl: [docker, run, uruchom, kontener]
+    tr: [docker, run, başlat, konteyner]
+    pt: [docker, run, iniciar, contêiner]
+    nl: [docker, run, starten, container]
+    hu: [docker, run, indítás, konténer]
   commands:
-  - cmd: docker run -d --name web -p 80:80 nginx
-    desc:
-      cs: Nginx na pozadí, port 80 → 80
-      en: Nginx in background, port 80 → 80
-  - cmd: docker run -it ubuntu bash
-    desc:
-      cs: Interaktivní shell v Ubuntu
-      en: Interactive shell in Ubuntu
-  - cmd: docker run --rm -v $(pwd):/data alpine ls /data
-    desc:
-      cs: Jednorázový kontejner s mountem
-      en: One-shot container with mount
-  - cmd: docker start kontejner
-    desc:
-      cs: Spustit zastavený kontejner
-      en: Start stopped container
-  - cmd: docker stop kontejner
-    desc:
-      cs: Slušně zastavit
-      en: Stop gracefully
-  - cmd: docker restart kontejner
-    desc:
-      cs: Restartovat
-      en: Restart
+    - cmd: "docker run -d --name web -p 80:80 nginx"
+      desc:
+        en: "Nginx in background, port 80 → 80"
+        cs: "Nginx na pozadí, port 80 → 80"
+        sk: "Nginx na pozadí, port 80 → 80"
+        de: "Nginx im Hintergrund, Port 80 → 80"
+        es: "Nginx en segundo plano, puerto 80 → 80"
+        fr: "Nginx en arrière-plan, port 80 → 80"
+        it: "Nginx in background, porta 80 → 80"
+        pl: "Nginx w tle, port 80 → 80"
+        tr: "Nginx arka planda, port 80 → 80"
+        pt: "Nginx em background, porta 80 → 80"
+        nl: "Nginx op achtergrond, poort 80 → 80"
+        hu: "Nginx háttérben, port 80 → 80"
+    - cmd: "docker run -it ubuntu bash"
+      desc:
+        en: "Interactive shell in Ubuntu"
+        cs: "Interaktivní shell v Ubuntu"
+        sk: "Interaktívny shell v Ubuntu"
+        de: "Interaktive Shell in Ubuntu"
+        es: "Shell interactivo en Ubuntu"
+        fr: "Shell interactif dans Ubuntu"
+        it: "Shell interattivo in Ubuntu"
+        pl: "Interaktywna powłoka w Ubuntu"
+        tr: "Ubuntu'da etkileşimli kabuk"
+        pt: "Shell interativo no Ubuntu"
+        nl: "Interactieve shell in Ubuntu"
+        hu: "Interaktív shell az Ubuntuban"
+    - cmd: "docker run --rm -v $(pwd):/data alpine ls /data"
+      desc:
+        en: "One-shot container with mount"
+        cs: "Jednorázový kontejner s mountem"
+        sk: "Jednorazový kontajner s mountom"
+        de: "Einmaliger Container mit Mount"
+        es: "Contenedor único con mount"
+        fr: "Conteneur unique avec mount"
+        it: "Container one-shot con mount"
+        pl: "Jednorazowy kontener z mount"
+        tr: "Mount'lu tek seferlik konteyner"
+        pt: "Contêiner único com mount"
+        nl: "Eenmalige container met mount"
+        hu: "Egyszeri konténer mounttal"
+    - cmd: "docker start container"
+      desc:
+        en: "Start stopped container"
+        cs: "Spustit zastavený kontejner"
+        sk: "Spustiť zastavený kontajner"
+        de: "Gestoppten Container starten"
+        es: "Iniciar contenedor detenido"
+        fr: "Démarrer un conteneur arrêté"
+        it: "Avviare container fermo"
+        pl: "Uruchom zatrzymany kontener"
+        tr: "Durmuş konteyneri başlat"
+        pt: "Iniciar contêiner parado"
+        nl: "Gestopte container starten"
+        hu: "Leállított konténer indítása"
+    - cmd: "docker stop container"
+      desc:
+        en: "Stop gracefully"
+        cs: "Slušně zastavit"
+        sk: "Slušne zastaviť"
+        de: "Sauber stoppen"
+        es: "Detener elegantemente"
+        fr: "Arrêter proprement"
+        it: "Arrestare con grazia"
+        pl: "Zatrzymaj łagodnie"
+        tr: "Düzgün durdur"
+        pt: "Parar graciosamente"
+        nl: "Net stoppen"
+        hu: "Elegáns leállítás"
+    - cmd: "docker restart container"
+      desc:
+        en: "Restart"
+        cs: "Restartovat"
+        sk: "Reštartovať"
+        de: "Neu starten"
+        es: "Reiniciar"
+        fr: "Redémarrer"
+        it: "Riavviare"
+        pl: "Uruchom ponownie"
+        tr: "Yeniden başlat"
+        pt: "Reiniciar"
+        nl: "Herstarten"
+        hu: "Újraindítás"
+
 - id: docker-logs-exec
   title:
-    cs: Logy a shell v kontejneru
-    en: Logs and shell in container
+    en: "Logs and shell in container"
+    cs: "Logy a shell v kontejneru"
+    sk: "Logy a shell v kontajneri"
+    de: "Logs und Shell im Container"
+    es: "Logs y shell en contenedor"
+    fr: "Logs et shell dans le conteneur"
+    it: "Log e shell nel container"
+    pl: "Logi i powłoka w kontenerze"
+    tr: "Konteyner içinde günlükler ve kabuk"
+    pt: "Logs e shell no contêiner"
+    nl: "Logs en shell in container"
+    hu: "Naplók és shell a konténerben"
   tags:
-    cs:
-    - docker
-    - logs
-    - exec
-    - shell
-    - bash
-    - kontejner
-    en:
-    - docker
-    - logs
-    - exec
-    - shell
-    - bash
+    en: [docker, logs, exec, shell, bash]
+    cs: [docker, logs, exec, shell, bash, kontejner]
+    sk: [docker, logs, exec, shell, bash]
+    de: [docker, logs, exec, shell, bash]
+    es: [docker, logs, exec, shell, bash]
+    fr: [docker, logs, exec, shell, bash]
+    it: [docker, logs, exec, shell, bash]
+    pl: [docker, logs, exec, shell, bash]
+    tr: [docker, logs, exec, shell, bash]
+    pt: [docker, logs, exec, shell, bash]
+    nl: [docker, logs, exec, shell, bash]
+    hu: [docker, logs, exec, shell, bash]
   commands:
-  - cmd: docker logs -f kontejner
-    desc:
-      cs: Sledovat logy živě
-      en: Follow logs live
-  - cmd: docker logs --tail 100 kontejner
-    desc:
-      cs: Posledních 100 řádků
-      en: Last 100 lines
-  - cmd: docker exec -it kontejner bash
-    desc:
-      cs: Otevřít bash uvnitř běžícího kontejneru
-      en: Open bash inside running container
-  - cmd: docker exec -it kontejner sh
-    desc:
-      cs: Pokud bash chybí (Alpine)
-      en: If bash missing (Alpine)
-  - cmd: docker inspect kontejner
-    desc:
-      cs: Detail (sítě, mounty, env)
-      en: Details (networks, mounts, env)
+    - cmd: "docker logs -f container"
+      desc:
+        en: "Follow logs live"
+        cs: "Sledovat logy živě"
+        sk: "Sledovať logy živo"
+        de: "Logs live verfolgen"
+        es: "Seguir logs en vivo"
+        fr: "Suivre les logs en direct"
+        it: "Seguire log in tempo reale"
+        pl: "Śledź logi na żywo"
+        tr: "Günlükleri canlı takip et"
+        pt: "Acompanhar logs ao vivo"
+        nl: "Logs live volgen"
+        hu: "Naplók élő követése"
+    - cmd: "docker logs --tail 100 container"
+      desc:
+        en: "Last 100 lines"
+        cs: "Posledních 100 řádků"
+        sk: "Posledných 100 riadkov"
+        de: "Letzte 100 Zeilen"
+        es: "Últimas 100 líneas"
+        fr: "Dernières 100 lignes"
+        it: "Ultime 100 righe"
+        pl: "Ostatnie 100 linii"
+        tr: "Son 100 satır"
+        pt: "Últimas 100 linhas"
+        nl: "Laatste 100 regels"
+        hu: "Utolsó 100 sor"
+    - cmd: "docker exec -it container bash"
+      desc:
+        en: "Open bash inside running container"
+        cs: "Otevřít bash uvnitř běžícího kontejneru"
+        sk: "Otvoriť bash vo vnútri bežiaceho kontajnera"
+        de: "Bash im laufenden Container öffnen"
+        es: "Abrir bash dentro de contenedor en ejecución"
+        fr: "Ouvrir bash dans un conteneur en cours"
+        it: "Aprire bash in container in esecuzione"
+        pl: "Otwórz bash w działającym kontenerze"
+        tr: "Çalışan konteynerde bash aç"
+        pt: "Abrir bash em contêiner em execução"
+        nl: "Bash openen in draaiende container"
+        hu: "Bash megnyitása futó konténerben"
+    - cmd: "docker exec -it container sh"
+      desc:
+        en: "If bash missing (Alpine)"
+        cs: "Pokud bash chybí (Alpine)"
+        sk: "Ak bash chýba (Alpine)"
+        de: "Wenn bash fehlt (Alpine)"
+        es: "Si falta bash (Alpine)"
+        fr: "Si bash manque (Alpine)"
+        it: "Se bash manca (Alpine)"
+        pl: "Jeśli brak bash (Alpine)"
+        tr: "Bash yoksa (Alpine)"
+        pt: "Se bash não existir (Alpine)"
+        nl: "Als bash ontbreekt (Alpine)"
+        hu: "Ha a bash hiányzik (Alpine)"
+    - cmd: "docker inspect container"
+      desc:
+        en: "Details (networks, mounts, env)"
+        cs: "Detail (sítě, mounty, env)"
+        sk: "Detail (siete, mounty, env)"
+        de: "Details (Netzwerke, Mounts, env)"
+        es: "Detalles (redes, mounts, env)"
+        fr: "Détails (réseaux, mounts, env)"
+        it: "Dettagli (reti, mount, env)"
+        pl: "Szczegóły (sieci, mounty, env)"
+        tr: "Detaylar (ağlar, mount'lar, env)"
+        pt: "Detalhes (redes, mounts, env)"
+        nl: "Details (netwerken, mounts, env)"
+        hu: "Részletek (hálózatok, mountok, env)"
+
 - id: docker-images
   title:
-    cs: Obrazy (images)
-    en: Images
+    en: "Images"
+    cs: "Obrazy (images)"
+    sk: "Obrazy (images)"
+    de: "Images"
+    es: "Imágenes"
+    fr: "Images"
+    it: "Immagini"
+    pl: "Obrazy"
+    tr: "İmajlar"
+    pt: "Imagens"
+    nl: "Images"
+    hu: "Image-ek"
   tags:
-    cs:
-    - docker
-    - image
-    - obraz
-    - pull
-    - push
-    - build
-    en:
-    - docker
-    - image
-    - pull
-    - push
-    - build
+    en: [docker, image, pull, push, build]
+    cs: [docker, image, obraz, pull, push, build]
+    sk: [docker, image, obraz, pull, push, build]
+    de: [docker, image, pull, push, build]
+    es: [docker, image, imagen, pull, push, build]
+    fr: [docker, image, pull, push, build]
+    it: [docker, image, immagine, pull, push, build]
+    pl: [docker, image, obraz, pull, push, build]
+    tr: [docker, image, imaj, pull, push, build]
+    pt: [docker, image, imagem, pull, push, build]
+    nl: [docker, image, pull, push, build]
+    hu: [docker, image, pull, push, build]
   commands:
-  - cmd: docker images
-    desc:
-      cs: Seznam stažených obrazů
-      en: List of downloaded images
-  - cmd: docker pull nginx:alpine
-    desc:
-      cs: Stáhnout obraz
-      en: Pull image
-  - cmd: docker build -t mojeapp:1.0 .
-    desc:
-      cs: Sestavit obraz z Dockerfile
-      en: Build image from Dockerfile
-  - cmd: docker rmi nginx:alpine
-    desc:
-      cs: Smazat obraz
-      en: Remove image
-  - cmd: docker image prune -a
-    desc:
-      cs: Smazat všechny nepoužívané obrazy
-      en: Remove all unused images
+    - cmd: "docker images"
+      desc:
+        en: "List of downloaded images"
+        cs: "Seznam stažených obrazů"
+        sk: "Zoznam stiahnutých obrazov"
+        de: "Liste der heruntergeladenen Images"
+        es: "Lista de imágenes descargadas"
+        fr: "Liste des images téléchargées"
+        it: "Elenco immagini scaricate"
+        pl: "Lista pobranych obrazów"
+        tr: "İndirilen imajların listesi"
+        pt: "Lista de imagens baixadas"
+        nl: "Lijst met gedownloade images"
+        hu: "Letöltött image-ek listája"
+    - cmd: "docker pull nginx:alpine"
+      desc:
+        en: "Pull image"
+        cs: "Stáhnout obraz"
+        sk: "Stiahnuť obraz"
+        de: "Image pullen"
+        es: "Descargar imagen"
+        fr: "Récupérer l'image"
+        it: "Pull immagine"
+        pl: "Pobierz obraz"
+        tr: "İmajı çek"
+        pt: "Baixar imagem"
+        nl: "Image pullen"
+        hu: "Image letöltése"
+    - cmd: "docker build -t myapp:1.0 ."
+      desc:
+        en: "Build image from Dockerfile"
+        cs: "Sestavit obraz z Dockerfile"
+        sk: "Zostaviť obraz z Dockerfile"
+        de: "Image aus Dockerfile bauen"
+        es: "Construir imagen desde Dockerfile"
+        fr: "Construire l'image depuis Dockerfile"
+        it: "Build immagine da Dockerfile"
+        pl: "Zbuduj obraz z Dockerfile"
+        tr: "Dockerfile'dan imaj oluştur"
+        pt: "Construir imagem do Dockerfile"
+        nl: "Image bouwen vanuit Dockerfile"
+        hu: "Image építése Dockerfile-ból"
+    - cmd: "docker rmi nginx:alpine"
+      desc:
+        en: "Remove image"
+        cs: "Smazat obraz"
+        sk: "Zmazať obraz"
+        de: "Image entfernen"
+        es: "Eliminar imagen"
+        fr: "Supprimer l'image"
+        it: "Rimuovere immagine"
+        pl: "Usuń obraz"
+        tr: "İmajı kaldır"
+        pt: "Remover imagem"
+        nl: "Image verwijderen"
+        hu: "Image eltávolítása"
+    - cmd: "docker image prune -a"
+      desc:
+        en: "Remove all unused images"
+        cs: "Smazat všechny nepoužívané obrazy"
+        sk: "Zmazať všetky nepoužívané obrazy"
+        de: "Alle ungenutzten Images entfernen"
+        es: "Eliminar todas las imágenes sin usar"
+        fr: "Supprimer toutes les images inutilisées"
+        it: "Rimuovere tutte le immagini inutilizzate"
+        pl: "Usuń wszystkie nieużywane obrazy"
+        tr: "Tüm kullanılmayan imajları kaldır"
+        pt: "Remover todas as imagens não usadas"
+        nl: "Alle ongebruikte images verwijderen"
+        hu: "Minden nem használt image eltávolítása"
+
 - id: docker-cleanup
   title:
-    cs: Úklid (volné místo)
-    en: Cleanup (free space)
+    en: "Cleanup (free space)"
+    cs: "Úklid (volné místo)"
+    sk: "Upratovanie (voľné miesto)"
+    de: "Aufräumen (freier Platz)"
+    es: "Limpieza (liberar espacio)"
+    fr: "Nettoyage (libérer de l'espace)"
+    it: "Pulizia (liberare spazio)"
+    pl: "Sprzątanie (zwolnij miejsce)"
+    tr: "Temizlik (alan boşalt)"
+    pt: "Limpeza (liberar espaço)"
+    nl: "Opruimen (ruimte vrijmaken)"
+    hu: "Tisztítás (hely felszabadítása)"
   tags:
-    cs:
-    - docker
-    - prune
-    - úklid
-    - smazat
-    - místo
-    - cleanup
-    en:
-    - docker
-    - prune
-    - cleanup
-    - remove
-    - space
+    en: [docker, prune, cleanup, remove, space]
+    cs: [docker, prune, úklid, smazat, místo, cleanup]
+    sk: [docker, prune, upratovanie, zmazať, miesto, cleanup]
+    de: [docker, prune, aufräumen, entfernen, platz]
+    es: [docker, prune, limpiar, eliminar, espacio]
+    fr: [docker, prune, nettoyer, supprimer, espace]
+    it: [docker, prune, pulizia, rimuovere, spazio]
+    pl: [docker, prune, sprzątanie, usuń, miejsce]
+    tr: [docker, prune, temizlik, kaldır, alan]
+    pt: [docker, prune, limpeza, remover, espaço]
+    nl: [docker, prune, opruimen, verwijderen, ruimte]
+    hu: [docker, prune, tisztítás, eltávolítás, hely]
   commands:
-  - cmd: docker system df
-    desc:
-      cs: Kolik místa zabírá Docker
-      en: How much space Docker uses
-  - cmd: docker system prune -a --volumes
-    desc:
-      cs: Smazat vše nepoužívané (POZOR i volumes)
-      en: Remove everything unused (CAREFUL — volumes too)
-  - cmd: docker container prune
-    desc:
-      cs: Smazat zastavené kontejnery
-      en: Remove stopped containers
-  - cmd: docker volume prune
-    desc:
-      cs: Smazat nepoužívané volumes
-      en: Remove unused volumes
+    - cmd: "docker system df"
+      desc:
+        en: "How much space Docker uses"
+        cs: "Kolik místa zabírá Docker"
+        sk: "Koľko miesta zaberá Docker"
+        de: "Wie viel Platz Docker verwendet"
+        es: "Cuánto espacio usa Docker"
+        fr: "Combien d'espace Docker utilise"
+        it: "Quanto spazio usa Docker"
+        pl: "Ile miejsca zajmuje Docker"
+        tr: "Docker ne kadar alan kullanıyor"
+        pt: "Quanto espaço o Docker usa"
+        nl: "Hoeveel ruimte Docker gebruikt"
+        hu: "Mennyi helyet használ a Docker"
+    - cmd: "docker system prune -a --volumes"
+      desc:
+        en: "Remove everything unused (CAREFUL — volumes too)"
+        cs: "Smazat vše nepoužívané (POZOR i volumes)"
+        sk: "Zmazať všetko nepoužívané (POZOR aj volumes)"
+        de: "Alles Ungenutzte entfernen (VORSICHT — auch Volumes)"
+        es: "Eliminar todo lo no usado (CUIDADO — también volúmenes)"
+        fr: "Supprimer tout inutilisé (ATTENTION — volumes aussi)"
+        it: "Rimuovere tutto inutilizzato (ATTENZIONE — anche volumi)"
+        pl: "Usuń wszystko nieużywane (UWAGA — także wolumeny)"
+        tr: "Kullanılmayan her şeyi sil (DİKKAT — volumeler dahil)"
+        pt: "Remover tudo não usado (CUIDADO — volumes também)"
+        nl: "Alles ongebruikt verwijderen (LET OP — ook volumes)"
+        hu: "Minden használatlan eltávolítása (FIGYELEM — volumeokkal)"
+    - cmd: "docker container prune"
+      desc:
+        en: "Remove stopped containers"
+        cs: "Smazat zastavené kontejnery"
+        sk: "Zmazať zastavené kontajnery"
+        de: "Gestoppte Container entfernen"
+        es: "Eliminar contenedores detenidos"
+        fr: "Supprimer les conteneurs arrêtés"
+        it: "Rimuovere container fermati"
+        pl: "Usuń zatrzymane kontenery"
+        tr: "Durmuş konteynerleri sil"
+        pt: "Remover contêineres parados"
+        nl: "Gestopte containers verwijderen"
+        hu: "Leállított konténerek eltávolítása"
+    - cmd: "docker volume prune"
+      desc:
+        en: "Remove unused volumes"
+        cs: "Smazat nepoužívané volumes"
+        sk: "Zmazať nepoužívané volumes"
+        de: "Ungenutzte Volumes entfernen"
+        es: "Eliminar volúmenes sin usar"
+        fr: "Supprimer les volumes inutilisés"
+        it: "Rimuovere volumi inutilizzati"
+        pl: "Usuń nieużywane wolumeny"
+        tr: "Kullanılmayan volumeleri sil"
+        pt: "Remover volumes não usados"
+        nl: "Ongebruikte volumes verwijderen"
+        hu: "Nem használt volume-ok eltávolítása"
+
 - id: docker-compose
   title:
-    cs: Docker Compose
-    en: Docker Compose
+    en: "Docker Compose"
+    cs: "Docker Compose"
+    sk: "Docker Compose"
+    de: "Docker Compose"
+    es: "Docker Compose"
+    fr: "Docker Compose"
+    it: "Docker Compose"
+    pl: "Docker Compose"
+    tr: "Docker Compose"
+    pt: "Docker Compose"
+    nl: "Docker Compose"
+    hu: "Docker Compose"
   tags:
-    cs:
-    - docker
-    - compose
-    - yaml
-    - stack
-    en:
-    - docker
-    - compose
-    - yaml
-    - stack
+    en: [docker, compose, yaml, stack]
+    cs: [docker, compose, yaml, stack]
+    sk: [docker, compose, yaml, stack]
+    de: [docker, compose, yaml, stack]
+    es: [docker, compose, yaml, stack]
+    fr: [docker, compose, yaml, stack]
+    it: [docker, compose, yaml, stack]
+    pl: [docker, compose, yaml, stack]
+    tr: [docker, compose, yaml, stack]
+    pt: [docker, compose, yaml, stack]
+    nl: [docker, compose, yaml, stack]
+    hu: [docker, compose, yaml, stack]
   commands:
-  - cmd: docker compose up -d
-    desc:
-      cs: Spustit vše z docker-compose.yml na pozadí
-      en: Start everything from docker-compose.yml in background
-  - cmd: docker compose down
-    desc:
-      cs: Zastavit + odstranit kontejnery
-      en: Stop + remove containers
-  - cmd: docker compose logs -f web
-    desc:
-      cs: Logy služby 'web' živě
-      en: Follow logs of service 'web'
-  - cmd: docker compose pull && docker compose up -d
-    desc:
-      cs: Aktualizovat obrazy a restartovat
-      en: Update images and restart
-  - cmd: docker compose ps
-    desc:
-      cs: Stav služeb
-      en: Services status
-  - cmd: docker compose restart web
-    desc:
-      cs: Restartovat jen jednu službu
-      en: Restart only one service
+    - cmd: "docker compose up -d"
+      desc:
+        en: "Start everything from docker-compose.yml in background"
+        cs: "Spustit vše z docker-compose.yml na pozadí"
+        sk: "Spustiť všetko z docker-compose.yml na pozadí"
+        de: "Alles aus docker-compose.yml im Hintergrund starten"
+        es: "Iniciar todo de docker-compose.yml en background"
+        fr: "Démarrer tout de docker-compose.yml en arrière-plan"
+        it: "Avviare tutto da docker-compose.yml in background"
+        pl: "Uruchom wszystko z docker-compose.yml w tle"
+        tr: "docker-compose.yml'den her şeyi arka planda başlat"
+        pt: "Iniciar tudo do docker-compose.yml em background"
+        nl: "Alles uit docker-compose.yml op achtergrond starten"
+        hu: "Minden indítása docker-compose.yml-ből háttérben"
+    - cmd: "docker compose down"
+      desc:
+        en: "Stop + remove containers"
+        cs: "Zastavit + odstranit kontejnery"
+        sk: "Zastaviť + odstrániť kontajnery"
+        de: "Container stoppen + entfernen"
+        es: "Detener + eliminar contenedores"
+        fr: "Arrêter + supprimer les conteneurs"
+        it: "Arrestare + rimuovere container"
+        pl: "Zatrzymaj + usuń kontenery"
+        tr: "Konteynerleri durdur + kaldır"
+        pt: "Parar + remover contêineres"
+        nl: "Containers stoppen + verwijderen"
+        hu: "Konténerek leállítása + eltávolítása"
+    - cmd: "docker compose logs -f web"
+      desc:
+        en: "Follow logs of service 'web'"
+        cs: "Logy služby 'web' živě"
+        sk: "Logy služby 'web' živo"
+        de: "Logs des Dienstes 'web' verfolgen"
+        es: "Seguir logs del servicio 'web'"
+        fr: "Suivre les logs du service 'web'"
+        it: "Seguire log del servizio 'web'"
+        pl: "Śledź logi usługi 'web'"
+        tr: "'web' servisinin günlüklerini takip et"
+        pt: "Acompanhar logs do serviço 'web'"
+        nl: "Logs van service 'web' volgen"
+        hu: "A 'web' szolgáltatás naplóinak követése"
+    - cmd: "docker compose pull && docker compose up -d"
+      desc:
+        en: "Update images and restart"
+        cs: "Aktualizovat obrazy a restartovat"
+        sk: "Aktualizovať obrazy a reštartovať"
+        de: "Images aktualisieren und neu starten"
+        es: "Actualizar imágenes y reiniciar"
+        fr: "Mettre à jour les images et redémarrer"
+        it: "Aggiornare immagini e riavviare"
+        pl: "Zaktualizuj obrazy i uruchom ponownie"
+        tr: "İmajları güncelle ve yeniden başlat"
+        pt: "Atualizar imagens e reiniciar"
+        nl: "Images bijwerken en herstarten"
+        hu: "Image-ek frissítése és újraindítás"
+    - cmd: "docker compose ps"
+      desc:
+        en: "Services status"
+        cs: "Stav služeb"
+        sk: "Stav služieb"
+        de: "Status der Dienste"
+        es: "Estado de los servicios"
+        fr: "État des services"
+        it: "Stato dei servizi"
+        pl: "Stan usług"
+        tr: "Servislerin durumu"
+        pt: "Estado dos serviços"
+        nl: "Status van services"
+        hu: "Szolgáltatások állapota"
+    - cmd: "docker compose restart web"
+      desc:
+        en: "Restart only one service"
+        cs: "Restartovat jen jednu službu"
+        sk: "Reštartovať len jednu službu"
+        de: "Nur einen Dienst neu starten"
+        es: "Reiniciar solo un servicio"
+        fr: "Redémarrer un seul service"
+        it: "Riavviare un solo servizio"
+        pl: "Uruchom ponownie tylko jedną usługę"
+        tr: "Sadece bir servisi yeniden başlat"
+        pt: "Reiniciar apenas um serviço"
+        nl: "Slechts één service herstarten"
+        hu: "Csak egy szolgáltatás újraindítása"
