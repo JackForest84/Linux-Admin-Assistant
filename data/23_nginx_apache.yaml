@@ -1,118 +1,310 @@
 - id: nginx-control
   title:
-    cs: Nginx - správa
-    en: Nginx - management
+    en: "Nginx - management"
+    cs: "Nginx - správa"
+    sk: "Nginx - správa"
+    de: "Nginx - Verwaltung"
+    es: "Nginx - gestión"
+    fr: "Nginx - gestion"
+    it: "Nginx - gestione"
+    pl: "Nginx - zarządzanie"
+    tr: "Nginx - yönetim"
+    pt: "Nginx - gestão"
+    nl: "Nginx - beheer"
+    hu: "Nginx - kezelés"
   tags:
-    cs:
-    - nginx
-    - restart
-    - reload
-    - test
-    - konfigurace
-    en:
-    - nginx
-    - restart
-    - reload
-    - test
-    - config
+    en: [nginx, restart, reload, test, config]
+    cs: [nginx, restart, reload, test, konfigurace]
+    sk: [nginx, restart, reload, test, konfigurácia]
+    de: [nginx, neustart, reload, test, konfig]
+    es: [nginx, reiniciar, reload, test, config]
+    fr: [nginx, redémarrer, reload, test, config]
+    it: [nginx, riavviare, reload, test, config]
+    pl: [nginx, restart, reload, test, konfiguracja]
+    tr: [nginx, yeniden başlat, reload, test, yapılandırma]
+    pt: [nginx, reiniciar, reload, test, config]
+    nl: [nginx, herstart, reload, test, config]
+    hu: [nginx, újraindítás, reload, test, konfig]
   commands:
-  - cmd: sudo nginx -t
-    desc:
-      cs: Test konfigurace (před reloadem!)
-      en: Test config (before reload!)
-  - cmd: sudo systemctl reload nginx
-    desc:
-      cs: Načíst konfiguraci bez výpadku
-      en: Reload config without downtime
-  - cmd: sudo systemctl restart nginx
-    desc:
-      cs: Plný restart
-      en: Full restart
-  - cmd: sudo nginx -s reload
-    desc:
-      cs: Alternativní reload
-      en: Alternative reload
-  - cmd: sudo nginx -V
-    desc:
-      cs: Verze + zkompilované moduly
-      en: Version + compiled modules
+    - cmd: "sudo nginx -t"
+      desc:
+        en: "Test config (before reload!)"
+        cs: "Test konfigurace (před reloadem!)"
+        sk: "Test konfigurácie (pred reloadom!)"
+        de: "Konfiguration testen (vor reload!)"
+        es: "Probar config (antes del reload!)"
+        fr: "Tester la config (avant reload !)"
+        it: "Testare config (prima del reload!)"
+        pl: "Test konfiguracji (przed reload!)"
+        tr: "Yapılandırmayı test et (reload öncesi!)"
+        pt: "Testar config (antes do reload!)"
+        nl: "Config testen (vóór reload!)"
+        hu: "Konfig tesztelése (reload előtt!)"
+    - cmd: "sudo systemctl reload nginx"
+      desc:
+        en: "Reload config without downtime"
+        cs: "Načíst konfiguraci bez výpadku"
+        sk: "Načítať konfiguráciu bez výpadku"
+        de: "Konfiguration ohne Ausfall neu laden"
+        es: "Recargar config sin caída"
+        fr: "Recharger sans interruption"
+        it: "Ricaricare config senza downtime"
+        pl: "Przeładuj konfigurację bez przestoju"
+        tr: "Kesintisiz yapılandırmayı yeniden yükle"
+        pt: "Recarregar config sem downtime"
+        nl: "Config herladen zonder downtime"
+        hu: "Konfig újratöltése állásidő nélkül"
+    - cmd: "sudo systemctl restart nginx"
+      desc:
+        en: "Full restart"
+        cs: "Plný restart"
+        sk: "Úplný reštart"
+        de: "Voller Neustart"
+        es: "Reinicio completo"
+        fr: "Redémarrage complet"
+        it: "Riavvio completo"
+        pl: "Pełny restart"
+        tr: "Tam yeniden başlatma"
+        pt: "Reinício completo"
+        nl: "Volledige herstart"
+        hu: "Teljes újraindítás"
+    - cmd: "sudo nginx -s reload"
+      desc:
+        en: "Alternative reload"
+        cs: "Alternativní reload"
+        sk: "Alternatívny reload"
+        de: "Alternatives Reload"
+        es: "Reload alternativo"
+        fr: "Reload alternatif"
+        it: "Reload alternativo"
+        pl: "Alternatywny reload"
+        tr: "Alternatif reload"
+        pt: "Reload alternativo"
+        nl: "Alternatieve reload"
+        hu: "Alternatív reload"
+    - cmd: "sudo nginx -V"
+      desc:
+        en: "Version + compiled modules"
+        cs: "Verze + zkompilované moduly"
+        sk: "Verzia + skompilované moduly"
+        de: "Version + kompilierte Module"
+        es: "Versión + módulos compilados"
+        fr: "Version + modules compilés"
+        it: "Versione + moduli compilati"
+        pl: "Wersja + skompilowane moduły"
+        tr: "Sürüm + derlenmiş modüller"
+        pt: "Versão + módulos compilados"
+        nl: "Versie + gecompileerde modules"
+        hu: "Verzió + lefordított modulok"
+
 - id: nginx-sites
   title:
-    cs: Nginx - virtual hosts
-    en: Nginx - virtual hosts
+    en: "Nginx - virtual hosts"
+    cs: "Nginx - virtual hosts"
+    sk: "Nginx - virtual hosts"
+    de: "Nginx - Virtual Hosts"
+    es: "Nginx - virtual hosts"
+    fr: "Nginx - virtual hosts"
+    it: "Nginx - virtual host"
+    pl: "Nginx - virtual hosts"
+    tr: "Nginx - sanal sunucular"
+    pt: "Nginx - virtual hosts"
+    nl: "Nginx - virtual hosts"
+    hu: "Nginx - virtuális hostok"
   tags:
-    cs:
-    - nginx
-    - vhost
-    - site
-    - povolit
-    - zakázat
-    en:
-    - nginx
-    - vhost
-    - site
-    - enable
-    - disable
+    en: [nginx, vhost, site, enable, disable]
+    cs: [nginx, vhost, site, povolit, zakázat]
+    sk: [nginx, vhost, site, povoliť, zakázať]
+    de: [nginx, vhost, site, aktivieren, deaktivieren]
+    es: [nginx, vhost, site, activar, desactivar]
+    fr: [nginx, vhost, site, activer, désactiver]
+    it: [nginx, vhost, site, abilitare, disabilitare]
+    pl: [nginx, vhost, site, włącz, wyłącz]
+    tr: [nginx, vhost, site, etkinleştir, devre dışı bırak]
+    pt: [nginx, vhost, site, ativar, desativar]
+    nl: [nginx, vhost, site, inschakelen, uitschakelen]
+    hu: [nginx, vhost, site, engedélyezés, tiltás]
   commands:
-  - cmd: ls /etc/nginx/sites-available/
-    desc:
-      cs: Dostupné konfigurace
-      en: Available configs
-  - cmd: ls /etc/nginx/sites-enabled/
-    desc:
-      cs: Aktivní (zapnuté) konfigurace
-      en: Active (enabled) configs
-  - cmd: sudo ln -s /etc/nginx/sites-available/site /etc/nginx/sites-enabled/
-    desc:
-      cs: Zapnout virtual host
-      en: Enable virtual host
-  - cmd: sudo rm /etc/nginx/sites-enabled/site
-    desc:
-      cs: Vypnout virtual host
-      en: Disable virtual host
-  - cmd: sudo tail -f /var/log/nginx/access.log
-    desc:
-      cs: Sledovat access log
-      en: Watch access log
-  - cmd: sudo tail -f /var/log/nginx/error.log
-    desc:
-      cs: Sledovat error log
-      en: Watch error log
+    - cmd: "ls /etc/nginx/sites-available/"
+      desc:
+        en: "Available configs"
+        cs: "Dostupné konfigurace"
+        sk: "Dostupné konfigurácie"
+        de: "Verfügbare Konfigurationen"
+        es: "Configuraciones disponibles"
+        fr: "Configurations disponibles"
+        it: "Configurazioni disponibili"
+        pl: "Dostępne konfiguracje"
+        tr: "Mevcut yapılandırmalar"
+        pt: "Configurações disponíveis"
+        nl: "Beschikbare configuraties"
+        hu: "Elérhető konfigurációk"
+    - cmd: "ls /etc/nginx/sites-enabled/"
+      desc:
+        en: "Active (enabled) configs"
+        cs: "Aktivní (zapnuté) konfigurace"
+        sk: "Aktívne (zapnuté) konfigurácie"
+        de: "Aktive (eingeschaltete) Konfigurationen"
+        es: "Configuraciones activas (habilitadas)"
+        fr: "Configurations actives (activées)"
+        it: "Configurazioni attive (abilitate)"
+        pl: "Aktywne (włączone) konfiguracje"
+        tr: "Aktif (etkinleştirilmiş) yapılandırmalar"
+        pt: "Configurações ativas (ativadas)"
+        nl: "Actieve (ingeschakelde) configuraties"
+        hu: "Aktív (engedélyezett) konfigurációk"
+    - cmd: "sudo ln -s /etc/nginx/sites-available/site /etc/nginx/sites-enabled/"
+      desc:
+        en: "Enable virtual host"
+        cs: "Zapnout virtual host"
+        sk: "Zapnúť virtual host"
+        de: "Virtual Host aktivieren"
+        es: "Activar virtual host"
+        fr: "Activer le virtual host"
+        it: "Abilitare virtual host"
+        pl: "Włącz virtual host"
+        tr: "Sanal sunucuyu etkinleştir"
+        pt: "Ativar virtual host"
+        nl: "Virtual host inschakelen"
+        hu: "Virtuális host engedélyezése"
+    - cmd: "sudo rm /etc/nginx/sites-enabled/site"
+      desc:
+        en: "Disable virtual host"
+        cs: "Vypnout virtual host"
+        sk: "Vypnúť virtual host"
+        de: "Virtual Host deaktivieren"
+        es: "Desactivar virtual host"
+        fr: "Désactiver le virtual host"
+        it: "Disabilitare virtual host"
+        pl: "Wyłącz virtual host"
+        tr: "Sanal sunucuyu devre dışı bırak"
+        pt: "Desativar virtual host"
+        nl: "Virtual host uitschakelen"
+        hu: "Virtuális host tiltása"
+    - cmd: "sudo tail -f /var/log/nginx/access.log"
+      desc:
+        en: "Watch access log"
+        cs: "Sledovat access log"
+        sk: "Sledovať access log"
+        de: "Access-Log verfolgen"
+        es: "Ver access log"
+        fr: "Suivre access log"
+        it: "Vedere access log"
+        pl: "Śledź access log"
+        tr: "Access log izle"
+        pt: "Acompanhar access log"
+        nl: "Access log volgen"
+        hu: "Access log követése"
+    - cmd: "sudo tail -f /var/log/nginx/error.log"
+      desc:
+        en: "Watch error log"
+        cs: "Sledovat error log"
+        sk: "Sledovať error log"
+        de: "Error-Log verfolgen"
+        es: "Ver error log"
+        fr: "Suivre error log"
+        it: "Vedere error log"
+        pl: "Śledź error log"
+        tr: "Error log izle"
+        pt: "Acompanhar error log"
+        nl: "Error log volgen"
+        hu: "Error log követése"
+
 - id: apache-control
   title:
-    cs: Apache - správa
-    en: Apache - management
+    en: "Apache - management"
+    cs: "Apache - správa"
+    sk: "Apache - správa"
+    de: "Apache - Verwaltung"
+    es: "Apache - gestión"
+    fr: "Apache - gestion"
+    it: "Apache - gestione"
+    pl: "Apache - zarządzanie"
+    tr: "Apache - yönetim"
+    pt: "Apache - gestão"
+    nl: "Apache - beheer"
+    hu: "Apache - kezelés"
   tags:
-    cs:
-    - apache
-    - apache2
-    - httpd
-    - restart
-    - reload
-    en:
-    - apache
-    - apache2
-    - httpd
-    - restart
-    - reload
+    en: [apache, apache2, httpd, restart, reload]
+    cs: [apache, apache2, httpd, restart, reload]
+    sk: [apache, apache2, httpd, reštart, reload]
+    de: [apache, apache2, httpd, neustart, reload]
+    es: [apache, apache2, httpd, reiniciar, reload]
+    fr: [apache, apache2, httpd, redémarrer, reload]
+    it: [apache, apache2, httpd, riavviare, reload]
+    pl: [apache, apache2, httpd, restart, reload]
+    tr: [apache, apache2, httpd, yeniden başlat, reload]
+    pt: [apache, apache2, httpd, reiniciar, reload]
+    nl: [apache, apache2, httpd, herstart, reload]
+    hu: [apache, apache2, httpd, újraindítás, reload]
   commands:
-  - cmd: sudo apache2ctl configtest
-    desc:
-      cs: Test konfigurace
-      en: Test config
-  - cmd: sudo systemctl reload apache2
-    desc:
-      cs: Reload bez výpadku
-      en: Reload without downtime
-  - cmd: sudo a2enmod rewrite
-    desc:
-      cs: Zapnout modul
-      en: Enable module
-  - cmd: sudo a2ensite mysite
-    desc:
-      cs: Zapnout site
-      en: Enable site
-  - cmd: sudo a2dissite mysite
-    desc:
-      cs: Vypnout site
-      en: Disable site
+    - cmd: "sudo apache2ctl configtest"
+      desc:
+        en: "Test config"
+        cs: "Test konfigurace"
+        sk: "Test konfigurácie"
+        de: "Konfiguration testen"
+        es: "Probar config"
+        fr: "Tester la config"
+        it: "Testare config"
+        pl: "Test konfiguracji"
+        tr: "Yapılandırmayı test et"
+        pt: "Testar config"
+        nl: "Config testen"
+        hu: "Konfig tesztelése"
+    - cmd: "sudo systemctl reload apache2"
+      desc:
+        en: "Reload without downtime"
+        cs: "Reload bez výpadku"
+        sk: "Reload bez výpadku"
+        de: "Reload ohne Ausfall"
+        es: "Recargar sin caída"
+        fr: "Reload sans interruption"
+        it: "Reload senza downtime"
+        pl: "Reload bez przestoju"
+        tr: "Kesintisiz reload"
+        pt: "Reload sem downtime"
+        nl: "Reload zonder downtime"
+        hu: "Reload állásidő nélkül"
+    - cmd: "sudo a2enmod rewrite"
+      desc:
+        en: "Enable module"
+        cs: "Zapnout modul"
+        sk: "Zapnúť modul"
+        de: "Modul aktivieren"
+        es: "Activar módulo"
+        fr: "Activer le module"
+        it: "Abilitare modulo"
+        pl: "Włącz moduł"
+        tr: "Modülü etkinleştir"
+        pt: "Ativar módulo"
+        nl: "Module inschakelen"
+        hu: "Modul engedélyezése"
+    - cmd: "sudo a2ensite mysite"
+      desc:
+        en: "Enable site"
+        cs: "Zapnout site"
+        sk: "Zapnúť site"
+        de: "Site aktivieren"
+        es: "Activar site"
+        fr: "Activer le site"
+        it: "Abilitare site"
+        pl: "Włącz site"
+        tr: "Site'yi etkinleştir"
+        pt: "Ativar site"
+        nl: "Site inschakelen"
+        hu: "Site engedélyezése"
+    - cmd: "sudo a2dissite mysite"
+      desc:
+        en: "Disable site"
+        cs: "Vypnout site"
+        sk: "Vypnúť site"
+        de: "Site deaktivieren"
+        es: "Desactivar site"
+        fr: "Désactiver le site"
+        it: "Disabilitare site"
+        pl: "Wyłącz site"
+        tr: "Site'yi devre dışı bırak"
+        pt: "Desativar site"
+        nl: "Site uitschakelen"
+        hu: "Site tiltása"

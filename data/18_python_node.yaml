@@ -1,138 +1,394 @@
 - id: python-venv
   title:
-    cs: Python virtuální prostředí
-    en: Python virtual environment
+    en: "Python virtual environment"
+    cs: "Python virtuální prostředí"
+    sk: "Python virtuálne prostredie"
+    de: "Python virtuelle Umgebung"
+    es: "Entorno virtual Python"
+    fr: "Environnement virtuel Python"
+    it: "Ambiente virtuale Python"
+    pl: "Wirtualne środowisko Python"
+    tr: "Python sanal ortamı"
+    pt: "Ambiente virtual Python"
+    nl: "Python virtuele omgeving"
+    hu: "Python virtuális környezet"
   tags:
-    cs:
-    - python
-    - venv
-    - virtualenv
-    - pip
-    - prostředí
-    en:
-    - python
-    - venv
-    - virtualenv
-    - pip
-    - environment
+    en: [python, venv, virtualenv, pip, environment]
+    cs: [python, venv, virtualenv, pip, prostředí]
+    sk: [python, venv, virtualenv, pip, prostredie]
+    de: [python, venv, virtualenv, pip, umgebung]
+    es: [python, venv, virtualenv, pip, entorno]
+    fr: [python, venv, virtualenv, pip, environnement]
+    it: [python, venv, virtualenv, pip, ambiente]
+    pl: [python, venv, virtualenv, pip, środowisko]
+    tr: [python, venv, virtualenv, pip, ortam]
+    pt: [python, venv, virtualenv, pip, ambiente]
+    nl: [python, venv, virtualenv, pip, omgeving]
+    hu: [python, venv, virtualenv, pip, környezet]
   commands:
-  - cmd: python3 -m venv .venv
-    desc:
-      cs: Vytvořit venv v adresáři .venv
-      en: Create venv in .venv directory
-  - cmd: source .venv/bin/activate
-    desc:
-      cs: Aktivovat venv
-      en: Activate venv
-  - cmd: deactivate
-    desc:
-      cs: Deaktivovat venv
-      en: Deactivate venv
-  - cmd: pip install requests
-    desc:
-      cs: Nainstalovat balíček
-      en: Install package
-  - cmd: pip install -r requirements.txt
-    desc:
-      cs: Nainstalovat ze souboru závislostí
-      en: Install from requirements file
-  - cmd: pip freeze > requirements.txt
-    desc:
-      cs: Uložit aktuální balíčky do souboru
-      en: Save current packages to file
-  - cmd: pip list --outdated
-    desc:
-      cs: Které balíčky jsou zastaralé
-      en: Which packages are outdated
-  - cmd: pip install --upgrade balicek
-    desc:
-      cs: Upgradovat balíček
-      en: Upgrade package
+    - cmd: "python3 -m venv .venv"
+      desc:
+        en: "Create venv in .venv directory"
+        cs: "Vytvořit venv v adresáři .venv"
+        sk: "Vytvoriť venv v adresári .venv"
+        de: "Venv im .venv-Verzeichnis erstellen"
+        es: "Crear venv en directorio .venv"
+        fr: "Créer venv dans le dossier .venv"
+        it: "Creare venv nella directory .venv"
+        pl: "Utwórz venv w katalogu .venv"
+        tr: ".venv dizininde venv oluştur"
+        pt: "Criar venv no diretório .venv"
+        nl: "Venv maken in .venv-map"
+        hu: "Venv létrehozása .venv könyvtárban"
+    - cmd: "source .venv/bin/activate"
+      desc:
+        en: "Activate venv"
+        cs: "Aktivovat venv"
+        sk: "Aktivovať venv"
+        de: "Venv aktivieren"
+        es: "Activar venv"
+        fr: "Activer venv"
+        it: "Attivare venv"
+        pl: "Aktywuj venv"
+        tr: "Venv'i etkinleştir"
+        pt: "Ativar venv"
+        nl: "Venv activeren"
+        hu: "Venv aktiválása"
+    - cmd: "deactivate"
+      desc:
+        en: "Deactivate venv"
+        cs: "Deaktivovat venv"
+        sk: "Deaktivovať venv"
+        de: "Venv deaktivieren"
+        es: "Desactivar venv"
+        fr: "Désactiver venv"
+        it: "Disattivare venv"
+        pl: "Dezaktywuj venv"
+        tr: "Venv'i devre dışı bırak"
+        pt: "Desativar venv"
+        nl: "Venv deactiveren"
+        hu: "Venv deaktiválása"
+    - cmd: "pip install requests"
+      desc:
+        en: "Install package"
+        cs: "Nainstalovat balíček"
+        sk: "Nainštalovať balíček"
+        de: "Paket installieren"
+        es: "Instalar paquete"
+        fr: "Installer un paquet"
+        it: "Installare pacchetto"
+        pl: "Zainstaluj pakiet"
+        tr: "Paket yükle"
+        pt: "Instalar pacote"
+        nl: "Pakket installeren"
+        hu: "Csomag telepítése"
+    - cmd: "pip install -r requirements.txt"
+      desc:
+        en: "Install from requirements file"
+        cs: "Nainstalovat ze souboru závislostí"
+        sk: "Nainštalovať zo súboru závislostí"
+        de: "Aus Requirements-Datei installieren"
+        es: "Instalar desde requirements"
+        fr: "Installer depuis requirements"
+        it: "Installare da requirements"
+        pl: "Zainstaluj z requirements"
+        tr: "Requirements dosyasından yükle"
+        pt: "Instalar de requirements"
+        nl: "Installeren vanuit requirements"
+        hu: "Telepítés requirements fájlból"
+    - cmd: "pip freeze > requirements.txt"
+      desc:
+        en: "Save current packages to file"
+        cs: "Uložit aktuální balíčky do souboru"
+        sk: "Uložiť aktuálne balíčky do súboru"
+        de: "Aktuelle Pakete in Datei speichern"
+        es: "Guardar paquetes actuales en archivo"
+        fr: "Enregistrer les paquets actuels"
+        it: "Salvare pacchetti attuali su file"
+        pl: "Zapisz aktualne pakiety do pliku"
+        tr: "Mevcut paketleri dosyaya kaydet"
+        pt: "Salvar pacotes atuais em arquivo"
+        nl: "Huidige pakketten naar bestand"
+        hu: "Aktuális csomagok mentése fájlba"
+    - cmd: "pip list --outdated"
+      desc:
+        en: "Which packages are outdated"
+        cs: "Které balíčky jsou zastaralé"
+        sk: "Ktoré balíčky sú zastarané"
+        de: "Welche Pakete sind veraltet"
+        es: "Qué paquetes están desactualizados"
+        fr: "Quels paquets sont obsolètes"
+        it: "Quali pacchetti sono obsoleti"
+        pl: "Które pakiety są nieaktualne"
+        tr: "Hangi paketler güncel değil"
+        pt: "Quais pacotes estão desatualizados"
+        nl: "Welke pakketten zijn verouderd"
+        hu: "Mely csomagok elavultak"
+    - cmd: "pip install --upgrade package"
+      desc:
+        en: "Upgrade package"
+        cs: "Upgradovat balíček"
+        sk: "Upgradovať balíček"
+        de: "Paket upgraden"
+        es: "Actualizar paquete"
+        fr: "Mettre à jour le paquet"
+        it: "Aggiornare pacchetto"
+        pl: "Zaktualizuj pakiet"
+        tr: "Paketi yükselt"
+        pt: "Atualizar pacote"
+        nl: "Pakket upgraden"
+        hu: "Csomag frissítése"
+
 - id: python-run
   title:
-    cs: Python spouštění
-    en: Running Python
+    en: "Running Python"
+    cs: "Python spouštění"
+    sk: "Python spúšťanie"
+    de: "Python ausführen"
+    es: "Ejecutar Python"
+    fr: "Exécuter Python"
+    it: "Eseguire Python"
+    pl: "Uruchamianie Pythona"
+    tr: "Python çalıştırma"
+    pt: "Executar Python"
+    nl: "Python uitvoeren"
+    hu: "Python futtatása"
   tags:
-    cs:
-    - python
-    - spustit
-    - http
-    - server
-    en:
-    - python
-    - run
-    - http
-    - server
+    en: [python, run, http, server]
+    cs: [python, spustit, http, server]
+    sk: [python, spustiť, http, server]
+    de: [python, ausführen, http, server]
+    es: [python, ejecutar, http, servidor]
+    fr: [python, exécuter, http, serveur]
+    it: [python, eseguire, http, server]
+    pl: [python, uruchom, http, serwer]
+    tr: [python, çalıştır, http, sunucu]
+    pt: [python, executar, http, servidor]
+    nl: [python, uitvoeren, http, server]
+    hu: [python, futtatás, http, szerver]
   commands:
-  - cmd: python3 skript.py
-    desc:
-      cs: Spustit skript
-      en: Run script
-  - cmd: python3 -m http.server 8080
-    desc:
-      cs: Jednoduchý HTTP server v aktuálním adresáři
-      en: Simple HTTP server in current directory
-  - cmd: python3 -m json.tool soubor.json
-    desc:
-      cs: Pretty-print JSON
-      en: Pretty-print JSON
-  - cmd: python3 -c 'print(2**10)'
-    desc:
-      cs: Spustit inline výraz
-      en: Run inline expression
-  - cmd: python3 -i skript.py
-    desc:
-      cs: Po skončení zůstat v REPL
-      en: Stay in REPL after script
+    - cmd: "python3 script.py"
+      desc:
+        en: "Run script"
+        cs: "Spustit skript"
+        sk: "Spustiť skript"
+        de: "Skript ausführen"
+        es: "Ejecutar script"
+        fr: "Exécuter le script"
+        it: "Eseguire script"
+        pl: "Uruchom skrypt"
+        tr: "Betik çalıştır"
+        pt: "Executar script"
+        nl: "Script uitvoeren"
+        hu: "Szkript futtatása"
+    - cmd: "python3 -m http.server 8080"
+      desc:
+        en: "Simple HTTP server in current directory"
+        cs: "Jednoduchý HTTP server v aktuálním adresáři"
+        sk: "Jednoduchý HTTP server v aktuálnom adresári"
+        de: "Einfacher HTTP-Server im aktuellen Verzeichnis"
+        es: "Servidor HTTP simple en directorio actual"
+        fr: "Serveur HTTP simple dans le dossier actuel"
+        it: "Server HTTP semplice nella directory"
+        pl: "Prosty serwer HTTP w bieżącym katalogu"
+        tr: "Geçerli dizinde basit HTTP sunucusu"
+        pt: "Servidor HTTP simples no diretório atual"
+        nl: "Eenvoudige HTTP-server in huidige map"
+        hu: "Egyszerű HTTP szerver az aktuális könyvtárban"
+    - cmd: "python3 -m json.tool file.json"
+      desc:
+        en: "Pretty-print JSON"
+        cs: "Pretty-print JSON"
+        sk: "Pretty-print JSON"
+        de: "JSON formatieren"
+        es: "Formatear JSON"
+        fr: "Formater JSON"
+        it: "Formattare JSON"
+        pl: "Formatuj JSON"
+        tr: "JSON biçimle"
+        pt: "Formatar JSON"
+        nl: "JSON formatteren"
+        hu: "JSON formázása"
+    - cmd: "python3 -c 'print(2**10)'"
+      desc:
+        en: "Run inline expression"
+        cs: "Spustit inline výraz"
+        sk: "Spustiť inline výraz"
+        de: "Inline-Ausdruck ausführen"
+        es: "Ejecutar expresión en línea"
+        fr: "Exécuter une expression en ligne"
+        it: "Eseguire espressione inline"
+        pl: "Uruchom wyrażenie inline"
+        tr: "Satır içi ifade çalıştır"
+        pt: "Executar expressão inline"
+        nl: "Inline-expressie uitvoeren"
+        hu: "Inline kifejezés futtatása"
+    - cmd: "python3 -i script.py"
+      desc:
+        en: "Stay in REPL after script"
+        cs: "Po skončení zůstat v REPL"
+        sk: "Po skončení zostať v REPL"
+        de: "Nach Skript im REPL bleiben"
+        es: "Permanecer en REPL tras script"
+        fr: "Rester en REPL après le script"
+        it: "Restare in REPL dopo lo script"
+        pl: "Zostań w REPL po skrypcie"
+        tr: "Betikten sonra REPL'de kal"
+        pt: "Permanecer no REPL após script"
+        nl: "Na script in REPL blijven"
+        hu: "REPL-ben maradás szkript után"
+
 - id: node-npm
   title:
-    cs: Node.js / npm
-    en: Node.js / npm
+    en: "Node.js / npm"
+    cs: "Node.js / npm"
+    sk: "Node.js / npm"
+    de: "Node.js / npm"
+    es: "Node.js / npm"
+    fr: "Node.js / npm"
+    it: "Node.js / npm"
+    pl: "Node.js / npm"
+    tr: "Node.js / npm"
+    pt: "Node.js / npm"
+    nl: "Node.js / npm"
+    hu: "Node.js / npm"
   tags:
-    cs:
-    - node
-    - npm
-    - javascript
-    - balíčky
-    en:
-    - node
-    - npm
-    - javascript
-    - packages
+    en: [node, npm, javascript, packages]
+    cs: [node, npm, javascript, balíčky]
+    sk: [node, npm, javascript, balíčky]
+    de: [node, npm, javascript, pakete]
+    es: [node, npm, javascript, paquetes]
+    fr: [node, npm, javascript, paquets]
+    it: [node, npm, javascript, pacchetti]
+    pl: [node, npm, javascript, pakiety]
+    tr: [node, npm, javascript, paketler]
+    pt: [node, npm, javascript, pacotes]
+    nl: [node, npm, javascript, pakketten]
+    hu: [node, npm, javascript, csomagok]
   commands:
-  - cmd: node --version
-    desc:
-      cs: Verze Node.js
-      en: Node.js version
-  - cmd: node app.js
-    desc:
-      cs: Spustit skript
-      en: Run script
-  - cmd: npm init -y
-    desc:
-      cs: Vytvořit package.json s výchozími hodnotami
-      en: Create package.json with defaults
-  - cmd: npm install express
-    desc:
-      cs: Nainstalovat balíček (do node_modules)
-      en: Install package (into node_modules)
-  - cmd: npm install -g pm2
-    desc:
-      cs: Globální instalace
-      en: Global install
-  - cmd: npm install
-    desc:
-      cs: Nainstalovat vše z package.json
-      en: Install everything from package.json
-  - cmd: npm update
-    desc:
-      cs: Aktualizovat balíčky
-      en: Update packages
-  - cmd: npm outdated
-    desc:
-      cs: Které balíčky jsou zastaralé
-      en: Which packages are outdated
-  - cmd: npm run dev
-    desc:
-      cs: Spustit script 'dev' z package.json
-      en: Run 'dev' script from package.json
+    - cmd: "node --version"
+      desc:
+        en: "Node.js version"
+        cs: "Verze Node.js"
+        sk: "Verzia Node.js"
+        de: "Node.js-Version"
+        es: "Versión de Node.js"
+        fr: "Version de Node.js"
+        it: "Versione Node.js"
+        pl: "Wersja Node.js"
+        tr: "Node.js sürümü"
+        pt: "Versão do Node.js"
+        nl: "Node.js-versie"
+        hu: "Node.js verzió"
+    - cmd: "node app.js"
+      desc:
+        en: "Run script"
+        cs: "Spustit skript"
+        sk: "Spustiť skript"
+        de: "Skript ausführen"
+        es: "Ejecutar script"
+        fr: "Exécuter le script"
+        it: "Eseguire script"
+        pl: "Uruchom skrypt"
+        tr: "Betik çalıştır"
+        pt: "Executar script"
+        nl: "Script uitvoeren"
+        hu: "Szkript futtatása"
+    - cmd: "npm init -y"
+      desc:
+        en: "Create package.json with defaults"
+        cs: "Vytvořit package.json s výchozími hodnotami"
+        sk: "Vytvoriť package.json s predvolenými hodnotami"
+        de: "Package.json mit Standardwerten erstellen"
+        es: "Crear package.json con valores por defecto"
+        fr: "Créer package.json avec valeurs par défaut"
+        it: "Creare package.json con default"
+        pl: "Utwórz package.json z domyślnymi"
+        tr: "Varsayılan değerlerle package.json oluştur"
+        pt: "Criar package.json com padrões"
+        nl: "Package.json maken met standaarden"
+        hu: "Package.json létrehozása alapértékekkel"
+    - cmd: "npm install express"
+      desc:
+        en: "Install package (into node_modules)"
+        cs: "Nainstalovat balíček (do node_modules)"
+        sk: "Nainštalovať balíček (do node_modules)"
+        de: "Paket installieren (in node_modules)"
+        es: "Instalar paquete (en node_modules)"
+        fr: "Installer un paquet (dans node_modules)"
+        it: "Installare pacchetto (in node_modules)"
+        pl: "Zainstaluj pakiet (do node_modules)"
+        tr: "Paket yükle (node_modules'a)"
+        pt: "Instalar pacote (em node_modules)"
+        nl: "Pakket installeren (in node_modules)"
+        hu: "Csomag telepítése (node_modules-be)"
+    - cmd: "npm install -g pm2"
+      desc:
+        en: "Global install"
+        cs: "Globální instalace"
+        sk: "Globálna inštalácia"
+        de: "Globale Installation"
+        es: "Instalación global"
+        fr: "Installation globale"
+        it: "Installazione globale"
+        pl: "Instalacja globalna"
+        tr: "Genel kurulum"
+        pt: "Instalação global"
+        nl: "Globale installatie"
+        hu: "Globális telepítés"
+    - cmd: "npm install"
+      desc:
+        en: "Install everything from package.json"
+        cs: "Nainstalovat vše z package.json"
+        sk: "Nainštalovať všetko z package.json"
+        de: "Alles aus package.json installieren"
+        es: "Instalar todo de package.json"
+        fr: "Installer tout depuis package.json"
+        it: "Installare tutto da package.json"
+        pl: "Zainstaluj wszystko z package.json"
+        tr: "package.json'dan her şeyi yükle"
+        pt: "Instalar tudo de package.json"
+        nl: "Alles uit package.json installeren"
+        hu: "Minden telepítése package.json-ból"
+    - cmd: "npm update"
+      desc:
+        en: "Update packages"
+        cs: "Aktualizovat balíčky"
+        sk: "Aktualizovať balíčky"
+        de: "Pakete aktualisieren"
+        es: "Actualizar paquetes"
+        fr: "Mettre à jour les paquets"
+        it: "Aggiornare pacchetti"
+        pl: "Zaktualizuj pakiety"
+        tr: "Paketleri güncelle"
+        pt: "Atualizar pacotes"
+        nl: "Pakketten bijwerken"
+        hu: "Csomagok frissítése"
+    - cmd: "npm outdated"
+      desc:
+        en: "Which packages are outdated"
+        cs: "Které balíčky jsou zastaralé"
+        sk: "Ktoré balíčky sú zastarané"
+        de: "Welche Pakete sind veraltet"
+        es: "Qué paquetes están desactualizados"
+        fr: "Quels paquets sont obsolètes"
+        it: "Quali pacchetti sono obsoleti"
+        pl: "Które pakiety są nieaktualne"
+        tr: "Hangi paketler güncel değil"
+        pt: "Quais pacotes estão desatualizados"
+        nl: "Welke pakketten zijn verouderd"
+        hu: "Mely csomagok elavultak"
+    - cmd: "npm run dev"
+      desc:
+        en: "Run 'dev' script from package.json"
+        cs: "Spustit script 'dev' z package.json"
+        sk: "Spustiť script 'dev' z package.json"
+        de: "Skript 'dev' aus package.json ausführen"
+        es: "Ejecutar script 'dev' de package.json"
+        fr: "Exécuter le script 'dev' de package.json"
+        it: "Eseguire script 'dev' da package.json"
+        pl: "Uruchom skrypt 'dev' z package.json"
+        tr: "package.json'dan 'dev' betiğini çalıştır"
+        pt: "Executar script 'dev' de package.json"
+        nl: "Script 'dev' uit package.json uitvoeren"
+        hu: "'dev' szkript futtatása package.json-ból"

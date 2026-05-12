@@ -1,130 +1,325 @@
 - id: hw-overview
   title:
-    cs: Hardware - přehled
-    en: Hardware overview
+    en: "Hardware overview"
+    cs: "Hardware - přehled"
+    sk: "Hardvér - prehľad"
+    de: "Hardware-Übersicht"
+    es: "Resumen de hardware"
+    fr: "Vue d'ensemble du matériel"
+    it: "Panoramica hardware"
+    pl: "Przegląd sprzętu"
+    tr: "Donanım özeti"
+    pt: "Visão geral de hardware"
+    nl: "Hardware-overzicht"
+    hu: "Hardver áttekintés"
   tags:
-    cs:
-    - hardware
-    - hw
-    - lshw
-    - lspci
-    - lsusb
-    - info
-    en:
-    - hardware
-    - hw
-    - lshw
-    - lspci
-    - lsusb
-    - info
+    en: [hardware, hw, lshw, lspci, lsusb, info]
+    cs: [hardware, hw, lshw, lspci, lsusb, info]
+    sk: [hardvér, hw, lshw, lspci, lsusb, info]
+    de: [hardware, hw, lshw, lspci, lsusb, info]
+    es: [hardware, hw, lshw, lspci, lsusb, info]
+    fr: [matériel, hw, lshw, lspci, lsusb, info]
+    it: [hardware, hw, lshw, lspci, lsusb, info]
+    pl: [sprzęt, hw, lshw, lspci, lsusb, info]
+    tr: [donanım, hw, lshw, lspci, lsusb, info]
+    pt: [hardware, hw, lshw, lspci, lsusb, info]
+    nl: [hardware, hw, lshw, lspci, lsusb, info]
+    hu: [hardver, hw, lshw, lspci, lsusb, info]
   commands:
-  - cmd: sudo lshw -short
-    desc:
-      cs: Kompletní přehled HW (stručně)
-      en: Complete HW overview (brief)
-  - cmd: sudo lshw -class disk -class storage
-    desc:
-      cs: Jen disky a řadiče
-      en: Only disks and controllers
-  - cmd: lspci
-    desc:
-      cs: PCI zařízení (síťovky, GPU)
-      en: PCI devices (NICs, GPU)
-  - cmd: lspci -v
-    desc:
-      cs: Podrobně (drivery)
-      en: Verbose (drivers)
-  - cmd: lsusb
-    desc:
-      cs: USB zařízení
-      en: USB devices
-  - cmd: sudo dmidecode -t system
-    desc:
-      cs: Výrobce, model, BIOS
-      en: Manufacturer, model, BIOS
+    - cmd: "sudo lshw -short"
+      desc:
+        en: "Complete HW overview (brief)"
+        cs: "Kompletní přehled HW (stručně)"
+        sk: "Kompletný prehľad HW (stručne)"
+        de: "Vollständige HW-Übersicht (kurz)"
+        es: "Resumen completo de HW (breve)"
+        fr: "Vue complète du HW (bref)"
+        it: "Panoramica HW completa (breve)"
+        pl: "Pełny przegląd HW (krótko)"
+        tr: "Tam HW özeti (kısa)"
+        pt: "Visão geral HW (breve)"
+        nl: "Volledig HW-overzicht (beknopt)"
+        hu: "Teljes HW áttekintés (rövid)"
+    - cmd: "sudo lshw -class disk -class storage"
+      desc:
+        en: "Only disks and controllers"
+        cs: "Jen disky a řadiče"
+        sk: "Iba disky a radiče"
+        de: "Nur Festplatten und Controller"
+        es: "Solo discos y controladores"
+        fr: "Uniquement disques et contrôleurs"
+        it: "Solo dischi e controller"
+        pl: "Tylko dyski i kontrolery"
+        tr: "Sadece diskler ve denetleyiciler"
+        pt: "Apenas discos e controladores"
+        nl: "Alleen schijven en controllers"
+        hu: "Csak lemezek és vezérlők"
+    - cmd: "lspci"
+      desc:
+        en: "PCI devices (NICs, GPU)"
+        cs: "PCI zařízení (síťovky, GPU)"
+        sk: "PCI zariadenia (sieťovky, GPU)"
+        de: "PCI-Geräte (NICs, GPU)"
+        es: "Dispositivos PCI (NIC, GPU)"
+        fr: "Périphériques PCI (NIC, GPU)"
+        it: "Dispositivi PCI (NIC, GPU)"
+        pl: "Urządzenia PCI (karty, GPU)"
+        tr: "PCI cihazları (ağ kartı, GPU)"
+        pt: "Dispositivos PCI (NICs, GPU)"
+        nl: "PCI-apparaten (NIC's, GPU)"
+        hu: "PCI eszközök (hálózati kártya, GPU)"
+    - cmd: "lspci -v"
+      desc:
+        en: "Verbose (drivers)"
+        cs: "Podrobně (drivery)"
+        sk: "Podrobne (drivery)"
+        de: "Ausführlich (Treiber)"
+        es: "Detallado (drivers)"
+        fr: "Détaillé (pilotes)"
+        it: "Dettagliato (driver)"
+        pl: "Szczegółowo (sterowniki)"
+        tr: "Ayrıntılı (sürücüler)"
+        pt: "Detalhado (drivers)"
+        nl: "Uitgebreid (drivers)"
+        hu: "Részletes (illesztők)"
+    - cmd: "lsusb"
+      desc:
+        en: "USB devices"
+        cs: "USB zařízení"
+        sk: "USB zariadenia"
+        de: "USB-Geräte"
+        es: "Dispositivos USB"
+        fr: "Périphériques USB"
+        it: "Dispositivi USB"
+        pl: "Urządzenia USB"
+        tr: "USB cihazları"
+        pt: "Dispositivos USB"
+        nl: "USB-apparaten"
+        hu: "USB eszközök"
+    - cmd: "sudo dmidecode -t system"
+      desc:
+        en: "Manufacturer, model, BIOS"
+        cs: "Výrobce, model, BIOS"
+        sk: "Výrobca, model, BIOS"
+        de: "Hersteller, Modell, BIOS"
+        es: "Fabricante, modelo, BIOS"
+        fr: "Fabricant, modèle, BIOS"
+        it: "Produttore, modello, BIOS"
+        pl: "Producent, model, BIOS"
+        tr: "Üretici, model, BIOS"
+        pt: "Fabricante, modelo, BIOS"
+        nl: "Fabrikant, model, BIOS"
+        hu: "Gyártó, modell, BIOS"
+
 - id: hw-disk-health
   title:
-    cs: Zdraví disků (SMART)
-    en: Disk health (SMART)
+    en: "Disk health (SMART)"
+    cs: "Zdraví disků (SMART)"
+    sk: "Zdravie diskov (SMART)"
+    de: "Festplattengesundheit (SMART)"
+    es: "Salud del disco (SMART)"
+    fr: "Santé du disque (SMART)"
+    it: "Salute del disco (SMART)"
+    pl: "Stan dysku (SMART)"
+    tr: "Disk sağlığı (SMART)"
+    pt: "Saúde do disco (SMART)"
+    nl: "Schijfgezondheid (SMART)"
+    hu: "Lemez egészség (SMART)"
   tags:
-    cs:
-    - smart
-    - disk
-    - zdraví
-    - smartctl
-    - závada
-    en:
-    - smart
-    - disk
-    - health
-    - smartctl
-    - failure
+    en: [smart, disk, health, smartctl, failure]
+    cs: [smart, disk, zdraví, smartctl, závada]
+    sk: [smart, disk, zdravie, smartctl, závada]
+    de: [smart, festplatte, gesundheit, smartctl, ausfall]
+    es: [smart, disco, salud, smartctl, fallo]
+    fr: [smart, disque, santé, smartctl, défaillance]
+    it: [smart, disco, salute, smartctl, guasto]
+    pl: [smart, dysk, stan, smartctl, awaria]
+    tr: [smart, disk, sağlık, smartctl, arıza]
+    pt: [smart, disco, saúde, smartctl, falha]
+    nl: [smart, schijf, gezondheid, smartctl, falen]
+    hu: [smart, lemez, egészség, smartctl, hiba]
   commands:
-  - cmd: sudo smartctl -a /dev/sda
-    desc:
-      cs: SMART hodnoty disku
-      en: Disk SMART values
-  - cmd: sudo smartctl -H /dev/sda
-    desc:
-      cs: Stručný stav (PASSED / FAILED)
-      en: Brief status (PASSED / FAILED)
-  - cmd: sudo smartctl -t short /dev/sda
-    desc:
-      cs: Spustit krátký self-test
-      en: Run short self-test
-  - cmd: sudo nvme smart-log /dev/nvme0
-    desc:
-      cs: SMART pro NVMe disk
-      en: SMART for NVMe disk
+    - cmd: "sudo smartctl -a /dev/sda"
+      desc:
+        en: "Disk SMART values"
+        cs: "SMART hodnoty disku"
+        sk: "SMART hodnoty disku"
+        de: "SMART-Werte der Festplatte"
+        es: "Valores SMART del disco"
+        fr: "Valeurs SMART du disque"
+        it: "Valori SMART del disco"
+        pl: "Wartości SMART dysku"
+        tr: "Disk SMART değerleri"
+        pt: "Valores SMART do disco"
+        nl: "SMART-waarden van schijf"
+        hu: "Lemez SMART értékek"
+    - cmd: "sudo smartctl -H /dev/sda"
+      desc:
+        en: "Brief status (PASSED / FAILED)"
+        cs: "Stručný stav (PASSED / FAILED)"
+        sk: "Stručný stav (PASSED / FAILED)"
+        de: "Kurzstatus (PASSED / FAILED)"
+        es: "Estado breve (PASSED / FAILED)"
+        fr: "État court (PASSED / FAILED)"
+        it: "Stato breve (PASSED / FAILED)"
+        pl: "Krótki stan (PASSED / FAILED)"
+        tr: "Kısa durum (PASSED / FAILED)"
+        pt: "Status breve (PASSED / FAILED)"
+        nl: "Beknopte status (PASSED / FAILED)"
+        hu: "Rövid állapot (PASSED / FAILED)"
+    - cmd: "sudo smartctl -t short /dev/sda"
+      desc:
+        en: "Run short self-test"
+        cs: "Spustit krátký self-test"
+        sk: "Spustiť krátky self-test"
+        de: "Kurzen Selbsttest ausführen"
+        es: "Ejecutar self-test corto"
+        fr: "Lancer un self-test court"
+        it: "Eseguire self-test breve"
+        pl: "Uruchom krótki self-test"
+        tr: "Kısa self-test çalıştır"
+        pt: "Executar self-test curto"
+        nl: "Korte self-test uitvoeren"
+        hu: "Rövid önellenőrzés futtatása"
+    - cmd: "sudo nvme smart-log /dev/nvme0"
+      desc:
+        en: "SMART for NVMe disk"
+        cs: "SMART pro NVMe disk"
+        sk: "SMART pre NVMe disk"
+        de: "SMART für NVMe-Festplatte"
+        es: "SMART para disco NVMe"
+        fr: "SMART pour disque NVMe"
+        it: "SMART per disco NVMe"
+        pl: "SMART dla dysku NVMe"
+        tr: "NVMe disk için SMART"
+        pt: "SMART para disco NVMe"
+        nl: "SMART voor NVMe-schijf"
+        hu: "SMART NVMe lemezhez"
+
 - id: hw-temp
   title:
-    cs: Teploty
-    en: Temperatures
+    en: "Temperatures"
+    cs: "Teploty"
+    sk: "Teploty"
+    de: "Temperaturen"
+    es: "Temperaturas"
+    fr: "Températures"
+    it: "Temperature"
+    pl: "Temperatury"
+    tr: "Sıcaklıklar"
+    pt: "Temperaturas"
+    nl: "Temperaturen"
+    hu: "Hőmérsékletek"
   tags:
-    cs:
-    - teplota
-    - temp
-    - sensors
-    - lm-sensors
-    en:
-    - temperature
-    - temp
-    - sensors
-    - lm-sensors
+    en: [temperature, temp, sensors, lm-sensors]
+    cs: [teplota, temp, sensors, lm-sensors]
+    sk: [teplota, temp, sensors, lm-sensors]
+    de: [temperatur, temp, sensors, lm-sensors]
+    es: [temperatura, temp, sensors, lm-sensors]
+    fr: [température, temp, sensors, lm-sensors]
+    it: [temperatura, temp, sensors, lm-sensors]
+    pl: [temperatura, temp, sensors, lm-sensors]
+    tr: [sıcaklık, temp, sensors, lm-sensors]
+    pt: [temperatura, temp, sensors, lm-sensors]
+    nl: [temperatuur, temp, sensors, lm-sensors]
+    hu: [hőmérséklet, temp, sensors, lm-sensors]
   commands:
-  - cmd: sensors
-    desc:
-      cs: Teploty CPU/desky (apt install lm-sensors)
-      en: CPU/mainboard temps
-  - cmd: sudo sensors-detect --auto
-    desc:
-      cs: Inicializovat senzory (po instalaci)
-      en: Initialize sensors (after install)
-  - cmd: watch -n 2 sensors
-    desc:
-      cs: Sledovat teploty živě
-      en: Watch temps live
+    - cmd: "sensors"
+      desc:
+        en: "CPU/mainboard temps"
+        cs: "Teploty CPU/desky (apt install lm-sensors)"
+        sk: "Teploty CPU/dosky (apt install lm-sensors)"
+        de: "CPU-/Mainboard-Temperaturen"
+        es: "Temperaturas CPU/placa"
+        fr: "Températures CPU/carte mère"
+        it: "Temperature CPU/scheda madre"
+        pl: "Temperatury CPU/płyty"
+        tr: "CPU/anakart sıcaklıkları"
+        pt: "Temperaturas CPU/placa"
+        nl: "CPU-/moederbordtemperaturen"
+        hu: "CPU/alaplap hőmérsékletek"
+    - cmd: "sudo sensors-detect --auto"
+      desc:
+        en: "Initialize sensors (after install)"
+        cs: "Inicializovat senzory (po instalaci)"
+        sk: "Inicializovať senzory (po inštalácii)"
+        de: "Sensoren initialisieren (nach Installation)"
+        es: "Inicializar sensores (tras instalación)"
+        fr: "Initialiser les capteurs (après install)"
+        it: "Inizializzare sensori (dopo install)"
+        pl: "Zainicjuj sensory (po instalacji)"
+        tr: "Sensörleri başlat (kurulumdan sonra)"
+        pt: "Inicializar sensores (após instalação)"
+        nl: "Sensoren initialiseren (na install)"
+        hu: "Szenzorok inicializálása (telepítés után)"
+    - cmd: "watch -n 2 sensors"
+      desc:
+        en: "Watch temps live"
+        cs: "Sledovat teploty živě"
+        sk: "Sledovať teploty živo"
+        de: "Temperaturen live verfolgen"
+        es: "Ver temperaturas en vivo"
+        fr: "Suivre les températures en direct"
+        it: "Vedere temperature live"
+        pl: "Śledź temperatury na żywo"
+        tr: "Sıcaklıkları canlı izle"
+        pt: "Acompanhar temperaturas ao vivo"
+        nl: "Temperaturen live volgen"
+        hu: "Hőmérsékletek élő követése"
+
 - id: hw-power
   title:
-    cs: Baterie a napájení
-    en: Battery and power
+    en: "Battery and power"
+    cs: "Baterie a napájení"
+    sk: "Batéria a napájanie"
+    de: "Akku und Strom"
+    es: "Batería y energía"
+    fr: "Batterie et alimentation"
+    it: "Batteria e alimentazione"
+    pl: "Bateria i zasilanie"
+    tr: "Pil ve güç"
+    pt: "Bateria e energia"
+    nl: "Batterij en stroom"
+    hu: "Akkumulátor és táp"
   tags:
-    cs:
-    - baterie
-    - battery
-    - napájení
-    - power
-    - upower
-    en:
-    - battery
-    - power
-    - upower
+    en: [battery, power, upower]
+    cs: [baterie, battery, napájení, power, upower]
+    sk: [batéria, battery, napájanie, power, upower]
+    de: [akku, battery, strom, power, upower]
+    es: [batería, battery, energía, power, upower]
+    fr: [batterie, battery, alimentation, power, upower]
+    it: [batteria, battery, alimentazione, power, upower]
+    pl: [bateria, battery, zasilanie, power, upower]
+    tr: [pil, battery, güç, power, upower]
+    pt: [bateria, battery, energia, power, upower]
+    nl: [batterij, battery, stroom, power, upower]
+    hu: [akkumulátor, battery, táp, power, upower]
   commands:
-  - cmd: upower -i $(upower -e | grep BAT)
-    desc:
-      cs: Stav baterie (procenta, kapacita)
-      en: Battery status (percent, capacity)
-  - cmd: cat /sys/class/power_supply/BAT0/capacity
-    desc:
-      cs: Jen procenta baterie
-      en: Just battery percent
+    - cmd: "upower -i $(upower -e | grep BAT)"
+      desc:
+        en: "Battery status (percent, capacity)"
+        cs: "Stav baterie (procenta, kapacita)"
+        sk: "Stav batérie (percentá, kapacita)"
+        de: "Akkustatus (Prozent, Kapazität)"
+        es: "Estado de la batería (%, capacidad)"
+        fr: "État de la batterie (%, capacité)"
+        it: "Stato batteria (percentuale, capacità)"
+        pl: "Stan baterii (procent, pojemność)"
+        tr: "Pil durumu (yüzde, kapasite)"
+        pt: "Estado da bateria (%, capacidade)"
+        nl: "Batterijstatus (procent, capaciteit)"
+        hu: "Akkumulátor állapot (százalék, kapacitás)"
+    - cmd: "cat /sys/class/power_supply/BAT0/capacity"
+      desc:
+        en: "Just battery percent"
+        cs: "Jen procenta baterie"
+        sk: "Iba percentá batérie"
+        de: "Nur Akku-Prozent"
+        es: "Solo porcentaje de batería"
+        fr: "Juste le pourcentage de batterie"
+        it: "Solo percentuale batteria"
+        pl: "Tylko procent baterii"
+        tr: "Sadece pil yüzdesi"
+        pt: "Apenas porcentagem de bateria"
+        nl: "Alleen batterijpercentage"
+        hu: "Csak az akkumulátor százalék"

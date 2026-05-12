@@ -1,126 +1,324 @@
 - id: curl-basic
   title:
-    cs: curl - HTTP požadavky
-    en: curl - HTTP requests
+    en: "curl - HTTP requests"
+    cs: "curl - HTTP požadavky"
+    sk: "curl - HTTP požiadavky"
+    de: "curl - HTTP-Anfragen"
+    es: "curl - peticiones HTTP"
+    fr: "curl - requêtes HTTP"
+    it: "curl - richieste HTTP"
+    pl: "curl - żądania HTTP"
+    tr: "curl - HTTP istekleri"
+    pt: "curl - requisições HTTP"
+    nl: "curl - HTTP-verzoeken"
+    hu: "curl - HTTP kérések"
   tags:
-    cs:
-    - curl
-    - http
-    - request
-    - api
-    - json
-    - post
-    - get
-    en:
-    - curl
-    - http
-    - request
-    - api
-    - json
-    - post
-    - get
+    en: [curl, http, request, api, json, post, get]
+    cs: [curl, http, request, api, json, post, get]
+    sk: [curl, http, request, api, json, post, get]
+    de: [curl, http, request, api, json, post, get]
+    es: [curl, http, request, api, json, post, get]
+    fr: [curl, http, request, api, json, post, get]
+    it: [curl, http, request, api, json, post, get]
+    pl: [curl, http, request, api, json, post, get]
+    tr: [curl, http, request, api, json, post, get]
+    pt: [curl, http, request, api, json, post, get]
+    nl: [curl, http, request, api, json, post, get]
+    hu: [curl, http, request, api, json, post, get]
   commands:
-  - cmd: curl https://api.example.com
-    desc:
-      cs: GET požadavek
-      en: GET request
-  - cmd: curl -i https://example.com
-    desc:
-      cs: Včetně HTTP hlaviček odpovědi
-      en: Include response headers
-  - cmd: curl -I https://example.com
-    desc:
-      cs: Jen HEAD (hlavičky)
-      en: HEAD only (headers)
-  - cmd: curl -L https://bit.ly/something
-    desc:
-      cs: Následovat redirecty
-      en: Follow redirects
-  - cmd: curl -s https://example.com | jq .
-    desc:
-      cs: Tichý mód + pretty-print JSON
-      en: Silent + pretty-print JSON
-  - cmd: curl -w 'HTTP %{http_code}\nTime %{time_total}s\n' -o /dev/null -s https://example.com
-    desc:
-      cs: Měřit dobu odezvy
-      en: Measure response time
+    - cmd: "curl https://api.example.com"
+      desc:
+        en: "GET request"
+        cs: "GET požadavek"
+        sk: "GET požiadavka"
+        de: "GET-Anfrage"
+        es: "Petición GET"
+        fr: "Requête GET"
+        it: "Richiesta GET"
+        pl: "Żądanie GET"
+        tr: "GET isteği"
+        pt: "Requisição GET"
+        nl: "GET-verzoek"
+        hu: "GET kérés"
+    - cmd: "curl -i https://example.com"
+      desc:
+        en: "Include response headers"
+        cs: "Včetně HTTP hlaviček odpovědi"
+        sk: "Vrátane HTTP hlavičiek odpovede"
+        de: "Inklusive Antwortheader"
+        es: "Incluir cabeceras de respuesta"
+        fr: "Avec en-têtes de réponse"
+        it: "Includere header risposta"
+        pl: "Wraz z nagłówkami odpowiedzi"
+        tr: "Yanıt başlıkları dahil"
+        pt: "Incluindo cabeçalhos de resposta"
+        nl: "Inclusief responsheaders"
+        hu: "Beleértve a válasz fejléceket"
+    - cmd: "curl -I https://example.com"
+      desc:
+        en: "HEAD only (headers)"
+        cs: "Jen HEAD (hlavičky)"
+        sk: "Iba HEAD (hlavičky)"
+        de: "Nur HEAD (Header)"
+        es: "Solo HEAD (cabeceras)"
+        fr: "HEAD uniquement (en-têtes)"
+        it: "Solo HEAD (header)"
+        pl: "Tylko HEAD (nagłówki)"
+        tr: "Sadece HEAD (başlıklar)"
+        pt: "Apenas HEAD (cabeçalhos)"
+        nl: "Alleen HEAD (headers)"
+        hu: "Csak HEAD (fejlécek)"
+    - cmd: "curl -L https://bit.ly/something"
+      desc:
+        en: "Follow redirects"
+        cs: "Následovat redirecty"
+        sk: "Nasledovať redirecty"
+        de: "Weiterleitungen folgen"
+        es: "Seguir redirecciones"
+        fr: "Suivre les redirections"
+        it: "Seguire i redirect"
+        pl: "Podążaj za przekierowaniami"
+        tr: "Yönlendirmeleri takip et"
+        pt: "Seguir redirecionamentos"
+        nl: "Doorverwijzingen volgen"
+        hu: "Átirányítások követése"
+    - cmd: "curl -s https://example.com | jq ."
+      desc:
+        en: "Silent + pretty-print JSON"
+        cs: "Tichý mód + pretty-print JSON"
+        sk: "Tichý režim + pretty-print JSON"
+        de: "Stiller Modus + JSON formatieren"
+        es: "Silencioso + JSON formateado"
+        fr: "Silencieux + JSON formaté"
+        it: "Silenzioso + JSON formattato"
+        pl: "Cichy + sformatowany JSON"
+        tr: "Sessiz + biçimli JSON"
+        pt: "Silencioso + JSON formatado"
+        nl: "Stil + pretty-print JSON"
+        hu: "Csendes + formázott JSON"
+    - cmd: "curl -w 'HTTP %{http_code}\\nTime %{time_total}s\\n' -o /dev/null -s https://example.com"
+      desc:
+        en: "Measure response time"
+        cs: "Měřit dobu odezvy"
+        sk: "Merať čas odozvy"
+        de: "Antwortzeit messen"
+        es: "Medir tiempo de respuesta"
+        fr: "Mesurer le temps de réponse"
+        it: "Misurare tempo di risposta"
+        pl: "Zmierz czas odpowiedzi"
+        tr: "Yanıt süresini ölç"
+        pt: "Medir tempo de resposta"
+        nl: "Responstijd meten"
+        hu: "Válaszidő mérése"
+
 - id: curl-post
   title:
-    cs: curl - POST a hlavičky
-    en: curl - POST and headers
+    en: "curl - POST and headers"
+    cs: "curl - POST a hlavičky"
+    sk: "curl - POST a hlavičky"
+    de: "curl - POST und Header"
+    es: "curl - POST y cabeceras"
+    fr: "curl - POST et en-têtes"
+    it: "curl - POST e header"
+    pl: "curl - POST i nagłówki"
+    tr: "curl - POST ve başlıklar"
+    pt: "curl - POST e cabeçalhos"
+    nl: "curl - POST en headers"
+    hu: "curl - POST és fejlécek"
   tags:
-    cs:
-    - curl
-    - post
-    - header
-    - json
-    - api
-    - auth
-    en:
-    - curl
-    - post
-    - header
-    - json
-    - api
-    - auth
+    en: [curl, post, header, json, api, auth]
+    cs: [curl, post, header, json, api, auth]
+    sk: [curl, post, header, json, api, auth]
+    de: [curl, post, header, json, api, auth]
+    es: [curl, post, header, json, api, auth]
+    fr: [curl, post, header, json, api, auth]
+    it: [curl, post, header, json, api, auth]
+    pl: [curl, post, header, json, api, auth]
+    tr: [curl, post, header, json, api, auth]
+    pt: [curl, post, header, json, api, auth]
+    nl: [curl, post, header, json, api, auth]
+    hu: [curl, post, header, json, api, auth]
   commands:
-  - cmd: curl -X POST https://api.example.com/data
-    desc:
-      cs: Prázdný POST
-      en: Empty POST
-  - cmd: 'curl -X POST -H ''Content-Type: application/json'' -d ''{"key":"val"}'' https://api.example.com'
-    desc:
-      cs: POST s JSON tělem
-      en: POST with JSON body
-  - cmd: 'curl -X POST -d @data.json -H ''Content-Type: application/json'' https://api.example.com'
-    desc:
-      cs: POST s tělem ze souboru
-      en: POST with body from file
-  - cmd: 'curl -H ''Authorization: Bearer TOKEN'' https://api.example.com'
-    desc:
-      cs: Autorizační hlavička (Bearer token)
-      en: Authorization header (Bearer)
-  - cmd: curl -u user:heslo https://api.example.com
-    desc:
-      cs: Basic auth
-      en: Basic auth
-  - cmd: curl -F 'file=@obrazek.png' https://api.example.com/upload
-    desc:
-      cs: Upload souboru (multipart)
-      en: Upload file (multipart)
+    - cmd: "curl -X POST https://api.example.com/data"
+      desc:
+        en: "Empty POST"
+        cs: "Prázdný POST"
+        sk: "Prázdny POST"
+        de: "Leerer POST"
+        es: "POST vacío"
+        fr: "POST vide"
+        it: "POST vuoto"
+        pl: "Pusty POST"
+        tr: "Boş POST"
+        pt: "POST vazio"
+        nl: "Lege POST"
+        hu: "Üres POST"
+    - cmd: "curl -X POST -H 'Content-Type: application/json' -d '{\"key\":\"val\"}' https://api.example.com"
+      desc:
+        en: "POST with JSON body"
+        cs: "POST s JSON tělem"
+        sk: "POST s JSON telom"
+        de: "POST mit JSON-Body"
+        es: "POST con cuerpo JSON"
+        fr: "POST avec corps JSON"
+        it: "POST con body JSON"
+        pl: "POST z ciałem JSON"
+        tr: "JSON gövdeli POST"
+        pt: "POST com corpo JSON"
+        nl: "POST met JSON-body"
+        hu: "POST JSON törzzsel"
+    - cmd: "curl -X POST -d @data.json -H 'Content-Type: application/json' https://api.example.com"
+      desc:
+        en: "POST with body from file"
+        cs: "POST s tělem ze souboru"
+        sk: "POST s telom zo súboru"
+        de: "POST mit Body aus Datei"
+        es: "POST con cuerpo desde archivo"
+        fr: "POST avec corps depuis fichier"
+        it: "POST con body da file"
+        pl: "POST z ciałem z pliku"
+        tr: "Dosyadan gövdeli POST"
+        pt: "POST com corpo de arquivo"
+        nl: "POST met body uit bestand"
+        hu: "POST törzs fájlból"
+    - cmd: "curl -H 'Authorization: Bearer TOKEN' https://api.example.com"
+      desc:
+        en: "Authorization header (Bearer)"
+        cs: "Autorizační hlavička (Bearer token)"
+        sk: "Autorizačná hlavička (Bearer token)"
+        de: "Authorization-Header (Bearer)"
+        es: "Cabecera Authorization (Bearer)"
+        fr: "En-tête Authorization (Bearer)"
+        it: "Header Authorization (Bearer)"
+        pl: "Nagłówek Authorization (Bearer)"
+        tr: "Authorization başlığı (Bearer)"
+        pt: "Cabeçalho Authorization (Bearer)"
+        nl: "Authorization-header (Bearer)"
+        hu: "Authorization fejléc (Bearer)"
+    - cmd: "curl -u user:password https://api.example.com"
+      desc:
+        en: "Basic auth"
+        cs: "Basic auth"
+        sk: "Basic auth"
+        de: "Basic Auth"
+        es: "Autenticación básica"
+        fr: "Authentification basique"
+        it: "Basic auth"
+        pl: "Basic auth"
+        tr: "Basic auth"
+        pt: "Basic auth"
+        nl: "Basic auth"
+        hu: "Basic auth"
+    - cmd: "curl -F 'file=@image.png' https://api.example.com/upload"
+      desc:
+        en: "Upload file (multipart)"
+        cs: "Upload souboru (multipart)"
+        sk: "Upload súboru (multipart)"
+        de: "Datei hochladen (multipart)"
+        es: "Subir archivo (multipart)"
+        fr: "Téléverser un fichier (multipart)"
+        it: "Caricare file (multipart)"
+        pl: "Wyślij plik (multipart)"
+        tr: "Dosya yükle (multipart)"
+        pt: "Enviar arquivo (multipart)"
+        nl: "Bestand uploaden (multipart)"
+        hu: "Fájl feltöltése (multipart)"
+
 - id: jq
   title:
-    cs: jq - práce s JSON
-    en: jq - JSON processing
+    en: "jq - JSON processing"
+    cs: "jq - práce s JSON"
+    sk: "jq - práca s JSON"
+    de: "jq - JSON-Verarbeitung"
+    es: "jq - procesar JSON"
+    fr: "jq - traitement JSON"
+    it: "jq - elaborazione JSON"
+    pl: "jq - przetwarzanie JSON"
+    tr: "jq - JSON işleme"
+    pt: "jq - processar JSON"
+    nl: "jq - JSON-verwerking"
+    hu: "jq - JSON feldolgozás"
   tags:
-    cs:
-    - jq
-    - json
-    - zpracovat
-    - filtr
-    en:
-    - jq
-    - json
-    - filter
-    - process
+    en: [jq, json, filter, process]
+    cs: [jq, json, zpracovat, filtr]
+    sk: [jq, json, spracovať, filter]
+    de: [jq, json, filter, verarbeiten]
+    es: [jq, json, filtro, procesar]
+    fr: [jq, json, filtre, traiter]
+    it: [jq, json, filtro, elaborare]
+    pl: [jq, json, filtr, przetwarzaj]
+    tr: [jq, json, filtre, işle]
+    pt: [jq, json, filtro, processar]
+    nl: [jq, json, filter, verwerken]
+    hu: [jq, json, szűrő, feldolgozás]
   commands:
-  - cmd: cat data.json | jq .
-    desc:
-      cs: Pretty-print JSON
-      en: Pretty-print JSON
-  - cmd: cat data.json | jq '.users[].name'
-    desc:
-      cs: Vypsat jména uživatelů
-      en: Extract user names
-  - cmd: cat data.json | jq '.[] | select(.age > 30)'
-    desc:
-      cs: Filtrovat podle podmínky
-      en: Filter by condition
-  - cmd: cat data.json | jq -r '.token'
-    desc:
-      cs: Raw výstup (bez uvozovek)
-      en: Raw output (no quotes)
-  - cmd: cat data.json | jq 'length'
-    desc:
-      cs: Počet prvků
-      en: Number of elements
+    - cmd: "cat data.json | jq ."
+      desc:
+        en: "Pretty-print JSON"
+        cs: "Pretty-print JSON"
+        sk: "Pretty-print JSON"
+        de: "JSON formatieren"
+        es: "Formatear JSON"
+        fr: "Formater JSON"
+        it: "Formattare JSON"
+        pl: "Formatuj JSON"
+        tr: "JSON'u biçimle"
+        pt: "Formatar JSON"
+        nl: "JSON formatteren"
+        hu: "JSON formázása"
+    - cmd: "cat data.json | jq '.users[].name'"
+      desc:
+        en: "Extract user names"
+        cs: "Vypsat jména uživatelů"
+        sk: "Vypísať mená používateľov"
+        de: "Benutzernamen extrahieren"
+        es: "Extraer nombres de usuario"
+        fr: "Extraire les noms d'utilisateur"
+        it: "Estrarre nomi utente"
+        pl: "Wyciągnij nazwy użytkowników"
+        tr: "Kullanıcı adlarını çıkar"
+        pt: "Extrair nomes de usuário"
+        nl: "Gebruikersnamen extraheren"
+        hu: "Felhasználónevek kinyerése"
+    - cmd: "cat data.json | jq '.[] | select(.age > 30)'"
+      desc:
+        en: "Filter by condition"
+        cs: "Filtrovat podle podmínky"
+        sk: "Filtrovať podľa podmienky"
+        de: "Nach Bedingung filtern"
+        es: "Filtrar por condición"
+        fr: "Filtrer par condition"
+        it: "Filtrare per condizione"
+        pl: "Filtruj wg warunku"
+        tr: "Koşula göre filtrele"
+        pt: "Filtrar por condição"
+        nl: "Filteren op conditie"
+        hu: "Szűrés feltétel alapján"
+    - cmd: "cat data.json | jq -r '.token'"
+      desc:
+        en: "Raw output (no quotes)"
+        cs: "Raw výstup (bez uvozovek)"
+        sk: "Raw výstup (bez úvodzoviek)"
+        de: "Raw-Ausgabe (ohne Anführungszeichen)"
+        es: "Salida raw (sin comillas)"
+        fr: "Sortie brute (sans guillemets)"
+        it: "Output raw (senza virgolette)"
+        pl: "Surowe wyjście (bez cudzysłowów)"
+        tr: "Ham çıktı (tırnak yok)"
+        pt: "Saída raw (sem aspas)"
+        nl: "Raw uitvoer (zonder aanhalingstekens)"
+        hu: "Nyers kimenet (idézőjelek nélkül)"
+    - cmd: "cat data.json | jq 'length'"
+      desc:
+        en: "Number of elements"
+        cs: "Počet prvků"
+        sk: "Počet prvkov"
+        de: "Anzahl der Elemente"
+        es: "Número de elementos"
+        fr: "Nombre d'éléments"
+        it: "Numero di elementi"
+        pl: "Liczba elementów"
+        tr: "Eleman sayısı"
+        pt: "Número de elementos"
+        nl: "Aantal elementen"
+        hu: "Elemek száma"

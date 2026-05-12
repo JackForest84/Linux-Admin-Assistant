@@ -1,191 +1,508 @@
 - id: fail2ban
   title:
-    cs: Fail2ban (ochrana proti brute-force)
-    en: Fail2ban (brute-force protection)
+    en: "Fail2ban (brute-force protection)"
+    cs: "Fail2ban (ochrana proti brute-force)"
+    sk: "Fail2ban (ochrana proti brute-force)"
+    de: "Fail2ban (Brute-Force-Schutz)"
+    es: "Fail2ban (protección brute-force)"
+    fr: "Fail2ban (protection brute-force)"
+    it: "Fail2ban (protezione brute-force)"
+    pl: "Fail2ban (ochrona przed brute-force)"
+    tr: "Fail2ban (brute-force koruması)"
+    pt: "Fail2ban (proteção brute-force)"
+    nl: "Fail2ban (brute-force-bescherming)"
+    hu: "Fail2ban (brute-force védelem)"
   tags:
-    cs:
-    - fail2ban
-    - ban
-    - brute
-    - force
-    - ochrana
-    en:
-    - fail2ban
-    - ban
-    - brute
-    - force
-    - protection
+    en: [fail2ban, ban, brute, force, protection]
+    cs: [fail2ban, ban, brute, force, ochrana]
+    sk: [fail2ban, ban, brute, force, ochrana]
+    de: [fail2ban, ban, brute, force, schutz]
+    es: [fail2ban, ban, brute, force, protección]
+    fr: [fail2ban, ban, brute, force, protection]
+    it: [fail2ban, ban, brute, force, protezione]
+    pl: [fail2ban, ban, brute, force, ochrona]
+    tr: [fail2ban, ban, brute, force, koruma]
+    pt: [fail2ban, ban, brute, force, proteção]
+    nl: [fail2ban, ban, brute, force, bescherming]
+    hu: [fail2ban, ban, brute, force, védelem]
   commands:
-  - cmd: sudo fail2ban-client status
-    desc:
-      cs: Souhrn (které jaily jsou aktivní)
-      en: Summary (active jails)
-  - cmd: sudo fail2ban-client status sshd
-    desc:
-      cs: Detail SSH jailu (zabanované IP)
-      en: SSH jail detail (banned IPs)
-  - cmd: sudo fail2ban-client set sshd unbanip 1.2.3.4
-    desc:
-      cs: Odbanovat IP
-      en: Unban IP
-  - cmd: sudo fail2ban-client reload
-    desc:
-      cs: Znovu načíst konfiguraci
-      en: Reload config
-  - cmd: sudo tail -f /var/log/fail2ban.log
-    desc:
-      cs: Sledovat akce fail2ban živě
-      en: Watch fail2ban actions live
+    - cmd: "sudo fail2ban-client status"
+      desc:
+        en: "Summary (active jails)"
+        cs: "Souhrn (které jaily jsou aktivní)"
+        sk: "Súhrn (ktoré jaily sú aktívne)"
+        de: "Zusammenfassung (aktive Jails)"
+        es: "Resumen (jails activos)"
+        fr: "Résumé (jails actifs)"
+        it: "Riepilogo (jail attivi)"
+        pl: "Podsumowanie (aktywne jaile)"
+        tr: "Özet (aktif jail'ler)"
+        pt: "Resumo (jails ativos)"
+        nl: "Samenvatting (actieve jails)"
+        hu: "Összefoglaló (aktív jail-ek)"
+    - cmd: "sudo fail2ban-client status sshd"
+      desc:
+        en: "SSH jail detail (banned IPs)"
+        cs: "Detail SSH jailu (zabanované IP)"
+        sk: "Detail SSH jailu (zabanované IP)"
+        de: "SSH-Jail-Details (gesperrte IPs)"
+        es: "Detalle del jail SSH (IPs baneadas)"
+        fr: "Détail jail SSH (IP bannies)"
+        it: "Dettaglio jail SSH (IP bannate)"
+        pl: "Szczegóły jaila SSH (zbanowane IP)"
+        tr: "SSH jail detayı (yasaklı IP'ler)"
+        pt: "Detalhe do jail SSH (IPs banidos)"
+        nl: "SSH-jaildetail (gebande IP's)"
+        hu: "SSH jail részlet (tiltott IP-k)"
+    - cmd: "sudo fail2ban-client set sshd unbanip 1.2.3.4"
+      desc:
+        en: "Unban IP"
+        cs: "Odbanovat IP"
+        sk: "Odbanovať IP"
+        de: "IP-Sperre aufheben"
+        es: "Quitar baneo a IP"
+        fr: "Débannir une IP"
+        it: "Sbanare IP"
+        pl: "Odbanuj IP"
+        tr: "IP yasağını kaldır"
+        pt: "Desbanir IP"
+        nl: "IP ontbannen"
+        hu: "IP feloldása"
+    - cmd: "sudo fail2ban-client reload"
+      desc:
+        en: "Reload config"
+        cs: "Znovu načíst konfiguraci"
+        sk: "Znova načítať konfiguráciu"
+        de: "Konfiguration neu laden"
+        es: "Recargar configuración"
+        fr: "Recharger la configuration"
+        it: "Ricaricare configurazione"
+        pl: "Przeładuj konfigurację"
+        tr: "Yapılandırmayı yeniden yükle"
+        pt: "Recarregar configuração"
+        nl: "Configuratie herladen"
+        hu: "Konfiguráció újratöltése"
+    - cmd: "sudo tail -f /var/log/fail2ban.log"
+      desc:
+        en: "Watch fail2ban actions live"
+        cs: "Sledovat akce fail2ban živě"
+        sk: "Sledovať akcie fail2ban živo"
+        de: "Fail2ban-Aktionen live verfolgen"
+        es: "Ver acciones de fail2ban en vivo"
+        fr: "Suivre les actions fail2ban en direct"
+        it: "Vedere azioni fail2ban live"
+        pl: "Śledź akcje fail2ban na żywo"
+        tr: "Fail2ban eylemlerini canlı izle"
+        pt: "Acompanhar ações do fail2ban ao vivo"
+        nl: "Fail2ban-acties live volgen"
+        hu: "Fail2ban műveletek élő követése"
+
 - id: openssl-cert
   title:
-    cs: OpenSSL - certifikáty
-    en: OpenSSL - certificates
+    en: "OpenSSL - certificates"
+    cs: "OpenSSL - certifikáty"
+    sk: "OpenSSL - certifikáty"
+    de: "OpenSSL - Zertifikate"
+    es: "OpenSSL - certificados"
+    fr: "OpenSSL - certificats"
+    it: "OpenSSL - certificati"
+    pl: "OpenSSL - certyfikaty"
+    tr: "OpenSSL - sertifikalar"
+    pt: "OpenSSL - certificados"
+    nl: "OpenSSL - certificaten"
+    hu: "OpenSSL - tanúsítványok"
   tags:
-    cs:
-    - openssl
-    - certifikát
-    - ssl
-    - tls
-    - klíč
-    en:
-    - openssl
-    - certificate
-    - ssl
-    - tls
-    - key
+    en: [openssl, certificate, ssl, tls, key]
+    cs: [openssl, certifikát, ssl, tls, klíč]
+    sk: [openssl, certifikát, ssl, tls, kľúč]
+    de: [openssl, zertifikat, ssl, tls, schlüssel]
+    es: [openssl, certificado, ssl, tls, clave]
+    fr: [openssl, certificat, ssl, tls, clé]
+    it: [openssl, certificato, ssl, tls, chiave]
+    pl: [openssl, certyfikat, ssl, tls, klucz]
+    tr: [openssl, sertifika, ssl, tls, anahtar]
+    pt: [openssl, certificado, ssl, tls, chave]
+    nl: [openssl, certificaat, ssl, tls, sleutel]
+    hu: [openssl, tanúsítvány, ssl, tls, kulcs]
   commands:
-  - cmd: openssl s_client -connect example.com:443
-    desc:
-      cs: Otestovat TLS spojení
-      en: Test TLS connection
-  - cmd: echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -dates
-    desc:
-      cs: Datum platnosti certifikátu
-      en: Certificate validity dates
-  - cmd: openssl x509 -in cert.pem -noout -text
-    desc:
-      cs: Dekódovat certifikát do textu
-      en: Decode certificate to text
-  - cmd: openssl genrsa -out klic.pem 4096
-    desc:
-      cs: Vygenerovat RSA klíč 4096 bit
-      en: Generate RSA 4096-bit key
-  - cmd: openssl req -new -key klic.pem -out csr.pem
-    desc:
-      cs: Vytvořit CSR (žádost o certifikát)
-      en: Create CSR (certificate request)
-  - cmd: openssl req -x509 -newkey rsa:4096 -keyout klic.pem -out cert.pem -days 365 -nodes
-    desc:
-      cs: Self-signed certifikát na 365 dní
-      en: Self-signed cert for 365 days
+    - cmd: "openssl s_client -connect example.com:443"
+      desc:
+        en: "Test TLS connection"
+        cs: "Otestovat TLS spojení"
+        sk: "Otestovať TLS spojenie"
+        de: "TLS-Verbindung testen"
+        es: "Probar conexión TLS"
+        fr: "Tester la connexion TLS"
+        it: "Testare connessione TLS"
+        pl: "Test połączenia TLS"
+        tr: "TLS bağlantısını test et"
+        pt: "Testar conexão TLS"
+        nl: "TLS-verbinding testen"
+        hu: "TLS kapcsolat tesztelése"
+    - cmd: "echo | openssl s_client -connect example.com:443 2>/dev/null | openssl x509 -noout -dates"
+      desc:
+        en: "Certificate validity dates"
+        cs: "Datum platnosti certifikátu"
+        sk: "Dátum platnosti certifikátu"
+        de: "Zertifikatsgültigkeitsdaten"
+        es: "Fechas de validez del certificado"
+        fr: "Dates de validité du certificat"
+        it: "Date di validità certificato"
+        pl: "Daty ważności certyfikatu"
+        tr: "Sertifika geçerlilik tarihleri"
+        pt: "Datas de validade do certificado"
+        nl: "Geldigheidsdata certificaat"
+        hu: "Tanúsítvány érvényességi dátumai"
+    - cmd: "openssl x509 -in cert.pem -noout -text"
+      desc:
+        en: "Decode certificate to text"
+        cs: "Dekódovat certifikát do textu"
+        sk: "Dekódovať certifikát do textu"
+        de: "Zertifikat in Text decodieren"
+        es: "Decodificar certificado a texto"
+        fr: "Décoder le certificat en texte"
+        it: "Decodificare certificato in testo"
+        pl: "Zdekoduj certyfikat do tekstu"
+        tr: "Sertifikayı metne çöz"
+        pt: "Decodificar certificado para texto"
+        nl: "Certificaat decoderen naar tekst"
+        hu: "Tanúsítvány szöveggé dekódolása"
+    - cmd: "openssl genrsa -out key.pem 4096"
+      desc:
+        en: "Generate RSA 4096-bit key"
+        cs: "Vygenerovat RSA klíč 4096 bit"
+        sk: "Vygenerovať RSA kľúč 4096 bit"
+        de: "RSA-4096-Bit-Schlüssel erzeugen"
+        es: "Generar clave RSA 4096 bits"
+        fr: "Générer une clé RSA 4096 bits"
+        it: "Generare chiave RSA 4096 bit"
+        pl: "Wygeneruj klucz RSA 4096 bit"
+        tr: "RSA 4096 bit anahtar üret"
+        pt: "Gerar chave RSA 4096 bits"
+        nl: "RSA 4096-bit-sleutel genereren"
+        hu: "RSA 4096 bites kulcs létrehozása"
+    - cmd: "openssl req -new -key key.pem -out csr.pem"
+      desc:
+        en: "Create CSR (certificate request)"
+        cs: "Vytvořit CSR (žádost o certifikát)"
+        sk: "Vytvoriť CSR (žiadosť o certifikát)"
+        de: "CSR erstellen (Zertifikatsanforderung)"
+        es: "Crear CSR (solicitud de certificado)"
+        fr: "Créer un CSR (demande de certificat)"
+        it: "Creare CSR (richiesta certificato)"
+        pl: "Utwórz CSR (żądanie certyfikatu)"
+        tr: "CSR oluştur (sertifika isteği)"
+        pt: "Criar CSR (pedido de certificado)"
+        nl: "CSR maken (certificaataanvraag)"
+        hu: "CSR létrehozása (tanúsítványkérelem)"
+    - cmd: "openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes"
+      desc:
+        en: "Self-signed cert for 365 days"
+        cs: "Self-signed certifikát na 365 dní"
+        sk: "Self-signed certifikát na 365 dní"
+        de: "Selbstsigniertes Zertifikat für 365 Tage"
+        es: "Certificado autofirmado por 365 días"
+        fr: "Certificat auto-signé pour 365 jours"
+        it: "Certificato self-signed per 365 giorni"
+        pl: "Self-signed certyfikat na 365 dni"
+        tr: "365 günlük self-signed sertifika"
+        pt: "Certificado autoassinado por 365 dias"
+        nl: "Zelfondertekend certificaat 365 dagen"
+        hu: "Önaláírt tanúsítvány 365 napra"
+
 - id: certbot
   title:
-    cs: Let's Encrypt (certbot)
-    en: Let's Encrypt (certbot)
+    en: "Let's Encrypt (certbot)"
+    cs: "Let's Encrypt (certbot)"
+    sk: "Let's Encrypt (certbot)"
+    de: "Let's Encrypt (certbot)"
+    es: "Let's Encrypt (certbot)"
+    fr: "Let's Encrypt (certbot)"
+    it: "Let's Encrypt (certbot)"
+    pl: "Let's Encrypt (certbot)"
+    tr: "Let's Encrypt (certbot)"
+    pt: "Let's Encrypt (certbot)"
+    nl: "Let's Encrypt (certbot)"
+    hu: "Let's Encrypt (certbot)"
   tags:
-    cs:
-    - certbot
-    - letsencrypt
-    - https
-    - certifikát
-    en:
-    - certbot
-    - letsencrypt
-    - https
-    - certificate
+    en: [certbot, letsencrypt, https, certificate]
+    cs: [certbot, letsencrypt, https, certifikát]
+    sk: [certbot, letsencrypt, https, certifikát]
+    de: [certbot, letsencrypt, https, zertifikat]
+    es: [certbot, letsencrypt, https, certificado]
+    fr: [certbot, letsencrypt, https, certificat]
+    it: [certbot, letsencrypt, https, certificato]
+    pl: [certbot, letsencrypt, https, certyfikat]
+    tr: [certbot, letsencrypt, https, sertifika]
+    pt: [certbot, letsencrypt, https, certificado]
+    nl: [certbot, letsencrypt, https, certificaat]
+    hu: [certbot, letsencrypt, https, tanúsítvány]
   commands:
-  - cmd: sudo certbot --nginx -d example.com
-    desc:
-      cs: Získat + nastavit HTTPS pro nginx
-      en: Obtain + configure HTTPS for nginx
-  - cmd: sudo certbot --apache -d example.com
-    desc:
-      cs: Pro Apache
-      en: For Apache
-  - cmd: sudo certbot certonly --standalone -d example.com
-    desc:
-      cs: Jen získat cert (bez auto-configu)
-      en: Just obtain cert (no auto-config)
-  - cmd: sudo certbot renew --dry-run
-    desc:
-      cs: Test obnovení
-      en: Test renewal
-  - cmd: sudo certbot certificates
-    desc:
-      cs: Seznam získaných certifikátů
-      en: List obtained certificates
+    - cmd: "sudo certbot --nginx -d example.com"
+      desc:
+        en: "Obtain + configure HTTPS for nginx"
+        cs: "Získat + nastavit HTTPS pro nginx"
+        sk: "Získať + nastaviť HTTPS pre nginx"
+        de: "HTTPS für nginx beziehen + konfigurieren"
+        es: "Obtener + configurar HTTPS para nginx"
+        fr: "Obtenir + configurer HTTPS pour nginx"
+        it: "Ottenere + configurare HTTPS per nginx"
+        pl: "Uzyskaj + skonfiguruj HTTPS dla nginx"
+        tr: "Nginx için HTTPS al + yapılandır"
+        pt: "Obter + configurar HTTPS para nginx"
+        nl: "HTTPS verkrijgen + configureren voor nginx"
+        hu: "HTTPS beszerzése + beállítása nginx-hez"
+    - cmd: "sudo certbot --apache -d example.com"
+      desc:
+        en: "For Apache"
+        cs: "Pro Apache"
+        sk: "Pre Apache"
+        de: "Für Apache"
+        es: "Para Apache"
+        fr: "Pour Apache"
+        it: "Per Apache"
+        pl: "Dla Apache"
+        tr: "Apache için"
+        pt: "Para Apache"
+        nl: "Voor Apache"
+        hu: "Apache-hoz"
+    - cmd: "sudo certbot certonly --standalone -d example.com"
+      desc:
+        en: "Just obtain cert (no auto-config)"
+        cs: "Jen získat cert (bez auto-configu)"
+        sk: "Len získať cert (bez auto-configu)"
+        de: "Nur Zertifikat beziehen (keine Auto-Konfig)"
+        es: "Solo obtener cert (sin auto-config)"
+        fr: "Juste obtenir le cert (sans auto-config)"
+        it: "Solo ottenere cert (no auto-config)"
+        pl: "Tylko uzyskaj cert (bez auto-config)"
+        tr: "Sadece sertifika al (otomatik yapılandırma yok)"
+        pt: "Apenas obter cert (sem auto-config)"
+        nl: "Alleen cert verkrijgen (geen auto-config)"
+        hu: "Csak tanúsítvány beszerzése (auto-config nélkül)"
+    - cmd: "sudo certbot renew --dry-run"
+      desc:
+        en: "Test renewal"
+        cs: "Test obnovení"
+        sk: "Test obnovenia"
+        de: "Erneuerung testen"
+        es: "Probar renovación"
+        fr: "Tester le renouvellement"
+        it: "Testare rinnovo"
+        pl: "Test odnowienia"
+        tr: "Yenileme testi"
+        pt: "Testar renovação"
+        nl: "Vernieuwing testen"
+        hu: "Megújítás tesztelése"
+    - cmd: "sudo certbot certificates"
+      desc:
+        en: "List obtained certificates"
+        cs: "Seznam získaných certifikátů"
+        sk: "Zoznam získaných certifikátov"
+        de: "Liste erhaltener Zertifikate"
+        es: "Listar certificados obtenidos"
+        fr: "Lister les certificats obtenus"
+        it: "Elenco certificati ottenuti"
+        pl: "Lista uzyskanych certyfikatów"
+        tr: "Alınan sertifikaları listele"
+        pt: "Listar certificados obtidos"
+        nl: "Verkregen certificaten tonen"
+        hu: "Beszerzett tanúsítványok listája"
+
 - id: gpg
   title:
-    cs: GPG (šifrování a podpisy)
-    en: GPG (encryption and signing)
+    en: "GPG (encryption and signing)"
+    cs: "GPG (šifrování a podpisy)"
+    sk: "GPG (šifrovanie a podpisy)"
+    de: "GPG (Verschlüsselung und Signaturen)"
+    es: "GPG (cifrado y firmas)"
+    fr: "GPG (chiffrement et signatures)"
+    it: "GPG (cifratura e firma)"
+    pl: "GPG (szyfrowanie i podpisy)"
+    tr: "GPG (şifreleme ve imzalama)"
+    pt: "GPG (criptografia e assinaturas)"
+    nl: "GPG (versleuteling en ondertekening)"
+    hu: "GPG (titkosítás és aláírás)"
   tags:
-    cs:
-    - gpg
-    - šifrování
-    - podpis
-    - klíč
-    - encrypt
-    en:
-    - gpg
-    - encrypt
-    - sign
-    - key
+    en: [gpg, encrypt, sign, key]
+    cs: [gpg, šifrování, podpis, klíč, encrypt]
+    sk: [gpg, šifrovanie, podpis, kľúč, encrypt]
+    de: [gpg, verschlüsseln, signieren, schlüssel]
+    es: [gpg, cifrar, firmar, clave]
+    fr: [gpg, chiffrer, signer, clé]
+    it: [gpg, cifrare, firmare, chiave]
+    pl: [gpg, szyfruj, podpisuj, klucz]
+    tr: [gpg, şifrele, imzala, anahtar]
+    pt: [gpg, criptografar, assinar, chave]
+    nl: [gpg, versleutelen, ondertekenen, sleutel]
+    hu: [gpg, titkosítás, aláírás, kulcs]
   commands:
-  - cmd: gpg --gen-key
-    desc:
-      cs: Vygenerovat GPG klíčový pár
-      en: Generate GPG key pair
-  - cmd: gpg --list-keys
-    desc:
-      cs: Veřejné klíče v klíčence
-      en: Public keys in keyring
-  - cmd: gpg --export -a 'jméno' > klic.asc
-    desc:
-      cs: Exportovat veřejný klíč
-      en: Export public key
-  - cmd: gpg -c soubor.txt
-    desc:
-      cs: Zašifrovat heslem (symetricky)
-      en: Encrypt with password (symmetric)
-  - cmd: gpg soubor.txt.gpg
-    desc:
-      cs: Dešifrovat
-      en: Decrypt
-  - cmd: gpg -e -r prijemce soubor.txt
-    desc:
-      cs: Zašifrovat pro příjemce (asymetricky)
-      en: Encrypt for recipient (asymmetric)
+    - cmd: "gpg --gen-key"
+      desc:
+        en: "Generate GPG key pair"
+        cs: "Vygenerovat GPG klíčový pár"
+        sk: "Vygenerovať GPG kľúčový pár"
+        de: "GPG-Schlüsselpaar erzeugen"
+        es: "Generar par de claves GPG"
+        fr: "Générer une paire de clés GPG"
+        it: "Generare coppia chiavi GPG"
+        pl: "Wygeneruj parę kluczy GPG"
+        tr: "GPG anahtar çifti üret"
+        pt: "Gerar par de chaves GPG"
+        nl: "GPG-sleutelpaar genereren"
+        hu: "GPG kulcspár létrehozása"
+    - cmd: "gpg --list-keys"
+      desc:
+        en: "Public keys in keyring"
+        cs: "Veřejné klíče v klíčence"
+        sk: "Verejné kľúče v kľúčenke"
+        de: "Öffentliche Schlüssel im Schlüsselbund"
+        es: "Claves públicas en el llavero"
+        fr: "Clés publiques du trousseau"
+        it: "Chiavi pubbliche nel portachiavi"
+        pl: "Klucze publiczne w kluczniku"
+        tr: "Anahtarlıktaki genel anahtarlar"
+        pt: "Chaves públicas no chaveiro"
+        nl: "Publieke sleutels in sleutelbos"
+        hu: "Nyilvános kulcsok a kulcstartóban"
+    - cmd: "gpg --export -a 'name' > key.asc"
+      desc:
+        en: "Export public key"
+        cs: "Exportovat veřejný klíč"
+        sk: "Exportovať verejný kľúč"
+        de: "Öffentlichen Schlüssel exportieren"
+        es: "Exportar clave pública"
+        fr: "Exporter la clé publique"
+        it: "Esportare chiave pubblica"
+        pl: "Eksportuj klucz publiczny"
+        tr: "Genel anahtarı dışa aktar"
+        pt: "Exportar chave pública"
+        nl: "Publieke sleutel exporteren"
+        hu: "Nyilvános kulcs exportálása"
+    - cmd: "gpg -c file.txt"
+      desc:
+        en: "Encrypt with password (symmetric)"
+        cs: "Zašifrovat heslem (symetricky)"
+        sk: "Zašifrovať heslom (symetricky)"
+        de: "Mit Passwort verschlüsseln (symmetrisch)"
+        es: "Cifrar con contraseña (simétrico)"
+        fr: "Chiffrer avec mot de passe (symétrique)"
+        it: "Cifrare con password (simmetrico)"
+        pl: "Szyfruj hasłem (symetrycznie)"
+        tr: "Parolayla şifrele (simetrik)"
+        pt: "Criptografar com senha (simétrico)"
+        nl: "Versleutelen met wachtwoord (symmetrisch)"
+        hu: "Titkosítás jelszóval (szimmetrikus)"
+    - cmd: "gpg file.txt.gpg"
+      desc:
+        en: "Decrypt"
+        cs: "Dešifrovat"
+        sk: "Dešifrovať"
+        de: "Entschlüsseln"
+        es: "Descifrar"
+        fr: "Déchiffrer"
+        it: "Decifrare"
+        pl: "Odszyfruj"
+        tr: "Şifresini çöz"
+        pt: "Descriptografar"
+        nl: "Ontsleutelen"
+        hu: "Visszafejtés"
+    - cmd: "gpg -e -r recipient file.txt"
+      desc:
+        en: "Encrypt for recipient (asymmetric)"
+        cs: "Zašifrovat pro příjemce (asymetricky)"
+        sk: "Zašifrovať pre príjemcu (asymetricky)"
+        de: "Für Empfänger verschlüsseln (asymmetrisch)"
+        es: "Cifrar para destinatario (asimétrico)"
+        fr: "Chiffrer pour le destinataire (asymétrique)"
+        it: "Cifrare per destinatario (asimmetrico)"
+        pl: "Szyfruj dla odbiorcy (asymetrycznie)"
+        tr: "Alıcı için şifrele (asimetrik)"
+        pt: "Criptografar para destinatário (assimétrico)"
+        nl: "Versleutelen voor ontvanger (asymmetrisch)"
+        hu: "Titkosítás címzettnek (aszimmetrikus)"
+
 - id: hash
   title:
-    cs: Kontrolní součty (hash)
-    en: Checksums (hash)
+    en: "Checksums (hash)"
+    cs: "Kontrolní součty (hash)"
+    sk: "Kontrolné súčty (hash)"
+    de: "Prüfsummen (Hash)"
+    es: "Sumas de verificación (hash)"
+    fr: "Sommes de contrôle (hash)"
+    it: "Checksum (hash)"
+    pl: "Sumy kontrolne (hash)"
+    tr: "Sağlama toplamları (hash)"
+    pt: "Somas de verificação (hash)"
+    nl: "Controlesommen (hash)"
+    hu: "Ellenőrző összegek (hash)"
   tags:
-    cs:
-    - hash
-    - md5
-    - sha256
-    - kontrolní
-    - součet
-    - checksum
-    en:
-    - hash
-    - md5
-    - sha256
-    - checksum
+    en: [hash, md5, sha256, checksum]
+    cs: [hash, md5, sha256, kontrolní, součet, checksum]
+    sk: [hash, md5, sha256, kontrolný, súčet, checksum]
+    de: [hash, md5, sha256, prüfsumme, checksum]
+    es: [hash, md5, sha256, suma, checksum]
+    fr: [hash, md5, sha256, somme, checksum]
+    it: [hash, md5, sha256, somma, checksum]
+    pl: [hash, md5, sha256, suma, checksum]
+    tr: [hash, md5, sha256, sağlama, checksum]
+    pt: [hash, md5, sha256, soma, checksum]
+    nl: [hash, md5, sha256, controlesom, checksum]
+    hu: [hash, md5, sha256, ellenőrzőösszeg, checksum]
   commands:
-  - cmd: md5sum soubor
-    desc:
-      cs: MD5 hash souboru
-      en: MD5 hash of file
-  - cmd: sha256sum soubor
-    desc:
-      cs: SHA-256 hash souboru
-      en: SHA-256 hash of file
-  - cmd: sha256sum -c soubor.sha256
-    desc:
-      cs: Ověřit podle .sha256 souboru
-      en: Verify against .sha256 file
-  - cmd: echo -n 'text' | sha256sum
-    desc:
-      cs: Hash z řetězce
-      en: Hash from string
+    - cmd: "md5sum file"
+      desc:
+        en: "MD5 hash of file"
+        cs: "MD5 hash souboru"
+        sk: "MD5 hash súboru"
+        de: "MD5-Hash der Datei"
+        es: "Hash MD5 del archivo"
+        fr: "Hash MD5 du fichier"
+        it: "Hash MD5 del file"
+        pl: "Hash MD5 pliku"
+        tr: "Dosyanın MD5 hash'i"
+        pt: "Hash MD5 do arquivo"
+        nl: "MD5-hash van bestand"
+        hu: "Fájl MD5 hash"
+    - cmd: "sha256sum file"
+      desc:
+        en: "SHA-256 hash of file"
+        cs: "SHA-256 hash souboru"
+        sk: "SHA-256 hash súboru"
+        de: "SHA-256-Hash der Datei"
+        es: "Hash SHA-256 del archivo"
+        fr: "Hash SHA-256 du fichier"
+        it: "Hash SHA-256 del file"
+        pl: "Hash SHA-256 pliku"
+        tr: "Dosyanın SHA-256 hash'i"
+        pt: "Hash SHA-256 do arquivo"
+        nl: "SHA-256-hash van bestand"
+        hu: "Fájl SHA-256 hash"
+    - cmd: "sha256sum -c file.sha256"
+      desc:
+        en: "Verify against .sha256 file"
+        cs: "Ověřit podle .sha256 souboru"
+        sk: "Overiť podľa .sha256 súboru"
+        de: "Gegen .sha256-Datei verifizieren"
+        es: "Verificar contra archivo .sha256"
+        fr: "Vérifier contre le fichier .sha256"
+        it: "Verificare contro file .sha256"
+        pl: "Zweryfikuj wg pliku .sha256"
+        tr: ".sha256 dosyasıyla doğrula"
+        pt: "Verificar contra arquivo .sha256"
+        nl: "Verifiëren tegen .sha256-bestand"
+        hu: "Ellenőrzés .sha256 fájl alapján"
+    - cmd: "echo -n 'text' | sha256sum"
+      desc:
+        en: "Hash from string"
+        cs: "Hash z řetězce"
+        sk: "Hash z reťazca"
+        de: "Hash aus String"
+        es: "Hash de cadena"
+        fr: "Hash d'une chaîne"
+        it: "Hash da stringa"
+        pl: "Hash z ciągu"
+        tr: "Dizeden hash"
+        pt: "Hash de string"
+        nl: "Hash van string"
+        hu: "Hash karakterláncból"

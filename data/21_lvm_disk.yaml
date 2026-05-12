@@ -1,128 +1,338 @@
 - id: lvm-basics
   title:
-    cs: LVM (Logical Volume Manager)
-    en: LVM (Logical Volume Manager)
+    en: "LVM (Logical Volume Manager)"
+    cs: "LVM (Logical Volume Manager)"
+    sk: "LVM (Logical Volume Manager)"
+    de: "LVM (Logical Volume Manager)"
+    es: "LVM (Logical Volume Manager)"
+    fr: "LVM (Logical Volume Manager)"
+    it: "LVM (Logical Volume Manager)"
+    pl: "LVM (Logical Volume Manager)"
+    tr: "LVM (Logical Volume Manager)"
+    pt: "LVM (Logical Volume Manager)"
+    nl: "LVM (Logical Volume Manager)"
+    hu: "LVM (Logical Volume Manager)"
   tags:
-    cs:
-    - lvm
-    - oddíl
-    - partition
-    - pv
-    - vg
-    - lv
-    - volume
-    en:
-    - lvm
-    - partition
-    - pv
-    - vg
-    - lv
-    - volume
+    en: [lvm, partition, pv, vg, lv, volume]
+    cs: [lvm, oddíl, partition, pv, vg, lv, volume]
+    sk: [lvm, oddiel, partition, pv, vg, lv, volume]
+    de: [lvm, partition, pv, vg, lv, volume]
+    es: [lvm, partición, pv, vg, lv, volumen]
+    fr: [lvm, partition, pv, vg, lv, volume]
+    it: [lvm, partizione, pv, vg, lv, volume]
+    pl: [lvm, partycja, pv, vg, lv, wolumen]
+    tr: [lvm, bölüm, pv, vg, lv, hacim]
+    pt: [lvm, partição, pv, vg, lv, volume]
+    nl: [lvm, partitie, pv, vg, lv, volume]
+    hu: [lvm, partíció, pv, vg, lv, kötet]
   commands:
-  - cmd: sudo pvs
-    desc:
-      cs: Physical volumes (fyzické disky)
-      en: Physical volumes
-  - cmd: sudo vgs
-    desc:
-      cs: Volume groups (skupiny)
-      en: Volume groups
-  - cmd: sudo lvs
-    desc:
-      cs: Logical volumes (oddíly)
-      en: Logical volumes
-  - cmd: sudo lvextend -L +10G /dev/vg/lv
-    desc:
-      cs: Zvětšit LV o 10 GB
-      en: Extend LV by 10 GB
-  - cmd: sudo lvextend -l +100%FREE /dev/vg/lv
-    desc:
-      cs: Použít všechno volné místo
-      en: Use all free space
-  - cmd: sudo resize2fs /dev/vg/lv
-    desc:
-      cs: Zvětšit ext4 filesystem na max
-      en: Resize ext4 filesystem to max
-  - cmd: sudo xfs_growfs /mnt
-    desc:
-      cs: Zvětšit XFS (musí být připojený)
-      en: Grow XFS (must be mounted)
+    - cmd: "sudo pvs"
+      desc:
+        en: "Physical volumes"
+        cs: "Physical volumes (fyzické disky)"
+        sk: "Physical volumes (fyzické disky)"
+        de: "Physische Volumes"
+        es: "Volúmenes físicos"
+        fr: "Volumes physiques"
+        it: "Volumi fisici"
+        pl: "Wolumeny fizyczne"
+        tr: "Fiziksel hacimler"
+        pt: "Volumes físicos"
+        nl: "Fysieke volumes"
+        hu: "Fizikai kötetek"
+    - cmd: "sudo vgs"
+      desc:
+        en: "Volume groups"
+        cs: "Volume groups (skupiny)"
+        sk: "Volume groups (skupiny)"
+        de: "Volume-Gruppen"
+        es: "Grupos de volúmenes"
+        fr: "Groupes de volumes"
+        it: "Gruppi di volumi"
+        pl: "Grupy wolumenów"
+        tr: "Hacim grupları"
+        pt: "Grupos de volumes"
+        nl: "Volumegroepen"
+        hu: "Kötetcsoportok"
+    - cmd: "sudo lvs"
+      desc:
+        en: "Logical volumes"
+        cs: "Logical volumes (oddíly)"
+        sk: "Logical volumes (oddiely)"
+        de: "Logische Volumes"
+        es: "Volúmenes lógicos"
+        fr: "Volumes logiques"
+        it: "Volumi logici"
+        pl: "Wolumeny logiczne"
+        tr: "Mantıksal hacimler"
+        pt: "Volumes lógicos"
+        nl: "Logische volumes"
+        hu: "Logikai kötetek"
+    - cmd: "sudo lvextend -L +10G /dev/vg/lv"
+      desc:
+        en: "Extend LV by 10 GB"
+        cs: "Zvětšit LV o 10 GB"
+        sk: "Zväčšiť LV o 10 GB"
+        de: "LV um 10 GB erweitern"
+        es: "Extender LV en 10 GB"
+        fr: "Étendre LV de 10 Go"
+        it: "Estendere LV di 10 GB"
+        pl: "Powiększ LV o 10 GB"
+        tr: "LV'yi 10 GB genişlet"
+        pt: "Estender LV em 10 GB"
+        nl: "LV met 10 GB uitbreiden"
+        hu: "LV bővítése 10 GB-tal"
+    - cmd: "sudo lvextend -l +100%FREE /dev/vg/lv"
+      desc:
+        en: "Use all free space"
+        cs: "Použít všechno volné místo"
+        sk: "Použiť všetko voľné miesto"
+        de: "Gesamten freien Speicher nutzen"
+        es: "Usar todo el espacio libre"
+        fr: "Utiliser tout l'espace libre"
+        it: "Usare tutto lo spazio libero"
+        pl: "Wykorzystaj całe wolne miejsce"
+        tr: "Tüm boş alanı kullan"
+        pt: "Usar todo o espaço livre"
+        nl: "Alle vrije ruimte gebruiken"
+        hu: "Minden szabad hely felhasználása"
+    - cmd: "sudo resize2fs /dev/vg/lv"
+      desc:
+        en: "Resize ext4 filesystem to max"
+        cs: "Zvětšit ext4 filesystem na max"
+        sk: "Zväčšiť ext4 filesystem na max"
+        de: "Ext4-Dateisystem auf Max vergrößern"
+        es: "Redimensionar ext4 al máximo"
+        fr: "Redimensionner ext4 au max"
+        it: "Ridimensionare ext4 al massimo"
+        pl: "Zmień rozmiar ext4 do maks."
+        tr: "Ext4 dosya sistemini max'a büyüt"
+        pt: "Redimensionar ext4 ao máximo"
+        nl: "Ext4-bestandssysteem maximaliseren"
+        hu: "Ext4 fájlrendszer maximumra méretezése"
+    - cmd: "sudo xfs_growfs /mnt"
+      desc:
+        en: "Grow XFS (must be mounted)"
+        cs: "Zvětšit XFS (musí být připojený)"
+        sk: "Zväčšiť XFS (musí byť pripojený)"
+        de: "XFS vergrößern (muss eingehängt sein)"
+        es: "Aumentar XFS (debe estar montado)"
+        fr: "Agrandir XFS (doit être monté)"
+        it: "Espandere XFS (deve essere montato)"
+        pl: "Powiększ XFS (musi być zamontowany)"
+        tr: "XFS'i büyüt (bağlı olmalı)"
+        pt: "Aumentar XFS (deve estar montado)"
+        nl: "XFS vergroten (moet gemount zijn)"
+        hu: "XFS növelése (csatolva kell lennie)"
+
 - id: mkfs-fsck
   title:
-    cs: Vytvořit / opravit filesystem
-    en: Create / repair filesystem
+    en: "Create / repair filesystem"
+    cs: "Vytvořit / opravit filesystem"
+    sk: "Vytvoriť / opraviť filesystem"
+    de: "Dateisystem erstellen / reparieren"
+    es: "Crear / reparar sistema de archivos"
+    fr: "Créer / réparer système de fichiers"
+    it: "Creare / riparare filesystem"
+    pl: "Utwórz / napraw system plików"
+    tr: "Dosya sistemi oluştur / onar"
+    pt: "Criar / reparar sistema de arquivos"
+    nl: "Bestandssysteem maken / repareren"
+    hu: "Fájlrendszer létrehozása / javítása"
   tags:
-    cs:
-    - mkfs
-    - fsck
-    - formátovat
-    - oprava
-    - filesystem
-    en:
-    - mkfs
-    - fsck
-    - format
-    - repair
-    - filesystem
+    en: [mkfs, fsck, format, repair, filesystem]
+    cs: [mkfs, fsck, formátovat, oprava, filesystem]
+    sk: [mkfs, fsck, formátovať, oprava, filesystem]
+    de: [mkfs, fsck, formatieren, reparieren, dateisystem]
+    es: [mkfs, fsck, formatear, reparar, sistema de archivos]
+    fr: [mkfs, fsck, formater, réparer, système de fichiers]
+    it: [mkfs, fsck, formattare, riparare, filesystem]
+    pl: [mkfs, fsck, formatuj, napraw, system plików]
+    tr: [mkfs, fsck, biçimle, onar, dosya sistemi]
+    pt: [mkfs, fsck, formatar, reparar, sistema de arquivos]
+    nl: [mkfs, fsck, formatteren, repareren, bestandssysteem]
+    hu: [mkfs, fsck, formázás, javítás, fájlrendszer]
   commands:
-  - cmd: sudo mkfs.ext4 /dev/sdb1
-    desc:
-      cs: Formátovat na ext4
-      en: Format as ext4
-  - cmd: sudo mkfs.xfs /dev/sdb1
-    desc:
-      cs: Formátovat na XFS
-      en: Format as XFS
-  - cmd: sudo mkfs.vfat -F32 /dev/sdb1
-    desc:
-      cs: FAT32 (USB klíčenky)
-      en: FAT32 (USB sticks)
-  - cmd: sudo fsck /dev/sdb1
-    desc:
-      cs: Zkontrolovat filesystem (odpojený!)
-      en: Check filesystem (unmounted!)
-  - cmd: sudo fsck -y /dev/sdb1
-    desc:
-      cs: Automaticky opravit (odpovídat 'yes')
-      en: Auto-repair (answer 'yes')
-  - cmd: sudo tune2fs -l /dev/sda1
-    desc:
-      cs: Detailní info o ext filesystému
-      en: Detailed ext filesystem info
+    - cmd: "sudo mkfs.ext4 /dev/sdb1"
+      desc:
+        en: "Format as ext4"
+        cs: "Formátovat na ext4"
+        sk: "Formátovať na ext4"
+        de: "Als ext4 formatieren"
+        es: "Formatear como ext4"
+        fr: "Formater en ext4"
+        it: "Formattare in ext4"
+        pl: "Sformatuj jako ext4"
+        tr: "Ext4 olarak biçimle"
+        pt: "Formatar como ext4"
+        nl: "Als ext4 formatteren"
+        hu: "Ext4-re formázás"
+    - cmd: "sudo mkfs.xfs /dev/sdb1"
+      desc:
+        en: "Format as XFS"
+        cs: "Formátovat na XFS"
+        sk: "Formátovať na XFS"
+        de: "Als XFS formatieren"
+        es: "Formatear como XFS"
+        fr: "Formater en XFS"
+        it: "Formattare in XFS"
+        pl: "Sformatuj jako XFS"
+        tr: "XFS olarak biçimle"
+        pt: "Formatar como XFS"
+        nl: "Als XFS formatteren"
+        hu: "XFS-re formázás"
+    - cmd: "sudo mkfs.vfat -F32 /dev/sdb1"
+      desc:
+        en: "FAT32 (USB sticks)"
+        cs: "FAT32 (USB klíčenky)"
+        sk: "FAT32 (USB kľúčenky)"
+        de: "FAT32 (USB-Sticks)"
+        es: "FAT32 (memorias USB)"
+        fr: "FAT32 (clés USB)"
+        it: "FAT32 (chiavette USB)"
+        pl: "FAT32 (pendrive)"
+        tr: "FAT32 (USB bellekler)"
+        pt: "FAT32 (pen drives USB)"
+        nl: "FAT32 (USB-sticks)"
+        hu: "FAT32 (USB pendrive-ok)"
+    - cmd: "sudo fsck /dev/sdb1"
+      desc:
+        en: "Check filesystem (unmounted!)"
+        cs: "Zkontrolovat filesystem (odpojený!)"
+        sk: "Skontrolovať filesystem (odpojený!)"
+        de: "Dateisystem prüfen (ausgehängt!)"
+        es: "Verificar sistema de archivos (desmontado!)"
+        fr: "Vérifier le système de fichiers (démonté !)"
+        it: "Verificare filesystem (smontato!)"
+        pl: "Sprawdź system plików (odmontowany!)"
+        tr: "Dosya sistemini kontrol et (bağlanmamış!)"
+        pt: "Verificar sistema de arquivos (desmontado!)"
+        nl: "Bestandssysteem controleren (afgekoppeld!)"
+        hu: "Fájlrendszer ellenőrzése (lecsatolva!)"
+    - cmd: "sudo fsck -y /dev/sdb1"
+      desc:
+        en: "Auto-repair (answer 'yes')"
+        cs: "Automaticky opravit (odpovídat 'yes')"
+        sk: "Automaticky opraviť (odpovedať 'yes')"
+        de: "Auto-Reparatur (mit 'yes' antworten)"
+        es: "Auto-reparar (responder 'yes')"
+        fr: "Réparation auto (répondre 'yes')"
+        it: "Auto-riparazione (rispondere 'yes')"
+        pl: "Auto-naprawa (odpowiadaj 'yes')"
+        tr: "Otomatik onar ('yes' yanıtla)"
+        pt: "Auto-reparar (responder 'yes')"
+        nl: "Auto-repareren (antwoord 'yes')"
+        hu: "Automatikus javítás ('yes' válasz)"
+    - cmd: "sudo tune2fs -l /dev/sda1"
+      desc:
+        en: "Detailed ext filesystem info"
+        cs: "Detailní info o ext filesystému"
+        sk: "Detailné info o ext filesystéme"
+        de: "Detaillierte ext-Dateisystem-Info"
+        es: "Info detallada de sistema ext"
+        fr: "Info détaillée du système ext"
+        it: "Info dettagliate filesystem ext"
+        pl: "Szczegółowe info o ext"
+        tr: "Ayrıntılı ext dosya sistemi bilgisi"
+        pt: "Info detalhada do sistema ext"
+        nl: "Gedetailleerde ext-info"
+        hu: "Részletes ext fájlrendszer info"
+
 - id: swap
   title:
-    cs: Swap (odkládací prostor)
-    en: Swap (swap space)
+    en: "Swap (swap space)"
+    cs: "Swap (odkládací prostor)"
+    sk: "Swap (odkladací priestor)"
+    de: "Swap (Auslagerungsbereich)"
+    es: "Swap (espacio de intercambio)"
+    fr: "Swap (espace d'échange)"
+    it: "Swap (spazio di swap)"
+    pl: "Swap (przestrzeń wymiany)"
+    tr: "Swap (takas alanı)"
+    pt: "Swap (espaço de swap)"
+    nl: "Swap (wisselruimte)"
+    hu: "Swap (lapozóterület)"
   tags:
-    cs:
-    - swap
-    - swapfile
-    - paměť
-    - ram
-    - odkládací
-    en:
-    - swap
-    - swapfile
-    - memory
-    - ram
+    en: [swap, swapfile, memory, ram]
+    cs: [swap, swapfile, paměť, ram, odkládací]
+    sk: [swap, swapfile, pamäť, ram, odkladací]
+    de: [swap, swapfile, speicher, ram]
+    es: [swap, swapfile, memoria, ram]
+    fr: [swap, swapfile, mémoire, ram]
+    it: [swap, swapfile, memoria, ram]
+    pl: [swap, swapfile, pamięć, ram]
+    tr: [swap, swapfile, bellek, ram]
+    pt: [swap, swapfile, memória, ram]
+    nl: [swap, swapfile, geheugen, ram]
+    hu: [swap, swapfile, memória, ram]
   commands:
-  - cmd: swapon --show
-    desc:
-      cs: Aktivní swap
-      en: Active swap
-  - cmd: sudo fallocate -l 2G /swapfile
-    desc:
-      cs: Vytvořit 2GB swap soubor
-      en: Create 2GB swap file
-  - cmd: sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
-    desc:
-      cs: Zformátovat a aktivovat
-      en: Format and activate
-  - cmd: sudo swapoff /swapfile
-    desc:
-      cs: Deaktivovat swap
-      en: Disable swap
-  - cmd: cat /proc/sys/vm/swappiness
-    desc:
-      cs: Současná hodnota swappiness (0-100)
-      en: Current swappiness value (0-100)
+    - cmd: "swapon --show"
+      desc:
+        en: "Active swap"
+        cs: "Aktivní swap"
+        sk: "Aktívny swap"
+        de: "Aktiver Swap"
+        es: "Swap activo"
+        fr: "Swap actif"
+        it: "Swap attivo"
+        pl: "Aktywny swap"
+        tr: "Aktif swap"
+        pt: "Swap ativo"
+        nl: "Actieve swap"
+        hu: "Aktív swap"
+    - cmd: "sudo fallocate -l 2G /swapfile"
+      desc:
+        en: "Create 2GB swap file"
+        cs: "Vytvořit 2GB swap soubor"
+        sk: "Vytvoriť 2GB swap súbor"
+        de: "2-GB-Swap-Datei erstellen"
+        es: "Crear archivo swap de 2 GB"
+        fr: "Créer un fichier swap de 2 Go"
+        it: "Creare file swap di 2 GB"
+        pl: "Utwórz plik swap 2 GB"
+        tr: "2GB swap dosyası oluştur"
+        pt: "Criar arquivo swap 2 GB"
+        nl: "2GB swap-bestand maken"
+        hu: "2 GB-os swap fájl létrehozása"
+    - cmd: "sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile"
+      desc:
+        en: "Format and activate"
+        cs: "Zformátovat a aktivovat"
+        sk: "Sformátovať a aktivovať"
+        de: "Formatieren und aktivieren"
+        es: "Formatear y activar"
+        fr: "Formater et activer"
+        it: "Formattare e attivare"
+        pl: "Sformatuj i aktywuj"
+        tr: "Biçimle ve etkinleştir"
+        pt: "Formatar e ativar"
+        nl: "Formatteren en activeren"
+        hu: "Formázás és aktiválás"
+    - cmd: "sudo swapoff /swapfile"
+      desc:
+        en: "Disable swap"
+        cs: "Deaktivovat swap"
+        sk: "Deaktivovať swap"
+        de: "Swap deaktivieren"
+        es: "Desactivar swap"
+        fr: "Désactiver swap"
+        it: "Disattivare swap"
+        pl: "Wyłącz swap"
+        tr: "Swap'ı devre dışı bırak"
+        pt: "Desativar swap"
+        nl: "Swap uitschakelen"
+        hu: "Swap tiltása"
+    - cmd: "cat /proc/sys/vm/swappiness"
+      desc:
+        en: "Current swappiness value (0-100)"
+        cs: "Současná hodnota swappiness (0-100)"
+        sk: "Súčasná hodnota swappiness (0-100)"
+        de: "Aktueller swappiness-Wert (0-100)"
+        es: "Valor actual de swappiness (0-100)"
+        fr: "Valeur swappiness actuelle (0-100)"
+        it: "Valore swappiness attuale (0-100)"
+        pl: "Bieżąca wartość swappiness (0-100)"
+        tr: "Geçerli swappiness değeri (0-100)"
+        pt: "Valor atual de swappiness (0-100)"
+        nl: "Huidige swappiness-waarde (0-100)"
+        hu: "Aktuális swappiness érték (0-100)"
