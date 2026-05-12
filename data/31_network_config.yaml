@@ -1,163 +1,423 @@
 - id: netplan
   title:
-    cs: Netplan (Ubuntu)
-    en: Netplan (Ubuntu)
+    en: "Netplan (Ubuntu)"
+    cs: "Netplan (Ubuntu)"
+    sk: "Netplan (Ubuntu)"
+    de: "Netplan (Ubuntu)"
+    es: "Netplan (Ubuntu)"
+    fr: "Netplan (Ubuntu)"
+    it: "Netplan (Ubuntu)"
+    pl: "Netplan (Ubuntu)"
+    tr: "Netplan (Ubuntu)"
+    pt: "Netplan (Ubuntu)"
+    nl: "Netplan (Ubuntu)"
+    hu: "Netplan (Ubuntu)"
   tags:
-    cs:
-    - netplan
-    - síť
-    - konfigurace
-    - ip
-    - static
-    - dhcp
-    - ubuntu
-    en:
-    - netplan
-    - network
-    - config
-    - ip
-    - static
-    - dhcp
-    - ubuntu
+    en: [netplan, network, config, ip, static, dhcp, ubuntu]
+    cs: [netplan, síť, konfigurace, ip, static, dhcp, ubuntu]
+    sk: [netplan, sieť, konfigurácia, ip, static, dhcp, ubuntu]
+    de: [netplan, netzwerk, konfig, ip, static, dhcp, ubuntu]
+    es: [netplan, red, config, ip, static, dhcp, ubuntu]
+    fr: [netplan, réseau, config, ip, static, dhcp, ubuntu]
+    it: [netplan, rete, config, ip, static, dhcp, ubuntu]
+    pl: [netplan, sieć, konfiguracja, ip, static, dhcp, ubuntu]
+    tr: [netplan, ağ, yapılandırma, ip, static, dhcp, ubuntu]
+    pt: [netplan, rede, config, ip, static, dhcp, ubuntu]
+    nl: [netplan, netwerk, config, ip, static, dhcp, ubuntu]
+    hu: [netplan, hálózat, konfig, ip, static, dhcp, ubuntu]
   commands:
-  - cmd: sudo netplan apply
-    desc:
-      cs: Aplikovat změny konfigurace
-      en: Apply config changes
-  - cmd: sudo netplan try
-    desc:
-      cs: Vyzkoušet (vrátí se zpět, pokud nepotvrdíš)
-      en: Try (reverts if not confirmed)
-  - cmd: sudo netplan generate
-    desc:
-      cs: Vygenerovat backend konfiguraci
-      en: Generate backend config
-  - cmd: ls /etc/netplan/
-    desc:
-      cs: Seznam netplan konfigurací
-      en: List netplan configs
+    - cmd: "sudo netplan apply"
+      desc:
+        en: "Apply config changes"
+        cs: "Aplikovat změny konfigurace"
+        sk: "Aplikovať zmeny konfigurácie"
+        de: "Konfigurationsänderungen anwenden"
+        es: "Aplicar cambios de config"
+        fr: "Appliquer les changements"
+        it: "Applicare modifiche config"
+        pl: "Zastosuj zmiany konfiguracji"
+        tr: "Yapılandırma değişikliklerini uygula"
+        pt: "Aplicar mudanças de config"
+        nl: "Configuratiewijzigingen toepassen"
+        hu: "Konfiguráció módosítások alkalmazása"
+    - cmd: "sudo netplan try"
+      desc:
+        en: "Try (reverts if not confirmed)"
+        cs: "Vyzkoušet (vrátí se zpět, pokud nepotvrdíš)"
+        sk: "Vyskúšať (vráti sa späť, ak nepotvrdíš)"
+        de: "Versuchen (rollback ohne Bestätigung)"
+        es: "Probar (revierte si no confirmas)"
+        fr: "Essayer (revient sans confirmation)"
+        it: "Provare (torna indietro se non confermato)"
+        pl: "Wypróbuj (cofa się bez potwierdzenia)"
+        tr: "Dene (onaylanmazsa geri alır)"
+        pt: "Tentar (reverte se não confirmado)"
+        nl: "Proberen (terugdraaien indien niet bevestigd)"
+        hu: "Próbálkozás (visszavon, ha nincs megerősítve)"
+    - cmd: "sudo netplan generate"
+      desc:
+        en: "Generate backend config"
+        cs: "Vygenerovat backend konfiguraci"
+        sk: "Vygenerovať backend konfiguráciu"
+        de: "Backend-Konfiguration generieren"
+        es: "Generar config del backend"
+        fr: "Générer la config du backend"
+        it: "Generare config backend"
+        pl: "Wygeneruj konfigurację backend"
+        tr: "Backend yapılandırması üret"
+        pt: "Gerar config do backend"
+        nl: "Backend-config genereren"
+        hu: "Backend konfig generálása"
+    - cmd: "ls /etc/netplan/"
+      desc:
+        en: "List netplan configs"
+        cs: "Seznam netplan konfigurací"
+        sk: "Zoznam netplan konfigurácií"
+        de: "Netplan-Konfigurationen auflisten"
+        es: "Listar configs de netplan"
+        fr: "Lister les configs netplan"
+        it: "Elencare config netplan"
+        pl: "Lista konfiguracji netplan"
+        tr: "Netplan yapılandırmalarını listele"
+        pt: "Listar configs do netplan"
+        nl: "Netplan-configs tonen"
+        hu: "Netplan konfigurációk listája"
+
 - id: nm
   title:
-    cs: NetworkManager (nmcli)
-    en: NetworkManager (nmcli)
+    en: "NetworkManager (nmcli)"
+    cs: "NetworkManager (nmcli)"
+    sk: "NetworkManager (nmcli)"
+    de: "NetworkManager (nmcli)"
+    es: "NetworkManager (nmcli)"
+    fr: "NetworkManager (nmcli)"
+    it: "NetworkManager (nmcli)"
+    pl: "NetworkManager (nmcli)"
+    tr: "NetworkManager (nmcli)"
+    pt: "NetworkManager (nmcli)"
+    nl: "NetworkManager (nmcli)"
+    hu: "NetworkManager (nmcli)"
   tags:
-    cs:
-    - networkmanager
-    - nmcli
-    - síť
-    - wifi
-    - připojení
-    en:
-    - networkmanager
-    - nmcli
-    - network
-    - wifi
-    - connection
+    en: [networkmanager, nmcli, network, wifi, connection]
+    cs: [networkmanager, nmcli, síť, wifi, připojení]
+    sk: [networkmanager, nmcli, sieť, wifi, pripojenie]
+    de: [networkmanager, nmcli, netzwerk, wifi, verbindung]
+    es: [networkmanager, nmcli, red, wifi, conexión]
+    fr: [networkmanager, nmcli, réseau, wifi, connexion]
+    it: [networkmanager, nmcli, rete, wifi, connessione]
+    pl: [networkmanager, nmcli, sieć, wifi, połączenie]
+    tr: [networkmanager, nmcli, ağ, wifi, bağlantı]
+    pt: [networkmanager, nmcli, rede, wifi, conexão]
+    nl: [networkmanager, nmcli, netwerk, wifi, verbinding]
+    hu: [networkmanager, nmcli, hálózat, wifi, kapcsolat]
   commands:
-  - cmd: nmcli device status
-    desc:
-      cs: Stav síťových zařízení
-      en: Network device status
-  - cmd: nmcli connection show
-    desc:
-      cs: Seznam připojení
-      en: List connections
-  - cmd: nmcli device wifi list
-    desc:
-      cs: Dostupné Wi-Fi sítě
-      en: Available Wi-Fi networks
-  - cmd: nmcli device wifi connect SSID password HESLO
-    desc:
-      cs: Připojit k Wi-Fi
-      en: Connect to Wi-Fi
-  - cmd: nmcli connection up nazev
-    desc:
-      cs: Aktivovat připojení
-      en: Activate connection
-  - cmd: nmcli connection down nazev
-    desc:
-      cs: Deaktivovat připojení
-      en: Deactivate connection
-  - cmd: nmtui
-    desc:
-      cs: Textové GUI pro NetworkManager
-      en: Text GUI for NetworkManager
+    - cmd: "nmcli device status"
+      desc:
+        en: "Network device status"
+        cs: "Stav síťových zařízení"
+        sk: "Stav sieťových zariadení"
+        de: "Status der Netzwerkgeräte"
+        es: "Estado de dispositivos de red"
+        fr: "État des périphériques réseau"
+        it: "Stato dispositivi di rete"
+        pl: "Stan urządzeń sieciowych"
+        tr: "Ağ cihazı durumu"
+        pt: "Estado de dispositivos de rede"
+        nl: "Status van netwerkapparaten"
+        hu: "Hálózati eszközök állapota"
+    - cmd: "nmcli connection show"
+      desc:
+        en: "List connections"
+        cs: "Seznam připojení"
+        sk: "Zoznam pripojení"
+        de: "Verbindungen auflisten"
+        es: "Listar conexiones"
+        fr: "Lister les connexions"
+        it: "Elenco connessioni"
+        pl: "Lista połączeń"
+        tr: "Bağlantıları listele"
+        pt: "Listar conexões"
+        nl: "Verbindingen tonen"
+        hu: "Kapcsolatok listája"
+    - cmd: "nmcli device wifi list"
+      desc:
+        en: "Available Wi-Fi networks"
+        cs: "Dostupné Wi-Fi sítě"
+        sk: "Dostupné Wi-Fi siete"
+        de: "Verfügbare Wi-Fi-Netzwerke"
+        es: "Redes Wi-Fi disponibles"
+        fr: "Réseaux Wi-Fi disponibles"
+        it: "Reti Wi-Fi disponibili"
+        pl: "Dostępne sieci Wi-Fi"
+        tr: "Mevcut Wi-Fi ağları"
+        pt: "Redes Wi-Fi disponíveis"
+        nl: "Beschikbare Wi-Fi-netwerken"
+        hu: "Elérhető Wi-Fi hálózatok"
+    - cmd: "nmcli device wifi connect SSID password PASSWORD"
+      desc:
+        en: "Connect to Wi-Fi"
+        cs: "Připojit k Wi-Fi"
+        sk: "Pripojiť k Wi-Fi"
+        de: "Mit Wi-Fi verbinden"
+        es: "Conectar a Wi-Fi"
+        fr: "Se connecter au Wi-Fi"
+        it: "Connettersi al Wi-Fi"
+        pl: "Połącz z Wi-Fi"
+        tr: "Wi-Fi'ye bağlan"
+        pt: "Conectar ao Wi-Fi"
+        nl: "Verbinden met Wi-Fi"
+        hu: "Csatlakozás Wi-Fi-hez"
+    - cmd: "nmcli connection up name"
+      desc:
+        en: "Activate connection"
+        cs: "Aktivovat připojení"
+        sk: "Aktivovať pripojenie"
+        de: "Verbindung aktivieren"
+        es: "Activar conexión"
+        fr: "Activer la connexion"
+        it: "Attivare connessione"
+        pl: "Aktywuj połączenie"
+        tr: "Bağlantıyı etkinleştir"
+        pt: "Ativar conexão"
+        nl: "Verbinding activeren"
+        hu: "Kapcsolat aktiválása"
+    - cmd: "nmcli connection down name"
+      desc:
+        en: "Deactivate connection"
+        cs: "Deaktivovat připojení"
+        sk: "Deaktivovať pripojenie"
+        de: "Verbindung deaktivieren"
+        es: "Desactivar conexión"
+        fr: "Désactiver la connexion"
+        it: "Disattivare connessione"
+        pl: "Dezaktywuj połączenie"
+        tr: "Bağlantıyı devre dışı bırak"
+        pt: "Desativar conexão"
+        nl: "Verbinding deactiveren"
+        hu: "Kapcsolat deaktiválása"
+    - cmd: "nmtui"
+      desc:
+        en: "Text GUI for NetworkManager"
+        cs: "Textové GUI pro NetworkManager"
+        sk: "Textové GUI pre NetworkManager"
+        de: "Text-GUI für NetworkManager"
+        es: "GUI de texto para NetworkManager"
+        fr: "GUI texte pour NetworkManager"
+        it: "GUI testuale per NetworkManager"
+        pl: "Tekstowe GUI dla NetworkManager"
+        tr: "NetworkManager için metin GUI"
+        pt: "GUI texto para NetworkManager"
+        nl: "Tekst-GUI voor NetworkManager"
+        hu: "Szöveges GUI a NetworkManagerhez"
+
 - id: ip-config
   title:
-    cs: Nastavit IP / route / DNS
-    en: Set IP / route / DNS
+    en: "Set IP / route / DNS"
+    cs: "Nastavit IP / route / DNS"
+    sk: "Nastaviť IP / route / DNS"
+    de: "IP / Route / DNS setzen"
+    es: "Configurar IP / ruta / DNS"
+    fr: "Configurer IP / route / DNS"
+    it: "Impostare IP / route / DNS"
+    pl: "Ustaw IP / route / DNS"
+    tr: "IP / yönlendirme / DNS ayarla"
+    pt: "Configurar IP / rota / DNS"
+    nl: "IP / route / DNS instellen"
+    hu: "IP / útvonal / DNS beállítása"
   tags:
-    cs:
-    - ip
-    - route
-    - gateway
-    - dns
-    - nastavit
-    - static
-    en:
-    - ip
-    - route
-    - gateway
-    - dns
-    - set
-    - static
+    en: [ip, route, gateway, dns, set, static]
+    cs: [ip, route, gateway, dns, nastavit, static]
+    sk: [ip, route, gateway, dns, nastaviť, static]
+    de: [ip, route, gateway, dns, setzen, static]
+    es: [ip, route, gateway, dns, configurar, static]
+    fr: [ip, route, gateway, dns, configurer, static]
+    it: [ip, route, gateway, dns, impostare, static]
+    pl: [ip, route, gateway, dns, ustaw, static]
+    tr: [ip, route, gateway, dns, ayarla, static]
+    pt: [ip, route, gateway, dns, configurar, static]
+    nl: [ip, route, gateway, dns, instellen, static]
+    hu: [ip, route, gateway, dns, beállítás, static]
   commands:
-  - cmd: sudo ip addr add 192.168.1.50/24 dev eth0
-    desc:
-      cs: Přidat IP na rozhraní (dočasně)
-      en: Add IP to interface (temporary)
-  - cmd: sudo ip addr del 192.168.1.50/24 dev eth0
-    desc:
-      cs: Odebrat IP
-      en: Remove IP
-  - cmd: sudo ip link set eth0 up
-    desc:
-      cs: Zapnout rozhraní
-      en: Bring interface up
-  - cmd: sudo ip link set eth0 down
-    desc:
-      cs: Vypnout rozhraní
-      en: Bring interface down
-  - cmd: ip route
-    desc:
-      cs: Routovací tabulka
-      en: Routing table
-  - cmd: sudo ip route add default via 192.168.1.1
-    desc:
-      cs: Nastavit výchozí bránu
-      en: Set default gateway
-  - cmd: cat /etc/resolv.conf
-    desc:
-      cs: Aktuální DNS servery
-      en: Current DNS servers
-  - cmd: resolvectl status
-    desc:
-      cs: Stav DNS resolveru (systemd-resolved)
-      en: DNS resolver status
+    - cmd: "sudo ip addr add 192.168.1.50/24 dev eth0"
+      desc:
+        en: "Add IP to interface (temporary)"
+        cs: "Přidat IP na rozhraní (dočasně)"
+        sk: "Pridať IP na rozhranie (dočasne)"
+        de: "IP zur Schnittstelle hinzufügen (temporär)"
+        es: "Añadir IP a interfaz (temporal)"
+        fr: "Ajouter IP à l'interface (temporaire)"
+        it: "Aggiungere IP all'interfaccia (temporaneo)"
+        pl: "Dodaj IP do interfejsu (tymczasowo)"
+        tr: "Arayüze IP ekle (geçici)"
+        pt: "Adicionar IP à interface (temporário)"
+        nl: "IP toevoegen aan interface (tijdelijk)"
+        hu: "IP hozzáadása interfészhez (ideiglenes)"
+    - cmd: "sudo ip addr del 192.168.1.50/24 dev eth0"
+      desc:
+        en: "Remove IP"
+        cs: "Odebrat IP"
+        sk: "Odobrať IP"
+        de: "IP entfernen"
+        es: "Eliminar IP"
+        fr: "Supprimer IP"
+        it: "Rimuovere IP"
+        pl: "Usuń IP"
+        tr: "IP'yi kaldır"
+        pt: "Remover IP"
+        nl: "IP verwijderen"
+        hu: "IP eltávolítása"
+    - cmd: "sudo ip link set eth0 up"
+      desc:
+        en: "Bring interface up"
+        cs: "Zapnout rozhraní"
+        sk: "Zapnúť rozhranie"
+        de: "Schnittstelle aktivieren"
+        es: "Activar interfaz"
+        fr: "Activer l'interface"
+        it: "Attivare interfaccia"
+        pl: "Włącz interfejs"
+        tr: "Arayüzü aç"
+        pt: "Ativar interface"
+        nl: "Interface activeren"
+        hu: "Interfész bekapcsolása"
+    - cmd: "sudo ip link set eth0 down"
+      desc:
+        en: "Bring interface down"
+        cs: "Vypnout rozhraní"
+        sk: "Vypnúť rozhranie"
+        de: "Schnittstelle deaktivieren"
+        es: "Desactivar interfaz"
+        fr: "Désactiver l'interface"
+        it: "Disattivare interfaccia"
+        pl: "Wyłącz interfejs"
+        tr: "Arayüzü kapat"
+        pt: "Desativar interface"
+        nl: "Interface uitschakelen"
+        hu: "Interfész kikapcsolása"
+    - cmd: "ip route"
+      desc:
+        en: "Routing table"
+        cs: "Routovací tabulka"
+        sk: "Smerovacia tabuľka"
+        de: "Routing-Tabelle"
+        es: "Tabla de enrutamiento"
+        fr: "Table de routage"
+        it: "Tabella di routing"
+        pl: "Tablica routingu"
+        tr: "Yönlendirme tablosu"
+        pt: "Tabela de roteamento"
+        nl: "Routeringstabel"
+        hu: "Útválasztási tábla"
+    - cmd: "sudo ip route add default via 192.168.1.1"
+      desc:
+        en: "Set default gateway"
+        cs: "Nastavit výchozí bránu"
+        sk: "Nastaviť predvolenú bránu"
+        de: "Standard-Gateway setzen"
+        es: "Establecer puerta de enlace"
+        fr: "Définir la passerelle par défaut"
+        it: "Impostare gateway predefinito"
+        pl: "Ustaw bramę domyślną"
+        tr: "Varsayılan ağ geçidi ayarla"
+        pt: "Definir gateway padrão"
+        nl: "Standaard gateway instellen"
+        hu: "Alapértelmezett átjáró beállítása"
+    - cmd: "cat /etc/resolv.conf"
+      desc:
+        en: "Current DNS servers"
+        cs: "Aktuální DNS servery"
+        sk: "Aktuálne DNS servery"
+        de: "Aktuelle DNS-Server"
+        es: "Servidores DNS actuales"
+        fr: "Serveurs DNS actuels"
+        it: "Server DNS attuali"
+        pl: "Bieżące serwery DNS"
+        tr: "Geçerli DNS sunucuları"
+        pt: "Servidores DNS atuais"
+        nl: "Huidige DNS-servers"
+        hu: "Aktuális DNS szerverek"
+    - cmd: "resolvectl status"
+      desc:
+        en: "DNS resolver status"
+        cs: "Stav DNS resolveru (systemd-resolved)"
+        sk: "Stav DNS resolvera (systemd-resolved)"
+        de: "DNS-Resolver-Status"
+        es: "Estado del resolutor DNS"
+        fr: "État du résolveur DNS"
+        it: "Stato resolver DNS"
+        pl: "Stan resolvera DNS"
+        tr: "DNS çözücü durumu"
+        pt: "Estado do resolver DNS"
+        nl: "DNS-resolverstatus"
+        hu: "DNS feloldó állapota"
+
 - id: hostname-config
   title:
-    cs: Hostname
-    en: Hostname
+    en: "Hostname"
+    cs: "Hostname"
+    sk: "Hostname"
+    de: "Hostname"
+    es: "Hostname"
+    fr: "Hostname"
+    it: "Hostname"
+    pl: "Hostname"
+    tr: "Hostname"
+    pt: "Hostname"
+    nl: "Hostname"
+    hu: "Hostname"
   tags:
-    cs:
-    - hostname
-    - jméno
-    - stroj
-    - host
-    en:
-    - hostname
-    - name
-    - host
+    en: [hostname, name, host]
+    cs: [hostname, jméno, stroj, host]
+    sk: [hostname, meno, stroj, host]
+    de: [hostname, name, host]
+    es: [hostname, nombre, host]
+    fr: [hostname, nom, host]
+    it: [hostname, nome, host]
+    pl: [hostname, nazwa, host]
+    tr: [hostname, ad, host]
+    pt: [hostname, nome, host]
+    nl: [hostname, naam, host]
+    hu: [hostname, név, host]
   commands:
-  - cmd: hostname
-    desc:
-      cs: Vypsat hostname
-      en: Print hostname
-  - cmd: sudo hostnamectl set-hostname novy-server
-    desc:
-      cs: Nastavit hostname (trvale)
-      en: Set hostname (permanent)
-  - cmd: cat /etc/hosts
-    desc:
-      cs: Lokální mapování IP → jména
-      en: Local IP → name mapping
+    - cmd: "hostname"
+      desc:
+        en: "Print hostname"
+        cs: "Vypsat hostname"
+        sk: "Vypísať hostname"
+        de: "Hostname ausgeben"
+        es: "Mostrar hostname"
+        fr: "Afficher hostname"
+        it: "Stampare hostname"
+        pl: "Wypisz hostname"
+        tr: "Hostname yazdır"
+        pt: "Mostrar hostname"
+        nl: "Hostname tonen"
+        hu: "Hostname kiírása"
+    - cmd: "sudo hostnamectl set-hostname new-server"
+      desc:
+        en: "Set hostname (permanent)"
+        cs: "Nastavit hostname (trvale)"
+        sk: "Nastaviť hostname (trvalo)"
+        de: "Hostname setzen (permanent)"
+        es: "Establecer hostname (permanente)"
+        fr: "Définir hostname (permanent)"
+        it: "Impostare hostname (permanente)"
+        pl: "Ustaw hostname (trwale)"
+        tr: "Hostname ayarla (kalıcı)"
+        pt: "Definir hostname (permanente)"
+        nl: "Hostname instellen (permanent)"
+        hu: "Hostname beállítása (állandó)"
+    - cmd: "cat /etc/hosts"
+      desc:
+        en: "Local IP → name mapping"
+        cs: "Lokální mapování IP → jména"
+        sk: "Lokálne mapovanie IP → mená"
+        de: "Lokales IP → Namen-Mapping"
+        es: "Mapeo local IP → nombre"
+        fr: "Mappage local IP → noms"
+        it: "Mapping locale IP → nomi"
+        pl: "Lokalne mapowanie IP → nazwy"
+        tr: "Yerel IP → ad eşlemesi"
+        pt: "Mapeamento local IP → nomes"
+        nl: "Lokale IP → naam-mapping"
+        hu: "Helyi IP → név leképezés"

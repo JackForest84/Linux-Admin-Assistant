@@ -1,164 +1,451 @@
 - id: make
   title:
-    cs: make a build
-    en: make and build
+    en: "make and build"
+    cs: "make a build"
+    sk: "make a build"
+    de: "make und Build"
+    es: "make y build"
+    fr: "make et build"
+    it: "make e build"
+    pl: "make i build"
+    tr: "make ve build"
+    pt: "make e build"
+    nl: "make en build"
+    hu: "make és build"
   tags:
-    cs:
-    - make
-    - makefile
-    - build
-    - kompilace
-    en:
-    - make
-    - makefile
-    - build
-    - compile
+    en: [make, makefile, build, compile]
+    cs: [make, makefile, build, kompilace]
+    sk: [make, makefile, build, kompilácia]
+    de: [make, makefile, build, kompilieren]
+    es: [make, makefile, build, compilar]
+    fr: [make, makefile, build, compiler]
+    it: [make, makefile, build, compilare]
+    pl: [make, makefile, build, kompilacja]
+    tr: [make, makefile, build, derle]
+    pt: [make, makefile, build, compilar]
+    nl: [make, makefile, build, compileren]
+    hu: [make, makefile, build, fordítás]
   commands:
-  - cmd: make
-    desc:
-      cs: Spustit default target z Makefile
-      en: Run default target from Makefile
-  - cmd: make install
-    desc:
-      cs: Nainstalovat zkompilovaný program
-      en: Install compiled program
-  - cmd: make clean
-    desc:
-      cs: Smazat build artefakty
-      en: Remove build artifacts
-  - cmd: make -j$(nproc)
-    desc:
-      cs: Paralelní build (využije všechna jádra)
-      en: Parallel build (use all cores)
-  - cmd: ./configure && make && sudo make install
-    desc:
-      cs: Klasická trojice u zdrojákových balíčků
-      en: Classic source build trio
+    - cmd: "make"
+      desc:
+        en: "Run default target from Makefile"
+        cs: "Spustit default target z Makefile"
+        sk: "Spustiť default target z Makefile"
+        de: "Default-Target aus Makefile ausführen"
+        es: "Ejecutar target por defecto del Makefile"
+        fr: "Exécuter le target par défaut du Makefile"
+        it: "Eseguire default target dal Makefile"
+        pl: "Uruchom domyślny target z Makefile"
+        tr: "Makefile'dan varsayılan hedef çalıştır"
+        pt: "Executar target padrão do Makefile"
+        nl: "Standaard target uit Makefile uitvoeren"
+        hu: "Alapértelmezett cél futtatása Makefile-ból"
+    - cmd: "make install"
+      desc:
+        en: "Install compiled program"
+        cs: "Nainstalovat zkompilovaný program"
+        sk: "Nainštalovať skompilovaný program"
+        de: "Kompiliertes Programm installieren"
+        es: "Instalar programa compilado"
+        fr: "Installer le programme compilé"
+        it: "Installare programma compilato"
+        pl: "Zainstaluj skompilowany program"
+        tr: "Derlenmiş programı yükle"
+        pt: "Instalar programa compilado"
+        nl: "Gecompileerd programma installeren"
+        hu: "Lefordított program telepítése"
+    - cmd: "make clean"
+      desc:
+        en: "Remove build artifacts"
+        cs: "Smazat build artefakty"
+        sk: "Zmazať build artefakty"
+        de: "Build-Artefakte entfernen"
+        es: "Eliminar artefactos de build"
+        fr: "Supprimer les artefacts de build"
+        it: "Rimuovere artefatti di build"
+        pl: "Usuń artefakty build"
+        tr: "Build artefaktlarını kaldır"
+        pt: "Remover artefatos de build"
+        nl: "Build-artefacten verwijderen"
+        hu: "Build artefaktok eltávolítása"
+    - cmd: "make -j$(nproc)"
+      desc:
+        en: "Parallel build (use all cores)"
+        cs: "Paralelní build (využije všechna jádra)"
+        sk: "Paralelný build (využije všetky jadrá)"
+        de: "Paralleler Build (alle Kerne)"
+        es: "Build paralelo (todos los núcleos)"
+        fr: "Build parallèle (tous les cœurs)"
+        it: "Build parallelo (tutti i core)"
+        pl: "Równoległy build (wszystkie rdzenie)"
+        tr: "Paralel build (tüm çekirdekler)"
+        pt: "Build paralelo (todos os núcleos)"
+        nl: "Parallelle build (alle cores)"
+        hu: "Párhuzamos build (minden mag)"
+    - cmd: "./configure && make && sudo make install"
+      desc:
+        en: "Classic source build trio"
+        cs: "Klasická trojice u zdrojákových balíčků"
+        sk: "Klasická trojica u zdrojákových balíčkov"
+        de: "Klassisches Quelltext-Build-Trio"
+        es: "Trío clásico de build desde código"
+        fr: "Trio classique de compilation source"
+        it: "Trio classico build sorgenti"
+        pl: "Klasyczna trójka buildu źródeł"
+        tr: "Klasik kaynak build üçlüsü"
+        pt: "Trio clássico de build fonte"
+        nl: "Klassiek bron-build-trio"
+        hu: "Klasszikus forráskód build trió"
+
 - id: go-rust
   title:
-    cs: Go a Rust
-    en: Go and Rust
+    en: "Go and Rust"
+    cs: "Go a Rust"
+    sk: "Go a Rust"
+    de: "Go und Rust"
+    es: "Go y Rust"
+    fr: "Go et Rust"
+    it: "Go e Rust"
+    pl: "Go i Rust"
+    tr: "Go ve Rust"
+    pt: "Go e Rust"
+    nl: "Go en Rust"
+    hu: "Go és Rust"
   tags:
-    cs:
-    - go
-    - golang
-    - rust
-    - cargo
-    - kompilace
-    en:
-    - go
-    - golang
-    - rust
-    - cargo
-    - compile
+    en: [go, golang, rust, cargo, compile]
+    cs: [go, golang, rust, cargo, kompilace]
+    sk: [go, golang, rust, cargo, kompilácia]
+    de: [go, golang, rust, cargo, kompilieren]
+    es: [go, golang, rust, cargo, compilar]
+    fr: [go, golang, rust, cargo, compiler]
+    it: [go, golang, rust, cargo, compilare]
+    pl: [go, golang, rust, cargo, kompilacja]
+    tr: [go, golang, rust, cargo, derle]
+    pt: [go, golang, rust, cargo, compilar]
+    nl: [go, golang, rust, cargo, compileren]
+    hu: [go, golang, rust, cargo, fordítás]
   commands:
-  - cmd: go build
-    desc:
-      cs: Zkompilovat (vytvoří binárku)
-      en: Compile (creates binary)
-  - cmd: go run main.go
-    desc:
-      cs: Spustit bez vytvoření binárky
-      en: Run without binary
-  - cmd: go test ./...
-    desc:
-      cs: Spustit všechny testy v projektu
-      en: Run all tests in project
-  - cmd: go mod tidy
-    desc:
-      cs: Vyčistit závislosti
-      en: Clean dependencies
-  - cmd: cargo build --release
-    desc:
-      cs: 'Rust: kompilace s optimalizacemi'
-      en: 'Rust: compile with optimizations'
-  - cmd: cargo run
-    desc:
-      cs: 'Rust: build + spustit'
-      en: 'Rust: build + run'
-  - cmd: cargo test
-    desc:
-      cs: 'Rust: testy'
-      en: 'Rust: tests'
+    - cmd: "go build"
+      desc:
+        en: "Compile (creates binary)"
+        cs: "Zkompilovat (vytvoří binárku)"
+        sk: "Skompilovať (vytvorí binárku)"
+        de: "Kompilieren (erzeugt Binärdatei)"
+        es: "Compilar (crea binario)"
+        fr: "Compiler (crée binaire)"
+        it: "Compilare (crea binario)"
+        pl: "Skompiluj (tworzy binarkę)"
+        tr: "Derle (binary oluşturur)"
+        pt: "Compilar (cria binário)"
+        nl: "Compileren (maakt binary)"
+        hu: "Fordítás (bináris fájlt készít)"
+    - cmd: "go run main.go"
+      desc:
+        en: "Run without binary"
+        cs: "Spustit bez vytvoření binárky"
+        sk: "Spustiť bez vytvorenia binárky"
+        de: "Ohne Binärdatei ausführen"
+        es: "Ejecutar sin binario"
+        fr: "Exécuter sans binaire"
+        it: "Eseguire senza binario"
+        pl: "Uruchom bez binarki"
+        tr: "Binary olmadan çalıştır"
+        pt: "Executar sem binário"
+        nl: "Uitvoeren zonder binary"
+        hu: "Futtatás bináris nélkül"
+    - cmd: "go test ./..."
+      desc:
+        en: "Run all tests in project"
+        cs: "Spustit všechny testy v projektu"
+        sk: "Spustiť všetky testy v projekte"
+        de: "Alle Tests im Projekt ausführen"
+        es: "Ejecutar todos los tests del proyecto"
+        fr: "Exécuter tous les tests du projet"
+        it: "Eseguire tutti i test del progetto"
+        pl: "Uruchom wszystkie testy projektu"
+        tr: "Projedeki tüm testleri çalıştır"
+        pt: "Executar todos os testes do projeto"
+        nl: "Alle tests in project uitvoeren"
+        hu: "Minden teszt futtatása a projektben"
+    - cmd: "go mod tidy"
+      desc:
+        en: "Clean dependencies"
+        cs: "Vyčistit závislosti"
+        sk: "Vyčistiť závislosti"
+        de: "Abhängigkeiten bereinigen"
+        es: "Limpiar dependencias"
+        fr: "Nettoyer les dépendances"
+        it: "Pulire dipendenze"
+        pl: "Wyczyść zależności"
+        tr: "Bağımlılıkları temizle"
+        pt: "Limpar dependências"
+        nl: "Afhankelijkheden opschonen"
+        hu: "Függőségek tisztítása"
+    - cmd: "cargo build --release"
+      desc:
+        en: "Rust: compile with optimizations"
+        cs: "Rust: kompilace s optimalizacemi"
+        sk: "Rust: kompilácia s optimalizáciami"
+        de: "Rust: mit Optimierungen kompilieren"
+        es: "Rust: compilar con optimizaciones"
+        fr: "Rust : compiler avec optimisations"
+        it: "Rust: compilare con ottimizzazioni"
+        pl: "Rust: kompilacja z optymalizacjami"
+        tr: "Rust: optimizasyonlarla derle"
+        pt: "Rust: compilar com otimizações"
+        nl: "Rust: compileren met optimalisaties"
+        hu: "Rust: fordítás optimalizációkkal"
+    - cmd: "cargo run"
+      desc:
+        en: "Rust: build + run"
+        cs: "Rust: build + spustit"
+        sk: "Rust: build + spustiť"
+        de: "Rust: bauen + ausführen"
+        es: "Rust: build + ejecutar"
+        fr: "Rust : build + exécuter"
+        it: "Rust: build + eseguire"
+        pl: "Rust: build + uruchom"
+        tr: "Rust: build + çalıştır"
+        pt: "Rust: build + executar"
+        nl: "Rust: build + uitvoeren"
+        hu: "Rust: build + futtatás"
+    - cmd: "cargo test"
+      desc:
+        en: "Rust: tests"
+        cs: "Rust: testy"
+        sk: "Rust: testy"
+        de: "Rust: Tests"
+        es: "Rust: tests"
+        fr: "Rust : tests"
+        it: "Rust: test"
+        pl: "Rust: testy"
+        tr: "Rust: testler"
+        pt: "Rust: testes"
+        nl: "Rust: tests"
+        hu: "Rust: tesztek"
+
 - id: ansible-basics
   title:
-    cs: Ansible základy
-    en: Ansible basics
+    en: "Ansible basics"
+    cs: "Ansible základy"
+    sk: "Ansible základy"
+    de: "Ansible-Grundlagen"
+    es: "Conceptos básicos de Ansible"
+    fr: "Bases d'Ansible"
+    it: "Basi di Ansible"
+    pl: "Podstawy Ansible"
+    tr: "Ansible temelleri"
+    pt: "Básicos do Ansible"
+    nl: "Ansible-basis"
+    hu: "Ansible alapok"
   tags:
-    cs:
-    - ansible
-    - automatizace
-    - playbook
-    - ad-hoc
-    en:
-    - ansible
-    - automation
-    - playbook
-    - ad-hoc
+    en: [ansible, automation, playbook, ad-hoc]
+    cs: [ansible, automatizace, playbook, ad-hoc]
+    sk: [ansible, automatizácia, playbook, ad-hoc]
+    de: [ansible, automatisierung, playbook, ad-hoc]
+    es: [ansible, automatización, playbook, ad-hoc]
+    fr: [ansible, automatisation, playbook, ad-hoc]
+    it: [ansible, automazione, playbook, ad-hoc]
+    pl: [ansible, automatyzacja, playbook, ad-hoc]
+    tr: [ansible, otomasyon, playbook, ad-hoc]
+    pt: [ansible, automação, playbook, ad-hoc]
+    nl: [ansible, automatisering, playbook, ad-hoc]
+    hu: [ansible, automatizálás, playbook, ad-hoc]
   commands:
-  - cmd: ansible all -m ping
-    desc:
-      cs: Test spojení se všemi hosty
-      en: Test connection to all hosts
-  - cmd: ansible all -a 'uptime'
-    desc:
-      cs: Ad-hoc příkaz na všech serverech
-      en: Ad-hoc command on all servers
-  - cmd: ansible-playbook deploy.yml
-    desc:
-      cs: Spustit playbook
-      en: Run playbook
-  - cmd: ansible-playbook deploy.yml --check
-    desc:
-      cs: Dry-run (jen ukázat, co by udělal)
-      en: Dry-run (preview)
-  - cmd: ansible-playbook deploy.yml -l web1
-    desc:
-      cs: Spustit jen na 'web1'
-      en: Run only on 'web1'
-  - cmd: ansible-vault encrypt secrets.yml
-    desc:
-      cs: Zašifrovat soubor s tajnými údaji
-      en: Encrypt secrets file
+    - cmd: "ansible all -m ping"
+      desc:
+        en: "Test connection to all hosts"
+        cs: "Test spojení se všemi hosty"
+        sk: "Test spojenia so všetkými hostmi"
+        de: "Verbindung zu allen Hosts testen"
+        es: "Probar conexión con todos los hosts"
+        fr: "Tester connexion à tous les hôtes"
+        it: "Test connessione a tutti gli host"
+        pl: "Test połączenia ze wszystkimi hostami"
+        tr: "Tüm host'larla bağlantı testi"
+        pt: "Testar conexão com todos os hosts"
+        nl: "Verbinding met alle hosts testen"
+        hu: "Kapcsolat tesztelése minden hosttal"
+    - cmd: "ansible all -a 'uptime'"
+      desc:
+        en: "Ad-hoc command on all servers"
+        cs: "Ad-hoc příkaz na všech serverech"
+        sk: "Ad-hoc príkaz na všetkých serveroch"
+        de: "Ad-hoc-Befehl auf allen Servern"
+        es: "Comando ad-hoc en todos los servidores"
+        fr: "Commande ad-hoc sur tous les serveurs"
+        it: "Comando ad-hoc su tutti i server"
+        pl: "Polecenie ad-hoc na wszystkich serwerach"
+        tr: "Tüm sunucularda ad-hoc komut"
+        pt: "Comando ad-hoc em todos os servidores"
+        nl: "Ad-hoc-commando op alle servers"
+        hu: "Ad-hoc parancs minden szerveren"
+    - cmd: "ansible-playbook deploy.yml"
+      desc:
+        en: "Run playbook"
+        cs: "Spustit playbook"
+        sk: "Spustiť playbook"
+        de: "Playbook ausführen"
+        es: "Ejecutar playbook"
+        fr: "Exécuter le playbook"
+        it: "Eseguire playbook"
+        pl: "Uruchom playbook"
+        tr: "Playbook çalıştır"
+        pt: "Executar playbook"
+        nl: "Playbook uitvoeren"
+        hu: "Playbook futtatása"
+    - cmd: "ansible-playbook deploy.yml --check"
+      desc:
+        en: "Dry-run (preview)"
+        cs: "Dry-run (jen ukázat, co by udělal)"
+        sk: "Dry-run (len ukázať, čo by spravil)"
+        de: "Probelauf (Vorschau)"
+        es: "Dry-run (previsualizar)"
+        fr: "Dry-run (prévisualisation)"
+        it: "Dry-run (anteprima)"
+        pl: "Dry-run (podgląd)"
+        tr: "Dry-run (önizleme)"
+        pt: "Dry-run (prévia)"
+        nl: "Dry-run (preview)"
+        hu: "Dry-run (előnézet)"
+    - cmd: "ansible-playbook deploy.yml -l web1"
+      desc:
+        en: "Run only on 'web1'"
+        cs: "Spustit jen na 'web1'"
+        sk: "Spustiť len na 'web1'"
+        de: "Nur auf 'web1' ausführen"
+        es: "Ejecutar solo en 'web1'"
+        fr: "Exécuter uniquement sur 'web1'"
+        it: "Eseguire solo su 'web1'"
+        pl: "Uruchom tylko na 'web1'"
+        tr: "Sadece 'web1'de çalıştır"
+        pt: "Executar apenas em 'web1'"
+        nl: "Alleen op 'web1' uitvoeren"
+        hu: "Csak a 'web1'-en futtatás"
+    - cmd: "ansible-vault encrypt secrets.yml"
+      desc:
+        en: "Encrypt secrets file"
+        cs: "Zašifrovat soubor s tajnými údaji"
+        sk: "Zašifrovať súbor s tajnými údajmi"
+        de: "Secrets-Datei verschlüsseln"
+        es: "Cifrar archivo de secrets"
+        fr: "Chiffrer le fichier de secrets"
+        it: "Cifrare file di secrets"
+        pl: "Szyfruj plik secrets"
+        tr: "Secrets dosyasını şifrele"
+        pt: "Criptografar arquivo de secrets"
+        nl: "Secrets-bestand versleutelen"
+        hu: "Titok fájl titkosítása"
+
 - id: terraform
   title:
-    cs: Terraform
-    en: Terraform
+    en: "Terraform"
+    cs: "Terraform"
+    sk: "Terraform"
+    de: "Terraform"
+    es: "Terraform"
+    fr: "Terraform"
+    it: "Terraform"
+    pl: "Terraform"
+    tr: "Terraform"
+    pt: "Terraform"
+    nl: "Terraform"
+    hu: "Terraform"
   tags:
-    cs:
-    - terraform
-    - iac
-    - infrastruktura
-    - plan
-    - apply
-    en:
-    - terraform
-    - iac
-    - infrastructure
-    - plan
-    - apply
+    en: [terraform, iac, infrastructure, plan, apply]
+    cs: [terraform, iac, infrastruktura, plan, apply]
+    sk: [terraform, iac, infraštruktúra, plan, apply]
+    de: [terraform, iac, infrastruktur, plan, apply]
+    es: [terraform, iac, infraestructura, plan, apply]
+    fr: [terraform, iac, infrastructure, plan, apply]
+    it: [terraform, iac, infrastruttura, plan, apply]
+    pl: [terraform, iac, infrastruktura, plan, apply]
+    tr: [terraform, iac, altyapı, plan, apply]
+    pt: [terraform, iac, infraestrutura, plan, apply]
+    nl: [terraform, iac, infrastructuur, plan, apply]
+    hu: [terraform, iac, infrastruktúra, plan, apply]
   commands:
-  - cmd: terraform init
-    desc:
-      cs: Inicializovat (stáhnout providery)
-      en: Initialize (download providers)
-  - cmd: terraform plan
-    desc:
-      cs: Co bude změněno (preview)
-      en: What will change (preview)
-  - cmd: terraform apply
-    desc:
-      cs: Aplikovat změny
-      en: Apply changes
-  - cmd: terraform destroy
-    desc:
-      cs: Smazat vše, co terraform vytvořil
-      en: Destroy everything terraform created
-  - cmd: terraform fmt
-    desc:
-      cs: Zformátovat .tf soubory
-      en: Format .tf files
-  - cmd: terraform state list
-    desc:
-      cs: Seznam managed resources
-      en: List managed resources
+    - cmd: "terraform init"
+      desc:
+        en: "Initialize (download providers)"
+        cs: "Inicializovat (stáhnout providery)"
+        sk: "Inicializovať (stiahnuť providerov)"
+        de: "Initialisieren (Provider laden)"
+        es: "Inicializar (descargar providers)"
+        fr: "Initialiser (télécharger providers)"
+        it: "Inizializzare (scaricare provider)"
+        pl: "Zainicjuj (pobierz providerów)"
+        tr: "Başlat (provider'ları indir)"
+        pt: "Inicializar (baixar providers)"
+        nl: "Initialiseren (providers downloaden)"
+        hu: "Inicializálás (providerek letöltése)"
+    - cmd: "terraform plan"
+      desc:
+        en: "What will change (preview)"
+        cs: "Co bude změněno (preview)"
+        sk: "Čo bude zmenené (preview)"
+        de: "Was geändert wird (Vorschau)"
+        es: "Qué cambiará (previsualización)"
+        fr: "Ce qui changera (prévisualisation)"
+        it: "Cosa cambierà (anteprima)"
+        pl: "Co zostanie zmienione (podgląd)"
+        tr: "Ne değişecek (önizleme)"
+        pt: "O que vai mudar (prévia)"
+        nl: "Wat zal veranderen (preview)"
+        hu: "Mi fog változni (előnézet)"
+    - cmd: "terraform apply"
+      desc:
+        en: "Apply changes"
+        cs: "Aplikovat změny"
+        sk: "Aplikovať zmeny"
+        de: "Änderungen anwenden"
+        es: "Aplicar cambios"
+        fr: "Appliquer les changements"
+        it: "Applicare modifiche"
+        pl: "Zastosuj zmiany"
+        tr: "Değişiklikleri uygula"
+        pt: "Aplicar mudanças"
+        nl: "Wijzigingen toepassen"
+        hu: "Változások alkalmazása"
+    - cmd: "terraform destroy"
+      desc:
+        en: "Destroy everything terraform created"
+        cs: "Smazat vše, co terraform vytvořil"
+        sk: "Zmazať všetko, čo terraform vytvoril"
+        de: "Alles von Terraform Erstellte zerstören"
+        es: "Destruir todo lo creado por terraform"
+        fr: "Détruire tout ce que terraform a créé"
+        it: "Distruggere tutto ciò che terraform ha creato"
+        pl: "Zniszcz wszystko utworzone przez terraform"
+        tr: "Terraform'un oluşturduğu her şeyi yok et"
+        pt: "Destruir tudo que terraform criou"
+        nl: "Alles wat terraform maakte vernietigen"
+        hu: "Minden terraform által létrehozott megsemmisítése"
+    - cmd: "terraform fmt"
+      desc:
+        en: "Format .tf files"
+        cs: "Zformátovat .tf soubory"
+        sk: "Sformátovať .tf súbory"
+        de: ".tf-Dateien formatieren"
+        es: "Formatear archivos .tf"
+        fr: "Formater les fichiers .tf"
+        it: "Formattare file .tf"
+        pl: "Sformatuj pliki .tf"
+        tr: ".tf dosyalarını biçimle"
+        pt: "Formatar arquivos .tf"
+        nl: ".tf-bestanden formatteren"
+        hu: ".tf fájlok formázása"
+    - cmd: "terraform state list"
+      desc:
+        en: "List managed resources"
+        cs: "Seznam managed resources"
+        sk: "Zoznam managed resources"
+        de: "Verwaltete Ressourcen auflisten"
+        es: "Listar recursos gestionados"
+        fr: "Lister les ressources gérées"
+        it: "Elencare risorse gestite"
+        pl: "Lista zarządzanych zasobów"
+        tr: "Yönetilen kaynakları listele"
+        pt: "Listar recursos gerenciados"
+        nl: "Beheerde resources tonen"
+        hu: "Kezelt erőforrások listája"

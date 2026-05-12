@@ -1,153 +1,409 @@
 - id: find-advanced
   title:
-    cs: find - pokročilé použití
-    en: find - advanced usage
+    en: "find - advanced usage"
+    cs: "find - pokročilé použití"
+    sk: "find - pokročilé použitie"
+    de: "find - fortgeschrittene Nutzung"
+    es: "find - uso avanzado"
+    fr: "find - utilisation avancée"
+    it: "find - uso avanzato"
+    pl: "find - zaawansowane użycie"
+    tr: "find - gelişmiş kullanım"
+    pt: "find - uso avançado"
+    nl: "find - geavanceerd gebruik"
+    hu: "find - haladó használat"
   tags:
-    cs:
-    - find
-    - hledat
-    - advanced
-    - exec
-    - pokročilé
-    en:
-    - find
-    - advanced
-    - exec
+    en: [find, advanced, exec]
+    cs: [find, hledat, advanced, exec, pokročilé]
+    sk: [find, hľadať, advanced, exec, pokročilé]
+    de: [find, fortgeschritten, exec]
+    es: [find, avanzado, exec]
+    fr: [find, avancé, exec]
+    it: [find, avanzato, exec]
+    pl: [find, zaawansowane, exec]
+    tr: [find, gelişmiş, exec]
+    pt: [find, avançado, exec]
+    nl: [find, geavanceerd, exec]
+    hu: [find, haladó, exec]
   commands:
-  - cmd: find . -name '*.log' -mtime +30 -delete
-    desc:
-      cs: Smazat .log soubory starší než 30 dní
-      en: Delete .log files older than 30 days
-  - cmd: find . -name '*.tmp' -exec rm {} +
-    desc:
-      cs: Smazat všechny .tmp (efektivně)
-      en: Delete all .tmp (efficiently)
-  - cmd: find . -type f -exec grep -l 'TODO' {} +
-    desc:
-      cs: Najít soubory obsahující 'TODO'
-      en: Find files containing 'TODO'
-  - cmd: find . -type f -name '*.jpg' -exec cp {} /backup/ \;
-    desc:
-      cs: 'Pro každý JPG: kopírovat do /backup'
-      en: 'For each JPG: copy to /backup'
-  - cmd: find . -empty -type d
-    desc:
-      cs: Najít prázdné adresáře
-      en: Find empty directories
-  - cmd: find . -perm 777
-    desc:
-      cs: Soubory s konkrétními právy
-      en: Files with specific permissions
-  - cmd: find / -user pepa 2>/dev/null
-    desc:
-      cs: Soubory patřící uživateli
-      en: Files owned by user
-  - cmd: find . -newer reference.txt
-    desc:
-      cs: Soubory novější než reference.txt
-      en: Files newer than reference.txt
+    - cmd: "find . -name '*.log' -mtime +30 -delete"
+      desc:
+        en: "Delete .log files older than 30 days"
+        cs: "Smazat .log soubory starší než 30 dní"
+        sk: "Zmazať .log súbory staršie ako 30 dní"
+        de: ".log-Dateien älter als 30 Tage löschen"
+        es: "Eliminar .log de más de 30 días"
+        fr: "Supprimer .log de plus de 30 jours"
+        it: "Eliminare .log più vecchi di 30 giorni"
+        pl: "Usuń pliki .log starsze niż 30 dni"
+        tr: "30 günden eski .log dosyalarını sil"
+        pt: "Excluir .log com mais de 30 dias"
+        nl: ".log-bestanden ouder dan 30 dagen verwijderen"
+        hu: "30 napnál régebbi .log fájlok törlése"
+    - cmd: "find . -name '*.tmp' -exec rm {} +"
+      desc:
+        en: "Delete all .tmp (efficiently)"
+        cs: "Smazat všechny .tmp (efektivně)"
+        sk: "Zmazať všetky .tmp (efektívne)"
+        de: "Alle .tmp löschen (effizient)"
+        es: "Eliminar todos .tmp (eficiente)"
+        fr: "Supprimer tous .tmp (efficacement)"
+        it: "Eliminare tutti .tmp (efficiente)"
+        pl: "Usuń wszystkie .tmp (efektywnie)"
+        tr: "Tüm .tmp'leri sil (verimli)"
+        pt: "Excluir todos .tmp (eficiente)"
+        nl: "Alle .tmp verwijderen (efficiënt)"
+        hu: "Minden .tmp törlése (hatékonyan)"
+    - cmd: "find . -type f -exec grep -l 'TODO' {} +"
+      desc:
+        en: "Find files containing 'TODO'"
+        cs: "Najít soubory obsahující 'TODO'"
+        sk: "Nájsť súbory obsahujúce 'TODO'"
+        de: "Dateien finden, die 'TODO' enthalten"
+        es: "Encontrar archivos con 'TODO'"
+        fr: "Trouver les fichiers contenant 'TODO'"
+        it: "Trovare file contenenti 'TODO'"
+        pl: "Znajdź pliki zawierające 'TODO'"
+        tr: "'TODO' içeren dosyaları bul"
+        pt: "Encontrar arquivos com 'TODO'"
+        nl: "Bestanden vinden met 'TODO'"
+        hu: "'TODO'-t tartalmazó fájlok keresése"
+    - cmd: "find . -type f -name '*.jpg' -exec cp {} /backup/ \\;"
+      desc:
+        en: "For each JPG: copy to /backup"
+        cs: "Pro každý JPG: kopírovat do /backup"
+        sk: "Pre každý JPG: kopírovať do /backup"
+        de: "Für jede JPG: nach /backup kopieren"
+        es: "Por cada JPG: copiar a /backup"
+        fr: "Pour chaque JPG : copier dans /backup"
+        it: "Per ogni JPG: copiare in /backup"
+        pl: "Dla każdego JPG: kopiuj do /backup"
+        tr: "Her JPG için: /backup'a kopyala"
+        pt: "Para cada JPG: copiar para /backup"
+        nl: "Voor elke JPG: kopiëren naar /backup"
+        hu: "Minden JPG-hez: másolás /backup-ba"
+    - cmd: "find . -empty -type d"
+      desc:
+        en: "Find empty directories"
+        cs: "Najít prázdné adresáře"
+        sk: "Nájsť prázdne adresáre"
+        de: "Leere Verzeichnisse finden"
+        es: "Encontrar directorios vacíos"
+        fr: "Trouver les dossiers vides"
+        it: "Trovare directory vuote"
+        pl: "Znajdź puste katalogi"
+        tr: "Boş dizinleri bul"
+        pt: "Encontrar diretórios vazios"
+        nl: "Lege mappen vinden"
+        hu: "Üres könyvtárak keresése"
+    - cmd: "find . -perm 777"
+      desc:
+        en: "Files with specific permissions"
+        cs: "Soubory s konkrétními právy"
+        sk: "Súbory s konkrétnymi právami"
+        de: "Dateien mit bestimmten Rechten"
+        es: "Archivos con permisos específicos"
+        fr: "Fichiers avec permissions spécifiques"
+        it: "File con permessi specifici"
+        pl: "Pliki z konkretnymi uprawnieniami"
+        tr: "Belirli izinli dosyalar"
+        pt: "Arquivos com permissões específicas"
+        nl: "Bestanden met specifieke rechten"
+        hu: "Adott jogosultságú fájlok"
+    - cmd: "find / -user pepa 2>/dev/null"
+      desc:
+        en: "Files owned by user"
+        cs: "Soubory patřící uživateli"
+        sk: "Súbory patriace používateľovi"
+        de: "Dateien eines Benutzers"
+        es: "Archivos del usuario"
+        fr: "Fichiers d'un utilisateur"
+        it: "File di un utente"
+        pl: "Pliki użytkownika"
+        tr: "Kullanıcıya ait dosyalar"
+        pt: "Arquivos do usuário"
+        nl: "Bestanden van gebruiker"
+        hu: "Felhasználó fájljai"
+    - cmd: "find . -newer reference.txt"
+      desc:
+        en: "Files newer than reference.txt"
+        cs: "Soubory novější než reference.txt"
+        sk: "Súbory novšie ako reference.txt"
+        de: "Dateien neuer als reference.txt"
+        es: "Archivos más nuevos que reference.txt"
+        fr: "Fichiers plus récents que reference.txt"
+        it: "File più nuovi di reference.txt"
+        pl: "Pliki nowsze niż reference.txt"
+        tr: "reference.txt'den daha yeni dosyalar"
+        pt: "Arquivos mais novos que reference.txt"
+        nl: "Bestanden nieuwer dan reference.txt"
+        hu: "reference.txt-nél újabb fájlok"
+
 - id: rename-batch
   title:
-    cs: Hromadné přejmenování
-    en: Batch renaming
+    en: "Batch renaming"
+    cs: "Hromadné přejmenování"
+    sk: "Hromadné premenovanie"
+    de: "Batch-Umbenennung"
+    es: "Renombrado masivo"
+    fr: "Renommage en lot"
+    it: "Rinomina batch"
+    pl: "Masowa zmiana nazw"
+    tr: "Toplu yeniden adlandırma"
+    pt: "Renomeação em massa"
+    nl: "Hernoemen in batch"
+    hu: "Tömeges átnevezés"
   tags:
-    cs:
-    - rename
-    - přejmenovat
-    - hromadně
-    - batch
-    en:
-    - rename
-    - batch
-    - mass
+    en: [rename, batch, mass]
+    cs: [rename, přejmenovat, hromadně, batch]
+    sk: [rename, premenovať, hromadne, batch]
+    de: [rename, umbenennen, batch, massen]
+    es: [rename, renombrar, masivo, batch]
+    fr: [rename, renommer, lot, batch]
+    it: [rename, rinominare, massa, batch]
+    pl: [rename, zmień nazwę, masowo, batch]
+    tr: [rename, yeniden adlandır, toplu, batch]
+    pt: [rename, renomear, massa, batch]
+    nl: [rename, hernoemen, batch, massaal]
+    hu: [rename, átnevezés, tömeges, batch]
   commands:
-  - cmd: rename 's/\.txt$/.md/' *.txt
-    desc:
-      cs: Přejmenovat všechny .txt na .md (Perl rename)
-      en: Rename all .txt to .md (Perl rename)
-  - cmd: for f in *.JPG; do mv "$f" "${f%.JPG}.jpg"; done
-    desc:
-      cs: Přejmenovat .JPG → .jpg (bash)
-      en: Rename .JPG → .jpg (bash)
-  - cmd: mmv 'foo_*' 'bar_#1'
-    desc:
-      cs: 'S mmv: foo_X → bar_X (apt install mmv)'
-      en: 'Using mmv: foo_X → bar_X'
+    - cmd: "rename 's/\\.txt$/.md/' *.txt"
+      desc:
+        en: "Rename all .txt to .md (Perl rename)"
+        cs: "Přejmenovat všechny .txt na .md (Perl rename)"
+        sk: "Premenovať všetky .txt na .md (Perl rename)"
+        de: "Alle .txt zu .md umbenennen (Perl rename)"
+        es: "Renombrar .txt a .md (Perl rename)"
+        fr: "Renommer .txt en .md (Perl rename)"
+        it: "Rinominare .txt in .md (Perl rename)"
+        pl: "Zmień nazwy .txt na .md (Perl rename)"
+        tr: ".txt'leri .md'ye yeniden adlandır (Perl)"
+        pt: "Renomear .txt para .md (Perl rename)"
+        nl: ".txt naar .md hernoemen (Perl rename)"
+        hu: ".txt fájlok átnevezése .md-re (Perl rename)"
+    - cmd: "for f in *.JPG; do mv \"$f\" \"${f%.JPG}.jpg\"; done"
+      desc:
+        en: "Rename .JPG → .jpg (bash)"
+        cs: "Přejmenovat .JPG → .jpg (bash)"
+        sk: "Premenovať .JPG → .jpg (bash)"
+        de: ".JPG → .jpg umbenennen (bash)"
+        es: "Renombrar .JPG → .jpg (bash)"
+        fr: "Renommer .JPG → .jpg (bash)"
+        it: "Rinominare .JPG → .jpg (bash)"
+        pl: "Zmień .JPG → .jpg (bash)"
+        tr: ".JPG → .jpg yeniden adlandır (bash)"
+        pt: "Renomear .JPG → .jpg (bash)"
+        nl: ".JPG → .jpg hernoemen (bash)"
+        hu: ".JPG → .jpg átnevezés (bash)"
+    - cmd: "mmv 'foo_*' 'bar_#1'"
+      desc:
+        en: "Using mmv: foo_X → bar_X"
+        cs: "S mmv: foo_X → bar_X (apt install mmv)"
+        sk: "S mmv: foo_X → bar_X (apt install mmv)"
+        de: "Mit mmv: foo_X → bar_X"
+        es: "Con mmv: foo_X → bar_X"
+        fr: "Avec mmv : foo_X → bar_X"
+        it: "Con mmv: foo_X → bar_X"
+        pl: "Z mmv: foo_X → bar_X"
+        tr: "mmv ile: foo_X → bar_X"
+        pt: "Com mmv: foo_X → bar_X"
+        nl: "Met mmv: foo_X → bar_X"
+        hu: "mmv-vel: foo_X → bar_X"
+
 - id: file-meta
   title:
-    cs: Metadata souborů
-    en: File metadata
+    en: "File metadata"
+    cs: "Metadata souborů"
+    sk: "Metadáta súborov"
+    de: "Datei-Metadaten"
+    es: "Metadatos de archivos"
+    fr: "Métadonnées de fichiers"
+    it: "Metadati file"
+    pl: "Metadane plików"
+    tr: "Dosya meta verileri"
+    pt: "Metadados de arquivos"
+    nl: "Bestandsmetadata"
+    hu: "Fájl metaadatok"
   tags:
-    cs:
-    - stat
-    - file
-    - metadata
-    - typ
-    - info
-    en:
-    - stat
-    - file
-    - metadata
-    - type
-    - info
+    en: [stat, file, metadata, type, info]
+    cs: [stat, file, metadata, typ, info]
+    sk: [stat, file, metadata, typ, info]
+    de: [stat, file, metadata, typ, info]
+    es: [stat, file, metadata, tipo, info]
+    fr: [stat, file, metadata, type, info]
+    it: [stat, file, metadata, tipo, info]
+    pl: [stat, file, metadata, typ, info]
+    tr: [stat, file, metadata, tür, info]
+    pt: [stat, file, metadata, tipo, info]
+    nl: [stat, file, metadata, type, info]
+    hu: [stat, file, metadata, típus, info]
   commands:
-  - cmd: stat soubor.txt
-    desc:
-      cs: Detail souboru (časy, práva, inode)
-      en: File details (times, perms, inode)
-  - cmd: file soubor
-    desc:
-      cs: Jaký typ souboru je to
-      en: What type of file is it
-  - cmd: file -i soubor
-    desc:
-      cs: MIME typ
-      en: MIME type
-  - cmd: touch soubor
-    desc:
-      cs: Vytvořit prázdný soubor / aktualizovat čas
-      en: Create empty file / update timestamp
-  - cmd: touch -d '2025-01-01' soubor
-    desc:
-      cs: Nastavit konkrétní čas souboru
-      en: Set specific file timestamp
+    - cmd: "stat file.txt"
+      desc:
+        en: "File details (times, perms, inode)"
+        cs: "Detail souboru (časy, práva, inode)"
+        sk: "Detail súboru (časy, práva, inode)"
+        de: "Dateidetails (Zeiten, Rechte, inode)"
+        es: "Detalles del archivo (tiempos, permisos, inodo)"
+        fr: "Détails du fichier (temps, permissions, inode)"
+        it: "Dettagli file (orari, permessi, inode)"
+        pl: "Szczegóły pliku (czasy, prawa, inode)"
+        tr: "Dosya detayları (zaman, izin, inode)"
+        pt: "Detalhes do arquivo (tempos, permissões, inode)"
+        nl: "Bestandsdetails (tijden, rechten, inode)"
+        hu: "Fájl részletei (idők, jogosultságok, inode)"
+    - cmd: "file file"
+      desc:
+        en: "What type of file is it"
+        cs: "Jaký typ souboru je to"
+        sk: "Aký typ súboru to je"
+        de: "Welcher Dateityp es ist"
+        es: "Qué tipo de archivo es"
+        fr: "Quel type de fichier"
+        it: "Che tipo di file è"
+        pl: "Jaki to typ pliku"
+        tr: "Ne tür bir dosya"
+        pt: "Que tipo de arquivo é"
+        nl: "Wat voor type bestand"
+        hu: "Milyen típusú fájl"
+    - cmd: "file -i file"
+      desc:
+        en: "MIME type"
+        cs: "MIME typ"
+        sk: "MIME typ"
+        de: "MIME-Typ"
+        es: "Tipo MIME"
+        fr: "Type MIME"
+        it: "Tipo MIME"
+        pl: "Typ MIME"
+        tr: "MIME türü"
+        pt: "Tipo MIME"
+        nl: "MIME-type"
+        hu: "MIME típus"
+    - cmd: "touch file"
+      desc:
+        en: "Create empty file / update timestamp"
+        cs: "Vytvořit prázdný soubor / aktualizovat čas"
+        sk: "Vytvoriť prázdny súbor / aktualizovať čas"
+        de: "Leere Datei erstellen / Zeitstempel"
+        es: "Crear archivo vacío / actualizar tiempo"
+        fr: "Créer fichier vide / mettre à jour"
+        it: "Creare file vuoto / aggiornare timestamp"
+        pl: "Utwórz pusty plik / aktualizuj czas"
+        tr: "Boş dosya oluştur / zaman güncelle"
+        pt: "Criar arquivo vazio / atualizar timestamp"
+        nl: "Leeg bestand maken / timestamp bijwerken"
+        hu: "Üres fájl létrehozása / időbélyeg frissítése"
+    - cmd: "touch -d '2025-01-01' file"
+      desc:
+        en: "Set specific file timestamp"
+        cs: "Nastavit konkrétní čas souboru"
+        sk: "Nastaviť konkrétny čas súboru"
+        de: "Bestimmten Zeitstempel setzen"
+        es: "Establecer fecha específica"
+        fr: "Définir un horodatage spécifique"
+        it: "Impostare timestamp specifico"
+        pl: "Ustaw konkretny czas pliku"
+        tr: "Belirli dosya zamanı ayarla"
+        pt: "Definir timestamp específico"
+        nl: "Specifieke bestandstimestamp instellen"
+        hu: "Adott fájl időbélyeg beállítása"
+
 - id: dd-loop
   title:
-    cs: Loop soubory a virtuální disky
-    en: Loop files and virtual disks
+    en: "Loop files and virtual disks"
+    cs: "Loop soubory a virtuální disky"
+    sk: "Loop súbory a virtuálne disky"
+    de: "Loop-Dateien und virtuelle Festplatten"
+    es: "Archivos loop y discos virtuales"
+    fr: "Fichiers loop et disques virtuels"
+    it: "File loop e dischi virtuali"
+    pl: "Pliki loop i wirtualne dyski"
+    tr: "Loop dosyaları ve sanal diskler"
+    pt: "Arquivos loop e discos virtuais"
+    nl: "Loop-bestanden en virtuele schijven"
+    hu: "Loop fájlok és virtuális lemezek"
   tags:
-    cs:
-    - loop
-    - image
-    - virtuální
-    - disk
-    - losetup
-    - qemu
-    en:
-    - loop
-    - image
-    - virtual
-    - disk
-    - losetup
-    - qemu
+    en: [loop, image, virtual, disk, losetup, qemu]
+    cs: [loop, image, virtuální, disk, losetup, qemu]
+    sk: [loop, image, virtuálny, disk, losetup, qemu]
+    de: [loop, image, virtuell, disk, losetup, qemu]
+    es: [loop, image, virtual, disco, losetup, qemu]
+    fr: [loop, image, virtuel, disque, losetup, qemu]
+    it: [loop, image, virtuale, disco, losetup, qemu]
+    pl: [loop, image, wirtualny, dysk, losetup, qemu]
+    tr: [loop, image, sanal, disk, losetup, qemu]
+    pt: [loop, image, virtual, disco, losetup, qemu]
+    nl: [loop, image, virtueel, schijf, losetup, qemu]
+    hu: [loop, image, virtuális, lemez, losetup, qemu]
   commands:
-  - cmd: dd if=/dev/zero of=disk.img bs=1M count=100
-    desc:
-      cs: Vytvořit prázdný 100 MB image
-      en: Create empty 100 MB image
-  - cmd: sudo losetup -fP disk.img
-    desc:
-      cs: Připojit jako loop zařízení
-      en: Attach as loop device
-  - cmd: sudo losetup -a
-    desc:
-      cs: Seznam aktivních loop
-      en: List active loops
-  - cmd: sudo losetup -d /dev/loop0
-    desc:
-      cs: Odpojit loop
-      en: Detach loop
-  - cmd: sudo mount disk.img /mnt -o loop
-    desc:
-      cs: Mountovat image přímo
-      en: Mount image directly
+    - cmd: "dd if=/dev/zero of=disk.img bs=1M count=100"
+      desc:
+        en: "Create empty 100 MB image"
+        cs: "Vytvořit prázdný 100 MB image"
+        sk: "Vytvoriť prázdny 100 MB image"
+        de: "Leeres 100-MB-Image erstellen"
+        es: "Crear imagen vacía de 100 MB"
+        fr: "Créer une image vide de 100 Mo"
+        it: "Creare immagine vuota di 100 MB"
+        pl: "Utwórz pusty obraz 100 MB"
+        tr: "Boş 100 MB imaj oluştur"
+        pt: "Criar imagem vazia 100 MB"
+        nl: "Lege 100 MB-image maken"
+        hu: "Üres 100 MB-os image létrehozása"
+    - cmd: "sudo losetup -fP disk.img"
+      desc:
+        en: "Attach as loop device"
+        cs: "Připojit jako loop zařízení"
+        sk: "Pripojiť ako loop zariadenie"
+        de: "Als Loop-Gerät anhängen"
+        es: "Adjuntar como dispositivo loop"
+        fr: "Attacher comme périphérique loop"
+        it: "Collegare come dispositivo loop"
+        pl: "Dołącz jako urządzenie loop"
+        tr: "Loop cihazı olarak bağla"
+        pt: "Anexar como dispositivo loop"
+        nl: "Koppelen als loop-apparaat"
+        hu: "Csatolás loop eszközként"
+    - cmd: "sudo losetup -a"
+      desc:
+        en: "List active loops"
+        cs: "Seznam aktivních loop"
+        sk: "Zoznam aktívnych loop"
+        de: "Aktive Loops auflisten"
+        es: "Listar loops activos"
+        fr: "Lister loops actifs"
+        it: "Elencare loop attivi"
+        pl: "Lista aktywnych loop"
+        tr: "Aktif loop'ları listele"
+        pt: "Listar loops ativos"
+        nl: "Actieve loops tonen"
+        hu: "Aktív loopok listája"
+    - cmd: "sudo losetup -d /dev/loop0"
+      desc:
+        en: "Detach loop"
+        cs: "Odpojit loop"
+        sk: "Odpojiť loop"
+        de: "Loop trennen"
+        es: "Desconectar loop"
+        fr: "Détacher le loop"
+        it: "Scollegare loop"
+        pl: "Odłącz loop"
+        tr: "Loop'u ayır"
+        pt: "Desconectar loop"
+        nl: "Loop loskoppelen"
+        hu: "Loop leválasztása"
+    - cmd: "sudo mount disk.img /mnt -o loop"
+      desc:
+        en: "Mount image directly"
+        cs: "Mountovat image přímo"
+        sk: "Mountovať image priamo"
+        de: "Image direkt einhängen"
+        es: "Montar imagen directamente"
+        fr: "Monter directement l'image"
+        it: "Montare immagine direttamente"
+        pl: "Zamontuj obraz bezpośrednio"
+        tr: "İmajı doğrudan bağla"
+        pt: "Montar imagem diretamente"
+        nl: "Image direct mounten"
+        hu: "Image közvetlen csatolása"

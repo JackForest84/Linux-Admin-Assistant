@@ -1,130 +1,352 @@
 - id: kubectl-pods
   title:
-    cs: Kubernetes - pody
-    en: Kubernetes - pods
+    en: "Kubernetes - pods"
+    cs: "Kubernetes - pody"
+    sk: "Kubernetes - pody"
+    de: "Kubernetes - Pods"
+    es: "Kubernetes - pods"
+    fr: "Kubernetes - pods"
+    it: "Kubernetes - pod"
+    pl: "Kubernetes - pody"
+    tr: "Kubernetes - pod'lar"
+    pt: "Kubernetes - pods"
+    nl: "Kubernetes - pods"
+    hu: "Kubernetes - podok"
   tags:
-    cs:
-    - kubernetes
-    - k8s
-    - kubectl
-    - pod
-    - kontejner
-    en:
-    - kubernetes
-    - k8s
-    - kubectl
-    - pod
-    - container
+    en: [kubernetes, k8s, kubectl, pod, container]
+    cs: [kubernetes, k8s, kubectl, pod, kontejner]
+    sk: [kubernetes, k8s, kubectl, pod, kontajner]
+    de: [kubernetes, k8s, kubectl, pod, container]
+    es: [kubernetes, k8s, kubectl, pod, contenedor]
+    fr: [kubernetes, k8s, kubectl, pod, conteneur]
+    it: [kubernetes, k8s, kubectl, pod, container]
+    pl: [kubernetes, k8s, kubectl, pod, kontener]
+    tr: [kubernetes, k8s, kubectl, pod, konteyner]
+    pt: [kubernetes, k8s, kubectl, pod, contêiner]
+    nl: [kubernetes, k8s, kubectl, pod, container]
+    hu: [kubernetes, k8s, kubectl, pod, konténer]
   commands:
-  - cmd: kubectl get pods
-    desc:
-      cs: Seznam podů v aktuálním namespace
-      en: List pods in current namespace
-  - cmd: kubectl get pods -A
-    desc:
-      cs: Pody ve všech namespace
-      en: Pods in all namespaces
-  - cmd: kubectl get pods -o wide
-    desc:
-      cs: Vč. IP, node, atd.
-      en: Including IP, node, etc.
-  - cmd: kubectl describe pod nazev
-    desc:
-      cs: Detail podu (events, mounty)
-      en: Pod details (events, mounts)
-  - cmd: kubectl logs nazev -f
-    desc:
-      cs: Sledovat logy podu živě
-      en: Follow pod logs live
-  - cmd: kubectl exec -it nazev -- bash
-    desc:
-      cs: Shell uvnitř podu
-      en: Shell inside pod
-  - cmd: kubectl delete pod nazev
-    desc:
-      cs: Smazat pod (deployment ho znovu vytvoří)
-      en: Delete pod (deployment recreates)
+    - cmd: "kubectl get pods"
+      desc:
+        en: "List pods in current namespace"
+        cs: "Seznam podů v aktuálním namespace"
+        sk: "Zoznam podov v aktuálnom namespace"
+        de: "Pods im aktuellen Namespace auflisten"
+        es: "Listar pods en namespace actual"
+        fr: "Lister les pods du namespace actuel"
+        it: "Elencare pod nel namespace attuale"
+        pl: "Lista podów w bieżącym namespace"
+        tr: "Geçerli namespace'deki pod'lar"
+        pt: "Listar pods do namespace atual"
+        nl: "Pods in huidige namespace tonen"
+        hu: "Podok az aktuális névtérben"
+    - cmd: "kubectl get pods -A"
+      desc:
+        en: "Pods in all namespaces"
+        cs: "Pody ve všech namespace"
+        sk: "Pody vo všetkých namespace"
+        de: "Pods in allen Namespaces"
+        es: "Pods en todos los namespaces"
+        fr: "Pods dans tous les namespaces"
+        it: "Pod in tutti i namespace"
+        pl: "Pody we wszystkich namespace"
+        tr: "Tüm namespace'lerdeki pod'lar"
+        pt: "Pods em todos os namespaces"
+        nl: "Pods in alle namespaces"
+        hu: "Podok minden névtérben"
+    - cmd: "kubectl get pods -o wide"
+      desc:
+        en: "Including IP, node, etc."
+        cs: "Vč. IP, node, atd."
+        sk: "Vrátane IP, node atď."
+        de: "Inkl. IP, Node usw."
+        es: "Incluyendo IP, nodo, etc."
+        fr: "Y compris IP, node, etc."
+        it: "Inclusi IP, node, ecc."
+        pl: "Wraz z IP, node itp."
+        tr: "IP, node vb. dahil"
+        pt: "Incluindo IP, node, etc."
+        nl: "Inclusief IP, node, enz."
+        hu: "Beleértve IP-t, node-ot stb."
+    - cmd: "kubectl describe pod name"
+      desc:
+        en: "Pod details (events, mounts)"
+        cs: "Detail podu (events, mounty)"
+        sk: "Detail podu (events, mounty)"
+        de: "Pod-Details (Events, Mounts)"
+        es: "Detalles del pod (events, mounts)"
+        fr: "Détails du pod (events, mounts)"
+        it: "Dettagli pod (events, mount)"
+        pl: "Szczegóły podu (events, mounty)"
+        tr: "Pod detayları (events, mount'lar)"
+        pt: "Detalhes do pod (events, mounts)"
+        nl: "Poddetails (events, mounts)"
+        hu: "Pod részletei (events, mountok)"
+    - cmd: "kubectl logs name -f"
+      desc:
+        en: "Follow pod logs live"
+        cs: "Sledovat logy podu živě"
+        sk: "Sledovať logy podu živo"
+        de: "Pod-Logs live verfolgen"
+        es: "Seguir logs del pod en vivo"
+        fr: "Suivre les logs du pod en direct"
+        it: "Seguire log del pod live"
+        pl: "Śledź logi podu na żywo"
+        tr: "Pod günlüklerini canlı izle"
+        pt: "Acompanhar logs do pod ao vivo"
+        nl: "Pod-logs live volgen"
+        hu: "Pod naplók élő követése"
+    - cmd: "kubectl exec -it name -- bash"
+      desc:
+        en: "Shell inside pod"
+        cs: "Shell uvnitř podu"
+        sk: "Shell vo vnútri podu"
+        de: "Shell im Pod"
+        es: "Shell dentro del pod"
+        fr: "Shell dans le pod"
+        it: "Shell dentro il pod"
+        pl: "Powłoka w podzie"
+        tr: "Pod içinde kabuk"
+        pt: "Shell dentro do pod"
+        nl: "Shell in pod"
+        hu: "Shell a podon belül"
+    - cmd: "kubectl delete pod name"
+      desc:
+        en: "Delete pod (deployment recreates)"
+        cs: "Smazat pod (deployment ho znovu vytvoří)"
+        sk: "Zmazať pod (deployment ho znova vytvorí)"
+        de: "Pod löschen (Deployment erstellt neu)"
+        es: "Eliminar pod (deployment recrea)"
+        fr: "Supprimer pod (deployment recrée)"
+        it: "Eliminare pod (deployment ricrea)"
+        pl: "Usuń pod (deployment odtwarza)"
+        tr: "Pod'u sil (deployment yeniden oluşturur)"
+        pt: "Excluir pod (deployment recria)"
+        nl: "Pod verwijderen (deployment maakt opnieuw)"
+        hu: "Pod törlése (deployment újraépíti)"
+
 - id: kubectl-deploy
   title:
-    cs: Kubernetes - deployments a služby
-    en: Kubernetes - deployments and services
+    en: "Kubernetes - deployments and services"
+    cs: "Kubernetes - deployments a služby"
+    sk: "Kubernetes - deployments a služby"
+    de: "Kubernetes - Deployments und Services"
+    es: "Kubernetes - deployments y servicios"
+    fr: "Kubernetes - deployments et services"
+    it: "Kubernetes - deployment e servizi"
+    pl: "Kubernetes - deployments i usługi"
+    tr: "Kubernetes - deployment ve servisler"
+    pt: "Kubernetes - deployments e serviços"
+    nl: "Kubernetes - deployments en services"
+    hu: "Kubernetes - deployments és szolgáltatások"
   tags:
-    cs:
-    - kubernetes
-    - deployment
-    - service
-    - scale
-    - apply
-    en:
-    - kubernetes
-    - deployment
-    - service
-    - scale
-    - apply
+    en: [kubernetes, deployment, service, scale, apply]
+    cs: [kubernetes, deployment, service, scale, apply]
+    sk: [kubernetes, deployment, service, scale, apply]
+    de: [kubernetes, deployment, service, scale, apply]
+    es: [kubernetes, deployment, service, scale, apply]
+    fr: [kubernetes, deployment, service, scale, apply]
+    it: [kubernetes, deployment, service, scale, apply]
+    pl: [kubernetes, deployment, service, scale, apply]
+    tr: [kubernetes, deployment, service, scale, apply]
+    pt: [kubernetes, deployment, service, scale, apply]
+    nl: [kubernetes, deployment, service, scale, apply]
+    hu: [kubernetes, deployment, service, scale, apply]
   commands:
-  - cmd: kubectl apply -f deployment.yaml
-    desc:
-      cs: Vytvořit/aktualizovat z YAML
-      en: Create/update from YAML
-  - cmd: kubectl delete -f deployment.yaml
-    desc:
-      cs: Smazat resources z YAML
-      en: Delete resources from YAML
-  - cmd: kubectl get deployments
-    desc:
-      cs: Seznam deploymentů
-      en: List deployments
-  - cmd: kubectl scale deployment web --replicas=3
-    desc:
-      cs: Změnit počet replik
-      en: Change replica count
-  - cmd: kubectl rollout restart deployment web
-    desc:
-      cs: Rolling restart (postupně)
-      en: Rolling restart
-  - cmd: kubectl rollout undo deployment web
-    desc:
-      cs: Vrátit poslední změnu
-      en: Undo last change
-  - cmd: kubectl get svc
-    desc:
-      cs: Seznam služeb (services)
-      en: List services
+    - cmd: "kubectl apply -f deployment.yaml"
+      desc:
+        en: "Create/update from YAML"
+        cs: "Vytvořit/aktualizovat z YAML"
+        sk: "Vytvoriť/aktualizovať z YAML"
+        de: "Aus YAML erstellen/aktualisieren"
+        es: "Crear/actualizar desde YAML"
+        fr: "Créer/mettre à jour depuis YAML"
+        it: "Creare/aggiornare da YAML"
+        pl: "Utwórz/zaktualizuj z YAML"
+        tr: "YAML'dan oluştur/güncelle"
+        pt: "Criar/atualizar de YAML"
+        nl: "Maken/bijwerken vanuit YAML"
+        hu: "Létrehozás/frissítés YAML-ból"
+    - cmd: "kubectl delete -f deployment.yaml"
+      desc:
+        en: "Delete resources from YAML"
+        cs: "Smazat resources z YAML"
+        sk: "Zmazať resources z YAML"
+        de: "Ressourcen aus YAML löschen"
+        es: "Eliminar recursos de YAML"
+        fr: "Supprimer ressources de YAML"
+        it: "Eliminare risorse da YAML"
+        pl: "Usuń zasoby z YAML"
+        tr: "YAML'daki kaynakları sil"
+        pt: "Excluir recursos de YAML"
+        nl: "Resources verwijderen uit YAML"
+        hu: "Erőforrások törlése YAML-ból"
+    - cmd: "kubectl get deployments"
+      desc:
+        en: "List deployments"
+        cs: "Seznam deploymentů"
+        sk: "Zoznam deploymentov"
+        de: "Deployments auflisten"
+        es: "Listar deployments"
+        fr: "Lister les deployments"
+        it: "Elenco deployment"
+        pl: "Lista deploymentów"
+        tr: "Deployment'ları listele"
+        pt: "Listar deployments"
+        nl: "Deployments tonen"
+        hu: "Deployments listája"
+    - cmd: "kubectl scale deployment web --replicas=3"
+      desc:
+        en: "Change replica count"
+        cs: "Změnit počet replik"
+        sk: "Zmeniť počet replík"
+        de: "Replika-Anzahl ändern"
+        es: "Cambiar número de réplicas"
+        fr: "Modifier le nombre de répliques"
+        it: "Cambiare numero di repliche"
+        pl: "Zmień liczbę replik"
+        tr: "Replika sayısını değiştir"
+        pt: "Mudar número de réplicas"
+        nl: "Aantal replica's wijzigen"
+        hu: "Replikák számának módosítása"
+    - cmd: "kubectl rollout restart deployment web"
+      desc:
+        en: "Rolling restart"
+        cs: "Rolling restart (postupně)"
+        sk: "Rolling restart (postupne)"
+        de: "Rollender Neustart"
+        es: "Reinicio progresivo"
+        fr: "Redémarrage progressif"
+        it: "Riavvio rolling"
+        pl: "Rolling restart"
+        tr: "Aşamalı yeniden başlatma"
+        pt: "Reinício progressivo"
+        nl: "Rolling restart"
+        hu: "Gördülő újraindítás"
+    - cmd: "kubectl rollout undo deployment web"
+      desc:
+        en: "Undo last change"
+        cs: "Vrátit poslední změnu"
+        sk: "Vrátiť poslednú zmenu"
+        de: "Letzte Änderung rückgängig"
+        es: "Deshacer último cambio"
+        fr: "Annuler la dernière modification"
+        it: "Annullare ultima modifica"
+        pl: "Cofnij ostatnią zmianę"
+        tr: "Son değişikliği geri al"
+        pt: "Desfazer última alteração"
+        nl: "Laatste wijziging ongedaan maken"
+        hu: "Utolsó változás visszavonása"
+    - cmd: "kubectl get svc"
+      desc:
+        en: "List services"
+        cs: "Seznam služeb (services)"
+        sk: "Zoznam služieb (services)"
+        de: "Services auflisten"
+        es: "Listar servicios"
+        fr: "Lister les services"
+        it: "Elenco servizi"
+        pl: "Lista usług"
+        tr: "Servisleri listele"
+        pt: "Listar serviços"
+        nl: "Services tonen"
+        hu: "Szolgáltatások listája"
+
 - id: kubectl-context
   title:
-    cs: Kubernetes - context a namespace
-    en: Kubernetes - context and namespace
+    en: "Kubernetes - context and namespace"
+    cs: "Kubernetes - context a namespace"
+    sk: "Kubernetes - context a namespace"
+    de: "Kubernetes - Context und Namespace"
+    es: "Kubernetes - context y namespace"
+    fr: "Kubernetes - context et namespace"
+    it: "Kubernetes - context e namespace"
+    pl: "Kubernetes - context i namespace"
+    tr: "Kubernetes - context ve namespace"
+    pt: "Kubernetes - context e namespace"
+    nl: "Kubernetes - context en namespace"
+    hu: "Kubernetes - context és namespace"
   tags:
-    cs:
-    - kubectl
-    - context
-    - namespace
-    - cluster
-    - kubeconfig
-    en:
-    - kubectl
-    - context
-    - namespace
-    - cluster
-    - kubeconfig
+    en: [kubectl, context, namespace, cluster, kubeconfig]
+    cs: [kubectl, context, namespace, cluster, kubeconfig]
+    sk: [kubectl, context, namespace, cluster, kubeconfig]
+    de: [kubectl, context, namespace, cluster, kubeconfig]
+    es: [kubectl, context, namespace, cluster, kubeconfig]
+    fr: [kubectl, context, namespace, cluster, kubeconfig]
+    it: [kubectl, context, namespace, cluster, kubeconfig]
+    pl: [kubectl, context, namespace, cluster, kubeconfig]
+    tr: [kubectl, context, namespace, cluster, kubeconfig]
+    pt: [kubectl, context, namespace, cluster, kubeconfig]
+    nl: [kubectl, context, namespace, cluster, kubeconfig]
+    hu: [kubectl, context, namespace, cluster, kubeconfig]
   commands:
-  - cmd: kubectl config get-contexts
-    desc:
-      cs: Dostupné contexty (clustery)
-      en: Available contexts (clusters)
-  - cmd: kubectl config use-context jmeno
-    desc:
-      cs: Přepnout context
-      en: Switch context
-  - cmd: kubectl get ns
-    desc:
-      cs: Seznam namespace
-      en: List namespaces
-  - cmd: kubectl config set-context --current --namespace=prod
-    desc:
-      cs: Nastavit výchozí namespace
-      en: Set default namespace
-  - cmd: kubectl cluster-info
-    desc:
-      cs: Info o clusteru
-      en: Cluster info
+    - cmd: "kubectl config get-contexts"
+      desc:
+        en: "Available contexts (clusters)"
+        cs: "Dostupné contexty (clustery)"
+        sk: "Dostupné contexty (clustery)"
+        de: "Verfügbare Contexts (Cluster)"
+        es: "Contexts disponibles (clústeres)"
+        fr: "Contexts disponibles (clusters)"
+        it: "Context disponibili (cluster)"
+        pl: "Dostępne contexty (klastry)"
+        tr: "Mevcut context'ler (kümeler)"
+        pt: "Contexts disponíveis (clusters)"
+        nl: "Beschikbare contexts (clusters)"
+        hu: "Elérhető contextek (klaszterek)"
+    - cmd: "kubectl config use-context name"
+      desc:
+        en: "Switch context"
+        cs: "Přepnout context"
+        sk: "Prepnúť context"
+        de: "Context wechseln"
+        es: "Cambiar context"
+        fr: "Basculer de context"
+        it: "Cambiare context"
+        pl: "Przełącz context"
+        tr: "Context değiştir"
+        pt: "Mudar context"
+        nl: "Context wisselen"
+        hu: "Context váltás"
+    - cmd: "kubectl get ns"
+      desc:
+        en: "List namespaces"
+        cs: "Seznam namespace"
+        sk: "Zoznam namespace"
+        de: "Namespaces auflisten"
+        es: "Listar namespaces"
+        fr: "Lister les namespaces"
+        it: "Elenco namespace"
+        pl: "Lista namespace"
+        tr: "Namespace'leri listele"
+        pt: "Listar namespaces"
+        nl: "Namespaces tonen"
+        hu: "Névterek listája"
+    - cmd: "kubectl config set-context --current --namespace=prod"
+      desc:
+        en: "Set default namespace"
+        cs: "Nastavit výchozí namespace"
+        sk: "Nastaviť predvolený namespace"
+        de: "Standard-Namespace setzen"
+        es: "Establecer namespace por defecto"
+        fr: "Définir le namespace par défaut"
+        it: "Impostare namespace predefinito"
+        pl: "Ustaw domyślny namespace"
+        tr: "Varsayılan namespace ayarla"
+        pt: "Definir namespace padrão"
+        nl: "Standaard namespace instellen"
+        hu: "Alapértelmezett névtér beállítása"
+    - cmd: "kubectl cluster-info"
+      desc:
+        en: "Cluster info"
+        cs: "Info o clusteru"
+        sk: "Info o clusteri"
+        de: "Cluster-Info"
+        es: "Info del clúster"
+        fr: "Info du cluster"
+        it: "Info cluster"
+        pl: "Info o klastrze"
+        tr: "Küme bilgisi"
+        pt: "Info do cluster"
+        nl: "Clusterinfo"
+        hu: "Klaszter info"

@@ -1,155 +1,409 @@
 - id: systemd-create
   title:
-    cs: Vytvořit vlastní systemd službu
-    en: Create custom systemd service
+    en: "Create custom systemd service"
+    cs: "Vytvořit vlastní systemd službu"
+    sk: "Vytvoriť vlastnú systemd službu"
+    de: "Eigenen systemd-Dienst erstellen"
+    es: "Crear servicio systemd personalizado"
+    fr: "Créer un service systemd personnalisé"
+    it: "Creare servizio systemd personalizzato"
+    pl: "Utwórz własną usługę systemd"
+    tr: "Özel systemd servisi oluştur"
+    pt: "Criar serviço systemd personalizado"
+    nl: "Aangepaste systemd-service maken"
+    hu: "Egyéni systemd szolgáltatás létrehozása"
   tags:
-    cs:
-    - systemd
-    - služba
-    - vlastní
-    - vytvořit
-    - unit
-    en:
-    - systemd
-    - service
-    - custom
-    - create
-    - unit
+    en: [systemd, service, custom, create, unit]
+    cs: [systemd, služba, vlastní, vytvořit, unit]
+    sk: [systemd, služba, vlastná, vytvoriť, unit]
+    de: [systemd, dienst, eigen, erstellen, unit]
+    es: [systemd, servicio, personalizado, crear, unit]
+    fr: [systemd, service, personnalisé, créer, unit]
+    it: [systemd, servizio, personalizzato, creare, unit]
+    pl: [systemd, usługa, własna, utwórz, unit]
+    tr: [systemd, servis, özel, oluştur, unit]
+    pt: [systemd, serviço, personalizado, criar, unit]
+    nl: [systemd, service, aangepast, maken, unit]
+    hu: [systemd, szolgáltatás, egyéni, létrehozás, unit]
   commands:
-  - cmd: sudo nano /etc/systemd/system/mojeapp.service
-    desc:
-      cs: Vytvořit service unit
-      en: Create service unit
-  - cmd: sudo systemctl daemon-reload
-    desc:
-      cs: Po úpravě unit souboru - znovu načíst
-      en: After editing unit file - reload
-  - cmd: sudo systemctl enable --now mojeapp
-    desc:
-      cs: Zapnout + spustit
-      en: Enable + start
-  - cmd: systemctl cat mojeapp
-    desc:
-      cs: Vypsat obsah unit souboru
-      en: Show unit file content
-  - cmd: systemctl edit mojeapp
-    desc:
-      cs: Upravit (override drop-in)
-      en: Edit (override drop-in)
-  - cmd: systemctl show mojeapp
-    desc:
-      cs: Všechny vlastnosti služby
-      en: All service properties
+    - cmd: "sudo nano /etc/systemd/system/myapp.service"
+      desc:
+        en: "Create service unit"
+        cs: "Vytvořit service unit"
+        sk: "Vytvoriť service unit"
+        de: "Service-Unit erstellen"
+        es: "Crear unit de servicio"
+        fr: "Créer un unit de service"
+        it: "Creare service unit"
+        pl: "Utwórz unit usługi"
+        tr: "Servis unit oluştur"
+        pt: "Criar unit de serviço"
+        nl: "Service-unit maken"
+        hu: "Szolgáltatás unit létrehozása"
+    - cmd: "sudo systemctl daemon-reload"
+      desc:
+        en: "After editing unit file - reload"
+        cs: "Po úpravě unit souboru - znovu načíst"
+        sk: "Po úprave unit súboru - znova načítať"
+        de: "Nach Bearbeitung der Unit-Datei neu laden"
+        es: "Tras editar unit - recargar"
+        fr: "Après modification du unit - recharger"
+        it: "Dopo modifica unit - ricaricare"
+        pl: "Po edycji unit - przeładuj"
+        tr: "Unit dosyasını düzenledikten sonra - yeniden yükle"
+        pt: "Após editar unit - recarregar"
+        nl: "Na unit-bewerken - herladen"
+        hu: "Unit fájl szerkesztése után - újratöltés"
+    - cmd: "sudo systemctl enable --now myapp"
+      desc:
+        en: "Enable + start"
+        cs: "Zapnout + spustit"
+        sk: "Zapnúť + spustiť"
+        de: "Aktivieren + starten"
+        es: "Habilitar + iniciar"
+        fr: "Activer + démarrer"
+        it: "Abilitare + avviare"
+        pl: "Włącz + uruchom"
+        tr: "Etkinleştir + başlat"
+        pt: "Habilitar + iniciar"
+        nl: "Inschakelen + starten"
+        hu: "Engedélyezés + indítás"
+    - cmd: "systemctl cat myapp"
+      desc:
+        en: "Show unit file content"
+        cs: "Vypsat obsah unit souboru"
+        sk: "Vypísať obsah unit súboru"
+        de: "Unit-Datei-Inhalt anzeigen"
+        es: "Mostrar contenido del unit"
+        fr: "Afficher contenu du unit"
+        it: "Mostrare contenuto unit"
+        pl: "Pokaż zawartość unit"
+        tr: "Unit dosyası içeriğini göster"
+        pt: "Mostrar conteúdo do unit"
+        nl: "Unit-bestandsinhoud tonen"
+        hu: "Unit fájl tartalmának megjelenítése"
+    - cmd: "systemctl edit myapp"
+      desc:
+        en: "Edit (override drop-in)"
+        cs: "Upravit (override drop-in)"
+        sk: "Upraviť (override drop-in)"
+        de: "Bearbeiten (Override drop-in)"
+        es: "Editar (override drop-in)"
+        fr: "Modifier (override drop-in)"
+        it: "Modificare (override drop-in)"
+        pl: "Edytuj (override drop-in)"
+        tr: "Düzenle (override drop-in)"
+        pt: "Editar (override drop-in)"
+        nl: "Bewerken (override drop-in)"
+        hu: "Szerkesztés (override drop-in)"
+    - cmd: "systemctl show myapp"
+      desc:
+        en: "All service properties"
+        cs: "Všechny vlastnosti služby"
+        sk: "Všetky vlastnosti služby"
+        de: "Alle Dienst-Eigenschaften"
+        es: "Todas las propiedades del servicio"
+        fr: "Toutes les propriétés du service"
+        it: "Tutte le proprietà del servizio"
+        pl: "Wszystkie właściwości usługi"
+        tr: "Tüm servis özellikleri"
+        pt: "Todas as propriedades do serviço"
+        nl: "Alle service-eigenschappen"
+        hu: "Minden szolgáltatás tulajdonság"
+
 - id: systemd-deps
   title:
-    cs: Systemd - závislosti a analýza
-    en: Systemd - dependencies and analysis
+    en: "Systemd - dependencies and analysis"
+    cs: "Systemd - závislosti a analýza"
+    sk: "Systemd - závislosti a analýza"
+    de: "Systemd - Abhängigkeiten und Analyse"
+    es: "Systemd - dependencias y análisis"
+    fr: "Systemd - dépendances et analyse"
+    it: "Systemd - dipendenze e analisi"
+    pl: "Systemd - zależności i analiza"
+    tr: "Systemd - bağımlılıklar ve analiz"
+    pt: "Systemd - dependências e análise"
+    nl: "Systemd - afhankelijkheden en analyse"
+    hu: "Systemd - függőségek és elemzés"
   tags:
-    cs:
-    - systemd
-    - závislosti
-    - dependencies
-    - boot
-    - analyze
-    en:
-    - systemd
-    - dependencies
-    - boot
-    - analyze
+    en: [systemd, dependencies, boot, analyze]
+    cs: [systemd, závislosti, dependencies, boot, analyze]
+    sk: [systemd, závislosti, dependencies, boot, analyze]
+    de: [systemd, abhängigkeiten, dependencies, boot, analyze]
+    es: [systemd, dependencias, boot, analyze]
+    fr: [systemd, dépendances, boot, analyze]
+    it: [systemd, dipendenze, boot, analyze]
+    pl: [systemd, zależności, boot, analyze]
+    tr: [systemd, bağımlılıklar, boot, analyze]
+    pt: [systemd, dependências, boot, analyze]
+    nl: [systemd, afhankelijkheden, boot, analyze]
+    hu: [systemd, függőségek, boot, analyze]
   commands:
-  - cmd: systemctl list-dependencies nginx
-    desc:
-      cs: Strom závislostí služby
-      en: Service dependency tree
-  - cmd: systemd-analyze
-    desc:
-      cs: Jak dlouho trval start systému
-      en: How long boot took
-  - cmd: systemd-analyze blame
-    desc:
-      cs: Které služby zdržely boot
-      en: Which services slowed boot
-  - cmd: systemd-analyze critical-chain
-    desc:
-      cs: Kritická cesta startu
-      en: Critical boot chain
-  - cmd: systemctl --failed
-    desc:
-      cs: Které služby selhaly
-      en: Which services failed
+    - cmd: "systemctl list-dependencies nginx"
+      desc:
+        en: "Service dependency tree"
+        cs: "Strom závislostí služby"
+        sk: "Strom závislostí služby"
+        de: "Dienst-Abhängigkeitsbaum"
+        es: "Árbol de dependencias del servicio"
+        fr: "Arbre des dépendances du service"
+        it: "Albero dipendenze servizio"
+        pl: "Drzewo zależności usługi"
+        tr: "Servis bağımlılık ağacı"
+        pt: "Árvore de dependências do serviço"
+        nl: "Service-afhankelijkheidsboom"
+        hu: "Szolgáltatás függőségi fája"
+    - cmd: "systemd-analyze"
+      desc:
+        en: "How long boot took"
+        cs: "Jak dlouho trval start systému"
+        sk: "Ako dlho trval štart systému"
+        de: "Wie lange Boot dauerte"
+        es: "Cuánto duró el arranque"
+        fr: "Durée du démarrage"
+        it: "Quanto è durato il boot"
+        pl: "Jak długo trwał start"
+        tr: "Önyükleme ne kadar sürdü"
+        pt: "Quanto demorou o boot"
+        nl: "Hoelang boot duurde"
+        hu: "Meddig tartott a boot"
+    - cmd: "systemd-analyze blame"
+      desc:
+        en: "Which services slowed boot"
+        cs: "Které služby zdržely boot"
+        sk: "Ktoré služby zdržali boot"
+        de: "Welche Dienste den Boot verlangsamten"
+        es: "Qué servicios ralentizaron el arranque"
+        fr: "Quels services ont ralenti le boot"
+        it: "Quali servizi hanno rallentato il boot"
+        pl: "Które usługi spowolniły start"
+        tr: "Hangi servisler önyüklemeyi yavaşlattı"
+        pt: "Quais serviços atrasaram o boot"
+        nl: "Welke services vertraagden boot"
+        hu: "Mely szolgáltatások lassították a bootot"
+    - cmd: "systemd-analyze critical-chain"
+      desc:
+        en: "Critical boot chain"
+        cs: "Kritická cesta startu"
+        sk: "Kritická cesta štartu"
+        de: "Kritische Boot-Kette"
+        es: "Cadena crítica de arranque"
+        fr: "Chaîne critique de démarrage"
+        it: "Catena critica di boot"
+        pl: "Krytyczny łańcuch startu"
+        tr: "Kritik önyükleme zinciri"
+        pt: "Cadeia crítica de boot"
+        nl: "Kritieke bootketen"
+        hu: "Kritikus boot lánc"
+    - cmd: "systemctl --failed"
+      desc:
+        en: "Which services failed"
+        cs: "Které služby selhaly"
+        sk: "Ktoré služby zlyhali"
+        de: "Welche Dienste fehlgeschlagen sind"
+        es: "Qué servicios fallaron"
+        fr: "Quels services ont échoué"
+        it: "Quali servizi sono falliti"
+        pl: "Które usługi zawiodły"
+        tr: "Hangi servisler başarısız oldu"
+        pt: "Quais serviços falharam"
+        nl: "Welke services mislukten"
+        hu: "Mely szolgáltatások hibáztak"
+
 - id: systemd-target
   title:
-    cs: Runlevel / target
-    en: Runlevel / target
+    en: "Runlevel / target"
+    cs: "Runlevel / target"
+    sk: "Runlevel / target"
+    de: "Runlevel / Target"
+    es: "Runlevel / target"
+    fr: "Runlevel / target"
+    it: "Runlevel / target"
+    pl: "Runlevel / target"
+    tr: "Runlevel / target"
+    pt: "Runlevel / target"
+    nl: "Runlevel / target"
+    hu: "Runlevel / target"
   tags:
-    cs:
-    - target
-    - runlevel
-    - multi-user
-    - graphical
-    - default
-    en:
-    - target
-    - runlevel
-    - multi-user
-    - graphical
-    - default
+    en: [target, runlevel, multi-user, graphical, default]
+    cs: [target, runlevel, multi-user, graphical, default]
+    sk: [target, runlevel, multi-user, graphical, default]
+    de: [target, runlevel, multi-user, graphical, default]
+    es: [target, runlevel, multi-user, graphical, default]
+    fr: [target, runlevel, multi-user, graphical, default]
+    it: [target, runlevel, multi-user, graphical, default]
+    pl: [target, runlevel, multi-user, graphical, default]
+    tr: [target, runlevel, multi-user, graphical, default]
+    pt: [target, runlevel, multi-user, graphical, default]
+    nl: [target, runlevel, multi-user, graphical, default]
+    hu: [target, runlevel, multi-user, graphical, default]
   commands:
-  - cmd: systemctl get-default
-    desc:
-      cs: Výchozí target (multi-user / graphical)
-      en: Default target
-  - cmd: sudo systemctl set-default multi-user.target
-    desc:
-      cs: Bootovat bez GUI
-      en: Boot without GUI
-  - cmd: sudo systemctl set-default graphical.target
-    desc:
-      cs: Bootovat s GUI
-      en: Boot with GUI
-  - cmd: sudo systemctl isolate rescue.target
-    desc:
-      cs: Přepnout do rescue módu (single user)
-      en: Switch to rescue mode (single user)
+    - cmd: "systemctl get-default"
+      desc:
+        en: "Default target"
+        cs: "Výchozí target (multi-user / graphical)"
+        sk: "Predvolený target (multi-user / graphical)"
+        de: "Standard-Target"
+        es: "Target por defecto"
+        fr: "Target par défaut"
+        it: "Target predefinito"
+        pl: "Domyślny target"
+        tr: "Varsayılan target"
+        pt: "Target padrão"
+        nl: "Standaard target"
+        hu: "Alapértelmezett target"
+    - cmd: "sudo systemctl set-default multi-user.target"
+      desc:
+        en: "Boot without GUI"
+        cs: "Bootovat bez GUI"
+        sk: "Bootovať bez GUI"
+        de: "Booten ohne GUI"
+        es: "Arrancar sin GUI"
+        fr: "Démarrer sans GUI"
+        it: "Boot senza GUI"
+        pl: "Start bez GUI"
+        tr: "GUI olmadan önyükle"
+        pt: "Iniciar sem GUI"
+        nl: "Booten zonder GUI"
+        hu: "Indítás GUI nélkül"
+    - cmd: "sudo systemctl set-default graphical.target"
+      desc:
+        en: "Boot with GUI"
+        cs: "Bootovat s GUI"
+        sk: "Bootovať s GUI"
+        de: "Booten mit GUI"
+        es: "Arrancar con GUI"
+        fr: "Démarrer avec GUI"
+        it: "Boot con GUI"
+        pl: "Start z GUI"
+        tr: "GUI ile önyükle"
+        pt: "Iniciar com GUI"
+        nl: "Booten met GUI"
+        hu: "Indítás GUI-val"
+    - cmd: "sudo systemctl isolate rescue.target"
+      desc:
+        en: "Switch to rescue mode (single user)"
+        cs: "Přepnout do rescue módu (single user)"
+        sk: "Prepnúť do rescue módu (single user)"
+        de: "In Rescue-Modus wechseln (single user)"
+        es: "Cambiar a modo rescue (single user)"
+        fr: "Basculer en mode rescue (single user)"
+        it: "Passare a rescue (single user)"
+        pl: "Przejdź do trybu rescue (single user)"
+        tr: "Rescue moduna geç (tek kullanıcı)"
+        pt: "Mudar para modo rescue (single user)"
+        nl: "Naar rescue-modus (single user)"
+        hu: "Váltás rescue módba (single user)"
+
 - id: pm2
   title:
-    cs: PM2 (process manager pro Node.js)
-    en: PM2 (Node.js process manager)
+    en: "PM2 (Node.js process manager)"
+    cs: "PM2 (process manager pro Node.js)"
+    sk: "PM2 (process manager pre Node.js)"
+    de: "PM2 (Node.js Prozessmanager)"
+    es: "PM2 (gestor de procesos Node.js)"
+    fr: "PM2 (gestionnaire de processus Node.js)"
+    it: "PM2 (process manager Node.js)"
+    pl: "PM2 (menedżer procesów Node.js)"
+    tr: "PM2 (Node.js süreç yöneticisi)"
+    pt: "PM2 (gerenciador de processos Node.js)"
+    nl: "PM2 (Node.js procesmanager)"
+    hu: "PM2 (Node.js folyamatkezelő)"
   tags:
-    cs:
-    - pm2
-    - node
-    - proces
-    - manager
-    - restart
-    en:
-    - pm2
-    - node
-    - process
-    - manager
-    - restart
+    en: [pm2, node, process, manager, restart]
+    cs: [pm2, node, proces, manager, restart]
+    sk: [pm2, node, proces, manager, restart]
+    de: [pm2, node, prozess, manager, restart]
+    es: [pm2, node, proceso, manager, restart]
+    fr: [pm2, node, processus, manager, restart]
+    it: [pm2, node, processo, manager, restart]
+    pl: [pm2, node, proces, manager, restart]
+    tr: [pm2, node, süreç, manager, restart]
+    pt: [pm2, node, processo, manager, restart]
+    nl: [pm2, node, proces, manager, restart]
+    hu: [pm2, node, folyamat, manager, restart]
   commands:
-  - cmd: pm2 start app.js --name web
-    desc:
-      cs: Spustit aplikaci pod správou pm2
-      en: Start app under pm2
-  - cmd: pm2 list
-    desc:
-      cs: Seznam spravovaných procesů
-      en: List managed processes
-  - cmd: pm2 logs web
-    desc:
-      cs: Logy konkrétního procesu
-      en: Logs of specific process
-  - cmd: pm2 restart web
-    desc:
-      cs: Restart
-      en: Restart
-  - cmd: pm2 save
-    desc:
-      cs: Uložit aktuální seznam procesů
-      en: Save current process list
-  - cmd: pm2 startup
-    desc:
-      cs: Vygenerovat příkaz pro autostart po reboootu
-      en: Generate autostart-on-boot command
+    - cmd: "pm2 start app.js --name web"
+      desc:
+        en: "Start app under pm2"
+        cs: "Spustit aplikaci pod správou pm2"
+        sk: "Spustiť aplikáciu pod správou pm2"
+        de: "App unter pm2 starten"
+        es: "Iniciar app bajo pm2"
+        fr: "Démarrer app sous pm2"
+        it: "Avviare app sotto pm2"
+        pl: "Uruchom aplikację pod pm2"
+        tr: "Uygulamayı pm2 altında başlat"
+        pt: "Iniciar app sob pm2"
+        nl: "App onder pm2 starten"
+        hu: "Alkalmazás indítása pm2 alatt"
+    - cmd: "pm2 list"
+      desc:
+        en: "List managed processes"
+        cs: "Seznam spravovaných procesů"
+        sk: "Zoznam spravovaných procesov"
+        de: "Verwaltete Prozesse auflisten"
+        es: "Listar procesos gestionados"
+        fr: "Lister les processus gérés"
+        it: "Elenco processi gestiti"
+        pl: "Lista zarządzanych procesów"
+        tr: "Yönetilen süreçleri listele"
+        pt: "Listar processos gerenciados"
+        nl: "Beheerde processen tonen"
+        hu: "Kezelt folyamatok listája"
+    - cmd: "pm2 logs web"
+      desc:
+        en: "Logs of specific process"
+        cs: "Logy konkrétního procesu"
+        sk: "Logy konkrétneho procesu"
+        de: "Logs eines bestimmten Prozesses"
+        es: "Logs de proceso específico"
+        fr: "Logs d'un processus spécifique"
+        it: "Log di processo specifico"
+        pl: "Logi konkretnego procesu"
+        tr: "Belirli sürecin günlükleri"
+        pt: "Logs de processo específico"
+        nl: "Logs van specifiek proces"
+        hu: "Adott folyamat naplói"
+    - cmd: "pm2 restart web"
+      desc:
+        en: "Restart"
+        cs: "Restart"
+        sk: "Reštart"
+        de: "Neustart"
+        es: "Reiniciar"
+        fr: "Redémarrer"
+        it: "Riavviare"
+        pl: "Restart"
+        tr: "Yeniden başlat"
+        pt: "Reiniciar"
+        nl: "Herstarten"
+        hu: "Újraindítás"
+    - cmd: "pm2 save"
+      desc:
+        en: "Save current process list"
+        cs: "Uložit aktuální seznam procesů"
+        sk: "Uložiť aktuálny zoznam procesov"
+        de: "Aktuelle Prozessliste speichern"
+        es: "Guardar lista actual de procesos"
+        fr: "Enregistrer liste actuelle des processus"
+        it: "Salvare elenco processi attuale"
+        pl: "Zapisz aktualną listę procesów"
+        tr: "Geçerli süreç listesini kaydet"
+        pt: "Salvar lista atual de processos"
+        nl: "Huidige proceslijst opslaan"
+        hu: "Aktuális folyamatlista mentése"
+    - cmd: "pm2 startup"
+      desc:
+        en: "Generate autostart-on-boot command"
+        cs: "Vygenerovat příkaz pro autostart po reboootu"
+        sk: "Vygenerovať príkaz pre autostart po rebootu"
+        de: "Autostart-Befehl beim Booten generieren"
+        es: "Generar comando de autostart al arranque"
+        fr: "Générer commande autostart au démarrage"
+        it: "Generare comando autostart al boot"
+        pl: "Wygeneruj polecenie autostart"
+        tr: "Önyüklemede otomatik başlatma komutu üret"
+        pt: "Gerar comando de autostart no boot"
+        nl: "Autostart-bij-booten-commando genereren"
+        hu: "Indításkori autostart parancs generálása"

@@ -1,116 +1,310 @@
 - id: locale
   title:
-    cs: Locale (jazyk, znaková sada)
-    en: Locale (language, charset)
+    en: "Locale (language, charset)"
+    cs: "Locale (jazyk, znaková sada)"
+    sk: "Locale (jazyk, znaková sada)"
+    de: "Locale (Sprache, Zeichensatz)"
+    es: "Locale (idioma, juego de caracteres)"
+    fr: "Locale (langue, jeu de caractères)"
+    it: "Locale (lingua, set di caratteri)"
+    pl: "Locale (język, zestaw znaków)"
+    tr: "Locale (dil, karakter seti)"
+    pt: "Locale (idioma, conjunto de caracteres)"
+    nl: "Locale (taal, tekenset)"
+    hu: "Locale (nyelv, karakterkészlet)"
   tags:
-    cs:
-    - locale
-    - jazyk
-    - čeština
-    - utf8
-    - znaková
-    - sada
-    en:
-    - locale
-    - language
-    - charset
-    - utf8
+    en: [locale, language, charset, utf8]
+    cs: [locale, jazyk, čeština, utf8, znaková, sada]
+    sk: [locale, jazyk, slovenčina, utf8, znaková, sada]
+    de: [locale, sprache, zeichensatz, utf8]
+    es: [locale, idioma, charset, utf8]
+    fr: [locale, langue, charset, utf8]
+    it: [locale, lingua, charset, utf8]
+    pl: [locale, język, charset, utf8]
+    tr: [locale, dil, karakter seti, utf8]
+    pt: [locale, idioma, charset, utf8]
+    nl: [locale, taal, tekenset, utf8]
+    hu: [locale, nyelv, karakterkészlet, utf8]
   commands:
-  - cmd: locale
-    desc:
-      cs: Aktuální locale nastavení
-      en: Current locale settings
-  - cmd: locale -a
-    desc:
-      cs: Všechny dostupné locale
-      en: All available locales
-  - cmd: sudo dpkg-reconfigure locales
-    desc:
-      cs: Interaktivně přegenerovat locale (Debian)
-      en: Regenerate locales interactively (Debian)
-  - cmd: sudo locale-gen cs_CZ.UTF-8
-    desc:
-      cs: Vygenerovat české locale
-      en: Generate Czech locale
-  - cmd: sudo update-locale LANG=cs_CZ.UTF-8
-    desc:
-      cs: Nastavit jako výchozí
-      en: Set as default
+    - cmd: "locale"
+      desc:
+        en: "Current locale settings"
+        cs: "Aktuální locale nastavení"
+        sk: "Aktuálne locale nastavenia"
+        de: "Aktuelle Locale-Einstellungen"
+        es: "Configuración actual de locale"
+        fr: "Paramètres locale actuels"
+        it: "Impostazioni locale attuali"
+        pl: "Bieżące ustawienia locale"
+        tr: "Geçerli locale ayarları"
+        pt: "Configuração atual de locale"
+        nl: "Huidige locale-instellingen"
+        hu: "Aktuális locale beállítások"
+    - cmd: "locale -a"
+      desc:
+        en: "All available locales"
+        cs: "Všechny dostupné locale"
+        sk: "Všetky dostupné locale"
+        de: "Alle verfügbaren Locales"
+        es: "Todos los locales disponibles"
+        fr: "Tous les locales disponibles"
+        it: "Tutti i locale disponibili"
+        pl: "Wszystkie dostępne locale"
+        tr: "Tüm mevcut locale'ler"
+        pt: "Todos os locales disponíveis"
+        nl: "Alle beschikbare locales"
+        hu: "Minden elérhető locale"
+    - cmd: "sudo dpkg-reconfigure locales"
+      desc:
+        en: "Regenerate locales interactively (Debian)"
+        cs: "Interaktivně přegenerovat locale (Debian)"
+        sk: "Interaktívne pregenerovať locale (Debian)"
+        de: "Locales interaktiv neu generieren (Debian)"
+        es: "Regenerar locales interactivamente (Debian)"
+        fr: "Régénérer locales interactivement (Debian)"
+        it: "Rigenerare locale interattivo (Debian)"
+        pl: "Wygeneruj locale interaktywnie (Debian)"
+        tr: "Locale'leri etkileşimli yeniden üret (Debian)"
+        pt: "Regenerar locales interativamente (Debian)"
+        nl: "Locales interactief regenereren (Debian)"
+        hu: "Locale-k interaktív újragenerálása (Debian)"
+    - cmd: "sudo locale-gen en_US.UTF-8"
+      desc:
+        en: "Generate specific locale"
+        cs: "Vygenerovat konkrétní locale"
+        sk: "Vygenerovať konkrétne locale"
+        de: "Bestimmtes Locale generieren"
+        es: "Generar locale específico"
+        fr: "Générer un locale spécifique"
+        it: "Generare locale specifico"
+        pl: "Wygeneruj konkretne locale"
+        tr: "Belirli locale üret"
+        pt: "Gerar locale específico"
+        nl: "Specifieke locale genereren"
+        hu: "Adott locale generálása"
+    - cmd: "sudo update-locale LANG=en_US.UTF-8"
+      desc:
+        en: "Set as default"
+        cs: "Nastavit jako výchozí"
+        sk: "Nastaviť ako predvolené"
+        de: "Als Standard setzen"
+        es: "Establecer como predeterminado"
+        fr: "Définir par défaut"
+        it: "Impostare come predefinito"
+        pl: "Ustaw jako domyślne"
+        tr: "Varsayılan olarak ayarla"
+        pt: "Definir como padrão"
+        nl: "Als standaard instellen"
+        hu: "Alapértelmezettként beállítás"
+
 - id: tz
   title:
-    cs: Časové pásmo a NTP
-    en: Timezone and NTP
+    en: "Timezone and NTP"
+    cs: "Časové pásmo a NTP"
+    sk: "Časové pásmo a NTP"
+    de: "Zeitzone und NTP"
+    es: "Zona horaria y NTP"
+    fr: "Fuseau horaire et NTP"
+    it: "Fuso orario e NTP"
+    pl: "Strefa czasowa i NTP"
+    tr: "Saat dilimi ve NTP"
+    pt: "Fuso horário e NTP"
+    nl: "Tijdzone en NTP"
+    hu: "Időzóna és NTP"
   tags:
-    cs:
-    - timezone
-    - čas
-    - ntp
-    - chrony
-    - sync
-    en:
-    - timezone
-    - time
-    - ntp
-    - chrony
-    - sync
+    en: [timezone, time, ntp, chrony, sync]
+    cs: [timezone, čas, ntp, chrony, sync]
+    sk: [timezone, čas, ntp, chrony, sync]
+    de: [timezone, zeit, ntp, chrony, sync]
+    es: [timezone, tiempo, ntp, chrony, sync]
+    fr: [timezone, temps, ntp, chrony, sync]
+    it: [timezone, tempo, ntp, chrony, sync]
+    pl: [timezone, czas, ntp, chrony, sync]
+    tr: [timezone, zaman, ntp, chrony, sync]
+    pt: [timezone, tempo, ntp, chrony, sync]
+    nl: [timezone, tijd, ntp, chrony, sync]
+    hu: [timezone, idő, ntp, chrony, sync]
   commands:
-  - cmd: timedatectl
-    desc:
-      cs: Stav času + timezone + NTP
-      en: Time status + timezone + NTP
-  - cmd: timedatectl list-timezones | grep Prague
-    desc:
-      cs: Najít timezone
-      en: Find timezone
-  - cmd: sudo timedatectl set-timezone Europe/Prague
-    desc:
-      cs: Nastavit timezone
-      en: Set timezone
-  - cmd: sudo timedatectl set-ntp true
-    desc:
-      cs: Zapnout NTP synchronizaci
-      en: Enable NTP sync
-  - cmd: sudo systemctl status systemd-timesyncd
-    desc:
-      cs: Stav NTP klienta
-      en: NTP client status
-  - cmd: chronyc tracking
-    desc:
-      cs: Detail synchronizace (chrony)
-      en: Sync details (chrony)
-  - cmd: chronyc sources
-    desc:
-      cs: Seznam NTP zdrojů
-      en: NTP sources list
+    - cmd: "timedatectl"
+      desc:
+        en: "Time status + timezone + NTP"
+        cs: "Stav času + timezone + NTP"
+        sk: "Stav času + timezone + NTP"
+        de: "Zeitstatus + Zeitzone + NTP"
+        es: "Estado de tiempo + zona + NTP"
+        fr: "État du temps + fuseau + NTP"
+        it: "Stato ora + fuso + NTP"
+        pl: "Stan czasu + strefa + NTP"
+        tr: "Saat durumu + dilim + NTP"
+        pt: "Estado do tempo + fuso + NTP"
+        nl: "Tijdstatus + tijdzone + NTP"
+        hu: "Idő állapot + időzóna + NTP"
+    - cmd: "timedatectl list-timezones | grep Prague"
+      desc:
+        en: "Find timezone"
+        cs: "Najít timezone"
+        sk: "Nájsť timezone"
+        de: "Zeitzone finden"
+        es: "Encontrar zona horaria"
+        fr: "Trouver le fuseau horaire"
+        it: "Trovare fuso orario"
+        pl: "Znajdź strefę czasową"
+        tr: "Saat dilimi bul"
+        pt: "Encontrar fuso horário"
+        nl: "Tijdzone vinden"
+        hu: "Időzóna keresése"
+    - cmd: "sudo timedatectl set-timezone Europe/Prague"
+      desc:
+        en: "Set timezone"
+        cs: "Nastavit timezone"
+        sk: "Nastaviť timezone"
+        de: "Zeitzone setzen"
+        es: "Establecer zona horaria"
+        fr: "Définir le fuseau horaire"
+        it: "Impostare fuso orario"
+        pl: "Ustaw strefę czasową"
+        tr: "Saat dilimini ayarla"
+        pt: "Definir fuso horário"
+        nl: "Tijdzone instellen"
+        hu: "Időzóna beállítása"
+    - cmd: "sudo timedatectl set-ntp true"
+      desc:
+        en: "Enable NTP sync"
+        cs: "Zapnout NTP synchronizaci"
+        sk: "Zapnúť NTP synchronizáciu"
+        de: "NTP-Sync aktivieren"
+        es: "Activar sync NTP"
+        fr: "Activer la sync NTP"
+        it: "Abilitare sync NTP"
+        pl: "Włącz synchronizację NTP"
+        tr: "NTP senkronizasyonunu aç"
+        pt: "Ativar sync NTP"
+        nl: "NTP-sync inschakelen"
+        hu: "NTP szinkron engedélyezése"
+    - cmd: "sudo systemctl status systemd-timesyncd"
+      desc:
+        en: "NTP client status"
+        cs: "Stav NTP klienta"
+        sk: "Stav NTP klienta"
+        de: "NTP-Client-Status"
+        es: "Estado del cliente NTP"
+        fr: "État du client NTP"
+        it: "Stato client NTP"
+        pl: "Stan klienta NTP"
+        tr: "NTP istemcisi durumu"
+        pt: "Estado do cliente NTP"
+        nl: "NTP-clientstatus"
+        hu: "NTP kliens állapota"
+    - cmd: "chronyc tracking"
+      desc:
+        en: "Sync details (chrony)"
+        cs: "Detail synchronizace (chrony)"
+        sk: "Detail synchronizácie (chrony)"
+        de: "Sync-Details (chrony)"
+        es: "Detalles de sync (chrony)"
+        fr: "Détails de sync (chrony)"
+        it: "Dettagli sync (chrony)"
+        pl: "Szczegóły sync (chrony)"
+        tr: "Senkronizasyon detayları (chrony)"
+        pt: "Detalhes de sync (chrony)"
+        nl: "Sync-details (chrony)"
+        hu: "Szinkron részletei (chrony)"
+    - cmd: "chronyc sources"
+      desc:
+        en: "NTP sources list"
+        cs: "Seznam NTP zdrojů"
+        sk: "Zoznam NTP zdrojov"
+        de: "NTP-Quellen-Liste"
+        es: "Lista de fuentes NTP"
+        fr: "Liste des sources NTP"
+        it: "Elenco sorgenti NTP"
+        pl: "Lista źródeł NTP"
+        tr: "NTP kaynak listesi"
+        pt: "Lista de fontes NTP"
+        nl: "Lijst van NTP-bronnen"
+        hu: "NTP források listája"
+
 - id: keyboard
   title:
-    cs: Klávesnice
-    en: Keyboard layout
+    en: "Keyboard layout"
+    cs: "Klávesnice"
+    sk: "Klávesnica"
+    de: "Tastaturlayout"
+    es: "Distribución del teclado"
+    fr: "Disposition du clavier"
+    it: "Layout tastiera"
+    pl: "Układ klawiatury"
+    tr: "Klavye düzeni"
+    pt: "Layout do teclado"
+    nl: "Toetsenbordindeling"
+    hu: "Billentyűzetkiosztás"
   tags:
-    cs:
-    - klávesnice
-    - keyboard
-    - layout
-    - rozložení
-    - cz
-    en:
-    - keyboard
-    - layout
-    - cz
+    en: [keyboard, layout, cz]
+    cs: [klávesnice, keyboard, layout, rozložení, cz]
+    sk: [klávesnica, keyboard, layout, rozloženie, sk]
+    de: [tastatur, keyboard, layout, de]
+    es: [teclado, keyboard, layout, es]
+    fr: [clavier, keyboard, layout, fr]
+    it: [tastiera, keyboard, layout, it]
+    pl: [klawiatura, keyboard, layout, pl]
+    tr: [klavye, keyboard, layout, tr]
+    pt: [teclado, keyboard, layout, pt]
+    nl: [toetsenbord, keyboard, layout, nl]
+    hu: [billentyűzet, keyboard, layout, hu]
   commands:
-  - cmd: localectl status
-    desc:
-      cs: Aktuální rozložení klávesnice
-      en: Current keyboard layout
-  - cmd: sudo localectl set-keymap cz
-    desc:
-      cs: Nastavit českou klávesnici (konzole)
-      en: Set Czech keymap (console)
-  - cmd: sudo localectl set-x11-keymap cz
-    desc:
-      cs: Pro X11 (GUI)
-      en: For X11 (GUI)
-  - cmd: loadkeys cz
-    desc:
-      cs: Dočasně přepnout (jen aktuální session)
-      en: Temporary switch (current session)
+    - cmd: "localectl status"
+      desc:
+        en: "Current keyboard layout"
+        cs: "Aktuální rozložení klávesnice"
+        sk: "Aktuálne rozloženie klávesnice"
+        de: "Aktuelles Tastaturlayout"
+        es: "Distribución actual de teclado"
+        fr: "Disposition actuelle du clavier"
+        it: "Layout tastiera attuale"
+        pl: "Bieżący układ klawiatury"
+        tr: "Geçerli klavye düzeni"
+        pt: "Layout atual do teclado"
+        nl: "Huidige toetsenbordindeling"
+        hu: "Aktuális billentyűzetkiosztás"
+    - cmd: "sudo localectl set-keymap cz"
+      desc:
+        en: "Set Czech keymap (console)"
+        cs: "Nastavit českou klávesnici (konzole)"
+        sk: "Nastaviť českú klávesnicu (konzola)"
+        de: "Tschechische Tastenbelegung (Konsole)"
+        es: "Configurar teclado checo (consola)"
+        fr: "Définir clavier tchèque (console)"
+        it: "Impostare keymap ceco (console)"
+        pl: "Ustaw mapę czeską (konsola)"
+        tr: "Çek klavye düzeni (konsol)"
+        pt: "Definir teclado tcheco (console)"
+        nl: "Tsjechische keymap (console)"
+        hu: "Cseh billentyűkiosztás (konzol)"
+    - cmd: "sudo localectl set-x11-keymap cz"
+      desc:
+        en: "For X11 (GUI)"
+        cs: "Pro X11 (GUI)"
+        sk: "Pre X11 (GUI)"
+        de: "Für X11 (GUI)"
+        es: "Para X11 (GUI)"
+        fr: "Pour X11 (GUI)"
+        it: "Per X11 (GUI)"
+        pl: "Dla X11 (GUI)"
+        tr: "X11 için (GUI)"
+        pt: "Para X11 (GUI)"
+        nl: "Voor X11 (GUI)"
+        hu: "X11-hez (GUI)"
+    - cmd: "loadkeys cz"
+      desc:
+        en: "Temporary switch (current session)"
+        cs: "Dočasně přepnout (jen aktuální session)"
+        sk: "Dočasne prepnúť (len aktuálna session)"
+        de: "Vorübergehend wechseln (aktuelle Session)"
+        es: "Cambio temporal (sesión actual)"
+        fr: "Changement temporaire (session)"
+        it: "Cambio temporaneo (sessione attuale)"
+        pl: "Tymczasowe przełączenie (bieżąca sesja)"
+        tr: "Geçici geçiş (geçerli oturum)"
+        pt: "Mudança temporária (sessão atual)"
+        nl: "Tijdelijk wisselen (huidige sessie)"
+        hu: "Ideiglenes váltás (aktuális munkamenet)"
