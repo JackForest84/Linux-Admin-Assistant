@@ -11,14 +11,14 @@
 - Search in plain language, find the right command — across **12 languages**
 - Works offline (everything is local, SQLite FTS5)
 - One click → command in your clipboard
-- 800+ commands across 36 categories
+- 778 commands across 36 categories, fully translated to 12 languages
 - No AI, no cloud, no telemetry
 
 ## Languages
 
 🇬🇧 English · 🇨🇿 Čeština · 🇸🇰 Slovenčina · 🇩🇪 Deutsch · 🇪🇸 Español · 🇫🇷 Français · 🇮🇹 Italiano · 🇵🇱 Polski · 🇹🇷 Türkçe · 🇵🇹 Português · 🇳🇱 Nederlands · 🇭🇺 Magyar
 
-> English and Czech are fully translated. Other languages fall back to English where translations are missing — contributions welcome (see below).
+> All 778 commands across 153 entries are fully translated to all 12 languages (~9 360 translated strings).
 
 ## Categories
 
