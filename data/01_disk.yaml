@@ -1,85 +1,382 @@
 - id: disk-free
-  title_cs: "Volné místo na disku"
-  title_en: "Free disk space"
-  tags_cs: [disk, místo, volné, prostor, oddíl, df]
-  tags_en: [disk, space, free, partition, df]
+  title:
+    en: "Free disk space"
+    cs: "Volné místo na disku"
+    sk: "Voľné miesto na disku"
+    de: "Freier Speicherplatz"
+    es: "Espacio libre en disco"
+    fr: "Espace disque libre"
+    it: "Spazio libero su disco"
+    pl: "Wolne miejsce na dysku"
+    tr: "Boş disk alanı"
+    pt: "Espaço livre em disco"
+    nl: "Vrije schijfruimte"
+    hu: "Szabad lemezterület"
+  tags:
+    en: [disk, space, free, partition, df]
+    cs: [disk, místo, volné, prostor, oddíl, df]
+    sk: [disk, miesto, voľné, priestor, oddiel, df]
+    de: [festplatte, speicher, frei, partition, df]
+    es: [disco, espacio, libre, partición, df]
+    fr: [disque, espace, libre, partition, df]
+    it: [disco, spazio, libero, partizione, df]
+    pl: [dysk, miejsce, wolne, partycja, df]
+    tr: [disk, alan, boş, bölüm, df]
+    pt: [disco, espaço, livre, partição, df]
+    nl: [schijf, ruimte, vrij, partitie, df]
+    hu: [lemez, hely, szabad, partíció, df]
   commands:
     - cmd: "df -h"
-      desc_cs: "Lidsky čitelné jednotky (GB/MB)"
-      desc_en: "Human-readable units (GB/MB)"
+      desc:
+        en: "Human-readable units (GB/MB)"
+        cs: "Lidsky čitelné jednotky (GB/MB)"
+        sk: "Ľudsky čitateľné jednotky (GB/MB)"
+        de: "Menschenlesbare Einheiten (GB/MB)"
+        es: "Unidades legibles (GB/MB)"
+        fr: "Unités lisibles (Go/Mo)"
+        it: "Unità leggibili (GB/MB)"
+        pl: "Czytelne jednostki (GB/MB)"
+        tr: "Okunabilir birimler (GB/MB)"
+        pt: "Unidades legíveis (GB/MB)"
+        nl: "Leesbare eenheden (GB/MB)"
+        hu: "Olvasható egységek (GB/MB)"
     - cmd: "df -hT"
-      desc_cs: "Včetně typu souborového systému"
-      desc_en: "Including filesystem type"
+      desc:
+        en: "Including filesystem type"
+        cs: "Včetně typu souborového systému"
+        sk: "Vrátane typu súborového systému"
+        de: "Inklusive Dateisystemtyp"
+        es: "Incluyendo tipo de sistema de archivos"
+        fr: "Y compris le type de système de fichiers"
+        it: "Incluso il tipo di filesystem"
+        pl: "Wraz z typem systemu plików"
+        tr: "Dosya sistemi türü dahil"
+        pt: "Incluindo tipo de sistema de arquivos"
+        nl: "Inclusief type bestandssysteem"
+        hu: "Beleértve a fájlrendszer típusát"
     - cmd: "df -i"
-      desc_cs: "Volné inody (počet souborů)"
-      desc_en: "Free inodes (file count)"
+      desc:
+        en: "Free inodes (file count)"
+        cs: "Volné inody (počet souborů)"
+        sk: "Voľné inody (počet súborov)"
+        de: "Freie Inodes (Dateianzahl)"
+        es: "Inodos libres (número de archivos)"
+        fr: "Inodes libres (nombre de fichiers)"
+        it: "Inode liberi (conteggio file)"
+        pl: "Wolne i-węzły (liczba plików)"
+        tr: "Boş inode'lar (dosya sayısı)"
+        pt: "Inodes livres (contagem de arquivos)"
+        nl: "Vrije inodes (bestandsaantal)"
+        hu: "Szabad inode-ok (fájlok száma)"
 
 - id: disk-usage-dir
-  title_cs: "Co zabírá místo v adresáři"
-  title_en: "What takes up space in a directory"
-  tags_cs: [du, velikost, adresář, složka, zabírá, místo]
-  tags_en: [du, size, directory, folder, usage]
+  title:
+    en: "What takes up space in a directory"
+    cs: "Co zabírá místo v adresáři"
+    sk: "Čo zaberá miesto v adresári"
+    de: "Was belegt Platz in einem Verzeichnis"
+    es: "Qué ocupa espacio en un directorio"
+    fr: "Ce qui prend de l'espace dans un dossier"
+    it: "Cosa occupa spazio in una cartella"
+    pl: "Co zajmuje miejsce w katalogu"
+    tr: "Bir dizinde yer kaplayan şeyler"
+    pt: "O que ocupa espaço em um diretório"
+    nl: "Wat neemt ruimte in een map"
+    hu: "Mi foglalja a helyet egy könyvtárban"
+  tags:
+    en: [du, size, directory, folder, usage]
+    cs: [du, velikost, adresář, složka, zabírá, místo]
+    sk: [du, veľkosť, adresár, priečinok, zaberá, miesto]
+    de: [du, größe, verzeichnis, ordner, nutzung]
+    es: [du, tamaño, directorio, carpeta, uso]
+    fr: [du, taille, dossier, répertoire, utilisation]
+    it: [du, dimensione, directory, cartella, utilizzo]
+    pl: [du, rozmiar, katalog, folder, użycie]
+    tr: [du, boyut, dizin, klasör, kullanım]
+    pt: [du, tamanho, diretório, pasta, uso]
+    nl: [du, grootte, map, gebruik]
+    hu: [du, méret, könyvtár, mappa, használat]
   commands:
     - cmd: "du -sh /var/*"
-      desc_cs: "Velikost každé podsložky v /var"
-      desc_en: "Size of each subfolder in /var"
+      desc:
+        en: "Size of each subfolder in /var"
+        cs: "Velikost každé podsložky v /var"
+        sk: "Veľkosť každého podpriečinku v /var"
+        de: "Größe jedes Unterordners in /var"
+        es: "Tamaño de cada subcarpeta en /var"
+        fr: "Taille de chaque sous-dossier de /var"
+        it: "Dimensione di ogni sottocartella in /var"
+        pl: "Rozmiar każdego podfolderu w /var"
+        tr: "/var altındaki her alt klasörün boyutu"
+        pt: "Tamanho de cada subpasta em /var"
+        nl: "Grootte van elke submap in /var"
+        hu: "/var minden almappájának mérete"
     - cmd: "du -sh /var/* | sort -h"
-      desc_cs: "Seřazeno od nejmenší po největší"
-      desc_en: "Sorted from smallest to largest"
+      desc:
+        en: "Sorted from smallest to largest"
+        cs: "Seřazeno od nejmenší po největší"
+        sk: "Zoradené od najmenšieho po najväčšie"
+        de: "Sortiert von klein nach groß"
+        es: "Ordenado de menor a mayor"
+        fr: "Trié du plus petit au plus grand"
+        it: "Ordinato dal più piccolo al più grande"
+        pl: "Sortowane od najmniejszego do największego"
+        tr: "Küçükten büyüğe sıralı"
+        pt: "Ordenado do menor para o maior"
+        nl: "Gesorteerd van klein naar groot"
+        hu: "Rendezve a legkisebbtől a legnagyobbig"
     - cmd: "du -h --max-depth=1 /var | sort -h"
-      desc_cs: "První úroveň, seřazeno"
-      desc_en: "First level, sorted"
+      desc:
+        en: "First level only, sorted"
+        cs: "První úroveň, seřazeno"
+        sk: "Prvá úroveň, zoradené"
+        de: "Nur erste Ebene, sortiert"
+        es: "Solo primer nivel, ordenado"
+        fr: "Premier niveau uniquement, trié"
+        it: "Solo primo livello, ordinato"
+        pl: "Tylko pierwszy poziom, posortowane"
+        tr: "Sadece ilk seviye, sıralı"
+        pt: "Apenas primeiro nível, ordenado"
+        nl: "Alleen eerste niveau, gesorteerd"
+        hu: "Csak az első szint, rendezve"
     - cmd: "sudo du -ah / 2>/dev/null | sort -h | tail -20"
-      desc_cs: "20 největších souborů v celém systému"
-      desc_en: "20 largest files in entire system"
+      desc:
+        en: "Top 20 largest files in entire system"
+        cs: "20 největších souborů v celém systému"
+        sk: "20 najväčších súborov v celom systéme"
+        de: "Top 20 der größten Dateien im gesamten System"
+        es: "Top 20 de archivos más grandes en todo el sistema"
+        fr: "Top 20 des plus gros fichiers du système"
+        it: "Top 20 dei file più grandi nell'intero sistema"
+        pl: "20 największych plików w całym systemie"
+        tr: "Tüm sistemdeki en büyük 20 dosya"
+        pt: "Top 20 dos maiores arquivos do sistema"
+        nl: "Top 20 grootste bestanden in het hele systeem"
+        hu: "Top 20 legnagyobb fájl a rendszerben"
 
 - id: disk-largest-files
-  title_cs: "Najít největší soubory"
-  title_en: "Find largest files"
-  tags_cs: [najít, největší, soubor, find, velikost, place]
-  tags_en: [find, largest, biggest, file, size]
+  title:
+    en: "Find largest files"
+    cs: "Najít největší soubory"
+    sk: "Nájsť najväčšie súbory"
+    de: "Größte Dateien finden"
+    es: "Encontrar los archivos más grandes"
+    fr: "Trouver les plus gros fichiers"
+    it: "Trovare i file più grandi"
+    pl: "Znajdź największe pliki"
+    tr: "En büyük dosyaları bul"
+    pt: "Encontrar arquivos maiores"
+    nl: "Grootste bestanden vinden"
+    hu: "Legnagyobb fájlok keresése"
+  tags:
+    en: [find, largest, biggest, file, size]
+    cs: [najít, největší, soubor, find, velikost]
+    sk: [nájsť, najväčší, súbor, find, veľkosť]
+    de: [finden, größte, datei, größe]
+    es: [encontrar, mayor, archivo, tamaño]
+    fr: [trouver, plus grand, fichier, taille]
+    it: [trovare, più grande, file, dimensione]
+    pl: [znajdź, największy, plik, rozmiar]
+    tr: [bul, en büyük, dosya, boyut]
+    pt: [encontrar, maior, arquivo, tamanho]
+    nl: [vinden, grootste, bestand, grootte]
+    hu: [keresés, legnagyobb, fájl, méret]
   commands:
     - cmd: "sudo find / -type f -size +100M 2>/dev/null"
-      desc_cs: "Soubory větší než 100 MB"
-      desc_en: "Files larger than 100 MB"
+      desc:
+        en: "Files larger than 100 MB"
+        cs: "Soubory větší než 100 MB"
+        sk: "Súbory väčšie ako 100 MB"
+        de: "Dateien größer als 100 MB"
+        es: "Archivos mayores de 100 MB"
+        fr: "Fichiers de plus de 100 Mo"
+        it: "File più grandi di 100 MB"
+        pl: "Pliki większe niż 100 MB"
+        tr: "100 MB'tan büyük dosyalar"
+        pt: "Arquivos maiores que 100 MB"
+        nl: "Bestanden groter dan 100 MB"
+        hu: "100 MB-nál nagyobb fájlok"
     - cmd: "sudo find / -type f -printf '%s %p\\n' 2>/dev/null | sort -rn | head -20"
-      desc_cs: "Top 20 největších souborů"
-      desc_en: "Top 20 largest files"
+      desc:
+        en: "Top 20 largest files"
+        cs: "Top 20 největších souborů"
+        sk: "Top 20 najväčších súborov"
+        de: "Top 20 der größten Dateien"
+        es: "Top 20 de archivos más grandes"
+        fr: "Top 20 des plus gros fichiers"
+        it: "Top 20 dei file più grandi"
+        pl: "20 największych plików"
+        tr: "En büyük 20 dosya"
+        pt: "Top 20 maiores arquivos"
+        nl: "Top 20 grootste bestanden"
+        hu: "Top 20 legnagyobb fájl"
 
 - id: disk-block-devices
-  title_cs: "Seznam disků a oddílů"
-  title_en: "List disks and partitions"
-  tags_cs: [disk, lsblk, oddíl, partition, blokové, zařízení]
-  tags_en: [disk, lsblk, partition, block, device]
+  title:
+    en: "List disks and partitions"
+    cs: "Seznam disků a oddílů"
+    sk: "Zoznam diskov a oddielov"
+    de: "Festplatten und Partitionen auflisten"
+    es: "Listar discos y particiones"
+    fr: "Lister les disques et partitions"
+    it: "Elenco di dischi e partizioni"
+    pl: "Lista dysków i partycji"
+    tr: "Diskleri ve bölümleri listele"
+    pt: "Listar discos e partições"
+    nl: "Schijven en partities tonen"
+    hu: "Lemezek és partíciók listája"
+  tags:
+    en: [disk, lsblk, partition, block, device]
+    cs: [disk, lsblk, oddíl, partition, blokové, zařízení]
+    sk: [disk, lsblk, oddiel, blokové, zariadenie]
+    de: [festplatte, lsblk, partition, block, gerät]
+    es: [disco, lsblk, partición, bloque, dispositivo]
+    fr: [disque, lsblk, partition, bloc, périphérique]
+    it: [disco, lsblk, partizione, blocco, dispositivo]
+    pl: [dysk, lsblk, partycja, blok, urządzenie]
+    tr: [disk, lsblk, bölüm, blok, cihaz]
+    pt: [disco, lsblk, partição, bloco, dispositivo]
+    nl: [schijf, lsblk, partitie, blok, apparaat]
+    hu: [lemez, lsblk, partíció, blokk, eszköz]
   commands:
     - cmd: "lsblk"
-      desc_cs: "Strom všech blokových zařízení"
-      desc_en: "Tree of all block devices"
+      desc:
+        en: "Tree of all block devices"
+        cs: "Strom všech blokových zařízení"
+        sk: "Strom všetkých blokových zariadení"
+        de: "Baum aller Blockgeräte"
+        es: "Árbol de todos los dispositivos de bloque"
+        fr: "Arbre de tous les périphériques bloc"
+        it: "Albero di tutti i dispositivi a blocchi"
+        pl: "Drzewo wszystkich urządzeń blokowych"
+        tr: "Tüm blok cihazların ağacı"
+        pt: "Árvore de todos os dispositivos de bloco"
+        nl: "Boom van alle blokapparaten"
+        hu: "Az összes blokk eszköz fája"
     - cmd: "lsblk -f"
-      desc_cs: "Včetně filesystému a UUID"
-      desc_en: "Including filesystem and UUID"
+      desc:
+        en: "Including filesystem and UUID"
+        cs: "Včetně filesystému a UUID"
+        sk: "Vrátane filesystému a UUID"
+        de: "Inklusive Dateisystem und UUID"
+        es: "Incluyendo sistema de archivos y UUID"
+        fr: "Avec système de fichiers et UUID"
+        it: "Incluso filesystem e UUID"
+        pl: "Wraz z systemem plików i UUID"
+        tr: "Dosya sistemi ve UUID dahil"
+        pt: "Incluindo sistema de arquivos e UUID"
+        nl: "Inclusief bestandssysteem en UUID"
+        hu: "Beleértve fájlrendszert és UUID-t"
     - cmd: "sudo fdisk -l"
-      desc_cs: "Detail rozdělení disků"
-      desc_en: "Detailed partition info"
+      desc:
+        en: "Detailed partition info"
+        cs: "Detail rozdělení disků"
+        sk: "Detail rozdelenia diskov"
+        de: "Detaillierte Partitionsinformationen"
+        es: "Información detallada de particiones"
+        fr: "Informations détaillées sur les partitions"
+        it: "Info dettagliate sulle partizioni"
+        pl: "Szczegółowe informacje o partycjach"
+        tr: "Ayrıntılı bölüm bilgisi"
+        pt: "Informações detalhadas de partição"
+        nl: "Gedetailleerde partitie-informatie"
+        hu: "Részletes partíció információ"
     - cmd: "sudo blkid"
-      desc_cs: "UUID a typ filesystému"
-      desc_en: "UUID and filesystem type"
+      desc:
+        en: "UUID and filesystem type"
+        cs: "UUID a typ filesystému"
+        sk: "UUID a typ filesystému"
+        de: "UUID und Dateisystemtyp"
+        es: "UUID y tipo de sistema de archivos"
+        fr: "UUID et type de système de fichiers"
+        it: "UUID e tipo di filesystem"
+        pl: "UUID i typ systemu plików"
+        tr: "UUID ve dosya sistemi türü"
+        pt: "UUID e tipo de sistema de arquivos"
+        nl: "UUID en bestandssysteemtype"
+        hu: "UUID és fájlrendszer típus"
 
 - id: disk-mount
-  title_cs: "Připojené souborové systémy"
-  title_en: "Mounted filesystems"
-  tags_cs: [mount, připojené, namountovat, fstab]
-  tags_en: [mount, mounted, fstab]
+  title:
+    en: "Mounted filesystems"
+    cs: "Připojené souborové systémy"
+    sk: "Pripojené súborové systémy"
+    de: "Eingehängte Dateisysteme"
+    es: "Sistemas de archivos montados"
+    fr: "Systèmes de fichiers montés"
+    it: "Filesystem montati"
+    pl: "Zamontowane systemy plików"
+    tr: "Bağlı dosya sistemleri"
+    pt: "Sistemas de arquivos montados"
+    nl: "Gemounte bestandssystemen"
+    hu: "Csatolt fájlrendszerek"
+  tags:
+    en: [mount, mounted, fstab]
+    cs: [mount, připojené, namountovat, fstab]
+    sk: [mount, pripojené, pripojiť, fstab]
+    de: [mount, eingehängt, fstab]
+    es: [mount, montado, fstab]
+    fr: [mount, monté, fstab]
+    it: [mount, montato, fstab]
+    pl: [mount, zamontowany, fstab]
+    tr: [mount, bağlı, fstab]
+    pt: [mount, montado, fstab]
+    nl: [mount, gemount, fstab]
+    hu: [mount, csatolt, fstab]
   commands:
     - cmd: "mount | column -t"
-      desc_cs: "Vše připojené, hezky zarovnané"
-      desc_en: "All mounts, nicely aligned"
+      desc:
+        en: "All mounts, nicely aligned"
+        cs: "Vše připojené, hezky zarovnané"
+        sk: "Všetko pripojené, pekne zarovnané"
+        de: "Alle Mounts, schön ausgerichtet"
+        es: "Todos los montajes, bien alineados"
+        fr: "Tous les montages, bien alignés"
+        it: "Tutti i mount, ben allineati"
+        pl: "Wszystkie montowania, ładnie wyrównane"
+        tr: "Tüm mount'lar, düzgün hizalanmış"
+        pt: "Todas as montagens, bem alinhadas"
+        nl: "Alle mounts, netjes uitgelijnd"
+        hu: "Minden csatolás, szépen rendezve"
     - cmd: "findmnt"
-      desc_cs: "Strom přípojných bodů"
-      desc_en: "Mount point tree"
+      desc:
+        en: "Mount point tree"
+        cs: "Strom přípojných bodů"
+        sk: "Strom prípojných bodov"
+        de: "Mountpunkt-Baum"
+        es: "Árbol de puntos de montaje"
+        fr: "Arbre des points de montage"
+        it: "Albero dei mount point"
+        pl: "Drzewo punktów montowania"
+        tr: "Bağlama noktası ağacı"
+        pt: "Árvore de pontos de montagem"
+        nl: "Mountpunt-boom"
+        hu: "Csatolási pontok fája"
     - cmd: "sudo mount /dev/sdb1 /mnt"
-      desc_cs: "Připojit oddíl do /mnt"
-      desc_en: "Mount partition to /mnt"
+      desc:
+        en: "Mount partition to /mnt"
+        cs: "Připojit oddíl do /mnt"
+        sk: "Pripojiť oddiel do /mnt"
+        de: "Partition unter /mnt einhängen"
+        es: "Montar partición en /mnt"
+        fr: "Monter la partition sur /mnt"
+        it: "Montare la partizione su /mnt"
+        pl: "Zamontuj partycję w /mnt"
+        tr: "Bölümü /mnt'ye bağla"
+        pt: "Montar partição em /mnt"
+        nl: "Partitie mounten op /mnt"
+        hu: "Partíció csatolása /mnt-re"
     - cmd: "sudo umount /mnt"
-      desc_cs: "Odpojit"
-      desc_en: "Unmount"
+      desc:
+        en: "Unmount"
+        cs: "Odpojit"
+        sk: "Odpojiť"
+        de: "Aushängen"
+        es: "Desmontar"
+        fr: "Démonter"
+        it: "Smontare"
+        pl: "Odmontuj"
+        tr: "Bağlantıyı kes"
+        pt: "Desmontar"
+        nl: "Ontkoppelen"
+        hu: "Leválasztás"

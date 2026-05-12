@@ -1,68 +1,116 @@
 - id: locale
-  title_cs: "Locale (jazyk, znaková sada)"
-  title_en: "Locale (language, charset)"
-  tags_cs: [locale, jazyk, čeština, utf8, znaková, sada]
-  tags_en: [locale, language, charset, utf8]
+  title:
+    cs: Locale (jazyk, znaková sada)
+    en: Locale (language, charset)
+  tags:
+    cs:
+    - locale
+    - jazyk
+    - čeština
+    - utf8
+    - znaková
+    - sada
+    en:
+    - locale
+    - language
+    - charset
+    - utf8
   commands:
-    - cmd: "locale"
-      desc_cs: "Aktuální locale nastavení"
-      desc_en: "Current locale settings"
-    - cmd: "locale -a"
-      desc_cs: "Všechny dostupné locale"
-      desc_en: "All available locales"
-    - cmd: "sudo dpkg-reconfigure locales"
-      desc_cs: "Interaktivně přegenerovat locale (Debian)"
-      desc_en: "Regenerate locales interactively (Debian)"
-    - cmd: "sudo locale-gen cs_CZ.UTF-8"
-      desc_cs: "Vygenerovat české locale"
-      desc_en: "Generate Czech locale"
-    - cmd: "sudo update-locale LANG=cs_CZ.UTF-8"
-      desc_cs: "Nastavit jako výchozí"
-      desc_en: "Set as default"
-
+  - cmd: locale
+    desc:
+      cs: Aktuální locale nastavení
+      en: Current locale settings
+  - cmd: locale -a
+    desc:
+      cs: Všechny dostupné locale
+      en: All available locales
+  - cmd: sudo dpkg-reconfigure locales
+    desc:
+      cs: Interaktivně přegenerovat locale (Debian)
+      en: Regenerate locales interactively (Debian)
+  - cmd: sudo locale-gen cs_CZ.UTF-8
+    desc:
+      cs: Vygenerovat české locale
+      en: Generate Czech locale
+  - cmd: sudo update-locale LANG=cs_CZ.UTF-8
+    desc:
+      cs: Nastavit jako výchozí
+      en: Set as default
 - id: tz
-  title_cs: "Časové pásmo a NTP"
-  title_en: "Timezone and NTP"
-  tags_cs: [timezone, čas, ntp, chrony, sync]
-  tags_en: [timezone, time, ntp, chrony, sync]
+  title:
+    cs: Časové pásmo a NTP
+    en: Timezone and NTP
+  tags:
+    cs:
+    - timezone
+    - čas
+    - ntp
+    - chrony
+    - sync
+    en:
+    - timezone
+    - time
+    - ntp
+    - chrony
+    - sync
   commands:
-    - cmd: "timedatectl"
-      desc_cs: "Stav času + timezone + NTP"
-      desc_en: "Time status + timezone + NTP"
-    - cmd: "timedatectl list-timezones | grep Prague"
-      desc_cs: "Najít timezone"
-      desc_en: "Find timezone"
-    - cmd: "sudo timedatectl set-timezone Europe/Prague"
-      desc_cs: "Nastavit timezone"
-      desc_en: "Set timezone"
-    - cmd: "sudo timedatectl set-ntp true"
-      desc_cs: "Zapnout NTP synchronizaci"
-      desc_en: "Enable NTP sync"
-    - cmd: "sudo systemctl status systemd-timesyncd"
-      desc_cs: "Stav NTP klienta"
-      desc_en: "NTP client status"
-    - cmd: "chronyc tracking"
-      desc_cs: "Detail synchronizace (chrony)"
-      desc_en: "Sync details (chrony)"
-    - cmd: "chronyc sources"
-      desc_cs: "Seznam NTP zdrojů"
-      desc_en: "NTP sources list"
-
+  - cmd: timedatectl
+    desc:
+      cs: Stav času + timezone + NTP
+      en: Time status + timezone + NTP
+  - cmd: timedatectl list-timezones | grep Prague
+    desc:
+      cs: Najít timezone
+      en: Find timezone
+  - cmd: sudo timedatectl set-timezone Europe/Prague
+    desc:
+      cs: Nastavit timezone
+      en: Set timezone
+  - cmd: sudo timedatectl set-ntp true
+    desc:
+      cs: Zapnout NTP synchronizaci
+      en: Enable NTP sync
+  - cmd: sudo systemctl status systemd-timesyncd
+    desc:
+      cs: Stav NTP klienta
+      en: NTP client status
+  - cmd: chronyc tracking
+    desc:
+      cs: Detail synchronizace (chrony)
+      en: Sync details (chrony)
+  - cmd: chronyc sources
+    desc:
+      cs: Seznam NTP zdrojů
+      en: NTP sources list
 - id: keyboard
-  title_cs: "Klávesnice"
-  title_en: "Keyboard layout"
-  tags_cs: [klávesnice, keyboard, layout, rozložení, cz]
-  tags_en: [keyboard, layout, cz]
+  title:
+    cs: Klávesnice
+    en: Keyboard layout
+  tags:
+    cs:
+    - klávesnice
+    - keyboard
+    - layout
+    - rozložení
+    - cz
+    en:
+    - keyboard
+    - layout
+    - cz
   commands:
-    - cmd: "localectl status"
-      desc_cs: "Aktuální rozložení klávesnice"
-      desc_en: "Current keyboard layout"
-    - cmd: "sudo localectl set-keymap cz"
-      desc_cs: "Nastavit českou klávesnici (konzole)"
-      desc_en: "Set Czech keymap (console)"
-    - cmd: "sudo localectl set-x11-keymap cz"
-      desc_cs: "Pro X11 (GUI)"
-      desc_en: "For X11 (GUI)"
-    - cmd: "loadkeys cz"
-      desc_cs: "Dočasně přepnout (jen aktuální session)"
-      desc_en: "Temporary switch (current session)"
+  - cmd: localectl status
+    desc:
+      cs: Aktuální rozložení klávesnice
+      en: Current keyboard layout
+  - cmd: sudo localectl set-keymap cz
+    desc:
+      cs: Nastavit českou klávesnici (konzole)
+      en: Set Czech keymap (console)
+  - cmd: sudo localectl set-x11-keymap cz
+    desc:
+      cs: Pro X11 (GUI)
+      en: For X11 (GUI)
+  - cmd: loadkeys cz
+    desc:
+      cs: Dočasně přepnout (jen aktuální session)
+      en: Temporary switch (current session)

@@ -1,122 +1,214 @@
 - id: sys-info
-  title_cs: "Informace o systému"
-  title_en: "System information"
-  tags_cs: [systém, info, verze, kernel, uname, distribuce]
-  tags_en: [system, info, version, kernel, uname, distro]
+  title:
+    cs: Informace o systému
+    en: System information
+  tags:
+    cs:
+    - systém
+    - info
+    - verze
+    - kernel
+    - uname
+    - distribuce
+    en:
+    - system
+    - info
+    - version
+    - kernel
+    - uname
+    - distro
   commands:
-    - cmd: "uname -a"
-      desc_cs: "Kernel, architektura, hostname"
-      desc_en: "Kernel, architecture, hostname"
-    - cmd: "cat /etc/os-release"
-      desc_cs: "Distribuce a verze"
-      desc_en: "Distro and version"
-    - cmd: "lsb_release -a"
-      desc_cs: "Detail distribuce (apt install lsb-release)"
-      desc_en: "Detailed distro info"
-    - cmd: "hostnamectl"
-      desc_cs: "Hostname + verze systému + kernel"
-      desc_en: "Hostname + system version + kernel"
-    - cmd: "uptime"
-      desc_cs: "Jak dlouho systém běží + zátěž"
-      desc_en: "How long system runs + load"
-
+  - cmd: uname -a
+    desc:
+      cs: Kernel, architektura, hostname
+      en: Kernel, architecture, hostname
+  - cmd: cat /etc/os-release
+    desc:
+      cs: Distribuce a verze
+      en: Distro and version
+  - cmd: lsb_release -a
+    desc:
+      cs: Detail distribuce (apt install lsb-release)
+      en: Detailed distro info
+  - cmd: hostnamectl
+    desc:
+      cs: Hostname + verze systému + kernel
+      en: Hostname + system version + kernel
+  - cmd: uptime
+    desc:
+      cs: Jak dlouho systém běží + zátěž
+      en: How long system runs + load
 - id: sys-memory
-  title_cs: "Paměť (RAM, swap)"
-  title_en: "Memory (RAM, swap)"
-  tags_cs: [paměť, ram, swap, memory, free]
-  tags_en: [memory, ram, swap, free]
+  title:
+    cs: Paměť (RAM, swap)
+    en: Memory (RAM, swap)
+  tags:
+    cs:
+    - paměť
+    - ram
+    - swap
+    - memory
+    - free
+    en:
+    - memory
+    - ram
+    - swap
+    - free
   commands:
-    - cmd: "free -h"
-      desc_cs: "Volná/použitá RAM a swap (lidsky čitelné)"
-      desc_en: "Free/used RAM and swap (human-readable)"
-    - cmd: "free -m"
-      desc_cs: "V MB"
-      desc_en: "In MB"
-    - cmd: "cat /proc/meminfo"
-      desc_cs: "Detailní info o paměti"
-      desc_en: "Detailed memory info"
-    - cmd: "sudo dmidecode -t memory | grep -E 'Size|Speed'"
-      desc_cs: "Fyzické moduly RAM (na bare metalu)"
-      desc_en: "Physical RAM modules (on bare metal)"
-
+  - cmd: free -h
+    desc:
+      cs: Volná/použitá RAM a swap (lidsky čitelné)
+      en: Free/used RAM and swap (human-readable)
+  - cmd: free -m
+    desc:
+      cs: V MB
+      en: In MB
+  - cmd: cat /proc/meminfo
+    desc:
+      cs: Detailní info o paměti
+      en: Detailed memory info
+  - cmd: sudo dmidecode -t memory | grep -E 'Size|Speed'
+    desc:
+      cs: Fyzické moduly RAM (na bare metalu)
+      en: Physical RAM modules (on bare metal)
 - id: sys-cpu
-  title_cs: "CPU informace"
-  title_en: "CPU information"
-  tags_cs: [cpu, procesor, jádro, cores]
-  tags_en: [cpu, processor, cores]
+  title:
+    cs: CPU informace
+    en: CPU information
+  tags:
+    cs:
+    - cpu
+    - procesor
+    - jádro
+    - cores
+    en:
+    - cpu
+    - processor
+    - cores
   commands:
-    - cmd: "lscpu"
-      desc_cs: "Souhrn CPU"
-      desc_en: "CPU summary"
-    - cmd: "nproc"
-      desc_cs: "Počet jader"
-      desc_en: "Number of cores"
-    - cmd: "cat /proc/cpuinfo"
-      desc_cs: "Detailní info o CPU"
-      desc_en: "Detailed CPU info"
-
+  - cmd: lscpu
+    desc:
+      cs: Souhrn CPU
+      en: CPU summary
+  - cmd: nproc
+    desc:
+      cs: Počet jader
+      en: Number of cores
+  - cmd: cat /proc/cpuinfo
+    desc:
+      cs: Detailní info o CPU
+      en: Detailed CPU info
 - id: sys-time
-  title_cs: "Datum, čas, časové pásmo"
-  title_en: "Date, time, timezone"
-  tags_cs: [datum, čas, timezone, časové pásmo, ntp]
-  tags_en: [date, time, timezone, ntp]
+  title:
+    cs: Datum, čas, časové pásmo
+    en: Date, time, timezone
+  tags:
+    cs:
+    - datum
+    - čas
+    - timezone
+    - časové pásmo
+    - ntp
+    en:
+    - date
+    - time
+    - timezone
+    - ntp
   commands:
-    - cmd: "date"
-      desc_cs: "Aktuální čas"
-      desc_en: "Current time"
-    - cmd: "timedatectl"
-      desc_cs: "Čas + časové pásmo + NTP sync"
-      desc_en: "Time + timezone + NTP sync"
-    - cmd: "sudo timedatectl set-timezone Europe/Prague"
-      desc_cs: "Nastavit časové pásmo na Prahu"
-      desc_en: "Set timezone to Prague"
-    - cmd: "sudo timedatectl set-ntp true"
-      desc_cs: "Zapnout automatickou synchronizaci času"
-      desc_en: "Enable automatic time sync"
-
+  - cmd: date
+    desc:
+      cs: Aktuální čas
+      en: Current time
+  - cmd: timedatectl
+    desc:
+      cs: Čas + časové pásmo + NTP sync
+      en: Time + timezone + NTP sync
+  - cmd: sudo timedatectl set-timezone Europe/Prague
+    desc:
+      cs: Nastavit časové pásmo na Prahu
+      en: Set timezone to Prague
+  - cmd: sudo timedatectl set-ntp true
+    desc:
+      cs: Zapnout automatickou synchronizaci času
+      en: Enable automatic time sync
 - id: sys-reboot
-  title_cs: "Restart / vypnutí systému"
-  title_en: "Reboot / shutdown"
-  tags_cs: [restart, reboot, shutdown, vypnout, vypnutí]
-  tags_en: [reboot, shutdown, halt, poweroff]
+  title:
+    cs: Restart / vypnutí systému
+    en: Reboot / shutdown
+  tags:
+    cs:
+    - restart
+    - reboot
+    - shutdown
+    - vypnout
+    - vypnutí
+    en:
+    - reboot
+    - shutdown
+    - halt
+    - poweroff
   commands:
-    - cmd: "sudo reboot"
-      desc_cs: "Restart hned"
-      desc_en: "Reboot now"
-    - cmd: "sudo shutdown -h now"
-      desc_cs: "Vypnout hned"
-      desc_en: "Shutdown now"
-    - cmd: "sudo shutdown -r +5 'Restart za 5 minut'"
-      desc_cs: "Restart za 5 minut, s hláškou pro uživatele"
-      desc_en: "Reboot in 5 min, with message"
-    - cmd: "sudo shutdown -c"
-      desc_cs: "Zrušit naplánovaný shutdown"
-      desc_en: "Cancel scheduled shutdown"
-
+  - cmd: sudo reboot
+    desc:
+      cs: Restart hned
+      en: Reboot now
+  - cmd: sudo shutdown -h now
+    desc:
+      cs: Vypnout hned
+      en: Shutdown now
+  - cmd: sudo shutdown -r +5 'Restart za 5 minut'
+    desc:
+      cs: Restart za 5 minut, s hláškou pro uživatele
+      en: Reboot in 5 min, with message
+  - cmd: sudo shutdown -c
+    desc:
+      cs: Zrušit naplánovaný shutdown
+      en: Cancel scheduled shutdown
 - id: sys-users
-  title_cs: "Uživatelé a skupiny"
-  title_en: "Users and groups"
-  tags_cs: [user, uživatel, adduser, useradd, skupina, group, sudo]
-  tags_en: [user, adduser, useradd, group, sudo]
+  title:
+    cs: Uživatelé a skupiny
+    en: Users and groups
+  tags:
+    cs:
+    - user
+    - uživatel
+    - adduser
+    - useradd
+    - skupina
+    - group
+    - sudo
+    en:
+    - user
+    - adduser
+    - useradd
+    - group
+    - sudo
   commands:
-    - cmd: "whoami"
-      desc_cs: "Pod jakým uživatelem jsem"
-      desc_en: "Current username"
-    - cmd: "id"
-      desc_cs: "UID, GID a skupiny"
-      desc_en: "UID, GID and groups"
-    - cmd: "sudo adduser pepa"
-      desc_cs: "Přidat uživatele (interaktivně, s domovem)"
-      desc_en: "Add user (interactively, with home)"
-    - cmd: "sudo usermod -aG sudo pepa"
-      desc_cs: "Přidat uživatele do skupiny sudo"
-      desc_en: "Add user to sudo group"
-    - cmd: "sudo deluser pepa"
-      desc_cs: "Smazat uživatele"
-      desc_en: "Delete user"
-    - cmd: "groups pepa"
-      desc_cs: "V jakých skupinách je uživatel"
-      desc_en: "Which groups a user belongs to"
-    - cmd: "sudo passwd pepa"
-      desc_cs: "Změnit heslo uživateli"
-      desc_en: "Change user's password"
+  - cmd: whoami
+    desc:
+      cs: Pod jakým uživatelem jsem
+      en: Current username
+  - cmd: id
+    desc:
+      cs: UID, GID a skupiny
+      en: UID, GID and groups
+  - cmd: sudo adduser pepa
+    desc:
+      cs: Přidat uživatele (interaktivně, s domovem)
+      en: Add user (interactively, with home)
+  - cmd: sudo usermod -aG sudo pepa
+    desc:
+      cs: Přidat uživatele do skupiny sudo
+      en: Add user to sudo group
+  - cmd: sudo deluser pepa
+    desc:
+      cs: Smazat uživatele
+      en: Delete user
+  - cmd: groups pepa
+    desc:
+      cs: V jakých skupinách je uživatel
+      en: Which groups a user belongs to
+  - cmd: sudo passwd pepa
+    desc:
+      cs: Změnit heslo uživateli
+      en: Change user's password

@@ -1,96 +1,158 @@
 - id: pct-lxc
-  title_cs: "Proxmox - LXC kontejnery (pct)"
-  title_en: "Proxmox - LXC containers (pct)"
-  tags_cs: [proxmox, pct, lxc, kontejner]
-  tags_en: [proxmox, pct, lxc, container]
+  title:
+    cs: Proxmox - LXC kontejnery (pct)
+    en: Proxmox - LXC containers (pct)
+  tags:
+    cs:
+    - proxmox
+    - pct
+    - lxc
+    - kontejner
+    en:
+    - proxmox
+    - pct
+    - lxc
+    - container
   commands:
-    - cmd: "pct list"
-      desc_cs: "Seznam všech LXC kontejnerů"
-      desc_en: "List all LXC containers"
-    - cmd: "pct start 100"
-      desc_cs: "Spustit CT s ID 100"
-      desc_en: "Start CT with ID 100"
-    - cmd: "pct stop 100"
-      desc_cs: "Zastavit CT"
-      desc_en: "Stop CT"
-    - cmd: "pct enter 100"
-      desc_cs: "Vstoupit do shellu kontejneru (jako root)"
-      desc_en: "Enter container shell (as root)"
-    - cmd: "pct exec 100 -- uptime"
-      desc_cs: "Spustit příkaz uvnitř CT"
-      desc_en: "Run command inside CT"
-    - cmd: "pct destroy 100"
-      desc_cs: "Smazat CT (musí být zastaven)"
-      desc_en: "Destroy CT (must be stopped)"
-    - cmd: "pct config 100"
-      desc_cs: "Konfigurace CT"
-      desc_en: "CT configuration"
-    - cmd: "pct snapshot 100 pred-zalohou"
-      desc_cs: "Vytvořit snapshot"
-      desc_en: "Create snapshot"
-    - cmd: "pct rollback 100 pred-zalohou"
-      desc_cs: "Obnovit ze snapshotu"
-      desc_en: "Rollback to snapshot"
-
+  - cmd: pct list
+    desc:
+      cs: Seznam všech LXC kontejnerů
+      en: List all LXC containers
+  - cmd: pct start 100
+    desc:
+      cs: Spustit CT s ID 100
+      en: Start CT with ID 100
+  - cmd: pct stop 100
+    desc:
+      cs: Zastavit CT
+      en: Stop CT
+  - cmd: pct enter 100
+    desc:
+      cs: Vstoupit do shellu kontejneru (jako root)
+      en: Enter container shell (as root)
+  - cmd: pct exec 100 -- uptime
+    desc:
+      cs: Spustit příkaz uvnitř CT
+      en: Run command inside CT
+  - cmd: pct destroy 100
+    desc:
+      cs: Smazat CT (musí být zastaven)
+      en: Destroy CT (must be stopped)
+  - cmd: pct config 100
+    desc:
+      cs: Konfigurace CT
+      en: CT configuration
+  - cmd: pct snapshot 100 pred-zalohou
+    desc:
+      cs: Vytvořit snapshot
+      en: Create snapshot
+  - cmd: pct rollback 100 pred-zalohou
+    desc:
+      cs: Obnovit ze snapshotu
+      en: Rollback to snapshot
 - id: qm-vm
-  title_cs: "Proxmox - virtuální stroje (qm)"
-  title_en: "Proxmox - virtual machines (qm)"
-  tags_cs: [proxmox, qm, vm, virtuální]
-  tags_en: [proxmox, qm, vm, virtual]
+  title:
+    cs: Proxmox - virtuální stroje (qm)
+    en: Proxmox - virtual machines (qm)
+  tags:
+    cs:
+    - proxmox
+    - qm
+    - vm
+    - virtuální
+    en:
+    - proxmox
+    - qm
+    - vm
+    - virtual
   commands:
-    - cmd: "qm list"
-      desc_cs: "Seznam VM"
-      desc_en: "List VMs"
-    - cmd: "qm start 200"
-      desc_cs: "Spustit VM"
-      desc_en: "Start VM"
-    - cmd: "qm shutdown 200"
-      desc_cs: "Slušně vypnout"
-      desc_en: "Shutdown gracefully"
-    - cmd: "qm stop 200"
-      desc_cs: "Tvrdé zastavení"
-      desc_en: "Force stop"
-    - cmd: "qm migrate 200 node2 --online"
-      desc_cs: "Migrace VM za běhu"
-      desc_en: "Live migrate VM"
-    - cmd: "qm config 200"
-      desc_cs: "Konfigurace VM"
-      desc_en: "VM configuration"
-
+  - cmd: qm list
+    desc:
+      cs: Seznam VM
+      en: List VMs
+  - cmd: qm start 200
+    desc:
+      cs: Spustit VM
+      en: Start VM
+  - cmd: qm shutdown 200
+    desc:
+      cs: Slušně vypnout
+      en: Shutdown gracefully
+  - cmd: qm stop 200
+    desc:
+      cs: Tvrdé zastavení
+      en: Force stop
+  - cmd: qm migrate 200 node2 --online
+    desc:
+      cs: Migrace VM za běhu
+      en: Live migrate VM
+  - cmd: qm config 200
+    desc:
+      cs: Konfigurace VM
+      en: VM configuration
 - id: pve-cluster
-  title_cs: "Proxmox - cluster a uzly"
-  title_en: "Proxmox - cluster and nodes"
-  tags_cs: [proxmox, cluster, node, uzel, status]
-  tags_en: [proxmox, cluster, node, status]
+  title:
+    cs: Proxmox - cluster a uzly
+    en: Proxmox - cluster and nodes
+  tags:
+    cs:
+    - proxmox
+    - cluster
+    - node
+    - uzel
+    - status
+    en:
+    - proxmox
+    - cluster
+    - node
+    - status
   commands:
-    - cmd: "pvecm status"
-      desc_cs: "Stav clusteru"
-      desc_en: "Cluster status"
-    - cmd: "pvecm nodes"
-      desc_cs: "Seznam uzlů"
-      desc_en: "List nodes"
-    - cmd: "pveversion"
-      desc_cs: "Verze Proxmox VE"
-      desc_en: "Proxmox VE version"
-    - cmd: "pvesh get /nodes"
-      desc_cs: "Stav uzlů přes API"
-      desc_en: "Node status via API"
-    - cmd: "ha-manager status"
-      desc_cs: "Stav High Availability"
-      desc_en: "HA status"
-
+  - cmd: pvecm status
+    desc:
+      cs: Stav clusteru
+      en: Cluster status
+  - cmd: pvecm nodes
+    desc:
+      cs: Seznam uzlů
+      en: List nodes
+  - cmd: pveversion
+    desc:
+      cs: Verze Proxmox VE
+      en: Proxmox VE version
+  - cmd: pvesh get /nodes
+    desc:
+      cs: Stav uzlů přes API
+      en: Node status via API
+  - cmd: ha-manager status
+    desc:
+      cs: Stav High Availability
+      en: HA status
 - id: pve-backup
-  title_cs: "Proxmox - zálohy (vzdump)"
-  title_en: "Proxmox - backups (vzdump)"
-  tags_cs: [proxmox, záloha, backup, vzdump, restore]
-  tags_en: [proxmox, backup, vzdump, restore]
+  title:
+    cs: Proxmox - zálohy (vzdump)
+    en: Proxmox - backups (vzdump)
+  tags:
+    cs:
+    - proxmox
+    - záloha
+    - backup
+    - vzdump
+    - restore
+    en:
+    - proxmox
+    - backup
+    - vzdump
+    - restore
   commands:
-    - cmd: "vzdump 100 --storage local --compress zstd"
-      desc_cs: "Zálohovat CT 100"
-      desc_en: "Backup CT 100"
-    - cmd: "vzdump --all --storage local"
-      desc_cs: "Zálohovat všechny VM/CT"
-      desc_en: "Backup all VMs/CTs"
-    - cmd: "pct restore 101 /var/lib/vz/dump/vzdump-lxc-100-*.tar.zst"
-      desc_cs: "Obnovit CT pod novým ID"
-      desc_en: "Restore CT under new ID"
+  - cmd: vzdump 100 --storage local --compress zstd
+    desc:
+      cs: Zálohovat CT 100
+      en: Backup CT 100
+  - cmd: vzdump --all --storage local
+    desc:
+      cs: Zálohovat všechny VM/CT
+      en: Backup all VMs/CTs
+  - cmd: pct restore 101 /var/lib/vz/dump/vzdump-lxc-100-*.tar.zst
+    desc:
+      cs: Obnovit CT pod novým ID
+      en: Restore CT under new ID

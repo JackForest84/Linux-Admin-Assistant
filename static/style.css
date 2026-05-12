@@ -17,9 +17,10 @@ header { background: var(--panel); border-bottom: 1px solid var(--border); }
 header .wrap { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; }
 h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.5px; }
 h1 span { color: var(--accent); }
-.lang button { background: transparent; color: var(--muted); border: 1px solid var(--border);
-  padding: 4px 10px; border-radius: 6px; cursor: pointer; font-weight: 600; margin-left: 4px; }
-.lang button.active { background: var(--accent); color: #0e1116; border-color: var(--accent); }
+#lang { background: var(--panel2); color: var(--text); border: 1px solid var(--border);
+  padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 500;
+  outline: none; transition: border-color 0.15s; }
+#lang:hover, #lang:focus { border-color: var(--accent); }
 main { padding: 24px 0 60px; }
 #q { width: 100%; padding: 14px 16px; font-size: 17px; background: var(--panel);
   color: var(--text); border: 1px solid var(--border); border-radius: 10px; outline: none; }

@@ -1,137 +1,238 @@
 - id: dialog
-  title_cs: "Interaktivní dialogy ve skriptech"
-  title_en: "Interactive script dialogs"
-  tags_cs: [dialog, whiptail, read, otázka, interaktivní]
-  tags_en: [dialog, whiptail, read, prompt, interactive]
+  title:
+    cs: Interaktivní dialogy ve skriptech
+    en: Interactive script dialogs
+  tags:
+    cs:
+    - dialog
+    - whiptail
+    - read
+    - otázka
+    - interaktivní
+    en:
+    - dialog
+    - whiptail
+    - read
+    - prompt
+    - interactive
   commands:
-    - cmd: "read -p 'Tvé jméno: ' jmeno && echo \"Ahoj $jmeno\""
-      desc_cs: "Zeptat se uživatele na vstup"
-      desc_en: "Ask user for input"
-    - cmd: "read -s -p 'Heslo: ' heslo"
-      desc_cs: "Vstup bez echování (heslo)"
-      desc_en: "Hidden input (password)"
-    - cmd: "whiptail --yesno 'Pokračovat?' 10 40"
-      desc_cs: "Ano/Ne dialog (apt install whiptail)"
-      desc_en: "Yes/No dialog"
-    - cmd: "whiptail --inputbox 'Jméno?' 10 40 'výchozí'"
-      desc_cs: "Textový dialog s výchozí hodnotou"
-      desc_en: "Text input with default"
-    - cmd: "select s in a b c quit; do echo $s; [ $s = quit ] && break; done"
-      desc_cs: "Bash menu výběr"
-      desc_en: "Bash select menu"
-
+  - cmd: 'read -p ''Tvé jméno: '' jmeno && echo "Ahoj $jmeno"'
+    desc:
+      cs: Zeptat se uživatele na vstup
+      en: Ask user for input
+  - cmd: 'read -s -p ''Heslo: '' heslo'
+    desc:
+      cs: Vstup bez echování (heslo)
+      en: Hidden input (password)
+  - cmd: whiptail --yesno 'Pokračovat?' 10 40
+    desc:
+      cs: Ano/Ne dialog (apt install whiptail)
+      en: Yes/No dialog
+  - cmd: whiptail --inputbox 'Jméno?' 10 40 'výchozí'
+    desc:
+      cs: Textový dialog s výchozí hodnotou
+      en: Text input with default
+  - cmd: select s in a b c quit; do echo $s; [ $s = quit ] && break; done
+    desc:
+      cs: Bash menu výběr
+      en: Bash select menu
 - id: ssl-test
-  title_cs: "Test webů a SSL"
-  title_en: "Test websites and SSL"
-  tags_cs: [ssl, test, https, curl, openssl, web]
-  tags_en: [ssl, test, https, curl, openssl, web]
+  title:
+    cs: Test webů a SSL
+    en: Test websites and SSL
+  tags:
+    cs:
+    - ssl
+    - test
+    - https
+    - curl
+    - openssl
+    - web
+    en:
+    - ssl
+    - test
+    - https
+    - curl
+    - openssl
+    - web
   commands:
-    - cmd: "curl -vI https://example.com 2>&1 | grep -i 'subject\\|expire'"
-      desc_cs: "Info o cert. webu"
-      desc_en: "Web cert info"
-    - cmd: "openssl s_client -connect example.com:443 -servername example.com"
-      desc_cs: "Plné spojení (SNI)"
-      desc_en: "Full connection (SNI)"
-    - cmd: "nmap --script ssl-cert -p 443 example.com"
-      desc_cs: "SSL cert přes nmap"
-      desc_en: "SSL cert via nmap"
-
+  - cmd: curl -vI https://example.com 2>&1 | grep -i 'subject\|expire'
+    desc:
+      cs: Info o cert. webu
+      en: Web cert info
+  - cmd: openssl s_client -connect example.com:443 -servername example.com
+    desc:
+      cs: Plné spojení (SNI)
+      en: Full connection (SNI)
+  - cmd: nmap --script ssl-cert -p 443 example.com
+    desc:
+      cs: SSL cert přes nmap
+      en: SSL cert via nmap
 - id: nmap
-  title_cs: "nmap - sken sítě"
-  title_en: "nmap - network scan"
-  tags_cs: [nmap, sken, porty, síť, security]
-  tags_en: [nmap, scan, ports, network, security]
+  title:
+    cs: nmap - sken sítě
+    en: nmap - network scan
+  tags:
+    cs:
+    - nmap
+    - sken
+    - porty
+    - síť
+    - security
+    en:
+    - nmap
+    - scan
+    - ports
+    - network
+    - security
   commands:
-    - cmd: "nmap 192.168.1.0/24"
-      desc_cs: "Najít aktivní zařízení v síti"
-      desc_en: "Find active devices in network"
-    - cmd: "nmap -sn 192.168.1.0/24"
-      desc_cs: "Jen ping sken (rychlejší)"
-      desc_en: "Ping scan only (faster)"
-    - cmd: "sudo nmap -sS -p 1-1000 192.168.1.10"
-      desc_cs: "Sken portů 1-1000 (SYN scan)"
-      desc_en: "Port scan 1-1000 (SYN scan)"
-    - cmd: "nmap -A 192.168.1.10"
-      desc_cs: "Agresivní sken (OS, verze, skripty)"
-      desc_en: "Aggressive scan (OS, version, scripts)"
-    - cmd: "nmap -p- 192.168.1.10"
-      desc_cs: "Všechny porty (1-65535)"
-      desc_en: "All ports (1-65535)"
-
+  - cmd: nmap 192.168.1.0/24
+    desc:
+      cs: Najít aktivní zařízení v síti
+      en: Find active devices in network
+  - cmd: nmap -sn 192.168.1.0/24
+    desc:
+      cs: Jen ping sken (rychlejší)
+      en: Ping scan only (faster)
+  - cmd: sudo nmap -sS -p 1-1000 192.168.1.10
+    desc:
+      cs: Sken portů 1-1000 (SYN scan)
+      en: Port scan 1-1000 (SYN scan)
+  - cmd: nmap -A 192.168.1.10
+    desc:
+      cs: Agresivní sken (OS, verze, skripty)
+      en: Aggressive scan (OS, version, scripts)
+  - cmd: nmap -p- 192.168.1.10
+    desc:
+      cs: Všechny porty (1-65535)
+      en: All ports (1-65535)
 - id: zip-advanced
-  title_cs: "7zip a další komprese"
-  title_en: "7zip and other compression"
-  tags_cs: [7zip, 7z, gzip, bzip2, xz, komprese]
-  tags_en: [7zip, 7z, gzip, bzip2, xz, compression]
+  title:
+    cs: 7zip a další komprese
+    en: 7zip and other compression
+  tags:
+    cs:
+    - 7zip
+    - 7z
+    - gzip
+    - bzip2
+    - xz
+    - komprese
+    en:
+    - 7zip
+    - 7z
+    - gzip
+    - bzip2
+    - xz
+    - compression
   commands:
-    - cmd: "7z a archiv.7z slozka/"
-      desc_cs: "Vytvořit 7z archív (vysoká komprese)"
-      desc_en: "Create 7z archive (high compression)"
-    - cmd: "7z x archiv.7z"
-      desc_cs: "Rozbalit"
-      desc_en: "Extract"
-    - cmd: "7z a -p archiv.7z soubor"
-      desc_cs: "Zaheslovaný archív"
-      desc_en: "Password-protected archive"
-    - cmd: "gzip soubor.txt"
-      desc_cs: "Zkomprimovat (vytvoří .gz, smaže originál)"
-      desc_en: "Compress (creates .gz, removes original)"
-    - cmd: "gunzip soubor.txt.gz"
-      desc_cs: "Dekomprimovat"
-      desc_en: "Decompress"
-    - cmd: "zcat soubor.txt.gz"
-      desc_cs: "Vypsat obsah .gz bez rozbalení"
-      desc_en: "Show .gz content without extracting"
-
+  - cmd: 7z a archiv.7z slozka/
+    desc:
+      cs: Vytvořit 7z archív (vysoká komprese)
+      en: Create 7z archive (high compression)
+  - cmd: 7z x archiv.7z
+    desc:
+      cs: Rozbalit
+      en: Extract
+  - cmd: 7z a -p archiv.7z soubor
+    desc:
+      cs: Zaheslovaný archív
+      en: Password-protected archive
+  - cmd: gzip soubor.txt
+    desc:
+      cs: Zkomprimovat (vytvoří .gz, smaže originál)
+      en: Compress (creates .gz, removes original)
+  - cmd: gunzip soubor.txt.gz
+    desc:
+      cs: Dekomprimovat
+      en: Decompress
+  - cmd: zcat soubor.txt.gz
+    desc:
+      cs: Vypsat obsah .gz bez rozbalení
+      en: Show .gz content without extracting
 - id: cmd-chaining
-  title_cs: "Řetězení příkazů"
-  title_en: "Chaining commands"
-  tags_cs: [chaining, řetězení, sekvence, and, or]
-  tags_en: [chaining, sequence, and, or]
+  title:
+    cs: Řetězení příkazů
+    en: Chaining commands
+  tags:
+    cs:
+    - chaining
+    - řetězení
+    - sekvence
+    - and
+    - or
+    en:
+    - chaining
+    - sequence
+    - and
+    - or
   commands:
-    - cmd: "prikaz1 && prikaz2"
-      desc_cs: "Spustit prikaz2 jen pokud prikaz1 uspěl"
-      desc_en: "Run prikaz2 only if prikaz1 succeeded"
-    - cmd: "prikaz1 || prikaz2"
-      desc_cs: "Spustit prikaz2 jen pokud prikaz1 selhal"
-      desc_en: "Run prikaz2 only if prikaz1 failed"
-    - cmd: "prikaz1 ; prikaz2"
-      desc_cs: "Spustit oba bez ohledu na výsledek"
-      desc_en: "Run both regardless of result"
-    - cmd: "prikaz1 & prikaz2"
-      desc_cs: "Prikaz1 na pozadí + hned prikaz2"
-      desc_en: "Prikaz1 in background + prikaz2 immediately"
-    - cmd: "{ prikaz1; prikaz2; } > out.txt"
-      desc_cs: "Skupina příkazů - společný výstup"
-      desc_en: "Command group - shared output"
-
+  - cmd: prikaz1 && prikaz2
+    desc:
+      cs: Spustit prikaz2 jen pokud prikaz1 uspěl
+      en: Run prikaz2 only if prikaz1 succeeded
+  - cmd: prikaz1 || prikaz2
+    desc:
+      cs: Spustit prikaz2 jen pokud prikaz1 selhal
+      en: Run prikaz2 only if prikaz1 failed
+  - cmd: prikaz1 ; prikaz2
+    desc:
+      cs: Spustit oba bez ohledu na výsledek
+      en: Run both regardless of result
+  - cmd: prikaz1 & prikaz2
+    desc:
+      cs: Prikaz1 na pozadí + hned prikaz2
+      en: Prikaz1 in background + prikaz2 immediately
+  - cmd: '{ prikaz1; prikaz2; } > out.txt'
+    desc:
+      cs: Skupina příkazů - společný výstup
+      en: Command group - shared output
 - id: bash-string
-  title_cs: "Bash - manipulace s řetězci"
-  title_en: "Bash - string manipulation"
-  tags_cs: [bash, řetězec, string, manipulace, substituce]
-  tags_en: [bash, string, manipulation, substitution]
+  title:
+    cs: Bash - manipulace s řetězci
+    en: Bash - string manipulation
+  tags:
+    cs:
+    - bash
+    - řetězec
+    - string
+    - manipulace
+    - substituce
+    en:
+    - bash
+    - string
+    - manipulation
+    - substitution
   commands:
-    - cmd: "echo ${#retezec}"
-      desc_cs: "Délka řetězce"
-      desc_en: "String length"
-    - cmd: "echo ${retezec:0:5}"
-      desc_cs: "Substring (od 0, délka 5)"
-      desc_en: "Substring (from 0, length 5)"
-    - cmd: "echo ${retezec/staré/nové}"
-      desc_cs: "Nahradit první výskyt"
-      desc_en: "Replace first occurrence"
-    - cmd: "echo ${retezec//staré/nové}"
-      desc_cs: "Nahradit všechny výskyty"
-      desc_en: "Replace all occurrences"
-    - cmd: "echo ${retezec,,}"
-      desc_cs: "Na malá písmena"
-      desc_en: "To lowercase"
-    - cmd: "echo ${retezec^^}"
-      desc_cs: "Na velká písmena"
-      desc_en: "To uppercase"
-    - cmd: "basename /cesta/k/souboru.txt"
-      desc_cs: "Jen název souboru"
-      desc_en: "Just filename"
-    - cmd: "dirname /cesta/k/souboru.txt"
-      desc_cs: "Jen cesta"
-      desc_en: "Just directory"
+  - cmd: echo ${#retezec}
+    desc:
+      cs: Délka řetězce
+      en: String length
+  - cmd: echo ${retezec:0:5}
+    desc:
+      cs: Substring (od 0, délka 5)
+      en: Substring (from 0, length 5)
+  - cmd: echo ${retezec/staré/nové}
+    desc:
+      cs: Nahradit první výskyt
+      en: Replace first occurrence
+  - cmd: echo ${retezec//staré/nové}
+    desc:
+      cs: Nahradit všechny výskyty
+      en: Replace all occurrences
+  - cmd: echo ${retezec,,}
+    desc:
+      cs: Na malá písmena
+      en: To lowercase
+  - cmd: echo ${retezec^^}
+    desc:
+      cs: Na velká písmena
+      en: To uppercase
+  - cmd: basename /cesta/k/souboru.txt
+    desc:
+      cs: Jen název souboru
+      en: Just filename
+  - cmd: dirname /cesta/k/souboru.txt
+    desc:
+      cs: Jen cesta
+      en: Just directory

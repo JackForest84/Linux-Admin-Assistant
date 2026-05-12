@@ -1,99 +1,164 @@
 - id: make
-  title_cs: "make a build"
-  title_en: "make and build"
-  tags_cs: [make, makefile, build, kompilace]
-  tags_en: [make, makefile, build, compile]
+  title:
+    cs: make a build
+    en: make and build
+  tags:
+    cs:
+    - make
+    - makefile
+    - build
+    - kompilace
+    en:
+    - make
+    - makefile
+    - build
+    - compile
   commands:
-    - cmd: "make"
-      desc_cs: "Spustit default target z Makefile"
-      desc_en: "Run default target from Makefile"
-    - cmd: "make install"
-      desc_cs: "Nainstalovat zkompilovaný program"
-      desc_en: "Install compiled program"
-    - cmd: "make clean"
-      desc_cs: "Smazat build artefakty"
-      desc_en: "Remove build artifacts"
-    - cmd: "make -j$(nproc)"
-      desc_cs: "Paralelní build (využije všechna jádra)"
-      desc_en: "Parallel build (use all cores)"
-    - cmd: "./configure && make && sudo make install"
-      desc_cs: "Klasická trojice u zdrojákových balíčků"
-      desc_en: "Classic source build trio"
-
+  - cmd: make
+    desc:
+      cs: Spustit default target z Makefile
+      en: Run default target from Makefile
+  - cmd: make install
+    desc:
+      cs: Nainstalovat zkompilovaný program
+      en: Install compiled program
+  - cmd: make clean
+    desc:
+      cs: Smazat build artefakty
+      en: Remove build artifacts
+  - cmd: make -j$(nproc)
+    desc:
+      cs: Paralelní build (využije všechna jádra)
+      en: Parallel build (use all cores)
+  - cmd: ./configure && make && sudo make install
+    desc:
+      cs: Klasická trojice u zdrojákových balíčků
+      en: Classic source build trio
 - id: go-rust
-  title_cs: "Go a Rust"
-  title_en: "Go and Rust"
-  tags_cs: [go, golang, rust, cargo, kompilace]
-  tags_en: [go, golang, rust, cargo, compile]
+  title:
+    cs: Go a Rust
+    en: Go and Rust
+  tags:
+    cs:
+    - go
+    - golang
+    - rust
+    - cargo
+    - kompilace
+    en:
+    - go
+    - golang
+    - rust
+    - cargo
+    - compile
   commands:
-    - cmd: "go build"
-      desc_cs: "Zkompilovat (vytvoří binárku)"
-      desc_en: "Compile (creates binary)"
-    - cmd: "go run main.go"
-      desc_cs: "Spustit bez vytvoření binárky"
-      desc_en: "Run without binary"
-    - cmd: "go test ./..."
-      desc_cs: "Spustit všechny testy v projektu"
-      desc_en: "Run all tests in project"
-    - cmd: "go mod tidy"
-      desc_cs: "Vyčistit závislosti"
-      desc_en: "Clean dependencies"
-    - cmd: "cargo build --release"
-      desc_cs: "Rust: kompilace s optimalizacemi"
-      desc_en: "Rust: compile with optimizations"
-    - cmd: "cargo run"
-      desc_cs: "Rust: build + spustit"
-      desc_en: "Rust: build + run"
-    - cmd: "cargo test"
-      desc_cs: "Rust: testy"
-      desc_en: "Rust: tests"
-
+  - cmd: go build
+    desc:
+      cs: Zkompilovat (vytvoří binárku)
+      en: Compile (creates binary)
+  - cmd: go run main.go
+    desc:
+      cs: Spustit bez vytvoření binárky
+      en: Run without binary
+  - cmd: go test ./...
+    desc:
+      cs: Spustit všechny testy v projektu
+      en: Run all tests in project
+  - cmd: go mod tidy
+    desc:
+      cs: Vyčistit závislosti
+      en: Clean dependencies
+  - cmd: cargo build --release
+    desc:
+      cs: 'Rust: kompilace s optimalizacemi'
+      en: 'Rust: compile with optimizations'
+  - cmd: cargo run
+    desc:
+      cs: 'Rust: build + spustit'
+      en: 'Rust: build + run'
+  - cmd: cargo test
+    desc:
+      cs: 'Rust: testy'
+      en: 'Rust: tests'
 - id: ansible-basics
-  title_cs: "Ansible základy"
-  title_en: "Ansible basics"
-  tags_cs: [ansible, automatizace, playbook, ad-hoc]
-  tags_en: [ansible, automation, playbook, ad-hoc]
+  title:
+    cs: Ansible základy
+    en: Ansible basics
+  tags:
+    cs:
+    - ansible
+    - automatizace
+    - playbook
+    - ad-hoc
+    en:
+    - ansible
+    - automation
+    - playbook
+    - ad-hoc
   commands:
-    - cmd: "ansible all -m ping"
-      desc_cs: "Test spojení se všemi hosty"
-      desc_en: "Test connection to all hosts"
-    - cmd: "ansible all -a 'uptime'"
-      desc_cs: "Ad-hoc příkaz na všech serverech"
-      desc_en: "Ad-hoc command on all servers"
-    - cmd: "ansible-playbook deploy.yml"
-      desc_cs: "Spustit playbook"
-      desc_en: "Run playbook"
-    - cmd: "ansible-playbook deploy.yml --check"
-      desc_cs: "Dry-run (jen ukázat, co by udělal)"
-      desc_en: "Dry-run (preview)"
-    - cmd: "ansible-playbook deploy.yml -l web1"
-      desc_cs: "Spustit jen na 'web1'"
-      desc_en: "Run only on 'web1'"
-    - cmd: "ansible-vault encrypt secrets.yml"
-      desc_cs: "Zašifrovat soubor s tajnými údaji"
-      desc_en: "Encrypt secrets file"
-
+  - cmd: ansible all -m ping
+    desc:
+      cs: Test spojení se všemi hosty
+      en: Test connection to all hosts
+  - cmd: ansible all -a 'uptime'
+    desc:
+      cs: Ad-hoc příkaz na všech serverech
+      en: Ad-hoc command on all servers
+  - cmd: ansible-playbook deploy.yml
+    desc:
+      cs: Spustit playbook
+      en: Run playbook
+  - cmd: ansible-playbook deploy.yml --check
+    desc:
+      cs: Dry-run (jen ukázat, co by udělal)
+      en: Dry-run (preview)
+  - cmd: ansible-playbook deploy.yml -l web1
+    desc:
+      cs: Spustit jen na 'web1'
+      en: Run only on 'web1'
+  - cmd: ansible-vault encrypt secrets.yml
+    desc:
+      cs: Zašifrovat soubor s tajnými údaji
+      en: Encrypt secrets file
 - id: terraform
-  title_cs: "Terraform"
-  title_en: "Terraform"
-  tags_cs: [terraform, iac, infrastruktura, plan, apply]
-  tags_en: [terraform, iac, infrastructure, plan, apply]
+  title:
+    cs: Terraform
+    en: Terraform
+  tags:
+    cs:
+    - terraform
+    - iac
+    - infrastruktura
+    - plan
+    - apply
+    en:
+    - terraform
+    - iac
+    - infrastructure
+    - plan
+    - apply
   commands:
-    - cmd: "terraform init"
-      desc_cs: "Inicializovat (stáhnout providery)"
-      desc_en: "Initialize (download providers)"
-    - cmd: "terraform plan"
-      desc_cs: "Co bude změněno (preview)"
-      desc_en: "What will change (preview)"
-    - cmd: "terraform apply"
-      desc_cs: "Aplikovat změny"
-      desc_en: "Apply changes"
-    - cmd: "terraform destroy"
-      desc_cs: "Smazat vše, co terraform vytvořil"
-      desc_en: "Destroy everything terraform created"
-    - cmd: "terraform fmt"
-      desc_cs: "Zformátovat .tf soubory"
-      desc_en: "Format .tf files"
-    - cmd: "terraform state list"
-      desc_cs: "Seznam managed resources"
-      desc_en: "List managed resources"
+  - cmd: terraform init
+    desc:
+      cs: Inicializovat (stáhnout providery)
+      en: Initialize (download providers)
+  - cmd: terraform plan
+    desc:
+      cs: Co bude změněno (preview)
+      en: What will change (preview)
+  - cmd: terraform apply
+    desc:
+      cs: Aplikovat změny
+      en: Apply changes
+  - cmd: terraform destroy
+    desc:
+      cs: Smazat vše, co terraform vytvořil
+      en: Destroy everything terraform created
+  - cmd: terraform fmt
+    desc:
+      cs: Zformátovat .tf soubory
+      en: Format .tf files
+  - cmd: terraform state list
+    desc:
+      cs: Seznam managed resources
+      en: List managed resources

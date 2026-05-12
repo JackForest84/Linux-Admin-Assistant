@@ -1,69 +1,124 @@
 - id: pkg-update
-  title_cs: "Aktualizace balíčků (apt)"
-  title_en: "Update packages (apt)"
-  tags_cs: [apt, aktualizace, update, upgrade, balíčky]
-  tags_en: [apt, update, upgrade, packages]
+  title:
+    cs: Aktualizace balíčků (apt)
+    en: Update packages (apt)
+  tags:
+    cs:
+    - apt
+    - aktualizace
+    - update
+    - upgrade
+    - balíčky
+    en:
+    - apt
+    - update
+    - upgrade
+    - packages
   commands:
-    - cmd: "sudo apt update"
-      desc_cs: "Stáhnout seznam dostupných balíčků"
-      desc_en: "Refresh package index"
-    - cmd: "sudo apt upgrade -y"
-      desc_cs: "Nainstalovat dostupné aktualizace"
-      desc_en: "Install available upgrades"
-    - cmd: "sudo apt full-upgrade -y"
-      desc_cs: "Upgrade včetně řešení změn závislostí"
-      desc_en: "Upgrade including dependency changes"
-    - cmd: "sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
-      desc_cs: "Plný cyklus: update + upgrade + úklid"
-      desc_en: "Full cycle: update + upgrade + cleanup"
-
+  - cmd: sudo apt update
+    desc:
+      cs: Stáhnout seznam dostupných balíčků
+      en: Refresh package index
+  - cmd: sudo apt upgrade -y
+    desc:
+      cs: Nainstalovat dostupné aktualizace
+      en: Install available upgrades
+  - cmd: sudo apt full-upgrade -y
+    desc:
+      cs: Upgrade včetně řešení změn závislostí
+      en: Upgrade including dependency changes
+  - cmd: sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+    desc:
+      cs: 'Plný cyklus: update + upgrade + úklid'
+      en: 'Full cycle: update + upgrade + cleanup'
 - id: pkg-install
-  title_cs: "Nainstalovat balíček"
-  title_en: "Install package"
-  tags_cs: [apt, install, nainstalovat, balíček]
-  tags_en: [apt, install, package]
+  title:
+    cs: Nainstalovat balíček
+    en: Install package
+  tags:
+    cs:
+    - apt
+    - install
+    - nainstalovat
+    - balíček
+    en:
+    - apt
+    - install
+    - package
   commands:
-    - cmd: "sudo apt install -y htop"
-      desc_cs: "Bez otázek nainstalovat balíček"
-      desc_en: "Install package without prompts"
-    - cmd: "sudo apt install --reinstall -y nginx"
-      desc_cs: "Přeinstalovat stávající balíček"
-      desc_en: "Reinstall existing package"
-
+  - cmd: sudo apt install -y htop
+    desc:
+      cs: Bez otázek nainstalovat balíček
+      en: Install package without prompts
+  - cmd: sudo apt install --reinstall -y nginx
+    desc:
+      cs: Přeinstalovat stávající balíček
+      en: Reinstall existing package
 - id: pkg-remove
-  title_cs: "Odebrat balíček"
-  title_en: "Remove package"
-  tags_cs: [apt, remove, purge, odinstalovat, smazat]
-  tags_en: [apt, remove, purge, uninstall]
+  title:
+    cs: Odebrat balíček
+    en: Remove package
+  tags:
+    cs:
+    - apt
+    - remove
+    - purge
+    - odinstalovat
+    - smazat
+    en:
+    - apt
+    - remove
+    - purge
+    - uninstall
   commands:
-    - cmd: "sudo apt remove -y htop"
-      desc_cs: "Odebrat balíček (ponechat konfiguraci)"
-      desc_en: "Remove package (keep config)"
-    - cmd: "sudo apt purge -y htop"
-      desc_cs: "Odebrat včetně konfigurace"
-      desc_en: "Remove including config"
-    - cmd: "sudo apt autoremove -y"
-      desc_cs: "Smazat nepotřebné závislosti"
-      desc_en: "Remove unneeded dependencies"
-
+  - cmd: sudo apt remove -y htop
+    desc:
+      cs: Odebrat balíček (ponechat konfiguraci)
+      en: Remove package (keep config)
+  - cmd: sudo apt purge -y htop
+    desc:
+      cs: Odebrat včetně konfigurace
+      en: Remove including config
+  - cmd: sudo apt autoremove -y
+    desc:
+      cs: Smazat nepotřebné závislosti
+      en: Remove unneeded dependencies
 - id: pkg-search
-  title_cs: "Najít balíček"
-  title_en: "Find package"
-  tags_cs: [apt, search, najít, hledat, balíček, info]
-  tags_en: [apt, search, find, package, info]
+  title:
+    cs: Najít balíček
+    en: Find package
+  tags:
+    cs:
+    - apt
+    - search
+    - najít
+    - hledat
+    - balíček
+    - info
+    en:
+    - apt
+    - search
+    - find
+    - package
+    - info
   commands:
-    - cmd: "apt search nginx"
-      desc_cs: "Vyhledat balíček podle názvu/popisu"
-      desc_en: "Search package by name/description"
-    - cmd: "apt show nginx"
-      desc_cs: "Detail balíčku (verze, popis, závislosti)"
-      desc_en: "Package details (version, desc, deps)"
-    - cmd: "dpkg -l | grep nginx"
-      desc_cs: "Je tento balíček nainstalovaný?"
-      desc_en: "Is this package installed?"
-    - cmd: "dpkg -L nginx"
-      desc_cs: "Vypsat všechny soubory balíčku"
-      desc_en: "List all files of a package"
-    - cmd: "dpkg -S /etc/nginx/nginx.conf"
-      desc_cs: "Z jakého balíčku pochází tento soubor"
-      desc_en: "Which package owns this file"
+  - cmd: apt search nginx
+    desc:
+      cs: Vyhledat balíček podle názvu/popisu
+      en: Search package by name/description
+  - cmd: apt show nginx
+    desc:
+      cs: Detail balíčku (verze, popis, závislosti)
+      en: Package details (version, desc, deps)
+  - cmd: dpkg -l | grep nginx
+    desc:
+      cs: Je tento balíček nainstalovaný?
+      en: Is this package installed?
+  - cmd: dpkg -L nginx
+    desc:
+      cs: Vypsat všechny soubory balíčku
+      en: List all files of a package
+  - cmd: dpkg -S /etc/nginx/nginx.conf
+    desc:
+      cs: Z jakého balíčku pochází tento soubor
+      en: Which package owns this file

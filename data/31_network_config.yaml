@@ -1,93 +1,163 @@
 - id: netplan
-  title_cs: "Netplan (Ubuntu)"
-  title_en: "Netplan (Ubuntu)"
-  tags_cs: [netplan, síť, konfigurace, ip, static, dhcp, ubuntu]
-  tags_en: [netplan, network, config, ip, static, dhcp, ubuntu]
+  title:
+    cs: Netplan (Ubuntu)
+    en: Netplan (Ubuntu)
+  tags:
+    cs:
+    - netplan
+    - síť
+    - konfigurace
+    - ip
+    - static
+    - dhcp
+    - ubuntu
+    en:
+    - netplan
+    - network
+    - config
+    - ip
+    - static
+    - dhcp
+    - ubuntu
   commands:
-    - cmd: "sudo netplan apply"
-      desc_cs: "Aplikovat změny konfigurace"
-      desc_en: "Apply config changes"
-    - cmd: "sudo netplan try"
-      desc_cs: "Vyzkoušet (vrátí se zpět, pokud nepotvrdíš)"
-      desc_en: "Try (reverts if not confirmed)"
-    - cmd: "sudo netplan generate"
-      desc_cs: "Vygenerovat backend konfiguraci"
-      desc_en: "Generate backend config"
-    - cmd: "ls /etc/netplan/"
-      desc_cs: "Seznam netplan konfigurací"
-      desc_en: "List netplan configs"
-
+  - cmd: sudo netplan apply
+    desc:
+      cs: Aplikovat změny konfigurace
+      en: Apply config changes
+  - cmd: sudo netplan try
+    desc:
+      cs: Vyzkoušet (vrátí se zpět, pokud nepotvrdíš)
+      en: Try (reverts if not confirmed)
+  - cmd: sudo netplan generate
+    desc:
+      cs: Vygenerovat backend konfiguraci
+      en: Generate backend config
+  - cmd: ls /etc/netplan/
+    desc:
+      cs: Seznam netplan konfigurací
+      en: List netplan configs
 - id: nm
-  title_cs: "NetworkManager (nmcli)"
-  title_en: "NetworkManager (nmcli)"
-  tags_cs: [networkmanager, nmcli, síť, wifi, připojení]
-  tags_en: [networkmanager, nmcli, network, wifi, connection]
+  title:
+    cs: NetworkManager (nmcli)
+    en: NetworkManager (nmcli)
+  tags:
+    cs:
+    - networkmanager
+    - nmcli
+    - síť
+    - wifi
+    - připojení
+    en:
+    - networkmanager
+    - nmcli
+    - network
+    - wifi
+    - connection
   commands:
-    - cmd: "nmcli device status"
-      desc_cs: "Stav síťových zařízení"
-      desc_en: "Network device status"
-    - cmd: "nmcli connection show"
-      desc_cs: "Seznam připojení"
-      desc_en: "List connections"
-    - cmd: "nmcli device wifi list"
-      desc_cs: "Dostupné Wi-Fi sítě"
-      desc_en: "Available Wi-Fi networks"
-    - cmd: "nmcli device wifi connect SSID password HESLO"
-      desc_cs: "Připojit k Wi-Fi"
-      desc_en: "Connect to Wi-Fi"
-    - cmd: "nmcli connection up nazev"
-      desc_cs: "Aktivovat připojení"
-      desc_en: "Activate connection"
-    - cmd: "nmcli connection down nazev"
-      desc_cs: "Deaktivovat připojení"
-      desc_en: "Deactivate connection"
-    - cmd: "nmtui"
-      desc_cs: "Textové GUI pro NetworkManager"
-      desc_en: "Text GUI for NetworkManager"
-
+  - cmd: nmcli device status
+    desc:
+      cs: Stav síťových zařízení
+      en: Network device status
+  - cmd: nmcli connection show
+    desc:
+      cs: Seznam připojení
+      en: List connections
+  - cmd: nmcli device wifi list
+    desc:
+      cs: Dostupné Wi-Fi sítě
+      en: Available Wi-Fi networks
+  - cmd: nmcli device wifi connect SSID password HESLO
+    desc:
+      cs: Připojit k Wi-Fi
+      en: Connect to Wi-Fi
+  - cmd: nmcli connection up nazev
+    desc:
+      cs: Aktivovat připojení
+      en: Activate connection
+  - cmd: nmcli connection down nazev
+    desc:
+      cs: Deaktivovat připojení
+      en: Deactivate connection
+  - cmd: nmtui
+    desc:
+      cs: Textové GUI pro NetworkManager
+      en: Text GUI for NetworkManager
 - id: ip-config
-  title_cs: "Nastavit IP / route / DNS"
-  title_en: "Set IP / route / DNS"
-  tags_cs: [ip, route, gateway, dns, nastavit, static]
-  tags_en: [ip, route, gateway, dns, set, static]
+  title:
+    cs: Nastavit IP / route / DNS
+    en: Set IP / route / DNS
+  tags:
+    cs:
+    - ip
+    - route
+    - gateway
+    - dns
+    - nastavit
+    - static
+    en:
+    - ip
+    - route
+    - gateway
+    - dns
+    - set
+    - static
   commands:
-    - cmd: "sudo ip addr add 192.168.1.50/24 dev eth0"
-      desc_cs: "Přidat IP na rozhraní (dočasně)"
-      desc_en: "Add IP to interface (temporary)"
-    - cmd: "sudo ip addr del 192.168.1.50/24 dev eth0"
-      desc_cs: "Odebrat IP"
-      desc_en: "Remove IP"
-    - cmd: "sudo ip link set eth0 up"
-      desc_cs: "Zapnout rozhraní"
-      desc_en: "Bring interface up"
-    - cmd: "sudo ip link set eth0 down"
-      desc_cs: "Vypnout rozhraní"
-      desc_en: "Bring interface down"
-    - cmd: "ip route"
-      desc_cs: "Routovací tabulka"
-      desc_en: "Routing table"
-    - cmd: "sudo ip route add default via 192.168.1.1"
-      desc_cs: "Nastavit výchozí bránu"
-      desc_en: "Set default gateway"
-    - cmd: "cat /etc/resolv.conf"
-      desc_cs: "Aktuální DNS servery"
-      desc_en: "Current DNS servers"
-    - cmd: "resolvectl status"
-      desc_cs: "Stav DNS resolveru (systemd-resolved)"
-      desc_en: "DNS resolver status"
-
+  - cmd: sudo ip addr add 192.168.1.50/24 dev eth0
+    desc:
+      cs: Přidat IP na rozhraní (dočasně)
+      en: Add IP to interface (temporary)
+  - cmd: sudo ip addr del 192.168.1.50/24 dev eth0
+    desc:
+      cs: Odebrat IP
+      en: Remove IP
+  - cmd: sudo ip link set eth0 up
+    desc:
+      cs: Zapnout rozhraní
+      en: Bring interface up
+  - cmd: sudo ip link set eth0 down
+    desc:
+      cs: Vypnout rozhraní
+      en: Bring interface down
+  - cmd: ip route
+    desc:
+      cs: Routovací tabulka
+      en: Routing table
+  - cmd: sudo ip route add default via 192.168.1.1
+    desc:
+      cs: Nastavit výchozí bránu
+      en: Set default gateway
+  - cmd: cat /etc/resolv.conf
+    desc:
+      cs: Aktuální DNS servery
+      en: Current DNS servers
+  - cmd: resolvectl status
+    desc:
+      cs: Stav DNS resolveru (systemd-resolved)
+      en: DNS resolver status
 - id: hostname-config
-  title_cs: "Hostname"
-  title_en: "Hostname"
-  tags_cs: [hostname, jméno, stroj, host]
-  tags_en: [hostname, name, host]
+  title:
+    cs: Hostname
+    en: Hostname
+  tags:
+    cs:
+    - hostname
+    - jméno
+    - stroj
+    - host
+    en:
+    - hostname
+    - name
+    - host
   commands:
-    - cmd: "hostname"
-      desc_cs: "Vypsat hostname"
-      desc_en: "Print hostname"
-    - cmd: "sudo hostnamectl set-hostname novy-server"
-      desc_cs: "Nastavit hostname (trvale)"
-      desc_en: "Set hostname (permanent)"
-    - cmd: "cat /etc/hosts"
-      desc_cs: "Lokální mapování IP → jména"
-      desc_en: "Local IP → name mapping"
+  - cmd: hostname
+    desc:
+      cs: Vypsat hostname
+      en: Print hostname
+  - cmd: sudo hostnamectl set-hostname novy-server
+    desc:
+      cs: Nastavit hostname (trvale)
+      en: Set hostname (permanent)
+  - cmd: cat /etc/hosts
+    desc:
+      cs: Lokální mapování IP → jména
+      en: Local IP → name mapping

@@ -1,69 +1,311 @@
 - id: proc-list
-  title_cs: "Seznam procesů"
-  title_en: "List processes"
-  tags_cs: [procesy, ps, běžící, top]
-  tags_en: [processes, ps, running, top]
+  title:
+    en: "List processes"
+    cs: "Seznam procesů"
+    sk: "Zoznam procesov"
+    de: "Prozesse auflisten"
+    es: "Listar procesos"
+    fr: "Lister les processus"
+    it: "Elencare i processi"
+    pl: "Lista procesów"
+    tr: "Süreçleri listele"
+    pt: "Listar processos"
+    nl: "Processen tonen"
+    hu: "Folyamatok listája"
+  tags:
+    en: [processes, ps, running, top]
+    cs: [procesy, ps, běžící, top]
+    sk: [procesy, ps, bežiace, top]
+    de: [prozesse, ps, laufend, top]
+    es: [procesos, ps, ejecutándose, top]
+    fr: [processus, ps, en cours, top]
+    it: [processi, ps, in esecuzione, top]
+    pl: [procesy, ps, działające, top]
+    tr: [süreçler, ps, çalışan, top]
+    pt: [processos, ps, em execução, top]
+    nl: [processen, ps, draaiend, top]
+    hu: [folyamatok, ps, futó, top]
   commands:
     - cmd: "ps aux"
-      desc_cs: "Všechny procesy se zatížením CPU a RAM"
-      desc_en: "All processes with CPU and RAM usage"
+      desc:
+        en: "All processes with CPU and RAM usage"
+        cs: "Všechny procesy se zatížením CPU a RAM"
+        sk: "Všetky procesy so zaťažením CPU a RAM"
+        de: "Alle Prozesse mit CPU- und RAM-Auslastung"
+        es: "Todos los procesos con uso de CPU y RAM"
+        fr: "Tous les processus avec utilisation CPU et RAM"
+        it: "Tutti i processi con utilizzo CPU e RAM"
+        pl: "Wszystkie procesy z użyciem CPU i RAM"
+        tr: "Tüm süreçler CPU ve RAM kullanımıyla"
+        pt: "Todos os processos com uso de CPU e RAM"
+        nl: "Alle processen met CPU- en RAM-gebruik"
+        hu: "Minden folyamat CPU és RAM használattal"
     - cmd: "ps auxf"
-      desc_cs: "Strom procesů (rodič → potomek)"
-      desc_en: "Process tree (parent → child)"
+      desc:
+        en: "Process tree (parent → child)"
+        cs: "Strom procesů (rodič → potomek)"
+        sk: "Strom procesov (rodič → potomok)"
+        de: "Prozessbaum (Eltern → Kind)"
+        es: "Árbol de procesos (padre → hijo)"
+        fr: "Arbre des processus (parent → enfant)"
+        it: "Albero dei processi (genitore → figlio)"
+        pl: "Drzewo procesów (rodzic → dziecko)"
+        tr: "Süreç ağacı (ebeveyn → çocuk)"
+        pt: "Árvore de processos (pai → filho)"
+        nl: "Procesboom (ouder → kind)"
+        hu: "Folyamatfa (szülő → gyermek)"
     - cmd: "ps aux --sort=-%mem | head -10"
-      desc_cs: "10 procesů s největší spotřebou RAM"
-      desc_en: "Top 10 by RAM usage"
+      desc:
+        en: "Top 10 by RAM usage"
+        cs: "10 procesů s největší spotřebou RAM"
+        sk: "10 procesov s najväčšou spotrebou RAM"
+        de: "Top 10 nach RAM-Nutzung"
+        es: "Top 10 por uso de RAM"
+        fr: "Top 10 par utilisation RAM"
+        it: "Top 10 per utilizzo RAM"
+        pl: "Top 10 wg użycia RAM"
+        tr: "RAM kullanımına göre top 10"
+        pt: "Top 10 por uso de RAM"
+        nl: "Top 10 op RAM-gebruik"
+        hu: "Top 10 RAM használat szerint"
     - cmd: "ps aux --sort=-%cpu | head -10"
-      desc_cs: "10 procesů s největší spotřebou CPU"
-      desc_en: "Top 10 by CPU usage"
+      desc:
+        en: "Top 10 by CPU usage"
+        cs: "10 procesů s největší spotřebou CPU"
+        sk: "10 procesov s najväčšou spotrebou CPU"
+        de: "Top 10 nach CPU-Nutzung"
+        es: "Top 10 por uso de CPU"
+        fr: "Top 10 par utilisation CPU"
+        it: "Top 10 per utilizzo CPU"
+        pl: "Top 10 wg użycia CPU"
+        tr: "CPU kullanımına göre top 10"
+        pt: "Top 10 por uso de CPU"
+        nl: "Top 10 op CPU-gebruik"
+        hu: "Top 10 CPU használat szerint"
 
 - id: proc-monitor
-  title_cs: "Živé sledování procesů"
-  title_en: "Live process monitor"
-  tags_cs: [top, htop, monitor, sledování, živé]
-  tags_en: [top, htop, monitor, live]
+  title:
+    en: "Live process monitor"
+    cs: "Živé sledování procesů"
+    sk: "Živé sledovanie procesov"
+    de: "Live-Prozessüberwachung"
+    es: "Monitor de procesos en vivo"
+    fr: "Moniteur de processus en direct"
+    it: "Monitor live dei processi"
+    pl: "Monitor procesów na żywo"
+    tr: "Canlı süreç izleyici"
+    pt: "Monitor de processos ao vivo"
+    nl: "Live procesmonitor"
+    hu: "Élő folyamat monitor"
+  tags:
+    en: [top, htop, monitor, live]
+    cs: [top, htop, monitor, sledování, živé]
+    sk: [top, htop, monitor, sledovanie, živé]
+    de: [top, htop, monitor, live]
+    es: [top, htop, monitor, en vivo]
+    fr: [top, htop, moniteur, direct]
+    it: [top, htop, monitor, live]
+    pl: [top, htop, monitor, na żywo]
+    tr: [top, htop, izleyici, canlı]
+    pt: [top, htop, monitor, ao vivo]
+    nl: [top, htop, monitor, live]
+    hu: [top, htop, monitor, élő]
   commands:
     - cmd: "top"
-      desc_cs: "Klasický monitor (q pro konec)"
-      desc_en: "Classic monitor (q to quit)"
+      desc:
+        en: "Classic monitor (q to quit)"
+        cs: "Klasický monitor (q pro konec)"
+        sk: "Klasický monitor (q pre koniec)"
+        de: "Klassischer Monitor (q zum Beenden)"
+        es: "Monitor clásico (q para salir)"
+        fr: "Moniteur classique (q pour quitter)"
+        it: "Monitor classico (q per uscire)"
+        pl: "Klasyczny monitor (q aby wyjść)"
+        tr: "Klasik izleyici (çıkmak için q)"
+        pt: "Monitor clássico (q para sair)"
+        nl: "Klassieke monitor (q om af te sluiten)"
+        hu: "Klasszikus monitor (q a kilépéshez)"
     - cmd: "htop"
-      desc_cs: "Lepší interaktivní monitor (apt install htop)"
-      desc_en: "Better interactive monitor"
+      desc:
+        en: "Better interactive monitor"
+        cs: "Lepší interaktivní monitor (apt install htop)"
+        sk: "Lepší interaktívny monitor (apt install htop)"
+        de: "Besserer interaktiver Monitor"
+        es: "Mejor monitor interactivo"
+        fr: "Meilleur moniteur interactif"
+        it: "Monitor interattivo migliore"
+        pl: "Lepszy interaktywny monitor"
+        tr: "Daha iyi etkileşimli izleyici"
+        pt: "Monitor interativo melhor"
+        nl: "Betere interactieve monitor"
+        hu: "Jobb interaktív monitor"
     - cmd: "watch -n 1 'ps aux --sort=-%cpu | head'"
-      desc_cs: "Aktualizace TOP procesů každou vteřinu"
-      desc_en: "Refresh top processes every second"
+      desc:
+        en: "Refresh top processes every second"
+        cs: "Aktualizace TOP procesů každou vteřinu"
+        sk: "Aktualizácia TOP procesov každú sekundu"
+        de: "Top-Prozesse jede Sekunde aktualisieren"
+        es: "Refrescar procesos top cada segundo"
+        fr: "Rafraîchir les processus top chaque seconde"
+        it: "Aggiorna processi top ogni secondo"
+        pl: "Odświeżaj top procesów co sekundę"
+        tr: "Üst süreçleri her saniye yenile"
+        pt: "Atualizar processos top a cada segundo"
+        nl: "Top processen elke seconde verversen"
+        hu: "Top folyamatok másodpercenként frissítése"
 
 - id: proc-find
-  title_cs: "Najít proces podle jména"
-  title_en: "Find process by name"
-  tags_cs: [pgrep, pidof, najít, proces, hledat]
-  tags_en: [pgrep, pidof, find, process]
+  title:
+    en: "Find process by name"
+    cs: "Najít proces podle jména"
+    sk: "Nájsť proces podľa mena"
+    de: "Prozess nach Namen finden"
+    es: "Encontrar proceso por nombre"
+    fr: "Trouver un processus par nom"
+    it: "Trovare processo per nome"
+    pl: "Znajdź proces po nazwie"
+    tr: "Süreci ada göre bul"
+    pt: "Encontrar processo por nome"
+    nl: "Proces zoeken op naam"
+    hu: "Folyamat keresése név alapján"
+  tags:
+    en: [pgrep, pidof, find, process]
+    cs: [pgrep, pidof, najít, proces, hledat]
+    sk: [pgrep, pidof, nájsť, proces, hľadať]
+    de: [pgrep, pidof, finden, prozess]
+    es: [pgrep, pidof, encontrar, proceso]
+    fr: [pgrep, pidof, trouver, processus]
+    it: [pgrep, pidof, trovare, processo]
+    pl: [pgrep, pidof, znajdź, proces]
+    tr: [pgrep, pidof, bul, süreç]
+    pt: [pgrep, pidof, encontrar, processo]
+    nl: [pgrep, pidof, vinden, proces]
+    hu: [pgrep, pidof, keresés, folyamat]
   commands:
     - cmd: "pgrep -a nginx"
-      desc_cs: "PID + příkaz pro proces 'nginx'"
-      desc_en: "PID + command for 'nginx' processes"
+      desc:
+        en: "PID + command for 'nginx' processes"
+        cs: "PID + příkaz pro proces 'nginx'"
+        sk: "PID + príkaz pre proces 'nginx'"
+        de: "PID + Befehl für 'nginx'-Prozesse"
+        es: "PID + comando para procesos 'nginx'"
+        fr: "PID + commande pour les processus 'nginx'"
+        it: "PID + comando per processi 'nginx'"
+        pl: "PID + polecenie dla procesów 'nginx'"
+        tr: "'nginx' süreçleri için PID + komut"
+        pt: "PID + comando para processos 'nginx'"
+        nl: "PID + commando voor 'nginx'-processen"
+        hu: "PID + parancs az 'nginx' folyamatokhoz"
     - cmd: "pidof sshd"
-      desc_cs: "Jen PID daného procesu"
-      desc_en: "Only PID of given process"
+      desc:
+        en: "Only PID of given process"
+        cs: "Jen PID daného procesu"
+        sk: "Len PID daného procesu"
+        de: "Nur PID des angegebenen Prozesses"
+        es: "Solo PID del proceso dado"
+        fr: "Seulement PID du processus donné"
+        it: "Solo PID del processo specificato"
+        pl: "Tylko PID danego procesu"
+        tr: "Sadece verilen sürecin PID'i"
+        pt: "Apenas PID do processo dado"
+        nl: "Alleen PID van het proces"
+        hu: "Csak az adott folyamat PID-je"
     - cmd: "ps -ef | grep -v grep | grep nginx"
-      desc_cs: "Klasický grep přístup"
-      desc_en: "Classic grep approach"
+      desc:
+        en: "Classic grep approach"
+        cs: "Klasický grep přístup"
+        sk: "Klasický grep prístup"
+        de: "Klassischer grep-Ansatz"
+        es: "Enfoque clásico con grep"
+        fr: "Approche classique avec grep"
+        it: "Approccio classico con grep"
+        pl: "Klasyczne podejście grep"
+        tr: "Klasik grep yaklaşımı"
+        pt: "Abordagem clássica com grep"
+        nl: "Klassieke grep-aanpak"
+        hu: "Klasszikus grep megközelítés"
 
 - id: proc-kill
-  title_cs: "Ukončit proces"
-  title_en: "Kill process"
-  tags_cs: [kill, killall, ukončit, zabít, pkill]
-  tags_en: [kill, killall, terminate, pkill]
+  title:
+    en: "Kill process"
+    cs: "Ukončit proces"
+    sk: "Ukončiť proces"
+    de: "Prozess beenden"
+    es: "Matar proceso"
+    fr: "Tuer un processus"
+    it: "Terminare processo"
+    pl: "Zakończ proces"
+    tr: "Süreci sonlandır"
+    pt: "Encerrar processo"
+    nl: "Proces beëindigen"
+    hu: "Folyamat leállítása"
+  tags:
+    en: [kill, killall, terminate, pkill]
+    cs: [kill, killall, ukončit, zabít, pkill]
+    sk: [kill, killall, ukončiť, zabiť, pkill]
+    de: [kill, killall, beenden, pkill]
+    es: [kill, killall, terminar, pkill]
+    fr: [kill, killall, terminer, tuer, pkill]
+    it: [kill, killall, terminare, pkill]
+    pl: [kill, killall, zakończ, zabij, pkill]
+    tr: [kill, killall, sonlandır, pkill]
+    pt: [kill, killall, encerrar, pkill]
+    nl: [kill, killall, beëindigen, pkill]
+    hu: [kill, killall, leállítás, pkill]
   commands:
     - cmd: "kill 1234"
-      desc_cs: "Slušné ukončení (SIGTERM) procesu s PID 1234"
-      desc_en: "Graceful kill (SIGTERM) of PID 1234"
+      desc:
+        en: "Graceful kill (SIGTERM) of PID 1234"
+        cs: "Slušné ukončení (SIGTERM) procesu s PID 1234"
+        sk: "Slušné ukončenie (SIGTERM) procesu s PID 1234"
+        de: "Sauberes Beenden (SIGTERM) von PID 1234"
+        es: "Terminación elegante (SIGTERM) del PID 1234"
+        fr: "Arrêt propre (SIGTERM) du PID 1234"
+        it: "Terminazione pulita (SIGTERM) del PID 1234"
+        pl: "Eleganckie zakończenie (SIGTERM) PID 1234"
+        tr: "PID 1234'ün düzgün sonlandırılması (SIGTERM)"
+        pt: "Encerramento gracioso (SIGTERM) do PID 1234"
+        nl: "Net beëindigen (SIGTERM) van PID 1234"
+        hu: "PID 1234 elegáns leállítása (SIGTERM)"
     - cmd: "kill -9 1234"
-      desc_cs: "Tvrdé ukončení (SIGKILL)"
-      desc_en: "Force kill (SIGKILL)"
+      desc:
+        en: "Force kill (SIGKILL)"
+        cs: "Tvrdé ukončení (SIGKILL)"
+        sk: "Tvrdé ukončenie (SIGKILL)"
+        de: "Hartes Beenden (SIGKILL)"
+        es: "Terminación forzada (SIGKILL)"
+        fr: "Arrêt forcé (SIGKILL)"
+        it: "Terminazione forzata (SIGKILL)"
+        pl: "Wymuszone zakończenie (SIGKILL)"
+        tr: "Zorla sonlandırma (SIGKILL)"
+        pt: "Forçar encerramento (SIGKILL)"
+        nl: "Geforceerd beëindigen (SIGKILL)"
+        hu: "Erőltetett leállítás (SIGKILL)"
     - cmd: "pkill -f nginx"
-      desc_cs: "Ukončit všechny procesy obsahující 'nginx'"
-      desc_en: "Kill all processes matching 'nginx'"
+      desc:
+        en: "Kill all processes matching 'nginx'"
+        cs: "Ukončit všechny procesy obsahující 'nginx'"
+        sk: "Ukončiť všetky procesy obsahujúce 'nginx'"
+        de: "Alle Prozesse mit 'nginx' beenden"
+        es: "Matar todos los procesos que contengan 'nginx'"
+        fr: "Tuer tous les processus contenant 'nginx'"
+        it: "Terminare tutti i processi contenenti 'nginx'"
+        pl: "Zakończ wszystkie procesy zawierające 'nginx'"
+        tr: "'nginx' içeren tüm süreçleri sonlandır"
+        pt: "Encerrar todos os processos contendo 'nginx'"
+        nl: "Alle 'nginx'-processen beëindigen"
+        hu: "Minden 'nginx'-et tartalmazó folyamat leállítása"
     - cmd: "killall nginx"
-      desc_cs: "Ukončit podle přesného jména"
-      desc_en: "Kill by exact name"
+      desc:
+        en: "Kill by exact name"
+        cs: "Ukončit podle přesného jména"
+        sk: "Ukončiť podľa presného mena"
+        de: "Nach exaktem Namen beenden"
+        es: "Matar por nombre exacto"
+        fr: "Tuer par nom exact"
+        it: "Terminare per nome esatto"
+        pl: "Zakończ po dokładnej nazwie"
+        tr: "Tam ada göre sonlandır"
+        pt: "Encerrar pelo nome exato"
+        nl: "Beëindigen op exacte naam"
+        hu: "Leállítás pontos név alapján"

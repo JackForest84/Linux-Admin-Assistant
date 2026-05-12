@@ -1,114 +1,186 @@
 - id: vim-basics
-  title_cs: "Vim základy"
-  title_en: "Vim basics"
-  tags_cs: [vim, editor, základy, otevřít, zavřít]
-  tags_en: [vim, editor, basics, open, quit]
+  title:
+    cs: Vim základy
+    en: Vim basics
+  tags:
+    cs:
+    - vim
+    - editor
+    - základy
+    - otevřít
+    - zavřít
+    en:
+    - vim
+    - editor
+    - basics
+    - open
+    - quit
   commands:
-    - cmd: "vim soubor.txt"
-      desc_cs: "Otevřít soubor"
-      desc_en: "Open file"
-    - cmd: ":w"
-      desc_cs: "Uložit (write)"
-      desc_en: "Save (write)"
-    - cmd: ":q"
-      desc_cs: "Zavřít"
-      desc_en: "Quit"
-    - cmd: ":wq"
-      desc_cs: "Uložit a zavřít"
-      desc_en: "Save and quit"
-    - cmd: ":q!"
-      desc_cs: "Zavřít bez uložení"
-      desc_en: "Quit without saving"
-    - cmd: ":x"
-      desc_cs: "Uložit (pokud změněno) a zavřít"
-      desc_en: "Save (if changed) and quit"
-    - cmd: "i"
-      desc_cs: "Vstoupit do režimu vkládání"
-      desc_en: "Enter insert mode"
-    - cmd: "Esc"
-      desc_cs: "Zpět do normálního režimu"
-      desc_en: "Back to normal mode"
-
+  - cmd: vim soubor.txt
+    desc:
+      cs: Otevřít soubor
+      en: Open file
+  - cmd: :w
+    desc:
+      cs: Uložit (write)
+      en: Save (write)
+  - cmd: :q
+    desc:
+      cs: Zavřít
+      en: Quit
+  - cmd: :wq
+    desc:
+      cs: Uložit a zavřít
+      en: Save and quit
+  - cmd: :q!
+    desc:
+      cs: Zavřít bez uložení
+      en: Quit without saving
+  - cmd: :x
+    desc:
+      cs: Uložit (pokud změněno) a zavřít
+      en: Save (if changed) and quit
+  - cmd: i
+    desc:
+      cs: Vstoupit do režimu vkládání
+      en: Enter insert mode
+  - cmd: Esc
+    desc:
+      cs: Zpět do normálního režimu
+      en: Back to normal mode
 - id: vim-edit
-  title_cs: "Vim úpravy"
-  title_en: "Vim editing"
-  tags_cs: [vim, úpravy, kopírovat, mazat, yank, paste]
-  tags_en: [vim, edit, copy, delete, yank, paste]
+  title:
+    cs: Vim úpravy
+    en: Vim editing
+  tags:
+    cs:
+    - vim
+    - úpravy
+    - kopírovat
+    - mazat
+    - yank
+    - paste
+    en:
+    - vim
+    - edit
+    - copy
+    - delete
+    - yank
+    - paste
   commands:
-    - cmd: "dd"
-      desc_cs: "Smazat řádek"
-      desc_en: "Delete line"
-    - cmd: "5dd"
-      desc_cs: "Smazat 5 řádků"
-      desc_en: "Delete 5 lines"
-    - cmd: "yy"
-      desc_cs: "Zkopírovat řádek (yank)"
-      desc_en: "Copy line (yank)"
-    - cmd: "p"
-      desc_cs: "Vložit pod kurzor (paste)"
-      desc_en: "Paste below cursor"
-    - cmd: "u"
-      desc_cs: "Zpět (undo)"
-      desc_en: "Undo"
-    - cmd: "Ctrl+r"
-      desc_cs: "Znovu (redo)"
-      desc_en: "Redo"
-    - cmd: ":%s/staré/nové/g"
-      desc_cs: "Nahradit všude v souboru"
-      desc_en: "Replace everywhere in file"
-    - cmd: ":%s/staré/nové/gc"
-      desc_cs: "Nahradit s potvrzením každé změny"
-      desc_en: "Replace with confirmation per change"
-
+  - cmd: dd
+    desc:
+      cs: Smazat řádek
+      en: Delete line
+  - cmd: 5dd
+    desc:
+      cs: Smazat 5 řádků
+      en: Delete 5 lines
+  - cmd: yy
+    desc:
+      cs: Zkopírovat řádek (yank)
+      en: Copy line (yank)
+  - cmd: p
+    desc:
+      cs: Vložit pod kurzor (paste)
+      en: Paste below cursor
+  - cmd: u
+    desc:
+      cs: Zpět (undo)
+      en: Undo
+  - cmd: Ctrl+r
+    desc:
+      cs: Znovu (redo)
+      en: Redo
+  - cmd: :%s/staré/nové/g
+    desc:
+      cs: Nahradit všude v souboru
+      en: Replace everywhere in file
+  - cmd: :%s/staré/nové/gc
+    desc:
+      cs: Nahradit s potvrzením každé změny
+      en: Replace with confirmation per change
 - id: vim-nav
-  title_cs: "Vim navigace"
-  title_en: "Vim navigation"
-  tags_cs: [vim, navigace, hledat, řádek, skok]
-  tags_en: [vim, navigation, search, line, jump]
+  title:
+    cs: Vim navigace
+    en: Vim navigation
+  tags:
+    cs:
+    - vim
+    - navigace
+    - hledat
+    - řádek
+    - skok
+    en:
+    - vim
+    - navigation
+    - search
+    - line
+    - jump
   commands:
-    - cmd: "gg"
-      desc_cs: "Na začátek souboru"
-      desc_en: "Go to top of file"
-    - cmd: "G"
-      desc_cs: "Na konec souboru"
-      desc_en: "Go to end of file"
-    - cmd: ":42"
-      desc_cs: "Skočit na řádek 42"
-      desc_en: "Jump to line 42"
-    - cmd: "/hledej"
-      desc_cs: "Hledat dopředu (n = další)"
-      desc_en: "Search forward (n = next)"
-    - cmd: "?hledej"
-      desc_cs: "Hledat dozadu"
-      desc_en: "Search backward"
-    - cmd: "0"
-      desc_cs: "Na začátek řádku"
-      desc_en: "Start of line"
-    - cmd: "$"
-      desc_cs: "Na konec řádku"
-      desc_en: "End of line"
-
+  - cmd: gg
+    desc:
+      cs: Na začátek souboru
+      en: Go to top of file
+  - cmd: G
+    desc:
+      cs: Na konec souboru
+      en: Go to end of file
+  - cmd: :42
+    desc:
+      cs: Skočit na řádek 42
+      en: Jump to line 42
+  - cmd: /hledej
+    desc:
+      cs: Hledat dopředu (n = další)
+      en: Search forward (n = next)
+  - cmd: ?hledej
+    desc:
+      cs: Hledat dozadu
+      en: Search backward
+  - cmd: '0'
+    desc:
+      cs: Na začátek řádku
+      en: Start of line
+  - cmd: $
+    desc:
+      cs: Na konec řádku
+      en: End of line
 - id: nano-basics
-  title_cs: "Nano (jednodušší editor)"
-  title_en: "Nano (simpler editor)"
-  tags_cs: [nano, editor, jednoduchý]
-  tags_en: [nano, editor, simple]
+  title:
+    cs: Nano (jednodušší editor)
+    en: Nano (simpler editor)
+  tags:
+    cs:
+    - nano
+    - editor
+    - jednoduchý
+    en:
+    - nano
+    - editor
+    - simple
   commands:
-    - cmd: "nano soubor.txt"
-      desc_cs: "Otevřít soubor"
-      desc_en: "Open file"
-    - cmd: "Ctrl+O"
-      desc_cs: "Uložit"
-      desc_en: "Save"
-    - cmd: "Ctrl+X"
-      desc_cs: "Zavřít"
-      desc_en: "Exit"
-    - cmd: "Ctrl+W"
-      desc_cs: "Hledat"
-      desc_en: "Search"
-    - cmd: "Ctrl+K"
-      desc_cs: "Vyříznout řádek"
-      desc_en: "Cut line"
-    - cmd: "Ctrl+U"
-      desc_cs: "Vložit"
-      desc_en: "Paste"
+  - cmd: nano soubor.txt
+    desc:
+      cs: Otevřít soubor
+      en: Open file
+  - cmd: Ctrl+O
+    desc:
+      cs: Uložit
+      en: Save
+  - cmd: Ctrl+X
+    desc:
+      cs: Zavřít
+      en: Exit
+  - cmd: Ctrl+W
+    desc:
+      cs: Hledat
+      en: Search
+  - cmd: Ctrl+K
+    desc:
+      cs: Vyříznout řádek
+      en: Cut line
+  - cmd: Ctrl+U
+    desc:
+      cs: Vložit
+      en: Paste

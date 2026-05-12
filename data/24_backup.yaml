@@ -1,84 +1,145 @@
 - id: backup-rsync
-  title_cs: "Záloha přes rsync"
-  title_en: "Backup with rsync"
-  tags_cs: [rsync, záloha, backup, kopírovat, sync]
-  tags_en: [rsync, backup, sync, copy]
+  title:
+    cs: Záloha přes rsync
+    en: Backup with rsync
+  tags:
+    cs:
+    - rsync
+    - záloha
+    - backup
+    - kopírovat
+    - sync
+    en:
+    - rsync
+    - backup
+    - sync
+    - copy
   commands:
-    - cmd: "rsync -avh /zdroj/ /cil/"
-      desc_cs: "Základní lokální záloha"
-      desc_en: "Basic local backup"
-    - cmd: "rsync -avh --delete /zdroj/ /cil/"
-      desc_cs: "Včetně mazání souborů, které ve zdroji už nejsou (mirror)"
-      desc_en: "Include deletions (mirror)"
-    - cmd: "rsync -avzh -e ssh /zdroj/ user@host:/cil/"
-      desc_cs: "Vzdálená záloha přes SSH s kompresí"
-      desc_en: "Remote backup via SSH with compression"
-    - cmd: "rsync -avh --exclude='node_modules' /zdroj/ /cil/"
-      desc_cs: "S výjimkami"
-      desc_en: "With exclusions"
-    - cmd: "rsync -avh --progress --partial /zdroj/ /cil/"
-      desc_cs: "S progress barem a možností pokračovat"
-      desc_en: "With progress and resume capability"
-    - cmd: "rsync -avhn /zdroj/ /cil/"
-      desc_cs: "Dry-run (jen ukázat, co by udělal)"
-      desc_en: "Dry-run (preview only)"
-
+  - cmd: rsync -avh /zdroj/ /cil/
+    desc:
+      cs: Základní lokální záloha
+      en: Basic local backup
+  - cmd: rsync -avh --delete /zdroj/ /cil/
+    desc:
+      cs: Včetně mazání souborů, které ve zdroji už nejsou (mirror)
+      en: Include deletions (mirror)
+  - cmd: rsync -avzh -e ssh /zdroj/ user@host:/cil/
+    desc:
+      cs: Vzdálená záloha přes SSH s kompresí
+      en: Remote backup via SSH with compression
+  - cmd: rsync -avh --exclude='node_modules' /zdroj/ /cil/
+    desc:
+      cs: S výjimkami
+      en: With exclusions
+  - cmd: rsync -avh --progress --partial /zdroj/ /cil/
+    desc:
+      cs: S progress barem a možností pokračovat
+      en: With progress and resume capability
+  - cmd: rsync -avhn /zdroj/ /cil/
+    desc:
+      cs: Dry-run (jen ukázat, co by udělal)
+      en: Dry-run (preview only)
 - id: backup-tar
-  title_cs: "Záloha přes tar"
-  title_en: "Backup with tar"
-  tags_cs: [tar, záloha, backup, archiv]
-  tags_en: [tar, backup, archive]
+  title:
+    cs: Záloha přes tar
+    en: Backup with tar
+  tags:
+    cs:
+    - tar
+    - záloha
+    - backup
+    - archiv
+    en:
+    - tar
+    - backup
+    - archive
   commands:
-    - cmd: "tar czf zaloha-$(date +%Y%m%d).tar.gz /etc /home"
-      desc_cs: "Archív s datem v názvu"
-      desc_en: "Archive with date in name"
-    - cmd: "tar cjf zaloha.tar.bz2 /data"
-      desc_cs: "Lepší komprese (bzip2)"
-      desc_en: "Better compression (bzip2)"
-    - cmd: "tar cJf zaloha.tar.xz /data"
-      desc_cs: "Nejlepší komprese (xz, pomalé)"
-      desc_en: "Best compression (xz, slow)"
-    - cmd: "tar czf - /data | ssh host 'cat > zaloha.tar.gz'"
-      desc_cs: "Streamovat zálohu přes SSH"
-      desc_en: "Stream backup over SSH"
-
+  - cmd: tar czf zaloha-$(date +%Y%m%d).tar.gz /etc /home
+    desc:
+      cs: Archív s datem v názvu
+      en: Archive with date in name
+  - cmd: tar cjf zaloha.tar.bz2 /data
+    desc:
+      cs: Lepší komprese (bzip2)
+      en: Better compression (bzip2)
+  - cmd: tar cJf zaloha.tar.xz /data
+    desc:
+      cs: Nejlepší komprese (xz, pomalé)
+      en: Best compression (xz, slow)
+  - cmd: tar czf - /data | ssh host 'cat > zaloha.tar.gz'
+    desc:
+      cs: Streamovat zálohu přes SSH
+      en: Stream backup over SSH
 - id: restic
-  title_cs: "Restic (moderní zálohy s deduplikací)"
-  title_en: "Restic (modern dedup backup)"
-  tags_cs: [restic, záloha, backup, deduplikace, snapshot]
-  tags_en: [restic, backup, dedup, snapshot]
+  title:
+    cs: Restic (moderní zálohy s deduplikací)
+    en: Restic (modern dedup backup)
+  tags:
+    cs:
+    - restic
+    - záloha
+    - backup
+    - deduplikace
+    - snapshot
+    en:
+    - restic
+    - backup
+    - dedup
+    - snapshot
   commands:
-    - cmd: "restic init --repo /backups/repo"
-      desc_cs: "Inicializovat repozitář"
-      desc_en: "Initialize repository"
-    - cmd: "restic -r /backups/repo backup /data"
-      desc_cs: "Vytvořit zálohu (snapshot)"
-      desc_en: "Create backup (snapshot)"
-    - cmd: "restic -r /backups/repo snapshots"
-      desc_cs: "Seznam snapshotů"
-      desc_en: "List snapshots"
-    - cmd: "restic -r /backups/repo restore latest --target /obnova"
-      desc_cs: "Obnovit nejnovější snapshot"
-      desc_en: "Restore latest snapshot"
-    - cmd: "restic -r /backups/repo forget --keep-daily 7 --keep-weekly 4 --prune"
-      desc_cs: "Smazat staré + uvolnit místo"
-      desc_en: "Remove old + free space"
-
+  - cmd: restic init --repo /backups/repo
+    desc:
+      cs: Inicializovat repozitář
+      en: Initialize repository
+  - cmd: restic -r /backups/repo backup /data
+    desc:
+      cs: Vytvořit zálohu (snapshot)
+      en: Create backup (snapshot)
+  - cmd: restic -r /backups/repo snapshots
+    desc:
+      cs: Seznam snapshotů
+      en: List snapshots
+  - cmd: restic -r /backups/repo restore latest --target /obnova
+    desc:
+      cs: Obnovit nejnovější snapshot
+      en: Restore latest snapshot
+  - cmd: restic -r /backups/repo forget --keep-daily 7 --keep-weekly 4 --prune
+    desc:
+      cs: Smazat staré + uvolnit místo
+      en: Remove old + free space
 - id: dd-image
-  title_cs: "Image disku (dd)"
-  title_en: "Disk image (dd)"
-  tags_cs: [dd, image, klon, disk, sd karta, usb]
-  tags_en: [dd, image, clone, disk, sd card, usb]
+  title:
+    cs: Image disku (dd)
+    en: Disk image (dd)
+  tags:
+    cs:
+    - dd
+    - image
+    - klon
+    - disk
+    - sd karta
+    - usb
+    en:
+    - dd
+    - image
+    - clone
+    - disk
+    - sd card
+    - usb
   commands:
-    - cmd: "sudo dd if=/dev/sdb of=disk.img bs=4M status=progress"
-      desc_cs: "Vytvořit image disku (POZOR na zdroj!)"
-      desc_en: "Create disk image (CAREFUL with source!)"
-    - cmd: "sudo dd if=disk.img of=/dev/sdb bs=4M status=progress"
-      desc_cs: "Zapsat image na disk (PŘEPÍŠE!)"
-      desc_en: "Write image to disk (OVERWRITES!)"
-    - cmd: "sudo dd if=ubuntu.iso of=/dev/sdb bs=4M status=progress && sync"
-      desc_cs: "Vytvořit bootovací USB"
-      desc_en: "Create bootable USB"
-    - cmd: "sudo dd if=/dev/zero of=/dev/sdb bs=1M status=progress"
-      desc_cs: "Vynulovat celý disk (POZOR!)"
-      desc_en: "Zero out entire disk (CAREFUL!)"
+  - cmd: sudo dd if=/dev/sdb of=disk.img bs=4M status=progress
+    desc:
+      cs: Vytvořit image disku (POZOR na zdroj!)
+      en: Create disk image (CAREFUL with source!)
+  - cmd: sudo dd if=disk.img of=/dev/sdb bs=4M status=progress
+    desc:
+      cs: Zapsat image na disk (PŘEPÍŠE!)
+      en: Write image to disk (OVERWRITES!)
+  - cmd: sudo dd if=ubuntu.iso of=/dev/sdb bs=4M status=progress && sync
+    desc:
+      cs: Vytvořit bootovací USB
+      en: Create bootable USB
+  - cmd: sudo dd if=/dev/zero of=/dev/sdb bs=1M status=progress
+    desc:
+      cs: Vynulovat celý disk (POZOR!)
+      en: Zero out entire disk (CAREFUL!)

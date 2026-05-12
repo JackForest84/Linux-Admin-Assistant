@@ -1,71 +1,126 @@
 - id: curl-basic
-  title_cs: "curl - HTTP požadavky"
-  title_en: "curl - HTTP requests"
-  tags_cs: [curl, http, request, api, json, post, get]
-  tags_en: [curl, http, request, api, json, post, get]
+  title:
+    cs: curl - HTTP požadavky
+    en: curl - HTTP requests
+  tags:
+    cs:
+    - curl
+    - http
+    - request
+    - api
+    - json
+    - post
+    - get
+    en:
+    - curl
+    - http
+    - request
+    - api
+    - json
+    - post
+    - get
   commands:
-    - cmd: "curl https://api.example.com"
-      desc_cs: "GET požadavek"
-      desc_en: "GET request"
-    - cmd: "curl -i https://example.com"
-      desc_cs: "Včetně HTTP hlaviček odpovědi"
-      desc_en: "Include response headers"
-    - cmd: "curl -I https://example.com"
-      desc_cs: "Jen HEAD (hlavičky)"
-      desc_en: "HEAD only (headers)"
-    - cmd: "curl -L https://bit.ly/something"
-      desc_cs: "Následovat redirecty"
-      desc_en: "Follow redirects"
-    - cmd: "curl -s https://example.com | jq ."
-      desc_cs: "Tichý mód + pretty-print JSON"
-      desc_en: "Silent + pretty-print JSON"
-    - cmd: "curl -w 'HTTP %{http_code}\\nTime %{time_total}s\\n' -o /dev/null -s https://example.com"
-      desc_cs: "Měřit dobu odezvy"
-      desc_en: "Measure response time"
-
+  - cmd: curl https://api.example.com
+    desc:
+      cs: GET požadavek
+      en: GET request
+  - cmd: curl -i https://example.com
+    desc:
+      cs: Včetně HTTP hlaviček odpovědi
+      en: Include response headers
+  - cmd: curl -I https://example.com
+    desc:
+      cs: Jen HEAD (hlavičky)
+      en: HEAD only (headers)
+  - cmd: curl -L https://bit.ly/something
+    desc:
+      cs: Následovat redirecty
+      en: Follow redirects
+  - cmd: curl -s https://example.com | jq .
+    desc:
+      cs: Tichý mód + pretty-print JSON
+      en: Silent + pretty-print JSON
+  - cmd: curl -w 'HTTP %{http_code}\nTime %{time_total}s\n' -o /dev/null -s https://example.com
+    desc:
+      cs: Měřit dobu odezvy
+      en: Measure response time
 - id: curl-post
-  title_cs: "curl - POST a hlavičky"
-  title_en: "curl - POST and headers"
-  tags_cs: [curl, post, header, json, api, auth]
-  tags_en: [curl, post, header, json, api, auth]
+  title:
+    cs: curl - POST a hlavičky
+    en: curl - POST and headers
+  tags:
+    cs:
+    - curl
+    - post
+    - header
+    - json
+    - api
+    - auth
+    en:
+    - curl
+    - post
+    - header
+    - json
+    - api
+    - auth
   commands:
-    - cmd: "curl -X POST https://api.example.com/data"
-      desc_cs: "Prázdný POST"
-      desc_en: "Empty POST"
-    - cmd: "curl -X POST -H 'Content-Type: application/json' -d '{\"key\":\"val\"}' https://api.example.com"
-      desc_cs: "POST s JSON tělem"
-      desc_en: "POST with JSON body"
-    - cmd: "curl -X POST -d @data.json -H 'Content-Type: application/json' https://api.example.com"
-      desc_cs: "POST s tělem ze souboru"
-      desc_en: "POST with body from file"
-    - cmd: "curl -H 'Authorization: Bearer TOKEN' https://api.example.com"
-      desc_cs: "Autorizační hlavička (Bearer token)"
-      desc_en: "Authorization header (Bearer)"
-    - cmd: "curl -u user:heslo https://api.example.com"
-      desc_cs: "Basic auth"
-      desc_en: "Basic auth"
-    - cmd: "curl -F 'file=@obrazek.png' https://api.example.com/upload"
-      desc_cs: "Upload souboru (multipart)"
-      desc_en: "Upload file (multipart)"
-
+  - cmd: curl -X POST https://api.example.com/data
+    desc:
+      cs: Prázdný POST
+      en: Empty POST
+  - cmd: 'curl -X POST -H ''Content-Type: application/json'' -d ''{"key":"val"}'' https://api.example.com'
+    desc:
+      cs: POST s JSON tělem
+      en: POST with JSON body
+  - cmd: 'curl -X POST -d @data.json -H ''Content-Type: application/json'' https://api.example.com'
+    desc:
+      cs: POST s tělem ze souboru
+      en: POST with body from file
+  - cmd: 'curl -H ''Authorization: Bearer TOKEN'' https://api.example.com'
+    desc:
+      cs: Autorizační hlavička (Bearer token)
+      en: Authorization header (Bearer)
+  - cmd: curl -u user:heslo https://api.example.com
+    desc:
+      cs: Basic auth
+      en: Basic auth
+  - cmd: curl -F 'file=@obrazek.png' https://api.example.com/upload
+    desc:
+      cs: Upload souboru (multipart)
+      en: Upload file (multipart)
 - id: jq
-  title_cs: "jq - práce s JSON"
-  title_en: "jq - JSON processing"
-  tags_cs: [jq, json, zpracovat, filtr]
-  tags_en: [jq, json, filter, process]
+  title:
+    cs: jq - práce s JSON
+    en: jq - JSON processing
+  tags:
+    cs:
+    - jq
+    - json
+    - zpracovat
+    - filtr
+    en:
+    - jq
+    - json
+    - filter
+    - process
   commands:
-    - cmd: "cat data.json | jq ."
-      desc_cs: "Pretty-print JSON"
-      desc_en: "Pretty-print JSON"
-    - cmd: "cat data.json | jq '.users[].name'"
-      desc_cs: "Vypsat jména uživatelů"
-      desc_en: "Extract user names"
-    - cmd: "cat data.json | jq '.[] | select(.age > 30)'"
-      desc_cs: "Filtrovat podle podmínky"
-      desc_en: "Filter by condition"
-    - cmd: "cat data.json | jq -r '.token'"
-      desc_cs: "Raw výstup (bez uvozovek)"
-      desc_en: "Raw output (no quotes)"
-    - cmd: "cat data.json | jq 'length'"
-      desc_cs: "Počet prvků"
-      desc_en: "Number of elements"
+  - cmd: cat data.json | jq .
+    desc:
+      cs: Pretty-print JSON
+      en: Pretty-print JSON
+  - cmd: cat data.json | jq '.users[].name'
+    desc:
+      cs: Vypsat jména uživatelů
+      en: Extract user names
+  - cmd: cat data.json | jq '.[] | select(.age > 30)'
+    desc:
+      cs: Filtrovat podle podmínky
+      en: Filter by condition
+  - cmd: cat data.json | jq -r '.token'
+    desc:
+      cs: Raw výstup (bez uvozovek)
+      en: Raw output (no quotes)
+  - cmd: cat data.json | jq 'length'
+    desc:
+      cs: Počet prvků
+      en: Number of elements

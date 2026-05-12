@@ -1,133 +1,216 @@
 - id: postgres-basics
-  title_cs: "PostgreSQL - základ"
-  title_en: "PostgreSQL basics"
-  tags_cs: [postgres, postgresql, psql, databáze, sql]
-  tags_en: [postgres, postgresql, psql, database, sql]
+  title:
+    cs: PostgreSQL - základ
+    en: PostgreSQL basics
+  tags:
+    cs:
+    - postgres
+    - postgresql
+    - psql
+    - databáze
+    - sql
+    en:
+    - postgres
+    - postgresql
+    - psql
+    - database
+    - sql
   commands:
-    - cmd: "sudo -u postgres psql"
-      desc_cs: "Připojit jako superuser postgres"
-      desc_en: "Connect as postgres superuser"
-    - cmd: "psql -U user -d databaze -h localhost"
-      desc_cs: "Připojit ke konkrétní DB"
-      desc_en: "Connect to specific DB"
-    - cmd: "\\l"
-      desc_cs: "Seznam databází (uvnitř psql)"
-      desc_en: "List databases (inside psql)"
-    - cmd: "\\dt"
-      desc_cs: "Seznam tabulek"
-      desc_en: "List tables"
-    - cmd: "\\d tabulka"
-      desc_cs: "Popis tabulky"
-      desc_en: "Describe table"
-    - cmd: "\\du"
-      desc_cs: "Seznam uživatelů/rolí"
-      desc_en: "List users/roles"
-    - cmd: "\\q"
-      desc_cs: "Konec psql"
-      desc_en: "Quit psql"
-
+  - cmd: sudo -u postgres psql
+    desc:
+      cs: Připojit jako superuser postgres
+      en: Connect as postgres superuser
+  - cmd: psql -U user -d databaze -h localhost
+    desc:
+      cs: Připojit ke konkrétní DB
+      en: Connect to specific DB
+  - cmd: \l
+    desc:
+      cs: Seznam databází (uvnitř psql)
+      en: List databases (inside psql)
+  - cmd: \dt
+    desc:
+      cs: Seznam tabulek
+      en: List tables
+  - cmd: \d tabulka
+    desc:
+      cs: Popis tabulky
+      en: Describe table
+  - cmd: \du
+    desc:
+      cs: Seznam uživatelů/rolí
+      en: List users/roles
+  - cmd: \q
+    desc:
+      cs: Konec psql
+      en: Quit psql
 - id: postgres-admin
-  title_cs: "PostgreSQL - správa"
-  title_en: "PostgreSQL administration"
-  tags_cs: [postgres, create, drop, dump, backup, restore]
-  tags_en: [postgres, create, drop, dump, backup, restore]
+  title:
+    cs: PostgreSQL - správa
+    en: PostgreSQL administration
+  tags:
+    cs:
+    - postgres
+    - create
+    - drop
+    - dump
+    - backup
+    - restore
+    en:
+    - postgres
+    - create
+    - drop
+    - dump
+    - backup
+    - restore
   commands:
-    - cmd: "sudo -u postgres createdb mojeapp"
-      desc_cs: "Vytvořit novou databázi"
-      desc_en: "Create new database"
-    - cmd: "sudo -u postgres createuser -P uzivatel"
-      desc_cs: "Vytvořit uživatele (s heslem)"
-      desc_en: "Create user (with password)"
-    - cmd: "sudo -u postgres dropdb mojeapp"
-      desc_cs: "Smazat databázi"
-      desc_en: "Drop database"
-    - cmd: "pg_dump -U user mojeapp > backup.sql"
-      desc_cs: "Zálohovat DB do SQL souboru"
-      desc_en: "Backup DB to SQL file"
-    - cmd: "pg_dump -U user mojeapp | gzip > backup.sql.gz"
-      desc_cs: "Záloha s kompresí"
-      desc_en: "Backup with compression"
-    - cmd: "psql -U user mojeapp < backup.sql"
-      desc_cs: "Obnovit ze zálohy"
-      desc_en: "Restore from backup"
-
+  - cmd: sudo -u postgres createdb mojeapp
+    desc:
+      cs: Vytvořit novou databázi
+      en: Create new database
+  - cmd: sudo -u postgres createuser -P uzivatel
+    desc:
+      cs: Vytvořit uživatele (s heslem)
+      en: Create user (with password)
+  - cmd: sudo -u postgres dropdb mojeapp
+    desc:
+      cs: Smazat databázi
+      en: Drop database
+  - cmd: pg_dump -U user mojeapp > backup.sql
+    desc:
+      cs: Zálohovat DB do SQL souboru
+      en: Backup DB to SQL file
+  - cmd: pg_dump -U user mojeapp | gzip > backup.sql.gz
+    desc:
+      cs: Záloha s kompresí
+      en: Backup with compression
+  - cmd: psql -U user mojeapp < backup.sql
+    desc:
+      cs: Obnovit ze zálohy
+      en: Restore from backup
 - id: mysql-basics
-  title_cs: "MySQL / MariaDB"
-  title_en: "MySQL / MariaDB"
-  tags_cs: [mysql, mariadb, databáze, sql]
-  tags_en: [mysql, mariadb, database, sql]
+  title:
+    cs: MySQL / MariaDB
+    en: MySQL / MariaDB
+  tags:
+    cs:
+    - mysql
+    - mariadb
+    - databáze
+    - sql
+    en:
+    - mysql
+    - mariadb
+    - database
+    - sql
   commands:
-    - cmd: "sudo mysql"
-      desc_cs: "Připojit jako root (přes socket)"
-      desc_en: "Connect as root (via socket)"
-    - cmd: "mysql -u user -p databaze"
-      desc_cs: "Připojit s heslem"
-      desc_en: "Connect with password"
-    - cmd: "SHOW DATABASES;"
-      desc_cs: "Seznam databází"
-      desc_en: "List databases"
-    - cmd: "USE databaze;"
-      desc_cs: "Přepnout do databáze"
-      desc_en: "Switch to database"
-    - cmd: "SHOW TABLES;"
-      desc_cs: "Seznam tabulek"
-      desc_en: "List tables"
-    - cmd: "DESCRIBE tabulka;"
-      desc_cs: "Popis tabulky"
-      desc_en: "Describe table"
-    - cmd: "mysqldump -u root -p databaze > backup.sql"
-      desc_cs: "Zálohovat databázi"
-      desc_en: "Backup database"
-    - cmd: "mysql -u root -p databaze < backup.sql"
-      desc_cs: "Obnovit ze zálohy"
-      desc_en: "Restore from backup"
-
+  - cmd: sudo mysql
+    desc:
+      cs: Připojit jako root (přes socket)
+      en: Connect as root (via socket)
+  - cmd: mysql -u user -p databaze
+    desc:
+      cs: Připojit s heslem
+      en: Connect with password
+  - cmd: SHOW DATABASES;
+    desc:
+      cs: Seznam databází
+      en: List databases
+  - cmd: USE databaze;
+    desc:
+      cs: Přepnout do databáze
+      en: Switch to database
+  - cmd: SHOW TABLES;
+    desc:
+      cs: Seznam tabulek
+      en: List tables
+  - cmd: DESCRIBE tabulka;
+    desc:
+      cs: Popis tabulky
+      en: Describe table
+  - cmd: mysqldump -u root -p databaze > backup.sql
+    desc:
+      cs: Zálohovat databázi
+      en: Backup database
+  - cmd: mysql -u root -p databaze < backup.sql
+    desc:
+      cs: Obnovit ze zálohy
+      en: Restore from backup
 - id: redis-basics
-  title_cs: "Redis"
-  title_en: "Redis"
-  tags_cs: [redis, cache, key-value, klíč]
-  tags_en: [redis, cache, key-value, key]
+  title:
+    cs: Redis
+    en: Redis
+  tags:
+    cs:
+    - redis
+    - cache
+    - key-value
+    - klíč
+    en:
+    - redis
+    - cache
+    - key-value
+    - key
   commands:
-    - cmd: "redis-cli"
-      desc_cs: "Spustit Redis CLI"
-      desc_en: "Start Redis CLI"
-    - cmd: "redis-cli ping"
-      desc_cs: "Test, odpoví PONG"
-      desc_en: "Test, returns PONG"
-    - cmd: "SET klic 'hodnota'"
-      desc_cs: "Uložit hodnotu"
-      desc_en: "Store value"
-    - cmd: "GET klic"
-      desc_cs: "Načíst hodnotu"
-      desc_en: "Read value"
-    - cmd: "KEYS *"
-      desc_cs: "Všechny klíče (POZOR v produkci)"
-      desc_en: "All keys (CAREFUL in production)"
-    - cmd: "FLUSHDB"
-      desc_cs: "Smazat všechna data v aktuální DB"
-      desc_en: "Delete all data in current DB"
-    - cmd: "INFO memory"
-      desc_cs: "Spotřeba paměti"
-      desc_en: "Memory usage"
-
+  - cmd: redis-cli
+    desc:
+      cs: Spustit Redis CLI
+      en: Start Redis CLI
+  - cmd: redis-cli ping
+    desc:
+      cs: Test, odpoví PONG
+      en: Test, returns PONG
+  - cmd: SET klic 'hodnota'
+    desc:
+      cs: Uložit hodnotu
+      en: Store value
+  - cmd: GET klic
+    desc:
+      cs: Načíst hodnotu
+      en: Read value
+  - cmd: KEYS *
+    desc:
+      cs: Všechny klíče (POZOR v produkci)
+      en: All keys (CAREFUL in production)
+  - cmd: FLUSHDB
+    desc:
+      cs: Smazat všechna data v aktuální DB
+      en: Delete all data in current DB
+  - cmd: INFO memory
+    desc:
+      cs: Spotřeba paměti
+      en: Memory usage
 - id: sqlite-basics
-  title_cs: "SQLite"
-  title_en: "SQLite"
-  tags_cs: [sqlite, db, soubor]
-  tags_en: [sqlite, db, file]
+  title:
+    cs: SQLite
+    en: SQLite
+  tags:
+    cs:
+    - sqlite
+    - db
+    - soubor
+    en:
+    - sqlite
+    - db
+    - file
   commands:
-    - cmd: "sqlite3 data.db"
-      desc_cs: "Otevřít/vytvořit databázi"
-      desc_en: "Open/create database"
-    - cmd: ".tables"
-      desc_cs: "Seznam tabulek"
-      desc_en: "List tables"
-    - cmd: ".schema tabulka"
-      desc_cs: "Schéma tabulky"
-      desc_en: "Table schema"
-    - cmd: ".dump > backup.sql"
-      desc_cs: "Dump celé DB do SQL"
-      desc_en: "Dump entire DB to SQL"
-    - cmd: ".quit"
-      desc_cs: "Konec"
-      desc_en: "Quit"
+  - cmd: sqlite3 data.db
+    desc:
+      cs: Otevřít/vytvořit databázi
+      en: Open/create database
+  - cmd: .tables
+    desc:
+      cs: Seznam tabulek
+      en: List tables
+  - cmd: .schema tabulka
+    desc:
+      cs: Schéma tabulky
+      en: Table schema
+  - cmd: .dump > backup.sql
+    desc:
+      cs: Dump celé DB do SQL
+      en: Dump entire DB to SQL
+  - cmd: .quit
+    desc:
+      cs: Konec
+      en: Quit

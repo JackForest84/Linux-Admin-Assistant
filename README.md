@@ -1,104 +1,121 @@
 # linuxcmd
 
-**Česko-anglický cheatsheet linuxových příkazů** — zadáš co hledáš, dostaneš příkazy, jedním klikem zkopíruješ.
+**Multilingual Linux command cheatsheet** — type what you need, get the commands, click to copy.
 
-🌐 **[jakub.forejt.it](https://jakub.forejt.it)**
+🌐 [jakub.forejt.it](https://jakub.forejt.it)
 
 ---
 
-## Co to dělá
+## What it does
 
-- Hledáš česky nebo anglicky — najde příkazy
-- Funguje bez internetu (vše lokálně, SQLite FTS5)
-- Přepínač CS / EN
-- Klik na ikonku = příkaz ve schránce
-- **778 příkazů ve 36 kategoriích**
+- Search in plain language, find the right command — across **12 languages**
+- Works offline (everything is local, SQLite FTS5)
+- One click → command in your clipboard
+- 800+ commands across 36 categories
+- No AI, no cloud, no telemetry
 
-## Kategorie
+## Languages
 
-| Kategorie | Příklady |
+🇬🇧 English · 🇨🇿 Čeština · 🇸🇰 Slovenčina · 🇩🇪 Deutsch · 🇪🇸 Español · 🇫🇷 Français · 🇮🇹 Italiano · 🇵🇱 Polski · 🇹🇷 Türkçe · 🇵🇹 Português · 🇳🇱 Nederlands · 🇭🇺 Magyar
+
+> English and Czech are fully translated. Other languages fall back to English where translations are missing — contributions welcome (see below).
+
+## Categories
+
+| Category | Examples |
 |---|---|
 | Disk | df, du, lsblk, mount, LVM, swap |
-| Procesy | ps, top, kill, htop |
-| Síť | ip, ss, ufw, iptables, nmap, curl |
-| Systemd | start/stop/restart, journalctl, timery |
-| Balíčky | apt, dpkg |
-| Soubory | find, grep, chmod, rsync, tar, zip |
-| SSH | connect, klíče, tunel, scp |
+| Processes | ps, top, kill, htop |
+| Network | ip, ss, ufw, iptables, nmap, curl |
+| Systemd | start/stop/restart, journalctl, timers |
+| Packages | apt, dpkg |
+| Files | find, grep, chmod, rsync, tar, zip |
+| SSH | connect, keys, tunnel, scp |
 | Git | commit, branch, remote, log, stash |
 | Docker | ps, run, logs, compose, cleanup |
 | Kubernetes | pods, deployments, context |
 | Text | sed, awk, sort, cut, diff, wc |
-| Bash | history, pipes, aliasy, smyčky |
-| Vim / Nano | základy, navigace, úpravy |
-| Tmux | sessions, zkratky, screen |
-| Databáze | postgres, mysql, redis, sqlite |
-| Zálohy | rsync, tar, restic, dd |
-| Bezpečnost | fail2ban, openssl, certbot, gpg |
+| Bash | history, pipes, aliases, loops |
+| Vim / Nano | basics, navigation, editing |
+| Tmux | sessions, shortcuts, screen |
+| Databases | postgres, mysql, redis, sqlite |
+| Backup | rsync, tar, restic, dd |
+| Security | fail2ban, openssl, certbot, gpg |
 | Monitoring | iotop, iftop, tcpdump, benchmark |
 | Proxmox | pct, qm, cluster, vzdump |
-| Hardware | lshw, SMART, teploty |
-| + 16 dalších | ... |
+| Hardware | lshw, SMART, temperatures |
+| + 16 more | ... |
 
-## Stack
+## Tech stack
 
-- **Backend**: FastAPI + SQLite FTS5 (fulltext se diakritikou)
-- **Frontend**: Vanilla JS, bez frameworků
+- **Backend**: FastAPI + SQLite FTS5 (full-text search with diacritics handling per language)
+- **Frontend**: Vanilla JS, no frameworks
 - **Deploy**: systemd + nginx
-- **Data**: YAML soubory → snadno rozšiřitelné
+- **Data**: YAML files → easy to extend, easy to translate
 
-## Vlastní deploy (Debian / Ubuntu)
+## One-command install (Debian / Ubuntu)
 
-Jeden příkaz — nainstaluje vše automaticky (git clone, Python venv, systemd, nginx):
+Installs everything automatically (git clone, Python venv, systemd, nginx):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/JackForest84/Linux-Admin-Assistant/main/install.sh | sudo bash
 ```
 
-Po dokončení otevři `http://<IP-serveru>` v prohlížeči.
+Then open `http://<your-server-ip>` in your browser.
 
-### Ruční instalace
+### Manual install
 
 ```bash
-# Závislosti
 sudo apt install git python3-venv nginx
-
-# Projekt
 git clone https://github.com/JackForest84/Linux-Admin-Assistant.git /opt/linuxcmd
 cd /opt/linuxcmd
 python3 -m venv .venv
 .venv/bin/pip install -r app/requirements.txt
-
-# Systemd service
 sudo cp deploy/linuxcmd.service /etc/systemd/system/
 sudo systemctl enable --now linuxcmd
-
-# Nginx
 sudo cp deploy/nginx.conf /etc/nginx/sites-available/linuxcmd
 sudo ln -s /etc/nginx/sites-available/linuxcmd /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-## Přidat příkazy
+## Adding commands
 
-Uprav nebo přidej YAML soubor v `data/`:
+Edit or create a YAML file in `data/`:
 
 ```yaml
-- id: muj-prikaz
-  title_cs: "Název česky"
-  title_en: "Title in English"
-  tags_cs: [tag1, tag2]
-  tags_en: [tag1, tag2]
+- id: my-command
+  title:
+    en: "Title in English"
+    cs: "Název česky"
+    de: "Titel auf Deutsch"
+    # ... other languages
+  tags:
+    en: [tag1, tag2]
+    cs: [tag1, tag2]
+    # ... other languages
   commands:
-    - cmd: "prikaz --flag"
-      desc_cs: "Popis česky"
-      desc_en: "Description in English"
+    - cmd: "your --command --here"
+      desc:
+        en: "Description in English"
+        cs: "Popis česky"
+        # ... other languages
 ```
 
-Restart:
+Missing translations fall back to English. Restart the service:
+
 ```bash
 sudo systemctl restart linuxcmd
 ```
+
+## Contributing translations
+
+Want to help translate to your language? Pick a YAML file in `data/`, add your language to `title`, `tags`, and `desc` fields, and open a pull request. Even a single file or category helps.
+
+Supported language codes: `en`, `cs`, `sk`, `de`, `es`, `fr`, `it`, `pl`, `tr`, `pt`, `nl`, `hu`.
+
+## License
+
+Open source. Use it however you like.
 
 ---
 

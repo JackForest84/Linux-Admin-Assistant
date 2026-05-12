@@ -1,78 +1,138 @@
 - id: systemd-status
-  title_cs: "Stav služby"
-  title_en: "Service status"
-  tags_cs: [systemd, služba, service, status, stav]
-  tags_en: [systemd, service, status]
+  title:
+    cs: Stav služby
+    en: Service status
+  tags:
+    cs:
+    - systemd
+    - služba
+    - service
+    - status
+    - stav
+    en:
+    - systemd
+    - service
+    - status
   commands:
-    - cmd: "systemctl status nginx"
-      desc_cs: "Stav konkrétní služby"
-      desc_en: "Status of specific service"
-    - cmd: "systemctl is-active nginx"
-      desc_cs: "Jen 'active' / 'inactive'"
-      desc_en: "Just 'active' / 'inactive'"
-    - cmd: "systemctl is-enabled nginx"
-      desc_cs: "Zapnuto po startu?"
-      desc_en: "Enabled on boot?"
-
+  - cmd: systemctl status nginx
+    desc:
+      cs: Stav konkrétní služby
+      en: Status of specific service
+  - cmd: systemctl is-active nginx
+    desc:
+      cs: Jen 'active' / 'inactive'
+      en: Just 'active' / 'inactive'
+  - cmd: systemctl is-enabled nginx
+    desc:
+      cs: Zapnuto po startu?
+      en: Enabled on boot?
 - id: systemd-control
-  title_cs: "Ovládat službu (start/stop/restart)"
-  title_en: "Control service (start/stop/restart)"
-  tags_cs: [systemd, restart, start, stop, reload, služba]
-  tags_en: [systemd, restart, start, stop, reload, service]
+  title:
+    cs: Ovládat službu (start/stop/restart)
+    en: Control service (start/stop/restart)
+  tags:
+    cs:
+    - systemd
+    - restart
+    - start
+    - stop
+    - reload
+    - služba
+    en:
+    - systemd
+    - restart
+    - start
+    - stop
+    - reload
+    - service
   commands:
-    - cmd: "sudo systemctl start nginx"
-      desc_cs: "Spustit"
-      desc_en: "Start"
-    - cmd: "sudo systemctl stop nginx"
-      desc_cs: "Zastavit"
-      desc_en: "Stop"
-    - cmd: "sudo systemctl restart nginx"
-      desc_cs: "Restartovat"
-      desc_en: "Restart"
-    - cmd: "sudo systemctl reload nginx"
-      desc_cs: "Znovu načíst konfiguraci (bez restartu)"
-      desc_en: "Reload config (without restart)"
-    - cmd: "sudo systemctl enable --now nginx"
-      desc_cs: "Spustit + zapnout po startu systému"
-      desc_en: "Start + enable on boot"
-    - cmd: "sudo systemctl disable --now nginx"
-      desc_cs: "Zastavit + vypnout po startu"
-      desc_en: "Stop + disable on boot"
-
+  - cmd: sudo systemctl start nginx
+    desc:
+      cs: Spustit
+      en: Start
+  - cmd: sudo systemctl stop nginx
+    desc:
+      cs: Zastavit
+      en: Stop
+  - cmd: sudo systemctl restart nginx
+    desc:
+      cs: Restartovat
+      en: Restart
+  - cmd: sudo systemctl reload nginx
+    desc:
+      cs: Znovu načíst konfiguraci (bez restartu)
+      en: Reload config (without restart)
+  - cmd: sudo systemctl enable --now nginx
+    desc:
+      cs: Spustit + zapnout po startu systému
+      en: Start + enable on boot
+  - cmd: sudo systemctl disable --now nginx
+    desc:
+      cs: Zastavit + vypnout po startu
+      en: Stop + disable on boot
 - id: systemd-list
-  title_cs: "Seznam služeb"
-  title_en: "List services"
-  tags_cs: [systemd, seznam, služby, units, list]
-  tags_en: [systemd, list, services, units]
+  title:
+    cs: Seznam služeb
+    en: List services
+  tags:
+    cs:
+    - systemd
+    - seznam
+    - služby
+    - units
+    - list
+    en:
+    - systemd
+    - list
+    - services
+    - units
   commands:
-    - cmd: "systemctl list-units --type=service"
-      desc_cs: "Všechny běžící služby"
-      desc_en: "All running services"
-    - cmd: "systemctl list-units --type=service --state=failed"
-      desc_cs: "Selhané služby"
-      desc_en: "Failed services"
-    - cmd: "systemctl list-unit-files --state=enabled"
-      desc_cs: "Co se spouští po startu"
-      desc_en: "What starts on boot"
-
+  - cmd: systemctl list-units --type=service
+    desc:
+      cs: Všechny běžící služby
+      en: All running services
+  - cmd: systemctl list-units --type=service --state=failed
+    desc:
+      cs: Selhané služby
+      en: Failed services
+  - cmd: systemctl list-unit-files --state=enabled
+    desc:
+      cs: Co se spouští po startu
+      en: What starts on boot
 - id: systemd-logs
-  title_cs: "Logy ze systemd (journalctl)"
-  title_en: "Systemd logs (journalctl)"
-  tags_cs: [logy, journalctl, journal, log, chyby]
-  tags_en: [logs, journalctl, journal, errors]
+  title:
+    cs: Logy ze systemd (journalctl)
+    en: Systemd logs (journalctl)
+  tags:
+    cs:
+    - logy
+    - journalctl
+    - journal
+    - log
+    - chyby
+    en:
+    - logs
+    - journalctl
+    - journal
+    - errors
   commands:
-    - cmd: "journalctl -u nginx -n 100"
-      desc_cs: "Posledních 100 řádků logu nginxu"
-      desc_en: "Last 100 lines of nginx log"
-    - cmd: "journalctl -u nginx -f"
-      desc_cs: "Sledovat živě (jako tail -f)"
-      desc_en: "Follow live (like tail -f)"
-    - cmd: "journalctl --since '1 hour ago'"
-      desc_cs: "Vše za poslední hodinu"
-      desc_en: "Everything from last hour"
-    - cmd: "journalctl -p err -b"
-      desc_cs: "Jen chyby od posledního bootu"
-      desc_en: "Only errors since last boot"
-    - cmd: "journalctl --vacuum-time=7d"
-      desc_cs: "Smazat logy starší než 7 dní"
-      desc_en: "Delete logs older than 7 days"
+  - cmd: journalctl -u nginx -n 100
+    desc:
+      cs: Posledních 100 řádků logu nginxu
+      en: Last 100 lines of nginx log
+  - cmd: journalctl -u nginx -f
+    desc:
+      cs: Sledovat živě (jako tail -f)
+      en: Follow live (like tail -f)
+  - cmd: journalctl --since '1 hour ago'
+    desc:
+      cs: Vše za poslední hodinu
+      en: Everything from last hour
+  - cmd: journalctl -p err -b
+    desc:
+      cs: Jen chyby od posledního bootu
+      en: Only errors since last boot
+  - cmd: journalctl --vacuum-time=7d
+    desc:
+      cs: Smazat logy starší než 7 dní
+      en: Delete logs older than 7 days

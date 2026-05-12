@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,15 +11,25 @@
 <header>
   <div class="wrap">
     <h1>linux<span>cmd</span></h1>
-    <div class="lang">
-      <button data-lang="cs" class="active">CS</button>
-      <button data-lang="en">EN</button>
-    </div>
+    <select id="lang" aria-label="Language">
+      <option value="en">🇬🇧 English</option>
+      <option value="cs">🇨🇿 Čeština</option>
+      <option value="sk">🇸🇰 Slovenčina</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="pl">🇵🇱 Polski</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="pt">🇵🇹 Português</option>
+      <option value="nl">🇳🇱 Nederlands</option>
+      <option value="hu">🇭🇺 Magyar</option>
+    </select>
   </div>
 </header>
 <main class="wrap">
   <input id="q" type="search" autofocus
-    placeholder="Hledej: disk, procesy, síť, archiv…"
+    placeholder="Search: disk, processes, network, archive…"
     autocomplete="off" spellcheck="false">
   <div id="hint" class="hint"></div>
   <div id="results"></div>

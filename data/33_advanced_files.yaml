@@ -1,90 +1,153 @@
 - id: find-advanced
-  title_cs: "find - pokročilé použití"
-  title_en: "find - advanced usage"
-  tags_cs: [find, hledat, advanced, exec, pokročilé]
-  tags_en: [find, advanced, exec]
+  title:
+    cs: find - pokročilé použití
+    en: find - advanced usage
+  tags:
+    cs:
+    - find
+    - hledat
+    - advanced
+    - exec
+    - pokročilé
+    en:
+    - find
+    - advanced
+    - exec
   commands:
-    - cmd: "find . -name '*.log' -mtime +30 -delete"
-      desc_cs: "Smazat .log soubory starší než 30 dní"
-      desc_en: "Delete .log files older than 30 days"
-    - cmd: "find . -name '*.tmp' -exec rm {} +"
-      desc_cs: "Smazat všechny .tmp (efektivně)"
-      desc_en: "Delete all .tmp (efficiently)"
-    - cmd: "find . -type f -exec grep -l 'TODO' {} +"
-      desc_cs: "Najít soubory obsahující 'TODO'"
-      desc_en: "Find files containing 'TODO'"
-    - cmd: "find . -type f -name '*.jpg' -exec cp {} /backup/ \\;"
-      desc_cs: "Pro každý JPG: kopírovat do /backup"
-      desc_en: "For each JPG: copy to /backup"
-    - cmd: "find . -empty -type d"
-      desc_cs: "Najít prázdné adresáře"
-      desc_en: "Find empty directories"
-    - cmd: "find . -perm 777"
-      desc_cs: "Soubory s konkrétními právy"
-      desc_en: "Files with specific permissions"
-    - cmd: "find / -user pepa 2>/dev/null"
-      desc_cs: "Soubory patřící uživateli"
-      desc_en: "Files owned by user"
-    - cmd: "find . -newer reference.txt"
-      desc_cs: "Soubory novější než reference.txt"
-      desc_en: "Files newer than reference.txt"
-
+  - cmd: find . -name '*.log' -mtime +30 -delete
+    desc:
+      cs: Smazat .log soubory starší než 30 dní
+      en: Delete .log files older than 30 days
+  - cmd: find . -name '*.tmp' -exec rm {} +
+    desc:
+      cs: Smazat všechny .tmp (efektivně)
+      en: Delete all .tmp (efficiently)
+  - cmd: find . -type f -exec grep -l 'TODO' {} +
+    desc:
+      cs: Najít soubory obsahující 'TODO'
+      en: Find files containing 'TODO'
+  - cmd: find . -type f -name '*.jpg' -exec cp {} /backup/ \;
+    desc:
+      cs: 'Pro každý JPG: kopírovat do /backup'
+      en: 'For each JPG: copy to /backup'
+  - cmd: find . -empty -type d
+    desc:
+      cs: Najít prázdné adresáře
+      en: Find empty directories
+  - cmd: find . -perm 777
+    desc:
+      cs: Soubory s konkrétními právy
+      en: Files with specific permissions
+  - cmd: find / -user pepa 2>/dev/null
+    desc:
+      cs: Soubory patřící uživateli
+      en: Files owned by user
+  - cmd: find . -newer reference.txt
+    desc:
+      cs: Soubory novější než reference.txt
+      en: Files newer than reference.txt
 - id: rename-batch
-  title_cs: "Hromadné přejmenování"
-  title_en: "Batch renaming"
-  tags_cs: [rename, přejmenovat, hromadně, batch]
-  tags_en: [rename, batch, mass]
+  title:
+    cs: Hromadné přejmenování
+    en: Batch renaming
+  tags:
+    cs:
+    - rename
+    - přejmenovat
+    - hromadně
+    - batch
+    en:
+    - rename
+    - batch
+    - mass
   commands:
-    - cmd: "rename 's/\\.txt$/.md/' *.txt"
-      desc_cs: "Přejmenovat všechny .txt na .md (Perl rename)"
-      desc_en: "Rename all .txt to .md (Perl rename)"
-    - cmd: "for f in *.JPG; do mv \"$f\" \"${f%.JPG}.jpg\"; done"
-      desc_cs: "Přejmenovat .JPG → .jpg (bash)"
-      desc_en: "Rename .JPG → .jpg (bash)"
-    - cmd: "mmv 'foo_*' 'bar_#1'"
-      desc_cs: "S mmv: foo_X → bar_X (apt install mmv)"
-      desc_en: "Using mmv: foo_X → bar_X"
-
+  - cmd: rename 's/\.txt$/.md/' *.txt
+    desc:
+      cs: Přejmenovat všechny .txt na .md (Perl rename)
+      en: Rename all .txt to .md (Perl rename)
+  - cmd: for f in *.JPG; do mv "$f" "${f%.JPG}.jpg"; done
+    desc:
+      cs: Přejmenovat .JPG → .jpg (bash)
+      en: Rename .JPG → .jpg (bash)
+  - cmd: mmv 'foo_*' 'bar_#1'
+    desc:
+      cs: 'S mmv: foo_X → bar_X (apt install mmv)'
+      en: 'Using mmv: foo_X → bar_X'
 - id: file-meta
-  title_cs: "Metadata souborů"
-  title_en: "File metadata"
-  tags_cs: [stat, file, metadata, typ, info]
-  tags_en: [stat, file, metadata, type, info]
+  title:
+    cs: Metadata souborů
+    en: File metadata
+  tags:
+    cs:
+    - stat
+    - file
+    - metadata
+    - typ
+    - info
+    en:
+    - stat
+    - file
+    - metadata
+    - type
+    - info
   commands:
-    - cmd: "stat soubor.txt"
-      desc_cs: "Detail souboru (časy, práva, inode)"
-      desc_en: "File details (times, perms, inode)"
-    - cmd: "file soubor"
-      desc_cs: "Jaký typ souboru je to"
-      desc_en: "What type of file is it"
-    - cmd: "file -i soubor"
-      desc_cs: "MIME typ"
-      desc_en: "MIME type"
-    - cmd: "touch soubor"
-      desc_cs: "Vytvořit prázdný soubor / aktualizovat čas"
-      desc_en: "Create empty file / update timestamp"
-    - cmd: "touch -d '2025-01-01' soubor"
-      desc_cs: "Nastavit konkrétní čas souboru"
-      desc_en: "Set specific file timestamp"
-
+  - cmd: stat soubor.txt
+    desc:
+      cs: Detail souboru (časy, práva, inode)
+      en: File details (times, perms, inode)
+  - cmd: file soubor
+    desc:
+      cs: Jaký typ souboru je to
+      en: What type of file is it
+  - cmd: file -i soubor
+    desc:
+      cs: MIME typ
+      en: MIME type
+  - cmd: touch soubor
+    desc:
+      cs: Vytvořit prázdný soubor / aktualizovat čas
+      en: Create empty file / update timestamp
+  - cmd: touch -d '2025-01-01' soubor
+    desc:
+      cs: Nastavit konkrétní čas souboru
+      en: Set specific file timestamp
 - id: dd-loop
-  title_cs: "Loop soubory a virtuální disky"
-  title_en: "Loop files and virtual disks"
-  tags_cs: [loop, image, virtuální, disk, losetup, qemu]
-  tags_en: [loop, image, virtual, disk, losetup, qemu]
+  title:
+    cs: Loop soubory a virtuální disky
+    en: Loop files and virtual disks
+  tags:
+    cs:
+    - loop
+    - image
+    - virtuální
+    - disk
+    - losetup
+    - qemu
+    en:
+    - loop
+    - image
+    - virtual
+    - disk
+    - losetup
+    - qemu
   commands:
-    - cmd: "dd if=/dev/zero of=disk.img bs=1M count=100"
-      desc_cs: "Vytvořit prázdný 100 MB image"
-      desc_en: "Create empty 100 MB image"
-    - cmd: "sudo losetup -fP disk.img"
-      desc_cs: "Připojit jako loop zařízení"
-      desc_en: "Attach as loop device"
-    - cmd: "sudo losetup -a"
-      desc_cs: "Seznam aktivních loop"
-      desc_en: "List active loops"
-    - cmd: "sudo losetup -d /dev/loop0"
-      desc_cs: "Odpojit loop"
-      desc_en: "Detach loop"
-    - cmd: "sudo mount disk.img /mnt -o loop"
-      desc_cs: "Mountovat image přímo"
-      desc_en: "Mount image directly"
+  - cmd: dd if=/dev/zero of=disk.img bs=1M count=100
+    desc:
+      cs: Vytvořit prázdný 100 MB image
+      en: Create empty 100 MB image
+  - cmd: sudo losetup -fP disk.img
+    desc:
+      cs: Připojit jako loop zařízení
+      en: Attach as loop device
+  - cmd: sudo losetup -a
+    desc:
+      cs: Seznam aktivních loop
+      en: List active loops
+  - cmd: sudo losetup -d /dev/loop0
+    desc:
+      cs: Odpojit loop
+      en: Detach loop
+  - cmd: sudo mount disk.img /mnt -o loop
+    desc:
+      cs: Mountovat image přímo
+      en: Mount image directly

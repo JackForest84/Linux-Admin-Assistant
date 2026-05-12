@@ -1,3 +1,4 @@
+import json
 import sqlite3
 import unicodedata
 from pathlib import Path
@@ -10,7 +11,10 @@ from fastapi.staticfiles import StaticFiles
 BASE = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE / "data"
 STATIC_DIR = BASE / "static"
-DB_PATH = ":memory:"
+
+# Supported languages. First is primary (fallback).
+LANGS = ["en", "cs", "sk", "de", "es", "fr", "it", "pl", "tr", "pt", "nl", "hu"]
+PRIMARY = "en"
 
 app = FastAPI(title="linuxcmd")
 _conn: sqlite3.Connection | None = None
@@ -20,6 +24,22 @@ def strip_diacritics(s: str) -> str:
     return "".join(
         c for c in unicodedata.normalize("NFKD", s) if not unicodedata.combining(c)
     ).lower()
+
+
+def get_lang_field(entry: dict, field: str, lang: str) -> str | list:
+    """Get field for given lang, fallback to primary lang, then any available."""
+    val = entry.get(field, {})
+    if isinstance(val, dict):
+        if lang in val and val[lang]:
+            return val[lang]
+        if PRIMARY in val and val[PRIMARY]:
+            return val[PRIMARY]
+        for k in LANGS:
+            if k in val and val[k]:
+                return val[k]
+        return "" if field != "tags" else []
+    # Legacy flat string (shouldn't happen after migration)
+    return val or ("" if field != "tags" else [])
 
 
 def load_data() -> list[dict]:
@@ -34,46 +54,43 @@ def load_data() -> list[dict]:
 
 
 def build_db() -> sqlite3.Connection:
-    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
-    conn.execute("""
+    conn = sqlite3.connect(":memory:", check_same_thread=False)
+    search_cols = ", ".join(f"search_{l}" for l in LANGS)
+    conn.execute(f"""
         CREATE VIRTUAL TABLE cmd USING fts5(
             id UNINDEXED,
             category UNINDEXED,
-            title_cs, title_en,
-            tags_cs, tags_en,
-            search_cs, search_en,
+            {search_cols},
             payload UNINDEXED,
             tokenize = "unicode61 remove_diacritics 2"
         )
     """)
     items = load_data()
-    import json
 
     for it in items:
-        title_cs = it.get("title_cs", "")
-        title_en = it.get("title_en", "")
-        tags_cs = " ".join(it.get("tags_cs", []) or [])
-        tags_en = " ".join(it.get("tags_en", []) or [])
-        cmds_text = " ".join(
-            (c.get("cmd", "") + " " + c.get("desc_cs", "") + " " + c.get("desc_en", ""))
-            for c in it.get("commands", [])
+        search_per_lang = {}
+        for lang in LANGS:
+            title = get_lang_field(it, "title", lang)
+            tags = get_lang_field(it, "tags", lang) or []
+            if isinstance(tags, list):
+                tags_text = " ".join(tags)
+            else:
+                tags_text = str(tags)
+            cmds_text = " ".join(
+                (c.get("cmd", "") + " " + get_lang_field(c, "desc", lang))
+                for c in it.get("commands", [])
+            )
+            search_per_lang[lang] = f"{title} {tags_text} {cmds_text}"
+
+        cols = ", ".join(["id", "category"] + [f"search_{l}" for l in LANGS] + ["payload"])
+        placeholders = ", ".join(["?"] * (3 + len(LANGS)))
+        values = (
+            it.get("id", ""),
+            it.get("_category", ""),
+            *[search_per_lang[l] for l in LANGS],
+            json.dumps(it, ensure_ascii=False),
         )
-        search_cs = f"{title_cs} {tags_cs} {cmds_text}"
-        search_en = f"{title_en} {tags_en} {cmds_text}"
-        conn.execute(
-            "INSERT INTO cmd VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-            (
-                it.get("id", ""),
-                it.get("_category", ""),
-                title_cs,
-                title_en,
-                tags_cs,
-                tags_en,
-                search_cs,
-                search_en,
-                json.dumps(it, ensure_ascii=False),
-            ),
-        )
+        conn.execute(f"INSERT INTO cmd ({cols}) VALUES ({placeholders})", values)
     conn.commit()
     return conn
 
@@ -84,11 +101,28 @@ def startup():
     _conn = build_db()
 
 
-@app.get("/api/search")
-def search(q: str = Query(default=""), lang: str = Query(default="cs"), limit: int = 30):
-    import json
+def localize_entry(entry: dict, lang: str) -> dict:
+    """Return entry with localized title/desc/tags for the chosen lang."""
+    out = {
+        "id": entry.get("id", ""),
+        "category": entry.get("category", entry.get("_category", "")),
+        "title": get_lang_field(entry, "title", lang),
+        "tags": get_lang_field(entry, "tags", lang) or [],
+        "commands": [],
+    }
+    for c in entry.get("commands", []):
+        out["commands"].append({
+            "cmd": c.get("cmd", ""),
+            "desc": get_lang_field(c, "desc", lang),
+        })
+    return out
 
+
+@app.get("/api/search")
+def search(q: str = Query(default=""), lang: str = Query(default=PRIMARY), limit: int = 30):
     assert _conn is not None
+    if lang not in LANGS:
+        lang = PRIMARY
     q = q.strip()
     if not q:
         rows = _conn.execute(
@@ -97,7 +131,7 @@ def search(q: str = Query(default=""), lang: str = Query(default="cs"), limit: i
     else:
         terms = [strip_diacritics(t) for t in q.split() if t]
         fts_q = " ".join(f'"{t}"*' for t in terms)
-        col = "search_cs" if lang == "cs" else "search_en"
+        col = f"search_{lang}"
         try:
             rows = _conn.execute(
                 f"SELECT payload, category FROM cmd WHERE {col} MATCH ? ORDER BY bm25(cmd) LIMIT ?",
@@ -107,10 +141,15 @@ def search(q: str = Query(default=""), lang: str = Query(default="cs"), limit: i
             rows = []
     results = []
     for payload, category in rows:
-        item = json.loads(payload)
-        item["category"] = category
-        results.append(item)
-    return JSONResponse({"results": results, "count": len(results)})
+        entry = json.loads(payload)
+        entry["category"] = category
+        results.append(localize_entry(entry, lang))
+    return JSONResponse({"results": results, "count": len(results), "lang": lang})
+
+
+@app.get("/api/languages")
+def languages():
+    return {"languages": LANGS, "primary": PRIMARY}
 
 
 @app.get("/api/categories")

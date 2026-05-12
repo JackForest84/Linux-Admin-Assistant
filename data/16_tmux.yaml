@@ -1,71 +1,118 @@
 - id: tmux-basic
-  title_cs: "Tmux základy"
-  title_en: "Tmux basics"
-  tags_cs: [tmux, terminál, session, panely]
-  tags_en: [tmux, terminal, session, panes]
+  title:
+    cs: Tmux základy
+    en: Tmux basics
+  tags:
+    cs:
+    - tmux
+    - terminál
+    - session
+    - panely
+    en:
+    - tmux
+    - terminal
+    - session
+    - panes
   commands:
-    - cmd: "tmux"
-      desc_cs: "Spustit novou session"
-      desc_en: "Start new session"
-    - cmd: "tmux new -s prace"
-      desc_cs: "Pojmenovaná session 'prace'"
-      desc_en: "Named session 'prace'"
-    - cmd: "tmux ls"
-      desc_cs: "Seznam aktivních sessions"
-      desc_en: "List active sessions"
-    - cmd: "tmux attach -t prace"
-      desc_cs: "Připojit zpět k session 'prace'"
-      desc_en: "Reattach to session 'prace'"
-    - cmd: "tmux kill-session -t prace"
-      desc_cs: "Ukončit konkrétní session"
-      desc_en: "Kill specific session"
-
+  - cmd: tmux
+    desc:
+      cs: Spustit novou session
+      en: Start new session
+  - cmd: tmux new -s prace
+    desc:
+      cs: Pojmenovaná session 'prace'
+      en: Named session 'prace'
+  - cmd: tmux ls
+    desc:
+      cs: Seznam aktivních sessions
+      en: List active sessions
+  - cmd: tmux attach -t prace
+    desc:
+      cs: Připojit zpět k session 'prace'
+      en: Reattach to session 'prace'
+  - cmd: tmux kill-session -t prace
+    desc:
+      cs: Ukončit konkrétní session
+      en: Kill specific session
 - id: tmux-keys
-  title_cs: "Tmux klávesové zkratky (prefix Ctrl+b)"
-  title_en: "Tmux key bindings (prefix Ctrl+b)"
-  tags_cs: [tmux, zkratky, prefix, klávesy, panely, okna]
-  tags_en: [tmux, shortcuts, prefix, keys, panes, windows]
+  title:
+    cs: Tmux klávesové zkratky (prefix Ctrl+b)
+    en: Tmux key bindings (prefix Ctrl+b)
+  tags:
+    cs:
+    - tmux
+    - zkratky
+    - prefix
+    - klávesy
+    - panely
+    - okna
+    en:
+    - tmux
+    - shortcuts
+    - prefix
+    - keys
+    - panes
+    - windows
   commands:
-    - cmd: "Ctrl+b d"
-      desc_cs: "Detach (odpojit, ale session běží dál)"
-      desc_en: "Detach (session keeps running)"
-    - cmd: "Ctrl+b %"
-      desc_cs: "Rozdělit panel vertikálně"
-      desc_en: "Split pane vertically"
-    - cmd: "Ctrl+b \""
-      desc_cs: "Rozdělit panel horizontálně"
-      desc_en: "Split pane horizontally"
-    - cmd: "Ctrl+b šipka"
-      desc_cs: "Přepnout mezi panely"
-      desc_en: "Switch between panes"
-    - cmd: "Ctrl+b c"
-      desc_cs: "Vytvořit nové okno"
-      desc_en: "Create new window"
-    - cmd: "Ctrl+b n"
-      desc_cs: "Další okno"
-      desc_en: "Next window"
-    - cmd: "Ctrl+b ,"
-      desc_cs: "Přejmenovat okno"
-      desc_en: "Rename window"
-    - cmd: "Ctrl+b x"
-      desc_cs: "Zavřít panel"
-      desc_en: "Close pane"
-
+  - cmd: Ctrl+b d
+    desc:
+      cs: Detach (odpojit, ale session běží dál)
+      en: Detach (session keeps running)
+  - cmd: Ctrl+b %
+    desc:
+      cs: Rozdělit panel vertikálně
+      en: Split pane vertically
+  - cmd: Ctrl+b "
+    desc:
+      cs: Rozdělit panel horizontálně
+      en: Split pane horizontally
+  - cmd: Ctrl+b šipka
+    desc:
+      cs: Přepnout mezi panely
+      en: Switch between panes
+  - cmd: Ctrl+b c
+    desc:
+      cs: Vytvořit nové okno
+      en: Create new window
+  - cmd: Ctrl+b n
+    desc:
+      cs: Další okno
+      en: Next window
+  - cmd: Ctrl+b ,
+    desc:
+      cs: Přejmenovat okno
+      en: Rename window
+  - cmd: Ctrl+b x
+    desc:
+      cs: Zavřít panel
+      en: Close pane
 - id: screen-basic
-  title_cs: "Screen (alternativa k tmux)"
-  title_en: "Screen (tmux alternative)"
-  tags_cs: [screen, terminál, session]
-  tags_en: [screen, terminal, session]
+  title:
+    cs: Screen (alternativa k tmux)
+    en: Screen (tmux alternative)
+  tags:
+    cs:
+    - screen
+    - terminál
+    - session
+    en:
+    - screen
+    - terminal
+    - session
   commands:
-    - cmd: "screen -S prace"
-      desc_cs: "Nová pojmenovaná session"
-      desc_en: "New named session"
-    - cmd: "screen -ls"
-      desc_cs: "Seznam sessions"
-      desc_en: "List sessions"
-    - cmd: "screen -r prace"
-      desc_cs: "Připojit zpět"
-      desc_en: "Reattach"
-    - cmd: "Ctrl+a d"
-      desc_cs: "Detach"
-      desc_en: "Detach"
+  - cmd: screen -S prace
+    desc:
+      cs: Nová pojmenovaná session
+      en: New named session
+  - cmd: screen -ls
+    desc:
+      cs: Seznam sessions
+      en: List sessions
+  - cmd: screen -r prace
+    desc:
+      cs: Připojit zpět
+      en: Reattach
+  - cmd: Ctrl+a d
+    desc:
+      cs: Detach
+      en: Detach

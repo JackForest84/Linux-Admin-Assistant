@@ -1,77 +1,130 @@
 - id: kubectl-pods
-  title_cs: "Kubernetes - pody"
-  title_en: "Kubernetes - pods"
-  tags_cs: [kubernetes, k8s, kubectl, pod, kontejner]
-  tags_en: [kubernetes, k8s, kubectl, pod, container]
+  title:
+    cs: Kubernetes - pody
+    en: Kubernetes - pods
+  tags:
+    cs:
+    - kubernetes
+    - k8s
+    - kubectl
+    - pod
+    - kontejner
+    en:
+    - kubernetes
+    - k8s
+    - kubectl
+    - pod
+    - container
   commands:
-    - cmd: "kubectl get pods"
-      desc_cs: "Seznam podů v aktuálním namespace"
-      desc_en: "List pods in current namespace"
-    - cmd: "kubectl get pods -A"
-      desc_cs: "Pody ve všech namespace"
-      desc_en: "Pods in all namespaces"
-    - cmd: "kubectl get pods -o wide"
-      desc_cs: "Vč. IP, node, atd."
-      desc_en: "Including IP, node, etc."
-    - cmd: "kubectl describe pod nazev"
-      desc_cs: "Detail podu (events, mounty)"
-      desc_en: "Pod details (events, mounts)"
-    - cmd: "kubectl logs nazev -f"
-      desc_cs: "Sledovat logy podu živě"
-      desc_en: "Follow pod logs live"
-    - cmd: "kubectl exec -it nazev -- bash"
-      desc_cs: "Shell uvnitř podu"
-      desc_en: "Shell inside pod"
-    - cmd: "kubectl delete pod nazev"
-      desc_cs: "Smazat pod (deployment ho znovu vytvoří)"
-      desc_en: "Delete pod (deployment recreates)"
-
+  - cmd: kubectl get pods
+    desc:
+      cs: Seznam podů v aktuálním namespace
+      en: List pods in current namespace
+  - cmd: kubectl get pods -A
+    desc:
+      cs: Pody ve všech namespace
+      en: Pods in all namespaces
+  - cmd: kubectl get pods -o wide
+    desc:
+      cs: Vč. IP, node, atd.
+      en: Including IP, node, etc.
+  - cmd: kubectl describe pod nazev
+    desc:
+      cs: Detail podu (events, mounty)
+      en: Pod details (events, mounts)
+  - cmd: kubectl logs nazev -f
+    desc:
+      cs: Sledovat logy podu živě
+      en: Follow pod logs live
+  - cmd: kubectl exec -it nazev -- bash
+    desc:
+      cs: Shell uvnitř podu
+      en: Shell inside pod
+  - cmd: kubectl delete pod nazev
+    desc:
+      cs: Smazat pod (deployment ho znovu vytvoří)
+      en: Delete pod (deployment recreates)
 - id: kubectl-deploy
-  title_cs: "Kubernetes - deployments a služby"
-  title_en: "Kubernetes - deployments and services"
-  tags_cs: [kubernetes, deployment, service, scale, apply]
-  tags_en: [kubernetes, deployment, service, scale, apply]
+  title:
+    cs: Kubernetes - deployments a služby
+    en: Kubernetes - deployments and services
+  tags:
+    cs:
+    - kubernetes
+    - deployment
+    - service
+    - scale
+    - apply
+    en:
+    - kubernetes
+    - deployment
+    - service
+    - scale
+    - apply
   commands:
-    - cmd: "kubectl apply -f deployment.yaml"
-      desc_cs: "Vytvořit/aktualizovat z YAML"
-      desc_en: "Create/update from YAML"
-    - cmd: "kubectl delete -f deployment.yaml"
-      desc_cs: "Smazat resources z YAML"
-      desc_en: "Delete resources from YAML"
-    - cmd: "kubectl get deployments"
-      desc_cs: "Seznam deploymentů"
-      desc_en: "List deployments"
-    - cmd: "kubectl scale deployment web --replicas=3"
-      desc_cs: "Změnit počet replik"
-      desc_en: "Change replica count"
-    - cmd: "kubectl rollout restart deployment web"
-      desc_cs: "Rolling restart (postupně)"
-      desc_en: "Rolling restart"
-    - cmd: "kubectl rollout undo deployment web"
-      desc_cs: "Vrátit poslední změnu"
-      desc_en: "Undo last change"
-    - cmd: "kubectl get svc"
-      desc_cs: "Seznam služeb (services)"
-      desc_en: "List services"
-
+  - cmd: kubectl apply -f deployment.yaml
+    desc:
+      cs: Vytvořit/aktualizovat z YAML
+      en: Create/update from YAML
+  - cmd: kubectl delete -f deployment.yaml
+    desc:
+      cs: Smazat resources z YAML
+      en: Delete resources from YAML
+  - cmd: kubectl get deployments
+    desc:
+      cs: Seznam deploymentů
+      en: List deployments
+  - cmd: kubectl scale deployment web --replicas=3
+    desc:
+      cs: Změnit počet replik
+      en: Change replica count
+  - cmd: kubectl rollout restart deployment web
+    desc:
+      cs: Rolling restart (postupně)
+      en: Rolling restart
+  - cmd: kubectl rollout undo deployment web
+    desc:
+      cs: Vrátit poslední změnu
+      en: Undo last change
+  - cmd: kubectl get svc
+    desc:
+      cs: Seznam služeb (services)
+      en: List services
 - id: kubectl-context
-  title_cs: "Kubernetes - context a namespace"
-  title_en: "Kubernetes - context and namespace"
-  tags_cs: [kubectl, context, namespace, cluster, kubeconfig]
-  tags_en: [kubectl, context, namespace, cluster, kubeconfig]
+  title:
+    cs: Kubernetes - context a namespace
+    en: Kubernetes - context and namespace
+  tags:
+    cs:
+    - kubectl
+    - context
+    - namespace
+    - cluster
+    - kubeconfig
+    en:
+    - kubectl
+    - context
+    - namespace
+    - cluster
+    - kubeconfig
   commands:
-    - cmd: "kubectl config get-contexts"
-      desc_cs: "Dostupné contexty (clustery)"
-      desc_en: "Available contexts (clusters)"
-    - cmd: "kubectl config use-context jmeno"
-      desc_cs: "Přepnout context"
-      desc_en: "Switch context"
-    - cmd: "kubectl get ns"
-      desc_cs: "Seznam namespace"
-      desc_en: "List namespaces"
-    - cmd: "kubectl config set-context --current --namespace=prod"
-      desc_cs: "Nastavit výchozí namespace"
-      desc_en: "Set default namespace"
-    - cmd: "kubectl cluster-info"
-      desc_cs: "Info o clusteru"
-      desc_en: "Cluster info"
+  - cmd: kubectl config get-contexts
+    desc:
+      cs: Dostupné contexty (clustery)
+      en: Available contexts (clusters)
+  - cmd: kubectl config use-context jmeno
+    desc:
+      cs: Přepnout context
+      en: Switch context
+  - cmd: kubectl get ns
+    desc:
+      cs: Seznam namespace
+      en: List namespaces
+  - cmd: kubectl config set-context --current --namespace=prod
+    desc:
+      cs: Nastavit výchozí namespace
+      en: Set default namespace
+  - cmd: kubectl cluster-info
+    desc:
+      cs: Info o clusteru
+      en: Cluster info

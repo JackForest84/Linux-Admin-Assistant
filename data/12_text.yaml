@@ -1,137 +1,235 @@
 - id: text-view
-  title_cs: "Zobrazit obsah souboru"
-  title_en: "Show file contents"
-  tags_cs: [cat, less, head, tail, zobrazit, soubor, obsah]
-  tags_en: [cat, less, head, tail, show, file, content]
+  title:
+    cs: Zobrazit obsah souboru
+    en: Show file contents
+  tags:
+    cs:
+    - cat
+    - less
+    - head
+    - tail
+    - zobrazit
+    - soubor
+    - obsah
+    en:
+    - cat
+    - less
+    - head
+    - tail
+    - show
+    - file
+    - content
   commands:
-    - cmd: "cat soubor.txt"
-      desc_cs: "Vypsat celý soubor"
-      desc_en: "Output entire file"
-    - cmd: "less soubor.txt"
-      desc_cs: "Stránkování (q pro konec, / pro hledání)"
-      desc_en: "Paged view (q to quit, / to search)"
-    - cmd: "head -20 soubor.txt"
-      desc_cs: "Prvních 20 řádků"
-      desc_en: "First 20 lines"
-    - cmd: "tail -50 soubor.txt"
-      desc_cs: "Posledních 50 řádků"
-      desc_en: "Last 50 lines"
-    - cmd: "tail -f /var/log/syslog"
-      desc_cs: "Sledovat živě (jako logy)"
-      desc_en: "Follow live (like logs)"
-    - cmd: "tac soubor.txt"
-      desc_cs: "Soubor pozpátku"
-      desc_en: "File reversed"
-
+  - cmd: cat soubor.txt
+    desc:
+      cs: Vypsat celý soubor
+      en: Output entire file
+  - cmd: less soubor.txt
+    desc:
+      cs: Stránkování (q pro konec, / pro hledání)
+      en: Paged view (q to quit, / to search)
+  - cmd: head -20 soubor.txt
+    desc:
+      cs: Prvních 20 řádků
+      en: First 20 lines
+  - cmd: tail -50 soubor.txt
+    desc:
+      cs: Posledních 50 řádků
+      en: Last 50 lines
+  - cmd: tail -f /var/log/syslog
+    desc:
+      cs: Sledovat živě (jako logy)
+      en: Follow live (like logs)
+  - cmd: tac soubor.txt
+    desc:
+      cs: Soubor pozpátku
+      en: File reversed
 - id: text-sed
-  title_cs: "sed (úprava textu)"
-  title_en: "sed (text manipulation)"
-  tags_cs: [sed, nahradit, replace, úprava, regex]
-  tags_en: [sed, replace, substitute, regex]
+  title:
+    cs: sed (úprava textu)
+    en: sed (text manipulation)
+  tags:
+    cs:
+    - sed
+    - nahradit
+    - replace
+    - úprava
+    - regex
+    en:
+    - sed
+    - replace
+    - substitute
+    - regex
   commands:
-    - cmd: "sed 's/staré/nové/g' soubor.txt"
-      desc_cs: "Nahradit text (jen výstup, nemění soubor)"
-      desc_en: "Replace text (output only, no edit)"
-    - cmd: "sed -i 's/staré/nové/g' soubor.txt"
-      desc_cs: "Nahradit přímo v souboru"
-      desc_en: "Replace in-place"
-    - cmd: "sed -i.bak 's/old/new/g' soubor.txt"
-      desc_cs: "Se zálohou (.bak)"
-      desc_en: "With backup (.bak)"
-    - cmd: "sed -n '10,20p' soubor.txt"
-      desc_cs: "Vypsat jen řádky 10-20"
-      desc_en: "Print only lines 10-20"
-    - cmd: "sed '/^#/d' soubor.conf"
-      desc_cs: "Smazat řádky začínající '#'"
-      desc_en: "Delete lines starting with '#'"
-
+  - cmd: sed 's/staré/nové/g' soubor.txt
+    desc:
+      cs: Nahradit text (jen výstup, nemění soubor)
+      en: Replace text (output only, no edit)
+  - cmd: sed -i 's/staré/nové/g' soubor.txt
+    desc:
+      cs: Nahradit přímo v souboru
+      en: Replace in-place
+  - cmd: sed -i.bak 's/old/new/g' soubor.txt
+    desc:
+      cs: Se zálohou (.bak)
+      en: With backup (.bak)
+  - cmd: sed -n '10,20p' soubor.txt
+    desc:
+      cs: Vypsat jen řádky 10-20
+      en: Print only lines 10-20
+  - cmd: sed '/^#/d' soubor.conf
+    desc:
+      cs: Smazat řádky začínající '#'
+      en: Delete lines starting with '#'
 - id: text-awk
-  title_cs: "awk (zpracování sloupců)"
-  title_en: "awk (column processing)"
-  tags_cs: [awk, sloupce, columns, zpracování]
-  tags_en: [awk, columns, processing]
+  title:
+    cs: awk (zpracování sloupců)
+    en: awk (column processing)
+  tags:
+    cs:
+    - awk
+    - sloupce
+    - columns
+    - zpracování
+    en:
+    - awk
+    - columns
+    - processing
   commands:
-    - cmd: "awk '{print $1}' soubor.txt"
-      desc_cs: "První sloupec"
-      desc_en: "First column"
-    - cmd: "awk -F',' '{print $2}' data.csv"
-      desc_cs: "2. sloupec z CSV"
-      desc_en: "2nd column from CSV"
-    - cmd: "awk '$3 > 100' data.txt"
-      desc_cs: "Řádky, kde je 3. sloupec > 100"
-      desc_en: "Lines where column 3 > 100"
-    - cmd: "awk '{sum+=$1} END {print sum}' cisla.txt"
-      desc_cs: "Součet 1. sloupce"
-      desc_en: "Sum of column 1"
-    - cmd: "ps aux | awk '{print $11}' | sort | uniq -c | sort -rn"
-      desc_cs: "Počet instancí každého procesu"
-      desc_en: "Count of each process"
-
+  - cmd: awk '{print $1}' soubor.txt
+    desc:
+      cs: První sloupec
+      en: First column
+  - cmd: awk -F',' '{print $2}' data.csv
+    desc:
+      cs: 2. sloupec z CSV
+      en: 2nd column from CSV
+  - cmd: awk '$3 > 100' data.txt
+    desc:
+      cs: Řádky, kde je 3. sloupec > 100
+      en: Lines where column 3 > 100
+  - cmd: awk '{sum+=$1} END {print sum}' cisla.txt
+    desc:
+      cs: Součet 1. sloupce
+      en: Sum of column 1
+  - cmd: ps aux | awk '{print $11}' | sort | uniq -c | sort -rn
+    desc:
+      cs: Počet instancí každého procesu
+      en: Count of each process
 - id: text-sort
-  title_cs: "Řadit a deduplikovat"
-  title_en: "Sort and deduplicate"
-  tags_cs: [sort, uniq, řadit, deduplikovat, duplikáty]
-  tags_en: [sort, uniq, sort, dedupe, duplicates]
+  title:
+    cs: Řadit a deduplikovat
+    en: Sort and deduplicate
+  tags:
+    cs:
+    - sort
+    - uniq
+    - řadit
+    - deduplikovat
+    - duplikáty
+    en:
+    - sort
+    - uniq
+    - sort
+    - dedupe
+    - duplicates
   commands:
-    - cmd: "sort soubor.txt"
-      desc_cs: "Setřídit řádky abecedně"
-      desc_en: "Sort lines alphabetically"
-    - cmd: "sort -n cisla.txt"
-      desc_cs: "Numericky"
-      desc_en: "Numerically"
-    - cmd: "sort -rn cisla.txt"
-      desc_cs: "Numericky sestupně"
-      desc_en: "Numerically descending"
-    - cmd: "sort -h velikosti.txt"
-      desc_cs: "Lidsky čitelné velikosti (1K, 5M, 2G)"
-      desc_en: "Human-readable sizes"
-    - cmd: "sort soubor.txt | uniq"
-      desc_cs: "Setřídit a odstranit duplicity"
-      desc_en: "Sort and dedupe"
-    - cmd: "sort soubor.txt | uniq -c | sort -rn"
-      desc_cs: "Spočítat výskyty + setřídit"
-      desc_en: "Count occurrences + sort"
-
+  - cmd: sort soubor.txt
+    desc:
+      cs: Setřídit řádky abecedně
+      en: Sort lines alphabetically
+  - cmd: sort -n cisla.txt
+    desc:
+      cs: Numericky
+      en: Numerically
+  - cmd: sort -rn cisla.txt
+    desc:
+      cs: Numericky sestupně
+      en: Numerically descending
+  - cmd: sort -h velikosti.txt
+    desc:
+      cs: Lidsky čitelné velikosti (1K, 5M, 2G)
+      en: Human-readable sizes
+  - cmd: sort soubor.txt | uniq
+    desc:
+      cs: Setřídit a odstranit duplicity
+      en: Sort and dedupe
+  - cmd: sort soubor.txt | uniq -c | sort -rn
+    desc:
+      cs: Spočítat výskyty + setřídit
+      en: Count occurrences + sort
 - id: text-cut-wc
-  title_cs: "cut, wc, tr (rychlé úpravy)"
-  title_en: "cut, wc, tr (quick edits)"
-  tags_cs: [cut, wc, tr, řádky, slova, počet]
-  tags_en: [cut, wc, tr, lines, words, count]
+  title:
+    cs: cut, wc, tr (rychlé úpravy)
+    en: cut, wc, tr (quick edits)
+  tags:
+    cs:
+    - cut
+    - wc
+    - tr
+    - řádky
+    - slova
+    - počet
+    en:
+    - cut
+    - wc
+    - tr
+    - lines
+    - words
+    - count
   commands:
-    - cmd: "wc -l soubor.txt"
-      desc_cs: "Počet řádků"
-      desc_en: "Line count"
-    - cmd: "wc -w soubor.txt"
-      desc_cs: "Počet slov"
-      desc_en: "Word count"
-    - cmd: "wc -c soubor.txt"
-      desc_cs: "Počet bajtů"
-      desc_en: "Byte count"
-    - cmd: "cut -d',' -f1,3 data.csv"
-      desc_cs: "1. a 3. sloupec z CSV"
-      desc_en: "1st and 3rd column from CSV"
-    - cmd: "echo 'AHOJ' | tr 'A-Z' 'a-z'"
-      desc_cs: "Velká písmena → malá"
-      desc_en: "Uppercase → lowercase"
-    - cmd: "tr -d ' ' < soubor.txt"
-      desc_cs: "Smazat všechny mezery"
-      desc_en: "Remove all spaces"
-
+  - cmd: wc -l soubor.txt
+    desc:
+      cs: Počet řádků
+      en: Line count
+  - cmd: wc -w soubor.txt
+    desc:
+      cs: Počet slov
+      en: Word count
+  - cmd: wc -c soubor.txt
+    desc:
+      cs: Počet bajtů
+      en: Byte count
+  - cmd: cut -d',' -f1,3 data.csv
+    desc:
+      cs: 1. a 3. sloupec z CSV
+      en: 1st and 3rd column from CSV
+  - cmd: echo 'AHOJ' | tr 'A-Z' 'a-z'
+    desc:
+      cs: Velká písmena → malá
+      en: Uppercase → lowercase
+  - cmd: tr -d ' ' < soubor.txt
+    desc:
+      cs: Smazat všechny mezery
+      en: Remove all spaces
 - id: text-diff
-  title_cs: "Porovnat dva soubory"
-  title_en: "Compare two files"
-  tags_cs: [diff, porovnat, rozdíl, vimdiff]
-  tags_en: [diff, compare, difference]
+  title:
+    cs: Porovnat dva soubory
+    en: Compare two files
+  tags:
+    cs:
+    - diff
+    - porovnat
+    - rozdíl
+    - vimdiff
+    en:
+    - diff
+    - compare
+    - difference
   commands:
-    - cmd: "diff soubor1 soubor2"
-      desc_cs: "Rozdíly mezi soubory"
-      desc_en: "Differences between files"
-    - cmd: "diff -u soubor1 soubor2"
-      desc_cs: "Unified formát (jako u gitu)"
-      desc_en: "Unified format (git-like)"
-    - cmd: "diff -r adresar1 adresar2"
-      desc_cs: "Rekurzivně porovnat dva adresáře"
-      desc_en: "Recursively compare two directories"
-    - cmd: "vimdiff soubor1 soubor2"
-      desc_cs: "Side-by-side ve vimu"
-      desc_en: "Side-by-side in vim"
+  - cmd: diff soubor1 soubor2
+    desc:
+      cs: Rozdíly mezi soubory
+      en: Differences between files
+  - cmd: diff -u soubor1 soubor2
+    desc:
+      cs: Unified formát (jako u gitu)
+      en: Unified format (git-like)
+  - cmd: diff -r adresar1 adresar2
+    desc:
+      cs: Rekurzivně porovnat dva adresáře
+      en: Recursively compare two directories
+  - cmd: vimdiff soubor1 soubor2
+    desc:
+      cs: Side-by-side ve vimu
+      en: Side-by-side in vim

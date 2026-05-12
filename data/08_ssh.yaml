@@ -1,72 +1,131 @@
 - id: ssh-connect
-  title_cs: "SSH připojení"
-  title_en: "SSH connect"
-  tags_cs: [ssh, připojení, vzdálený, server]
-  tags_en: [ssh, connect, remote, server]
+  title:
+    cs: SSH připojení
+    en: SSH connect
+  tags:
+    cs:
+    - ssh
+    - připojení
+    - vzdálený
+    - server
+    en:
+    - ssh
+    - connect
+    - remote
+    - server
   commands:
-    - cmd: "ssh user@192.168.1.10"
-      desc_cs: "Připojit se k serveru"
-      desc_en: "Connect to server"
-    - cmd: "ssh -p 2222 user@host"
-      desc_cs: "Vlastní port"
-      desc_en: "Custom port"
-    - cmd: "ssh -i ~/.ssh/key user@host"
-      desc_cs: "Použít konkrétní klíč"
-      desc_en: "Use specific key"
-    - cmd: "ssh user@host 'uptime && df -h'"
-      desc_cs: "Spustit příkaz na serveru a vrátit se"
-      desc_en: "Run command remotely and return"
-
+  - cmd: ssh user@192.168.1.10
+    desc:
+      cs: Připojit se k serveru
+      en: Connect to server
+  - cmd: ssh -p 2222 user@host
+    desc:
+      cs: Vlastní port
+      en: Custom port
+  - cmd: ssh -i ~/.ssh/key user@host
+    desc:
+      cs: Použít konkrétní klíč
+      en: Use specific key
+  - cmd: ssh user@host 'uptime && df -h'
+    desc:
+      cs: Spustit příkaz na serveru a vrátit se
+      en: Run command remotely and return
 - id: ssh-keys
-  title_cs: "SSH klíče"
-  title_en: "SSH keys"
-  tags_cs: [ssh, klíč, klic, key, ssh-keygen, ssh-copy-id]
-  tags_en: [ssh, key, ssh-keygen, ssh-copy-id]
+  title:
+    cs: SSH klíče
+    en: SSH keys
+  tags:
+    cs:
+    - ssh
+    - klíč
+    - klic
+    - key
+    - ssh-keygen
+    - ssh-copy-id
+    en:
+    - ssh
+    - key
+    - ssh-keygen
+    - ssh-copy-id
   commands:
-    - cmd: "ssh-keygen -t ed25519 -C 'jmeno@stroj'"
-      desc_cs: "Vygenerovat nový moderní klíč"
-      desc_en: "Generate new modern key"
-    - cmd: "ssh-copy-id user@host"
-      desc_cs: "Nahrát veřejný klíč na server"
-      desc_en: "Upload public key to server"
-    - cmd: "cat ~/.ssh/id_ed25519.pub"
-      desc_cs: "Zobrazit veřejný klíč (pro zkopírování)"
-      desc_en: "Show public key (for copying)"
-    - cmd: "ssh-add ~/.ssh/id_ed25519"
-      desc_cs: "Přidat klíč do ssh-agenta"
-      desc_en: "Add key to ssh-agent"
-
+  - cmd: ssh-keygen -t ed25519 -C 'jmeno@stroj'
+    desc:
+      cs: Vygenerovat nový moderní klíč
+      en: Generate new modern key
+  - cmd: ssh-copy-id user@host
+    desc:
+      cs: Nahrát veřejný klíč na server
+      en: Upload public key to server
+  - cmd: cat ~/.ssh/id_ed25519.pub
+    desc:
+      cs: Zobrazit veřejný klíč (pro zkopírování)
+      en: Show public key (for copying)
+  - cmd: ssh-add ~/.ssh/id_ed25519
+    desc:
+      cs: Přidat klíč do ssh-agenta
+      en: Add key to ssh-agent
 - id: ssh-tunnel
-  title_cs: "SSH tunel (port forwarding)"
-  title_en: "SSH tunnel (port forwarding)"
-  tags_cs: [ssh, tunel, tunnel, port, forwarding, proxy]
-  tags_en: [ssh, tunnel, port, forwarding, proxy]
+  title:
+    cs: SSH tunel (port forwarding)
+    en: SSH tunnel (port forwarding)
+  tags:
+    cs:
+    - ssh
+    - tunel
+    - tunnel
+    - port
+    - forwarding
+    - proxy
+    en:
+    - ssh
+    - tunnel
+    - port
+    - forwarding
+    - proxy
   commands:
-    - cmd: "ssh -L 8080:localhost:80 user@host"
-      desc_cs: "Lokální 8080 → port 80 na vzdáleném serveru"
-      desc_en: "Local 8080 → port 80 on remote"
-    - cmd: "ssh -R 9000:localhost:3000 user@host"
-      desc_cs: "Vystavit lokální port 3000 jako 9000 na serveru"
-      desc_en: "Expose local 3000 as 9000 on server"
-    - cmd: "ssh -D 1080 user@host"
-      desc_cs: "SOCKS proxy přes SSH (port 1080)"
-      desc_en: "SOCKS proxy via SSH (port 1080)"
-
+  - cmd: ssh -L 8080:localhost:80 user@host
+    desc:
+      cs: Lokální 8080 → port 80 na vzdáleném serveru
+      en: Local 8080 → port 80 on remote
+  - cmd: ssh -R 9000:localhost:3000 user@host
+    desc:
+      cs: Vystavit lokální port 3000 jako 9000 na serveru
+      en: Expose local 3000 as 9000 on server
+  - cmd: ssh -D 1080 user@host
+    desc:
+      cs: SOCKS proxy přes SSH (port 1080)
+      en: SOCKS proxy via SSH (port 1080)
 - id: ssh-scp
-  title_cs: "Kopírovat soubory přes SSH (scp/rsync)"
-  title_en: "Copy files via SSH (scp/rsync)"
-  tags_cs: [scp, rsync, kopírovat, ssh, přenos]
-  tags_en: [scp, rsync, copy, ssh, transfer]
+  title:
+    cs: Kopírovat soubory přes SSH (scp/rsync)
+    en: Copy files via SSH (scp/rsync)
+  tags:
+    cs:
+    - scp
+    - rsync
+    - kopírovat
+    - ssh
+    - přenos
+    en:
+    - scp
+    - rsync
+    - copy
+    - ssh
+    - transfer
   commands:
-    - cmd: "scp soubor.txt user@host:/tmp/"
-      desc_cs: "Nahrát soubor na server"
-      desc_en: "Upload file to server"
-    - cmd: "scp user@host:/tmp/soubor.txt ."
-      desc_cs: "Stáhnout soubor ze serveru"
-      desc_en: "Download file from server"
-    - cmd: "scp -r slozka/ user@host:/tmp/"
-      desc_cs: "Rekurzivně přenést složku"
-      desc_en: "Recursively transfer folder"
-    - cmd: "rsync -avzh slozka/ user@host:/dest/"
-      desc_cs: "Rychlejší než scp, podporuje resume"
-      desc_en: "Faster than scp, supports resume"
+  - cmd: scp soubor.txt user@host:/tmp/
+    desc:
+      cs: Nahrát soubor na server
+      en: Upload file to server
+  - cmd: scp user@host:/tmp/soubor.txt .
+    desc:
+      cs: Stáhnout soubor ze serveru
+      en: Download file from server
+  - cmd: scp -r slozka/ user@host:/tmp/
+    desc:
+      cs: Rekurzivně přenést složku
+      en: Recursively transfer folder
+  - cmd: rsync -avzh slozka/ user@host:/dest/
+    desc:
+      cs: Rychlejší než scp, podporuje resume
+      en: Faster than scp, supports resume

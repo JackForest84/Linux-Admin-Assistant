@@ -1,86 +1,138 @@
 - id: python-venv
-  title_cs: "Python virtuální prostředí"
-  title_en: "Python virtual environment"
-  tags_cs: [python, venv, virtualenv, pip, prostředí]
-  tags_en: [python, venv, virtualenv, pip, environment]
+  title:
+    cs: Python virtuální prostředí
+    en: Python virtual environment
+  tags:
+    cs:
+    - python
+    - venv
+    - virtualenv
+    - pip
+    - prostředí
+    en:
+    - python
+    - venv
+    - virtualenv
+    - pip
+    - environment
   commands:
-    - cmd: "python3 -m venv .venv"
-      desc_cs: "Vytvořit venv v adresáři .venv"
-      desc_en: "Create venv in .venv directory"
-    - cmd: "source .venv/bin/activate"
-      desc_cs: "Aktivovat venv"
-      desc_en: "Activate venv"
-    - cmd: "deactivate"
-      desc_cs: "Deaktivovat venv"
-      desc_en: "Deactivate venv"
-    - cmd: "pip install requests"
-      desc_cs: "Nainstalovat balíček"
-      desc_en: "Install package"
-    - cmd: "pip install -r requirements.txt"
-      desc_cs: "Nainstalovat ze souboru závislostí"
-      desc_en: "Install from requirements file"
-    - cmd: "pip freeze > requirements.txt"
-      desc_cs: "Uložit aktuální balíčky do souboru"
-      desc_en: "Save current packages to file"
-    - cmd: "pip list --outdated"
-      desc_cs: "Které balíčky jsou zastaralé"
-      desc_en: "Which packages are outdated"
-    - cmd: "pip install --upgrade balicek"
-      desc_cs: "Upgradovat balíček"
-      desc_en: "Upgrade package"
-
+  - cmd: python3 -m venv .venv
+    desc:
+      cs: Vytvořit venv v adresáři .venv
+      en: Create venv in .venv directory
+  - cmd: source .venv/bin/activate
+    desc:
+      cs: Aktivovat venv
+      en: Activate venv
+  - cmd: deactivate
+    desc:
+      cs: Deaktivovat venv
+      en: Deactivate venv
+  - cmd: pip install requests
+    desc:
+      cs: Nainstalovat balíček
+      en: Install package
+  - cmd: pip install -r requirements.txt
+    desc:
+      cs: Nainstalovat ze souboru závislostí
+      en: Install from requirements file
+  - cmd: pip freeze > requirements.txt
+    desc:
+      cs: Uložit aktuální balíčky do souboru
+      en: Save current packages to file
+  - cmd: pip list --outdated
+    desc:
+      cs: Které balíčky jsou zastaralé
+      en: Which packages are outdated
+  - cmd: pip install --upgrade balicek
+    desc:
+      cs: Upgradovat balíček
+      en: Upgrade package
 - id: python-run
-  title_cs: "Python spouštění"
-  title_en: "Running Python"
-  tags_cs: [python, spustit, http, server]
-  tags_en: [python, run, http, server]
+  title:
+    cs: Python spouštění
+    en: Running Python
+  tags:
+    cs:
+    - python
+    - spustit
+    - http
+    - server
+    en:
+    - python
+    - run
+    - http
+    - server
   commands:
-    - cmd: "python3 skript.py"
-      desc_cs: "Spustit skript"
-      desc_en: "Run script"
-    - cmd: "python3 -m http.server 8080"
-      desc_cs: "Jednoduchý HTTP server v aktuálním adresáři"
-      desc_en: "Simple HTTP server in current directory"
-    - cmd: "python3 -m json.tool soubor.json"
-      desc_cs: "Pretty-print JSON"
-      desc_en: "Pretty-print JSON"
-    - cmd: "python3 -c 'print(2**10)'"
-      desc_cs: "Spustit inline výraz"
-      desc_en: "Run inline expression"
-    - cmd: "python3 -i skript.py"
-      desc_cs: "Po skončení zůstat v REPL"
-      desc_en: "Stay in REPL after script"
-
+  - cmd: python3 skript.py
+    desc:
+      cs: Spustit skript
+      en: Run script
+  - cmd: python3 -m http.server 8080
+    desc:
+      cs: Jednoduchý HTTP server v aktuálním adresáři
+      en: Simple HTTP server in current directory
+  - cmd: python3 -m json.tool soubor.json
+    desc:
+      cs: Pretty-print JSON
+      en: Pretty-print JSON
+  - cmd: python3 -c 'print(2**10)'
+    desc:
+      cs: Spustit inline výraz
+      en: Run inline expression
+  - cmd: python3 -i skript.py
+    desc:
+      cs: Po skončení zůstat v REPL
+      en: Stay in REPL after script
 - id: node-npm
-  title_cs: "Node.js / npm"
-  title_en: "Node.js / npm"
-  tags_cs: [node, npm, javascript, balíčky]
-  tags_en: [node, npm, javascript, packages]
+  title:
+    cs: Node.js / npm
+    en: Node.js / npm
+  tags:
+    cs:
+    - node
+    - npm
+    - javascript
+    - balíčky
+    en:
+    - node
+    - npm
+    - javascript
+    - packages
   commands:
-    - cmd: "node --version"
-      desc_cs: "Verze Node.js"
-      desc_en: "Node.js version"
-    - cmd: "node app.js"
-      desc_cs: "Spustit skript"
-      desc_en: "Run script"
-    - cmd: "npm init -y"
-      desc_cs: "Vytvořit package.json s výchozími hodnotami"
-      desc_en: "Create package.json with defaults"
-    - cmd: "npm install express"
-      desc_cs: "Nainstalovat balíček (do node_modules)"
-      desc_en: "Install package (into node_modules)"
-    - cmd: "npm install -g pm2"
-      desc_cs: "Globální instalace"
-      desc_en: "Global install"
-    - cmd: "npm install"
-      desc_cs: "Nainstalovat vše z package.json"
-      desc_en: "Install everything from package.json"
-    - cmd: "npm update"
-      desc_cs: "Aktualizovat balíčky"
-      desc_en: "Update packages"
-    - cmd: "npm outdated"
-      desc_cs: "Které balíčky jsou zastaralé"
-      desc_en: "Which packages are outdated"
-    - cmd: "npm run dev"
-      desc_cs: "Spustit script 'dev' z package.json"
-      desc_en: "Run 'dev' script from package.json"
+  - cmd: node --version
+    desc:
+      cs: Verze Node.js
+      en: Node.js version
+  - cmd: node app.js
+    desc:
+      cs: Spustit skript
+      en: Run script
+  - cmd: npm init -y
+    desc:
+      cs: Vytvořit package.json s výchozími hodnotami
+      en: Create package.json with defaults
+  - cmd: npm install express
+    desc:
+      cs: Nainstalovat balíček (do node_modules)
+      en: Install package (into node_modules)
+  - cmd: npm install -g pm2
+    desc:
+      cs: Globální instalace
+      en: Global install
+  - cmd: npm install
+    desc:
+      cs: Nainstalovat vše z package.json
+      en: Install everything from package.json
+  - cmd: npm update
+    desc:
+      cs: Aktualizovat balíčky
+      en: Update packages
+  - cmd: npm outdated
+    desc:
+      cs: Které balíčky jsou zastaralé
+      en: Which packages are outdated
+  - cmd: npm run dev
+    desc:
+      cs: Spustit script 'dev' z package.json
+      en: Run 'dev' script from package.json

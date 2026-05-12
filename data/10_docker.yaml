@@ -1,131 +1,225 @@
 - id: docker-ps
-  title_cs: "Běžící kontejnery"
-  title_en: "Running containers"
-  tags_cs: [docker, kontejner, ps, běžící]
-  tags_en: [docker, container, ps, running]
+  title:
+    cs: Běžící kontejnery
+    en: Running containers
+  tags:
+    cs:
+    - docker
+    - kontejner
+    - ps
+    - běžící
+    en:
+    - docker
+    - container
+    - ps
+    - running
   commands:
-    - cmd: "docker ps"
-      desc_cs: "Běžící kontejnery"
-      desc_en: "Running containers"
-    - cmd: "docker ps -a"
-      desc_cs: "Včetně zastavených"
-      desc_en: "Including stopped"
-    - cmd: "docker ps -q"
-      desc_cs: "Jen ID (pro skripty)"
-      desc_en: "Only IDs (for scripts)"
-    - cmd: "docker stats"
-      desc_cs: "Živý monitor CPU/RAM/IO kontejnerů"
-      desc_en: "Live CPU/RAM/IO monitor"
-
+  - cmd: docker ps
+    desc:
+      cs: Běžící kontejnery
+      en: Running containers
+  - cmd: docker ps -a
+    desc:
+      cs: Včetně zastavených
+      en: Including stopped
+  - cmd: docker ps -q
+    desc:
+      cs: Jen ID (pro skripty)
+      en: Only IDs (for scripts)
+  - cmd: docker stats
+    desc:
+      cs: Živý monitor CPU/RAM/IO kontejnerů
+      en: Live CPU/RAM/IO monitor
 - id: docker-run
-  title_cs: "Spustit kontejner"
-  title_en: "Run container"
-  tags_cs: [docker, run, spustit, kontejner]
-  tags_en: [docker, run, start, container]
+  title:
+    cs: Spustit kontejner
+    en: Run container
+  tags:
+    cs:
+    - docker
+    - run
+    - spustit
+    - kontejner
+    en:
+    - docker
+    - run
+    - start
+    - container
   commands:
-    - cmd: "docker run -d --name web -p 80:80 nginx"
-      desc_cs: "Nginx na pozadí, port 80 → 80"
-      desc_en: "Nginx in background, port 80 → 80"
-    - cmd: "docker run -it ubuntu bash"
-      desc_cs: "Interaktivní shell v Ubuntu"
-      desc_en: "Interactive shell in Ubuntu"
-    - cmd: "docker run --rm -v $(pwd):/data alpine ls /data"
-      desc_cs: "Jednorázový kontejner s mountem"
-      desc_en: "One-shot container with mount"
-    - cmd: "docker start kontejner"
-      desc_cs: "Spustit zastavený kontejner"
-      desc_en: "Start stopped container"
-    - cmd: "docker stop kontejner"
-      desc_cs: "Slušně zastavit"
-      desc_en: "Stop gracefully"
-    - cmd: "docker restart kontejner"
-      desc_cs: "Restartovat"
-      desc_en: "Restart"
-
+  - cmd: docker run -d --name web -p 80:80 nginx
+    desc:
+      cs: Nginx na pozadí, port 80 → 80
+      en: Nginx in background, port 80 → 80
+  - cmd: docker run -it ubuntu bash
+    desc:
+      cs: Interaktivní shell v Ubuntu
+      en: Interactive shell in Ubuntu
+  - cmd: docker run --rm -v $(pwd):/data alpine ls /data
+    desc:
+      cs: Jednorázový kontejner s mountem
+      en: One-shot container with mount
+  - cmd: docker start kontejner
+    desc:
+      cs: Spustit zastavený kontejner
+      en: Start stopped container
+  - cmd: docker stop kontejner
+    desc:
+      cs: Slušně zastavit
+      en: Stop gracefully
+  - cmd: docker restart kontejner
+    desc:
+      cs: Restartovat
+      en: Restart
 - id: docker-logs-exec
-  title_cs: "Logy a shell v kontejneru"
-  title_en: "Logs and shell in container"
-  tags_cs: [docker, logs, exec, shell, bash, kontejner]
-  tags_en: [docker, logs, exec, shell, bash]
+  title:
+    cs: Logy a shell v kontejneru
+    en: Logs and shell in container
+  tags:
+    cs:
+    - docker
+    - logs
+    - exec
+    - shell
+    - bash
+    - kontejner
+    en:
+    - docker
+    - logs
+    - exec
+    - shell
+    - bash
   commands:
-    - cmd: "docker logs -f kontejner"
-      desc_cs: "Sledovat logy živě"
-      desc_en: "Follow logs live"
-    - cmd: "docker logs --tail 100 kontejner"
-      desc_cs: "Posledních 100 řádků"
-      desc_en: "Last 100 lines"
-    - cmd: "docker exec -it kontejner bash"
-      desc_cs: "Otevřít bash uvnitř běžícího kontejneru"
-      desc_en: "Open bash inside running container"
-    - cmd: "docker exec -it kontejner sh"
-      desc_cs: "Pokud bash chybí (Alpine)"
-      desc_en: "If bash missing (Alpine)"
-    - cmd: "docker inspect kontejner"
-      desc_cs: "Detail (sítě, mounty, env)"
-      desc_en: "Details (networks, mounts, env)"
-
+  - cmd: docker logs -f kontejner
+    desc:
+      cs: Sledovat logy živě
+      en: Follow logs live
+  - cmd: docker logs --tail 100 kontejner
+    desc:
+      cs: Posledních 100 řádků
+      en: Last 100 lines
+  - cmd: docker exec -it kontejner bash
+    desc:
+      cs: Otevřít bash uvnitř běžícího kontejneru
+      en: Open bash inside running container
+  - cmd: docker exec -it kontejner sh
+    desc:
+      cs: Pokud bash chybí (Alpine)
+      en: If bash missing (Alpine)
+  - cmd: docker inspect kontejner
+    desc:
+      cs: Detail (sítě, mounty, env)
+      en: Details (networks, mounts, env)
 - id: docker-images
-  title_cs: "Obrazy (images)"
-  title_en: "Images"
-  tags_cs: [docker, image, obraz, pull, push, build]
-  tags_en: [docker, image, pull, push, build]
+  title:
+    cs: Obrazy (images)
+    en: Images
+  tags:
+    cs:
+    - docker
+    - image
+    - obraz
+    - pull
+    - push
+    - build
+    en:
+    - docker
+    - image
+    - pull
+    - push
+    - build
   commands:
-    - cmd: "docker images"
-      desc_cs: "Seznam stažených obrazů"
-      desc_en: "List of downloaded images"
-    - cmd: "docker pull nginx:alpine"
-      desc_cs: "Stáhnout obraz"
-      desc_en: "Pull image"
-    - cmd: "docker build -t mojeapp:1.0 ."
-      desc_cs: "Sestavit obraz z Dockerfile"
-      desc_en: "Build image from Dockerfile"
-    - cmd: "docker rmi nginx:alpine"
-      desc_cs: "Smazat obraz"
-      desc_en: "Remove image"
-    - cmd: "docker image prune -a"
-      desc_cs: "Smazat všechny nepoužívané obrazy"
-      desc_en: "Remove all unused images"
-
+  - cmd: docker images
+    desc:
+      cs: Seznam stažených obrazů
+      en: List of downloaded images
+  - cmd: docker pull nginx:alpine
+    desc:
+      cs: Stáhnout obraz
+      en: Pull image
+  - cmd: docker build -t mojeapp:1.0 .
+    desc:
+      cs: Sestavit obraz z Dockerfile
+      en: Build image from Dockerfile
+  - cmd: docker rmi nginx:alpine
+    desc:
+      cs: Smazat obraz
+      en: Remove image
+  - cmd: docker image prune -a
+    desc:
+      cs: Smazat všechny nepoužívané obrazy
+      en: Remove all unused images
 - id: docker-cleanup
-  title_cs: "Úklid (volné místo)"
-  title_en: "Cleanup (free space)"
-  tags_cs: [docker, prune, úklid, smazat, místo, cleanup]
-  tags_en: [docker, prune, cleanup, remove, space]
+  title:
+    cs: Úklid (volné místo)
+    en: Cleanup (free space)
+  tags:
+    cs:
+    - docker
+    - prune
+    - úklid
+    - smazat
+    - místo
+    - cleanup
+    en:
+    - docker
+    - prune
+    - cleanup
+    - remove
+    - space
   commands:
-    - cmd: "docker system df"
-      desc_cs: "Kolik místa zabírá Docker"
-      desc_en: "How much space Docker uses"
-    - cmd: "docker system prune -a --volumes"
-      desc_cs: "Smazat vše nepoužívané (POZOR i volumes)"
-      desc_en: "Remove everything unused (CAREFUL — volumes too)"
-    - cmd: "docker container prune"
-      desc_cs: "Smazat zastavené kontejnery"
-      desc_en: "Remove stopped containers"
-    - cmd: "docker volume prune"
-      desc_cs: "Smazat nepoužívané volumes"
-      desc_en: "Remove unused volumes"
-
+  - cmd: docker system df
+    desc:
+      cs: Kolik místa zabírá Docker
+      en: How much space Docker uses
+  - cmd: docker system prune -a --volumes
+    desc:
+      cs: Smazat vše nepoužívané (POZOR i volumes)
+      en: Remove everything unused (CAREFUL — volumes too)
+  - cmd: docker container prune
+    desc:
+      cs: Smazat zastavené kontejnery
+      en: Remove stopped containers
+  - cmd: docker volume prune
+    desc:
+      cs: Smazat nepoužívané volumes
+      en: Remove unused volumes
 - id: docker-compose
-  title_cs: "Docker Compose"
-  title_en: "Docker Compose"
-  tags_cs: [docker, compose, yaml, stack]
-  tags_en: [docker, compose, yaml, stack]
+  title:
+    cs: Docker Compose
+    en: Docker Compose
+  tags:
+    cs:
+    - docker
+    - compose
+    - yaml
+    - stack
+    en:
+    - docker
+    - compose
+    - yaml
+    - stack
   commands:
-    - cmd: "docker compose up -d"
-      desc_cs: "Spustit vše z docker-compose.yml na pozadí"
-      desc_en: "Start everything from docker-compose.yml in background"
-    - cmd: "docker compose down"
-      desc_cs: "Zastavit + odstranit kontejnery"
-      desc_en: "Stop + remove containers"
-    - cmd: "docker compose logs -f web"
-      desc_cs: "Logy služby 'web' živě"
-      desc_en: "Follow logs of service 'web'"
-    - cmd: "docker compose pull && docker compose up -d"
-      desc_cs: "Aktualizovat obrazy a restartovat"
-      desc_en: "Update images and restart"
-    - cmd: "docker compose ps"
-      desc_cs: "Stav služeb"
-      desc_en: "Services status"
-    - cmd: "docker compose restart web"
-      desc_cs: "Restartovat jen jednu službu"
-      desc_en: "Restart only one service"
+  - cmd: docker compose up -d
+    desc:
+      cs: Spustit vše z docker-compose.yml na pozadí
+      en: Start everything from docker-compose.yml in background
+  - cmd: docker compose down
+    desc:
+      cs: Zastavit + odstranit kontejnery
+      en: Stop + remove containers
+  - cmd: docker compose logs -f web
+    desc:
+      cs: Logy služby 'web' živě
+      en: Follow logs of service 'web'
+  - cmd: docker compose pull && docker compose up -d
+    desc:
+      cs: Aktualizovat obrazy a restartovat
+      en: Update images and restart
+  - cmd: docker compose ps
+    desc:
+      cs: Stav služeb
+      en: Services status
+  - cmd: docker compose restart web
+    desc:
+      cs: Restartovat jen jednu službu
+      en: Restart only one service

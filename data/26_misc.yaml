@@ -1,155 +1,262 @@
 - id: date-time
-  title_cs: "Datum a čas v shellu"
-  title_en: "Date and time in shell"
-  tags_cs: [date, datum, čas, timestamp, formát]
-  tags_en: [date, time, timestamp, format]
+  title:
+    cs: Datum a čas v shellu
+    en: Date and time in shell
+  tags:
+    cs:
+    - date
+    - datum
+    - čas
+    - timestamp
+    - formát
+    en:
+    - date
+    - time
+    - timestamp
+    - format
   commands:
-    - cmd: "date '+%Y-%m-%d %H:%M:%S'"
-      desc_cs: "ISO formát"
-      desc_en: "ISO format"
-    - cmd: "date +%s"
-      desc_cs: "Unix timestamp"
-      desc_en: "Unix timestamp"
-    - cmd: "date -d '@1700000000'"
-      desc_cs: "Převést timestamp na datum"
-      desc_en: "Convert timestamp to date"
-    - cmd: "date -d 'tomorrow'"
-      desc_cs: "Zítřejší datum"
-      desc_en: "Tomorrow's date"
-    - cmd: "date -d '7 days ago' +%Y-%m-%d"
-      desc_cs: "Datum 7 dní zpět"
-      desc_en: "Date 7 days ago"
-    - cmd: "cal"
-      desc_cs: "Kalendář aktuálního měsíce"
-      desc_en: "Current month calendar"
-
+  - cmd: date '+%Y-%m-%d %H:%M:%S'
+    desc:
+      cs: ISO formát
+      en: ISO format
+  - cmd: date +%s
+    desc:
+      cs: Unix timestamp
+      en: Unix timestamp
+  - cmd: date -d '@1700000000'
+    desc:
+      cs: Převést timestamp na datum
+      en: Convert timestamp to date
+  - cmd: date -d 'tomorrow'
+    desc:
+      cs: Zítřejší datum
+      en: Tomorrow's date
+  - cmd: date -d '7 days ago' +%Y-%m-%d
+    desc:
+      cs: Datum 7 dní zpět
+      en: Date 7 days ago
+  - cmd: cal
+    desc:
+      cs: Kalendář aktuálního měsíce
+      en: Current month calendar
 - id: terminal-tricks
-  title_cs: "Triky v terminálu"
-  title_en: "Terminal tricks"
-  tags_cs: [terminál, klávesy, zkratky, clear, ctrl]
-  tags_en: [terminal, keys, shortcuts, clear, ctrl]
+  title:
+    cs: Triky v terminálu
+    en: Terminal tricks
+  tags:
+    cs:
+    - terminál
+    - klávesy
+    - zkratky
+    - clear
+    - ctrl
+    en:
+    - terminal
+    - keys
+    - shortcuts
+    - clear
+    - ctrl
   commands:
-    - cmd: "Ctrl+C"
-      desc_cs: "Přerušit běžící příkaz"
-      desc_en: "Interrupt running command"
-    - cmd: "Ctrl+D"
-      desc_cs: "Konec vstupu / odhlásit"
-      desc_en: "End of input / logout"
-    - cmd: "Ctrl+Z"
-      desc_cs: "Pozastavit příkaz (bg / fg pro obnovu)"
-      desc_en: "Suspend command (bg / fg to resume)"
-    - cmd: "Ctrl+L"
-      desc_cs: "Vyčistit obrazovku"
-      desc_en: "Clear screen"
-    - cmd: "Ctrl+A"
-      desc_cs: "Na začátek řádku"
-      desc_en: "Start of line"
-    - cmd: "Ctrl+E"
-      desc_cs: "Na konec řádku"
-      desc_en: "End of line"
-    - cmd: "Ctrl+U"
-      desc_cs: "Vymazat řádek doleva"
-      desc_en: "Clear line to left"
-    - cmd: "Ctrl+W"
-      desc_cs: "Smazat slovo doleva"
-      desc_en: "Delete word to left"
-    - cmd: "clear"
-      desc_cs: "Vyčistit obrazovku (jako Ctrl+L)"
-      desc_en: "Clear screen (like Ctrl+L)"
-    - cmd: "reset"
-      desc_cs: "Reset terminálu (když se rozbije)"
-      desc_en: "Reset terminal (when broken)"
-
+  - cmd: Ctrl+C
+    desc:
+      cs: Přerušit běžící příkaz
+      en: Interrupt running command
+  - cmd: Ctrl+D
+    desc:
+      cs: Konec vstupu / odhlásit
+      en: End of input / logout
+  - cmd: Ctrl+Z
+    desc:
+      cs: Pozastavit příkaz (bg / fg pro obnovu)
+      en: Suspend command (bg / fg to resume)
+  - cmd: Ctrl+L
+    desc:
+      cs: Vyčistit obrazovku
+      en: Clear screen
+  - cmd: Ctrl+A
+    desc:
+      cs: Na začátek řádku
+      en: Start of line
+  - cmd: Ctrl+E
+    desc:
+      cs: Na konec řádku
+      en: End of line
+  - cmd: Ctrl+U
+    desc:
+      cs: Vymazat řádek doleva
+      en: Clear line to left
+  - cmd: Ctrl+W
+    desc:
+      cs: Smazat slovo doleva
+      en: Delete word to left
+  - cmd: clear
+    desc:
+      cs: Vyčistit obrazovku (jako Ctrl+L)
+      en: Clear screen (like Ctrl+L)
+  - cmd: reset
+    desc:
+      cs: Reset terminálu (když se rozbije)
+      en: Reset terminal (when broken)
 - id: bg-jobs
-  title_cs: "Procesy na pozadí"
-  title_en: "Background processes"
-  tags_cs: [pozadí, background, nohup, jobs, fg, bg]
-  tags_en: [background, nohup, jobs, fg, bg]
+  title:
+    cs: Procesy na pozadí
+    en: Background processes
+  tags:
+    cs:
+    - pozadí
+    - background
+    - nohup
+    - jobs
+    - fg
+    - bg
+    en:
+    - background
+    - nohup
+    - jobs
+    - fg
+    - bg
   commands:
-    - cmd: "prikaz &"
-      desc_cs: "Spustit na pozadí"
-      desc_en: "Run in background"
-    - cmd: "jobs"
-      desc_cs: "Seznam jobů této session"
-      desc_en: "List jobs of this session"
-    - cmd: "fg %1"
-      desc_cs: "Přenést job 1 do popředí"
-      desc_en: "Bring job 1 to foreground"
-    - cmd: "bg %1"
-      desc_cs: "Pokračovat v běhu na pozadí"
-      desc_en: "Resume in background"
-    - cmd: "nohup dlouhy-prikaz &"
-      desc_cs: "Spustit + nezavřít po odhlášení"
-      desc_en: "Run + survive logout"
-    - cmd: "disown %1"
-      desc_cs: "Odpojit job od shellu"
-      desc_en: "Detach job from shell"
-
+  - cmd: prikaz &
+    desc:
+      cs: Spustit na pozadí
+      en: Run in background
+  - cmd: jobs
+    desc:
+      cs: Seznam jobů této session
+      en: List jobs of this session
+  - cmd: fg %1
+    desc:
+      cs: Přenést job 1 do popředí
+      en: Bring job 1 to foreground
+  - cmd: bg %1
+    desc:
+      cs: Pokračovat v běhu na pozadí
+      en: Resume in background
+  - cmd: nohup dlouhy-prikaz &
+    desc:
+      cs: Spustit + nezavřít po odhlášení
+      en: Run + survive logout
+  - cmd: disown %1
+    desc:
+      cs: Odpojit job od shellu
+      en: Detach job from shell
 - id: which-info
-  title_cs: "Kde je příkaz, co dělá"
-  title_en: "Where is command, what it does"
-  tags_cs: [which, whereis, man, info, help, nápověda]
-  tags_en: [which, whereis, man, info, help]
+  title:
+    cs: Kde je příkaz, co dělá
+    en: Where is command, what it does
+  tags:
+    cs:
+    - which
+    - whereis
+    - man
+    - info
+    - help
+    - nápověda
+    en:
+    - which
+    - whereis
+    - man
+    - info
+    - help
   commands:
-    - cmd: "which git"
-      desc_cs: "Cesta k binárce"
-      desc_en: "Path to binary"
-    - cmd: "whereis git"
-      desc_cs: "Cesta + man stránka + zdrojáky"
-      desc_en: "Path + man page + sources"
-    - cmd: "man ls"
-      desc_cs: "Manuál (q pro konec)"
-      desc_en: "Manual (q to quit)"
-    - cmd: "man -k 'klíčové slovo'"
-      desc_cs: "Najít man stránku podle slova"
-      desc_en: "Find man page by keyword"
-    - cmd: "ls --help"
-      desc_cs: "Stručná nápověda"
-      desc_en: "Brief help"
-    - cmd: "info ls"
-      desc_cs: "Info dokumentace (rozsáhlejší než man)"
-      desc_en: "Info docs (more detailed than man)"
-    - cmd: "tldr tar"
-      desc_cs: "Praktické příklady místo manuálu (npm/apt install tldr)"
-      desc_en: "Practical examples instead of manual"
-
+  - cmd: which git
+    desc:
+      cs: Cesta k binárce
+      en: Path to binary
+  - cmd: whereis git
+    desc:
+      cs: Cesta + man stránka + zdrojáky
+      en: Path + man page + sources
+  - cmd: man ls
+    desc:
+      cs: Manuál (q pro konec)
+      en: Manual (q to quit)
+  - cmd: man -k 'klíčové slovo'
+    desc:
+      cs: Najít man stránku podle slova
+      en: Find man page by keyword
+  - cmd: ls --help
+    desc:
+      cs: Stručná nápověda
+      en: Brief help
+  - cmd: info ls
+    desc:
+      cs: Info dokumentace (rozsáhlejší než man)
+      en: Info docs (more detailed than man)
+  - cmd: tldr tar
+    desc:
+      cs: Praktické příklady místo manuálu (npm/apt install tldr)
+      en: Practical examples instead of manual
 - id: links
-  title_cs: "Symbolické a tvrdé linky"
-  title_en: "Symbolic and hard links"
-  tags_cs: [ln, link, odkaz, symlink, soft, hard]
-  tags_en: [ln, link, symlink, soft, hard]
+  title:
+    cs: Symbolické a tvrdé linky
+    en: Symbolic and hard links
+  tags:
+    cs:
+    - ln
+    - link
+    - odkaz
+    - symlink
+    - soft
+    - hard
+    en:
+    - ln
+    - link
+    - symlink
+    - soft
+    - hard
   commands:
-    - cmd: "ln -s /opt/aplikace /usr/local/bin/aplikace"
-      desc_cs: "Symbolický link (symlink, jako zástupce)"
-      desc_en: "Symbolic link (symlink)"
-    - cmd: "ln /zdroj /cil"
-      desc_cs: "Tvrdý link (na stejný inode)"
-      desc_en: "Hard link (same inode)"
-    - cmd: "readlink -f soubor"
-      desc_cs: "Kam ukazuje symlink (s rozbalením)"
-      desc_en: "Where does symlink point (resolved)"
-    - cmd: "ls -la | grep '^l'"
-      desc_cs: "Jen symlinky v adresáři"
-      desc_en: "Only symlinks in directory"
-
+  - cmd: ln -s /opt/aplikace /usr/local/bin/aplikace
+    desc:
+      cs: Symbolický link (symlink, jako zástupce)
+      en: Symbolic link (symlink)
+  - cmd: ln /zdroj /cil
+    desc:
+      cs: Tvrdý link (na stejný inode)
+      en: Hard link (same inode)
+  - cmd: readlink -f soubor
+    desc:
+      cs: Kam ukazuje symlink (s rozbalením)
+      en: Where does symlink point (resolved)
+  - cmd: ls -la | grep '^l'
+    desc:
+      cs: Jen symlinky v adresáři
+      en: Only symlinks in directory
 - id: env-shell
-  title_cs: "Konfigurace shellu"
-  title_en: "Shell configuration"
-  tags_cs: [bashrc, zshrc, profile, shell, prompt]
-  tags_en: [bashrc, zshrc, profile, shell, prompt]
+  title:
+    cs: Konfigurace shellu
+    en: Shell configuration
+  tags:
+    cs:
+    - bashrc
+    - zshrc
+    - profile
+    - shell
+    - prompt
+    en:
+    - bashrc
+    - zshrc
+    - profile
+    - shell
+    - prompt
   commands:
-    - cmd: "source ~/.bashrc"
-      desc_cs: "Znovu načíst bashrc"
-      desc_en: "Reload bashrc"
-    - cmd: "echo $SHELL"
-      desc_cs: "Aktuální shell (přihlašovací)"
-      desc_en: "Current shell (login)"
-    - cmd: "chsh -s /bin/zsh"
-      desc_cs: "Změnit výchozí shell na zsh"
-      desc_en: "Change default shell to zsh"
-    - cmd: "echo $PATH | tr ':' '\\n'"
-      desc_cs: "Vypsat PATH po řádcích"
-      desc_en: "Print PATH line by line"
-    - cmd: "export PATH=$PATH:/opt/bin"
-      desc_cs: "Přidat adresář do PATH (jen pro session)"
-      desc_en: "Add directory to PATH (session only)"
+  - cmd: source ~/.bashrc
+    desc:
+      cs: Znovu načíst bashrc
+      en: Reload bashrc
+  - cmd: echo $SHELL
+    desc:
+      cs: Aktuální shell (přihlašovací)
+      en: Current shell (login)
+  - cmd: chsh -s /bin/zsh
+    desc:
+      cs: Změnit výchozí shell na zsh
+      en: Change default shell to zsh
+  - cmd: echo $PATH | tr ':' '\n'
+    desc:
+      cs: Vypsat PATH po řádcích
+      en: Print PATH line by line
+  - cmd: export PATH=$PATH:/opt/bin
+    desc:
+      cs: Přidat adresář do PATH (jen pro session)
+      en: Add directory to PATH (session only)
