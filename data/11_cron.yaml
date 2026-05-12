@@ -1,134 +1,339 @@
 - id: cron-edit
   title:
-    cs: Plánované úlohy (cron)
-    en: Scheduled tasks (cron)
+    en: "Scheduled tasks (cron)"
+    cs: "Plánované úlohy (cron)"
+    sk: "Plánované úlohy (cron)"
+    de: "Geplante Aufgaben (cron)"
+    es: "Tareas programadas (cron)"
+    fr: "Tâches planifiées (cron)"
+    it: "Attività pianificate (cron)"
+    pl: "Zaplanowane zadania (cron)"
+    tr: "Zamanlanmış görevler (cron)"
+    pt: "Tarefas agendadas (cron)"
+    nl: "Geplande taken (cron)"
+    hu: "Ütemezett feladatok (cron)"
   tags:
-    cs:
-    - cron
-    - crontab
-    - plánovat
-    - scheduler
-    - úloha
-    - automaticky
-    en:
-    - cron
-    - crontab
-    - schedule
-    - scheduler
-    - task
+    en: [cron, crontab, schedule, scheduler, task]
+    cs: [cron, crontab, plánovat, scheduler, úloha, automaticky]
+    sk: [cron, crontab, plánovať, scheduler, úloha, automaticky]
+    de: [cron, crontab, planen, scheduler, aufgabe]
+    es: [cron, crontab, programar, scheduler, tarea]
+    fr: [cron, crontab, planifier, scheduler, tâche]
+    it: [cron, crontab, pianificare, scheduler, attività]
+    pl: [cron, crontab, planuj, scheduler, zadanie]
+    tr: [cron, crontab, zamanla, scheduler, görev]
+    pt: [cron, crontab, agendar, scheduler, tarefa]
+    nl: [cron, crontab, plannen, scheduler, taak]
+    hu: [cron, crontab, ütemezés, scheduler, feladat]
   commands:
-  - cmd: crontab -e
-    desc:
-      cs: Upravit crontab aktuálního uživatele
-      en: Edit current user's crontab
-  - cmd: crontab -l
-    desc:
-      cs: Vypsat naplánované úlohy
-      en: List scheduled tasks
-  - cmd: sudo crontab -e -u root
-    desc:
-      cs: Upravit root crontab
-      en: Edit root crontab
-  - cmd: crontab -r
-    desc:
-      cs: Smazat všechny úlohy (POZOR)
-      en: Delete all tasks (CAREFUL)
+    - cmd: "crontab -e"
+      desc:
+        en: "Edit current user's crontab"
+        cs: "Upravit crontab aktuálního uživatele"
+        sk: "Upraviť crontab aktuálneho používateľa"
+        de: "Crontab des aktuellen Benutzers bearbeiten"
+        es: "Editar crontab del usuario actual"
+        fr: "Modifier la crontab de l'utilisateur"
+        it: "Modificare crontab utente attuale"
+        pl: "Edytuj crontab bieżącego użytkownika"
+        tr: "Geçerli kullanıcının crontab'ını düzenle"
+        pt: "Editar crontab do usuário atual"
+        nl: "Crontab van huidige gebruiker bewerken"
+        hu: "Aktuális felhasználó crontab szerkesztése"
+    - cmd: "crontab -l"
+      desc:
+        en: "List scheduled tasks"
+        cs: "Vypsat naplánované úlohy"
+        sk: "Vypísať naplánované úlohy"
+        de: "Geplante Aufgaben auflisten"
+        es: "Listar tareas programadas"
+        fr: "Lister les tâches planifiées"
+        it: "Elencare attività pianificate"
+        pl: "Lista zaplanowanych zadań"
+        tr: "Zamanlanmış görevleri listele"
+        pt: "Listar tarefas agendadas"
+        nl: "Geplande taken tonen"
+        hu: "Ütemezett feladatok listája"
+    - cmd: "sudo crontab -e -u root"
+      desc:
+        en: "Edit root crontab"
+        cs: "Upravit root crontab"
+        sk: "Upraviť root crontab"
+        de: "Root-Crontab bearbeiten"
+        es: "Editar crontab de root"
+        fr: "Modifier la crontab root"
+        it: "Modificare crontab root"
+        pl: "Edytuj crontab root"
+        tr: "Root crontab'ını düzenle"
+        pt: "Editar crontab do root"
+        nl: "Root crontab bewerken"
+        hu: "Root crontab szerkesztése"
+    - cmd: "crontab -r"
+      desc:
+        en: "Delete all tasks (CAREFUL)"
+        cs: "Smazat všechny úlohy (POZOR)"
+        sk: "Zmazať všetky úlohy (POZOR)"
+        de: "Alle Aufgaben löschen (VORSICHT)"
+        es: "Eliminar todas las tareas (CUIDADO)"
+        fr: "Supprimer toutes les tâches (ATTENTION)"
+        it: "Eliminare tutte le attività (ATTENZIONE)"
+        pl: "Usuń wszystkie zadania (UWAGA)"
+        tr: "Tüm görevleri sil (DİKKAT)"
+        pt: "Excluir todas as tarefas (CUIDADO)"
+        nl: "Alle taken verwijderen (LET OP)"
+        hu: "Minden feladat törlése (FIGYELEM)"
+
 - id: cron-syntax
   title:
-    cs: Cron syntaxe (příklady)
-    en: Cron syntax (examples)
+    en: "Cron syntax (examples)"
+    cs: "Cron syntaxe (příklady)"
+    sk: "Cron syntax (príklady)"
+    de: "Cron-Syntax (Beispiele)"
+    es: "Sintaxis cron (ejemplos)"
+    fr: "Syntaxe cron (exemples)"
+    it: "Sintassi cron (esempi)"
+    pl: "Składnia cron (przykłady)"
+    tr: "Cron sözdizimi (örnekler)"
+    pt: "Sintaxe cron (exemplos)"
+    nl: "Cron-syntaxis (voorbeelden)"
+    hu: "Cron szintaxis (példák)"
   tags:
-    cs:
-    - cron
-    - syntaxe
-    - čas
-    - příklad
-    - minuta
-    - hodina
-    en:
-    - cron
-    - syntax
-    - time
-    - example
-    - minute
-    - hour
+    en: [cron, syntax, time, example, minute, hour]
+    cs: [cron, syntaxe, čas, příklad, minuta, hodina]
+    sk: [cron, syntax, čas, príklad, minúta, hodina]
+    de: [cron, syntax, zeit, beispiel, minute, stunde]
+    es: [cron, sintaxis, tiempo, ejemplo, minuto, hora]
+    fr: [cron, syntaxe, temps, exemple, minute, heure]
+    it: [cron, sintassi, tempo, esempio, minuto, ora]
+    pl: [cron, składnia, czas, przykład, minuta, godzina]
+    tr: [cron, sözdizimi, zaman, örnek, dakika, saat]
+    pt: [cron, sintaxe, tempo, exemplo, minuto, hora]
+    nl: [cron, syntaxis, tijd, voorbeeld, minuut, uur]
+    hu: [cron, szintaxis, idő, példa, perc, óra]
   commands:
-  - cmd: '*/5 * * * * /opt/script.sh'
-    desc:
-      cs: Každých 5 minut
-      en: Every 5 minutes
-  - cmd: 0 3 * * * /opt/backup.sh
-    desc:
-      cs: Každý den ve 3:00
-      en: Every day at 3:00
-  - cmd: 0 0 * * 0 /opt/weekly.sh
-    desc:
-      cs: Každou neděli o půlnoci
-      en: Every Sunday at midnight
-  - cmd: '@reboot /opt/onboot.sh'
-    desc:
-      cs: Při každém startu systému
-      en: On every system boot
-  - cmd: 0 9-17 * * 1-5 /opt/pracovni.sh
-    desc:
-      cs: Každou celou hodinu 9-17 v pracovních dnech
-      en: Every hour 9-17 on weekdays
+    - cmd: "*/5 * * * * /opt/script.sh"
+      desc:
+        en: "Every 5 minutes"
+        cs: "Každých 5 minut"
+        sk: "Každých 5 minút"
+        de: "Alle 5 Minuten"
+        es: "Cada 5 minutos"
+        fr: "Toutes les 5 minutes"
+        it: "Ogni 5 minuti"
+        pl: "Co 5 minut"
+        tr: "Her 5 dakikada"
+        pt: "A cada 5 minutos"
+        nl: "Elke 5 minuten"
+        hu: "5 percenként"
+    - cmd: "0 3 * * * /opt/backup.sh"
+      desc:
+        en: "Every day at 3:00"
+        cs: "Každý den ve 3:00"
+        sk: "Každý deň o 3:00"
+        de: "Jeden Tag um 3:00"
+        es: "Cada día a las 3:00"
+        fr: "Chaque jour à 3h00"
+        it: "Ogni giorno alle 3:00"
+        pl: "Codziennie o 3:00"
+        tr: "Her gün 03:00'te"
+        pt: "Todos os dias às 3:00"
+        nl: "Elke dag om 3:00"
+        hu: "Minden nap 3:00-kor"
+    - cmd: "0 0 * * 0 /opt/weekly.sh"
+      desc:
+        en: "Every Sunday at midnight"
+        cs: "Každou neděli o půlnoci"
+        sk: "Každú nedeľu o polnoci"
+        de: "Jeden Sonntag um Mitternacht"
+        es: "Cada domingo a medianoche"
+        fr: "Chaque dimanche à minuit"
+        it: "Ogni domenica a mezzanotte"
+        pl: "W każdą niedzielę o północy"
+        tr: "Her Pazar gece yarısı"
+        pt: "Todo domingo à meia-noite"
+        nl: "Elke zondag om middernacht"
+        hu: "Minden vasárnap éjfélkor"
+    - cmd: "@reboot /opt/onboot.sh"
+      desc:
+        en: "On every system boot"
+        cs: "Při každém startu systému"
+        sk: "Pri každom štarte systému"
+        de: "Bei jedem Systemstart"
+        es: "En cada arranque del sistema"
+        fr: "À chaque démarrage du système"
+        it: "Ad ogni avvio del sistema"
+        pl: "Przy każdym starcie systemu"
+        tr: "Her sistem başlangıcında"
+        pt: "Em cada inicialização do sistema"
+        nl: "Bij elke systeemstart"
+        hu: "Minden rendszerindításkor"
+    - cmd: "0 9-17 * * 1-5 /opt/workhours.sh"
+      desc:
+        en: "Every hour 9-17 on weekdays"
+        cs: "Každou celou hodinu 9-17 v pracovních dnech"
+        sk: "Každú celú hodinu 9-17 v pracovných dňoch"
+        de: "Jede Stunde 9-17 an Wochentagen"
+        es: "Cada hora 9-17 en días laborables"
+        fr: "Chaque heure 9-17 en semaine"
+        it: "Ogni ora 9-17 nei giorni feriali"
+        pl: "Co godzinę 9-17 w dni robocze"
+        tr: "Hafta içi 9-17 her saat"
+        pt: "A cada hora 9-17 em dias úteis"
+        nl: "Elk uur 9-17 op werkdagen"
+        hu: "Munkanapokon 9-17 között óránként"
+
 - id: systemd-timer
   title:
-    cs: Systemd timer (moderní alternativa cronu)
-    en: Systemd timer (modern cron alternative)
+    en: "Systemd timer (modern cron alternative)"
+    cs: "Systemd timer (moderní alternativa cronu)"
+    sk: "Systemd timer (moderná alternatíva cronu)"
+    de: "Systemd-Timer (moderne Cron-Alternative)"
+    es: "Systemd timer (alternativa moderna a cron)"
+    fr: "Timer systemd (alternative moderne à cron)"
+    it: "Timer systemd (alternativa moderna a cron)"
+    pl: "Timer systemd (nowoczesna alternatywa cron)"
+    tr: "Systemd zamanlayıcı (modern cron alternatifi)"
+    pt: "Timer systemd (alternativa moderna ao cron)"
+    nl: "Systemd timer (moderne cron-alternatief)"
+    hu: "Systemd időzítő (modern cron alternatíva)"
   tags:
-    cs:
-    - systemd
-    - timer
-    - časovač
-    - plánovat
-    en:
-    - systemd
-    - timer
-    - schedule
+    en: [systemd, timer, schedule]
+    cs: [systemd, timer, časovač, plánovat]
+    sk: [systemd, timer, časovač, plánovať]
+    de: [systemd, timer, planen]
+    es: [systemd, timer, programar]
+    fr: [systemd, timer, planifier]
+    it: [systemd, timer, pianificare]
+    pl: [systemd, timer, planuj]
+    tr: [systemd, timer, zamanla]
+    pt: [systemd, timer, agendar]
+    nl: [systemd, timer, plannen]
+    hu: [systemd, timer, ütemezés]
   commands:
-  - cmd: systemctl list-timers
-    desc:
-      cs: Všechny aktivní timery (kdy poběží)
-      en: All active timers (when they run)
-  - cmd: systemctl status mojeUloha.timer
-    desc:
-      cs: Stav konkrétního timeru
-      en: Status of specific timer
-  - cmd: sudo systemctl enable --now mojeUloha.timer
-    desc:
-      cs: Zapnout timer + po startu systému
-      en: Enable timer + on boot
+    - cmd: "systemctl list-timers"
+      desc:
+        en: "All active timers (when they run)"
+        cs: "Všechny aktivní timery (kdy poběží)"
+        sk: "Všetky aktívne timery (kedy pobežia)"
+        de: "Alle aktiven Timer (wann sie laufen)"
+        es: "Todos los timers activos (cuándo se ejecutan)"
+        fr: "Tous les timers actifs (quand ils s'exécutent)"
+        it: "Tutti i timer attivi (quando partono)"
+        pl: "Wszystkie aktywne timery (kiedy się uruchamiają)"
+        tr: "Tüm aktif zamanlayıcılar (ne zaman çalışır)"
+        pt: "Todos os timers ativos (quando rodam)"
+        nl: "Alle actieve timers (wanneer ze draaien)"
+        hu: "Minden aktív időzítő (mikor fut)"
+    - cmd: "systemctl status mytask.timer"
+      desc:
+        en: "Status of specific timer"
+        cs: "Stav konkrétního timeru"
+        sk: "Stav konkrétneho timeru"
+        de: "Status eines bestimmten Timers"
+        es: "Estado de un timer específico"
+        fr: "État d'un timer spécifique"
+        it: "Stato di un timer specifico"
+        pl: "Stan konkretnego timera"
+        tr: "Belirli zamanlayıcının durumu"
+        pt: "Estado de um timer específico"
+        nl: "Status van een specifieke timer"
+        hu: "Adott időzítő állapota"
+    - cmd: "sudo systemctl enable --now mytask.timer"
+      desc:
+        en: "Enable timer + on boot"
+        cs: "Zapnout timer + po startu systému"
+        sk: "Zapnúť timer + po štarte systému"
+        de: "Timer aktivieren + beim Booten"
+        es: "Activar timer + en arranque"
+        fr: "Activer le timer + au démarrage"
+        it: "Abilitare timer + all'avvio"
+        pl: "Włącz timer + przy starcie"
+        tr: "Zamanlayıcıyı etkinleştir + önyüklemede"
+        pt: "Ativar timer + na inicialização"
+        nl: "Timer inschakelen + bij opstarten"
+        hu: "Időzítő engedélyezése + indításkor"
+
 - id: at-jobs
   title:
-    cs: Jednorázové úlohy (at)
-    en: One-shot scheduled jobs (at)
+    en: "One-shot scheduled jobs (at)"
+    cs: "Jednorázové úlohy (at)"
+    sk: "Jednorazové úlohy (at)"
+    de: "Einmalige geplante Jobs (at)"
+    es: "Trabajos únicos programados (at)"
+    fr: "Tâches uniques planifiées (at)"
+    it: "Attività una tantum (at)"
+    pl: "Jednorazowe zaplanowane zadania (at)"
+    tr: "Tek seferlik zamanlanmış işler (at)"
+    pt: "Tarefas únicas agendadas (at)"
+    nl: "Eenmalige geplande taken (at)"
+    hu: "Egyszeri ütemezett feladatok (at)"
   tags:
-    cs:
-    - at
-    - jednorázové
-    - plánovat
-    - později
-    en:
-    - at
-    - one-shot
-    - schedule
-    - later
+    en: [at, one-shot, schedule, later]
+    cs: [at, jednorázové, plánovat, později]
+    sk: [at, jednorazové, plánovať, neskôr]
+    de: [at, einmalig, planen, später]
+    es: [at, único, programar, después]
+    fr: [at, unique, planifier, plus tard]
+    it: [at, una tantum, pianificare, dopo]
+    pl: [at, jednorazowe, planuj, później]
+    tr: [at, tek seferlik, zamanla, sonra]
+    pt: [at, único, agendar, depois]
+    nl: [at, eenmalig, plannen, later]
+    hu: [at, egyszeri, ütemezés, később]
   commands:
-  - cmd: echo 'sudo reboot' | at 03:00
-    desc:
-      cs: Spustit příkaz ve 3:00
-      en: Run command at 3:00
-  - cmd: echo 'backup.sh' | at now + 1 hour
-    desc:
-      cs: Za hodinu
-      en: In one hour
-  - cmd: atq
-    desc:
-      cs: Seznam čekajících úloh
-      en: List of pending jobs
-  - cmd: atrm 5
-    desc:
-      cs: Zrušit úlohu č. 5
-      en: Cancel job number 5
+    - cmd: "echo 'sudo reboot' | at 03:00"
+      desc:
+        en: "Run command at 3:00"
+        cs: "Spustit příkaz ve 3:00"
+        sk: "Spustiť príkaz o 3:00"
+        de: "Befehl um 3:00 ausführen"
+        es: "Ejecutar comando a las 3:00"
+        fr: "Exécuter la commande à 3h00"
+        it: "Eseguire comando alle 3:00"
+        pl: "Uruchom polecenie o 3:00"
+        tr: "Komutu 03:00'te çalıştır"
+        pt: "Executar comando às 3:00"
+        nl: "Commando uitvoeren om 3:00"
+        hu: "Parancs futtatása 3:00-kor"
+    - cmd: "echo 'backup.sh' | at now + 1 hour"
+      desc:
+        en: "In one hour"
+        cs: "Za hodinu"
+        sk: "O hodinu"
+        de: "In einer Stunde"
+        es: "En una hora"
+        fr: "Dans une heure"
+        it: "Tra un'ora"
+        pl: "Za godzinę"
+        tr: "Bir saat sonra"
+        pt: "Em uma hora"
+        nl: "Over een uur"
+        hu: "Egy óra múlva"
+    - cmd: "atq"
+      desc:
+        en: "List of pending jobs"
+        cs: "Seznam čekajících úloh"
+        sk: "Zoznam čakajúcich úloh"
+        de: "Liste der ausstehenden Jobs"
+        es: "Lista de trabajos pendientes"
+        fr: "Liste des tâches en attente"
+        it: "Elenco lavori in attesa"
+        pl: "Lista oczekujących zadań"
+        tr: "Bekleyen işlerin listesi"
+        pt: "Lista de trabalhos pendentes"
+        nl: "Lijst van wachtende taken"
+        hu: "Várakozó feladatok listája"
+    - cmd: "atrm 5"
+      desc:
+        en: "Cancel job number 5"
+        cs: "Zrušit úlohu č. 5"
+        sk: "Zrušiť úlohu č. 5"
+        de: "Job Nummer 5 abbrechen"
+        es: "Cancelar trabajo número 5"
+        fr: "Annuler la tâche numéro 5"
+        it: "Annullare lavoro numero 5"
+        pl: "Anuluj zadanie numer 5"
+        tr: "5 numaralı işi iptal et"
+        pt: "Cancelar trabalho número 5"
+        nl: "Taak nummer 5 annuleren"
+        hu: "5. számú feladat megszakítása"

@@ -1,180 +1,466 @@
 - id: file-find
   title:
-    cs: Najít soubor
-    en: Find file
+    en: "Find file"
+    cs: "Najít soubor"
+    sk: "Nájsť súbor"
+    de: "Datei finden"
+    es: "Encontrar archivo"
+    fr: "Trouver un fichier"
+    it: "Trovare file"
+    pl: "Znajdź plik"
+    tr: "Dosya bul"
+    pt: "Encontrar arquivo"
+    nl: "Bestand zoeken"
+    hu: "Fájl keresése"
   tags:
-    cs:
-    - find
-    - najít
-    - hledat
-    - soubor
-    en:
-    - find
-    - search
-    - file
+    en: [find, search, file]
+    cs: [find, najít, hledat, soubor]
+    sk: [find, nájsť, hľadať, súbor]
+    de: [find, suchen, datei]
+    es: [find, buscar, archivo]
+    fr: [find, chercher, fichier]
+    it: [find, cercare, file]
+    pl: [find, szukaj, plik]
+    tr: [find, ara, dosya]
+    pt: [find, buscar, arquivo]
+    nl: [find, zoeken, bestand]
+    hu: [find, keresés, fájl]
   commands:
-  - cmd: find /etc -name '*.conf'
-    desc:
-      cs: Najít všechny .conf soubory v /etc
-      en: Find all .conf files in /etc
-  - cmd: find . -type f -mtime -1
-    desc:
-      cs: Soubory změněné za posledních 24 h
-      en: Files modified in last 24 h
-  - cmd: find / -type f -size +1G 2>/dev/null
-    desc:
-      cs: Soubory větší než 1 GB
-      en: Files larger than 1 GB
-  - cmd: locate nginx.conf
-    desc:
-      cs: Rychlé hledání přes databázi (sudo updatedb)
-      en: Fast search via database (sudo updatedb)
+    - cmd: "find /etc -name '*.conf'"
+      desc:
+        en: "Find all .conf files in /etc"
+        cs: "Najít všechny .conf soubory v /etc"
+        sk: "Nájsť všetky .conf súbory v /etc"
+        de: "Alle .conf-Dateien in /etc finden"
+        es: "Encontrar todos los .conf en /etc"
+        fr: "Trouver tous les .conf dans /etc"
+        it: "Trovare tutti i .conf in /etc"
+        pl: "Znajdź wszystkie pliki .conf w /etc"
+        tr: "/etc'deki tüm .conf dosyalarını bul"
+        pt: "Encontrar todos os .conf em /etc"
+        nl: "Alle .conf-bestanden in /etc vinden"
+        hu: "Az összes .conf fájl megkeresése /etc-ben"
+    - cmd: "find . -type f -mtime -1"
+      desc:
+        en: "Files modified in last 24 h"
+        cs: "Soubory změněné za posledních 24 h"
+        sk: "Súbory zmenené za posledných 24 h"
+        de: "In den letzten 24 h geänderte Dateien"
+        es: "Archivos modificados en las últimas 24 h"
+        fr: "Fichiers modifiés dans les dernières 24 h"
+        it: "File modificati nelle ultime 24 h"
+        pl: "Pliki zmienione w ciągu ostatnich 24 h"
+        tr: "Son 24 saatte değiştirilen dosyalar"
+        pt: "Arquivos modificados nas últimas 24 h"
+        nl: "Bestanden gewijzigd in laatste 24 uur"
+        hu: "Az elmúlt 24 órában módosított fájlok"
+    - cmd: "find / -type f -size +1G 2>/dev/null"
+      desc:
+        en: "Files larger than 1 GB"
+        cs: "Soubory větší než 1 GB"
+        sk: "Súbory väčšie ako 1 GB"
+        de: "Dateien größer als 1 GB"
+        es: "Archivos mayores de 1 GB"
+        fr: "Fichiers de plus de 1 Go"
+        it: "File più grandi di 1 GB"
+        pl: "Pliki większe niż 1 GB"
+        tr: "1 GB'tan büyük dosyalar"
+        pt: "Arquivos maiores que 1 GB"
+        nl: "Bestanden groter dan 1 GB"
+        hu: "1 GB-nál nagyobb fájlok"
+    - cmd: "locate nginx.conf"
+      desc:
+        en: "Fast search via database (sudo updatedb)"
+        cs: "Rychlé hledání přes databázi (sudo updatedb)"
+        sk: "Rýchle hľadanie cez databázu (sudo updatedb)"
+        de: "Schnelle Suche per Datenbank (sudo updatedb)"
+        es: "Búsqueda rápida por BD (sudo updatedb)"
+        fr: "Recherche rapide via BD (sudo updatedb)"
+        it: "Ricerca veloce via DB (sudo updatedb)"
+        pl: "Szybkie wyszukiwanie przez bazę (sudo updatedb)"
+        tr: "Veritabanı üzerinden hızlı arama (sudo updatedb)"
+        pt: "Busca rápida por BD (sudo updatedb)"
+        nl: "Snel zoeken via database (sudo updatedb)"
+        hu: "Gyors keresés adatbázisból (sudo updatedb)"
+
 - id: file-grep
   title:
-    cs: Hledat text v souborech
-    en: Search text in files
+    en: "Search text in files"
+    cs: "Hledat text v souborech"
+    sk: "Hľadať text v súboroch"
+    de: "Text in Dateien suchen"
+    es: "Buscar texto en archivos"
+    fr: "Rechercher du texte dans les fichiers"
+    it: "Cercare testo nei file"
+    pl: "Szukaj tekstu w plikach"
+    tr: "Dosyalarda metin ara"
+    pt: "Pesquisar texto em arquivos"
+    nl: "Tekst zoeken in bestanden"
+    hu: "Szöveg keresése fájlokban"
   tags:
-    cs:
-    - grep
-    - hledat
-    - text
-    - obsah
-    - řetězec
-    en:
-    - grep
-    - search
-    - text
-    - content
-    - string
+    en: [grep, search, text, content, string]
+    cs: [grep, hledat, text, obsah, řetězec]
+    sk: [grep, hľadať, text, obsah, reťazec]
+    de: [grep, suchen, text, inhalt, zeichenkette]
+    es: [grep, buscar, texto, contenido, cadena]
+    fr: [grep, chercher, texte, contenu, chaîne]
+    it: [grep, cercare, testo, contenuto, stringa]
+    pl: [grep, szukaj, tekst, zawartość, ciąg]
+    tr: [grep, ara, metin, içerik, dize]
+    pt: [grep, buscar, texto, conteúdo, string]
+    nl: [grep, zoeken, tekst, inhoud, string]
+    hu: [grep, keresés, szöveg, tartalom, karakterlánc]
   commands:
-  - cmd: grep -r 'heslo' /etc
-    desc:
-      cs: Rekurzivně hledat řetězec ve všech souborech
-      en: Recursively search string in all files
-  - cmd: grep -rn 'error' /var/log
-    desc:
-      cs: Včetně čísel řádků
-      en: Including line numbers
-  - cmd: grep -ri 'TODO' . --include='*.py'
-    desc:
-      cs: Bez ohledu na velikost, jen v .py souborech
-      en: Case-insensitive, only in .py files
-  - cmd: grep -v '^#' /etc/ssh/sshd_config | grep -v '^$'
-    desc:
-      cs: Bez komentářů a prázdných řádků
-      en: Without comments and empty lines
+    - cmd: "grep -r 'password' /etc"
+      desc:
+        en: "Recursively search string in all files"
+        cs: "Rekurzivně hledat řetězec ve všech souborech"
+        sk: "Rekurzívne hľadať reťazec vo všetkých súboroch"
+        de: "String rekursiv in allen Dateien suchen"
+        es: "Buscar cadena recursivamente en archivos"
+        fr: "Chercher la chaîne récursivement"
+        it: "Cercare stringa ricorsivamente"
+        pl: "Szukaj ciągu rekursywnie we wszystkich plikach"
+        tr: "Tüm dosyalarda dizeyi özyinelemeli ara"
+        pt: "Buscar string recursivamente em todos os arquivos"
+        nl: "String recursief in alle bestanden zoeken"
+        hu: "Karakterlánc rekurzív keresése minden fájlban"
+    - cmd: "grep -rn 'error' /var/log"
+      desc:
+        en: "Including line numbers"
+        cs: "Včetně čísel řádků"
+        sk: "Vrátane čísel riadkov"
+        de: "Inklusive Zeilennummern"
+        es: "Incluyendo números de línea"
+        fr: "Avec les numéros de ligne"
+        it: "Includendo numeri di riga"
+        pl: "Wraz z numerami linii"
+        tr: "Satır numaraları dahil"
+        pt: "Incluindo números de linha"
+        nl: "Inclusief regelnummers"
+        hu: "Beleértve a sorszámokat"
+    - cmd: "grep -ri 'TODO' . --include='*.py'"
+      desc:
+        en: "Case-insensitive, only in .py files"
+        cs: "Bez ohledu na velikost, jen v .py souborech"
+        sk: "Bez ohľadu na veľkosť, len v .py súboroch"
+        de: "Groß-/Kleinschreibung ignorieren, nur in .py"
+        es: "Sin distinguir mayúsculas, solo en .py"
+        fr: "Insensible à la casse, uniquement dans .py"
+        it: "Senza distinzione di maiuscole, solo in .py"
+        pl: "Bez uwzględniania wielkości, tylko w .py"
+        tr: "Büyük/küçük harf duyarsız, sadece .py'de"
+        pt: "Sem distinção de maiúsculas, apenas em .py"
+        nl: "Hoofdletterongevoelig, alleen in .py"
+        hu: "Kis-/nagybetű érzéketlen, csak .py-ban"
+    - cmd: "grep -v '^#' /etc/ssh/sshd_config | grep -v '^$'"
+      desc:
+        en: "Without comments and empty lines"
+        cs: "Bez komentářů a prázdných řádků"
+        sk: "Bez komentárov a prázdnych riadkov"
+        de: "Ohne Kommentare und Leerzeilen"
+        es: "Sin comentarios ni líneas vacías"
+        fr: "Sans commentaires ni lignes vides"
+        it: "Senza commenti né righe vuote"
+        pl: "Bez komentarzy i pustych linii"
+        tr: "Yorumlar ve boş satırlar olmadan"
+        pt: "Sem comentários nem linhas vazias"
+        nl: "Zonder commentaar en lege regels"
+        hu: "Megjegyzések és üres sorok nélkül"
+
 - id: file-perms
   title:
-    cs: Práva souborů a vlastník
-    en: File permissions and owner
+    en: "File permissions and owner"
+    cs: "Práva souborů a vlastník"
+    sk: "Práva súborov a vlastník"
+    de: "Dateirechte und Besitzer"
+    es: "Permisos y propietario"
+    fr: "Permissions et propriétaire"
+    it: "Permessi e proprietario"
+    pl: "Uprawnienia i właściciel"
+    tr: "Dosya izinleri ve sahibi"
+    pt: "Permissões e dono"
+    nl: "Bestandsrechten en eigenaar"
+    hu: "Fájljogosultságok és tulajdonos"
   tags:
-    cs:
-    - chmod
-    - chown
-    - práva
-    - vlastník
-    - permissions
-    en:
-    - chmod
-    - chown
-    - permissions
-    - owner
+    en: [chmod, chown, permissions, owner]
+    cs: [chmod, chown, práva, vlastník, permissions]
+    sk: [chmod, chown, práva, vlastník, permissions]
+    de: [chmod, chown, rechte, besitzer]
+    es: [chmod, chown, permisos, propietario]
+    fr: [chmod, chown, permissions, propriétaire]
+    it: [chmod, chown, permessi, proprietario]
+    pl: [chmod, chown, uprawnienia, właściciel]
+    tr: [chmod, chown, izinler, sahip]
+    pt: [chmod, chown, permissões, dono]
+    nl: [chmod, chown, rechten, eigenaar]
+    hu: [chmod, chown, jogosultságok, tulajdonos]
   commands:
-  - cmd: ls -l soubor
-    desc:
-      cs: Zobrazit práva, vlastníka, velikost
-      en: Show permissions, owner, size
-  - cmd: chmod 644 soubor
-    desc:
-      cs: rw-r--r-- (běžný soubor)
-      en: rw-r--r-- (regular file)
-  - cmd: chmod 755 skript.sh
-    desc:
-      cs: rwxr-xr-x (spustitelný)
-      en: rwxr-xr-x (executable)
-  - cmd: chmod +x skript.sh
-    desc:
-      cs: Přidat právo spouštění
-      en: Add execute permission
-  - cmd: sudo chown jakub:jakub /opt/aplikace -R
-    desc:
-      cs: Změnit vlastníka rekurzivně
-      en: Change owner recursively
+    - cmd: "ls -l file"
+      desc:
+        en: "Show permissions, owner, size"
+        cs: "Zobrazit práva, vlastníka, velikost"
+        sk: "Zobraziť práva, vlastníka, veľkosť"
+        de: "Rechte, Besitzer, Größe anzeigen"
+        es: "Mostrar permisos, propietario, tamaño"
+        fr: "Afficher permissions, propriétaire, taille"
+        it: "Mostrare permessi, proprietario, dimensione"
+        pl: "Pokaż uprawnienia, właściciela, rozmiar"
+        tr: "İzinler, sahip, boyut göster"
+        pt: "Mostrar permissões, dono, tamanho"
+        nl: "Rechten, eigenaar, grootte tonen"
+        hu: "Jogosultságok, tulajdonos, méret megjelenítése"
+    - cmd: "chmod 644 file"
+      desc:
+        en: "rw-r--r-- (regular file)"
+        cs: "rw-r--r-- (běžný soubor)"
+        sk: "rw-r--r-- (bežný súbor)"
+        de: "rw-r--r-- (normale Datei)"
+        es: "rw-r--r-- (archivo normal)"
+        fr: "rw-r--r-- (fichier normal)"
+        it: "rw-r--r-- (file regolare)"
+        pl: "rw-r--r-- (zwykły plik)"
+        tr: "rw-r--r-- (normal dosya)"
+        pt: "rw-r--r-- (arquivo normal)"
+        nl: "rw-r--r-- (gewoon bestand)"
+        hu: "rw-r--r-- (normál fájl)"
+    - cmd: "chmod 755 script.sh"
+      desc:
+        en: "rwxr-xr-x (executable)"
+        cs: "rwxr-xr-x (spustitelný)"
+        sk: "rwxr-xr-x (spustiteľný)"
+        de: "rwxr-xr-x (ausführbar)"
+        es: "rwxr-xr-x (ejecutable)"
+        fr: "rwxr-xr-x (exécutable)"
+        it: "rwxr-xr-x (eseguibile)"
+        pl: "rwxr-xr-x (wykonywalny)"
+        tr: "rwxr-xr-x (çalıştırılabilir)"
+        pt: "rwxr-xr-x (executável)"
+        nl: "rwxr-xr-x (uitvoerbaar)"
+        hu: "rwxr-xr-x (futtatható)"
+    - cmd: "chmod +x script.sh"
+      desc:
+        en: "Add execute permission"
+        cs: "Přidat právo spouštění"
+        sk: "Pridať právo spúšťania"
+        de: "Ausführungsrecht hinzufügen"
+        es: "Añadir permiso de ejecución"
+        fr: "Ajouter le droit d'exécution"
+        it: "Aggiungere permesso di esecuzione"
+        pl: "Dodaj prawo wykonywania"
+        tr: "Çalıştırma izni ekle"
+        pt: "Adicionar permissão de execução"
+        nl: "Uitvoeringsrecht toevoegen"
+        hu: "Futtatási jog hozzáadása"
+    - cmd: "sudo chown user:user /opt/app -R"
+      desc:
+        en: "Change owner recursively"
+        cs: "Změnit vlastníka rekurzivně"
+        sk: "Zmeniť vlastníka rekurzívne"
+        de: "Besitzer rekursiv ändern"
+        es: "Cambiar propietario recursivamente"
+        fr: "Changer le propriétaire récursivement"
+        it: "Cambiare proprietario ricorsivamente"
+        pl: "Zmień właściciela rekursywnie"
+        tr: "Sahibi özyinelemeli değiştir"
+        pt: "Mudar dono recursivamente"
+        nl: "Eigenaar recursief wijzigen"
+        hu: "Tulajdonos rekurzív cseréje"
+
 - id: file-copy
   title:
-    cs: Kopírovat / přesunout soubory
-    en: Copy / move files
+    en: "Copy / move files"
+    cs: "Kopírovat / přesunout soubory"
+    sk: "Kopírovať / presunúť súbory"
+    de: "Dateien kopieren / verschieben"
+    es: "Copiar / mover archivos"
+    fr: "Copier / déplacer des fichiers"
+    it: "Copiare / spostare file"
+    pl: "Kopiowanie / przenoszenie plików"
+    tr: "Dosyaları kopyala / taşı"
+    pt: "Copiar / mover arquivos"
+    nl: "Bestanden kopiëren / verplaatsen"
+    hu: "Fájlok másolása / áthelyezése"
   tags:
-    cs:
-    - cp
-    - mv
-    - kopírovat
-    - přesunout
-    - rsync
-    en:
-    - cp
-    - mv
-    - copy
-    - move
-    - rsync
+    en: [cp, mv, copy, move, rsync]
+    cs: [cp, mv, kopírovat, přesunout, rsync]
+    sk: [cp, mv, kopírovať, presunúť, rsync]
+    de: [cp, mv, kopieren, verschieben, rsync]
+    es: [cp, mv, copiar, mover, rsync]
+    fr: [cp, mv, copier, déplacer, rsync]
+    it: [cp, mv, copiare, spostare, rsync]
+    pl: [cp, mv, kopiuj, przenieś, rsync]
+    tr: [cp, mv, kopyala, taşı, rsync]
+    pt: [cp, mv, copiar, mover, rsync]
+    nl: [cp, mv, kopiëren, verplaatsen, rsync]
+    hu: [cp, mv, másolás, áthelyezés, rsync]
   commands:
-  - cmd: cp -r src/ dest/
-    desc:
-      cs: Rekurzivně zkopírovat složku
-      en: Recursively copy folder
-  - cmd: cp -a src/ dest/
-    desc:
-      cs: Zachovat práva a časy
-      en: Preserve permissions and timestamps
-  - cmd: mv soubor.txt /tmp/
-    desc:
-      cs: Přesunout (nebo přejmenovat)
-      en: Move (or rename)
-  - cmd: rsync -avh --progress src/ dest/
-    desc:
-      cs: Rychlá synchronizace s progress barem
-      en: Fast sync with progress
-  - cmd: rsync -avzh src/ user@host:/path/
-    desc:
-      cs: Sync na vzdálený server přes SSH
-      en: Sync to remote server via SSH
+    - cmd: "cp -r src/ dest/"
+      desc:
+        en: "Recursively copy folder"
+        cs: "Rekurzivně zkopírovat složku"
+        sk: "Rekurzívne skopírovať priečinok"
+        de: "Ordner rekursiv kopieren"
+        es: "Copiar carpeta recursivamente"
+        fr: "Copier le dossier récursivement"
+        it: "Copiare cartella ricorsivamente"
+        pl: "Kopiuj folder rekursywnie"
+        tr: "Klasörü özyinelemeli kopyala"
+        pt: "Copiar pasta recursivamente"
+        nl: "Map recursief kopiëren"
+        hu: "Mappa rekurzív másolása"
+    - cmd: "cp -a src/ dest/"
+      desc:
+        en: "Preserve permissions and timestamps"
+        cs: "Zachovat práva a časy"
+        sk: "Zachovať práva a časy"
+        de: "Rechte und Zeitstempel beibehalten"
+        es: "Conservar permisos y fechas"
+        fr: "Conserver permissions et horodatages"
+        it: "Mantenere permessi e timestamp"
+        pl: "Zachowaj uprawnienia i czasy"
+        tr: "İzinleri ve zaman damgalarını koru"
+        pt: "Preservar permissões e datas"
+        nl: "Rechten en timestamps behouden"
+        hu: "Jogosultságok és időbélyegek megőrzése"
+    - cmd: "mv file.txt /tmp/"
+      desc:
+        en: "Move (or rename)"
+        cs: "Přesunout (nebo přejmenovat)"
+        sk: "Presunúť (alebo premenovať)"
+        de: "Verschieben (oder umbenennen)"
+        es: "Mover (o renombrar)"
+        fr: "Déplacer (ou renommer)"
+        it: "Spostare (o rinominare)"
+        pl: "Przenieś (lub zmień nazwę)"
+        tr: "Taşı (veya yeniden adlandır)"
+        pt: "Mover (ou renomear)"
+        nl: "Verplaatsen (of hernoemen)"
+        hu: "Áthelyezés (vagy átnevezés)"
+    - cmd: "rsync -avh --progress src/ dest/"
+      desc:
+        en: "Fast sync with progress"
+        cs: "Rychlá synchronizace s progress barem"
+        sk: "Rýchla synchronizácia s progress barom"
+        de: "Schnelle Synchronisation mit Fortschritt"
+        es: "Sincronización rápida con progreso"
+        fr: "Sync rapide avec progression"
+        it: "Sync veloce con progresso"
+        pl: "Szybka synchronizacja z postępem"
+        tr: "İlerleme ile hızlı senkronizasyon"
+        pt: "Sync rápido com progresso"
+        nl: "Snelle sync met voortgang"
+        hu: "Gyors szinkronizálás folyamatjelzővel"
+    - cmd: "rsync -avzh src/ user@host:/path/"
+      desc:
+        en: "Sync to remote server via SSH"
+        cs: "Sync na vzdálený server přes SSH"
+        sk: "Sync na vzdialený server cez SSH"
+        de: "Sync zu Remote-Server über SSH"
+        es: "Sync a servidor remoto vía SSH"
+        fr: "Sync vers serveur distant via SSH"
+        it: "Sync su server remoto via SSH"
+        pl: "Sync na zdalny serwer przez SSH"
+        tr: "SSH ile uzak sunucuya sync"
+        pt: "Sync para servidor remoto via SSH"
+        nl: "Sync naar externe server via SSH"
+        hu: "Sync távoli szerverre SSH-n keresztül"
+
 - id: file-archive
   title:
-    cs: Archivy (tar, zip)
-    en: Archives (tar, zip)
+    en: "Archives (tar, zip)"
+    cs: "Archivy (tar, zip)"
+    sk: "Archívy (tar, zip)"
+    de: "Archive (tar, zip)"
+    es: "Archivos (tar, zip)"
+    fr: "Archives (tar, zip)"
+    it: "Archivi (tar, zip)"
+    pl: "Archiwa (tar, zip)"
+    tr: "Arşivler (tar, zip)"
+    pt: "Arquivos (tar, zip)"
+    nl: "Archieven (tar, zip)"
+    hu: "Archívumok (tar, zip)"
   tags:
-    cs:
-    - tar
-    - zip
-    - archiv
-    - komprese
-    - gzip
-    - rozbalit
-    en:
-    - tar
-    - zip
-    - archive
-    - compress
-    - gzip
-    - extract
+    en: [tar, zip, archive, compress, gzip, extract]
+    cs: [tar, zip, archiv, komprese, gzip, rozbalit]
+    sk: [tar, zip, archív, kompresia, gzip, rozbaliť]
+    de: [tar, zip, archiv, komprimieren, gzip, entpacken]
+    es: [tar, zip, archivo, comprimir, gzip, extraer]
+    fr: [tar, zip, archive, compresser, gzip, extraire]
+    it: [tar, zip, archivio, comprimere, gzip, estrarre]
+    pl: [tar, zip, archiwum, kompresja, gzip, wypakuj]
+    tr: [tar, zip, arşiv, sıkıştır, gzip, çıkar]
+    pt: [tar, zip, arquivo, comprimir, gzip, extrair]
+    nl: [tar, zip, archief, comprimeren, gzip, uitpakken]
+    hu: [tar, zip, archívum, tömörítés, gzip, kibontás]
   commands:
-  - cmd: tar czf archiv.tar.gz slozka/
-    desc:
-      cs: Vytvořit gzip archiv ze složky
-      en: Create gzip archive from folder
-  - cmd: tar xzf archiv.tar.gz
-    desc:
-      cs: Rozbalit gzip archiv
-      en: Extract gzip archive
-  - cmd: tar tzf archiv.tar.gz
-    desc:
-      cs: Vypsat obsah archivu (bez rozbalení)
-      en: List archive contents (without extracting)
-  - cmd: zip -r archiv.zip slozka/
-    desc:
-      cs: Vytvořit ZIP
-      en: Create ZIP
-  - cmd: unzip archiv.zip
-    desc:
-      cs: Rozbalit ZIP
-      en: Extract ZIP
+    - cmd: "tar czf archive.tar.gz folder/"
+      desc:
+        en: "Create gzip archive from folder"
+        cs: "Vytvořit gzip archiv ze složky"
+        sk: "Vytvoriť gzip archív z priečinka"
+        de: "Gzip-Archiv aus Ordner erstellen"
+        es: "Crear archivo gzip desde carpeta"
+        fr: "Créer archive gzip depuis dossier"
+        it: "Creare archivio gzip da cartella"
+        pl: "Utwórz archiwum gzip z folderu"
+        tr: "Klasörden gzip arşivi oluştur"
+        pt: "Criar arquivo gzip de pasta"
+        nl: "Gzip-archief maken van map"
+        hu: "Gzip archívum létrehozása mappából"
+    - cmd: "tar xzf archive.tar.gz"
+      desc:
+        en: "Extract gzip archive"
+        cs: "Rozbalit gzip archiv"
+        sk: "Rozbaliť gzip archív"
+        de: "Gzip-Archiv entpacken"
+        es: "Extraer archivo gzip"
+        fr: "Extraire archive gzip"
+        it: "Estrarre archivio gzip"
+        pl: "Wypakuj archiwum gzip"
+        tr: "Gzip arşivi çıkar"
+        pt: "Extrair arquivo gzip"
+        nl: "Gzip-archief uitpakken"
+        hu: "Gzip archívum kibontása"
+    - cmd: "tar tzf archive.tar.gz"
+      desc:
+        en: "List archive contents (without extracting)"
+        cs: "Vypsat obsah archivu (bez rozbalení)"
+        sk: "Vypísať obsah archívu (bez rozbalenia)"
+        de: "Archivinhalt auflisten (ohne entpacken)"
+        es: "Listar contenido (sin extraer)"
+        fr: "Lister le contenu (sans extraire)"
+        it: "Elencare contenuto (senza estrarre)"
+        pl: "Lista zawartości (bez wypakowywania)"
+        tr: "Arşiv içeriğini listele (çıkarmadan)"
+        pt: "Listar conteúdo (sem extrair)"
+        nl: "Archiefinhoud tonen (zonder uitpakken)"
+        hu: "Archívum tartalmának listája (kibontás nélkül)"
+    - cmd: "zip -r archive.zip folder/"
+      desc:
+        en: "Create ZIP"
+        cs: "Vytvořit ZIP"
+        sk: "Vytvoriť ZIP"
+        de: "ZIP erstellen"
+        es: "Crear ZIP"
+        fr: "Créer ZIP"
+        it: "Creare ZIP"
+        pl: "Utwórz ZIP"
+        tr: "ZIP oluştur"
+        pt: "Criar ZIP"
+        nl: "ZIP maken"
+        hu: "ZIP létrehozása"
+    - cmd: "unzip archive.zip"
+      desc:
+        en: "Extract ZIP"
+        cs: "Rozbalit ZIP"
+        sk: "Rozbaliť ZIP"
+        de: "ZIP entpacken"
+        es: "Extraer ZIP"
+        fr: "Extraire ZIP"
+        it: "Estrarre ZIP"
+        pl: "Wypakuj ZIP"
+        tr: "ZIP çıkar"
+        pt: "Extrair ZIP"
+        nl: "ZIP uitpakken"
+        hu: "ZIP kibontása"

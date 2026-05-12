@@ -1,118 +1,324 @@
 - id: tmux-basic
   title:
-    cs: Tmux základy
-    en: Tmux basics
+    en: "Tmux basics"
+    cs: "Tmux základy"
+    sk: "Tmux základy"
+    de: "Tmux-Grundlagen"
+    es: "Conceptos básicos de tmux"
+    fr: "Bases de tmux"
+    it: "Basi di tmux"
+    pl: "Podstawy tmux"
+    tr: "Tmux temelleri"
+    pt: "Básicos do tmux"
+    nl: "Tmux-basis"
+    hu: "Tmux alapok"
   tags:
-    cs:
-    - tmux
-    - terminál
-    - session
-    - panely
-    en:
-    - tmux
-    - terminal
-    - session
-    - panes
+    en: [tmux, terminal, session, panes]
+    cs: [tmux, terminál, session, panely]
+    sk: [tmux, terminál, session, panely]
+    de: [tmux, terminal, session, fenster]
+    es: [tmux, terminal, sesión, paneles]
+    fr: [tmux, terminal, session, panneaux]
+    it: [tmux, terminale, sessione, pannelli]
+    pl: [tmux, terminal, sesja, panele]
+    tr: [tmux, terminal, oturum, paneller]
+    pt: [tmux, terminal, sessão, painéis]
+    nl: [tmux, terminal, sessie, panelen]
+    hu: [tmux, terminál, munkamenet, panelek]
   commands:
-  - cmd: tmux
-    desc:
-      cs: Spustit novou session
-      en: Start new session
-  - cmd: tmux new -s prace
-    desc:
-      cs: Pojmenovaná session 'prace'
-      en: Named session 'prace'
-  - cmd: tmux ls
-    desc:
-      cs: Seznam aktivních sessions
-      en: List active sessions
-  - cmd: tmux attach -t prace
-    desc:
-      cs: Připojit zpět k session 'prace'
-      en: Reattach to session 'prace'
-  - cmd: tmux kill-session -t prace
-    desc:
-      cs: Ukončit konkrétní session
-      en: Kill specific session
+    - cmd: "tmux"
+      desc:
+        en: "Start new session"
+        cs: "Spustit novou session"
+        sk: "Spustiť novú session"
+        de: "Neue Session starten"
+        es: "Iniciar nueva sesión"
+        fr: "Démarrer une nouvelle session"
+        it: "Avviare nuova sessione"
+        pl: "Uruchom nową sesję"
+        tr: "Yeni oturum başlat"
+        pt: "Iniciar nova sessão"
+        nl: "Nieuwe sessie starten"
+        hu: "Új munkamenet indítása"
+    - cmd: "tmux new -s work"
+      desc:
+        en: "Named session 'work'"
+        cs: "Pojmenovaná session 'work'"
+        sk: "Pomenovaná session 'work'"
+        de: "Benannte Session 'work'"
+        es: "Sesión llamada 'work'"
+        fr: "Session nommée 'work'"
+        it: "Sessione chiamata 'work'"
+        pl: "Nazwana sesja 'work'"
+        tr: "İsimli oturum 'work'"
+        pt: "Sessão chamada 'work'"
+        nl: "Genoemde sessie 'work'"
+        hu: "'work' nevű munkamenet"
+    - cmd: "tmux ls"
+      desc:
+        en: "List active sessions"
+        cs: "Seznam aktivních sessions"
+        sk: "Zoznam aktívnych sessions"
+        de: "Aktive Sessions auflisten"
+        es: "Listar sesiones activas"
+        fr: "Lister les sessions actives"
+        it: "Elenco sessioni attive"
+        pl: "Lista aktywnych sesji"
+        tr: "Aktif oturumları listele"
+        pt: "Listar sessões ativas"
+        nl: "Actieve sessies tonen"
+        hu: "Aktív munkamenetek listája"
+    - cmd: "tmux attach -t work"
+      desc:
+        en: "Reattach to session 'work'"
+        cs: "Připojit zpět k session 'work'"
+        sk: "Pripojiť späť k session 'work'"
+        de: "An Session 'work' wieder anhängen"
+        es: "Reconectar a la sesión 'work'"
+        fr: "Se rattacher à la session 'work'"
+        it: "Riconnettersi alla sessione 'work'"
+        pl: "Połącz ponownie z sesją 'work'"
+        tr: "'work' oturumuna yeniden bağlan"
+        pt: "Reconectar à sessão 'work'"
+        nl: "Opnieuw verbinden met sessie 'work'"
+        hu: "Visszakapcsolás a 'work' munkamenethez"
+    - cmd: "tmux kill-session -t work"
+      desc:
+        en: "Kill specific session"
+        cs: "Ukončit konkrétní session"
+        sk: "Ukončiť konkrétnu session"
+        de: "Bestimmte Session beenden"
+        es: "Matar sesión específica"
+        fr: "Tuer une session spécifique"
+        it: "Terminare sessione specifica"
+        pl: "Zakończ konkretną sesję"
+        tr: "Belirli oturumu sonlandır"
+        pt: "Encerrar sessão específica"
+        nl: "Specifieke sessie beëindigen"
+        hu: "Adott munkamenet leállítása"
+
 - id: tmux-keys
   title:
-    cs: Tmux klávesové zkratky (prefix Ctrl+b)
-    en: Tmux key bindings (prefix Ctrl+b)
+    en: "Tmux key bindings (prefix Ctrl+b)"
+    cs: "Tmux klávesové zkratky (prefix Ctrl+b)"
+    sk: "Tmux klávesové skratky (prefix Ctrl+b)"
+    de: "Tmux-Tastenbindungen (Prefix Strg+b)"
+    es: "Atajos de tmux (prefijo Ctrl+b)"
+    fr: "Raccourcis tmux (préfixe Ctrl+b)"
+    it: "Scorciatoie tmux (prefisso Ctrl+b)"
+    pl: "Skróty tmux (prefiks Ctrl+b)"
+    tr: "Tmux kısayolları (önek Ctrl+b)"
+    pt: "Atalhos tmux (prefixo Ctrl+b)"
+    nl: "Tmux-sneltoetsen (prefix Ctrl+b)"
+    hu: "Tmux gyorsbillentyűk (prefix Ctrl+b)"
   tags:
-    cs:
-    - tmux
-    - zkratky
-    - prefix
-    - klávesy
-    - panely
-    - okna
-    en:
-    - tmux
-    - shortcuts
-    - prefix
-    - keys
-    - panes
-    - windows
+    en: [tmux, shortcuts, prefix, keys, panes, windows]
+    cs: [tmux, zkratky, prefix, klávesy, panely, okna]
+    sk: [tmux, skratky, prefix, klávesy, panely, okná]
+    de: [tmux, tastenkürzel, prefix, tasten, fenster]
+    es: [tmux, atajos, prefijo, teclas, paneles, ventanas]
+    fr: [tmux, raccourcis, préfixe, touches, panneaux, fenêtres]
+    it: [tmux, scorciatoie, prefisso, tasti, pannelli, finestre]
+    pl: [tmux, skróty, prefiks, klawisze, panele, okna]
+    tr: [tmux, kısayollar, önek, tuşlar, paneller, pencereler]
+    pt: [tmux, atalhos, prefixo, teclas, painéis, janelas]
+    nl: [tmux, sneltoetsen, prefix, toetsen, panelen, vensters]
+    hu: [tmux, gyorsbillentyűk, prefix, billentyűk, panelek, ablakok]
   commands:
-  - cmd: Ctrl+b d
-    desc:
-      cs: Detach (odpojit, ale session běží dál)
-      en: Detach (session keeps running)
-  - cmd: Ctrl+b %
-    desc:
-      cs: Rozdělit panel vertikálně
-      en: Split pane vertically
-  - cmd: Ctrl+b "
-    desc:
-      cs: Rozdělit panel horizontálně
-      en: Split pane horizontally
-  - cmd: Ctrl+b šipka
-    desc:
-      cs: Přepnout mezi panely
-      en: Switch between panes
-  - cmd: Ctrl+b c
-    desc:
-      cs: Vytvořit nové okno
-      en: Create new window
-  - cmd: Ctrl+b n
-    desc:
-      cs: Další okno
-      en: Next window
-  - cmd: Ctrl+b ,
-    desc:
-      cs: Přejmenovat okno
-      en: Rename window
-  - cmd: Ctrl+b x
-    desc:
-      cs: Zavřít panel
-      en: Close pane
+    - cmd: "Ctrl+b d"
+      desc:
+        en: "Detach (session keeps running)"
+        cs: "Detach (odpojit, ale session běží dál)"
+        sk: "Detach (odpojiť, ale session beží ďalej)"
+        de: "Detach (Session läuft weiter)"
+        es: "Detach (sesión sigue corriendo)"
+        fr: "Détacher (la session continue)"
+        it: "Detach (la sessione continua)"
+        pl: "Detach (sesja działa dalej)"
+        tr: "Detach (oturum çalışmaya devam eder)"
+        pt: "Detach (sessão continua rodando)"
+        nl: "Detach (sessie blijft draaien)"
+        hu: "Lecsatlakozás (munkamenet tovább fut)"
+    - cmd: "Ctrl+b %"
+      desc:
+        en: "Split pane vertically"
+        cs: "Rozdělit panel vertikálně"
+        sk: "Rozdeliť panel vertikálne"
+        de: "Fenster vertikal teilen"
+        es: "Dividir panel verticalmente"
+        fr: "Diviser le panneau verticalement"
+        it: "Dividere pannello verticalmente"
+        pl: "Podziel panel pionowo"
+        tr: "Paneli dikey böl"
+        pt: "Dividir painel verticalmente"
+        nl: "Paneel verticaal splitsen"
+        hu: "Panel függőleges felosztása"
+    - cmd: "Ctrl+b \""
+      desc:
+        en: "Split pane horizontally"
+        cs: "Rozdělit panel horizontálně"
+        sk: "Rozdeliť panel horizontálne"
+        de: "Fenster horizontal teilen"
+        es: "Dividir panel horizontalmente"
+        fr: "Diviser le panneau horizontalement"
+        it: "Dividere pannello orizzontalmente"
+        pl: "Podziel panel poziomo"
+        tr: "Paneli yatay böl"
+        pt: "Dividir painel horizontalmente"
+        nl: "Paneel horizontaal splitsen"
+        hu: "Panel vízszintes felosztása"
+    - cmd: "Ctrl+b arrow"
+      desc:
+        en: "Switch between panes"
+        cs: "Přepnout mezi panely"
+        sk: "Prepnúť medzi panelmi"
+        de: "Zwischen Fenstern wechseln"
+        es: "Cambiar entre paneles"
+        fr: "Basculer entre les panneaux"
+        it: "Passare tra i pannelli"
+        pl: "Przełącz między panelami"
+        tr: "Paneller arasında geç"
+        pt: "Alternar entre painéis"
+        nl: "Wisselen tussen panelen"
+        hu: "Váltás panelek között"
+    - cmd: "Ctrl+b c"
+      desc:
+        en: "Create new window"
+        cs: "Vytvořit nové okno"
+        sk: "Vytvoriť nové okno"
+        de: "Neues Fenster erstellen"
+        es: "Crear nueva ventana"
+        fr: "Créer une nouvelle fenêtre"
+        it: "Creare nuova finestra"
+        pl: "Utwórz nowe okno"
+        tr: "Yeni pencere oluştur"
+        pt: "Criar nova janela"
+        nl: "Nieuw venster maken"
+        hu: "Új ablak létrehozása"
+    - cmd: "Ctrl+b n"
+      desc:
+        en: "Next window"
+        cs: "Další okno"
+        sk: "Ďalšie okno"
+        de: "Nächstes Fenster"
+        es: "Siguiente ventana"
+        fr: "Fenêtre suivante"
+        it: "Finestra successiva"
+        pl: "Następne okno"
+        tr: "Sonraki pencere"
+        pt: "Próxima janela"
+        nl: "Volgend venster"
+        hu: "Következő ablak"
+    - cmd: "Ctrl+b ,"
+      desc:
+        en: "Rename window"
+        cs: "Přejmenovat okno"
+        sk: "Premenovať okno"
+        de: "Fenster umbenennen"
+        es: "Renombrar ventana"
+        fr: "Renommer la fenêtre"
+        it: "Rinominare finestra"
+        pl: "Zmień nazwę okna"
+        tr: "Pencereyi yeniden adlandır"
+        pt: "Renomear janela"
+        nl: "Venster hernoemen"
+        hu: "Ablak átnevezése"
+    - cmd: "Ctrl+b x"
+      desc:
+        en: "Close pane"
+        cs: "Zavřít panel"
+        sk: "Zavrieť panel"
+        de: "Fenster schließen"
+        es: "Cerrar panel"
+        fr: "Fermer le panneau"
+        it: "Chiudere pannello"
+        pl: "Zamknij panel"
+        tr: "Paneli kapat"
+        pt: "Fechar painel"
+        nl: "Paneel sluiten"
+        hu: "Panel bezárása"
+
 - id: screen-basic
   title:
-    cs: Screen (alternativa k tmux)
-    en: Screen (tmux alternative)
+    en: "Screen (tmux alternative)"
+    cs: "Screen (alternativa k tmux)"
+    sk: "Screen (alternatíva k tmux)"
+    de: "Screen (tmux-Alternative)"
+    es: "Screen (alternativa a tmux)"
+    fr: "Screen (alternative à tmux)"
+    it: "Screen (alternativa a tmux)"
+    pl: "Screen (alternatywa dla tmux)"
+    tr: "Screen (tmux alternatifi)"
+    pt: "Screen (alternativa ao tmux)"
+    nl: "Screen (tmux-alternatief)"
+    hu: "Screen (tmux alternatíva)"
   tags:
-    cs:
-    - screen
-    - terminál
-    - session
-    en:
-    - screen
-    - terminal
-    - session
+    en: [screen, terminal, session]
+    cs: [screen, terminál, session]
+    sk: [screen, terminál, session]
+    de: [screen, terminal, session]
+    es: [screen, terminal, sesión]
+    fr: [screen, terminal, session]
+    it: [screen, terminale, sessione]
+    pl: [screen, terminal, sesja]
+    tr: [screen, terminal, oturum]
+    pt: [screen, terminal, sessão]
+    nl: [screen, terminal, sessie]
+    hu: [screen, terminál, munkamenet]
   commands:
-  - cmd: screen -S prace
-    desc:
-      cs: Nová pojmenovaná session
-      en: New named session
-  - cmd: screen -ls
-    desc:
-      cs: Seznam sessions
-      en: List sessions
-  - cmd: screen -r prace
-    desc:
-      cs: Připojit zpět
-      en: Reattach
-  - cmd: Ctrl+a d
-    desc:
-      cs: Detach
-      en: Detach
+    - cmd: "screen -S work"
+      desc:
+        en: "New named session"
+        cs: "Nová pojmenovaná session"
+        sk: "Nová pomenovaná session"
+        de: "Neue benannte Session"
+        es: "Nueva sesión nombrada"
+        fr: "Nouvelle session nommée"
+        it: "Nuova sessione nominata"
+        pl: "Nowa nazwana sesja"
+        tr: "Yeni isimli oturum"
+        pt: "Nova sessão nomeada"
+        nl: "Nieuwe genoemde sessie"
+        hu: "Új elnevezett munkamenet"
+    - cmd: "screen -ls"
+      desc:
+        en: "List sessions"
+        cs: "Seznam sessions"
+        sk: "Zoznam sessions"
+        de: "Sessions auflisten"
+        es: "Listar sesiones"
+        fr: "Lister les sessions"
+        it: "Elenco sessioni"
+        pl: "Lista sesji"
+        tr: "Oturumları listele"
+        pt: "Listar sessões"
+        nl: "Sessies tonen"
+        hu: "Munkamenetek listája"
+    - cmd: "screen -r work"
+      desc:
+        en: "Reattach"
+        cs: "Připojit zpět"
+        sk: "Pripojiť späť"
+        de: "Wieder anhängen"
+        es: "Reconectar"
+        fr: "Se rattacher"
+        it: "Riconnettersi"
+        pl: "Połącz ponownie"
+        tr: "Yeniden bağlan"
+        pt: "Reconectar"
+        nl: "Opnieuw verbinden"
+        hu: "Visszakapcsolódás"
+    - cmd: "Ctrl+a d"
+      desc:
+        en: "Detach"
+        cs: "Detach"
+        sk: "Detach"
+        de: "Detach"
+        es: "Detach"
+        fr: "Détacher"
+        it: "Detach"
+        pl: "Detach"
+        tr: "Detach"
+        pt: "Detach"
+        nl: "Detach"
+        hu: "Lecsatlakozás"

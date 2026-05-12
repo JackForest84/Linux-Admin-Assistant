@@ -1,186 +1,521 @@
 - id: vim-basics
   title:
-    cs: Vim základy
-    en: Vim basics
+    en: "Vim basics"
+    cs: "Vim základy"
+    sk: "Vim základy"
+    de: "Vim-Grundlagen"
+    es: "Conceptos básicos de Vim"
+    fr: "Bases de Vim"
+    it: "Basi di Vim"
+    pl: "Podstawy Vima"
+    tr: "Vim temelleri"
+    pt: "Básicos do Vim"
+    nl: "Vim-basis"
+    hu: "Vim alapok"
   tags:
-    cs:
-    - vim
-    - editor
-    - základy
-    - otevřít
-    - zavřít
-    en:
-    - vim
-    - editor
-    - basics
-    - open
-    - quit
+    en: [vim, editor, basics, open, quit]
+    cs: [vim, editor, základy, otevřít, zavřít]
+    sk: [vim, editor, základy, otvoriť, zavrieť]
+    de: [vim, editor, grundlagen, öffnen, beenden]
+    es: [vim, editor, básico, abrir, cerrar]
+    fr: [vim, éditeur, bases, ouvrir, quitter]
+    it: [vim, editor, basi, aprire, chiudere]
+    pl: [vim, edytor, podstawy, otwórz, zamknij]
+    tr: [vim, editör, temel, aç, kapat]
+    pt: [vim, editor, básico, abrir, sair]
+    nl: [vim, editor, basis, openen, sluiten]
+    hu: [vim, szerkesztő, alapok, megnyitás, kilépés]
   commands:
-  - cmd: vim soubor.txt
-    desc:
-      cs: Otevřít soubor
-      en: Open file
-  - cmd: :w
-    desc:
-      cs: Uložit (write)
-      en: Save (write)
-  - cmd: :q
-    desc:
-      cs: Zavřít
-      en: Quit
-  - cmd: :wq
-    desc:
-      cs: Uložit a zavřít
-      en: Save and quit
-  - cmd: :q!
-    desc:
-      cs: Zavřít bez uložení
-      en: Quit without saving
-  - cmd: :x
-    desc:
-      cs: Uložit (pokud změněno) a zavřít
-      en: Save (if changed) and quit
-  - cmd: i
-    desc:
-      cs: Vstoupit do režimu vkládání
-      en: Enter insert mode
-  - cmd: Esc
-    desc:
-      cs: Zpět do normálního režimu
-      en: Back to normal mode
+    - cmd: "vim file.txt"
+      desc:
+        en: "Open file"
+        cs: "Otevřít soubor"
+        sk: "Otvoriť súbor"
+        de: "Datei öffnen"
+        es: "Abrir archivo"
+        fr: "Ouvrir un fichier"
+        it: "Aprire file"
+        pl: "Otwórz plik"
+        tr: "Dosya aç"
+        pt: "Abrir arquivo"
+        nl: "Bestand openen"
+        hu: "Fájl megnyitása"
+    - cmd: ":w"
+      desc:
+        en: "Save (write)"
+        cs: "Uložit (write)"
+        sk: "Uložiť (write)"
+        de: "Speichern (write)"
+        es: "Guardar (write)"
+        fr: "Enregistrer (write)"
+        it: "Salvare (write)"
+        pl: "Zapisz (write)"
+        tr: "Kaydet (write)"
+        pt: "Salvar (write)"
+        nl: "Opslaan (write)"
+        hu: "Mentés (write)"
+    - cmd: ":q"
+      desc:
+        en: "Quit"
+        cs: "Zavřít"
+        sk: "Zavrieť"
+        de: "Beenden"
+        es: "Salir"
+        fr: "Quitter"
+        it: "Uscire"
+        pl: "Zamknij"
+        tr: "Çık"
+        pt: "Sair"
+        nl: "Sluiten"
+        hu: "Kilépés"
+    - cmd: ":wq"
+      desc:
+        en: "Save and quit"
+        cs: "Uložit a zavřít"
+        sk: "Uložiť a zavrieť"
+        de: "Speichern und beenden"
+        es: "Guardar y salir"
+        fr: "Enregistrer et quitter"
+        it: "Salvare e uscire"
+        pl: "Zapisz i wyjdź"
+        tr: "Kaydet ve çık"
+        pt: "Salvar e sair"
+        nl: "Opslaan en sluiten"
+        hu: "Mentés és kilépés"
+    - cmd: ":q!"
+      desc:
+        en: "Quit without saving"
+        cs: "Zavřít bez uložení"
+        sk: "Zavrieť bez uloženia"
+        de: "Ohne Speichern beenden"
+        es: "Salir sin guardar"
+        fr: "Quitter sans enregistrer"
+        it: "Uscire senza salvare"
+        pl: "Wyjdź bez zapisywania"
+        tr: "Kaydetmeden çık"
+        pt: "Sair sem salvar"
+        nl: "Sluiten zonder opslaan"
+        hu: "Kilépés mentés nélkül"
+    - cmd: ":x"
+      desc:
+        en: "Save (if changed) and quit"
+        cs: "Uložit (pokud změněno) a zavřít"
+        sk: "Uložiť (ak zmenené) a zavrieť"
+        de: "Speichern (falls geändert) und beenden"
+        es: "Guardar (si cambió) y salir"
+        fr: "Enregistrer (si modifié) et quitter"
+        it: "Salvare (se modificato) e uscire"
+        pl: "Zapisz (jeśli zmienione) i wyjdź"
+        tr: "Kaydet (değiştiyse) ve çık"
+        pt: "Salvar (se alterado) e sair"
+        nl: "Opslaan (indien gewijzigd) en sluiten"
+        hu: "Mentés (ha módosítva) és kilépés"
+    - cmd: "i"
+      desc:
+        en: "Enter insert mode"
+        cs: "Vstoupit do režimu vkládání"
+        sk: "Vstúpiť do režimu vkladania"
+        de: "Insert-Modus aktivieren"
+        es: "Entrar en modo insertar"
+        fr: "Entrer en mode insertion"
+        it: "Entrare in modalità inserimento"
+        pl: "Wejdź w tryb wstawiania"
+        tr: "Ekleme moduna gir"
+        pt: "Entrar no modo de inserção"
+        nl: "Invoegmodus openen"
+        hu: "Beszúrási mód belépés"
+    - cmd: "Esc"
+      desc:
+        en: "Back to normal mode"
+        cs: "Zpět do normálního režimu"
+        sk: "Späť do normálneho režimu"
+        de: "Zurück in den Normalmodus"
+        es: "Volver al modo normal"
+        fr: "Retour au mode normal"
+        it: "Tornare alla modalità normale"
+        pl: "Powrót do trybu normalnego"
+        tr: "Normal moda dön"
+        pt: "Voltar ao modo normal"
+        nl: "Terug naar normale modus"
+        hu: "Vissza normál módba"
+
 - id: vim-edit
   title:
-    cs: Vim úpravy
-    en: Vim editing
+    en: "Vim editing"
+    cs: "Vim úpravy"
+    sk: "Vim úpravy"
+    de: "Vim-Bearbeitung"
+    es: "Edición en Vim"
+    fr: "Édition Vim"
+    it: "Modifica in Vim"
+    pl: "Edycja w Vimie"
+    tr: "Vim düzenleme"
+    pt: "Edição no Vim"
+    nl: "Vim-bewerking"
+    hu: "Vim szerkesztés"
   tags:
-    cs:
-    - vim
-    - úpravy
-    - kopírovat
-    - mazat
-    - yank
-    - paste
-    en:
-    - vim
-    - edit
-    - copy
-    - delete
-    - yank
-    - paste
+    en: [vim, edit, copy, delete, yank, paste]
+    cs: [vim, úpravy, kopírovat, mazat, yank, paste]
+    sk: [vim, úpravy, kopírovať, mazať, yank, paste]
+    de: [vim, bearbeiten, kopieren, löschen, yank, paste]
+    es: [vim, editar, copiar, borrar, yank, paste]
+    fr: [vim, éditer, copier, supprimer, yank, paste]
+    it: [vim, modificare, copiare, eliminare, yank, paste]
+    pl: [vim, edycja, kopiowanie, usuwanie, yank, paste]
+    tr: [vim, düzenle, kopyala, sil, yank, paste]
+    pt: [vim, editar, copiar, apagar, yank, paste]
+    nl: [vim, bewerken, kopiëren, verwijderen, yank, paste]
+    hu: [vim, szerkesztés, másolás, törlés, yank, paste]
   commands:
-  - cmd: dd
-    desc:
-      cs: Smazat řádek
-      en: Delete line
-  - cmd: 5dd
-    desc:
-      cs: Smazat 5 řádků
-      en: Delete 5 lines
-  - cmd: yy
-    desc:
-      cs: Zkopírovat řádek (yank)
-      en: Copy line (yank)
-  - cmd: p
-    desc:
-      cs: Vložit pod kurzor (paste)
-      en: Paste below cursor
-  - cmd: u
-    desc:
-      cs: Zpět (undo)
-      en: Undo
-  - cmd: Ctrl+r
-    desc:
-      cs: Znovu (redo)
-      en: Redo
-  - cmd: :%s/staré/nové/g
-    desc:
-      cs: Nahradit všude v souboru
-      en: Replace everywhere in file
-  - cmd: :%s/staré/nové/gc
-    desc:
-      cs: Nahradit s potvrzením každé změny
-      en: Replace with confirmation per change
+    - cmd: "dd"
+      desc:
+        en: "Delete line"
+        cs: "Smazat řádek"
+        sk: "Zmazať riadok"
+        de: "Zeile löschen"
+        es: "Eliminar línea"
+        fr: "Supprimer la ligne"
+        it: "Eliminare riga"
+        pl: "Usuń linię"
+        tr: "Satırı sil"
+        pt: "Excluir linha"
+        nl: "Regel verwijderen"
+        hu: "Sor törlése"
+    - cmd: "5dd"
+      desc:
+        en: "Delete 5 lines"
+        cs: "Smazat 5 řádků"
+        sk: "Zmazať 5 riadkov"
+        de: "5 Zeilen löschen"
+        es: "Eliminar 5 líneas"
+        fr: "Supprimer 5 lignes"
+        it: "Eliminare 5 righe"
+        pl: "Usuń 5 linii"
+        tr: "5 satır sil"
+        pt: "Excluir 5 linhas"
+        nl: "5 regels verwijderen"
+        hu: "5 sor törlése"
+    - cmd: "yy"
+      desc:
+        en: "Copy line (yank)"
+        cs: "Zkopírovat řádek (yank)"
+        sk: "Skopírovať riadok (yank)"
+        de: "Zeile kopieren (yank)"
+        es: "Copiar línea (yank)"
+        fr: "Copier la ligne (yank)"
+        it: "Copiare riga (yank)"
+        pl: "Kopiuj linię (yank)"
+        tr: "Satırı kopyala (yank)"
+        pt: "Copiar linha (yank)"
+        nl: "Regel kopiëren (yank)"
+        hu: "Sor másolása (yank)"
+    - cmd: "p"
+      desc:
+        en: "Paste below cursor"
+        cs: "Vložit pod kurzor (paste)"
+        sk: "Vložiť pod kurzor (paste)"
+        de: "Unter Cursor einfügen"
+        es: "Pegar bajo el cursor"
+        fr: "Coller sous le curseur"
+        it: "Incollare sotto il cursore"
+        pl: "Wklej pod kursorem"
+        tr: "İmlecin altına yapıştır"
+        pt: "Colar abaixo do cursor"
+        nl: "Plakken onder cursor"
+        hu: "Beillesztés a kurzor alá"
+    - cmd: "u"
+      desc:
+        en: "Undo"
+        cs: "Zpět (undo)"
+        sk: "Späť (undo)"
+        de: "Rückgängig"
+        es: "Deshacer"
+        fr: "Annuler"
+        it: "Annullare"
+        pl: "Cofnij"
+        tr: "Geri al"
+        pt: "Desfazer"
+        nl: "Ongedaan maken"
+        hu: "Visszavonás"
+    - cmd: "Ctrl+r"
+      desc:
+        en: "Redo"
+        cs: "Znovu (redo)"
+        sk: "Znovu (redo)"
+        de: "Wiederholen"
+        es: "Rehacer"
+        fr: "Refaire"
+        it: "Ripristinare"
+        pl: "Powtórz"
+        tr: "Yinele"
+        pt: "Refazer"
+        nl: "Opnieuw"
+        hu: "Újra"
+    - cmd: ":%s/old/new/g"
+      desc:
+        en: "Replace everywhere in file"
+        cs: "Nahradit všude v souboru"
+        sk: "Nahradiť všade v súbore"
+        de: "Überall in der Datei ersetzen"
+        es: "Reemplazar en todo el archivo"
+        fr: "Remplacer partout dans le fichier"
+        it: "Sostituire ovunque nel file"
+        pl: "Zamień wszędzie w pliku"
+        tr: "Dosyada her yerde değiştir"
+        pt: "Substituir em todo o arquivo"
+        nl: "Overal in bestand vervangen"
+        hu: "Csere mindenhol a fájlban"
+    - cmd: ":%s/old/new/gc"
+      desc:
+        en: "Replace with confirmation per change"
+        cs: "Nahradit s potvrzením každé změny"
+        sk: "Nahradiť s potvrdením každej zmeny"
+        de: "Mit Bestätigung pro Änderung ersetzen"
+        es: "Reemplazar con confirmación"
+        fr: "Remplacer avec confirmation"
+        it: "Sostituire con conferma"
+        pl: "Zamień z potwierdzeniem"
+        tr: "Her değişiklik için onayla"
+        pt: "Substituir com confirmação"
+        nl: "Vervangen met bevestiging"
+        hu: "Csere megerősítéssel"
+
 - id: vim-nav
   title:
-    cs: Vim navigace
-    en: Vim navigation
+    en: "Vim navigation"
+    cs: "Vim navigace"
+    sk: "Vim navigácia"
+    de: "Vim-Navigation"
+    es: "Navegación en Vim"
+    fr: "Navigation Vim"
+    it: "Navigazione in Vim"
+    pl: "Nawigacja w Vimie"
+    tr: "Vim navigasyon"
+    pt: "Navegação no Vim"
+    nl: "Vim-navigatie"
+    hu: "Vim navigáció"
   tags:
-    cs:
-    - vim
-    - navigace
-    - hledat
-    - řádek
-    - skok
-    en:
-    - vim
-    - navigation
-    - search
-    - line
-    - jump
+    en: [vim, navigation, search, line, jump]
+    cs: [vim, navigace, hledat, řádek, skok]
+    sk: [vim, navigácia, hľadať, riadok, skok]
+    de: [vim, navigation, suchen, zeile, sprung]
+    es: [vim, navegación, buscar, línea, salto]
+    fr: [vim, navigation, chercher, ligne, saut]
+    it: [vim, navigazione, cercare, riga, salto]
+    pl: [vim, nawigacja, szukaj, linia, skok]
+    tr: [vim, navigasyon, ara, satır, atla]
+    pt: [vim, navegação, buscar, linha, salto]
+    nl: [vim, navigatie, zoeken, regel, sprong]
+    hu: [vim, navigáció, keresés, sor, ugrás]
   commands:
-  - cmd: gg
-    desc:
-      cs: Na začátek souboru
-      en: Go to top of file
-  - cmd: G
-    desc:
-      cs: Na konec souboru
-      en: Go to end of file
-  - cmd: :42
-    desc:
-      cs: Skočit na řádek 42
-      en: Jump to line 42
-  - cmd: /hledej
-    desc:
-      cs: Hledat dopředu (n = další)
-      en: Search forward (n = next)
-  - cmd: ?hledej
-    desc:
-      cs: Hledat dozadu
-      en: Search backward
-  - cmd: '0'
-    desc:
-      cs: Na začátek řádku
-      en: Start of line
-  - cmd: $
-    desc:
-      cs: Na konec řádku
-      en: End of line
+    - cmd: "gg"
+      desc:
+        en: "Go to top of file"
+        cs: "Na začátek souboru"
+        sk: "Na začiatok súboru"
+        de: "Zum Dateianfang"
+        es: "Al inicio del archivo"
+        fr: "Au début du fichier"
+        it: "All'inizio del file"
+        pl: "Na początek pliku"
+        tr: "Dosyanın başına"
+        pt: "Ao início do arquivo"
+        nl: "Naar begin van bestand"
+        hu: "Fájl elejére"
+    - cmd: "G"
+      desc:
+        en: "Go to end of file"
+        cs: "Na konec souboru"
+        sk: "Na koniec súboru"
+        de: "Zum Dateiende"
+        es: "Al final del archivo"
+        fr: "À la fin du fichier"
+        it: "Alla fine del file"
+        pl: "Na koniec pliku"
+        tr: "Dosyanın sonuna"
+        pt: "Ao final do arquivo"
+        nl: "Naar einde van bestand"
+        hu: "Fájl végére"
+    - cmd: ":42"
+      desc:
+        en: "Jump to line 42"
+        cs: "Skočit na řádek 42"
+        sk: "Skočiť na riadok 42"
+        de: "Zu Zeile 42 springen"
+        es: "Saltar a la línea 42"
+        fr: "Aller à la ligne 42"
+        it: "Saltare alla riga 42"
+        pl: "Skocz do linii 42"
+        tr: "42. satıra atla"
+        pt: "Saltar para linha 42"
+        nl: "Naar regel 42 springen"
+        hu: "Ugrás a 42. sorba"
+    - cmd: "/search"
+      desc:
+        en: "Search forward (n = next)"
+        cs: "Hledat dopředu (n = další)"
+        sk: "Hľadať dopredu (n = ďalšie)"
+        de: "Vorwärts suchen (n = nächste)"
+        es: "Buscar hacia adelante (n = siguiente)"
+        fr: "Chercher en avant (n = suivant)"
+        it: "Cercare in avanti (n = successivo)"
+        pl: "Szukaj w przód (n = następne)"
+        tr: "İleri ara (n = sonraki)"
+        pt: "Buscar adiante (n = próximo)"
+        nl: "Vooruit zoeken (n = volgende)"
+        hu: "Keresés előre (n = következő)"
+    - cmd: "?search"
+      desc:
+        en: "Search backward"
+        cs: "Hledat dozadu"
+        sk: "Hľadať dozadu"
+        de: "Rückwärts suchen"
+        es: "Buscar hacia atrás"
+        fr: "Chercher en arrière"
+        it: "Cercare all'indietro"
+        pl: "Szukaj wstecz"
+        tr: "Geri ara"
+        pt: "Buscar para trás"
+        nl: "Achteruit zoeken"
+        hu: "Keresés visszafelé"
+    - cmd: "0"
+      desc:
+        en: "Start of line"
+        cs: "Na začátek řádku"
+        sk: "Na začiatok riadku"
+        de: "Zeilenanfang"
+        es: "Inicio de línea"
+        fr: "Début de ligne"
+        it: "Inizio riga"
+        pl: "Początek linii"
+        tr: "Satır başına"
+        pt: "Início da linha"
+        nl: "Begin van regel"
+        hu: "Sor elejére"
+    - cmd: "$"
+      desc:
+        en: "End of line"
+        cs: "Na konec řádku"
+        sk: "Na koniec riadku"
+        de: "Zeilenende"
+        es: "Final de línea"
+        fr: "Fin de ligne"
+        it: "Fine riga"
+        pl: "Koniec linii"
+        tr: "Satır sonuna"
+        pt: "Final da linha"
+        nl: "Einde van regel"
+        hu: "Sor végére"
+
 - id: nano-basics
   title:
-    cs: Nano (jednodušší editor)
-    en: Nano (simpler editor)
+    en: "Nano (simpler editor)"
+    cs: "Nano (jednodušší editor)"
+    sk: "Nano (jednoduchší editor)"
+    de: "Nano (einfacherer Editor)"
+    es: "Nano (editor más simple)"
+    fr: "Nano (éditeur plus simple)"
+    it: "Nano (editor più semplice)"
+    pl: "Nano (prostszy edytor)"
+    tr: "Nano (daha basit editör)"
+    pt: "Nano (editor mais simples)"
+    nl: "Nano (eenvoudigere editor)"
+    hu: "Nano (egyszerűbb szerkesztő)"
   tags:
-    cs:
-    - nano
-    - editor
-    - jednoduchý
-    en:
-    - nano
-    - editor
-    - simple
+    en: [nano, editor, simple]
+    cs: [nano, editor, jednoduchý]
+    sk: [nano, editor, jednoduchý]
+    de: [nano, editor, einfach]
+    es: [nano, editor, simple]
+    fr: [nano, éditeur, simple]
+    it: [nano, editor, semplice]
+    pl: [nano, edytor, prosty]
+    tr: [nano, editör, basit]
+    pt: [nano, editor, simples]
+    nl: [nano, editor, eenvoudig]
+    hu: [nano, szerkesztő, egyszerű]
   commands:
-  - cmd: nano soubor.txt
-    desc:
-      cs: Otevřít soubor
-      en: Open file
-  - cmd: Ctrl+O
-    desc:
-      cs: Uložit
-      en: Save
-  - cmd: Ctrl+X
-    desc:
-      cs: Zavřít
-      en: Exit
-  - cmd: Ctrl+W
-    desc:
-      cs: Hledat
-      en: Search
-  - cmd: Ctrl+K
-    desc:
-      cs: Vyříznout řádek
-      en: Cut line
-  - cmd: Ctrl+U
-    desc:
-      cs: Vložit
-      en: Paste
+    - cmd: "nano file.txt"
+      desc:
+        en: "Open file"
+        cs: "Otevřít soubor"
+        sk: "Otvoriť súbor"
+        de: "Datei öffnen"
+        es: "Abrir archivo"
+        fr: "Ouvrir un fichier"
+        it: "Aprire file"
+        pl: "Otwórz plik"
+        tr: "Dosya aç"
+        pt: "Abrir arquivo"
+        nl: "Bestand openen"
+        hu: "Fájl megnyitása"
+    - cmd: "Ctrl+O"
+      desc:
+        en: "Save"
+        cs: "Uložit"
+        sk: "Uložiť"
+        de: "Speichern"
+        es: "Guardar"
+        fr: "Enregistrer"
+        it: "Salvare"
+        pl: "Zapisz"
+        tr: "Kaydet"
+        pt: "Salvar"
+        nl: "Opslaan"
+        hu: "Mentés"
+    - cmd: "Ctrl+X"
+      desc:
+        en: "Exit"
+        cs: "Zavřít"
+        sk: "Zavrieť"
+        de: "Beenden"
+        es: "Salir"
+        fr: "Quitter"
+        it: "Uscire"
+        pl: "Wyjdź"
+        tr: "Çık"
+        pt: "Sair"
+        nl: "Sluiten"
+        hu: "Kilépés"
+    - cmd: "Ctrl+W"
+      desc:
+        en: "Search"
+        cs: "Hledat"
+        sk: "Hľadať"
+        de: "Suchen"
+        es: "Buscar"
+        fr: "Rechercher"
+        it: "Cercare"
+        pl: "Szukaj"
+        tr: "Ara"
+        pt: "Buscar"
+        nl: "Zoeken"
+        hu: "Keresés"
+    - cmd: "Ctrl+K"
+      desc:
+        en: "Cut line"
+        cs: "Vyříznout řádek"
+        sk: "Vystrihnúť riadok"
+        de: "Zeile ausschneiden"
+        es: "Cortar línea"
+        fr: "Couper la ligne"
+        it: "Tagliare riga"
+        pl: "Wytnij linię"
+        tr: "Satırı kes"
+        pt: "Cortar linha"
+        nl: "Regel knippen"
+        hu: "Sor kivágása"
+    - cmd: "Ctrl+U"
+      desc:
+        en: "Paste"
+        cs: "Vložit"
+        sk: "Vložiť"
+        de: "Einfügen"
+        es: "Pegar"
+        fr: "Coller"
+        it: "Incollare"
+        pl: "Wklej"
+        tr: "Yapıştır"
+        pt: "Colar"
+        nl: "Plakken"
+        hu: "Beillesztés"

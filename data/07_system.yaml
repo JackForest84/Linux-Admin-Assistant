@@ -1,214 +1,551 @@
 - id: sys-info
   title:
-    cs: Informace o systému
-    en: System information
+    en: "System information"
+    cs: "Informace o systému"
+    sk: "Informácie o systéme"
+    de: "Systeminformationen"
+    es: "Información del sistema"
+    fr: "Informations système"
+    it: "Informazioni di sistema"
+    pl: "Informacje o systemie"
+    tr: "Sistem bilgisi"
+    pt: "Informações do sistema"
+    nl: "Systeeminformatie"
+    hu: "Rendszerinformációk"
   tags:
-    cs:
-    - systém
-    - info
-    - verze
-    - kernel
-    - uname
-    - distribuce
-    en:
-    - system
-    - info
-    - version
-    - kernel
-    - uname
-    - distro
+    en: [system, info, version, kernel, uname, distro]
+    cs: [systém, info, verze, kernel, uname, distribuce]
+    sk: [systém, info, verzia, kernel, uname, distribúcia]
+    de: [system, info, version, kernel, uname, distribution]
+    es: [sistema, info, versión, kernel, uname, distribución]
+    fr: [système, info, version, kernel, uname, distribution]
+    it: [sistema, info, versione, kernel, uname, distribuzione]
+    pl: [system, info, wersja, kernel, uname, dystrybucja]
+    tr: [sistem, info, sürüm, kernel, uname, dağıtım]
+    pt: [sistema, info, versão, kernel, uname, distribuição]
+    nl: [systeem, info, versie, kernel, uname, distro]
+    hu: [rendszer, info, verzió, kernel, uname, disztribúció]
   commands:
-  - cmd: uname -a
-    desc:
-      cs: Kernel, architektura, hostname
-      en: Kernel, architecture, hostname
-  - cmd: cat /etc/os-release
-    desc:
-      cs: Distribuce a verze
-      en: Distro and version
-  - cmd: lsb_release -a
-    desc:
-      cs: Detail distribuce (apt install lsb-release)
-      en: Detailed distro info
-  - cmd: hostnamectl
-    desc:
-      cs: Hostname + verze systému + kernel
-      en: Hostname + system version + kernel
-  - cmd: uptime
-    desc:
-      cs: Jak dlouho systém běží + zátěž
-      en: How long system runs + load
+    - cmd: "uname -a"
+      desc:
+        en: "Kernel, architecture, hostname"
+        cs: "Kernel, architektura, hostname"
+        sk: "Kernel, architektúra, hostname"
+        de: "Kernel, Architektur, Hostname"
+        es: "Kernel, arquitectura, hostname"
+        fr: "Kernel, architecture, hostname"
+        it: "Kernel, architettura, hostname"
+        pl: "Kernel, architektura, hostname"
+        tr: "Kernel, mimari, hostname"
+        pt: "Kernel, arquitetura, hostname"
+        nl: "Kernel, architectuur, hostname"
+        hu: "Kernel, architektúra, hostname"
+    - cmd: "cat /etc/os-release"
+      desc:
+        en: "Distro and version"
+        cs: "Distribuce a verze"
+        sk: "Distribúcia a verzia"
+        de: "Distribution und Version"
+        es: "Distribución y versión"
+        fr: "Distribution et version"
+        it: "Distribuzione e versione"
+        pl: "Dystrybucja i wersja"
+        tr: "Dağıtım ve sürüm"
+        pt: "Distribuição e versão"
+        nl: "Distro en versie"
+        hu: "Disztribúció és verzió"
+    - cmd: "lsb_release -a"
+      desc:
+        en: "Detailed distro info"
+        cs: "Detail distribuce (apt install lsb-release)"
+        sk: "Detail distribúcie (apt install lsb-release)"
+        de: "Detaillierte Distro-Info"
+        es: "Información detallada de distro"
+        fr: "Info distro détaillée"
+        it: "Info distro dettagliate"
+        pl: "Szczegółowe info o dystrybucji"
+        tr: "Ayrıntılı dağıtım bilgisi"
+        pt: "Info detalhada da distro"
+        nl: "Gedetailleerde distro-info"
+        hu: "Részletes disztró info"
+    - cmd: "hostnamectl"
+      desc:
+        en: "Hostname + system version + kernel"
+        cs: "Hostname + verze systému + kernel"
+        sk: "Hostname + verzia systému + kernel"
+        de: "Hostname + Systemversion + Kernel"
+        es: "Hostname + versión del sistema + kernel"
+        fr: "Hostname + version système + kernel"
+        it: "Hostname + versione di sistema + kernel"
+        pl: "Hostname + wersja systemu + kernel"
+        tr: "Hostname + sistem sürümü + kernel"
+        pt: "Hostname + versão do sistema + kernel"
+        nl: "Hostname + systeemversie + kernel"
+        hu: "Hostname + rendszerverzió + kernel"
+    - cmd: "uptime"
+      desc:
+        en: "How long system runs + load"
+        cs: "Jak dlouho systém běží + zátěž"
+        sk: "Ako dlho systém beží + zaťaženie"
+        de: "Wie lange das System läuft + Last"
+        es: "Cuánto tiempo lleva activo + carga"
+        fr: "Durée d'exécution + charge"
+        it: "Quanto è acceso + carico"
+        pl: "Jak długo system działa + obciążenie"
+        tr: "Sistem ne kadar süredir çalışıyor + yük"
+        pt: "Há quanto tempo rodando + carga"
+        nl: "Hoelang systeem draait + belasting"
+        hu: "Mennyi ideje fut a rendszer + terhelés"
+
 - id: sys-memory
   title:
-    cs: Paměť (RAM, swap)
-    en: Memory (RAM, swap)
+    en: "Memory (RAM, swap)"
+    cs: "Paměť (RAM, swap)"
+    sk: "Pamäť (RAM, swap)"
+    de: "Speicher (RAM, Swap)"
+    es: "Memoria (RAM, swap)"
+    fr: "Mémoire (RAM, swap)"
+    it: "Memoria (RAM, swap)"
+    pl: "Pamięć (RAM, swap)"
+    tr: "Bellek (RAM, swap)"
+    pt: "Memória (RAM, swap)"
+    nl: "Geheugen (RAM, swap)"
+    hu: "Memória (RAM, swap)"
   tags:
-    cs:
-    - paměť
-    - ram
-    - swap
-    - memory
-    - free
-    en:
-    - memory
-    - ram
-    - swap
-    - free
+    en: [memory, ram, swap, free]
+    cs: [paměť, ram, swap, memory, free]
+    sk: [pamäť, ram, swap, memory, free]
+    de: [speicher, ram, swap, free]
+    es: [memoria, ram, swap, free]
+    fr: [mémoire, ram, swap, free]
+    it: [memoria, ram, swap, free]
+    pl: [pamięć, ram, swap, free]
+    tr: [bellek, ram, swap, free]
+    pt: [memória, ram, swap, free]
+    nl: [geheugen, ram, swap, free]
+    hu: [memória, ram, swap, free]
   commands:
-  - cmd: free -h
-    desc:
-      cs: Volná/použitá RAM a swap (lidsky čitelné)
-      en: Free/used RAM and swap (human-readable)
-  - cmd: free -m
-    desc:
-      cs: V MB
-      en: In MB
-  - cmd: cat /proc/meminfo
-    desc:
-      cs: Detailní info o paměti
-      en: Detailed memory info
-  - cmd: sudo dmidecode -t memory | grep -E 'Size|Speed'
-    desc:
-      cs: Fyzické moduly RAM (na bare metalu)
-      en: Physical RAM modules (on bare metal)
+    - cmd: "free -h"
+      desc:
+        en: "Free/used RAM and swap (human-readable)"
+        cs: "Volná/použitá RAM a swap (lidsky čitelné)"
+        sk: "Voľná/použitá RAM a swap (ľudsky čitateľné)"
+        de: "Freie/genutzte RAM und Swap (menschenlesbar)"
+        es: "RAM y swap libre/usada (legible)"
+        fr: "RAM et swap libres/utilisés (lisible)"
+        it: "RAM e swap liberi/usati (leggibile)"
+        pl: "Wolna/użyta RAM i swap (czytelne)"
+        tr: "Boş/kullanılan RAM ve swap (okunabilir)"
+        pt: "RAM e swap livre/usada (legível)"
+        nl: "Vrij/gebruikt RAM en swap (leesbaar)"
+        hu: "Szabad/használt RAM és swap (olvashatóan)"
+    - cmd: "free -m"
+      desc:
+        en: "In MB"
+        cs: "V MB"
+        sk: "V MB"
+        de: "In MB"
+        es: "En MB"
+        fr: "En Mo"
+        it: "In MB"
+        pl: "W MB"
+        tr: "MB cinsinden"
+        pt: "Em MB"
+        nl: "In MB"
+        hu: "MB-ban"
+    - cmd: "cat /proc/meminfo"
+      desc:
+        en: "Detailed memory info"
+        cs: "Detailní info o paměti"
+        sk: "Detailné info o pamäti"
+        de: "Detaillierte Speicherinformationen"
+        es: "Info detallada de memoria"
+        fr: "Info mémoire détaillée"
+        it: "Info dettagliate sulla memoria"
+        pl: "Szczegółowe info o pamięci"
+        tr: "Ayrıntılı bellek bilgisi"
+        pt: "Info detalhada de memória"
+        nl: "Gedetailleerde geheugeninfo"
+        hu: "Részletes memóriainformáció"
+    - cmd: "sudo dmidecode -t memory | grep -E 'Size|Speed'"
+      desc:
+        en: "Physical RAM modules (on bare metal)"
+        cs: "Fyzické moduly RAM (na bare metalu)"
+        sk: "Fyzické moduly RAM (na bare metale)"
+        de: "Physische RAM-Module (auf Bare Metal)"
+        es: "Módulos RAM físicos (bare metal)"
+        fr: "Modules RAM physiques (bare metal)"
+        it: "Moduli RAM fisici (bare metal)"
+        pl: "Fizyczne moduły RAM (bare metal)"
+        tr: "Fiziksel RAM modülleri (bare metal)"
+        pt: "Módulos RAM físicos (bare metal)"
+        nl: "Fysieke RAM-modules (bare metal)"
+        hu: "Fizikai RAM modulok (bare metal)"
+
 - id: sys-cpu
   title:
-    cs: CPU informace
-    en: CPU information
+    en: "CPU information"
+    cs: "CPU informace"
+    sk: "CPU informácie"
+    de: "CPU-Informationen"
+    es: "Información de CPU"
+    fr: "Informations CPU"
+    it: "Informazioni CPU"
+    pl: "Informacje o CPU"
+    tr: "CPU bilgisi"
+    pt: "Informações de CPU"
+    nl: "CPU-informatie"
+    hu: "CPU információ"
   tags:
-    cs:
-    - cpu
-    - procesor
-    - jádro
-    - cores
-    en:
-    - cpu
-    - processor
-    - cores
+    en: [cpu, processor, cores]
+    cs: [cpu, procesor, jádro, cores]
+    sk: [cpu, procesor, jadro, cores]
+    de: [cpu, prozessor, kerne]
+    es: [cpu, procesador, núcleos]
+    fr: [cpu, processeur, cœurs]
+    it: [cpu, processore, core]
+    pl: [cpu, procesor, rdzenie]
+    tr: [cpu, işlemci, çekirdek]
+    pt: [cpu, processador, núcleos]
+    nl: [cpu, processor, cores]
+    hu: [cpu, processzor, magok]
   commands:
-  - cmd: lscpu
-    desc:
-      cs: Souhrn CPU
-      en: CPU summary
-  - cmd: nproc
-    desc:
-      cs: Počet jader
-      en: Number of cores
-  - cmd: cat /proc/cpuinfo
-    desc:
-      cs: Detailní info o CPU
-      en: Detailed CPU info
+    - cmd: "lscpu"
+      desc:
+        en: "CPU summary"
+        cs: "Souhrn CPU"
+        sk: "Súhrn CPU"
+        de: "CPU-Zusammenfassung"
+        es: "Resumen de CPU"
+        fr: "Résumé CPU"
+        it: "Riepilogo CPU"
+        pl: "Podsumowanie CPU"
+        tr: "CPU özeti"
+        pt: "Resumo de CPU"
+        nl: "CPU-overzicht"
+        hu: "CPU összefoglaló"
+    - cmd: "nproc"
+      desc:
+        en: "Number of cores"
+        cs: "Počet jader"
+        sk: "Počet jadier"
+        de: "Anzahl der Kerne"
+        es: "Número de núcleos"
+        fr: "Nombre de cœurs"
+        it: "Numero di core"
+        pl: "Liczba rdzeni"
+        tr: "Çekirdek sayısı"
+        pt: "Número de núcleos"
+        nl: "Aantal cores"
+        hu: "Magok száma"
+    - cmd: "cat /proc/cpuinfo"
+      desc:
+        en: "Detailed CPU info"
+        cs: "Detailní info o CPU"
+        sk: "Detailné info o CPU"
+        de: "Detaillierte CPU-Info"
+        es: "Info detallada de CPU"
+        fr: "Info CPU détaillée"
+        it: "Info CPU dettagliate"
+        pl: "Szczegółowe info o CPU"
+        tr: "Ayrıntılı CPU bilgisi"
+        pt: "Info detalhada de CPU"
+        nl: "Gedetailleerde CPU-info"
+        hu: "Részletes CPU info"
+
 - id: sys-time
   title:
-    cs: Datum, čas, časové pásmo
-    en: Date, time, timezone
+    en: "Date, time, timezone"
+    cs: "Datum, čas, časové pásmo"
+    sk: "Dátum, čas, časové pásmo"
+    de: "Datum, Uhrzeit, Zeitzone"
+    es: "Fecha, hora, zona horaria"
+    fr: "Date, heure, fuseau horaire"
+    it: "Data, ora, fuso orario"
+    pl: "Data, czas, strefa czasowa"
+    tr: "Tarih, saat, saat dilimi"
+    pt: "Data, hora, fuso horário"
+    nl: "Datum, tijd, tijdzone"
+    hu: "Dátum, idő, időzóna"
   tags:
-    cs:
-    - datum
-    - čas
-    - timezone
-    - časové pásmo
-    - ntp
-    en:
-    - date
-    - time
-    - timezone
-    - ntp
+    en: [date, time, timezone, ntp]
+    cs: [datum, čas, timezone, časové pásmo, ntp]
+    sk: [dátum, čas, timezone, časové pásmo, ntp]
+    de: [datum, uhrzeit, zeitzone, ntp]
+    es: [fecha, hora, zona horaria, ntp]
+    fr: [date, heure, fuseau horaire, ntp]
+    it: [data, ora, fuso orario, ntp]
+    pl: [data, czas, strefa czasowa, ntp]
+    tr: [tarih, saat, saat dilimi, ntp]
+    pt: [data, hora, fuso horário, ntp]
+    nl: [datum, tijd, tijdzone, ntp]
+    hu: [dátum, idő, időzóna, ntp]
   commands:
-  - cmd: date
-    desc:
-      cs: Aktuální čas
-      en: Current time
-  - cmd: timedatectl
-    desc:
-      cs: Čas + časové pásmo + NTP sync
-      en: Time + timezone + NTP sync
-  - cmd: sudo timedatectl set-timezone Europe/Prague
-    desc:
-      cs: Nastavit časové pásmo na Prahu
-      en: Set timezone to Prague
-  - cmd: sudo timedatectl set-ntp true
-    desc:
-      cs: Zapnout automatickou synchronizaci času
-      en: Enable automatic time sync
+    - cmd: "date"
+      desc:
+        en: "Current time"
+        cs: "Aktuální čas"
+        sk: "Aktuálny čas"
+        de: "Aktuelle Uhrzeit"
+        es: "Hora actual"
+        fr: "Heure actuelle"
+        it: "Ora attuale"
+        pl: "Aktualny czas"
+        tr: "Geçerli saat"
+        pt: "Hora atual"
+        nl: "Huidige tijd"
+        hu: "Aktuális idő"
+    - cmd: "timedatectl"
+      desc:
+        en: "Time + timezone + NTP sync"
+        cs: "Čas + časové pásmo + NTP sync"
+        sk: "Čas + časové pásmo + NTP sync"
+        de: "Zeit + Zeitzone + NTP-Sync"
+        es: "Hora + zona horaria + sincronización NTP"
+        fr: "Heure + fuseau horaire + sync NTP"
+        it: "Ora + fuso orario + sync NTP"
+        pl: "Czas + strefa czasowa + sync NTP"
+        tr: "Saat + saat dilimi + NTP senkronizasyon"
+        pt: "Hora + fuso horário + sync NTP"
+        nl: "Tijd + tijdzone + NTP-sync"
+        hu: "Idő + időzóna + NTP szinkronizáció"
+    - cmd: "sudo timedatectl set-timezone Europe/Prague"
+      desc:
+        en: "Set timezone to Prague"
+        cs: "Nastavit časové pásmo na Prahu"
+        sk: "Nastaviť časové pásmo na Prahu"
+        de: "Zeitzone auf Prag setzen"
+        es: "Establecer zona horaria a Praga"
+        fr: "Définir le fuseau sur Prague"
+        it: "Impostare fuso su Praga"
+        pl: "Ustaw strefę czasową na Pragę"
+        tr: "Saat dilimini Prag olarak ayarla"
+        pt: "Definir fuso para Praga"
+        nl: "Tijdzone instellen op Praag"
+        hu: "Időzóna beállítása Prágára"
+    - cmd: "sudo timedatectl set-ntp true"
+      desc:
+        en: "Enable automatic time sync"
+        cs: "Zapnout automatickou synchronizaci času"
+        sk: "Zapnúť automatickú synchronizáciu času"
+        de: "Automatische Zeitsynchronisation aktivieren"
+        es: "Activar sincronización automática"
+        fr: "Activer la sync automatique de l'heure"
+        it: "Abilitare sync automatica dell'ora"
+        pl: "Włącz automatyczną synchronizację czasu"
+        tr: "Otomatik saat senkronizasyonunu aç"
+        pt: "Ativar sincronização automática"
+        nl: "Automatische tijdsync inschakelen"
+        hu: "Automatikus időszinkron engedélyezése"
+
 - id: sys-reboot
   title:
-    cs: Restart / vypnutí systému
-    en: Reboot / shutdown
+    en: "Reboot / shutdown"
+    cs: "Restart / vypnutí systému"
+    sk: "Reštart / vypnutie systému"
+    de: "Neustart / Herunterfahren"
+    es: "Reiniciar / apagar"
+    fr: "Redémarrer / éteindre"
+    it: "Riavvio / spegnimento"
+    pl: "Restart / wyłączenie"
+    tr: "Yeniden başlat / kapat"
+    pt: "Reiniciar / desligar"
+    nl: "Herstart / uitschakelen"
+    hu: "Újraindítás / leállítás"
   tags:
-    cs:
-    - restart
-    - reboot
-    - shutdown
-    - vypnout
-    - vypnutí
-    en:
-    - reboot
-    - shutdown
-    - halt
-    - poweroff
+    en: [reboot, shutdown, halt, poweroff]
+    cs: [restart, reboot, shutdown, vypnout, vypnutí]
+    sk: [reštart, reboot, shutdown, vypnúť, vypnutie]
+    de: [neustart, reboot, shutdown, herunterfahren]
+    es: [reiniciar, reboot, shutdown, apagar]
+    fr: [redémarrer, reboot, shutdown, éteindre]
+    it: [riavvio, reboot, shutdown, spegnere]
+    pl: [restart, reboot, shutdown, wyłącz]
+    tr: [yeniden başlat, reboot, shutdown, kapat]
+    pt: [reiniciar, reboot, shutdown, desligar]
+    nl: [herstart, reboot, shutdown, uitschakelen]
+    hu: [újraindítás, reboot, shutdown, leállítás]
   commands:
-  - cmd: sudo reboot
-    desc:
-      cs: Restart hned
-      en: Reboot now
-  - cmd: sudo shutdown -h now
-    desc:
-      cs: Vypnout hned
-      en: Shutdown now
-  - cmd: sudo shutdown -r +5 'Restart za 5 minut'
-    desc:
-      cs: Restart za 5 minut, s hláškou pro uživatele
-      en: Reboot in 5 min, with message
-  - cmd: sudo shutdown -c
-    desc:
-      cs: Zrušit naplánovaný shutdown
-      en: Cancel scheduled shutdown
+    - cmd: "sudo reboot"
+      desc:
+        en: "Reboot now"
+        cs: "Restart hned"
+        sk: "Reštart hneď"
+        de: "Sofort neu starten"
+        es: "Reiniciar ahora"
+        fr: "Redémarrer maintenant"
+        it: "Riavviare ora"
+        pl: "Uruchom ponownie teraz"
+        tr: "Şimdi yeniden başlat"
+        pt: "Reiniciar agora"
+        nl: "Nu herstarten"
+        hu: "Újraindítás most"
+    - cmd: "sudo shutdown -h now"
+      desc:
+        en: "Shutdown now"
+        cs: "Vypnout hned"
+        sk: "Vypnúť hneď"
+        de: "Sofort herunterfahren"
+        es: "Apagar ahora"
+        fr: "Éteindre maintenant"
+        it: "Spegnere ora"
+        pl: "Wyłącz teraz"
+        tr: "Şimdi kapat"
+        pt: "Desligar agora"
+        nl: "Nu uitschakelen"
+        hu: "Leállítás most"
+    - cmd: "sudo shutdown -r +5 'Reboot in 5 min'"
+      desc:
+        en: "Reboot in 5 min, with message"
+        cs: "Restart za 5 minut, s hláškou pro uživatele"
+        sk: "Reštart za 5 minút, so správou"
+        de: "Neustart in 5 Min, mit Nachricht"
+        es: "Reiniciar en 5 min, con mensaje"
+        fr: "Redémarrage dans 5 min, avec message"
+        it: "Riavvio in 5 min, con messaggio"
+        pl: "Restart za 5 min, z komunikatem"
+        tr: "5 dakika sonra yeniden başlat, mesajla"
+        pt: "Reiniciar em 5 min, com mensagem"
+        nl: "Herstart over 5 min, met bericht"
+        hu: "Újraindítás 5 perc múlva, üzenettel"
+    - cmd: "sudo shutdown -c"
+      desc:
+        en: "Cancel scheduled shutdown"
+        cs: "Zrušit naplánovaný shutdown"
+        sk: "Zrušiť naplánovaný shutdown"
+        de: "Geplantes Herunterfahren abbrechen"
+        es: "Cancelar apagado programado"
+        fr: "Annuler l'arrêt programmé"
+        it: "Annullare spegnimento programmato"
+        pl: "Anuluj zaplanowane wyłączenie"
+        tr: "Planlı kapatmayı iptal et"
+        pt: "Cancelar desligamento agendado"
+        nl: "Geplande uitschakeling annuleren"
+        hu: "Tervezett leállítás megszakítása"
+
 - id: sys-users
   title:
-    cs: Uživatelé a skupiny
-    en: Users and groups
+    en: "Users and groups"
+    cs: "Uživatelé a skupiny"
+    sk: "Používatelia a skupiny"
+    de: "Benutzer und Gruppen"
+    es: "Usuarios y grupos"
+    fr: "Utilisateurs et groupes"
+    it: "Utenti e gruppi"
+    pl: "Użytkownicy i grupy"
+    tr: "Kullanıcılar ve gruplar"
+    pt: "Usuários e grupos"
+    nl: "Gebruikers en groepen"
+    hu: "Felhasználók és csoportok"
   tags:
-    cs:
-    - user
-    - uživatel
-    - adduser
-    - useradd
-    - skupina
-    - group
-    - sudo
-    en:
-    - user
-    - adduser
-    - useradd
-    - group
-    - sudo
+    en: [user, adduser, useradd, group, sudo]
+    cs: [user, uživatel, adduser, useradd, skupina, group, sudo]
+    sk: [user, používateľ, adduser, useradd, skupina, group, sudo]
+    de: [user, benutzer, adduser, useradd, gruppe, sudo]
+    es: [user, usuario, adduser, useradd, grupo, sudo]
+    fr: [user, utilisateur, adduser, useradd, groupe, sudo]
+    it: [user, utente, adduser, useradd, gruppo, sudo]
+    pl: [user, użytkownik, adduser, useradd, grupa, sudo]
+    tr: [user, kullanıcı, adduser, useradd, grup, sudo]
+    pt: [user, usuário, adduser, useradd, grupo, sudo]
+    nl: [user, gebruiker, adduser, useradd, groep, sudo]
+    hu: [user, felhasználó, adduser, useradd, csoport, sudo]
   commands:
-  - cmd: whoami
-    desc:
-      cs: Pod jakým uživatelem jsem
-      en: Current username
-  - cmd: id
-    desc:
-      cs: UID, GID a skupiny
-      en: UID, GID and groups
-  - cmd: sudo adduser pepa
-    desc:
-      cs: Přidat uživatele (interaktivně, s domovem)
-      en: Add user (interactively, with home)
-  - cmd: sudo usermod -aG sudo pepa
-    desc:
-      cs: Přidat uživatele do skupiny sudo
-      en: Add user to sudo group
-  - cmd: sudo deluser pepa
-    desc:
-      cs: Smazat uživatele
-      en: Delete user
-  - cmd: groups pepa
-    desc:
-      cs: V jakých skupinách je uživatel
-      en: Which groups a user belongs to
-  - cmd: sudo passwd pepa
-    desc:
-      cs: Změnit heslo uživateli
-      en: Change user's password
+    - cmd: "whoami"
+      desc:
+        en: "Current username"
+        cs: "Pod jakým uživatelem jsem"
+        sk: "Pod ktorým používateľom som"
+        de: "Aktueller Benutzername"
+        es: "Nombre de usuario actual"
+        fr: "Nom d'utilisateur actuel"
+        it: "Nome utente attuale"
+        pl: "Aktualna nazwa użytkownika"
+        tr: "Şu anki kullanıcı adı"
+        pt: "Nome do usuário atual"
+        nl: "Huidige gebruikersnaam"
+        hu: "Jelenlegi felhasználónév"
+    - cmd: "id"
+      desc:
+        en: "UID, GID and groups"
+        cs: "UID, GID a skupiny"
+        sk: "UID, GID a skupiny"
+        de: "UID, GID und Gruppen"
+        es: "UID, GID y grupos"
+        fr: "UID, GID et groupes"
+        it: "UID, GID e gruppi"
+        pl: "UID, GID i grupy"
+        tr: "UID, GID ve gruplar"
+        pt: "UID, GID e grupos"
+        nl: "UID, GID en groepen"
+        hu: "UID, GID és csoportok"
+    - cmd: "sudo adduser pepa"
+      desc:
+        en: "Add user (interactively, with home)"
+        cs: "Přidat uživatele (interaktivně, s domovem)"
+        sk: "Pridať používateľa (interaktívne, s domovom)"
+        de: "Benutzer hinzufügen (interaktiv, mit Home)"
+        es: "Añadir usuario (interactivo, con home)"
+        fr: "Ajouter un utilisateur (interactif, avec home)"
+        it: "Aggiungere utente (interattivo, con home)"
+        pl: "Dodaj użytkownika (interaktywnie, z home)"
+        tr: "Kullanıcı ekle (etkileşimli, home ile)"
+        pt: "Adicionar usuário (interativo, com home)"
+        nl: "Gebruiker toevoegen (interactief, met home)"
+        hu: "Felhasználó hozzáadása (interaktívan, home-mal)"
+    - cmd: "sudo usermod -aG sudo pepa"
+      desc:
+        en: "Add user to sudo group"
+        cs: "Přidat uživatele do skupiny sudo"
+        sk: "Pridať používateľa do skupiny sudo"
+        de: "Benutzer zur sudo-Gruppe hinzufügen"
+        es: "Añadir usuario al grupo sudo"
+        fr: "Ajouter l'utilisateur au groupe sudo"
+        it: "Aggiungere utente al gruppo sudo"
+        pl: "Dodaj użytkownika do grupy sudo"
+        tr: "Kullanıcıyı sudo grubuna ekle"
+        pt: "Adicionar usuário ao grupo sudo"
+        nl: "Gebruiker aan sudo-groep toevoegen"
+        hu: "Felhasználó hozzáadása a sudo csoporthoz"
+    - cmd: "sudo deluser pepa"
+      desc:
+        en: "Delete user"
+        cs: "Smazat uživatele"
+        sk: "Zmazať používateľa"
+        de: "Benutzer löschen"
+        es: "Eliminar usuario"
+        fr: "Supprimer l'utilisateur"
+        it: "Eliminare utente"
+        pl: "Usuń użytkownika"
+        tr: "Kullanıcıyı sil"
+        pt: "Excluir usuário"
+        nl: "Gebruiker verwijderen"
+        hu: "Felhasználó törlése"
+    - cmd: "groups pepa"
+      desc:
+        en: "Which groups a user belongs to"
+        cs: "V jakých skupinách je uživatel"
+        sk: "V akých skupinách je používateľ"
+        de: "Zu welchen Gruppen ein Benutzer gehört"
+        es: "A qué grupos pertenece un usuario"
+        fr: "À quels groupes appartient un utilisateur"
+        it: "A quali gruppi appartiene un utente"
+        pl: "Do jakich grup należy użytkownik"
+        tr: "Kullanıcı hangi gruplara ait"
+        pt: "A quais grupos um usuário pertence"
+        nl: "Tot welke groepen een gebruiker behoort"
+        hu: "Melyik csoportokba tartozik a felhasználó"
+    - cmd: "sudo passwd pepa"
+      desc:
+        en: "Change user's password"
+        cs: "Změnit heslo uživateli"
+        sk: "Zmeniť heslo používateľovi"
+        de: "Benutzerpasswort ändern"
+        es: "Cambiar contraseña del usuario"
+        fr: "Changer le mot de passe utilisateur"
+        it: "Cambiare password utente"
+        pl: "Zmień hasło użytkownika"
+        tr: "Kullanıcı parolasını değiştir"
+        pt: "Alterar senha do usuário"
+        nl: "Wachtwoord van gebruiker wijzigen"
+        hu: "Felhasználó jelszavának módosítása"

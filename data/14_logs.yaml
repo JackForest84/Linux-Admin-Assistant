@@ -1,113 +1,296 @@
 - id: log-view
   title:
-    cs: Prohlížení systémových logů
-    en: Viewing system logs
+    en: "Viewing system logs"
+    cs: "Prohlížení systémových logů"
+    sk: "Prehliadanie systémových logov"
+    de: "Systemlogs anzeigen"
+    es: "Ver logs del sistema"
+    fr: "Consulter les logs système"
+    it: "Visualizzare log di sistema"
+    pl: "Przeglądanie logów systemowych"
+    tr: "Sistem günlüklerini görüntüleme"
+    pt: "Visualizar logs do sistema"
+    nl: "Systeemlogs bekijken"
+    hu: "Rendszernaplók megtekintése"
   tags:
-    cs:
-    - logy
-    - log
-    - syslog
-    - dmesg
-    - journal
-    en:
-    - logs
-    - log
-    - syslog
-    - dmesg
-    - journal
+    en: [logs, log, syslog, dmesg, journal]
+    cs: [logy, log, syslog, dmesg, journal]
+    sk: [logy, log, syslog, dmesg, journal]
+    de: [logs, log, syslog, dmesg, journal]
+    es: [logs, log, syslog, dmesg, journal]
+    fr: [logs, log, syslog, dmesg, journal]
+    it: [log, syslog, dmesg, journal]
+    pl: [logi, log, syslog, dmesg, journal]
+    tr: [günlükler, log, syslog, dmesg, journal]
+    pt: [logs, log, syslog, dmesg, journal]
+    nl: [logs, log, syslog, dmesg, journal]
+    hu: [naplók, log, syslog, dmesg, journal]
   commands:
-  - cmd: sudo tail -f /var/log/syslog
-    desc:
-      cs: Hlavní systémový log živě
-      en: Main system log live
-  - cmd: sudo tail -f /var/log/auth.log
-    desc:
-      cs: Přihlášení, sudo, SSH
-      en: Logins, sudo, SSH
-  - cmd: sudo dmesg | tail -50
-    desc:
-      cs: Kernel zprávy (HW, drivery)
-      en: Kernel messages (HW, drivers)
-  - cmd: sudo dmesg -wH
-    desc:
-      cs: Kernel log živě, lidsky čitelné časy
-      en: Kernel log live, human times
-  - cmd: last -20
-    desc:
-      cs: Posledních 20 přihlášení
-      en: Last 20 logins
-  - cmd: lastb -20
-    desc:
-      cs: Posledních 20 NEÚSPĚŠNÝCH přihlášení
-      en: Last 20 FAILED logins
+    - cmd: "sudo tail -f /var/log/syslog"
+      desc:
+        en: "Main system log live"
+        cs: "Hlavní systémový log živě"
+        sk: "Hlavný systémový log živo"
+        de: "Hauptsystemlog live"
+        es: "Log principal del sistema en vivo"
+        fr: "Log système principal en direct"
+        it: "Log principale di sistema live"
+        pl: "Główny log systemowy na żywo"
+        tr: "Ana sistem günlüğü canlı"
+        pt: "Log principal do sistema ao vivo"
+        nl: "Hoofdsysteemlog live"
+        hu: "Fő rendszernapló élőben"
+    - cmd: "sudo tail -f /var/log/auth.log"
+      desc:
+        en: "Logins, sudo, SSH"
+        cs: "Přihlášení, sudo, SSH"
+        sk: "Prihlásenia, sudo, SSH"
+        de: "Anmeldungen, sudo, SSH"
+        es: "Inicios de sesión, sudo, SSH"
+        fr: "Connexions, sudo, SSH"
+        it: "Login, sudo, SSH"
+        pl: "Logowania, sudo, SSH"
+        tr: "Girişler, sudo, SSH"
+        pt: "Logins, sudo, SSH"
+        nl: "Logins, sudo, SSH"
+        hu: "Bejelentkezések, sudo, SSH"
+    - cmd: "sudo dmesg | tail -50"
+      desc:
+        en: "Kernel messages (HW, drivers)"
+        cs: "Kernel zprávy (HW, drivery)"
+        sk: "Kernel správy (HW, drivery)"
+        de: "Kernel-Nachrichten (HW, Treiber)"
+        es: "Mensajes del kernel (HW, drivers)"
+        fr: "Messages du kernel (HW, pilotes)"
+        it: "Messaggi kernel (HW, driver)"
+        pl: "Komunikaty kernela (HW, sterowniki)"
+        tr: "Kernel mesajları (HW, sürücüler)"
+        pt: "Mensagens do kernel (HW, drivers)"
+        nl: "Kernelberichten (HW, drivers)"
+        hu: "Kernel üzenetek (HW, illesztők)"
+    - cmd: "sudo dmesg -wH"
+      desc:
+        en: "Kernel log live, human times"
+        cs: "Kernel log živě, lidsky čitelné časy"
+        sk: "Kernel log živo, ľudsky čitateľné časy"
+        de: "Kernel-Log live, menschenlesbare Zeiten"
+        es: "Kernel log en vivo, tiempos legibles"
+        fr: "Kernel log direct, heures lisibles"
+        it: "Kernel log live, orari leggibili"
+        pl: "Kernel log na żywo, czytelne czasy"
+        tr: "Kernel günlük canlı, okunabilir saatler"
+        pt: "Kernel log ao vivo, horários legíveis"
+        nl: "Kernel-log live, leesbare tijden"
+        hu: "Kernel napló élő, olvasható időkkel"
+    - cmd: "last -20"
+      desc:
+        en: "Last 20 logins"
+        cs: "Posledních 20 přihlášení"
+        sk: "Posledných 20 prihlásení"
+        de: "Letzte 20 Anmeldungen"
+        es: "Últimos 20 inicios de sesión"
+        fr: "20 dernières connexions"
+        it: "Ultimi 20 login"
+        pl: "Ostatnie 20 logowań"
+        tr: "Son 20 giriş"
+        pt: "Últimos 20 logins"
+        nl: "Laatste 20 logins"
+        hu: "Utolsó 20 bejelentkezés"
+    - cmd: "lastb -20"
+      desc:
+        en: "Last 20 FAILED logins"
+        cs: "Posledních 20 NEÚSPĚŠNÝCH přihlášení"
+        sk: "Posledných 20 NEÚSPEŠNÝCH prihlásení"
+        de: "Letzte 20 FEHLGESCHLAGENE Anmeldungen"
+        es: "Últimos 20 inicios de sesión FALLIDOS"
+        fr: "20 dernières connexions ÉCHOUÉES"
+        it: "Ultimi 20 login FALLITI"
+        pl: "Ostatnie 20 NIEUDANYCH logowań"
+        tr: "Son 20 BAŞARISIZ giriş"
+        pt: "Últimos 20 logins FALHADOS"
+        nl: "Laatste 20 MISLUKTE logins"
+        hu: "Utolsó 20 SIKERTELEN bejelentkezés"
+
 - id: log-rotate
   title:
-    cs: Rotace logů
-    en: Log rotation
+    en: "Log rotation"
+    cs: "Rotace logů"
+    sk: "Rotácia logov"
+    de: "Log-Rotation"
+    es: "Rotación de logs"
+    fr: "Rotation des logs"
+    it: "Rotazione log"
+    pl: "Rotacja logów"
+    tr: "Günlük döndürme"
+    pt: "Rotação de logs"
+    nl: "Logrotatie"
+    hu: "Naplók rotálása"
   tags:
-    cs:
-    - logrotate
-    - rotace
-    - logy
-    - smazat
-    - staré
-    en:
-    - logrotate
-    - rotation
-    - logs
-    - old
-    - delete
+    en: [logrotate, rotation, logs, old, delete]
+    cs: [logrotate, rotace, logy, smazat, staré]
+    sk: [logrotate, rotácia, logy, zmazať, staré]
+    de: [logrotate, rotation, logs, alt, löschen]
+    es: [logrotate, rotación, logs, antiguos, eliminar]
+    fr: [logrotate, rotation, logs, ancien, supprimer]
+    it: [logrotate, rotazione, log, vecchi, eliminare]
+    pl: [logrotate, rotacja, logi, stare, usuń]
+    tr: [logrotate, döndürme, günlükler, eski, sil]
+    pt: [logrotate, rotação, logs, antigos, excluir]
+    nl: [logrotate, rotatie, logs, oud, verwijderen]
+    hu: [logrotate, rotálás, naplók, régi, törlés]
   commands:
-  - cmd: sudo logrotate -d /etc/logrotate.conf
-    desc:
-      cs: Test rotace (debug, nic nemění)
-      en: Test rotation (debug, no changes)
-  - cmd: sudo logrotate -f /etc/logrotate.conf
-    desc:
-      cs: Vynutit rotaci hned
-      en: Force rotation now
-  - cmd: sudo journalctl --vacuum-size=500M
-    desc:
-      cs: Smazat journal logy nad 500 MB
-      en: Trim journal logs above 500 MB
-  - cmd: sudo journalctl --vacuum-time=30d
-    desc:
-      cs: Smazat starší než 30 dní
-      en: Delete older than 30 days
-  - cmd: sudo journalctl --disk-usage
-    desc:
-      cs: Kolik místa journal zabírá
-      en: How much space journal uses
+    - cmd: "sudo logrotate -d /etc/logrotate.conf"
+      desc:
+        en: "Test rotation (debug, no changes)"
+        cs: "Test rotace (debug, nic nemění)"
+        sk: "Test rotácie (debug, nič nemení)"
+        de: "Rotation testen (Debug, keine Änderungen)"
+        es: "Probar rotación (debug, sin cambios)"
+        fr: "Tester la rotation (debug, sans changements)"
+        it: "Testare rotazione (debug, no modifiche)"
+        pl: "Test rotacji (debug, bez zmian)"
+        tr: "Döndürmeyi test et (debug, değişiklik yok)"
+        pt: "Testar rotação (debug, sem mudanças)"
+        nl: "Rotatie testen (debug, geen wijzigingen)"
+        hu: "Rotálás tesztelése (debug, változás nélkül)"
+    - cmd: "sudo logrotate -f /etc/logrotate.conf"
+      desc:
+        en: "Force rotation now"
+        cs: "Vynutit rotaci hned"
+        sk: "Vynútiť rotáciu hneď"
+        de: "Rotation jetzt erzwingen"
+        es: "Forzar rotación ahora"
+        fr: "Forcer la rotation maintenant"
+        it: "Forzare rotazione adesso"
+        pl: "Wymuś rotację teraz"
+        tr: "Şimdi döndürmeyi zorla"
+        pt: "Forçar rotação agora"
+        nl: "Rotatie nu forceren"
+        hu: "Rotálás kényszerítése most"
+    - cmd: "sudo journalctl --vacuum-size=500M"
+      desc:
+        en: "Trim journal logs above 500 MB"
+        cs: "Smazat journal logy nad 500 MB"
+        sk: "Zmazať journal logy nad 500 MB"
+        de: "Journal-Logs über 500 MB beschneiden"
+        es: "Recortar journal logs por encima de 500 MB"
+        fr: "Tronquer les journaux au-dessus de 500 Mo"
+        it: "Tagliare journal log oltre 500 MB"
+        pl: "Przytnij logi journal powyżej 500 MB"
+        tr: "500 MB üzeri journal günlüklerini kes"
+        pt: "Cortar logs journal acima de 500 MB"
+        nl: "Journal-logs boven 500 MB inkorten"
+        hu: "Journal naplók 500 MB feletti levágása"
+    - cmd: "sudo journalctl --vacuum-time=30d"
+      desc:
+        en: "Delete older than 30 days"
+        cs: "Smazat starší než 30 dní"
+        sk: "Zmazať staršie ako 30 dní"
+        de: "Älter als 30 Tage löschen"
+        es: "Eliminar más antiguos de 30 días"
+        fr: "Supprimer plus anciens que 30 jours"
+        it: "Eliminare più vecchi di 30 giorni"
+        pl: "Usuń starsze niż 30 dni"
+        tr: "30 günden eskileri sil"
+        pt: "Excluir mais antigos que 30 dias"
+        nl: "Ouder dan 30 dagen verwijderen"
+        hu: "30 napnál régebbiek törlése"
+    - cmd: "sudo journalctl --disk-usage"
+      desc:
+        en: "How much space journal uses"
+        cs: "Kolik místa journal zabírá"
+        sk: "Koľko miesta journal zaberá"
+        de: "Wie viel Platz das Journal nutzt"
+        es: "Cuánto espacio usa el journal"
+        fr: "Combien d'espace utilise le journal"
+        it: "Quanto spazio usa il journal"
+        pl: "Ile miejsca zajmuje journal"
+        tr: "Journal ne kadar alan kullanıyor"
+        pt: "Quanto espaço o journal usa"
+        nl: "Hoeveel ruimte het journal gebruikt"
+        hu: "Mennyi helyet használ a journal"
+
 - id: log-search
   title:
-    cs: Hledání v logách
-    en: Searching in logs
+    en: "Searching in logs"
+    cs: "Hledání v logách"
+    sk: "Hľadanie v logoch"
+    de: "Suche in Logs"
+    es: "Búsqueda en logs"
+    fr: "Recherche dans les logs"
+    it: "Ricerca nei log"
+    pl: "Wyszukiwanie w logach"
+    tr: "Günlüklerde arama"
+    pt: "Buscar em logs"
+    nl: "Zoeken in logs"
+    hu: "Keresés a naplókban"
   tags:
-    cs:
-    - logy
-    - grep
-    - hledat
-    - chyby
-    - error
-    en:
-    - logs
-    - grep
-    - search
-    - errors
+    en: [logs, grep, search, errors]
+    cs: [logy, grep, hledat, chyby, error]
+    sk: [logy, grep, hľadať, chyby, error]
+    de: [logs, grep, suchen, fehler]
+    es: [logs, grep, buscar, errores]
+    fr: [logs, grep, rechercher, erreurs]
+    it: [log, grep, cercare, errori]
+    pl: [logi, grep, szukaj, błędy]
+    tr: [günlükler, grep, ara, hatalar]
+    pt: [logs, grep, buscar, erros]
+    nl: [logs, grep, zoeken, fouten]
+    hu: [naplók, grep, keresés, hibák]
   commands:
-  - cmd: sudo grep -i error /var/log/syslog | tail -20
-    desc:
-      cs: Posledních 20 chyb
-      en: Last 20 errors
-  - cmd: sudo journalctl -p err --since today
-    desc:
-      cs: Dnešní chyby z journalu
-      en: Today's errors from journal
-  - cmd: sudo zcat /var/log/syslog.*.gz | grep ssh
-    desc:
-      cs: Hledat i ve zkomprimovaných archivech
-      en: Search in compressed archives too
-  - cmd: sudo awk '/Failed password/' /var/log/auth.log
-    desc:
-      cs: Neúspěšné SSH pokusy
-      en: Failed SSH login attempts
+    - cmd: "sudo grep -i error /var/log/syslog | tail -20"
+      desc:
+        en: "Last 20 errors"
+        cs: "Posledních 20 chyb"
+        sk: "Posledných 20 chýb"
+        de: "Letzte 20 Fehler"
+        es: "Últimos 20 errores"
+        fr: "20 dernières erreurs"
+        it: "Ultimi 20 errori"
+        pl: "Ostatnie 20 błędów"
+        tr: "Son 20 hata"
+        pt: "Últimos 20 erros"
+        nl: "Laatste 20 fouten"
+        hu: "Utolsó 20 hiba"
+    - cmd: "sudo journalctl -p err --since today"
+      desc:
+        en: "Today's errors from journal"
+        cs: "Dnešní chyby z journalu"
+        sk: "Dnešné chyby z journalu"
+        de: "Heutige Fehler aus dem Journal"
+        es: "Errores de hoy del journal"
+        fr: "Erreurs du jour depuis le journal"
+        it: "Errori odierni dal journal"
+        pl: "Dzisiejsze błędy z journala"
+        tr: "Bugünkü journal hataları"
+        pt: "Erros de hoje do journal"
+        nl: "Fouten van vandaag uit journal"
+        hu: "Mai hibák a journalból"
+    - cmd: "sudo zcat /var/log/syslog.*.gz | grep ssh"
+      desc:
+        en: "Search in compressed archives too"
+        cs: "Hledat i ve zkomprimovaných archivech"
+        sk: "Hľadať aj v skomprimovaných archívoch"
+        de: "Auch in komprimierten Archiven suchen"
+        es: "Buscar también en archivos comprimidos"
+        fr: "Rechercher aussi dans les archives compressées"
+        it: "Cercare anche negli archivi compressi"
+        pl: "Szukaj również w skompresowanych archiwach"
+        tr: "Sıkıştırılmış arşivlerde de ara"
+        pt: "Buscar também em arquivos comprimidos"
+        nl: "Ook in gecomprimeerde archieven zoeken"
+        hu: "Keresés tömörített archívumokban is"
+    - cmd: "sudo awk '/Failed password/' /var/log/auth.log"
+      desc:
+        en: "Failed SSH login attempts"
+        cs: "Neúspěšné SSH pokusy"
+        sk: "Neúspešné SSH pokusy"
+        de: "Fehlgeschlagene SSH-Anmeldeversuche"
+        es: "Intentos fallidos de SSH"
+        fr: "Tentatives SSH échouées"
+        it: "Tentativi SSH falliti"
+        pl: "Nieudane próby SSH"
+        tr: "Başarısız SSH giriş denemeleri"
+        pt: "Tentativas SSH falhadas"
+        nl: "Mislukte SSH-loginpogingen"
+        hu: "Sikertelen SSH bejelentkezési kísérletek"
