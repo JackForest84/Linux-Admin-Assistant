@@ -1,235 +1,621 @@
 - id: text-view
   title:
-    cs: Zobrazit obsah souboru
-    en: Show file contents
+    en: "Show file contents"
+    cs: "Zobrazit obsah souboru"
+    sk: "Zobraziť obsah súboru"
+    de: "Dateiinhalt anzeigen"
+    es: "Mostrar contenido de archivo"
+    fr: "Afficher le contenu du fichier"
+    it: "Mostrare contenuto del file"
+    pl: "Pokaż zawartość pliku"
+    tr: "Dosya içeriğini göster"
+    pt: "Mostrar conteúdo do arquivo"
+    nl: "Bestandsinhoud tonen"
+    hu: "Fájl tartalmának megjelenítése"
   tags:
-    cs:
-    - cat
-    - less
-    - head
-    - tail
-    - zobrazit
-    - soubor
-    - obsah
-    en:
-    - cat
-    - less
-    - head
-    - tail
-    - show
-    - file
-    - content
+    en: [cat, less, head, tail, show, file, content]
+    cs: [cat, less, head, tail, zobrazit, soubor, obsah]
+    sk: [cat, less, head, tail, zobraziť, súbor, obsah]
+    de: [cat, less, head, tail, anzeigen, datei, inhalt]
+    es: [cat, less, head, tail, mostrar, archivo, contenido]
+    fr: [cat, less, head, tail, afficher, fichier, contenu]
+    it: [cat, less, head, tail, mostrare, file, contenuto]
+    pl: [cat, less, head, tail, pokaż, plik, zawartość]
+    tr: [cat, less, head, tail, göster, dosya, içerik]
+    pt: [cat, less, head, tail, mostrar, arquivo, conteúdo]
+    nl: [cat, less, head, tail, tonen, bestand, inhoud]
+    hu: [cat, less, head, tail, megjelenít, fájl, tartalom]
   commands:
-  - cmd: cat soubor.txt
-    desc:
-      cs: Vypsat celý soubor
-      en: Output entire file
-  - cmd: less soubor.txt
-    desc:
-      cs: Stránkování (q pro konec, / pro hledání)
-      en: Paged view (q to quit, / to search)
-  - cmd: head -20 soubor.txt
-    desc:
-      cs: Prvních 20 řádků
-      en: First 20 lines
-  - cmd: tail -50 soubor.txt
-    desc:
-      cs: Posledních 50 řádků
-      en: Last 50 lines
-  - cmd: tail -f /var/log/syslog
-    desc:
-      cs: Sledovat živě (jako logy)
-      en: Follow live (like logs)
-  - cmd: tac soubor.txt
-    desc:
-      cs: Soubor pozpátku
-      en: File reversed
+    - cmd: "cat file.txt"
+      desc:
+        en: "Output entire file"
+        cs: "Vypsat celý soubor"
+        sk: "Vypísať celý súbor"
+        de: "Ganze Datei ausgeben"
+        es: "Mostrar todo el archivo"
+        fr: "Afficher tout le fichier"
+        it: "Mostrare intero file"
+        pl: "Wypisz cały plik"
+        tr: "Tüm dosyayı çıkar"
+        pt: "Exibir arquivo inteiro"
+        nl: "Hele bestand uitvoeren"
+        hu: "Teljes fájl kiírása"
+    - cmd: "less file.txt"
+      desc:
+        en: "Paged view (q to quit, / to search)"
+        cs: "Stránkování (q pro konec, / pro hledání)"
+        sk: "Stránkovanie (q pre koniec, / pre hľadanie)"
+        de: "Seitenweise (q zum Beenden, / suchen)"
+        es: "Paginado (q salir, / buscar)"
+        fr: "Pagination (q quitter, / chercher)"
+        it: "Paginato (q per uscire, / cercare)"
+        pl: "Stronicowanie (q wyjście, / szukaj)"
+        tr: "Sayfalı (q çıkış, / arama)"
+        pt: "Paginado (q sair, / buscar)"
+        nl: "Per pagina (q sluiten, / zoeken)"
+        hu: "Lapozott nézet (q kilépés, / keresés)"
+    - cmd: "head -20 file.txt"
+      desc:
+        en: "First 20 lines"
+        cs: "Prvních 20 řádků"
+        sk: "Prvých 20 riadkov"
+        de: "Erste 20 Zeilen"
+        es: "Primeras 20 líneas"
+        fr: "20 premières lignes"
+        it: "Prime 20 righe"
+        pl: "Pierwsze 20 linii"
+        tr: "İlk 20 satır"
+        pt: "Primeiras 20 linhas"
+        nl: "Eerste 20 regels"
+        hu: "Első 20 sor"
+    - cmd: "tail -50 file.txt"
+      desc:
+        en: "Last 50 lines"
+        cs: "Posledních 50 řádků"
+        sk: "Posledných 50 riadkov"
+        de: "Letzte 50 Zeilen"
+        es: "Últimas 50 líneas"
+        fr: "50 dernières lignes"
+        it: "Ultime 50 righe"
+        pl: "Ostatnie 50 linii"
+        tr: "Son 50 satır"
+        pt: "Últimas 50 linhas"
+        nl: "Laatste 50 regels"
+        hu: "Utolsó 50 sor"
+    - cmd: "tail -f /var/log/syslog"
+      desc:
+        en: "Follow live (like logs)"
+        cs: "Sledovat živě (jako logy)"
+        sk: "Sledovať živo (ako logy)"
+        de: "Live verfolgen (wie Logs)"
+        es: "Seguir en vivo (como logs)"
+        fr: "Suivre en direct (comme les logs)"
+        it: "Seguire live (come i log)"
+        pl: "Śledź na żywo (jak logi)"
+        tr: "Canlı takip (günlükler gibi)"
+        pt: "Acompanhar ao vivo (como logs)"
+        nl: "Live volgen (zoals logs)"
+        hu: "Élő követés (mint a naplók)"
+    - cmd: "tac file.txt"
+      desc:
+        en: "File reversed"
+        cs: "Soubor pozpátku"
+        sk: "Súbor odzadu"
+        de: "Datei rückwärts"
+        es: "Archivo al revés"
+        fr: "Fichier inversé"
+        it: "File al contrario"
+        pl: "Plik wstecz"
+        tr: "Dosya tersine"
+        pt: "Arquivo invertido"
+        nl: "Bestand omgekeerd"
+        hu: "Fájl visszafelé"
+
 - id: text-sed
   title:
-    cs: sed (úprava textu)
-    en: sed (text manipulation)
+    en: "sed (text manipulation)"
+    cs: "sed (úprava textu)"
+    sk: "sed (úprava textu)"
+    de: "sed (Textmanipulation)"
+    es: "sed (manipulación de texto)"
+    fr: "sed (manipulation de texte)"
+    it: "sed (manipolazione testo)"
+    pl: "sed (manipulacja tekstem)"
+    tr: "sed (metin işleme)"
+    pt: "sed (manipulação de texto)"
+    nl: "sed (tekstmanipulatie)"
+    hu: "sed (szövegmanipuláció)"
   tags:
-    cs:
-    - sed
-    - nahradit
-    - replace
-    - úprava
-    - regex
-    en:
-    - sed
-    - replace
-    - substitute
-    - regex
+    en: [sed, replace, substitute, regex]
+    cs: [sed, nahradit, replace, úprava, regex]
+    sk: [sed, nahradiť, replace, úprava, regex]
+    de: [sed, ersetzen, regex]
+    es: [sed, reemplazar, regex]
+    fr: [sed, remplacer, regex]
+    it: [sed, sostituire, regex]
+    pl: [sed, zamień, regex]
+    tr: [sed, değiştir, regex]
+    pt: [sed, substituir, regex]
+    nl: [sed, vervangen, regex]
+    hu: [sed, csere, regex]
   commands:
-  - cmd: sed 's/staré/nové/g' soubor.txt
-    desc:
-      cs: Nahradit text (jen výstup, nemění soubor)
-      en: Replace text (output only, no edit)
-  - cmd: sed -i 's/staré/nové/g' soubor.txt
-    desc:
-      cs: Nahradit přímo v souboru
-      en: Replace in-place
-  - cmd: sed -i.bak 's/old/new/g' soubor.txt
-    desc:
-      cs: Se zálohou (.bak)
-      en: With backup (.bak)
-  - cmd: sed -n '10,20p' soubor.txt
-    desc:
-      cs: Vypsat jen řádky 10-20
-      en: Print only lines 10-20
-  - cmd: sed '/^#/d' soubor.conf
-    desc:
-      cs: Smazat řádky začínající '#'
-      en: Delete lines starting with '#'
+    - cmd: "sed 's/old/new/g' file.txt"
+      desc:
+        en: "Replace text (output only, no edit)"
+        cs: "Nahradit text (jen výstup, nemění soubor)"
+        sk: "Nahradiť text (len výstup, nemení súbor)"
+        de: "Text ersetzen (nur Ausgabe, keine Änderung)"
+        es: "Reemplazar texto (solo salida, sin editar)"
+        fr: "Remplacer (sortie seulement, sans modifier)"
+        it: "Sostituire (solo output, no modifica)"
+        pl: "Zamień tekst (tylko wyjście, bez edycji)"
+        tr: "Metin değiştir (sadece çıktı, düzenleme yok)"
+        pt: "Substituir texto (apenas saída, sem editar)"
+        nl: "Tekst vervangen (alleen uitvoer, geen edit)"
+        hu: "Szöveg cseréje (csak kimenet, nincs szerkesztés)"
+    - cmd: "sed -i 's/old/new/g' file.txt"
+      desc:
+        en: "Replace in-place"
+        cs: "Nahradit přímo v souboru"
+        sk: "Nahradiť priamo v súbore"
+        de: "Direkt in der Datei ersetzen"
+        es: "Reemplazar en el archivo"
+        fr: "Remplacer directement dans le fichier"
+        it: "Sostituire direttamente nel file"
+        pl: "Zamień bezpośrednio w pliku"
+        tr: "Yerinde değiştir"
+        pt: "Substituir no próprio arquivo"
+        nl: "In-place vervangen"
+        hu: "Csere helyben"
+    - cmd: "sed -i.bak 's/old/new/g' file.txt"
+      desc:
+        en: "With backup (.bak)"
+        cs: "Se zálohou (.bak)"
+        sk: "So zálohou (.bak)"
+        de: "Mit Backup (.bak)"
+        es: "Con copia de seguridad (.bak)"
+        fr: "Avec sauvegarde (.bak)"
+        it: "Con backup (.bak)"
+        pl: "Z kopią (.bak)"
+        tr: "Yedeklemeyle (.bak)"
+        pt: "Com backup (.bak)"
+        nl: "Met back-up (.bak)"
+        hu: "Biztonsági másolattal (.bak)"
+    - cmd: "sed -n '10,20p' file.txt"
+      desc:
+        en: "Print only lines 10-20"
+        cs: "Vypsat jen řádky 10-20"
+        sk: "Vypísať len riadky 10-20"
+        de: "Nur Zeilen 10-20 ausgeben"
+        es: "Mostrar solo líneas 10-20"
+        fr: "Afficher uniquement les lignes 10-20"
+        it: "Mostrare solo righe 10-20"
+        pl: "Wypisz tylko linie 10-20"
+        tr: "Sadece 10-20 satırları yazdır"
+        pt: "Imprimir apenas linhas 10-20"
+        nl: "Alleen regels 10-20 weergeven"
+        hu: "Csak a 10-20. sorok"
+    - cmd: "sed '/^#/d' file.conf"
+      desc:
+        en: "Delete lines starting with '#'"
+        cs: "Smazat řádky začínající '#'"
+        sk: "Zmazať riadky začínajúce '#'"
+        de: "Mit '#' beginnende Zeilen löschen"
+        es: "Eliminar líneas que empiezan con '#'"
+        fr: "Supprimer les lignes commençant par '#'"
+        it: "Eliminare righe che iniziano con '#'"
+        pl: "Usuń linie zaczynające się od '#'"
+        tr: "'#' ile başlayan satırları sil"
+        pt: "Excluir linhas começando com '#'"
+        nl: "Regels die met '#' beginnen verwijderen"
+        hu: "'#'-tel kezdődő sorok törlése"
+
 - id: text-awk
   title:
-    cs: awk (zpracování sloupců)
-    en: awk (column processing)
+    en: "awk (column processing)"
+    cs: "awk (zpracování sloupců)"
+    sk: "awk (spracovanie stĺpcov)"
+    de: "awk (Spaltenverarbeitung)"
+    es: "awk (procesar columnas)"
+    fr: "awk (traitement des colonnes)"
+    it: "awk (elaborazione colonne)"
+    pl: "awk (przetwarzanie kolumn)"
+    tr: "awk (sütun işleme)"
+    pt: "awk (processar colunas)"
+    nl: "awk (kolomverwerking)"
+    hu: "awk (oszlopfeldolgozás)"
   tags:
-    cs:
-    - awk
-    - sloupce
-    - columns
-    - zpracování
-    en:
-    - awk
-    - columns
-    - processing
+    en: [awk, columns, processing]
+    cs: [awk, sloupce, columns, zpracování]
+    sk: [awk, stĺpce, columns, spracovanie]
+    de: [awk, spalten, verarbeitung]
+    es: [awk, columnas, procesar]
+    fr: [awk, colonnes, traitement]
+    it: [awk, colonne, elaborazione]
+    pl: [awk, kolumny, przetwarzanie]
+    tr: [awk, sütunlar, işleme]
+    pt: [awk, colunas, processamento]
+    nl: [awk, kolommen, verwerking]
+    hu: [awk, oszlopok, feldolgozás]
   commands:
-  - cmd: awk '{print $1}' soubor.txt
-    desc:
-      cs: První sloupec
-      en: First column
-  - cmd: awk -F',' '{print $2}' data.csv
-    desc:
-      cs: 2. sloupec z CSV
-      en: 2nd column from CSV
-  - cmd: awk '$3 > 100' data.txt
-    desc:
-      cs: Řádky, kde je 3. sloupec > 100
-      en: Lines where column 3 > 100
-  - cmd: awk '{sum+=$1} END {print sum}' cisla.txt
-    desc:
-      cs: Součet 1. sloupce
-      en: Sum of column 1
-  - cmd: ps aux | awk '{print $11}' | sort | uniq -c | sort -rn
-    desc:
-      cs: Počet instancí každého procesu
-      en: Count of each process
+    - cmd: "awk '{print $1}' file.txt"
+      desc:
+        en: "First column"
+        cs: "První sloupec"
+        sk: "Prvý stĺpec"
+        de: "Erste Spalte"
+        es: "Primera columna"
+        fr: "Première colonne"
+        it: "Prima colonna"
+        pl: "Pierwsza kolumna"
+        tr: "İlk sütun"
+        pt: "Primeira coluna"
+        nl: "Eerste kolom"
+        hu: "Első oszlop"
+    - cmd: "awk -F',' '{print $2}' data.csv"
+      desc:
+        en: "2nd column from CSV"
+        cs: "2. sloupec z CSV"
+        sk: "2. stĺpec z CSV"
+        de: "2. Spalte aus CSV"
+        es: "Segunda columna del CSV"
+        fr: "2e colonne du CSV"
+        it: "2ª colonna da CSV"
+        pl: "2. kolumna z CSV"
+        tr: "CSV'den 2. sütun"
+        pt: "2ª coluna do CSV"
+        nl: "2e kolom uit CSV"
+        hu: "2. oszlop a CSV-ből"
+    - cmd: "awk '$3 > 100' data.txt"
+      desc:
+        en: "Lines where column 3 > 100"
+        cs: "Řádky, kde je 3. sloupec > 100"
+        sk: "Riadky, kde je 3. stĺpec > 100"
+        de: "Zeilen, in denen Spalte 3 > 100"
+        es: "Líneas donde columna 3 > 100"
+        fr: "Lignes où colonne 3 > 100"
+        it: "Righe dove colonna 3 > 100"
+        pl: "Linie gdzie kolumna 3 > 100"
+        tr: "3. sütun > 100 olan satırlar"
+        pt: "Linhas onde coluna 3 > 100"
+        nl: "Regels waar kolom 3 > 100"
+        hu: "Sorok ahol a 3. oszlop > 100"
+    - cmd: "awk '{sum+=$1} END {print sum}' numbers.txt"
+      desc:
+        en: "Sum of column 1"
+        cs: "Součet 1. sloupce"
+        sk: "Súčet 1. stĺpca"
+        de: "Summe der 1. Spalte"
+        es: "Suma de la columna 1"
+        fr: "Somme de la colonne 1"
+        it: "Somma colonna 1"
+        pl: "Suma kolumny 1"
+        tr: "1. sütunun toplamı"
+        pt: "Soma da coluna 1"
+        nl: "Som van kolom 1"
+        hu: "Az 1. oszlop összege"
+    - cmd: "ps aux | awk '{print $11}' | sort | uniq -c | sort -rn"
+      desc:
+        en: "Count of each process"
+        cs: "Počet instancí každého procesu"
+        sk: "Počet inštancií každého procesu"
+        de: "Anzahl jeder Prozessinstanz"
+        es: "Conteo de cada proceso"
+        fr: "Nombre d'instances de chaque processus"
+        it: "Conteggio di ogni processo"
+        pl: "Liczba instancji każdego procesu"
+        tr: "Her sürecin sayısı"
+        pt: "Contagem de cada processo"
+        nl: "Aantal van elk proces"
+        hu: "Az egyes folyamatok száma"
+
 - id: text-sort
   title:
-    cs: Řadit a deduplikovat
-    en: Sort and deduplicate
+    en: "Sort and deduplicate"
+    cs: "Řadit a deduplikovat"
+    sk: "Radiť a deduplikovať"
+    de: "Sortieren und deduplizieren"
+    es: "Ordenar y deduplicar"
+    fr: "Trier et dédupliquer"
+    it: "Ordinare e deduplicare"
+    pl: "Sortuj i deduplikuj"
+    tr: "Sırala ve tekrarları kaldır"
+    pt: "Ordenar e deduplicar"
+    nl: "Sorteren en dedupliceren"
+    hu: "Rendezés és duplikációk eltávolítása"
   tags:
-    cs:
-    - sort
-    - uniq
-    - řadit
-    - deduplikovat
-    - duplikáty
-    en:
-    - sort
-    - uniq
-    - sort
-    - dedupe
-    - duplicates
+    en: [sort, uniq, dedupe, duplicates]
+    cs: [sort, uniq, řadit, deduplikovat, duplikáty]
+    sk: [sort, uniq, radiť, deduplikovať, duplikáty]
+    de: [sort, uniq, sortieren, duplikate]
+    es: [sort, uniq, ordenar, duplicados]
+    fr: [sort, uniq, trier, doublons]
+    it: [sort, uniq, ordinare, duplicati]
+    pl: [sort, uniq, sortuj, duplikaty]
+    tr: [sort, uniq, sırala, tekrarlar]
+    pt: [sort, uniq, ordenar, duplicatas]
+    nl: [sort, uniq, sorteren, duplicaten]
+    hu: [sort, uniq, rendezés, duplikációk]
   commands:
-  - cmd: sort soubor.txt
-    desc:
-      cs: Setřídit řádky abecedně
-      en: Sort lines alphabetically
-  - cmd: sort -n cisla.txt
-    desc:
-      cs: Numericky
-      en: Numerically
-  - cmd: sort -rn cisla.txt
-    desc:
-      cs: Numericky sestupně
-      en: Numerically descending
-  - cmd: sort -h velikosti.txt
-    desc:
-      cs: Lidsky čitelné velikosti (1K, 5M, 2G)
-      en: Human-readable sizes
-  - cmd: sort soubor.txt | uniq
-    desc:
-      cs: Setřídit a odstranit duplicity
-      en: Sort and dedupe
-  - cmd: sort soubor.txt | uniq -c | sort -rn
-    desc:
-      cs: Spočítat výskyty + setřídit
-      en: Count occurrences + sort
+    - cmd: "sort file.txt"
+      desc:
+        en: "Sort lines alphabetically"
+        cs: "Setřídit řádky abecedně"
+        sk: "Zoradiť riadky abecedne"
+        de: "Zeilen alphabetisch sortieren"
+        es: "Ordenar líneas alfabéticamente"
+        fr: "Trier les lignes alphabétiquement"
+        it: "Ordinare righe alfabeticamente"
+        pl: "Sortuj linie alfabetycznie"
+        tr: "Satırları alfabetik sırala"
+        pt: "Ordenar linhas alfabeticamente"
+        nl: "Regels alfabetisch sorteren"
+        hu: "Sorok rendezése ábécé szerint"
+    - cmd: "sort -n numbers.txt"
+      desc:
+        en: "Numerically"
+        cs: "Numericky"
+        sk: "Numericky"
+        de: "Numerisch"
+        es: "Numéricamente"
+        fr: "Numériquement"
+        it: "Numericamente"
+        pl: "Numerycznie"
+        tr: "Sayısal olarak"
+        pt: "Numericamente"
+        nl: "Numeriek"
+        hu: "Numerikusan"
+    - cmd: "sort -rn numbers.txt"
+      desc:
+        en: "Numerically descending"
+        cs: "Numericky sestupně"
+        sk: "Numericky zostupne"
+        de: "Numerisch absteigend"
+        es: "Numéricamente descendente"
+        fr: "Numériquement décroissant"
+        it: "Numericamente decrescente"
+        pl: "Numerycznie malejąco"
+        tr: "Sayısal azalan"
+        pt: "Numericamente decrescente"
+        nl: "Numeriek aflopend"
+        hu: "Numerikusan csökkenő"
+    - cmd: "sort -h sizes.txt"
+      desc:
+        en: "Human-readable sizes"
+        cs: "Lidsky čitelné velikosti (1K, 5M, 2G)"
+        sk: "Ľudsky čitateľné veľkosti (1K, 5M, 2G)"
+        de: "Menschenlesbare Größen"
+        es: "Tamaños legibles"
+        fr: "Tailles lisibles"
+        it: "Dimensioni leggibili"
+        pl: "Czytelne rozmiary"
+        tr: "Okunabilir boyutlar"
+        pt: "Tamanhos legíveis"
+        nl: "Leesbare groottes"
+        hu: "Olvasható méretek"
+    - cmd: "sort file.txt | uniq"
+      desc:
+        en: "Sort and dedupe"
+        cs: "Setřídit a odstranit duplicity"
+        sk: "Zoradiť a odstrániť duplicity"
+        de: "Sortieren und duplizieren entfernen"
+        es: "Ordenar y deduplicar"
+        fr: "Trier et dédupliquer"
+        it: "Ordinare e deduplicare"
+        pl: "Sortuj i deduplikuj"
+        tr: "Sırala ve tekrarları kaldır"
+        pt: "Ordenar e deduplicar"
+        nl: "Sorteren en dedupliceren"
+        hu: "Rendezés és duplikációk eltávolítása"
+    - cmd: "sort file.txt | uniq -c | sort -rn"
+      desc:
+        en: "Count occurrences + sort"
+        cs: "Spočítat výskyty + setřídit"
+        sk: "Spočítať výskyty + zoradiť"
+        de: "Vorkommen zählen + sortieren"
+        es: "Contar ocurrencias + ordenar"
+        fr: "Compter occurrences + trier"
+        it: "Contare occorrenze + ordinare"
+        pl: "Policz wystąpienia + sortuj"
+        tr: "Tekrarları say + sırala"
+        pt: "Contar ocorrências + ordenar"
+        nl: "Voorkomens tellen + sorteren"
+        hu: "Előfordulások számolása + rendezés"
+
 - id: text-cut-wc
   title:
-    cs: cut, wc, tr (rychlé úpravy)
-    en: cut, wc, tr (quick edits)
+    en: "cut, wc, tr (quick edits)"
+    cs: "cut, wc, tr (rychlé úpravy)"
+    sk: "cut, wc, tr (rýchle úpravy)"
+    de: "cut, wc, tr (Schnellbearbeitung)"
+    es: "cut, wc, tr (ediciones rápidas)"
+    fr: "cut, wc, tr (modifications rapides)"
+    it: "cut, wc, tr (modifiche rapide)"
+    pl: "cut, wc, tr (szybkie edycje)"
+    tr: "cut, wc, tr (hızlı düzenlemeler)"
+    pt: "cut, wc, tr (edições rápidas)"
+    nl: "cut, wc, tr (snelle bewerkingen)"
+    hu: "cut, wc, tr (gyors szerkesztések)"
   tags:
-    cs:
-    - cut
-    - wc
-    - tr
-    - řádky
-    - slova
-    - počet
-    en:
-    - cut
-    - wc
-    - tr
-    - lines
-    - words
-    - count
+    en: [cut, wc, tr, lines, words, count]
+    cs: [cut, wc, tr, řádky, slova, počet]
+    sk: [cut, wc, tr, riadky, slová, počet]
+    de: [cut, wc, tr, zeilen, wörter, anzahl]
+    es: [cut, wc, tr, líneas, palabras, contar]
+    fr: [cut, wc, tr, lignes, mots, compter]
+    it: [cut, wc, tr, righe, parole, conteggio]
+    pl: [cut, wc, tr, linie, słowa, liczba]
+    tr: [cut, wc, tr, satırlar, kelimeler, sayım]
+    pt: [cut, wc, tr, linhas, palavras, contagem]
+    nl: [cut, wc, tr, regels, woorden, aantal]
+    hu: [cut, wc, tr, sorok, szavak, szám]
   commands:
-  - cmd: wc -l soubor.txt
-    desc:
-      cs: Počet řádků
-      en: Line count
-  - cmd: wc -w soubor.txt
-    desc:
-      cs: Počet slov
-      en: Word count
-  - cmd: wc -c soubor.txt
-    desc:
-      cs: Počet bajtů
-      en: Byte count
-  - cmd: cut -d',' -f1,3 data.csv
-    desc:
-      cs: 1. a 3. sloupec z CSV
-      en: 1st and 3rd column from CSV
-  - cmd: echo 'AHOJ' | tr 'A-Z' 'a-z'
-    desc:
-      cs: Velká písmena → malá
-      en: Uppercase → lowercase
-  - cmd: tr -d ' ' < soubor.txt
-    desc:
-      cs: Smazat všechny mezery
-      en: Remove all spaces
+    - cmd: "wc -l file.txt"
+      desc:
+        en: "Line count"
+        cs: "Počet řádků"
+        sk: "Počet riadkov"
+        de: "Zeilenanzahl"
+        es: "Número de líneas"
+        fr: "Nombre de lignes"
+        it: "Numero di righe"
+        pl: "Liczba linii"
+        tr: "Satır sayısı"
+        pt: "Número de linhas"
+        nl: "Aantal regels"
+        hu: "Sorok száma"
+    - cmd: "wc -w file.txt"
+      desc:
+        en: "Word count"
+        cs: "Počet slov"
+        sk: "Počet slov"
+        de: "Wortanzahl"
+        es: "Número de palabras"
+        fr: "Nombre de mots"
+        it: "Numero di parole"
+        pl: "Liczba słów"
+        tr: "Kelime sayısı"
+        pt: "Número de palavras"
+        nl: "Aantal woorden"
+        hu: "Szavak száma"
+    - cmd: "wc -c file.txt"
+      desc:
+        en: "Byte count"
+        cs: "Počet bajtů"
+        sk: "Počet bajtov"
+        de: "Byte-Anzahl"
+        es: "Número de bytes"
+        fr: "Nombre d'octets"
+        it: "Numero di byte"
+        pl: "Liczba bajtów"
+        tr: "Bayt sayısı"
+        pt: "Número de bytes"
+        nl: "Aantal bytes"
+        hu: "Bájtok száma"
+    - cmd: "cut -d',' -f1,3 data.csv"
+      desc:
+        en: "1st and 3rd column from CSV"
+        cs: "1. a 3. sloupec z CSV"
+        sk: "1. a 3. stĺpec z CSV"
+        de: "1. und 3. Spalte aus CSV"
+        es: "Columnas 1 y 3 del CSV"
+        fr: "1ère et 3e colonne du CSV"
+        it: "1ª e 3ª colonna da CSV"
+        pl: "1 i 3 kolumna z CSV"
+        tr: "CSV'den 1. ve 3. sütun"
+        pt: "1ª e 3ª coluna do CSV"
+        nl: "1e en 3e kolom uit CSV"
+        hu: "1. és 3. oszlop a CSV-ből"
+    - cmd: "echo 'HELLO' | tr 'A-Z' 'a-z'"
+      desc:
+        en: "Uppercase → lowercase"
+        cs: "Velká písmena → malá"
+        sk: "Veľké písmená → malé"
+        de: "Großbuchstaben → Kleinbuchstaben"
+        es: "Mayúsculas → minúsculas"
+        fr: "Majuscules → minuscules"
+        it: "Maiuscole → minuscole"
+        pl: "Wielkie → małe litery"
+        tr: "Büyük → küçük harf"
+        pt: "Maiúsculas → minúsculas"
+        nl: "Hoofdletters → kleine letters"
+        hu: "Nagybetű → kisbetű"
+    - cmd: "tr -d ' ' < file.txt"
+      desc:
+        en: "Remove all spaces"
+        cs: "Smazat všechny mezery"
+        sk: "Zmazať všetky medzery"
+        de: "Alle Leerzeichen entfernen"
+        es: "Eliminar todos los espacios"
+        fr: "Supprimer toutes les espaces"
+        it: "Rimuovere tutti gli spazi"
+        pl: "Usuń wszystkie spacje"
+        tr: "Tüm boşlukları sil"
+        pt: "Remover todos os espaços"
+        nl: "Alle spaties verwijderen"
+        hu: "Minden szóköz törlése"
+
 - id: text-diff
   title:
-    cs: Porovnat dva soubory
-    en: Compare two files
+    en: "Compare two files"
+    cs: "Porovnat dva soubory"
+    sk: "Porovnať dva súbory"
+    de: "Zwei Dateien vergleichen"
+    es: "Comparar dos archivos"
+    fr: "Comparer deux fichiers"
+    it: "Confrontare due file"
+    pl: "Porównaj dwa pliki"
+    tr: "İki dosyayı karşılaştır"
+    pt: "Comparar dois arquivos"
+    nl: "Twee bestanden vergelijken"
+    hu: "Két fájl összehasonlítása"
   tags:
-    cs:
-    - diff
-    - porovnat
-    - rozdíl
-    - vimdiff
-    en:
-    - diff
-    - compare
-    - difference
+    en: [diff, compare, difference]
+    cs: [diff, porovnat, rozdíl, vimdiff]
+    sk: [diff, porovnať, rozdiel, vimdiff]
+    de: [diff, vergleichen, unterschied]
+    es: [diff, comparar, diferencia]
+    fr: [diff, comparer, différence]
+    it: [diff, confrontare, differenza]
+    pl: [diff, porównaj, różnica]
+    tr: [diff, karşılaştır, fark]
+    pt: [diff, comparar, diferença]
+    nl: [diff, vergelijken, verschil]
+    hu: [diff, összehasonlítás, különbség]
   commands:
-  - cmd: diff soubor1 soubor2
-    desc:
-      cs: Rozdíly mezi soubory
-      en: Differences between files
-  - cmd: diff -u soubor1 soubor2
-    desc:
-      cs: Unified formát (jako u gitu)
-      en: Unified format (git-like)
-  - cmd: diff -r adresar1 adresar2
-    desc:
-      cs: Rekurzivně porovnat dva adresáře
-      en: Recursively compare two directories
-  - cmd: vimdiff soubor1 soubor2
-    desc:
-      cs: Side-by-side ve vimu
-      en: Side-by-side in vim
+    - cmd: "diff file1 file2"
+      desc:
+        en: "Differences between files"
+        cs: "Rozdíly mezi soubory"
+        sk: "Rozdiely medzi súbormi"
+        de: "Unterschiede zwischen Dateien"
+        es: "Diferencias entre archivos"
+        fr: "Différences entre fichiers"
+        it: "Differenze tra file"
+        pl: "Różnice między plikami"
+        tr: "Dosyalar arasındaki farklar"
+        pt: "Diferenças entre arquivos"
+        nl: "Verschillen tussen bestanden"
+        hu: "Fájlok közötti különbségek"
+    - cmd: "diff -u file1 file2"
+      desc:
+        en: "Unified format (git-like)"
+        cs: "Unified formát (jako u gitu)"
+        sk: "Unified formát (ako u gitu)"
+        de: "Unified-Format (wie git)"
+        es: "Formato unificado (estilo git)"
+        fr: "Format unifié (style git)"
+        it: "Formato unified (stile git)"
+        pl: "Format unified (jak git)"
+        tr: "Birleşik format (git tarzı)"
+        pt: "Formato unificado (estilo git)"
+        nl: "Unified-formaat (zoals git)"
+        hu: "Egységes formátum (git-szerű)"
+    - cmd: "diff -r dir1 dir2"
+      desc:
+        en: "Recursively compare two directories"
+        cs: "Rekurzivně porovnat dva adresáře"
+        sk: "Rekurzívne porovnať dva adresáre"
+        de: "Zwei Verzeichnisse rekursiv vergleichen"
+        es: "Comparar dos directorios recursivamente"
+        fr: "Comparer deux dossiers récursivement"
+        it: "Confrontare due directory ricorsivamente"
+        pl: "Porównaj rekursywnie dwa katalogi"
+        tr: "İki dizini özyinelemeli karşılaştır"
+        pt: "Comparar dois diretórios recursivamente"
+        nl: "Twee mappen recursief vergelijken"
+        hu: "Két könyvtár rekurzív összehasonlítása"
+    - cmd: "vimdiff file1 file2"
+      desc:
+        en: "Side-by-side in vim"
+        cs: "Side-by-side ve vimu"
+        sk: "Side-by-side vo vime"
+        de: "Nebeneinander in vim"
+        es: "Lado a lado en vim"
+        fr: "Côte à côte dans vim"
+        it: "Affiancato in vim"
+        pl: "Obok siebie w vimie"
+        tr: "Vim'de yan yana"
+        pt: "Lado a lado no vim"
+        nl: "Naast elkaar in vim"
+        hu: "Egymás mellett vimben"

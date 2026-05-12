@@ -1,220 +1,592 @@
 - id: bash-history
   title:
-    cs: Historie příkazů
-    en: Command history
+    en: "Command history"
+    cs: "Historie příkazů"
+    sk: "História príkazov"
+    de: "Befehlsverlauf"
+    es: "Historial de comandos"
+    fr: "Historique des commandes"
+    it: "Cronologia comandi"
+    pl: "Historia poleceń"
+    tr: "Komut geçmişi"
+    pt: "Histórico de comandos"
+    nl: "Commandogeschiedenis"
+    hu: "Parancsok előzményei"
   tags:
-    cs:
-    - history
-    - historie
-    - bash
-    - příkaz
-    - opakovat
-    en:
-    - history
-    - bash
-    - command
-    - repeat
+    en: [history, bash, command, repeat]
+    cs: [history, historie, bash, příkaz, opakovat]
+    sk: [history, história, bash, príkaz, opakovať]
+    de: [history, bash, befehl, wiederholen]
+    es: [history, bash, comando, repetir]
+    fr: [history, bash, commande, répéter]
+    it: [history, bash, comando, ripetere]
+    pl: [history, bash, polecenie, powtórz]
+    tr: [history, bash, komut, tekrarla]
+    pt: [history, bash, comando, repetir]
+    nl: [history, bash, commando, herhalen]
+    hu: [history, bash, parancs, ismétlés]
   commands:
-  - cmd: history
-    desc:
-      cs: Všechny příkazy z historie
-      en: All commands from history
-  - cmd: history | grep ssh
-    desc:
-      cs: Najít v historii
-      en: Search history
-  - cmd: '!42'
-    desc:
-      cs: Spustit příkaz č. 42 z historie
-      en: 'Run command #42 from history'
-  - cmd: '!!'
-    desc:
-      cs: Zopakovat poslední příkaz
-      en: Repeat last command
-  - cmd: sudo !!
-    desc:
-      cs: Zopakovat poslední příkaz s sudo
-      en: Repeat last command with sudo
-  - cmd: Ctrl+R
-    desc:
-      cs: Reverse search v historii (interaktivně)
-      en: Reverse search in history (interactive)
+    - cmd: "history"
+      desc:
+        en: "All commands from history"
+        cs: "Všechny příkazy z historie"
+        sk: "Všetky príkazy z histórie"
+        de: "Alle Befehle aus dem Verlauf"
+        es: "Todos los comandos del historial"
+        fr: "Toutes les commandes de l'historique"
+        it: "Tutti i comandi dalla cronologia"
+        pl: "Wszystkie polecenia z historii"
+        tr: "Geçmişten tüm komutlar"
+        pt: "Todos os comandos do histórico"
+        nl: "Alle commando's uit geschiedenis"
+        hu: "Minden parancs az előzményekből"
+    - cmd: "history | grep ssh"
+      desc:
+        en: "Search history"
+        cs: "Najít v historii"
+        sk: "Nájsť v histórii"
+        de: "In Verlauf suchen"
+        es: "Buscar en el historial"
+        fr: "Chercher dans l'historique"
+        it: "Cercare nella cronologia"
+        pl: "Szukaj w historii"
+        tr: "Geçmişte ara"
+        pt: "Buscar no histórico"
+        nl: "Zoeken in geschiedenis"
+        hu: "Keresés az előzményekben"
+    - cmd: "!42"
+      desc:
+        en: "Run command #42 from history"
+        cs: "Spustit příkaz č. 42 z historie"
+        sk: "Spustiť príkaz č. 42 z histórie"
+        de: "Befehl Nr. 42 aus dem Verlauf ausführen"
+        es: "Ejecutar comando 42 del historial"
+        fr: "Exécuter la commande 42 de l'historique"
+        it: "Eseguire comando 42 dalla cronologia"
+        pl: "Uruchom polecenie 42 z historii"
+        tr: "Geçmişten 42. komutu çalıştır"
+        pt: "Executar comando 42 do histórico"
+        nl: "Commando 42 uit geschiedenis uitvoeren"
+        hu: "42. parancs futtatása az előzményekből"
+    - cmd: "!!"
+      desc:
+        en: "Repeat last command"
+        cs: "Zopakovat poslední příkaz"
+        sk: "Zopakovať posledný príkaz"
+        de: "Letzten Befehl wiederholen"
+        es: "Repetir último comando"
+        fr: "Répéter la dernière commande"
+        it: "Ripetere ultimo comando"
+        pl: "Powtórz ostatnie polecenie"
+        tr: "Son komutu tekrarla"
+        pt: "Repetir último comando"
+        nl: "Laatste commando herhalen"
+        hu: "Utolsó parancs ismétlése"
+    - cmd: "sudo !!"
+      desc:
+        en: "Repeat last command with sudo"
+        cs: "Zopakovat poslední příkaz s sudo"
+        sk: "Zopakovať posledný príkaz so sudo"
+        de: "Letzten Befehl mit sudo wiederholen"
+        es: "Repetir último comando con sudo"
+        fr: "Répéter la dernière commande avec sudo"
+        it: "Ripetere ultimo comando con sudo"
+        pl: "Powtórz ostatnie polecenie z sudo"
+        tr: "Son komutu sudo ile tekrarla"
+        pt: "Repetir último comando com sudo"
+        nl: "Laatste commando met sudo herhalen"
+        hu: "Utolsó parancs ismétlése sudo-val"
+    - cmd: "Ctrl+R"
+      desc:
+        en: "Reverse search in history (interactive)"
+        cs: "Reverse search v historii (interaktivně)"
+        sk: "Reverse search v histórii (interaktívne)"
+        de: "Rückwärtssuche im Verlauf (interaktiv)"
+        es: "Búsqueda inversa en historial (interactivo)"
+        fr: "Recherche inversée dans l'historique"
+        it: "Ricerca inversa nella cronologia"
+        pl: "Reverse search w historii (interaktywnie)"
+        tr: "Geçmişte geri arama (etkileşimli)"
+        pt: "Busca reversa no histórico (interativo)"
+        nl: "Reverse search in geschiedenis (interactief)"
+        hu: "Visszafelé keresés az előzményekben"
+
 - id: bash-redirect
   title:
-    cs: Přesměrování a roury
-    en: Redirection and pipes
+    en: "Redirection and pipes"
+    cs: "Přesměrování a roury"
+    sk: "Presmerovanie a rúry"
+    de: "Umleitung und Pipes"
+    es: "Redirección y tuberías"
+    fr: "Redirection et pipes"
+    it: "Reindirizzamento e pipe"
+    pl: "Przekierowania i potoki"
+    tr: "Yönlendirme ve borular"
+    pt: "Redirecionamento e pipes"
+    nl: "Omleidingen en pipes"
+    hu: "Átirányítás és csövek"
   tags:
-    cs:
-    - redirect
-    - pipe
-    - roura
-    - přesměrování
-    - stdout
-    - stderr
-    en:
-    - redirect
-    - pipe
-    - stdout
-    - stderr
+    en: [redirect, pipe, stdout, stderr]
+    cs: [redirect, pipe, roura, přesměrování, stdout, stderr]
+    sk: [redirect, pipe, rúra, presmerovanie, stdout, stderr]
+    de: [redirect, pipe, umleitung, stdout, stderr]
+    es: [redirect, pipe, tubería, redirección, stdout, stderr]
+    fr: [redirect, pipe, redirection, stdout, stderr]
+    it: [redirect, pipe, reindirizzamento, stdout, stderr]
+    pl: [redirect, pipe, potok, przekierowanie, stdout, stderr]
+    tr: [redirect, pipe, yönlendirme, stdout, stderr]
+    pt: [redirect, pipe, redirecionamento, stdout, stderr]
+    nl: [redirect, pipe, omleiding, stdout, stderr]
+    hu: [redirect, pipe, átirányítás, stdout, stderr]
   commands:
-  - cmd: prikaz > soubor.txt
-    desc:
-      cs: Zapsat výstup do souboru (přepsat)
-      en: Write output to file (overwrite)
-  - cmd: prikaz >> soubor.txt
-    desc:
-      cs: Přidat na konec souboru
-      en: Append to file
-  - cmd: prikaz 2> chyby.txt
-    desc:
-      cs: Přesměrovat jen chyby (stderr)
-      en: Redirect only errors (stderr)
-  - cmd: prikaz > vse.txt 2>&1
-    desc:
-      cs: Stdout i stderr do jednoho souboru
-      en: Both stdout and stderr to one file
-  - cmd: prikaz &> vse.txt
-    desc:
-      cs: Stejné, zkrácený zápis
-      en: Same, shorter syntax
-  - cmd: prikaz1 | prikaz2
-    desc:
-      cs: 'Roura: výstup 1 → vstup 2'
-      en: 'Pipe: output of 1 → input of 2'
-  - cmd: prikaz | tee soubor.txt
-    desc:
-      cs: Vypsat na obrazovku i do souboru
-      en: Show on screen and save to file
+    - cmd: "command > file.txt"
+      desc:
+        en: "Write output to file (overwrite)"
+        cs: "Zapsat výstup do souboru (přepsat)"
+        sk: "Zapísať výstup do súboru (prepísať)"
+        de: "Ausgabe in Datei schreiben (überschreiben)"
+        es: "Escribir salida en archivo (sobrescribir)"
+        fr: "Écrire la sortie dans un fichier (écraser)"
+        it: "Scrivere output su file (sovrascrivere)"
+        pl: "Zapisz wyjście do pliku (nadpisz)"
+        tr: "Çıktıyı dosyaya yaz (üzerine yaz)"
+        pt: "Escrever saída em arquivo (sobrescrever)"
+        nl: "Uitvoer naar bestand schrijven (overschrijven)"
+        hu: "Kimenet írása fájlba (felülír)"
+    - cmd: "command >> file.txt"
+      desc:
+        en: "Append to file"
+        cs: "Přidat na konec souboru"
+        sk: "Pridať na koniec súboru"
+        de: "An Datei anhängen"
+        es: "Añadir al final del archivo"
+        fr: "Ajouter à la fin du fichier"
+        it: "Aggiungere alla fine del file"
+        pl: "Dopisz do pliku"
+        tr: "Dosyanın sonuna ekle"
+        pt: "Anexar ao arquivo"
+        nl: "Toevoegen aan bestand"
+        hu: "Hozzáfűzés fájlhoz"
+    - cmd: "command 2> errors.txt"
+      desc:
+        en: "Redirect only errors (stderr)"
+        cs: "Přesměrovat jen chyby (stderr)"
+        sk: "Presmerovať len chyby (stderr)"
+        de: "Nur Fehler umleiten (stderr)"
+        es: "Redirigir solo errores (stderr)"
+        fr: "Rediriger uniquement les erreurs (stderr)"
+        it: "Reindirizzare solo errori (stderr)"
+        pl: "Przekieruj tylko błędy (stderr)"
+        tr: "Sadece hataları yönlendir (stderr)"
+        pt: "Redirecionar apenas erros (stderr)"
+        nl: "Alleen fouten omleiden (stderr)"
+        hu: "Csak hibák átirányítása (stderr)"
+    - cmd: "command > all.txt 2>&1"
+      desc:
+        en: "Both stdout and stderr to one file"
+        cs: "Stdout i stderr do jednoho souboru"
+        sk: "Stdout aj stderr do jedného súboru"
+        de: "Stdout und stderr in eine Datei"
+        es: "Stdout y stderr a un archivo"
+        fr: "Stdout et stderr dans un seul fichier"
+        it: "Stdout e stderr in un solo file"
+        pl: "Stdout i stderr do jednego pliku"
+        tr: "Stdout ve stderr tek dosyaya"
+        pt: "Stdout e stderr para um arquivo"
+        nl: "Stdout en stderr naar één bestand"
+        hu: "Stdout és stderr egy fájlba"
+    - cmd: "command &> all.txt"
+      desc:
+        en: "Same, shorter syntax"
+        cs: "Stejné, zkrácený zápis"
+        sk: "To isté, skrátený zápis"
+        de: "Gleich, kürzere Syntax"
+        es: "Lo mismo, sintaxis más corta"
+        fr: "Idem, syntaxe plus courte"
+        it: "Stesso, sintassi più corta"
+        pl: "To samo, krótsza składnia"
+        tr: "Aynı, kısa sözdizimi"
+        pt: "Mesmo, sintaxe mais curta"
+        nl: "Hetzelfde, kortere syntaxis"
+        hu: "Ugyanaz, rövidebb szintaxissal"
+    - cmd: "command1 | command2"
+      desc:
+        en: "Pipe: output of 1 → input of 2"
+        cs: "Roura: výstup 1 → vstup 2"
+        sk: "Rúra: výstup 1 → vstup 2"
+        de: "Pipe: Ausgabe 1 → Eingabe 2"
+        es: "Pipe: salida de 1 → entrada de 2"
+        fr: "Pipe : sortie de 1 → entrée de 2"
+        it: "Pipe: output di 1 → input di 2"
+        pl: "Potok: wyjście 1 → wejście 2"
+        tr: "Boru: 1'in çıktısı → 2'nin girdisi"
+        pt: "Pipe: saída de 1 → entrada de 2"
+        nl: "Pipe: uitvoer van 1 → invoer van 2"
+        hu: "Cső: 1 kimenete → 2 bemenete"
+    - cmd: "command | tee file.txt"
+      desc:
+        en: "Show on screen and save to file"
+        cs: "Vypsat na obrazovku i do souboru"
+        sk: "Vypísať na obrazovku aj do súboru"
+        de: "Auf Bildschirm anzeigen und in Datei speichern"
+        es: "Mostrar en pantalla y guardar en archivo"
+        fr: "Afficher à l'écran et enregistrer"
+        it: "Mostrare a schermo e salvare su file"
+        pl: "Pokaż na ekranie i zapisz do pliku"
+        tr: "Ekranda göster ve dosyaya kaydet"
+        pt: "Mostrar na tela e salvar em arquivo"
+        nl: "Op scherm tonen en in bestand opslaan"
+        hu: "Megjelenítés képernyőn és mentés fájlba"
+
 - id: bash-vars
   title:
-    cs: Proměnné a aliasy
-    en: Variables and aliases
+    en: "Variables and aliases"
+    cs: "Proměnné a aliasy"
+    sk: "Premenné a aliasy"
+    de: "Variablen und Aliase"
+    es: "Variables y alias"
+    fr: "Variables et alias"
+    it: "Variabili e alias"
+    pl: "Zmienne i aliasy"
+    tr: "Değişkenler ve takma adlar"
+    pt: "Variáveis e aliases"
+    nl: "Variabelen en aliassen"
+    hu: "Változók és aliasok"
   tags:
-    cs:
-    - proměnná
-    - variable
-    - export
-    - alias
-    - env
-    en:
-    - variable
-    - export
-    - alias
-    - env
+    en: [variable, export, alias, env]
+    cs: [proměnná, variable, export, alias, env]
+    sk: [premenná, variable, export, alias, env]
+    de: [variable, export, alias, env]
+    es: [variable, export, alias, env]
+    fr: [variable, export, alias, env]
+    it: [variabile, export, alias, env]
+    pl: [zmienna, export, alias, env]
+    tr: [değişken, export, alias, env]
+    pt: [variável, export, alias, env]
+    nl: [variabele, export, alias, env]
+    hu: [változó, export, alias, env]
   commands:
-  - cmd: export MY_VAR='hodnota'
-    desc:
-      cs: Nastavit proměnnou pro tuto session
-      en: Set variable for this session
-  - cmd: echo $MY_VAR
-    desc:
-      cs: Vypsat hodnotu proměnné
-      en: Print variable value
-  - cmd: env
-    desc:
-      cs: Všechny proměnné prostředí
-      en: All environment variables
-  - cmd: alias ll='ls -lah'
-    desc:
-      cs: Vytvořit alias
-      en: Create alias
-  - cmd: unalias ll
-    desc:
-      cs: Smazat alias
-      en: Remove alias
-  - cmd: echo 'alias ll="ls -lah"' >> ~/.bashrc
-    desc:
-      cs: Trvalý alias
-      en: Permanent alias
+    - cmd: "export MY_VAR='value'"
+      desc:
+        en: "Set variable for this session"
+        cs: "Nastavit proměnnou pro tuto session"
+        sk: "Nastaviť premennú pre túto session"
+        de: "Variable für diese Session setzen"
+        es: "Establecer variable para esta sesión"
+        fr: "Définir une variable pour la session"
+        it: "Impostare variabile per questa sessione"
+        pl: "Ustaw zmienną dla tej sesji"
+        tr: "Bu oturum için değişken ayarla"
+        pt: "Definir variável para esta sessão"
+        nl: "Variabele instellen voor deze sessie"
+        hu: "Változó beállítása erre a munkamenetre"
+    - cmd: "echo $MY_VAR"
+      desc:
+        en: "Print variable value"
+        cs: "Vypsat hodnotu proměnné"
+        sk: "Vypísať hodnotu premennej"
+        de: "Variablenwert ausgeben"
+        es: "Mostrar valor de la variable"
+        fr: "Afficher la valeur de la variable"
+        it: "Stampare valore variabile"
+        pl: "Wypisz wartość zmiennej"
+        tr: "Değişken değerini yazdır"
+        pt: "Imprimir valor da variável"
+        nl: "Variabelewaarde tonen"
+        hu: "Változó értékének kiírása"
+    - cmd: "env"
+      desc:
+        en: "All environment variables"
+        cs: "Všechny proměnné prostředí"
+        sk: "Všetky premenné prostredia"
+        de: "Alle Umgebungsvariablen"
+        es: "Todas las variables de entorno"
+        fr: "Toutes les variables d'environnement"
+        it: "Tutte le variabili di ambiente"
+        pl: "Wszystkie zmienne środowiskowe"
+        tr: "Tüm ortam değişkenleri"
+        pt: "Todas as variáveis de ambiente"
+        nl: "Alle omgevingsvariabelen"
+        hu: "Minden környezeti változó"
+    - cmd: "alias ll='ls -lah'"
+      desc:
+        en: "Create alias"
+        cs: "Vytvořit alias"
+        sk: "Vytvoriť alias"
+        de: "Alias erstellen"
+        es: "Crear alias"
+        fr: "Créer un alias"
+        it: "Creare alias"
+        pl: "Utwórz alias"
+        tr: "Takma ad oluştur"
+        pt: "Criar alias"
+        nl: "Alias maken"
+        hu: "Alias létrehozása"
+    - cmd: "unalias ll"
+      desc:
+        en: "Remove alias"
+        cs: "Smazat alias"
+        sk: "Zmazať alias"
+        de: "Alias entfernen"
+        es: "Eliminar alias"
+        fr: "Supprimer l'alias"
+        it: "Rimuovere alias"
+        pl: "Usuń alias"
+        tr: "Takma adı kaldır"
+        pt: "Remover alias"
+        nl: "Alias verwijderen"
+        hu: "Alias eltávolítása"
+    - cmd: "echo 'alias ll=\"ls -lah\"' >> ~/.bashrc"
+      desc:
+        en: "Permanent alias"
+        cs: "Trvalý alias"
+        sk: "Trvalý alias"
+        de: "Permanenter Alias"
+        es: "Alias permanente"
+        fr: "Alias permanent"
+        it: "Alias permanente"
+        pl: "Stały alias"
+        tr: "Kalıcı takma ad"
+        pt: "Alias permanente"
+        nl: "Permanente alias"
+        hu: "Állandó alias"
+
 - id: bash-loops
   title:
-    cs: Smyčky a podmínky
-    en: Loops and conditions
+    en: "Loops and conditions"
+    cs: "Smyčky a podmínky"
+    sk: "Slučky a podmienky"
+    de: "Schleifen und Bedingungen"
+    es: "Bucles y condiciones"
+    fr: "Boucles et conditions"
+    it: "Cicli e condizioni"
+    pl: "Pętle i warunki"
+    tr: "Döngüler ve koşullar"
+    pt: "Laços e condições"
+    nl: "Lussen en condities"
+    hu: "Ciklusok és feltételek"
   tags:
-    cs:
-    - for
-    - while
-    - if
-    - smyčka
-    - podmínka
-    - bash
-    en:
-    - for
-    - while
-    - if
-    - loop
-    - condition
-    - bash
+    en: [for, while, if, loop, condition, bash]
+    cs: [for, while, if, smyčka, podmínka, bash]
+    sk: [for, while, if, slučka, podmienka, bash]
+    de: [for, while, if, schleife, bedingung, bash]
+    es: [for, while, if, bucle, condición, bash]
+    fr: [for, while, if, boucle, condition, bash]
+    it: [for, while, if, ciclo, condizione, bash]
+    pl: [for, while, if, pętla, warunek, bash]
+    tr: [for, while, if, döngü, koşul, bash]
+    pt: [for, while, if, laço, condição, bash]
+    nl: [for, while, if, lus, conditie, bash]
+    hu: [for, while, if, ciklus, feltétel, bash]
   commands:
-  - cmd: for f in *.txt; do echo $f; done
-    desc:
-      cs: Iterovat přes soubory
-      en: Iterate over files
-  - cmd: for i in {1..10}; do echo $i; done
-    desc:
-      cs: Od 1 do 10
-      en: From 1 to 10
-  - cmd: while read line; do echo $line; done < soubor.txt
-    desc:
-      cs: Číst soubor po řádcích
-      en: Read file line by line
-  - cmd: if [ -f soubor ]; then echo 'existuje'; fi
-    desc:
-      cs: Test existence souboru
-      en: Test if file exists
-  - cmd: '[ -d /opt ] && echo ''existuje'''
-    desc:
-      cs: Test adresáře, jednořádkově
-      en: Test directory, one-liner
+    - cmd: "for f in *.txt; do echo $f; done"
+      desc:
+        en: "Iterate over files"
+        cs: "Iterovat přes soubory"
+        sk: "Iterovať cez súbory"
+        de: "Über Dateien iterieren"
+        es: "Iterar sobre archivos"
+        fr: "Itérer sur les fichiers"
+        it: "Iterare sui file"
+        pl: "Iteruj po plikach"
+        tr: "Dosyalar üzerinde döngü"
+        pt: "Iterar sobre arquivos"
+        nl: "Itereren over bestanden"
+        hu: "Iteráció a fájlokon"
+    - cmd: "for i in {1..10}; do echo $i; done"
+      desc:
+        en: "From 1 to 10"
+        cs: "Od 1 do 10"
+        sk: "Od 1 do 10"
+        de: "Von 1 bis 10"
+        es: "Del 1 al 10"
+        fr: "De 1 à 10"
+        it: "Da 1 a 10"
+        pl: "Od 1 do 10"
+        tr: "1'den 10'a"
+        pt: "De 1 a 10"
+        nl: "Van 1 tot 10"
+        hu: "1-től 10-ig"
+    - cmd: "while read line; do echo $line; done < file.txt"
+      desc:
+        en: "Read file line by line"
+        cs: "Číst soubor po řádcích"
+        sk: "Čítať súbor po riadkoch"
+        de: "Datei zeilenweise lesen"
+        es: "Leer archivo línea por línea"
+        fr: "Lire le fichier ligne par ligne"
+        it: "Leggere file riga per riga"
+        pl: "Czytaj plik linia po linii"
+        tr: "Dosyayı satır satır oku"
+        pt: "Ler arquivo linha por linha"
+        nl: "Bestand regel voor regel lezen"
+        hu: "Fájl olvasása soronként"
+    - cmd: "if [ -f file ]; then echo 'exists'; fi"
+      desc:
+        en: "Test if file exists"
+        cs: "Test existence souboru"
+        sk: "Test existencie súboru"
+        de: "Test, ob Datei existiert"
+        es: "Comprobar si existe el archivo"
+        fr: "Tester l'existence du fichier"
+        it: "Testare se file esiste"
+        pl: "Test istnienia pliku"
+        tr: "Dosyanın varlığını test et"
+        pt: "Testar se arquivo existe"
+        nl: "Test of bestand bestaat"
+        hu: "Fájl létezésének ellenőrzése"
+    - cmd: "[ -d /opt ] && echo 'exists'"
+      desc:
+        en: "Test directory, one-liner"
+        cs: "Test adresáře, jednořádkově"
+        sk: "Test adresára, jednoriadkovo"
+        de: "Verzeichnistest, einzeilig"
+        es: "Comprobar directorio, una línea"
+        fr: "Tester un dossier, sur une ligne"
+        it: "Test directory, una riga"
+        pl: "Test katalogu, jednolinijkowy"
+        tr: "Dizin testi, tek satır"
+        pt: "Testar diretório, uma linha"
+        nl: "Maptest, één regel"
+        hu: "Könyvtár teszt, egy soros"
+
 - id: bash-misc
   title:
-    cs: Užitečné triky
-    en: Useful tricks
+    en: "Useful tricks"
+    cs: "Užitečné triky"
+    sk: "Užitočné triky"
+    de: "Nützliche Tricks"
+    es: "Trucos útiles"
+    fr: "Astuces utiles"
+    it: "Trucchi utili"
+    pl: "Przydatne triki"
+    tr: "Yararlı ipuçları"
+    pt: "Truques úteis"
+    nl: "Handige trucs"
+    hu: "Hasznos trükkök"
   tags:
-    cs:
-    - bash
-    - triky
-    - xargs
-    - watch
-    - time
-    - sleep
-    en:
-    - bash
-    - tricks
-    - xargs
-    - watch
-    - time
-    - sleep
+    en: [bash, tricks, xargs, watch, time, sleep]
+    cs: [bash, triky, xargs, watch, time, sleep]
+    sk: [bash, triky, xargs, watch, time, sleep]
+    de: [bash, tricks, xargs, watch, time, sleep]
+    es: [bash, trucos, xargs, watch, time, sleep]
+    fr: [bash, astuces, xargs, watch, time, sleep]
+    it: [bash, trucchi, xargs, watch, time, sleep]
+    pl: [bash, triki, xargs, watch, time, sleep]
+    tr: [bash, ipuçları, xargs, watch, time, sleep]
+    pt: [bash, truques, xargs, watch, time, sleep]
+    nl: [bash, trucs, xargs, watch, time, sleep]
+    hu: [bash, trükkök, xargs, watch, time, sleep]
   commands:
-  - cmd: xargs -I {} cp {} /backup/ < seznam.txt
-    desc:
-      cs: Spustit příkaz pro každý řádek vstupu
-      en: Run command for each input line
-  - cmd: find . -name '*.log' | xargs rm
-    desc:
-      cs: Smazat všechny .log soubory
-      en: Delete all .log files
-  - cmd: watch -n 2 'df -h'
-    desc:
-      cs: Spouštět příkaz každé 2 vteřiny
-      en: Run command every 2 seconds
-  - cmd: time prikaz
-    desc:
-      cs: Změřit, jak dlouho příkaz trval
-      en: Measure how long command took
-  - cmd: sleep 5 && echo 'hotovo'
-    desc:
-      cs: Počkat 5 vteřin a něco udělat
-      en: Wait 5 seconds and do something
-  - cmd: yes | sudo apt remove balicek
-    desc:
-      cs: Automaticky odpovídat 'y' na otázky
-      en: Automatically answer 'y' to prompts
-  - cmd: command -v git
-    desc:
-      cs: Je tento příkaz nainstalovaný?
-      en: Is this command installed?
-  - cmd: type ls
-    desc:
-      cs: Co je za 'ls' (alias/binární/funkce)?
-      en: What is 'ls' (alias/binary/function)?
+    - cmd: "xargs -I {} cp {} /backup/ < list.txt"
+      desc:
+        en: "Run command for each input line"
+        cs: "Spustit příkaz pro každý řádek vstupu"
+        sk: "Spustiť príkaz pre každý riadok vstupu"
+        de: "Befehl für jede Eingabezeile ausführen"
+        es: "Ejecutar comando por cada línea de entrada"
+        fr: "Exécuter pour chaque ligne d'entrée"
+        it: "Eseguire comando per ogni riga di input"
+        pl: "Uruchom polecenie dla każdej linii"
+        tr: "Her giriş satırı için komut çalıştır"
+        pt: "Executar comando para cada linha"
+        nl: "Commando voor elke invoerregel"
+        hu: "Parancs futtatása minden bemeneti sorhoz"
+    - cmd: "find . -name '*.log' | xargs rm"
+      desc:
+        en: "Delete all .log files"
+        cs: "Smazat všechny .log soubory"
+        sk: "Zmazať všetky .log súbory"
+        de: "Alle .log-Dateien löschen"
+        es: "Eliminar todos los archivos .log"
+        fr: "Supprimer tous les fichiers .log"
+        it: "Eliminare tutti i file .log"
+        pl: "Usuń wszystkie pliki .log"
+        tr: "Tüm .log dosyalarını sil"
+        pt: "Excluir todos os arquivos .log"
+        nl: "Alle .log-bestanden verwijderen"
+        hu: "Az összes .log fájl törlése"
+    - cmd: "watch -n 2 'df -h'"
+      desc:
+        en: "Run command every 2 seconds"
+        cs: "Spouštět příkaz každé 2 vteřiny"
+        sk: "Spúšťať príkaz každé 2 sekundy"
+        de: "Befehl alle 2 Sekunden ausführen"
+        es: "Ejecutar comando cada 2 segundos"
+        fr: "Exécuter la commande toutes les 2 s"
+        it: "Eseguire comando ogni 2 secondi"
+        pl: "Uruchamiaj polecenie co 2 sekundy"
+        tr: "Komutu her 2 saniyede çalıştır"
+        pt: "Executar comando a cada 2 segundos"
+        nl: "Commando elke 2 seconden uitvoeren"
+        hu: "Parancs futtatása 2 másodpercenként"
+    - cmd: "time command"
+      desc:
+        en: "Measure how long command took"
+        cs: "Změřit, jak dlouho příkaz trval"
+        sk: "Zmerať, ako dlho príkaz trval"
+        de: "Befehlsdauer messen"
+        es: "Medir cuánto tarda un comando"
+        fr: "Mesurer la durée d'une commande"
+        it: "Misurare durata di un comando"
+        pl: "Zmierz czas trwania polecenia"
+        tr: "Komutun ne kadar sürdüğünü ölç"
+        pt: "Medir quanto tempo o comando levou"
+        nl: "Meet hoelang het commando duurde"
+        hu: "Mérje meg, mennyi ideig tartott"
+    - cmd: "sleep 5 && echo 'done'"
+      desc:
+        en: "Wait 5 seconds and do something"
+        cs: "Počkat 5 vteřin a něco udělat"
+        sk: "Počkať 5 sekúnd a niečo urobiť"
+        de: "5 Sekunden warten und etwas tun"
+        es: "Esperar 5 segundos y hacer algo"
+        fr: "Attendre 5 secondes et faire quelque chose"
+        it: "Aspettare 5 secondi e fare qualcosa"
+        pl: "Poczekaj 5 sekund i zrób coś"
+        tr: "5 saniye bekle ve bir şey yap"
+        pt: "Esperar 5 segundos e fazer algo"
+        nl: "Wacht 5 seconden en doe iets"
+        hu: "Várj 5 másodpercet és csinálj valamit"
+    - cmd: "yes | sudo apt remove package"
+      desc:
+        en: "Automatically answer 'y' to prompts"
+        cs: "Automaticky odpovídat 'y' na otázky"
+        sk: "Automaticky odpovedať 'y' na otázky"
+        de: "Automatisch mit 'y' antworten"
+        es: "Responder 'y' automáticamente"
+        fr: "Répondre automatiquement 'y'"
+        it: "Rispondere automaticamente 'y'"
+        pl: "Automatycznie odpowiadaj 'y'"
+        tr: "Otomatik olarak 'y' yanıtla"
+        pt: "Responder 'y' automaticamente"
+        nl: "Automatisch 'y' antwoorden"
+        hu: "Automatikus 'y' válasz"
+    - cmd: "command -v git"
+      desc:
+        en: "Is this command installed?"
+        cs: "Je tento příkaz nainstalovaný?"
+        sk: "Je tento príkaz nainštalovaný?"
+        de: "Ist dieser Befehl installiert?"
+        es: "¿Está este comando instalado?"
+        fr: "Cette commande est-elle installée ?"
+        it: "Questo comando è installato?"
+        pl: "Czy to polecenie jest zainstalowane?"
+        tr: "Bu komut yüklü mü?"
+        pt: "Este comando está instalado?"
+        nl: "Is dit commando geïnstalleerd?"
+        hu: "Telepítve van ez a parancs?"
+    - cmd: "type ls"
+      desc:
+        en: "What is 'ls' (alias/binary/function)?"
+        cs: "Co je za 'ls' (alias/binární/funkce)?"
+        sk: "Čo je za 'ls' (alias/binárny/funkcia)?"
+        de: "Was ist 'ls' (Alias/Binärdatei/Funktion)?"
+        es: "¿Qué es 'ls' (alias/binario/función)?"
+        fr: "Qu'est-ce que 'ls' (alias/binaire/fonction) ?"
+        it: "Cos'è 'ls' (alias/binario/funzione)?"
+        pl: "Czym jest 'ls' (alias/binarka/funkcja)?"
+        tr: "'ls' nedir (alias/ikili/fonksiyon)?"
+        pt: "O que é 'ls' (alias/binário/função)?"
+        nl: "Wat is 'ls' (alias/binary/functie)?"
+        hu: "Mi az 'ls' (alias/bináris/funkció)?"
