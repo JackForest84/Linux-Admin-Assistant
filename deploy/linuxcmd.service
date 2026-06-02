@@ -4,13 +4,28 @@ After=network.target
 
 [Service]
 Type=simple
-User=jakub
-Group=jakub
+# Dedicated, unprivileged system account (created by install.sh).
+User=linuxcmd
+Group=linuxcmd
 WorkingDirectory=/opt/linuxcmd
 Environment="PATH=/opt/linuxcmd/.venv/bin"
 ExecStart=/opt/linuxcmd/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
 Restart=on-failure
 RestartSec=3
+
+# --- Hardening (app is read-only: in-memory DB, reads files only) ---
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=false
 
 [Install]
 WantedBy=multi-user.target

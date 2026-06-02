@@ -53,24 +53,41 @@
 - **Deploy**: systemd + nginx
 - **Data**: YAML files → easy to extend, easy to translate
 
-## One-command install (Debian / Ubuntu)
+## Install (Debian / Ubuntu)
 
-Installs everything automatically (git clone, Python venv, systemd, nginx):
+The installer creates a dedicated unprivileged service user, sets up a hardened
+systemd unit and nginx, and **disables the default nginx site** (moved to
+`default.disabled`, not deleted).
+
+### Recommended: download, read, then run
+
+```bash
+curl -fsSLO https://raw.githubusercontent.com/JackForest84/Linux-Admin-Assistant/main/install.sh
+less install.sh        # read what it does
+sudo bash install.sh
+```
+
+One-liner (convenient, but runs remote code as root — use only if you trust the source):
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/JackForest84/Linux-Admin-Assistant/main/install.sh | sudo bash
 ```
 
-Then open `http://<your-server-ip>` in your browser.
+Then open `http://<your-server-ip>`. For any public deployment, put it behind
+TLS (Let's Encrypt / Cloudflare Tunnel / reverse proxy) — see `deploy/nginx.conf`.
 
 ### Manual install
 
 ```bash
 sudo apt install git python3-venv nginx
-git clone https://github.com/JackForest84/Linux-Admin-Assistant.git /opt/linuxcmd
+sudo git clone https://github.com/JackForest84/Linux-Admin-Assistant.git /opt/linuxcmd
 cd /opt/linuxcmd
-python3 -m venv .venv
-.venv/bin/pip install -r app/requirements.txt
+sudo python3 -m venv .venv
+sudo .venv/bin/pip install -r app/requirements.txt
+
+# Dedicated service account (the systemd unit runs as this user)
+sudo useradd --system --no-create-home --shell /usr/sbin/nologin linuxcmd
+
 sudo cp deploy/linuxcmd.service /etc/systemd/system/
 sudo systemctl enable --now linuxcmd
 sudo cp deploy/nginx.conf /etc/nginx/sites-available/linuxcmd
@@ -113,9 +130,25 @@ Want to help translate to your language? Pick a YAML file in `data/`, add your l
 
 Supported language codes: `en`, `cs`, `sk`, `de`, `es`, `fr`, `it`, `pl`, `tr`, `pt`, `nl`, `hu`.
 
+## Tests
+
+```bash
+pip install -r app/requirements.txt -r requirements-dev.txt
+pytest
+```
+
+Covers diacritics normalization, per-language search, the English fallback, and the limit clamp.
+
+## Security notes
+
+- The app binds to `127.0.0.1` only; nginx is the public entry point.
+- The systemd unit runs as a dedicated unprivileged user with `ProtectSystem=strict`, `ProtectHome`, `NoNewPrivileges`, `PrivateTmp` and related sandboxing.
+- nginx ships with `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, a `Content-Security-Policy`, and per-IP rate limiting. Enable HSTS once you serve over HTTPS.
+- Search input is validated against a language allow-list and parameterized — no SQL injection surface.
+
 ## License
 
-Open source. Use it however you like.
+[MIT](LICENSE) — © 2026 Jakub Forejt.
 
 ---
 

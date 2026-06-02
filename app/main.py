@@ -1,6 +1,7 @@
 import json
 import sqlite3
 import unicodedata
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 import yaml
@@ -16,8 +17,22 @@ STATIC_DIR = BASE / "static"
 LANGS = ["en", "cs", "sk", "de", "es", "fr", "it", "pl", "tr", "pt", "nl", "hu"]
 PRIMARY = "en"
 
-app = FastAPI(title="linuxcmd")
 _conn: sqlite3.Connection | None = None
+
+# Cap how many results a single query can request (anti-abuse).
+MAX_LIMIT = 200
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    global _conn
+    _conn = build_db()
+    yield
+    if _conn is not None:
+        _conn.close()
+
+
+app = FastAPI(title="linuxcmd", lifespan=lifespan)
 
 
 def strip_diacritics(s: str) -> str:
@@ -95,12 +110,6 @@ def build_db() -> sqlite3.Connection:
     return conn
 
 
-@app.on_event("startup")
-def startup():
-    global _conn
-    _conn = build_db()
-
-
 def localize_entry(entry: dict, lang: str) -> dict:
     """Return entry with localized title/desc/tags for the chosen lang."""
     out = {
@@ -123,6 +132,7 @@ def search(q: str = Query(default=""), lang: str = Query(default=PRIMARY), limit
     assert _conn is not None
     if lang not in LANGS:
         lang = PRIMARY
+    limit = max(1, min(limit, MAX_LIMIT))
     q = q.strip()
     if not q:
         rows = _conn.execute(
